@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="assets/memo.css" >
+  <title>memo</title>
+</head>
+<body>
+  <section class="memo-write">
+    <form class="memo-body">
+      <!--data-tooltip 은 a에 마우스를 hover하면 나타남-->
+      <div class="blind-sec">
+        <input class="memo-title" type="text" placeholder="제목">
+        <div id="fixed-icon">
+          <a class="input-icon" href="#" data-tooltip="메모 고정">
+            <i id="memo-title-icon" class="fas fa-thumbtack"></i>
+          </a>
+        </div>
+      </div>
+      <input class="memo-description" type="text" placeholder="메모 작성...">
+      <div class="memo-front-icons">
+        <a class="input-icon" href="#" data-tooltip="새 목록">
+          <i class="far fa-check-square"></i>
+        </a>
+        <a class="input-icon" href="#" data-tooltip="그림이 있는 새 메모">
+          <i class="fas fa-paint-brush"></i>
+        </a>
+        <a class="input-icon" href="#" data-tooltip="이미지가 있는 새 메모">
+          <i class="far fa-image"></i>
+        </a>
+      </div>
+      <!--wrap 되게해줘!  -->
+      <div class="memo-mid-icons">
+
+        <a href="#" class="input-icon" data-tooltip="나에게 알림">
+          <i class="far fa-bell"></i>
+        </a>
+        <a href="#" class="input-icon" data-tooltip="공동작업자">
+          <i class="fas fa-user-friends"></i>
+        </a>
+        <a href="#" class="input-icon" data-tooltip="색상 변경">
+          <i class="fas fa-palette"></i>
+        </a>
+        <a href="#" class="input-icon" data-tooltip="이미지 추가">
+          <i class="far fa-image"></i>
+        </a>
+        <a href="#" class="input-icon" data-tooltip="보관처리">
+          <i class="fas fa-download"></i>
+        </a>
+        <a href="#" class="input-icon" data-tooltip="더보기">
+          <i class="fas fa-ellipsis-v"></i>
+        </a>
+        <!--text를 작성하면 undo 활성화  -->
+        <a href="#" class="input-icon-l" id="text-undo">
+        <i class="fas fa-undo-alt"></i>
+        </a>
+        <a href="#" class="input-icon-l">
+        <i class="fas fa-redo-alt"></i>
+        </a>
+      </div>
+      <div id="btn-set">
+        <button id="memo-save">저장</button><button id="memo-close">닫기</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="memo-show">
+    <div class="no-memo">
+      <i class="far fa-lightbulb"></i>
+      <p>추가한 메모가 여기에 표시됩니다.</p>
+    </div>
+  </section>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    //no-memo 히든 안먹힘 , memo-show 에 입력해도 hidden이 적용되는데 그 이유를 모르겠음 
+    // function checkNoContent(){
+    //   var memoLength = $('.memo-show .memo-body').length;
+      
+    //   if(memoLength === 0){
+    //     $('.no-memo').removeAttr('hidden');
+    //     } 
+
+    //     else {
+    //     $('.no-memo').attr('hidden','');
+    //     }
+    // };
+
+    //툴팁 mouseenter
+    $(document).on('mouseenter','[data-tooltip]',function(){
+      var tooltipText = $(this).attr('data-tooltip');
+      $(this).append('<div class="upload-tooltip">'+tooltipText+'</div>');
+    });
+
+    //툴팁 mouseleave
+    $(document).on('mouseleave','[data-tooltip]',function(){
+      var tooltipText = $(this).attr('data-tooltip');
+      $('.upload-tooltip', this).remove();
+    });
+
+
+    //메모열기
+    $(document).on('focus','.memo-description',function(){
+      $('.memo-body').attr('open','');
+    });
+
+    //메모닫기
+    $(document).on('click','#memo-close',function(){
+      $('.memo-body').removeAttr('open','');
+    });
+
+    //메모저장
+    $(document).on('click','#memo-save',function(){
+      var saveMemo = $('.memo-write .memo-body').clone();
+      $(saveMemo).removeAttr('open','');
+      $('.memo-show').append(saveMemo);
+    });
+
+    //가짜로 내용넣기에 왜 3개가 뜨는지 모르겠음
+    $('.memo-body .memo-title').val("안녕 난 타이틀")
+    $('.memo-body .memo-description').val('안녕 난 내용');
+    // $('.memo-body #memo-save').trigger('click');
+    // $('.memo-body #memo-save').trigger('click');
+    // $('.memo-show .memo-body:last-child').trigger('hover');
+    //호버 왜 안먹힘
+    
+    //메모 타이틀에 내용이 없을 경우 title line이 안보이고 내용 있을 경우 보이게
+
+  </script>
+
+</body>
+</html>
