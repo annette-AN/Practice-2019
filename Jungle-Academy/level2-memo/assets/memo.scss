@@ -12,7 +12,7 @@ section.memo-write {
     &[open] {
       height: auto;
 
-      .blind-sec { //부모 width를 왜 안받는지 모르겠음
+      .blind-sec { //인풋이라 부모 width를 안받음
         width: 100%;
         display: inline-block;
       }
@@ -70,7 +70,7 @@ section.memo-write {
       font-family:sans-serif;
       color: gray;
       padding: 10px 20px;
-      background: none; //이렇게 하니까 보더 안겹침 이래도 되는지
+      background: none;
       font-size: 15px;
       font-weight: bold;
       border: none;
@@ -80,7 +80,7 @@ section.memo-write {
       box-sizing: border-box;
     }
 
-    .blind-sec { //블라인드섹션을 안보이게 했는데 왜 메모바디를 여는건지
+    .blind-sec {
       display: none;
       position: relative;
 
@@ -140,7 +140,7 @@ section.memo-write {
 section.memo-show {
 
   .no-memo {
-  margin: 200px auto; //얘도 안먹힘
+  margin: 200px auto;
   width: 800px;
   max-width: calc(100% - 40px);
   color: rgb(209, 209, 209);
@@ -159,22 +159,24 @@ section.memo-show {
   .memo-body {
     margin: 20px auto;
     width: 300px;
-    // max-width: calc(100% - 40px); //얘 안먹힘
+    max-width: calc(100% - 40px);
     height: 125px;
     border: 1px solid rgb(196, 196, 196);
     border-radius: 10px;
-    transition: all 3s; //이거 왜 적용안됌
+    transition: box-shadow .5s ;
+    //미드아이콘은 오퍼시티를 적용해서 사르륵 열리게 하면됌
 
     // &[open] memo-write memo-body와 동일하게
 
 
-    // &:hover {
-    //   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.1);
+    &:hover, &[hover] {
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.1);
       
-    //   #fixed-icon, div.memo-mid-icons {
-    //     display: inline-block;
-    //   }
-    // }
+      #fixed-icon, div.memo-mid-icons {
+        display: inline-block;
+
+      }
+    }
 
     a.input-icon {
       color: gray;
@@ -215,6 +217,7 @@ section.memo-show {
       width: 100%;
       box-sizing: border-box;
       outline: none;
+      background: none;
     }
 
     .memo-title {
@@ -229,7 +232,7 @@ section.memo-show {
         line-height: 40px;
         position: absolute;
         right: 30px;
-        top: 0; //왜 top 0 을 줘야 올라가는지 모르겠음
+        top: 0;
       }
     }
 

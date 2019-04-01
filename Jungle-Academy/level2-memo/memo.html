@@ -32,9 +32,8 @@
           <i class="far fa-image"></i>
         </a>
       </div>
-      <!--wrap 되게해줘!  -->
+      
       <div class="memo-mid-icons">
-
         <a href="#" class="input-icon" data-tooltip="나에게 알림">
           <i class="far fa-bell"></i>
         </a>
@@ -53,6 +52,7 @@
         <a href="#" class="input-icon" data-tooltip="더보기">
           <i class="fas fa-ellipsis-v"></i>
         </a>
+
         <!--text를 작성하면 undo 활성화  -->
         <a href="#" class="input-icon-l" id="text-undo">
         <i class="fas fa-undo-alt"></i>
@@ -76,18 +76,17 @@
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
-    //no-memo 히든 안먹힘 , memo-show 에 입력해도 hidden이 적용되는데 그 이유를 모르겠음 
-    // function checkNoContent(){
-    //   var memoLength = $('.memo-show .memo-body').length;
+    
+    //no-memo 가 적용되려면 저장할때 함수가 실행되도록 해줘야함
+    function checkNocContent(){
+      var memoLength = $('.memo-show .memo-body').length;
       
-    //   if(memoLength === 0){
-    //     $('.no-memo').removeAttr('hidden');
-    //     } 
-
-    //     else {
-    //     $('.no-memo').attr('hidden','');
-    //     }
-    // };
+      if(memoLength === 0){
+        $('.no-memo').removeAttr('hidden');
+      } else {
+        $('.no-memo').attr('hidden','');
+      }
+    };
 
     //툴팁 mouseenter
     $(document).on('mouseenter','[data-tooltip]',function(){
@@ -114,17 +113,25 @@
 
     //메모저장
     $(document).on('click','#memo-save',function(){
+      console.log('memo save')
       var saveMemo = $('.memo-write .memo-body').clone();
       $(saveMemo).removeAttr('open','');
       $('.memo-show').append(saveMemo);
+      checkNocContent();
     });
 
-    //가짜로 내용넣기에 왜 3개가 뜨는지 모르겠음
-    // $('.memo-body .memo-title').val("안녕 난 타이틀")
-    // $('.memo-body .memo-description').val('안녕 난 내용');
-    // $('.memo-body #memo-save').trigger('click');
-    // $('.memo-body #memo-save').trigger('click');
-    // $('.memo-show .memo-body:last-child').trigger('hover');
+    //폼 액션을 막아줌
+    $(document).on('submit','form.memo-body',function(e){
+      e.preventDefault();
+    });
+
+    //가짜로 내용넣기
+    $('.memo-body .memo-title').val("안녕 난 타이틀")
+    $('.memo-body .memo-description').val('안녕 난 내용');
+    $('.memo-write .memo-body #memo-save').trigger('click');
+    $('.memo-write .memo-body #memo-save').trigger('click');
+    $('.memo-show .memo-body:last-child').attr('hover','');
+    
     //호버 왜 안먹힘
     
     //메모 타이틀에 내용이 없을 경우 title line이 안보이고 내용 있을 경우 보이게

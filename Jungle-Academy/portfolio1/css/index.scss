@@ -1,15 +1,117 @@
+html {
+  width: 100%;
+  height: 100%;
+}
 body {
   width: 100%;
   height: 100%;
-  background-color: red;
   margin: 0;
+}
 
+section#main-door {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  
+  .left-door{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top:0;
+    left:-25%;
+    right: auto;
+    bottom: 0;
+    background-color: #CEE9F6;
+    background-image: url(/Jungle-Academy/portfolio1/img/main/img_smart_intro01.jpg);
+    background-repeat: no-repeat;
+    transition: left .5s;
+  }
 
-  main {
+  .right-door{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top:0;
+    left:75%;
+    right: auto;
+    bottom: 0;
+    background-color: #CEE9F6;
+    background-image: url(/Jungle-Academy/portfolio1/img/main/img_smart_intro01.jpg);
+    background-repeat: no-repeat;
+    transition: left .5s;
+  }
 
-    section#main-door {
-      height: 800px;
-      background: url(/Practice-2019/Jungle-Academy/portfolio1/img/main/img_smart_intro01.jpg) 50% 50% no-repeat;
+  &.door-active {
+    .left-door {
+      left:0%;
+    }
+    .right-door {
+      left:50%;
     }
   }
+  
+}
+
+main {
+
+  
+}
+
+header {
+  display: none;
+
+  //parants영역
+  menu.tnbParents {
+    background-color: #1E75A8;
+    color: #FFFFFF;
+
+    .parentsSection {
+
+      a {//after로 '<' 넣어주기
+      }
+    }
+  }
+
+
+
+  //students영역
+  menu.tnbStudents {
+    background-color: #E2487E;
+    color: #FFFFFF;
+  }
+
+
+
+
+
+
+
+
+  //class id
+  div.btnBox {
+
+    a{ 
+      color: #BBD5E5;
+      text-decoration: none; 
+    } 
+  }
+
+  a.headerLogo, h2.headerLogo {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    width: 95px;
+    height: 80px;
+    letter-spacing: 16px;
+    vertical-align: 80px;
+    line-height: 26.6666px;
+    margin: 0;
+  }
+
+  tnb {
+    background: yellow;
+    color: black;
+  }
+
 }

@@ -1,12 +1,92 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+
 body {
   width: 100%;
   height: 100%;
-  background-color: red;
   margin: 0;
 }
 
-body main section#main-door {
-  height: 800px;
-  background: url(/Practice-2019/Jungle-Academy/portfolio1/img/main/img_smart_intro01.jpg) 50% 50% no-repeat;
+section#main-door {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+section#main-door .left-door {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: -25%;
+  right: auto;
+  bottom: 0;
+  background-color: #CEE9F6;
+  background-image: url(/Jungle-Academy/portfolio1/img/main/img_smart_intro01.jpg);
+  background-repeat: no-repeat;
+  -webkit-transition: left .5s;
+  transition: left .5s;
+}
+
+section#main-door .right-door {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 75%;
+  right: auto;
+  bottom: 0;
+  background-color: #CEE9F6;
+  background-image: url(/Jungle-Academy/portfolio1/img/main/img_smart_intro01.jpg);
+  background-repeat: no-repeat;
+  -webkit-transition: left .5s;
+  transition: left .5s;
+}
+
+section#main-door.door-active .left-door {
+  left: 0%;
+}
+
+section#main-door.door-active .right-door {
+  left: 50%;
+}
+
+header {
+  display: none;
+}
+
+header menu.tnbParents {
+  background-color: #1E75A8;
+  color: #FFFFFF;
+}
+
+header menu.tnbStudents {
+  background-color: #E2487E;
+  color: #FFFFFF;
+}
+
+header div.btnBox a {
+  color: #BBD5E5;
+  text-decoration: none;
+}
+
+header a.headerLogo, header h2.headerLogo {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  width: 95px;
+  height: 80px;
+  letter-spacing: 16px;
+  vertical-align: 80px;
+  line-height: 26.6666px;
+  margin: 0;
+}
+
+header tnb {
+  background: yellow;
+  color: black;
 }
 /*# sourceMappingURL=index.css.map */
