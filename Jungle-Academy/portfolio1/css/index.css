@@ -24,7 +24,7 @@ section#main-door .left-door {
   right: auto;
   bottom: 0;
   background-color: #CEE9F6;
-  background-image: url(/Jungle-Academy/portfolio1/img/main/img_smart_intro01.jpg);
+  background-image: url(../img/main/img_smart_intro01.jpg);
   background-repeat: no-repeat;
   -webkit-transition: left .5s;
   transition: left .5s;
@@ -39,7 +39,7 @@ section#main-door .right-door {
   right: auto;
   bottom: 0;
   background-color: #CEE9F6;
-  background-image: url(/Jungle-Academy/portfolio1/img/main/img_smart_intro01.jpg);
+  background-image: url(../img/main/img_smart_intro01.jpg);
   background-repeat: no-repeat;
   -webkit-transition: left .5s;
   transition: left .5s;
@@ -53,40 +53,50 @@ section#main-door.door-active .right-door {
   left: 50%;
 }
 
-header {
-  display: none;
-}
-
-header menu.tnbParents {
-  background-color: #1E75A8;
-  color: #FFFFFF;
-}
-
-header menu.tnbStudents {
-  background-color: #E2487E;
-  color: #FFFFFF;
-}
-
-header div.btnBox a {
-  color: #BBD5E5;
-  text-decoration: none;
-}
-
-header a.headerLogo, header h2.headerLogo {
-  color: #FFFFFF;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: bold;
-  width: 95px;
+section#main-door .door-top-logo {
+  position: absolute;
+  top: 10%;
+  right: 50%;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  display: block;
+  background-image: url(../img/main/img_logo.png);
+  background-repeat: no-repeat;
+  width: 180px;
   height: 80px;
-  letter-spacing: 16px;
-  vertical-align: 80px;
-  line-height: 26.6666px;
-  margin: 0;
 }
 
-header tnb {
-  background: yellow;
-  color: black;
+section#main-door .top-text {
+  width: 50%;
+  height: 80%;
+  background-image: url(/Practice-2019/Jungle-Academy/portfolio1/img/main/img_intro_txt_l.png);
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: background-position 1s;
+  transition: background-position 1s;
+}
+
+section#main-door .bottom-text {
+  width: 50%;
+  height: 41.2%;
+  background-image: url(/Practice-2019/Jungle-Academy/portfolio1/img/main/img_intro_txt_r.png);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  -webkit-transition: background-position 1s;
+  transition: background-position 1s;
+}
+
+section#main-door.banner-active .top-text {
+  background-position: 100% 100%;
+}
+
+section#main-door.banner-active .bottom-text {
+  background-position: 0 0;
 }
 /*# sourceMappingURL=index.css.map */

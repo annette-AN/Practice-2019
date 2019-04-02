@@ -38,7 +38,6 @@ section.memo-write {
       margin-right:30px;
 
       div.upload-tooltip {
-        display: none;
         font-size: 12px;
         position: absolute;
         top: 100%;
@@ -50,12 +49,6 @@ section.memo-write {
         padding: 5px 10px;
         white-space:nowrap;
         line-height: initial;
-      }
-
-      &:hover {
-        div.upload-tooltip {
-          display: inline-block;
-        }
       }
     }
 
@@ -163,7 +156,8 @@ section.memo-show {
     height: 125px;
     border: 1px solid rgb(196, 196, 196);
     border-radius: 10px;
-    transition: box-shadow .5s ;
+    transition: box-shadow .3s, opacity 1s ;
+
     //미드아이콘은 오퍼시티를 적용해서 사르륵 열리게 하면됌
 
     // &[open] memo-write memo-body와 동일하게
@@ -171,14 +165,19 @@ section.memo-show {
 
     &:hover, &[hover] {
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.1);
-      
-      #fixed-icon, div.memo-mid-icons {
-        display: inline-block;
 
+      #fixed-icon {
+        opacity: 1;
+      }
+      div.memo-mid-icons {
+        a.input-icon {
+          opacity: 1;
+        }
       }
     }
 
     a.input-icon {
+      opacity: 0;
       color: gray;
       font-size: 20px;
       text-decoration: none;
@@ -186,7 +185,6 @@ section.memo-show {
       margin-right:30px;
 
       div.upload-tooltip {
-        display: none;
         font-size: 12px;
         position: absolute;
         top: 100%;
@@ -198,12 +196,6 @@ section.memo-show {
         padding: 5px 10px;
         white-space:nowrap;
         line-height: initial;
-      }
-
-      &:hover {
-        div.upload-tooltip {
-          display: inline-block;
-        }
       }
     }
 
@@ -228,7 +220,7 @@ section.memo-show {
       position: relative;
 
       #fixed-icon {
-        display: none;
+        opacity: 0;
         line-height: 40px;
         position: absolute;
         right: 30px;
@@ -236,12 +228,32 @@ section.memo-show {
       }
     }
 
-    div.memo-front-icons{
+    div.memo-front-icons {
       display: none; //hover 및 open일 때도 안보임
     }
 
     div.memo-mid-icons {
-      display: none;
+      width: 100%;
+      text-align: center;
+      margin-top: 5px;
+
+      a.input-icon {
+        opacity: 0;
+        display: inline-block;
+        text-align: center;
+        width: 15%;
+        margin: 0;
+
+        i {
+          color: #3E3E3E;
+          font-size: 15px;
+          line-height: 27px;
+        }
+      }
+
+      a.input-icon-l {
+        display: none;
+      }
     }
 
     div#btn-set {

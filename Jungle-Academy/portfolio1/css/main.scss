@@ -1,0 +1,58 @@
+header {
+    display: none;
+  
+    //parants영역
+    menu.tnbParents {
+      background-color: #1E75A8;
+      color: #FFFFFF;
+  
+      .parentsSection {
+  
+        a {//after로 '<' 넣어주기
+        }
+      }
+    }
+  
+  
+  
+    //students영역
+    menu.tnbStudents {
+      background-color: #E2487E;
+      color: #FFFFFF;
+    }
+  
+  
+  
+  
+  
+  
+  
+  
+    //class id
+    div.btnBox {
+  
+      a{ 
+        color: #BBD5E5;
+        text-decoration: none; 
+      } 
+    }
+  
+    a.headerLogo, h2.headerLogo {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      width: 95px;
+      height: 80px;
+      letter-spacing: 16px;
+      vertical-align: 80px;
+      line-height: 26.6666px;
+      margin: 0;
+    }
+  
+    tnb {
+      background: yellow;
+      color: black;
+    }
+  
+  }
