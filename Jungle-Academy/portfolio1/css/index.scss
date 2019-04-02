@@ -53,9 +53,9 @@ section#main-door {
 
   .door-top-logo { //효과 넣어야함
     position: absolute;
-    top: 10%;
-    right: 50%; //50%했는데 가운데로 안감
-    transform: translateX(50%);
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
     display: block;
     background-image: url(../img/main/img_logo.png);
     background-repeat: no-repeat;

@@ -55,10 +55,10 @@ section#main-door.door-active .right-door {
 
 section#main-door .door-top-logo {
   position: absolute;
-  top: 10%;
-  right: 50%;
-  -webkit-transform: translateX(50%);
-          transform: translateX(50%);
+  top: 5%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   display: block;
   background-image: url(../img/main/img_logo.png);
   background-repeat: no-repeat;
