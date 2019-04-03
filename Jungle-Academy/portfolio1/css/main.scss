@@ -1,58 +1,136 @@
-header {
-    display: none;
+html {
+  background: silver;
+  width: 100%;
+  height: 100%;
+
+  body {
+    background: #BBD5E5;
+    margin: 0;
+    height: 100%;
+    // overflow: hidden;
+
+    header {
+      margin: 0;
+      height: 100%;
+    }
+    
+    section {
+      // display: none;
+    }
+  }
+}
+
+//header>nav
+nav.gnb {
+  position: relative;
+  height: 100%;
+
+  .gnb-menu {
+    position: absolute;
+    left: 92.5%;
+    height: 100%;
   
-    //parants영역
-    menu.tnbParents {
-      background-color: #1E75A8;
-      color: #FFFFFF;
-  
-      .parentsSection {
-  
-        a {//after로 '<' 넣어주기
-        }
+    a.blue-gnb, a.pink-gnb {
+      display: block;
+      cursor: pointer;
+
+      &:after {//after로 '<' 넣어주기
+
+      }
+
+      span { //aline 정렬 제대로 하고싶음
+        display: inline-block;
+        margin: 150px 10px;
+        letter-spacing: 6px;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        color: #FFFFFF;
+        line-height: 1.5em;
       }
     }
-  
-  
-  
-    //students영역
-    menu.tnbStudents {
-      background-color: #E2487E;
-      color: #FFFFFF;
+
+    a.blue-gnb {
+      background-color:#1573AA;
+      height: 50%;
     }
-  
-  
-  
-  
-  
-  
-  
-  
-    //class id
-    div.btnBox {
-  
-      a{ 
-        color: #BBD5E5;
-        text-decoration: none; 
-      } 
+
+    a.pink-gnb {
+      background-color:#E7437D;
+      height: 50%;
     }
-  
-    a.headerLogo, h2.headerLogo {
-      color: #FFFFFF;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
-      width: 95px;
-      height: 80px;
-      letter-spacing: 16px;
-      vertical-align: 80px;
-      line-height: 26.6666px;
-      margin: 0;
-    }
-  
-    tnb {
-      background: yellow;
-      color: black;
-    }
-  
   }
+}
+
+//header>nav>section
+section {
+  div.btnBox {
+    height: 75px;
+    margin-top: 50px;
+    margin-right: 100px;
+    float: right;
+
+    a {
+      vertical-align: top;
+      display: inline-block;
+      font-size: 15px;
+      font-weight: bold;
+      color: #BBD5E5;
+      text-decoration: none;
+      margin: 3px 10px;
+    }
+
+    a.closeBtn {
+      width: 25px;
+      margin: 0 0 0 30px;
+      // margin-top: 20px;
+
+      img {
+        width:100%;
+      }
+    }
+  }
+
+  h2.headerLogo {
+    left: 45px;
+    word-spacing: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.7em;
+    float: left;
+    margin: 0;
+  }
+
+  .menu-body {
+    overflow: hidden;
+    height: 100%;
+  }
+
+  .main-body {
+    margin: 0 40px;
+    clear: both;
+    overflow: hidden;
+
+    .gnbMenu {
+      float: right;
+      width: 89%;
+      margin: 0 auto;
+    }
+  }
+}
+
+
+section#blue-menu {
+  width: 92.5%;
+  height: 100%;
+  background-color: #1E75A8;
+  color: #FFFFFF;
+}
+
+section#pink-menu {
+  width: 92.5%;
+  height: 100%;
+  background-color: #E7437D;
+  color: #FFFFFF;
+}

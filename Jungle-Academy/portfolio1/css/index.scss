@@ -64,36 +64,34 @@ section#main-door {
   }
 
     .top-text {
+      position: absolute;
+      top: -25%;
+      left: 25.3%;
       width: 50%;
-      height: 80%;
+      height: 100%; //80
       background-image: url(/Practice-2019/Jungle-Academy/portfolio1/img/main/img_intro_txt_l.png);
       background-repeat: no-repeat;
-      background-position: 100% 0;
-      position: absolute;
-      top: 0;
-      left: 0;
-      transition: background-position 1s;
+      transition: top 1s;
     }
 
     .bottom-text {
+      position: absolute;
+      left: 50%;
+      top: 100%;
       width: 50%;
-      height: 41.2%;
+      height: 100%; //41.2
       background-image: url(/Practice-2019/Jungle-Academy/portfolio1/img/main/img_intro_txt_r.png);
       background-repeat: no-repeat;
-      background-position: 0 100%;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      transition: background-position 1s;
+      transition: top 1s;
     }
   
 
   &.banner-active {
     .top-text {
-      background-position: 100% 100%;
+      top: 50%;
     }
     .bottom-text {
-      background-position: 0 0;
+      top: 50%;
     }
   }
 

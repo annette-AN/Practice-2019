@@ -43,13 +43,27 @@
     //구조가 그려진 상태이고 , 그린 후에 제어를 하고싶을때
     //window load
 
-    //문닫기
-    $(window).on("load",function(){
-      $("#main-door").addClass("door-active");
-    });
+    // //문닫기
+    // $(window).on("load",function(){
+    //   $("#main-door").addClass("door-active");
+    // });
 
-    //텍스트배너만나기
-    $(window).on("load",function(){
+    // //텍스트배너만나기
+    // $(window).on("load",function(){
+    //   $("#main-door").addClass("banner-active");
+    // });
+
+    // main-door 효과
+    promise(function(resolve){ $(window).on("load",resolve) })
+    .then(function(){
+      $("#main-door").addClass("door-active");
+      return promise.timeout(1000);
+    })
+    .then(function(){
+      $("#main-door").removeClass("door-active");
+      return promise.timeout(1000);
+    })
+    .then(function(){
       $("#main-door").addClass("banner-active");
     });
 
