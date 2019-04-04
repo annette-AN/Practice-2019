@@ -1,0 +1,238 @@
+html {
+  background: silver;
+  width: 100%;
+  height: 100%;
+
+  >body {
+    background: #BBD5E5;
+    margin: 0;
+    height: 100%;
+
+    >header {
+      margin: 0;
+      height: 100%;
+
+      >nav.gnb {
+        position: relative;
+        height: 100%;
+
+        >section {
+          >.menu-body {
+            overflow: hidden;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+//nav>section
+section.blue-menu {
+  position: absolute;
+  // left: 100%;
+  width: 92.5%;
+  height: 100%;
+  background-color: #1E75A8;
+  color: #FFFFFF;
+  transition: left .5s;
+}
+
+section.pink-menu { // class로 바꿔줘야함
+  position: absolute;
+  // left: 100%;
+  width: 92.5%;
+  height: 100%;
+  background-color: #E7437D;
+  color: #FFFFFF;
+  transition: left .5s;
+}
+
+&.menu-active {
+  left: 0;
+}
+
+//section>menu-body
+
+.btnBox {
+  height: 75px;
+  margin-top: 50px;
+  margin-right: 100px;
+  float: right;
+
+  >a {
+    vertical-align: top;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    color: #BBD5E5;
+    text-decoration: none;
+    margin: 3px 10px;
+  }
+
+  >a.closeBtn {
+    width: 30px;
+    margin: 0 0 0 35px;
+
+    >img {
+      width:100%;
+    }
+  }
+}
+
+//section>menu-body
+
+.main-body {
+  height: 61%;
+  margin: 0 40px;
+  clear: both;
+
+  >h2.headerLogo {
+    left: 45px;
+    word-spacing: 8px;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.7em;
+    float: left;
+    margin: 0;
+  }
+
+  >.gnbMenu {
+    height: 100%;
+    float: right;
+    width: 89%;
+    margin: 0 auto;
+    overflow: auto; //스크롤 효과있음
+
+    >ul {
+      display: inline-block;
+      width: 21.8%;
+      box-sizing: border-box;
+      border: 1px solid white;
+      vertical-align: top;
+      margin-top: 0;
+      margin-right: 35px;
+
+      h3, p, li {
+        letter-spacing: -1px;
+      }
+
+      h3 {
+        font-size: 1.3em;
+        margin-top: 30px;
+      }
+
+      p {
+        font-size: 12px;
+        line-height: 1.5em;
+        margin-top: 0;
+      }
+
+      span {
+        display: block;
+        width: 55px;
+        height: 1px;
+        margin: 25px 0;
+        border-bottom: 1px solid white;
+        opacity: 0.3;
+      }
+
+      >li.contentsList {
+        list-style: none;
+
+        >a.insideList {
+          display: inline-block;
+          text-decoration: none;
+          font-size: 0.8em;
+          color: white;
+          line-height: 2em;
+          padding-left: 10px;
+          background-image: url(/Practice-2019/Jungle-Academy/portfolio1/img/bg_hmenu_sub_a.png);
+          background-repeat: no-repeat;
+          background-position: 0 11px;
+
+          &:hover {
+            color: #FFFE8E;
+          }
+        }
+      }
+    }
+
+    ul.contents-top {
+      min-height: 280px;
+    }
+    
+    ul.contents-buttom {
+      margin-top: 15px;
+      min-height: 340px;
+    }
+  }
+}
+
+//section>menu-body
+
+div.snb {
+  margin-top: 60px;
+  overflow: hidden;
+
+  >.snb-center {
+    width: 440px;
+    margin-left: 38.5%;
+    overflow: hidden;
+    float: left;
+
+    >a.snb-btn {
+      display: block;
+      float: left;
+      width: 20%;
+      text-align: center;
+      text-decoration: none;
+    }
+  }
+
+  a.snb-right-btn {
+    display: block;
+    float: right;
+    margin-right: 100px;
+  }
+}
+
+
+//nav>div.gnb-menu
+
+.gnb-menu {
+  position: absolute;
+  left: 92.5%;
+  height: 100%;
+
+  a.blue-gnb, a.pink-gnb {
+    display: block;
+    cursor: pointer;
+
+    &:after {//after로 '<' 넣어주기
+
+    }
+
+    span { //aline 정렬 제대로 하고싶음
+      display: inline-block;
+      margin: 150px 10px;
+      letter-spacing: 6px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      color: #FFFFFF;
+      line-height: 1.5em;
+    }
+  }
+
+  a.blue-gnb {
+    background-color:#1573AA;
+    height: 50%;
+  }
+
+  a.pink-gnb {
+    background-color:#E7437D;
+    height: 50%;
+  }
+}
