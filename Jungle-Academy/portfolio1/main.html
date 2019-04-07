@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="/Practice-2019/Jungle-Academy/portfolio1/css/main.css">
+  <link rel="stylesheet" href="css/main.css">
   <script src="https://unpkg.com/jquery"></script>
   <title>Document</title>
 </head>
@@ -14,14 +14,15 @@
   <header class="smartMenu">
     <nav class="gnb">
       <div class="gnb-menu">
-        <a class="blue-gnb">
+        <a id="blue-gnb">
           <span>부모님선생님정보통</span>
         </a>
-        <a class="pink-gnb">
+        <a id="pink-gnb">
           <span>학생들놀이터스마트</span>
       </div>
 
-      <section class="blue-menu">
+      <!--  블루메뉴 시작  -->
+      <section id="blue-menu">
         <div class="menu-body">
           <div class="btnBox">
             <a href="#">EN</a>
@@ -177,13 +178,184 @@
           </div>
         </div>
       </section>
+      <!--  블루메뉴 끝  -->
+
+      <!--  핑크메뉴 시작  -->
+      <section id="pink-menu">
+        <div class="menu-body">
+          <div class="btnBox">
+            <a href="#">EN</a>
+            <a href="#">CN</a>
+            <a href="#" class="closeBtn">
+              <img src="img/btn-close.png">
+            </a>
+          </div>
+
+          <div class="main-body">
+            <h2 class="headerLogo">
+              부 모 님<br>선 생 님<br>정 보 통
+            </h2>
+            <div class="gnbMenu">
+              <ul class="contents-top">
+                <h3>예쁜 교복 스마트</h3>
+                <p>교복의 프리스타일! 불편함을 날리고 스타일을 살리다</p>
+                <span></span>
+                <li class="contentsList">
+                  <a href="#" class="insideList">소년 스타일</a>
+                </li>
+                <li class="contentsList">
+                  <a href="#" class="insideList">소녀 스타일</a>
+                </li>
+                <li class="contentsList">
+                  <a href="#" class="insideList">스타일링 아이템</a>
+                </li>
+              </ul>
+              <ul class="contents-top">
+                <h3>편한 교복 스마트</h3>
+                <p>교복의 프리스타일! 이젠 생활복/체육복도 스타일리쉬하게~</p>
+                <span></span>
+                <li class="contentsList">
+                  <a href="#" class="insideList">인생교복</a>
+                </li>
+                <li class="contentsList">
+                  <a href="#" class="insideList">생활복 스타일</a>
+                </li>
+                <li class="contentsList">
+                  <a href="#" class="insideList">체육복 스타일</a>
+                </li>
+              </ul>
+              <ul class="contents-top">
+                <h3>스마트 TV</h3>
+                <p>소통하는 브랜드 스마트의 영상을 만나보세요</p>
+                <span></span>
+                <li class="contentsList">
+                  <a href="#" class="insideList">채널 MX</a>
+                </li>
+                <li class="contentsList">
+                  <a href="#" class="insideList">스마트 필름</a>
+                </li>
+                <li class="contentsList">
+                  <a href="#" class="insideList">온에어</a>
+                </li>
+              </ul>
+              <ul class="contents-top">
+                <h3>룩북</h3>
+                <p>프리하고 스타일리쉬한 스마트 패션 스타일을 만나보세요</p>
+                <span></span>
+                <li class="contentsList">
+                  <a href="#" class="insideList">스마트 룩북</a>
+                </li>
+                <li class="contentsList">
+                  <a href="#" class="insideList">화보 갤러리</a>
+                </li>
+                <li class="contentsList">
+                  <a href="#" class="insideList">웰페이퍼</a>
+                </li>
+              </ul>
+              <ul class="contents-buttom">
+                <h3>스마트 히스토리</h3>
+                <p>최고의 스타와 함께한 스마트 학생복을 공개합니다</p>
+                <span></span>
+                <li class="contentsList">
+                  <a href="#" class="insideList">모델 히스토리</a>
+                </li>
+                <li class="contentsList">
+                  <a href="#" class="insideList">홈페이지 히스토리</a>
+                </li>
+              </ul>
+              <ul class="contents-buttom">
+                <h3>이벤트</h3>
+                <p>스마트가 준비한 다양한 이벤트에 직접 참여해 보세요</p>
+                <span></span>
+                <li class="contentsList">
+                  <a href="#" class="insideList">이벤트</a>
+                </li>
+              </ul>
+              <ul class="contents-buttom">
+                <h3>매장/고객센터</h3>
+                <p>전국에 있는 스마트 매장을 한번에 찾아 볼 수 있습니다</p>
+                <span></span>
+                <li class="contentsList">
+                  <a href="#" class="insideList">매장찾기</a>
+                </li>
+                <li class="contentsList">
+                  <a href="#" class="insideList">고객문의</a>
+                </li>
+                <li class="contentsList">
+                  <a href="#" class="insideList">업무제휴문의</a>
+                </li>
+                <li class="contentsList">
+                  <a href="#" class="insideList">대리점개설문의</a>
+                </li>
+                <li class="contentsList">
+                  <a href="#" class="insideList">FAQ</a>
+                </li>
+              </ul>
+              <ul class="contents-buttom">
+                <h3>스마트 소개</h3>
+                <p>교복의 역사가 smart의 역사! 바른학생복 스마트를 소개해 드립니다</p>
+                <span></span>
+                <li class="contentsList">
+                  <a href="#" class="insideList">스마트소개</a>
+                </li>
+                <li class="contentsList">
+                  <a href="#" class="insideList">수상연혁</a>
+                </li>
+                <li class="contentsList">
+                  <a href="#" class="insideList">사회공헌</a>
+                </li>
+                <li class="contentsList">
+                  <a href="#" class="insideList">글로벌 네트워크</a>
+                </li>
+                <li class="contentsList">
+                  <a href="#" class="insideList">언론보도</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="snb">
+            <div class="snb-center">
+              <a href="https://www.facebook.com/smartzzang" class="snb-btn">
+                <img src="/Practice-2019/Jungle-Academy/portfolio1/img/header, footer/ico_h_facebook.png"
+                  alt="facebook">
+              </a>
+              <a href="https://story.kakao.com/ch/smartfnd" class="snb-btn">
+                <img src="/Practice-2019/Jungle-Academy/portfolio1/img/header, footer/ico_h_story.png" alt="kakaostory">
+              </a>
+              <a href="https://www.youtube.com/channel/UC9Pfm_o3Y3OgtpFXUIvsV7w?feature=watch" class="snb-btn">
+                <img src="/Practice-2019/Jungle-Academy/portfolio1/img/header, footer/ico_h_youtube.png" alt="youtube">
+              </a>
+              <a href="https://blog.naver.com/smartfnd" class="snb-btn">
+                <img src="/Practice-2019/Jungle-Academy/portfolio1/img/header, footer/ico_h_nblog.png" alt="nblog">
+              </a>
+              <a href="https://www.instagram.com/ilovesmart/" class="snb-btn">
+                <img src="/Practice-2019/Jungle-Academy/portfolio1/img/header, footer/ico_h_instargram.png"
+                  alt="instagram">
+              </a>
+            </div>
+            <a href="https://pf.kakao.com/_LxoyAj" class="snb-right-btn">
+              <img src="/Practice-2019/Jungle-Academy/portfolio1/img/header, footer/ico_h_kakao.png" alt="kakao">
+            </a>
+          </div>
+        </div>
+      </section>
+      <!--  핑크메뉴 끝  -->
     </nav>
   </header>
 </body>
 
 <script>
+  //메뉴 오픈 계속 클릭가능하게 하고싶음
+
+  //블루메뉴 오픈
   $(document).on('click', '#blue-gnb', function () {
-    $('.blue-menu').addClass('menu-active');
+    $('#blue-menu').addClass('menu-active');
+  });
+
+  //핑크메뉴 오픈
+  $(document).on('click','#pink-gnb',function(){
+    $('#pink-menu').addClass('menu-active');
   });
 
 
