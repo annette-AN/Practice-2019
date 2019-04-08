@@ -1,3 +1,4 @@
+/* Presented by pado & reborn https://github.com/sepalang/pado */
 window.promise = (function () {
     'use strict';
   
