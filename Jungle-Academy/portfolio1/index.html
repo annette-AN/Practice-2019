@@ -56,12 +56,10 @@
     // });
 
     // main-door 효과 (es5)
-    /*
+    
     promise(function(resolve){ $(window).on("load",resolve) })
-    .then(async function(){
+    .then(function(){
       $("#main-door").addClass("door-active");
-      await promise.timeout(1000);
-      $("#main-door").removeClass("door-active");
       return promise.timeout(1000);
     })
     .then(function(){
@@ -69,22 +67,27 @@
       return promise.timeout(1000);
     })
     .then(function(){
-      $("#main-door").removeClass("door-active");
+      $("#main-door").addClass("banner-move");
       return promise.timeout(1000);
     });
-    */
+    // .then(function(){
+    //   $("#main-door").addClass("IntroModel01");
+    //   return promise.timeout(1000);
+    // });
+    
 
     //chrome, ie edge에서만 가능한 문법 (es6)
-    $(window).on("load", async function(){
-      $("#main-door").addClass("door-active");
-      await promise.timeout(1000);
-      $("#main-door").removeClass("door-active");
-      await promise.timeout(1000);
-      $("#main-door").addClass("door-active");
-      await promise.timeout(1000);
-      $("#main-door").removeClass("door-active");
-      await promise.timeout(1000);
-    });
+    // $(window).on("load", async function(){
+    //   $("#main-door").addClass("door-active");
+    //   await promise.timeout(1000);
+    //   $("#main-door").addClass("banner-active");
+    //   await promise.timeout(1000);
+
+      // $("#main-door").addClass("door-active");
+      // await promise.timeout(1000);
+      // $("#main-door").removeClass("door-active");
+      // await promise.timeout(1000);
+      //});
   
     
   </script>

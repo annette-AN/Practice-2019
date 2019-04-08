@@ -19,7 +19,7 @@ html {
 
         >div.menu {
           // background: silver;
-          width: 92.5%; // 100%로 바꿔주기
+          width: 100%;
           height: 100%;
           color: #FFFFFF;
 
@@ -75,12 +75,13 @@ nav.gnb {
     }
   }
 
-  >div.menu {
+  >div.menu { //아래에 스크롤이 생김
     
     .btnBox {
-      height: 75px;
-      margin-top: 50px;
-      margin-right: 100px;
+      box-sizing: border-box;
+      height: 130px;
+      padding-top: 50px;
+      margin-right: 200px;
       float: right;
 
       >a {
@@ -90,12 +91,13 @@ nav.gnb {
         font-weight: bold;
         color: #BBD5E5;
         text-decoration: none;
-        margin: 3px 10px;
+        margin-top: 3px;
+        margin-left: 30px;
       }
 
       >a.closeBtn {
         width: 30px;
-        margin: 0 0 0 35px;
+        margin: 0 0 0 40px;
 
         >img {
           width:100%;
@@ -104,36 +106,35 @@ nav.gnb {
     }
     
     .main-body {
-      height: 61%;
-      margin: 0 40px;
+      height: 480px;
+      margin: 0 180px 0 40px;
       clear: both;
 
-      >h2.headerLogo {
-        left: 45px;
-        word-spacing: 8px;
+      >h2.headerLogo { //좀더 위로 올리고 싶음
         font-size: 28px;
         font-weight: bold;
         text-align: center;
         line-height: 1.7em;
+        word-spacing: 7px;
         float: left;
         margin: 0;
       }
 
-      >.gnbMenu {
+      >.gnbMenu { //스크롤 바꾸기
         height: 100%;
         float: right;
-        width: 89%;
+        width: 1230px;
         margin: 0 auto;
-        overflow: auto; //스크롤 효과있음
+        overflow: auto; 
 
         >ul {
-          display: inline-block;
-          width: 21.8%;
           box-sizing: border-box;
+          display: inline-block;
+          width: 270px;
           border: 1px solid white;
           vertical-align: top;
           margin-top: 0;
-          margin-right: 35px;
+          margin-right: 28px;
 
           h3, p, li {
             letter-spacing: -1px;
@@ -181,23 +182,23 @@ nav.gnb {
         }
 
         ul.contents-top {
-          min-height: 280px;
+          min-height: 285px;
         }
         
         ul.contents-buttom {
-          margin-top: 15px;
+          margin-top: 30px;
           min-height: 340px;
         }
       }
     }
 
     div.snb {
-      margin-top: 60px;
+      margin-top: 50px;
       overflow: hidden;
 
       >.snb-center {
-        width: 440px;
-        margin-left: 38.5%;
+        width: 410px;
+        margin-left: 590px;
         overflow: hidden;
         float: left;
 
@@ -205,7 +206,6 @@ nav.gnb {
           display: block;
           float: left;
           width: 20%;
-          text-align: center;
           text-decoration: none;
         }
       }
@@ -213,7 +213,7 @@ nav.gnb {
       a.snb-right-btn {
         display: block;
         float: right;
-        margin-right: 100px;
+        margin-right: 200px;
       }
     }
   }

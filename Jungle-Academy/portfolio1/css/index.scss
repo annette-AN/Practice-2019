@@ -93,4 +93,13 @@ section#main-door {
       top: 50%;
     }
   }
+
+  &.banner-move {
+    .banner-text-l {
+      top: 15%;
+    }
+    .banner-text-r {
+      top: 15%;
+    }
+  }
 }

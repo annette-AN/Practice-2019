@@ -97,4 +97,12 @@ section#main-door.banner-active .banner-text-l {
 section#main-door.banner-active .banner-text-r {
   top: 50%;
 }
+
+section#main-door.banner-move .banner-text-l {
+  top: 15%;
+}
+
+section#main-door.banner-move .banner-text-r {
+  top: 15%;
+}
 /*# sourceMappingURL=index.css.map */
