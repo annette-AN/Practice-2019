@@ -17,14 +17,12 @@ html > body > header > nav.gnb {
   height: 100%;
 }
 
-html > body > header > nav.gnb > section {
-  background: silver;
-  width: 92.5%;
+html > body > header > nav.gnb > div.menu {
   height: 100%;
   color: #FFFFFF;
 }
 
-html > body > header > nav.gnb > section > .menu-body {
+html > body > header > nav.gnb > div.menu > .menu-body {
   overflow: hidden;
   height: 100%;
 }
@@ -34,9 +32,10 @@ nav.gnb {
 }
 
 nav.gnb > .gnb-menu {
-  position: absolute;
-  width: 100%;
-  left: 92.5%;
+  position: fixed;
+  width: 120px;
+  right: 0;
+  left: auto;
   height: 100%;
   z-index: 999;
 }
@@ -66,14 +65,14 @@ nav.gnb > .gnb-menu a#pink-gnb {
   background-color: #E7437D;
 }
 
-nav.gnb > section .btnBox {
+nav.gnb > div.menu .btnBox {
   height: 75px;
   margin-top: 50px;
   margin-right: 100px;
   float: right;
 }
 
-nav.gnb > section .btnBox > a {
+nav.gnb > div.menu .btnBox > a {
   vertical-align: top;
   display: inline-block;
   font-size: 15px;
@@ -83,22 +82,22 @@ nav.gnb > section .btnBox > a {
   margin: 3px 10px;
 }
 
-nav.gnb > section .btnBox > a.closeBtn {
+nav.gnb > div.menu .btnBox > a.closeBtn {
   width: 30px;
   margin: 0 0 0 35px;
 }
 
-nav.gnb > section .btnBox > a.closeBtn > img {
+nav.gnb > div.menu .btnBox > a.closeBtn > img {
   width: 100%;
 }
 
-nav.gnb > section .main-body {
+nav.gnb > div.menu .main-body {
   height: 61%;
   margin: 0 40px;
   clear: both;
 }
 
-nav.gnb > section .main-body > h2.headerLogo {
+nav.gnb > div.menu .main-body > h2.headerLogo {
   left: 45px;
   word-spacing: 8px;
   font-size: 28px;
@@ -109,7 +108,7 @@ nav.gnb > section .main-body > h2.headerLogo {
   margin: 0;
 }
 
-nav.gnb > section .main-body > .gnbMenu {
+nav.gnb > div.menu .main-body > .gnbMenu {
   height: 100%;
   float: right;
   width: 89%;
@@ -117,7 +116,7 @@ nav.gnb > section .main-body > .gnbMenu {
   overflow: auto;
 }
 
-nav.gnb > section .main-body > .gnbMenu > ul {
+nav.gnb > div.menu .main-body > .gnbMenu > ul {
   display: inline-block;
   width: 21.8%;
   -webkit-box-sizing: border-box;
@@ -128,22 +127,22 @@ nav.gnb > section .main-body > .gnbMenu > ul {
   margin-right: 35px;
 }
 
-nav.gnb > section .main-body > .gnbMenu > ul h3, nav.gnb > section .main-body > .gnbMenu > ul p, nav.gnb > section .main-body > .gnbMenu > ul li {
+nav.gnb > div.menu .main-body > .gnbMenu > ul h3, nav.gnb > div.menu .main-body > .gnbMenu > ul p, nav.gnb > div.menu .main-body > .gnbMenu > ul li {
   letter-spacing: -1px;
 }
 
-nav.gnb > section .main-body > .gnbMenu > ul h3 {
+nav.gnb > div.menu .main-body > .gnbMenu > ul h3 {
   font-size: 1.3em;
   margin-top: 30px;
 }
 
-nav.gnb > section .main-body > .gnbMenu > ul p {
+nav.gnb > div.menu .main-body > .gnbMenu > ul p {
   font-size: 12px;
   line-height: 1.5em;
   margin-top: 0;
 }
 
-nav.gnb > section .main-body > .gnbMenu > ul span {
+nav.gnb > div.menu .main-body > .gnbMenu > ul span {
   display: block;
   width: 55px;
   height: 1px;
@@ -152,11 +151,11 @@ nav.gnb > section .main-body > .gnbMenu > ul span {
   opacity: 0.3;
 }
 
-nav.gnb > section .main-body > .gnbMenu > ul > li.contentsList {
+nav.gnb > div.menu .main-body > .gnbMenu > ul > li.contentsList {
   list-style: none;
 }
 
-nav.gnb > section .main-body > .gnbMenu > ul > li.contentsList > a.insideList {
+nav.gnb > div.menu .main-body > .gnbMenu > ul > li.contentsList > a.insideList {
   display: inline-block;
   text-decoration: none;
   font-size: 0.8em;
@@ -168,32 +167,32 @@ nav.gnb > section .main-body > .gnbMenu > ul > li.contentsList > a.insideList {
   background-position: 0 11px;
 }
 
-nav.gnb > section .main-body > .gnbMenu > ul > li.contentsList > a.insideList:hover {
+nav.gnb > div.menu .main-body > .gnbMenu > ul > li.contentsList > a.insideList:hover {
   color: #FFFE8E;
 }
 
-nav.gnb > section .main-body > .gnbMenu ul.contents-top {
+nav.gnb > div.menu .main-body > .gnbMenu ul.contents-top {
   min-height: 280px;
 }
 
-nav.gnb > section .main-body > .gnbMenu ul.contents-buttom {
+nav.gnb > div.menu .main-body > .gnbMenu ul.contents-buttom {
   margin-top: 15px;
   min-height: 340px;
 }
 
-nav.gnb > section div.snb {
+nav.gnb > div.menu div.snb {
   margin-top: 60px;
   overflow: hidden;
 }
 
-nav.gnb > section div.snb > .snb-center {
+nav.gnb > div.menu div.snb > .snb-center {
   width: 440px;
   margin-left: 38.5%;
   overflow: hidden;
   float: left;
 }
 
-nav.gnb > section div.snb > .snb-center > a.snb-btn {
+nav.gnb > div.menu div.snb > .snb-center > a.snb-btn {
   display: block;
   float: left;
   width: 20%;
@@ -201,13 +200,13 @@ nav.gnb > section div.snb > .snb-center > a.snb-btn {
   text-decoration: none;
 }
 
-nav.gnb > section div.snb a.snb-right-btn {
+nav.gnb > div.menu div.snb a.snb-right-btn {
   display: block;
   float: right;
   margin-right: 100px;
 }
 
-nav.gnb > section#blue-menu {
+nav.gnb > div.menu.parents {
   position: absolute;
   left: 100%;
   background-color: #1E75A8;
@@ -215,11 +214,11 @@ nav.gnb > section#blue-menu {
   transition: left .5s;
 }
 
-nav.gnb > section#blue-menu.menu-active {
+nav.gnb > div.menu.parents.menu-active {
   left: 0;
 }
 
-nav.gnb > section#pink-menu {
+nav.gnb > div.menu.students {
   position: absolute;
   left: 100%;
   background-color: #E7437D;
@@ -227,7 +226,7 @@ nav.gnb > section#pink-menu {
   transition: left .5s;
 }
 
-nav.gnb > section#pink-menu.menu-active {
+nav.gnb > div.menu.students.menu-active {
   left: 0;
 }
 /*# sourceMappingURL=main.css.map */

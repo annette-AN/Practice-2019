@@ -21,8 +21,8 @@
           <span>학생들놀이터스마트</span>
       </div>
 
-      <!--  블루메뉴 시작  -->
-      <section id="blue-menu">
+      <!--  부모님메뉴 시작  -->
+      <div class="menu parents">
         <div class="menu-body">
           <div class="btnBox">
             <a href="#">EN</a>
@@ -177,11 +177,11 @@
             </a>
           </div>
         </div>
-      </section>
-      <!--  블루메뉴 끝  -->
+      </div>
+      <!--  부모님메뉴 끝  -->
 
-      <!--  핑크메뉴 시작  -->
-      <section id="pink-menu">
+      <!--  학생들메뉴 시작  -->
+      <div class="menu students">
         <div class="menu-body">
           <div class="btnBox">
             <a href="#">EN</a>
@@ -339,8 +339,8 @@
             </a>
           </div>
         </div>
-      </section>
-      <!--  핑크메뉴 끝  -->
+      </div>
+      <!--  학생들메뉴 끝  -->
     </nav>
   </header>
 </body>
@@ -348,12 +348,12 @@
 <script>
   //메뉴 오픈 계속 클릭가능하게 하고싶음
 
-  //블루메뉴 오픈
+  //부모님메뉴 오픈
   $(document).on('click', '#blue-gnb', function () {
     $('#blue-menu').addClass('menu-active');
   });
 
-  //핑크메뉴 오픈
+  //학생들메뉴 오픈
   $(document).on('click','#pink-gnb',function(){
     $('#pink-menu').addClass('menu-active');
   });
