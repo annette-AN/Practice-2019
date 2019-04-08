@@ -51,7 +51,7 @@ section#main-door {
     }
   }
 
-  .door-top-logo { //효과 넣어야함
+  .logo { //효과 넣어야함
     position: absolute;
     top: 5%;
     left: 50%;
@@ -63,36 +63,34 @@ section#main-door {
     height: 80px;
   }
 
-    .top-text {
-      position: absolute;
-      top: -25%;
-      left: 25.3%;
-      width: 50%;
-      height: 100%; //80
-      background-image: url(/Practice-2019/Jungle-Academy/portfolio1/img/main/img_intro_txt_l.png);
-      background-repeat: no-repeat;
-      transition: top 1s;
-    }
+  .banner-text-l {
+    position: absolute;
+    top: -25%;
+    left: 25.3%;
+    width: 50%;
+    height: 100%; //80
+    background-image: url(/Practice-2019/Jungle-Academy/portfolio1/img/main/img_intro_txt_l.png);
+    background-repeat: no-repeat;
+    transition: top 1s;
+  }
 
-    .bottom-text {
-      position: absolute;
-      left: 50%;
-      top: 100%;
-      width: 50%;
-      height: 100%; //41.2
-      background-image: url(/Practice-2019/Jungle-Academy/portfolio1/img/main/img_intro_txt_r.png);
-      background-repeat: no-repeat;
-      transition: top 1s;
-    }
+  .banner-text-r {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 50%;
+    height: 100%; //41.2
+    background-image: url(/Practice-2019/Jungle-Academy/portfolio1/img/main/img_intro_txt_r.png);
+    background-repeat: no-repeat;
+    transition: top 1s;
+  }
   
-
   &.banner-active {
-    .top-text {
+    .banner-text-l {
       top: 50%;
     }
-    .bottom-text {
+    .banner-text-r {
       top: 50%;
     }
   }
-
 }

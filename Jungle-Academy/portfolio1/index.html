@@ -19,52 +19,71 @@
     <div class="right-door"></div>
       
     <!-- 스마트 로고 -->
-    <div class="door-top-logo"></div>
+    <div class="logo"></div>
 
     <!-- 텍스트 배너 위아래에서 나와 합쳐지는 효과 -->
     <div class="text-banner">
-      <div class="top-text"></div>
-      <div class="bottom-text"></div>
+      <div class="banner-text-l"></div>
+      <div class="banner-text-r"></div>
     </div>
 
   </section> 
 
 
   <script>
-    $("#main-door").on('click',function(){
-      location.href = "main.html";
-    });
+    // $("#main-door").on('click',function(){
+    //   location.href = "main.html";
+    // });
 
     //구조가 있는 상태이고 , 아래대로 실행만 하면됌
     // $(document).on("click",function(){
     //   $("#main-door").addClass("door-active");
     // });
 
-    //구조가 그려진 상태이고 , 그린 후에 제어를 하고싶을때
-    //window load
+    // 구조가 그려진 상태이고 , 그린 후에 제어를 하고싶을때
+    // window load
 
-    // //문닫기
+    //문닫기
     // $(window).on("load",function(){
     //   $("#main-door").addClass("door-active");
     // });
+    
 
-    // //텍스트배너만나기
+    //텍스트배너만나기
     // $(window).on("load",function(){
     //   $("#main-door").addClass("banner-active");
     // });
 
-    // main-door 효과
-    promise(function(resolve){ $(window).on("load",resolve) })
-    .then(function(){
+    // main-door 효과 (es5)
+    // promise(function(resolve){ $(window).on("load",resolve) })
+    // .then(function(){
+    //   $("#main-door").addClass("door-active");
+    //   return promise.timeout(1000);
+    // })
+    // .then(function(){
+    //   $("#main-door").removeClass("door-active");
+    //   return promise.timeout(1000);
+    // })
+    // .then(function(){
+    //   $("#main-door").addClass("door-active");
+    //   return promise.timeout(1000);
+    // })
+    // .then(function(){
+    //   $("#main-door").removeClass("door-active");
+    //   return promise.timeout(1000);
+    // });
+
+    //chrome, ie edge에서만 가능한 문법 (es6)
+    
+    $(window).on("load", async function(){
       $("#main-door").addClass("door-active");
-      return promise.timeout(1000);
-    })
-    .then(function(){
+      await promise.timeout(1000);
       $("#main-door").removeClass("door-active");
-      return promise.timeout(1000);
-    })
-    .then(function(){
+      await promise.timeout(1000);
       $("#main-door").addClass("banner-active");
+      await promise.timeout(1000);
+      $("#main-door").removeClass("banner-active");
+      await promise.timeout(1000);
     });
 
 

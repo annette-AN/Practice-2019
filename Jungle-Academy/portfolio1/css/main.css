@@ -18,6 +18,7 @@ html > body > header > nav.gnb {
 }
 
 html > body > header > nav.gnb > div.menu {
+  width: 92.5%;
   height: 100%;
   color: #FFFFFF;
 }
@@ -44,6 +45,10 @@ nav.gnb > .gnb-menu a#blue-gnb, nav.gnb > .gnb-menu a#pink-gnb {
   display: block;
   height: 50%;
   cursor: pointer;
+}
+
+nav.gnb > .gnb-menu a#blue-gnb:after, nav.gnb > .gnb-menu a#pink-gnb:after {
+  content: url(/Practice-2019/Jungle-Academy/portfolio1/img/bg_mnavi_p.png);
 }
 
 nav.gnb > .gnb-menu a#blue-gnb span, nav.gnb > .gnb-menu a#pink-gnb span {

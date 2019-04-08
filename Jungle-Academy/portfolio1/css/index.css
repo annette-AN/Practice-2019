@@ -53,7 +53,7 @@ section#main-door.door-active .right-door {
   left: 50%;
 }
 
-section#main-door .door-top-logo {
+section#main-door .logo {
   position: absolute;
   top: 5%;
   left: 50%;
@@ -66,7 +66,7 @@ section#main-door .door-top-logo {
   height: 80px;
 }
 
-section#main-door .top-text {
+section#main-door .banner-text-l {
   position: absolute;
   top: -25%;
   left: 25.3%;
@@ -78,7 +78,7 @@ section#main-door .top-text {
   transition: top 1s;
 }
 
-section#main-door .bottom-text {
+section#main-door .banner-text-r {
   position: absolute;
   left: 50%;
   top: 100%;
@@ -90,11 +90,11 @@ section#main-door .bottom-text {
   transition: top 1s;
 }
 
-section#main-door.banner-active .top-text {
+section#main-door.banner-active .banner-text-l {
   top: 50%;
 }
 
-section#main-door.banner-active .bottom-text {
+section#main-door.banner-active .banner-text-r {
   top: 50%;
 }
 /*# sourceMappingURL=index.css.map */

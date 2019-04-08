@@ -19,7 +19,7 @@ html {
 
         >div.menu {
           // background: silver;
-          // width: 92.5%;
+          width: 92.5%; // 100%로 바꿔주기
           height: 100%;
           color: #FFFFFF;
 
@@ -50,8 +50,8 @@ nav.gnb {
       height: 50%;
       cursor: pointer;
 
-      &:after {//after로 '<' 넣어주기
-
+      &:after {//위치조정 필요
+        content: url(/Practice-2019/Jungle-Academy/portfolio1/img/bg_mnavi_p.png);
       }
 
       span { //aline 정렬 제대로 하고싶음
