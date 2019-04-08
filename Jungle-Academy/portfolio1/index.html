@@ -55,7 +55,7 @@
     // });
 
     // main-door 효과 (es5)
-    false && promise(function(resolve){ $(window).on("load",resolve) })
+    promise(function(resolve){ $(window).on("load",resolve) })
     .then(function(){
       $("#main-door").addClass("door-active");
       return promise.timeout(1000);
