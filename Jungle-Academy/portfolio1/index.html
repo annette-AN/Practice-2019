@@ -12,6 +12,7 @@
   <!--made miryean-->
   <!--왜 이 포트폴리오를 선택했는지 : css, jquery 사용에 중점을 둠 / 내용 더 필요-->
   <!--만드는 중 뭔가를 바꿨다면 왜 바꿨는지 설명-->
+  <!-- animation을 css로 구현해서 브라우저에서 버벅임이 없다 -->
 </head>
 <body>
   <section id="main-door">
@@ -27,6 +28,8 @@
       <div class="banner-text-l"></div>
       <div class="banner-text-r"></div>
     </div>
+
+    <div class="actor-1"></div>
 
   </section> 
 
@@ -63,17 +66,14 @@
       return promise.timeout(1000);
     })
     .then(function(){
-      $("#main-door").addClass("banner-active");
+      $(".text-banner").addClass("banner-active");
       return promise.timeout(1000);
     })
     .then(function(){
-      $("#main-door").addClass("banner-move");
+      $(".text-banner").addClass("banner-move");
+      $(".actor-1").addClass("actor-active");
       return promise.timeout(1000);
     });
-    // .then(function(){
-    //   $("#main-door").addClass("IntroModel01");
-    //   return promise.timeout(1000);
-    // });
     
 
     //chrome, ie edge에서만 가능한 문법 (es6)
