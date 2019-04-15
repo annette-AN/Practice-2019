@@ -129,7 +129,7 @@ section.memo-write {
 }
 
 
-
+//메모쇼
 section.memo-show {
 
   .no-memo {
@@ -156,8 +156,8 @@ section.memo-show {
     height: 125px;
     border: 1px solid rgb(196, 196, 196);
     border-radius: 10px;
-    transition: box-shadow .3s, opacity 1s ;
-
+    transition: box-shadow .5s, opacity: .5s;
+    //opacity 적용안됌
     //미드아이콘은 오퍼시티를 적용해서 사르륵 열리게 하면됌
 
     // &[open] memo-write memo-body와 동일하게
@@ -167,9 +167,11 @@ section.memo-show {
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.1);
 
       #fixed-icon {
-        opacity: 1;
+        // opacity: 1;
       }
       div.memo-mid-icons {
+        opacity: 1;
+
         a.input-icon {
           opacity: 1;
         }
@@ -245,7 +247,10 @@ section.memo-show {
         margin: 0;
 
         i {
-          color: #3E3E3E;
+          &:hover { //적용안됌
+            color: #3E3E3E;
+          }
+
           font-size: 15px;
           line-height: 27px;
         }
@@ -272,5 +277,11 @@ section.memo-show {
         outline: none;
       }
     }
+  }
+}
+
+@media all and (min-width:768px) and (max-width:1024px){
+  section.memo-show .memo-body {
+    display: inline-block;
   }
 }

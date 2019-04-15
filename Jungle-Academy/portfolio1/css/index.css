@@ -53,15 +53,37 @@ section#main-door.door-active .right-door {
   left: 50%;
 }
 
+@-webkit-keyframes logo {
+  from {
+    width: 0;
+    height: 0;
+  }
+  to {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes logo {
+  from {
+    width: 0;
+    height: 0;
+  }
+  to {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 section#main-door .logo {
   position: absolute;
   top: 5%;
   left: 50%;
+  background-image: url(img/hero/img_logo.png);
+  background-repeat: no-repeat;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   display: block;
-  background-image: url(../img/main/img_logo.png);
-  background-repeat: no-repeat;
   width: 180px;
   height: 80px;
 }
