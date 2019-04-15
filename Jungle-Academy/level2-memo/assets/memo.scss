@@ -156,7 +156,7 @@ section.memo-show {
     height: 125px;
     border: 1px solid rgb(196, 196, 196);
     border-radius: 10px;
-    transition: box-shadow .5s, opacity: .5s;
+    transition: box-shadow .5s, opacity .5s;
     //opacity 적용안됌
     //미드아이콘은 오퍼시티를 적용해서 사르륵 열리게 하면됌
 
@@ -240,6 +240,11 @@ section.memo-show {
       margin-top: 5px;
 
       a.input-icon {
+        
+        &:hover {
+        color: #3E3E3E;
+        }
+
         opacity: 0;
         display: inline-block;
         text-align: center;
@@ -247,10 +252,6 @@ section.memo-show {
         margin: 0;
 
         i {
-          &:hover { //적용안됌
-            color: #3E3E3E;
-          }
-
           font-size: 15px;
           line-height: 27px;
         }

@@ -151,10 +151,10 @@ section.memo-show .memo-body {
   height: 125px;
   border: 1px solid #c4c4c4;
   border-radius: 10px;
-  -webkit-transition: -webkit-box-shadow .5s;
-  transition: -webkit-box-shadow .5s;
-  transition: box-shadow .5s;
-  transition: box-shadow .5s, -webkit-box-shadow .5s;
+  -webkit-transition: opacity .5s, -webkit-box-shadow .5s;
+  transition: opacity .5s, -webkit-box-shadow .5s;
+  transition: box-shadow .5s, opacity .5s;
+  transition: box-shadow .5s, opacity .5s, -webkit-box-shadow .5s;
 }
 
 section.memo-show .memo-body:hover, section.memo-show .memo-body[hover] {
@@ -242,6 +242,10 @@ section.memo-show .memo-body div.memo-mid-icons a.input-icon {
   margin: 0;
 }
 
+section.memo-show .memo-body div.memo-mid-icons a.input-icon:hover {
+  color: #3E3E3E;
+}
+
 section.memo-show .memo-body div.memo-mid-icons a.input-icon i {
   font-size: 15px;
   line-height: 27px;
@@ -266,5 +270,11 @@ section.memo-show .memo-body div#btn-set button {
   cursor: pointer;
   font-family: sans-serif;
   outline: none;
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  section.memo-show .memo-body {
+    display: inline-block;
+  }
 }
 /*# sourceMappingURL=memo.css.map */
