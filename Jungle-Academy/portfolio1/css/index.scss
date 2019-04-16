@@ -54,7 +54,7 @@ section#main-door {
 
 section#main-door {
 
-  @keyframes logo { //효과 적용안됌
+  @keyframes mask {
     from {width: 0%;}
     to {width: 100%;}
   }
@@ -72,7 +72,7 @@ section#main-door {
       content: url(../img/hero/img_logo.png);
       display: block;
       overflow: hidden;
-      animation-name: logo;
+      animation-name: mask;
       animation-duration: 2s;
       animation-fill-mode: forwards;
     }
@@ -133,12 +133,25 @@ section#main-door {
     height: 589px;
     left: 50%;
     transform: translateX(-50%);
-    top: 1500px;
-    transition: top 1s;
+    bottom: -1500px;
+    transition: bottom 1s;
 
     &.actor-active{
-      top: 400px;
-
+      bottom: -50px;
     }
   }
 }
+
+section#main-door {
+  img#uniform-1 {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s;
+
+    &.uniform-active {
+      opacity: 1;
+    }
+  }
+}
+

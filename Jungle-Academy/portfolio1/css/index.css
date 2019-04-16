@@ -53,7 +53,7 @@ section#main-door.door-active .right-door {
   left: 50%;
 }
 
-@-webkit-keyframes logo {
+@-webkit-keyframes mask {
   from {
     width: 0%;
   }
@@ -62,7 +62,7 @@ section#main-door.door-active .right-door {
   }
 }
 
-@keyframes logo {
+@keyframes mask {
   from {
     width: 0%;
   }
@@ -86,8 +86,8 @@ section#main-door .logo:after {
   content: url(../img/hero/img_logo.png);
   display: block;
   overflow: hidden;
-  -webkit-animation-name: logo;
-          animation-name: logo;
+  -webkit-animation-name: mask;
+          animation-name: mask;
   -webkit-animation-duration: 2s;
           animation-duration: 2s;
   -webkit-animation-fill-mode: forwards;
@@ -150,12 +150,24 @@ section#main-door .actor-1 {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  top: 1500px;
-  -webkit-transition: top 1s;
-  transition: top 1s;
+  bottom: -1500px;
+  -webkit-transition: bottom 1s;
+  transition: bottom 1s;
 }
 
 section#main-door .actor-1.actor-active {
-  top: 400px;
+  bottom: -50px;
+}
+
+section#main-door img#uniform-1 {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+section#main-door img#uniform-1.uniform-active {
+  opacity: 1;
 }
 /*# sourceMappingURL=index.css.map */

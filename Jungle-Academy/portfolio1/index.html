@@ -16,20 +16,23 @@
 </head>
 <body>
   <section id="main-door">
-  <!-- 파란 문 양옆에서 나와 닫히는 효과 -->
+  <!-- 파란 문 양옆에서 닫히는 효과 -->
     <div class="left-door"></div>
     <div class="right-door"></div>
       
     <!-- 스마트 로고 -->
     <div class="logo"></div>
 
-    <!-- 텍스트 배너 위아래에서 나와 합쳐지는 효과 -->
+    <!-- 텍스트 배너 합쳐지는 효과 -->
     <div class="text-banner">
       <div class="banner-text-l"></div>
       <div class="banner-text-r"></div>
     </div>
 
+    <!-- 모델 및 교복 효과 -->
     <div class="actor-1"></div>
+    <img id="uniform-1" src="img/main/img_clothes01.png" alt="uniform">
+
 
   </section> 
 
@@ -60,21 +63,25 @@
 
     // main-door 효과 (es5)
     
-    promise(function(resolve){ $(window).on("load",resolve) })
+    promise(function(resolve){ $(window).on('load',resolve) })
     .then(function(){
-      $("#main-door").addClass("door-active");
-      return promise.timeout(1000);
+      $('#main-door').addClass('door-active');
+      return promise.timeout(500);
     })
     .then(function(){
-      $(".text-banner").addClass("banner-active");
-      return promise.timeout(1000);
+      $('.text-banner').addClass('banner-active');
+      return promise.timeout(1500);
     })
     .then(function(){
-      $(".text-banner").addClass("banner-move");
-      $(".actor-1").addClass("actor-active");
+      $('.text-banner').addClass('banner-move');
+      $('.actor-1').addClass('actor-active');
+      return promise.timeout(500);
+    })
+    .then(function(){
+      $('#uniform-1').addClass('.uniform-active');
       return promise.timeout(1000);
-    });
-    
+    })
+    ;
 
     //chrome, ie edge에서만 가능한 문법 (es6)
     // $(window).on("load", async function(){
