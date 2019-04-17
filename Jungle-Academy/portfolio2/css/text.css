@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR|Raleway");
+h1, h2, h3, h4, div, ul, ol, li, dl, dt, dd, p, address, header, nav, main,
+section, article, footer, aside, figure, a {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header, body, nav, main, section, article, footer, aside, figure {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #898989;
+}
+
+a img {
+  border: 0;
+}
+
+img {
+  vertical-align: middle;
+}
+
+body {
+  font: 15px/1.6 'Noto Sans KR';
+}
+
+header#mainHeader {
+  position: relative;
+  width: 100%;
+  height: 840px;
+  background: url(../img/main_img2.png) no-repeat center/cover;
+}
+
+header#mainHeader nav#mainNav {
+  height: 120px;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+header#mainHeader nav#mainNav div#innerNav {
+  position: relative;
+  width: 1200px;
+  height: 100%;
+  color: #fff;
+  margin: 0 auto;
+}
+
+div#innerNav h1.logo {
+  height: 100%;
+}
+
+div#innerNav h1.logo a {
+  position: absolute;
+  vertical-align: middle;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font: bold 36px 'Raleway';
+  color: #fff;
+  line-height: 0.9;
+}
+
+div#innerNav h1.logo a span {
+  display: block;
+  padding-left: 30px;
+  font-size: 30px;
+}
+
+div#innerNav > nav.gnb {
+  position: absolute;
+  top: 57px;
+  right: 40px;
+  width: 690px;
+  overflow: hidden;
+}
+
+div#innerNav > nav.gnb > ul.gnb-menu {
+  overflow: hidden;
+}
+
+div#innerNav > nav.gnb > ul.gnb-menu > li.menus {
+  width: 25%;
+  float: left;
+  text-align: center;
+}
+
+div#innerNav > nav.gnb > ul.gnb-menu > li.menus:hover ul.sub-menus {
+  opacity: 1;
+}
+
+div#innerNav > nav.gnb > ul.gnb-menu > li.menus > a.menus-a {
+  display: block;
+  color: #fff;
+  font-size: 14px;
+  text-transform: capitalize;
+  padding: 20px 40px;
+}
+
+div#innerNav > nav.gnb > ul.gnb-menu > li.menus > ul.sub-menus {
+  position: relative;
+  z-index: 999;
+  opacity: 0;
+  padding: 15px 30px;
+  height: auto;
+  background-color: #fff;
+}
+
+div#innerNav > nav.gnb > ul.gnb-menu > li.menus > ul.sub-menus > li {
+  height: 45px;
+  text-align: left;
+}
+
+div#innerNav > nav.gnb > ul.gnb-menu > li.menus > ul.sub-menus > li > a {
+  color: #898989;
+  font-size: 12px;
+  text-transform: capitalize;
+  line-height: 45px;
+}
+
+div#innerNav a.menu {
+  position: absolute;
+  bottom: 15px;
+  right: 0;
+  z-index: 999;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+div#innerNav a.menu:hover .item:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: 2px;
+          transform-origin: 2px;
+}
+
+div#innerNav a.menu:hover .item:nth-child(2) {
+  opacity: 0;
+}
+
+div#innerNav a.menu:hover .item:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transform-origin: 2px;
+          transform-origin: 2px;
+}
+
+div#innerNav a.menu span.item {
+  background: #fff;
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin: 0 0 10px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+div#innerNav nav.tnb {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+div#innerNav nav.tnb a {
+  color: rgba(255, 255, 255, 0.7);
+  padding: 5px 15px;
+  margin-right: 10px;
+  font-size: 12px;
+}
+
+header#mainHeader > div.mainTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  line-height: 1.3;
+}
+
+header#mainHeader > div.mainTitle h1 {
+  font-size: 50px;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 3px;
+  margin-left: 1.5px;
+  text-shadow: -2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+header#mainHeader > div.mainTitle span {
+  display: block;
+  font-size: 30px;
+  font-weight: lighter;
+  letter-spacing: 8px;
+  margin-left: 4px;
+  text-transform: uppercase;
+  text-shadow: -2px 2px 5px rgba(145, 144, 144, 0.6);
+}
+/*# sourceMappingURL=text.css.map */
