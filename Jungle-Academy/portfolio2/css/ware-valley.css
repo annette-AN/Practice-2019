@@ -81,6 +81,7 @@ div#innerNav > nav.gnb {
   right: 80px;
   width: 690px;
   overflow: hidden;
+  z-index: 999;
 }
 
 div#innerNav > nav.gnb > ul.gnb-menu {
@@ -93,8 +94,13 @@ div#innerNav > nav.gnb > ul.gnb-menu > li.menus {
   text-align: center;
 }
 
-div#innerNav > nav.gnb > ul.gnb-menu > li.menus:hover ul.sub-menus {
-  opacity: 1;
+div#innerNav > nav.gnb > ul.gnb-menu > li.menus:hover > ul.sub-menus {
+  height: calc(100% + 0px);
+  padding: 15px 30px;
+}
+
+div#innerNav > nav.gnb > ul.gnb-menu > li.menus:hover > ul.sub-menus > li {
+  height: 45px;
 }
 
 div#innerNav > nav.gnb > ul.gnb-menu > li.menus > a.menus-a {
@@ -107,16 +113,19 @@ div#innerNav > nav.gnb > ul.gnb-menu > li.menus > a.menus-a {
 
 div#innerNav > nav.gnb > ul.gnb-menu > li.menus > ul.sub-menus {
   position: relative;
-  z-index: 999;
-  opacity: 0;
-  padding: 15px 30px;
-  height: auto;
+  height: 0px;
+  overflow: hidden;
   background-color: #fff;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  padding: 0px 30px;
 }
 
 div#innerNav > nav.gnb > ul.gnb-menu > li.menus > ul.sub-menus > li {
-  height: 45px;
+  height: 0px;
   text-align: left;
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
 
 div#innerNav > nav.gnb > ul.gnb-menu > li.menus > ul.sub-menus > li > a {

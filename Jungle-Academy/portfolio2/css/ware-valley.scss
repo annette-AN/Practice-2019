@@ -65,6 +65,7 @@ div#innerNav {
     right: 80px;
     width: 690px;
     overflow: hidden;
+    z-index: 999;
 
     >ul.gnb-menu{
       overflow: hidden;
@@ -74,9 +75,14 @@ div#innerNav {
         float: left;
         text-align: center;
 
-        &:hover{ //j쿼리로 불러내기, 트랜지션 안먹음
-          ul.sub-menus {
-            opacity: 1;
+        &:hover{
+          >ul.sub-menus {
+            height: calc(100% + 0px);
+            padding: 15px 30px;
+            
+            >li {
+              height: 45px;
+            }
           }
         }
 
@@ -90,15 +96,16 @@ div#innerNav {
         
         >ul.sub-menus{ //크게 보이게 한거 어떻게 하는지
           position: relative;
-          z-index: 999;
-          opacity: 0;
-          padding: 15px 30px;
-          height: auto;
+          height: 0px;
+          overflow: hidden;
           background-color: #fff;
+          transition: all .2s;
+          padding: 0px 30px;
 
           >li{
-            height: 45px;
+            height: 0px;
             text-align: left;
+            transition: all .2s;
 
             >a{
               color: #898989;
