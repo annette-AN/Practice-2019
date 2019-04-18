@@ -48,6 +48,7 @@ header#mainHeader nav#mainNav {
 
 header#mainHeader nav#mainNav div#innerNav {
   position: relative;
+  max-width: calc(100% - 40px);
   width: 1200px;
   height: 100%;
   color: #fff;
@@ -226,6 +227,7 @@ h2.subTitle {
 }
 
 section#product article {
+  max-width: calc(100% - 40px);
   width: 1200px;
   margin: 0 auto;
   overflow: hidden;
@@ -237,7 +239,6 @@ section#product article ul {
   width: 200px;
   height: 400px;
   margin-left: 33.3333px;
-  vertical-align: top;
   text-align: center;
 }
 
@@ -304,21 +305,31 @@ section#boardList {
   background-color: #f5f6f8;
 }
 
-section#boardList article {
+section#boardList div {
   overflow: hidden;
   padding-top: 20px;
+  max-width: calc(100% - 40px);
+  width: 1500px;
+  margin: 0 auto;
 }
 
-section#boardList article ul.utill {
-  width: 465px;
+section#boardList div ul.utill-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section#boardList div ul.utill-wrap li {
+  width: calc(33.3333% - 15px);
   height: 180px;
   background-color: #9f9f9f;
   padding: 40px;
-  float: left;
-  margin: 0 30px 70px;
 }
 
-section#boardList article ul.utill h3 {
+section#boardList div ul.utill-wrap li h3 {
   color: #fff;
   font-size: 18px;
   letter-spacing: 1.5px;
@@ -326,7 +337,7 @@ section#boardList article ul.utill h3 {
   text-transform: capitalize;
 }
 
-section#boardList article ul.utill p {
+section#boardList div ul.utill-wrap li p {
   color: #fff;
   font-size: 15px;
   letter-spacing: 0.5px;
@@ -334,12 +345,18 @@ section#boardList article ul.utill p {
   padding-top: 20px;
 }
 
-section#boardList div.left, section#boardList div.right {
+@media all and (min-width: 768px) {
+  section#boardList div ul.utill-wrap li {
+    border: 1px solid red;
+  }
+}
+
+section#boardList div div.left, section#boardList div div.right {
   width: 45%;
   height: 220px;
 }
 
-section#boardList div.left h3, section#boardList div.right h3 {
+section#boardList div div.left h3, section#boardList div div.right h3 {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
@@ -347,14 +364,14 @@ section#boardList div.left h3, section#boardList div.right h3 {
   letter-spacing: 1.2px;
 }
 
-section#boardList div.left h3:after, section#boardList div.right h3:after {
+section#boardList div div.left h3:after, section#boardList div div.right h3:after {
   margin-left: 10px;
   content: '\f138';
   font-family: 'Font Awesome 5 Free';
   font-weight: 600;
 }
 
-section#boardList div.left ul li, section#boardList div.right ul li {
+section#boardList div div.left ul li, section#boardList div div.right ul li {
   padding: 15px 0;
   border-bottom: 1px solid #dcdcdc;
   overflow: hidden;
@@ -362,17 +379,17 @@ section#boardList div.left ul li, section#boardList div.right ul li {
   white-space: nowrap;
 }
 
-section#boardList div.left ul li a, section#boardList div.right ul li a {
+section#boardList div div.left ul li a, section#boardList div div.right ul li a {
   font-size: 18px;
   color: #929292;
 }
 
-section#boardList div.left {
+section#boardList div div.left {
   float: left;
   margin-left: 30px;
 }
 
-section#boardList div.right {
+section#boardList div div.right {
   float: right;
   margin-right: 30px;
 }
@@ -390,6 +407,7 @@ section#aboutus p {
 
 section#aboutus div.hero {
   position: relative;
+  max-width: calc(100%);
   width: 1500px;
   height: 450px;
   margin: 0 auto;
@@ -487,7 +505,7 @@ footer div.valleyLogo {
   border-radius: 30px;
 }
 
-div.topLogo {
+div.logo-Top {
   z-index: 9999;
   position: fixed;
   right: 0;

@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR|Raleway');
 
+@mixin media-mobile {
+  @media all and (min-width:768px) {
+    @content;
+  }
+}
+
 // reset
 h1,h2,h3,h4,div,ul,ol,li,dl,dt,dd,p,address,header,nav,main,
 section,article,footer,aside,figure,a {
@@ -28,6 +34,7 @@ header#mainHeader {
 
     div#innerNav {
       position: relative;
+      max-width: calc(100% - 40px);
       width: 1200px;
       height: 100%;
       color: #fff;
@@ -213,6 +220,7 @@ h2.subTitle {
 section#product {
 
   article {
+    max-width: calc(100% - 40px);
     width: 1200px;
     margin: 0 auto;
     overflow: hidden;
@@ -223,7 +231,6 @@ section#product {
       width: 200px;
       height: 400px;
       margin-left: 33.3333px;
-      vertical-align: top;
       text-align: center;
 
       li {
@@ -285,92 +292,108 @@ section#product {
   }
 }
 
+
+
 section#boardList {
   background-color: #f5f6f8;
 
 
-  article{
+  div{
     overflow: hidden;
     padding-top: 20px;
+    max-width: calc(100% - 40px);
+    width: 1500px;
+    margin: 0 auto;
 
-    ul.utill{
-      width: 465px;
-      height: 180px;
-      background-color: #9f9f9f;
-      padding: 40px;
-      float: left;
-      margin: 0 30px 70px;
+    ul.utill-wrap{
+      display: flex;
+      justify-content: space-between;
 
-      h3 {
-        color: #fff;
-        font-size: 18px;
-        letter-spacing: 1.5px;
-        font-weight: bold;
-        text-transform: capitalize;
-      }
-
-      p{
-        color: #fff;
-        font-size: 15px;
-        letter-spacing: 0.5px;
-        line-height: 1.5;
-        padding-top: 20px;
-      }
-    }
-
-    ul.traning {
-      // 구현 못함
-      // background: url(../img/ico7.png) center top no-repeat/ 95px 90px;
-    }
-  }
-
-  div.left, div.right {
-    width: 45%;
-    height: 220px;
-    
-    h3 {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 10px;
-      text-transform: capitalize;
-      letter-spacing: 1.2px;
-
-      &:after {
-        margin-left: 10px;
-        content:'\f138';
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 600;
-      }
-    }
-
-    ul{
-      
       li {
-        padding: 15px 0;
-        border-bottom: 1px solid #dcdcdc;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        width: calc(33.3333% - 15px);
+        height: 180px;
+        background-color: #9f9f9f;
+        padding: 40px;
 
-        a {
+        h3 {
+          color: #fff;
           font-size: 18px;
-          color: #929292;
+          letter-spacing: 1.5px;
+          font-weight: bold;
+          text-transform: capitalize;
+        }
 
+        p{
+          color: #fff;
+          font-size: 15px;
+          letter-spacing: 0.5px;
+          line-height: 1.5;
+          padding-top: 20px;
+        }
+      }
+
+      @include media-mobile{
+        display: block;
+        width: 100%;
+         
+        li {
+          width: 100%;
+          margin-bottom: 10px;
+          border: 1px solid red;
         }
       }
     }
-  }
 
-  div.left {
-    float: left;
-    margin-left: 30px;
-  }
+    div.left, div.right {
+      width: 45%;
+      height: 220px;
+      
+      h3 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-transform: capitalize;
+        letter-spacing: 1.2px;
 
-  div.right {
-    float: right;
-    margin-right: 30px;
+        &:after {
+          margin-left: 10px;
+          content:'\f138';
+          font-family: 'Font Awesome 5 Free';
+          font-weight: 600;
+        }
+      }
+
+      ul{
+        
+        li {
+          padding: 15px 0;
+          border-bottom: 1px solid #dcdcdc;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+
+          a {
+            font-size: 18px;
+            color: #929292;
+
+          }
+        }
+      }
+    }
+
+    div.left {
+      float: left;
+      margin-left: 30px;
+    }
+
+    div.right {
+      float: right;
+      margin-right: 30px;
+    }
   }
 }
+
+
 
 section#aboutus {
 
@@ -387,6 +410,7 @@ section#aboutus {
 
   div.hero {
     position: relative;
+    max-width: calc(100%);
     width: 1500px;
     height: 450px;
     margin: 0 auto;
@@ -485,7 +509,8 @@ footer {
   }
 }
 
-div.topLogo { //맨위일때는 안보임
+div.logo-Top { 
+  //맨위일때는 안보임
   z-index: 9999;
   position: fixed;
   right: 0;
