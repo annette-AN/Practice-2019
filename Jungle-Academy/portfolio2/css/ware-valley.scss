@@ -43,7 +43,7 @@ header#main-header {
   }
 
   nav#main-nav {
-    display: none;
+    // display: none;
     
   }
 
@@ -51,10 +51,11 @@ header#main-header {
     // margin-top: -120px;
   }
 
+  //header#main-header
   @include media-mobile(){
     height: 400px;
 
-    nav#mainNav {
+    nav#mainNav { //적용안됌
       height: 50px;
     }
   }
@@ -165,21 +166,6 @@ div.inner-nav {
     bottom: 15px;
     right: 0;
     z-index: 999;
-    transition: all .3s;
-
-    &:hover .item:nth-child(1) {
-      transform: rotate(45deg);
-      transform-origin: 2px;
-    }
-
-    &:hover .item:nth-child(2) {
-      opacity: 0; 
-    }
-
-    &:hover .item:nth-child(3) {
-      transform: rotate(-45deg);
-      transform-origin: 2px;
-    }
 
     span.item {
       background: #fff;
@@ -188,6 +174,7 @@ div.inner-nav {
       height: 3px;
       margin: 0 0 10px;
       transition: all .3s;
+      //click할때 transition 적용
 
       @include media-mobile(){
         width: 20px;
@@ -217,25 +204,53 @@ div.inner-nav {
   }
 }
 header#main-header{
+  
   nav#hidden-nav {
     position: fixed;
+    overflow: hidden; // 아래에 글로벌 메뉴가 표시됌
     width: 100%;
     height: 100%;
-    // background-color: white;
+    background-color: white;
 
 
     div.inner-nav{
-      background: red;
       position: relative;
       max-width: calc(100% - 40px);
       width: 1200px;
-      height: 100%;
+      height: 120px;
       color: #fff;
       margin: 0 auto;
 
       h1.logo {
         height: 100%;
     
+        a {
+          color: #949592;
+        }
+      }
+
+      a.menu {
+        span.item {
+          background-color: #646464;
+        }
+         //click할때 transition 적용
+        .item:nth-child(1) {
+          transform: rotate(45deg);
+          transform-origin: 2px;
+        }
+
+        .item:nth-child(2) {
+          opacity: 0; 
+        }
+
+        .item:nth-child(3) {
+          transform: rotate(-45deg);
+          transform-origin: 2px;
+        }
+
+      }
+
+      nav.tnb {
         a {
           color: #949592;
         }
@@ -256,6 +271,7 @@ header#main-header{
         a {
           text-transform: capitalize;
           display: block;
+          letter-spacing: 1px;
         }
 
         ul.gnb-menu {
@@ -264,28 +280,83 @@ header#main-header{
           li.menus {
             width: 25%;
             float: left;
-            text-align: center;
             
             a.menus-a {
               padding: 45px 0;
-              color: black;
+              color: #333333;
               font-weight: bold;
-              font-size: 30px;
+              font-size: 37px;
             }
 
             ul.sub-menus {
               li {
-                list-style-type: circle;
-                height: 45px;
+                padding: 16px 0;
+
                 a {
                   color: #646464;
-                  font-size: 22px;
+                  font-size: 30px;
                 }
               }
             }
           }
         }
       }
+    }
+    // hidden-nav
+    @include media-mobile(){
+      width: 85%;
+      right: 0;
+      background: #F5F6F8;
+      margin-top: -120px;
+
+      div.inner-nav {
+        height: 50px;
+
+        h1.logo {
+          display: none;
+        }
+
+        nav.tnb {
+          bottom: 0;
+
+        }
+
+      }
+
+      div.gnb-wrap {
+        background: #F5F6F8;
+        margin-left: 40px;
+
+        nav.gnb {
+          margin-top: 5px;
+
+          ul.gnb-menu{
+            li.menus {
+              float: none;
+              
+              a.menus-a {
+                font-size: 20px;
+                font-weight: normal;
+                padding: 14px 0px;
+                letter-spacing: 5px;
+              }
+
+              ul.sub-menus {
+
+                li { //click하면 나옴
+                  display: none;
+                  padding: 14px 0px;
+
+                  a{
+                    font-size: 13px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
     }
   }
 }

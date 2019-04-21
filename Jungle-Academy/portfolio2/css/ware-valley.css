@@ -55,10 +55,6 @@ header#main-header nav#main-nav div.inner-nav, header#main-header nav#hidden-nav
   margin: 0 auto;
 }
 
-header#main-header nav#main-nav {
-  display: none;
-}
-
 @media all and (max-width: 768px) {
   header#main-header {
     height: 400px;
@@ -170,26 +166,6 @@ div.inner-nav a.menu {
   bottom: 15px;
   right: 0;
   z-index: 999;
-  -webkit-transition: all .3s;
-  transition: all .3s;
-}
-
-div.inner-nav a.menu:hover .item:nth-child(1) {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  -webkit-transform-origin: 2px;
-          transform-origin: 2px;
-}
-
-div.inner-nav a.menu:hover .item:nth-child(2) {
-  opacity: 0;
-}
-
-div.inner-nav a.menu:hover .item:nth-child(3) {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  -webkit-transform-origin: 2px;
-          transform-origin: 2px;
 }
 
 div.inner-nav a.menu span.item {
@@ -231,16 +207,17 @@ div.inner-nav nav.tnb a {
 
 header#main-header nav#hidden-nav {
   position: fixed;
+  overflow: hidden;
   width: 100%;
   height: 100%;
+  background-color: white;
 }
 
 header#main-header nav#hidden-nav div.inner-nav {
-  background: red;
   position: relative;
   max-width: calc(100% - 40px);
   width: 1200px;
-  height: 100%;
+  height: 120px;
   color: #fff;
   margin: 0 auto;
 }
@@ -250,6 +227,32 @@ header#main-header nav#hidden-nav div.inner-nav h1.logo {
 }
 
 header#main-header nav#hidden-nav div.inner-nav h1.logo a {
+  color: #949592;
+}
+
+header#main-header nav#hidden-nav div.inner-nav a.menu span.item {
+  background-color: #646464;
+}
+
+header#main-header nav#hidden-nav div.inner-nav a.menu .item:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: 2px;
+          transform-origin: 2px;
+}
+
+header#main-header nav#hidden-nav div.inner-nav a.menu .item:nth-child(2) {
+  opacity: 0;
+}
+
+header#main-header nav#hidden-nav div.inner-nav a.menu .item:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transform-origin: 2px;
+          transform-origin: 2px;
+}
+
+header#main-header nav#hidden-nav div.inner-nav nav.tnb a {
   color: #949592;
 }
 
@@ -269,6 +272,7 @@ header#main-header nav#hidden-nav div.gnb-wrap nav.gnb {
 header#main-header nav#hidden-nav div.gnb-wrap nav.gnb a {
   text-transform: capitalize;
   display: block;
+  letter-spacing: 1px;
 }
 
 header#main-header nav#hidden-nav div.gnb-wrap nav.gnb ul.gnb-menu {
@@ -278,24 +282,63 @@ header#main-header nav#hidden-nav div.gnb-wrap nav.gnb ul.gnb-menu {
 header#main-header nav#hidden-nav div.gnb-wrap nav.gnb ul.gnb-menu li.menus {
   width: 25%;
   float: left;
-  text-align: center;
 }
 
 header#main-header nav#hidden-nav div.gnb-wrap nav.gnb ul.gnb-menu li.menus a.menus-a {
   padding: 45px 0;
-  color: black;
+  color: #333333;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 37px;
 }
 
 header#main-header nav#hidden-nav div.gnb-wrap nav.gnb ul.gnb-menu li.menus ul.sub-menus li {
-  list-style-type: circle;
-  height: 45px;
+  padding: 16px 0;
 }
 
 header#main-header nav#hidden-nav div.gnb-wrap nav.gnb ul.gnb-menu li.menus ul.sub-menus li a {
   color: #646464;
-  font-size: 22px;
+  font-size: 30px;
+}
+
+@media all and (max-width: 768px) {
+  header#main-header nav#hidden-nav {
+    width: 85%;
+    right: 0;
+    background: #F5F6F8;
+    margin-top: -120px;
+  }
+  header#main-header nav#hidden-nav div.inner-nav {
+    height: 50px;
+  }
+  header#main-header nav#hidden-nav div.inner-nav h1.logo {
+    display: none;
+  }
+  header#main-header nav#hidden-nav div.inner-nav nav.tnb {
+    bottom: 0;
+  }
+  header#main-header nav#hidden-nav div.gnb-wrap {
+    background: #F5F6F8;
+    margin-left: 40px;
+  }
+  header#main-header nav#hidden-nav div.gnb-wrap nav.gnb {
+    margin-top: 5px;
+  }
+  header#main-header nav#hidden-nav div.gnb-wrap nav.gnb ul.gnb-menu li.menus {
+    float: none;
+  }
+  header#main-header nav#hidden-nav div.gnb-wrap nav.gnb ul.gnb-menu li.menus a.menus-a {
+    font-size: 20px;
+    font-weight: normal;
+    padding: 14px 0px;
+    letter-spacing: 5px;
+  }
+  header#main-header nav#hidden-nav div.gnb-wrap nav.gnb ul.gnb-menu li.menus ul.sub-menus li {
+    display: none;
+    padding: 14px 0px;
+  }
+  header#main-header nav#hidden-nav div.gnb-wrap nav.gnb ul.gnb-menu li.menus ul.sub-menus li a {
+    font-size: 13px;
+  }
 }
 
 header#main-header > div.mainTitle {
