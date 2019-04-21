@@ -55,6 +55,10 @@ header#main-header nav#main-nav div.inner-nav, header#main-header nav#hidden-nav
   margin: 0 auto;
 }
 
+header#main-header nav#hidden-nav {
+  margin-top: -120px;
+}
+
 @media all and (max-width: 768px) {
   header#main-header {
     height: 400px;
@@ -106,6 +110,7 @@ div.inner-nav > nav.gnb {
 
 div.inner-nav > nav.gnb > ul.gnb-menu {
   overflow: hidden;
+  max-width: calc(100% - 10px);
 }
 
 div.inner-nav > nav.gnb > ul.gnb-menu > li.menus {
@@ -206,6 +211,7 @@ div.inner-nav nav.tnb a {
 }
 
 header#main-header nav#hidden-nav {
+  display: none;
   position: fixed;
   overflow: hidden;
   width: 100%;
@@ -252,8 +258,26 @@ header#main-header nav#hidden-nav div.inner-nav a.menu .item:nth-child(3) {
           transform-origin: 2px;
 }
 
-header#main-header nav#hidden-nav div.inner-nav nav.tnb a {
+header#main-header nav#hidden-nav div.tnb-wrap {
+  position: relative;
+  top: 0;
+  max-width: calc(100% - 40px);
+  width: 1200px;
+  height: 0px;
+  margin: 0 auto;
+}
+
+header#main-header nav#hidden-nav div.tnb-wrap nav.tnb {
+  position: absolute;
+  top: -120px;
+  right: 0;
+}
+
+header#main-header nav#hidden-nav div.tnb-wrap nav.tnb a {
   color: #949592;
+  padding: 5px 15px;
+  margin-right: 10px;
+  font-size: 12px;
 }
 
 header#main-header nav#hidden-nav div.gnb-wrap {
@@ -263,8 +287,8 @@ header#main-header nav#hidden-nav div.gnb-wrap {
 }
 
 header#main-header nav#hidden-nav div.gnb-wrap nav.gnb {
-  width: 1000px;
   max-width: calc(100% - 40px);
+  width: 1200px;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -277,6 +301,7 @@ header#main-header nav#hidden-nav div.gnb-wrap nav.gnb a {
 
 header#main-header nav#hidden-nav div.gnb-wrap nav.gnb ul.gnb-menu {
   padding-top: 10px;
+  padding-left: 60px;
 }
 
 header#main-header nav#hidden-nav div.gnb-wrap nav.gnb ul.gnb-menu li.menus {
@@ -313,8 +338,37 @@ header#main-header nav#hidden-nav div.gnb-wrap nav.gnb ul.gnb-menu li.menus ul.s
   header#main-header nav#hidden-nav div.inner-nav h1.logo {
     display: none;
   }
-  header#main-header nav#hidden-nav div.inner-nav nav.tnb {
-    bottom: 0;
+  header#main-header nav#hidden-nav div.tnb-wrap {
+    max-width: 100%;
+    width: 100%;
+    height: 55px;
+    margin: 0;
+  }
+  header#main-header nav#hidden-nav div.tnb-wrap nav.tnb {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-top: 1px solid #bbbbbb;
+  }
+  header#main-header nav#hidden-nav div.tnb-wrap nav.tnb a {
+    display: block;
+    float: left;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    color: #949592;
+    line-height: 55px;
+    font-size: 12px;
+    text-align: center;
+    border-left: 1px solid #bbbbbb;
+  }
+  header#main-header nav#hidden-nav div.tnb-wrap nav.tnb a:nth-of-type(1) {
+    display: none;
+  }
+  header#main-header nav#hidden-nav div.tnb-wrap nav.tnb a i {
+    margin-right: 5px;
   }
   header#main-header nav#hidden-nav div.gnb-wrap {
     background: #F5F6F8;
@@ -325,6 +379,8 @@ header#main-header nav#hidden-nav div.gnb-wrap nav.gnb ul.gnb-menu li.menus ul.s
   }
   header#main-header nav#hidden-nav div.gnb-wrap nav.gnb ul.gnb-menu li.menus {
     float: none;
+    width: 100%;
+    margin: 0;
   }
   header#main-header nav#hidden-nav div.gnb-wrap nav.gnb ul.gnb-menu li.menus a.menus-a {
     font-size: 20px;
@@ -385,34 +441,33 @@ header#main-header > div.mainTitle span {
 }
 
 section {
-  padding-top: 50px;
-  padding-bottom: 80px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 h2.subTitle {
   font: bold 25px;
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 100px;
 }
 
 section#product article {
   max-width: calc(100% - 40px);
-  width: 1200px;
+  width: 1500px;
   margin: 0 auto;
   overflow: hidden;
 }
 
 section#product article ul {
   display: block;
-  float: left;
-  width: 200px;
   height: 400px;
-  margin-left: 33.3333px;
   text-align: center;
 }
 
 section#product article ul li {
+  margin-left: 33.3333px;
+  width: 20%;
+  float: left;
   margin: 0 auto;
   height: 100%;
 }
@@ -431,10 +486,10 @@ section#product article ul li p {
 }
 
 section#product article ul li a {
-  margin: 0 52.5px;
   display: block;
   width: 95px;
   height: 40px;
+  margin: 0 auto;
   text-align: center;
   line-height: 40px;
   font-size: 10px;
@@ -496,6 +551,7 @@ section#boardList div ul.utill-wrap {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-bottom: 50px;
 }
 
 section#boardList div ul.utill-wrap li {

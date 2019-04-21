@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR|Raleway');
 
+@mixin media-tablit {
+  @media all and (min-width:769px) and (max-width:1200px) {
+    @content;
+  }
+}
+
 @mixin media-mobile {
   @media all and (max-width:768px) {
     @content;
   }
 }
+
 
 // reset
 h1,h2,h3,h4,div,ul,ol,li,dl,dt,dd,p,address,header,nav,main,
@@ -42,13 +49,8 @@ header#main-header {
     }
   }
 
-  nav#main-nav {
-    // display: none;
-    
-  }
-
   nav#hidden-nav { //-margin으로 올렸는데 괜찮은지
-    // margin-top: -120px;
+    margin-top: -120px;
   }
 
   //header#main-header
@@ -104,6 +106,7 @@ div.inner-nav {
 
     >ul.gnb-menu{
       overflow: hidden;
+      max-width: calc(100% - 10px);
 
       >li.menus{
         width: 25%;
@@ -152,6 +155,7 @@ div.inner-nav {
         }
       }
 
+      //ul.gnb-menu
       @include media-mobile(){
         display: none;
       }
@@ -203,9 +207,12 @@ div.inner-nav {
     }
   }
 }
+
+//hidden-nav 영역
+
 header#main-header{
-  
   nav#hidden-nav {
+    display: none;
     position: fixed;
     overflow: hidden; // 아래에 글로벌 메뉴가 표시됌
     width: 100%;
@@ -247,24 +254,39 @@ header#main-header{
           transform: rotate(-45deg);
           transform-origin: 2px;
         }
-
       }
+    }
+
+    div.tnb-wrap {
+      position: relative;
+      top: 0;
+      max-width: calc(100% - 40px);
+      width: 1200px;
+      height: 0px;
+      margin: 0 auto;
 
       nav.tnb {
+        position: absolute;
+        top: -120px;
+        right: 0;
+
         a {
           color: #949592;
+          padding: 5px 15px;
+          margin-right: 10px;
+          font-size: 12px;
         }
       }
     }
 
-    div.gnb-wrap{
+    div.gnb-wrap{ //gnb가 1200px 기준으로 width가 줄어듬
       width:100%;
       height: 100%;
       background-color: #F5F6F8;
       
       nav.gnb {
-        width: 1000px;
         max-width: calc(100% - 40px);
+        width: 1200px;
         margin: 0 auto;
         overflow: hidden;
 
@@ -276,6 +298,7 @@ header#main-header{
 
         ul.gnb-menu {
           padding-top: 10px;
+          padding-left: 60px;
 
           li.menus {
             width: 25%;
@@ -302,6 +325,7 @@ header#main-header{
         }
       }
     }
+
     // hidden-nav
     @include media-mobile(){
       width: 85%;
@@ -315,12 +339,43 @@ header#main-header{
         h1.logo {
           display: none;
         }
+      }
 
+      div.tnb-wrap { //얘를 맨 밑으로 내려야함
+        max-width: 100%;
+        width: 100%;
+        height: 55px;
+        margin: 0;
+  
         nav.tnb {
-          bottom: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          border-top: 1px solid #bbbbbb;
+  
+          a {
+            display: block;
+            float: left;
+            width: 50%;
+            margin: 0;
+            padding: 0;
+            color: #949592;
+            line-height: 55px;
+            font-size: 12px;
+            text-align: center;
+            border-left: 1px solid #bbbbbb;
 
+            &:nth-of-type(1) {
+              display: none;
+            }
+
+            i {
+              margin-right: 5px;
+            }
+          }
         }
-
       }
 
       div.gnb-wrap {
@@ -333,6 +388,8 @@ header#main-header{
           ul.gnb-menu{
             li.menus {
               float: none;
+              width: 100%;
+              margin: 0;
               
               a.menus-a {
                 font-size: 20px;
@@ -343,7 +400,7 @@ header#main-header{
 
               ul.sub-menus {
 
-                li { //click하면 나옴
+                li { //click하면 나와야함
                   display: none;
                   padding: 14px 0px;
 
@@ -356,8 +413,8 @@ header#main-header{
           }
         }
       }
-
     }
+    //include-mobile end
   }
 }
 
@@ -404,34 +461,33 @@ header#main-header {
 }
 
 section {
-  padding-top: 50px;
-  padding-bottom: 80px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 h2.subTitle {
   font: bold 25px;
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 100px;
 }
 
 section#product {
 
   article {
     max-width: calc(100% - 40px);
-    width: 1200px;
+    width: 1500px;
     margin: 0 auto;
     overflow: hidden;
 
     ul {
       display: block;
-      float: left;
-      width: 200px;
       height: 400px;
-      margin-left: 33.3333px;
       text-align: center;
 
       li {
+        margin-left: 33.3333px;
+        width: 20%;
+        float: left;
         margin: 0 auto;
         height: 100%;
 
@@ -449,10 +505,10 @@ section#product {
         }
 
         a {
-          margin: 0 52.5px;
           display: block;
           width: 95px;
           height: 40px;
+          margin: 0 auto;
           text-align: center;
           line-height: 40px;
           font-size: 10px;
@@ -513,6 +569,7 @@ section#boardList {
     ul.utill-wrap{
       display: flex;
       justify-content: space-between;
+      margin-bottom: 50px;
 
       li {
         width: calc(33.3333% - 15px);
