@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR|Raleway');
 
-@mixin media-tablit {
+@mixin media-tablet {
   @media all and (min-width:769px) and (max-width:1200px) {
     @content;
   }
@@ -49,19 +49,17 @@ header#main-header {
     }
   }
 
-  nav#hidden-nav { //-margin으로 올렸는데 괜찮은지
-    margin-top: -120px;
-  }
 
   //header#main-header
   @include media-mobile(){
     height: 400px;
 
-    nav#mainNav { //적용안됌
+    nav#main-nav {
       height: 50px;
     }
   }
 }
+
 
 div.inner-nav {
   h1.logo {
@@ -132,7 +130,7 @@ div.inner-nav {
           padding: 20px 40px;
         }
         
-        >ul.sub-menus{ //크게 보이게 한거 어떻게 하는지
+        >ul.sub-menus{
           position: relative;
           height: 0px;
           overflow: hidden;
@@ -169,7 +167,6 @@ div.inner-nav {
     position: absolute;
     bottom: 15px;
     right: 0;
-    z-index: 999;
 
     span.item {
       background: #fff;
@@ -203,8 +200,7 @@ div.inner-nav {
     }
 
     @include media-mobile(){
-      display: none;
-    }
+      display: none;    }
   }
 }
 
@@ -212,13 +208,19 @@ div.inner-nav {
 
 header#main-header{
   nav#hidden-nav {
-    display: none;
+    z-index: 1;
     position: fixed;
+    top: 0;
+    left: 0;
     overflow: hidden; // 아래에 글로벌 메뉴가 표시됌
     width: 100%;
     height: 100%;
     background-color: white;
+    display: none;
 
+    &[open] {
+      display: block;
+    }
 
     div.inner-nav{
       position: relative;
@@ -283,22 +285,33 @@ header#main-header{
       width:100%;
       height: 100%;
       background-color: #F5F6F8;
+      overflow: hidden;
       
       nav.gnb {
-        max-width: calc(100% - 40px);
         width: 1200px;
         margin: 0 auto;
         overflow: hidden;
+        @include media-tablet(){
+          width: 800px;
+        }
 
         a {
           text-transform: capitalize;
           display: block;
           letter-spacing: 1px;
+
+          @include media-tablet(){
+            letter-spacing: 0;
+          }
         }
 
         ul.gnb-menu {
           padding-top: 10px;
           padding-left: 60px;
+          @include media-tablet(){
+            padding-left: 15px;
+          }
+
 
           li.menus {
             width: 25%;
@@ -309,6 +322,9 @@ header#main-header{
               color: #333333;
               font-weight: bold;
               font-size: 37px;
+              @include media-tablet(){
+                font-size: 32px;
+              }
             }
 
             ul.sub-menus {
@@ -318,6 +334,10 @@ header#main-header{
                 a {
                   color: #646464;
                   font-size: 30px;
+                  @include media-tablet(){
+                    font-size: 23px;
+                  }
+                  
                 }
               }
             }
@@ -330,8 +350,8 @@ header#main-header{
     @include media-mobile(){
       width: 85%;
       right: 0;
+      left: auto;
       background: #F5F6F8;
-      margin-top: -120px;
 
       div.inner-nav {
         height: 50px;
@@ -341,20 +361,19 @@ header#main-header{
         }
       }
 
-      div.tnb-wrap { //얘를 맨 밑으로 내려야함
+      div.tnb-wrap {
         max-width: 100%;
         width: 100%;
-        height: 55px;
-        margin: 0;
   
         nav.tnb {
-          position: absolute;
-          top: 0;
-          width: 100%;
-          height: 100%;
+          position: fixed;
+          top:auto;
+          bottom: 0%;
+          width: 85%;
+          height: 55px;
           overflow: hidden;
           border-top: 1px solid #bbbbbb;
-  
+
           a {
             display: block;
             float: left;
@@ -365,10 +384,14 @@ header#main-header{
             line-height: 55px;
             font-size: 12px;
             text-align: center;
-            border-left: 1px solid #bbbbbb;
+            border-right: 1px solid #bbbbbb;
 
-            &:nth-of-type(1) {
+            &:first-child {
               display: none;
+            }
+
+            &:last-child {
+              border-right: none;
             }
 
             i {

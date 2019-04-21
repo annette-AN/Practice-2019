@@ -4,20 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/jquery@3"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="css/ware-valley.css">
   <title>WareValley</title>
   </head>
 <body>
-  <header id="main-header">
+  <header id="main-header"> 
+    <!-- hero영역을 묶어주는 바람에 생긴 태그로 사실 필요없음 id 값은 안줘도 무방 -->
     <nav id="main-nav">
+      <!-- container/wrapper/wrap 영역임 -->
       <div class="inner-nav">
         <h1 class="logo">
           <a href="#">Ware<span>Valley</span></a>
         </h1>
         <nav class="gnb">
           <ul class="gnb-menu">
+            <!-- li.menu-item -->
+            <!-- a class명이 없어도 무방하고 css는 >a 로 표현 -->
             <li class="menus"><a class="menus-a" href="product.html">Product</a>
+              <!-- menu 자체가 복수라서 단수로 표현 -->
               <ul class="sub-menus">
                 <li>
                   <a href="#">cyclone</a>
@@ -30,7 +36,7 @@
                 </li>
                 <li>
                   <a href="#">trusted orange</a>
-                </li>
+                </li>ㄴ
                 <li>
                   <a href="#">orange</a>
                 </li>
@@ -87,10 +93,12 @@
           </ul>
         </nav>
 
-        <a href="#" class="menu">
-          <span class="item"></span>
-          <span class="item"></span>
-          <span class="item"></span>
+        <!-- menu-opener -->
+        <a href="#" class="menu" role="button">
+          <!-- item은 데이터의 의미가 강함 menu-stick / line -->
+          <span class="item" role="image"></span>
+          <span class="item" role="image"></span>
+          <span class="item" role="image"></span>
         </a>
         <nav class="tnb">
           <a href="#"><i class="far fa-file-alt"></i> Warevalley Data</a>
@@ -99,6 +107,9 @@
         </nav>
       </div>
     </nav>
+    
+    <!-- background img+text는 header영역이 아님 -->
+    <!-- hero-title -->
     <div class="mainTitle">
       <h1>Global Knowledge<span>enterprise</span></h1>
     </div>
@@ -177,7 +188,7 @@
               <a class="menus-a" href="#">About us</a>
               <ul class="sub-menus">
                 <li>
-                  <a href="#">CEO greetings</a>
+                  <a href="#">CEO greeting</a>
                 </li>
                 <li>
                   <a href="#">history</a>
@@ -196,13 +207,12 @@
           </ul>
         </nav>
       </div>
-    
     </nav>
-
   </header>
 
-  <section id="product">
+  <section id="product" class="product-section">
     <article>
+      <!-- 겹칠일이 없어 class명을 굳이 줄 필요없음 -->
       <h2 class="subTitle">Products</h2>
       <ul>
         <li class="cyclone">
@@ -257,6 +267,8 @@
         </li>
       </ul>
 
+      <!-- div로 wrapping하면 더 좋겠다 class명을 notice-list -->
+      <!-- left right 는 없어도 됨 -->
       <div class="left">
         <h3>orange board</h3>
         <ul>
@@ -279,7 +291,10 @@
   <section id="aboutus">
     <h2 class="subTitle">About us</h2>
     <p>글로벌 지식기억 웨어밸리를 소개합니다.</p>
+    <!-- 사이트의 가장 대표적인 대문격 비주얼 이미지들가 hero -->
+    <!-- figure -->
     <div class="hero">
+      <!-- figure-caption -->
       <div class="innerBox">
         <h3>글로벌 솔루션<span></span></h3>
         <p>웨어밸리 "샤크라 맥스" 아시아 기업최초 가트너 선정<br>
@@ -289,6 +304,7 @@
   </section>
 
   <footer>
+    <!-- footer-buttons -->
     <div class="btnSet">
       <a href="#">개인정보 취급방침</a>
       <a href="#">Warevalley Data <i class="far fa-copy"></i></a>
@@ -305,5 +321,24 @@
 
   <div class="logo-Top">TOP</div>
   
+  <script> 
+  //메뉴 click 효과
+  $(document).on('click','.menu',function(){
+    $('.menu').addClass()
+  });
+
+  //메뉴열기
+  $(document).on('click','.menu',function(){
+    if($('#hidden-nav').is("[open]")){
+      $('#hidden-nav').removeAttr('open');
+    } else {
+      $('#hidden-nav').attr('open','');
+    };
+  });
+
+
+
+
+  </script>
 </body>
 </html>

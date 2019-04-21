@@ -55,15 +55,11 @@ header#main-header nav#main-nav div.inner-nav, header#main-header nav#hidden-nav
   margin: 0 auto;
 }
 
-header#main-header nav#hidden-nav {
-  margin-top: -120px;
-}
-
 @media all and (max-width: 768px) {
   header#main-header {
     height: 400px;
   }
-  header#main-header nav#mainNav {
+  header#main-header nav#main-nav {
     height: 50px;
   }
 }
@@ -170,7 +166,6 @@ div.inner-nav a.menu {
   position: absolute;
   bottom: 15px;
   right: 0;
-  z-index: 999;
 }
 
 div.inner-nav a.menu span.item {
@@ -211,12 +206,19 @@ div.inner-nav nav.tnb a {
 }
 
 header#main-header nav#hidden-nav {
-  display: none;
+  z-index: 1;
   position: fixed;
+  top: 0;
+  left: 0;
   overflow: hidden;
   width: 100%;
   height: 100%;
   background-color: white;
+  display: none;
+}
+
+header#main-header nav#hidden-nav[open] {
+  display: block;
 }
 
 header#main-header nav#hidden-nav div.inner-nav {
@@ -284,13 +286,19 @@ header#main-header nav#hidden-nav div.gnb-wrap {
   width: 100%;
   height: 100%;
   background-color: #F5F6F8;
+  overflow: hidden;
 }
 
 header#main-header nav#hidden-nav div.gnb-wrap nav.gnb {
-  max-width: calc(100% - 40px);
   width: 1200px;
   margin: 0 auto;
   overflow: hidden;
+}
+
+@media all and (min-width: 769px) and (max-width: 1200px) {
+  header#main-header nav#hidden-nav div.gnb-wrap nav.gnb {
+    width: 800px;
+  }
 }
 
 header#main-header nav#hidden-nav div.gnb-wrap nav.gnb a {
@@ -299,9 +307,21 @@ header#main-header nav#hidden-nav div.gnb-wrap nav.gnb a {
   letter-spacing: 1px;
 }
 
+@media all and (min-width: 769px) and (max-width: 1200px) {
+  header#main-header nav#hidden-nav div.gnb-wrap nav.gnb a {
+    letter-spacing: 0;
+  }
+}
+
 header#main-header nav#hidden-nav div.gnb-wrap nav.gnb ul.gnb-menu {
   padding-top: 10px;
   padding-left: 60px;
+}
+
+@media all and (min-width: 769px) and (max-width: 1200px) {
+  header#main-header nav#hidden-nav div.gnb-wrap nav.gnb ul.gnb-menu {
+    padding-left: 15px;
+  }
 }
 
 header#main-header nav#hidden-nav div.gnb-wrap nav.gnb ul.gnb-menu li.menus {
@@ -316,6 +336,12 @@ header#main-header nav#hidden-nav div.gnb-wrap nav.gnb ul.gnb-menu li.menus a.me
   font-size: 37px;
 }
 
+@media all and (min-width: 769px) and (max-width: 1200px) {
+  header#main-header nav#hidden-nav div.gnb-wrap nav.gnb ul.gnb-menu li.menus a.menus-a {
+    font-size: 32px;
+  }
+}
+
 header#main-header nav#hidden-nav div.gnb-wrap nav.gnb ul.gnb-menu li.menus ul.sub-menus li {
   padding: 16px 0;
 }
@@ -325,12 +351,18 @@ header#main-header nav#hidden-nav div.gnb-wrap nav.gnb ul.gnb-menu li.menus ul.s
   font-size: 30px;
 }
 
+@media all and (min-width: 769px) and (max-width: 1200px) {
+  header#main-header nav#hidden-nav div.gnb-wrap nav.gnb ul.gnb-menu li.menus ul.sub-menus li a {
+    font-size: 23px;
+  }
+}
+
 @media all and (max-width: 768px) {
   header#main-header nav#hidden-nav {
     width: 85%;
     right: 0;
+    left: auto;
     background: #F5F6F8;
-    margin-top: -120px;
   }
   header#main-header nav#hidden-nav div.inner-nav {
     height: 50px;
@@ -341,14 +373,13 @@ header#main-header nav#hidden-nav div.gnb-wrap nav.gnb ul.gnb-menu li.menus ul.s
   header#main-header nav#hidden-nav div.tnb-wrap {
     max-width: 100%;
     width: 100%;
-    height: 55px;
-    margin: 0;
   }
   header#main-header nav#hidden-nav div.tnb-wrap nav.tnb {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    position: fixed;
+    top: auto;
+    bottom: 0%;
+    width: 85%;
+    height: 55px;
     overflow: hidden;
     border-top: 1px solid #bbbbbb;
   }
@@ -362,10 +393,13 @@ header#main-header nav#hidden-nav div.gnb-wrap nav.gnb ul.gnb-menu li.menus ul.s
     line-height: 55px;
     font-size: 12px;
     text-align: center;
-    border-left: 1px solid #bbbbbb;
+    border-right: 1px solid #bbbbbb;
   }
-  header#main-header nav#hidden-nav div.tnb-wrap nav.tnb a:nth-of-type(1) {
+  header#main-header nav#hidden-nav div.tnb-wrap nav.tnb a:first-child {
     display: none;
+  }
+  header#main-header nav#hidden-nav div.tnb-wrap nav.tnb a:last-child {
+    border-right: none;
   }
   header#main-header nav#hidden-nav div.tnb-wrap nav.tnb a i {
     margin-right: 5px;
