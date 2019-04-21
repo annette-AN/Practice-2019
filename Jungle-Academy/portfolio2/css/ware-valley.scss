@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR|Raleway');
 
 @mixin media-mobile {
-  @media all and (min-width:768px) {
+  @media all and (max-width:768px) {
     @content;
   }
 }
@@ -22,17 +22,17 @@ img {vertical-align: middle;} //인라인요소에 middle 기본 리셋
 body {font: 15px/1.6 'Noto Sans KR';}
 
 
-header#mainHeader {
+header#main-header {
   position: relative;
   width: 100%;
   height: 840px;
   background: url(../img/main_img2.png) no-repeat center / cover;
 
-  nav#mainNav {
+  nav#main-nav, nav#hidden-nav {
     height: 120px;
     background: rgba(0,0,0,0.6);
 
-    div#innerNav {
+    div.inner-nav {
       position: relative;
       max-width: calc(100% - 40px);
       width: 1200px;
@@ -41,9 +41,26 @@ header#mainHeader {
       margin: 0 auto;
     }
   }
+
+  nav#main-nav {
+    display: none;
+    
+  }
+
+  nav#hidden-nav { //-margin으로 올렸는데 괜찮은지
+    // margin-top: -120px;
+  }
+
+  @include media-mobile(){
+    height: 400px;
+
+    nav#mainNav {
+      height: 50px;
+    }
+  }
 }
 
-div#innerNav {
+div.inner-nav {
   h1.logo {
     height: 100%;
 
@@ -62,10 +79,20 @@ div#innerNav {
         font-size: 30px;
       }
     }
+    @include media-mobile(){
+      a{
+        font-size: 14px;
+
+        span {
+          font-size: 13px;
+          padding-left: 10px;
+        }
+      }
+    }
   }
 }
 
-div#innerNav {
+div.inner-nav {
   >nav.gnb {
     position: absolute;
     top: 58px;
@@ -123,12 +150,16 @@ div#innerNav {
           }
         }
       }
+
+      @include media-mobile(){
+        display: none;
+      }
     }
   }
 }
 
 
-div#innerNav {
+div.inner-nav {
   a.menu {
     position: absolute;
     bottom: 15px;
@@ -157,11 +188,17 @@ div#innerNav {
       height: 3px;
       margin: 0 0 10px;
       transition: all .3s;
+
+      @include media-mobile(){
+        width: 20px;
+        height: 1px;
+        margin: 0 0 5px;
+      }
     }
   }
 }
 
-div#innerNav {
+div.inner-nav {
   nav.tnb {
     position: absolute;
     top: 0;
@@ -173,16 +210,94 @@ div#innerNav {
       margin-right: 10px;
       font-size: 12px;
     }
+
+    @include media-mobile(){
+      display: none;
+    }
+  }
+}
+header#main-header{
+  nav#hidden-nav {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    // background-color: white;
+
+
+    div.inner-nav{
+      background: red;
+      position: relative;
+      max-width: calc(100% - 40px);
+      width: 1200px;
+      height: 100%;
+      color: #fff;
+      margin: 0 auto;
+
+      h1.logo {
+        height: 100%;
+    
+        a {
+          color: #949592;
+        }
+      }
+    }
+
+    div.gnb-wrap{
+      width:100%;
+      height: 100%;
+      background-color: #F5F6F8;
+      
+      nav.gnb {
+        width: 1000px;
+        max-width: calc(100% - 40px);
+        margin: 0 auto;
+        overflow: hidden;
+
+        a {
+          text-transform: capitalize;
+          display: block;
+        }
+
+        ul.gnb-menu {
+          padding-top: 10px;
+
+          li.menus {
+            width: 25%;
+            float: left;
+            text-align: center;
+            
+            a.menus-a {
+              padding: 45px 0;
+              color: black;
+              font-weight: bold;
+              font-size: 30px;
+            }
+
+            ul.sub-menus {
+              li {
+                list-style-type: circle;
+                height: 45px;
+                a {
+                  color: #646464;
+                  font-size: 22px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 
-header#mainHeader {
+header#main-header {
   >div.mainTitle {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     line-height: 1.3;
+    width:fit-content;
 
     h1{
       font-size: 50px;
@@ -201,6 +316,18 @@ header#mainHeader {
       margin-left: 4px;
       text-transform: uppercase;
       text-shadow: -2px 2px 5px rgba(145, 144, 144, 0.6);
+    }
+
+    @include media-mobile(){
+      line-height: 2;
+      
+      h1 {
+        font-size: 30px;
+      }
+
+      span {
+        font-size: 20px;
+      }
     }
   }
 }
@@ -269,8 +396,15 @@ section#product {
             background-color: #20242a;
             color: #fff;
           }
-          
         }
+      }
+
+      // ul  
+      @include media-mobile(){
+        li p {
+          display: none;
+        }
+    
       }
     }
 
@@ -335,18 +469,30 @@ section#boardList {
       @include media-mobile{
         display: block;
         width: 100%;
-         
+        
         li {
           width: 100%;
+          height: auto;
           margin-bottom: 10px;
-          border: 1px solid red;
+          padding: 15px 20px;
+
+          h3 {
+            font-size: 15px;
+          }
+          
+          p {
+            font-size: 14px;
+
+            br {
+              display: none;
+            }
+          }
         }
       }
     }
 
     div.left, div.right {
       width: 45%;
-      height: 220px;
       
       h3 {
         font-size: 20px;
@@ -374,7 +520,7 @@ section#boardList {
 
           a {
             font-size: 18px;
-            color: #929292;
+            color: #646464;
 
           }
         }
@@ -389,6 +535,24 @@ section#boardList {
     div.right {
       float: right;
       margin-right: 30px;
+    }
+
+    @include media-mobile{
+      
+      div.left, div.right {
+        float: none;
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+
+        ul li {
+          padding: 10px;
+
+          a {
+            font-size: 15px;
+          }
+        }
+      }
     }
   }
 }
