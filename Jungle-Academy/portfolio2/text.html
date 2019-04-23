@@ -6,108 +6,128 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/text.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <script src="https://unpkg.com/jquery@3"></script>
   <title>Document</title>
 </head>
 
 <body>
-  <header id="mainHeader">
-    <nav id="mainNav">
-      <div id="innerNav">
-        <h1 class="logo">
-          <a href="#">Ware<span>Valley</span></a>
-        </h1>
-        <nav class="gnb">
-          <ul class="gnb-menu">
-            <li class="menus"><a class="menus-a" href="product.html">Product</a>
-              <ul class="sub-menus">
-                <li>
-                  <a href="#">cyclone</a>
-                </li>
-                <li>
-                  <a href="#">chakra max</a>
-                </li>
-                <li>
-                  <a href="#">galea</a>
-                </li>
-                <li>
-                  <a href="#">trusted orange</a>
-                </li>
-                <li>
-                  <a href="#">orange</a>
-                </li>
-                <li>
-                  <a href="#">petaSQL</a>
-                </li>
-                <li>
-                  <a href="#">lora</a>
-                </li>
-              </ul>
-            </li>
-        
-        
-        
-            <li class="menus">
-              <a class="menus-a" href="#">Solutions</a>
-              <ul class="sub-menus">
-                <li>
-                  <a href="#">WISS</a>
-                </li>
-              </ul>
-            </li>
-        
-            <li class="menus">
-              <a class="menus-a" href="#">Support</a>
-              <ul class="sub-menus">
-                <li>
-                  <a href="#">traning</a>
-                </li>
-                <li>
-                  <a href="#">download</a>
-                </li>
-                <li>
-                  <a href="#">orange board</a>
-                </li>
-              </ul>
-            </li>
-        
-        
-            <li class="menus">
-              <a class="menus-a" href="#">About us</a>
-              <ul class="sub-menus">
-                <li>
-                  <a href="#">CEO greetings</a>
-                </li>
-                <li>
-                  <a href="#">history</a>
-                </li>
-                <li>
-                  <a href="#">partners</a>
-                </li>
-                <li>
-                  <a href="#">news</a>
-                </li>
-                <li>
-                  <a href="#">contact us</a>
-                </li>
-              </ul>
-            </li>
-        </nav>
-        <a href="#" class="menu">
-          <span class="item"></span>
-          <span class="item"></span>
-          <span class="item"></span>
-        </a>
-        <nav class="tnb">
-          <a href="#"><i class="far fa-file-alt"></i> Warevalley Data</a>
-          <a href="#"><i class="fas fa-fingerprint"></i> Login</a>
-          <a href="#"><i class="fas fa-globe"></i> Language</a>
-        </nav>
-      </div>
-    </nav>
-    <div class="mainTitle">
-      <h1>Global Knowledge<span>enterprise</span></h1>
+  <div class="hero">
+    <h1>Global Knowledge<span>enterprise</span></h1>
+  </div>
+  <header class="main-header"open>
+    <!-- container/wrapper/wrap 영역임 -->
+    <div class="container">
+      <h1 class="logo">
+        <a href="#">Ware<span>Valley</span></a>
+      </h1>
+      <nav class="gnb">
+        <ul class="gnb-menu">
+          <!-- li.menu-item -->
+          <!-- a class명이 없어도 무방하고 css는 >a 로 표현 -->
+          <li class="menu-item"><a href="product.html">Product</a>
+            <ul class="sub-menu">
+              <li>
+                <a href="#">cyclone</a>
+              </li>
+              <li>
+                <a href="#">chakra max</a>
+              </li>
+              <li>
+                <a href="#">galea</a>
+              </li>
+              <li>
+                <a href="#">trusted orange</a>
+              </li>
+              <li>
+                <a href="#">orange</a>
+              </li>
+              <li>
+                <a href="#">petaSQL</a>
+              </li>
+              <li>
+                <a href="#">lora</a>
+              </li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <a href="#">Solutions</a>
+            <ul class="sub-menu">
+              <li>
+                <a href="#">WISS</a>
+              </li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <a href="#">Support</a>
+            <ul class="sub-menu">
+              <li>
+                <a href="#">traning</a>
+              </li>
+              <li>
+                <a href="#">download</a>
+              </li>
+              <li>
+                <a href="#">orange board</a>
+              </li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <a href="#">About us</a>
+            <ul class="sub-menu">
+              <li>
+                <a href="#">CEO greetings</a>
+              </li>
+              <li>
+                <a href="#">history</a>
+              </li>
+              <li>
+                <a href="#">partners</a>
+              </li>
+              <li>
+                <a href="#">news</a>
+              </li>
+              <li>
+                <a href="#">contact us</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+  
+      <a href="#" class="menu-opener" role="button">
+        <!-- item이라는 말은 데이터의 의미가 강함 menu-stick / line -->
+        <span class="menu-stick" role="image"></span>
+        <span class="menu-stick" role="image"></span>
+        <span class="menu-stick" role="image"></span>
+      </a>
+      <nav class="tnb">
+        <a href="#"><i class="far fa-file-alt"></i> Warevalley Data</a>
+        <a href="#"><i class="fas fa-fingerprint"></i> Login</a>
+        <a href="#"><i class="fas fa-globe"></i> Language</a>
+      </nav>
     </div>
   </header>
+
+  <script> 
+      //메뉴 click 효과
+      $(document).on('click','.menu-opener',function(){
+        $('.main-header').attr('open');
+      });
+    
+      //메뉴열기
+      $(document).on('click','.menu-opener',function(){
+        if($('.main-header').is('[open]')){
+          $('.main-header').removeAttr('open');
+        } else {
+          $('.main-header').attr('open','');
+        };
+      });
+    
+    
+    
+    
+      </script>
 </body>
 
 </html>
