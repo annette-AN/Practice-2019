@@ -9,211 +9,108 @@
   <link rel="stylesheet" href="css/ware-valley.css">
   <title>WareValley</title>
   </head>
-<body>
-  <header id="main-header"> 
-    <!-- hero영역을 묶어주는 바람에 생긴 태그로 사실 필요없음 id 값은 안줘도 무방 -->
-    <nav id="main-nav">
+  <body>
+    <div class="hero">
+      <h1>Global Knowledge<span>enterprise</span></h1>
+    </div>
+    <header class="main-header">
       <!-- container/wrapper/wrap 영역임 -->
-      <div class="inner-nav">
+      <div class="container">
         <h1 class="logo">
-          <a href="#">Ware<span>Valley</span></a>
+          <a href="javascript:;">Ware<span>Valley</span></a>
         </h1>
         <nav class="gnb">
           <ul class="gnb-menu">
             <!-- li.menu-item -->
             <!-- a class명이 없어도 무방하고 css는 >a 로 표현 -->
-            <li class="menus"><a class="menus-a" href="product.html">Product</a>
-              <!-- menu 자체가 복수라서 단수로 표현 -->
-              <ul class="sub-menus">
+            <li class="menu-item"><a href="javascript:;">Product</a>
+              <ul class="sub-menu">
                 <li>
-                  <a href="#">cyclone</a>
+                  <a href="javascript:;">cyclone</a>
                 </li>
                 <li>
-                  <a href="#">chakra max</a>
+                  <a href="javascript:;">chakra max</a>
                 </li>
                 <li>
-                  <a href="#">galea</a>
+                  <a href="javascript:;">galea</a>
                 </li>
                 <li>
-                  <a href="#">trusted orange</a>
-                </li>ㄴ
-                <li>
-                  <a href="#">orange</a>
+                  <a href="javascript:;">trusted orange</a>
                 </li>
                 <li>
-                  <a href="#">petaSQL</a>
+                  <a href="javascript:;">orange</a>
                 </li>
                 <li>
-                  <a href="#">lora</a>
+                  <a href="javascript:;">petaSQL</a>
                 </li>
-              </ul>
-            </li>
-            <li class="menus">
-              <a class="menus-a" href="#">Solutions</a>
-              <ul class="sub-menus">
                 <li>
-                  <a href="#">WISS</a>
+                  <a href="javascript:;">lora</a>
                 </li>
               </ul>
             </li>
-            <li class="menus">
-              <a class="menus-a" href="#">Support</a>
-              <ul class="sub-menus">
+            <li class="menu-item">
+              <a href="javascript:;">Solutions</a>
+              <ul class="sub-menu">
                 <li>
-                  <a href="#">traning</a>
-                </li>
-                <li>
-                  <a href="#">download</a>
-                </li>
-                <li>
-                  <a href="#">orange board</a>
+                  <a href="javascript:;">WISS</a>
                 </li>
               </ul>
             </li>
-            <li class="menus">
-              <a class="menus-a" href="#">About us</a>
-              <ul class="sub-menus">
+            <li class="menu-item">
+              <a href="javascript:;">Support</a>
+              <ul class="sub-menu">
                 <li>
-                  <a href="#">CEO greetings</a>
+                  <a href="javascript:;">traning</a>
                 </li>
                 <li>
-                  <a href="#">history</a>
+                  <a href="javascript:;">download</a>
                 </li>
                 <li>
-                  <a href="#">partners</a>
+                  <a href="javascript:;">orange board</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="javascript:;">About us</a>
+              <ul class="sub-menu">
+                <li>
+                  <a href="javascript:;">CEO greetings</a>
                 </li>
                 <li>
-                  <a href="#">news</a>
+                  <a href="javascript:;">history</a>
                 </li>
                 <li>
-                  <a href="#">contact us</a>
+                  <a href="javascript:;">partners</a>
+                </li>
+                <li>
+                  <a href="javascript:;">news</a>
+                </li>
+                <li>
+                  <a href="javascript:;">contact us</a>
                 </li>
               </ul>
             </li>
           </ul>
         </nav>
-
-        <!-- menu-opener -->
-        <a href="#" class="menu" role="button">
-          <!-- item은 데이터의 의미가 강함 menu-stick / line -->
-          <span class="item" role="image"></span>
-          <span class="item" role="image"></span>
-          <span class="item" role="image"></span>
+    
+        <a href="javascript:;" class="menu-opener" role="button">
+          <!-- item이라는 말은 데이터의 의미가 강함 menu-stick / line -->
+          <span class="menu-stick" role="image"></span>
+          <span class="menu-stick" role="image"></span>
+          <span class="menu-stick" role="image"></span>
         </a>
         <nav class="tnb">
-          <a href="#"><i class="far fa-file-alt"></i> Warevalley Data</a>
-          <a href="#"><i class="fas fa-fingerprint"></i> Login</a>
-          <a href="#"><i class="fas fa-globe"></i> Language</a>
+          <a href="javascript:;"><i class="far fa-file-alt"></i> Warevalley Data</a>
+          <a href="javascript:;"><i class="fas fa-fingerprint"></i> Login</a>
+          <a href="javascript:;"><i class="fas fa-globe"></i> Language</a>
         </nav>
       </div>
-    </nav>
-    
-    <!-- background img+text는 header영역이 아님 -->
-    <!-- hero-title -->
-    <div class="mainTitle">
-      <h1>Global Knowledge<span>enterprise</span></h1>
-    </div>
-
-    <nav id="hidden-nav">
-      <div class="inner-nav">
-        <h1 class="logo">
-          <a href="#">Ware<span>Valley</span></a>
-        </h1>
-        <a href="#" class="menu">
-          <span class="item"></span>
-          <span class="item"></span>
-          <span class="item"></span>
-        </a>
-      </div>
-
-      <div class="tnb-wrap">
-        <nav class="tnb"> 
-          <a href="#"><i class="far fa-file-alt"></i> Warevalley Data</a>
-          <a href="#"><i class="fas fa-fingerprint"></i> Login</a>
-          <a href="#"><i class="fas fa-globe"></i> Language</a>
-        </nav>
-      </div>
-
-      <div class="gnb-wrap">
-        <nav class="gnb">
-          <ul class="gnb-menu">
-            <li class="menus"><a class="menus-a" href="product.html">Product</a>
-              <ul class="sub-menus">
-                <li>
-                  <a href="#">cyclone</a>
-                </li>
-                <li>
-                  <a href="#">chakra max</a>
-                </li>
-                <li>
-                  <a href="#">galea</a>
-                </li>
-                <li>
-                  <a href="#">trusted orange</a>
-                </li>
-                <li>
-                  <a href="#">orange</a>
-                </li>
-                <li>
-                  <a href="#">petaSQL</a>
-                </li>
-                <li>
-                  <a href="#">lora</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menus">
-              <a class="menus-a" href="#">Solutions</a>
-              <ul class="sub-menus">
-                <li>
-                  <a href="#">WISS</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menus">
-              <a class="menus-a" href="#">Support</a>
-              <ul class="sub-menus">
-                <li>
-                  <a href="#">traning</a>
-                </li>
-                <li>
-                  <a href="#">download</a>
-                </li>
-                <li>
-                  <a href="#">orange board</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menus">
-              <a class="menus-a" href="#">About us</a>
-              <ul class="sub-menus">
-                <li>
-                  <a href="#">CEO greeting</a>
-                </li>
-                <li>
-                  <a href="#">history</a>
-                </li>
-                <li>
-                  <a href="#">partners</a>
-                </li>
-                <li>
-                  <a href="#">news</a>
-                </li>
-                <li>
-                  <a href="#">contact us</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </nav>
-  </header>
+    </header>
 
   <section id="product" class="product-section">
     <article>
       <!-- 겹칠일이 없어 class명을 굳이 줄 필요없음 -->
-      <h2 class="subTitle">Products</h2>
+      <h2>Products</h2>
       <ul>
         <li class="cyclone">
           <h3>Cyclone</h3>
@@ -244,23 +141,23 @@
     </article>
   </section>
 
-  <section id="boardList">
+  <section class="board-list">
     <div>
       <ul class="utill-wrap">
-        <li class="utill">
-          <a href="#">
+        <li>
+          <a href="javascript:;">
             <h3>gartner research</h3>
             <p>웨어밸리는 국내 기업 유일하게<br> 파트너의 DAP 분야 보고서의 언급되는<br> DB보안 선두 기업입니다.</p>
           </a>
         </li>
         <li class="utill traning">
-          <a href="#">
+          <a href="javascript:;">
             <h3>training</h3>
             <p>전문가들로 구성된 강사진들의 교육을<br> 무료로 받으실 수 있습니다.</p>
           </a>
         </li>
         <li class="utill download">
-          <a href="#">
+          <a href="javascript:;">
             <h3>download</h3>
             <p>홈페이지를 방문하시는 모든 분들께<br> 회원가입 이후 무상 제공됩니다.</p>
           </a>
@@ -269,27 +166,27 @@
 
       <!-- div로 wrapping하면 더 좋겠다 class명을 notice-list -->
       <!-- left right 는 없어도 됨 -->
-      <div class="left">
+      <div class="orange-board">
         <h3>orange board</h3>
         <ul>
-          <li><a href="#">작업환경 저장이 가능한가요?</a></li>
-          <li><a href="#">바인드 변수 할당 관련 문의 드립니다.</a></li>
-          <li><a href="#">파일 저장 혹은 열기 시 최근에 열었던 폴더로 인하여 프로그램이 비정상적으로 종료되는 일이 있어서 그 부분에 대한 솔루션을 요청드립니다.</a></li>
+          <li><a href="javascript:;">작업환경 저장이 가능한가요?</a></li>
+          <li><a href="javascript:;">바인드 변수 할당 관련 문의 드립니다.</a></li>
+          <li><a href="javascript:;">파일 저장 혹은 열기 시 최근에 열었던 폴더로 인하여 프로그램이 비정상적으로 종료되는 일이 있어서 그 부분에 대한 솔루션을 요청드립니다.</a></li>
         </ul>
       </div>
-      <div class="right">
+      <div class="news">
         <h3>news</h3>
         <ul>
-          <li><a href="#">웨어밸리 기술연구소 IR52 '장영실 기술혁신상 수상'</a></li>
-          <li><a href="#">7년 연속 웨어밸리 가트너(Gartner) 보고서 등재</a></li>
-          <li><a href="#">웨어밸리, 2018 위스 해외파트너 초청 행사 개최</a></li>
+          <li><a href="javascript:;">웨어밸리 기술연구소 IR52 '장영실 기술혁신상 수상'</a></li>
+          <li><a href="javascript:;">7년 연속 웨어밸리 가트너(Gartner) 보고서 등재</a></li>
+          <li><a href="javascript:;">웨어밸리, 2018 위스 해외파트너 초청 행사 개최</a></li>
         </ul>
       </div>
     </div>
   </section>
 
-  <section id="aboutus">
-    <h2 class="subTitle">About us</h2>
+  <section class="aboutus">
+    <h2>About us</h2>
     <p>글로벌 지식기억 웨어밸리를 소개합니다.</p>
     <!-- 사이트의 가장 대표적인 대문격 비주얼 이미지들가 hero -->
     <!-- figure -->
@@ -305,11 +202,11 @@
 
   <footer>
     <!-- footer-buttons -->
-    <div class="btnSet">
-      <a href="#">개인정보 취급방침</a>
-      <a href="#">Warevalley Data <i class="far fa-copy"></i></a>
+    <div class="btn-set">
+      <a href="javascript:;">개인정보 취급방침</a>
+      <a href="javascript:;">Warevalley Data <i class="far fa-copy"></i></a>
     </div>
-    <address class="mainFooter">
+    <address class="main-footer">
       <span>대표이사 손삼수</span>
       <span>서울시 마포구 월드컵북로 396 (상암동, 누리꿈스퀘어) 비즈니스타워 22층</span>
       <span><a href="tel:+8227434910">TEL : 02-743-4910</a></span>
@@ -322,20 +219,52 @@
   <div class="logo-Top">TOP</div>
   
   <script> 
-  //메뉴 click 효과
-  $(document).on('click','.menu',function(){
-    $('.menu').addClass()
-  });
+    function isDesktop (){
+      return window.innerWidth > 768;
+    }
 
-  //메뉴열기
-  $(document).on('click','.menu',function(){
-    if($('#hidden-nav').is("[open]")){
-      $('#hidden-nav').removeAttr('open');
-    } else {
-      $('#hidden-nav').attr('open','');
-    };
-  });
+    function toggleMenuOpenClose (){
+      if($('.main-header').is('[open]')){
+        $('.main-header').removeAttr('open');
+      } else {
+        $('.main-header').attr('open','');
+      };
+    }
 
+    //메뉴 click 효과
+    //메뉴열기
+    $(document).on('click','.menu-opener',toggleMenuOpenClose);
+
+    //pc버전이고 open이 아닐때 메뉴 click
+    $(document).on('click','li.menu-item',function(){
+      if(isDesktop() === true){
+        toggleMenuOpenClose();
+      } else {
+        if($(this).is('.sub-menu-open')){
+          $(this).removeClass('sub-menu-open');
+        } else {
+          $('li.menu-item').removeClass('sub-menu-open');
+          $(this).addClass('sub-menu-open');
+        }
+        
+        //var subMenuOpen = $(this).index();
+        //console.log('subMenuOpen',subMenuOpen);
+        //$('.sub-menu').removeClass('.sub-menu-open');
+        //$('.sub-menu').eq(subMenuOpen).addClass('.sub-menu-open');
+        //한개가 틀렸어
+      };
+    });
+
+
+    //mobile버전일때가 전제조건임
+    false && $(document).on('click','li.menu-item', function(){
+      
+    });
+
+    
+  
+
+  
 
 
 

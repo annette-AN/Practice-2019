@@ -75,7 +75,7 @@ div.hero h1 span {
 
 @media all and (max-width: 768px) {
   div.hero {
-    height: 500px;
+    height: 400px;
     position: relative;
   }
   div.hero h1 {
@@ -116,7 +116,7 @@ header.main-header div.container {
 
 header.main-header[open] {
   background-color: #F5F6F8;
-  height: 500px;
+  height: 480px;
 }
 
 header.main-header[open] h1.logo {
@@ -131,6 +131,34 @@ header.main-header[open] h1.logo a {
 
 header.main-header[open] h1.logo a span {
   color: #949592;
+}
+
+@media all and (max-width: 768px) {
+  header.main-header[open] h1.logo {
+    height: 50px;
+    position: relative;
+  }
+  header.main-header[open] h1.logo a {
+    padding-top: 7.75px;
+    font-size: 14px;
+  }
+  header.main-header[open] h1.logo a span {
+    font-size: 13px;
+    padding-left: 10px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  header.main-header[open] {
+    position: fixed;
+    right: 0;
+    left: auto;
+    width: 85%;
+    height: 100%;
+  }
+  header.main-header[open] div.container {
+    height: 100%;
+  }
 }
 
 header.main-header[open] .menu-opener {
@@ -159,6 +187,12 @@ header.main-header[open] .menu-opener .menu-stick:nth-child(3) {
           transform-origin: 2px;
 }
 
+@media all and (max-width: 768px) {
+  header.main-header[open] .menu-opener {
+    top: 16.5px;
+  }
+}
+
 header.main-header[open] nav.tnb a {
   color: #949592;
 }
@@ -174,8 +208,6 @@ header.main-header[open] nav.gnb ul.gnb-menu li.menu-item ul.sub-menu {
   height: auto;
   margin-left: 30px;
   white-space: nowrap;
-  -webkit-transition: height .4s , background-color .000001s;
-  transition: height .4s , background-color .000001s;
 }
 
 header.main-header[open] nav.gnb ul.gnb-menu li.menu-item ul.sub-menu li {
@@ -187,6 +219,61 @@ header.main-header[open] nav.gnb ul.gnb-menu li.menu-item ul.sub-menu li {
 
 header.main-header[open] nav.gnb ul.gnb-menu li.menu-item ul.sub-menu li a {
   color: #646464;
+}
+
+@media all and (max-width: 768px) {
+  header.main-header[open] nav.gnb {
+    width: 200px;
+    left: 0;
+    height: 100%;
+    margin-left: 20px;
+    z-index: 999;
+    opacity: 1;
+  }
+  header.main-header[open] nav.gnb > ul.gnb-menu {
+    margin-top: 20px;
+    height: 100%;
+    display: block;
+  }
+  header.main-header[open] nav.gnb > ul.gnb-menu > li.menu-item {
+    width: 100%;
+    text-align: left;
+    float: none;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+  }
+  header.main-header[open] nav.gnb > ul.gnb-menu > li.menu-item.sub-menu-open > ul.sub-menu, header.main-header[open] nav.gnb > ul.gnb-menu > li.menu-item:hover > ul.sub-menu {
+    opacity: 1;
+    height: auto;
+    padding: 0;
+  }
+  header.main-header[open] nav.gnb > ul.gnb-menu > li.menu-item.sub-menu-open > ul.sub-menu > li, header.main-header[open] nav.gnb > ul.gnb-menu > li.menu-item:hover > ul.sub-menu > li {
+    height: 45px;
+  }
+  header.main-header[open] nav.gnb > ul.gnb-menu > li.menu-item.sub-menu-open > ul.sub-menu > li a, header.main-header[open] nav.gnb > ul.gnb-menu > li.menu-item:hover > ul.sub-menu > li a {
+    opacity: 1;
+  }
+  header.main-header[open] nav.gnb > ul.gnb-menu > li.menu-item > a {
+    font-weight: normal;
+    font-size: 20px;
+    letter-spacing: 3px;
+    padding: 15px 15px 10px 15px;
+  }
+  header.main-header[open] nav.gnb > ul.gnb-menu > li.menu-item > ul.sub-menu {
+    height: 0px;
+    opacity: 0;
+    padding: 0px;
+  }
+  header.main-header[open] nav.gnb > ul.gnb-menu > li.menu-item > ul.sub-menu > li {
+    height: 40px;
+  }
+  header.main-header[open] nav.gnb > ul.gnb-menu > li.menu-item > ul.sub-menu > li > a {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 40px;
+    letter-spacing: 1.5px;
+    opacity: 0;
+  }
 }
 
 div.container h1.logo {
@@ -244,15 +331,6 @@ div.container > nav.gnb > ul.gnb-menu > li.menu-item {
   text-align: center;
 }
 
-div.container > nav.gnb > ul.gnb-menu > li.menu-item:hover > ul.sub-menu {
-  height: calc(100% + 0px);
-  padding: 15px 30px;
-}
-
-div.container > nav.gnb > ul.gnb-menu > li.menu-item:hover > ul.sub-menu > li {
-  height: 45px;
-}
-
 div.container > nav.gnb > ul.gnb-menu > li.menu-item > a {
   display: block;
   color: #fff;
@@ -266,16 +344,12 @@ div.container > nav.gnb > ul.gnb-menu > li.menu-item > ul.sub-menu {
   height: 0px;
   overflow: hidden;
   background-color: #fff;
-  -webkit-transition: padding .2s;
-  transition: padding .2s;
   padding: 0px 30px;
 }
 
 div.container > nav.gnb > ul.gnb-menu > li.menu-item > ul.sub-menu > li {
   height: 0px;
   text-align: left;
-  -webkit-transition: height .2s;
-  transition: height .2s;
 }
 
 div.container > nav.gnb > ul.gnb-menu > li.menu-item > ul.sub-menu > li > a {
@@ -286,8 +360,10 @@ div.container > nav.gnb > ul.gnb-menu > li.menu-item > ul.sub-menu > li > a {
 }
 
 @media all and (max-width: 768px) {
-  div.container > nav.gnb > ul.gnb-menu {
-    display: none;
+  div.container > nav.gnb {
+    opacity: 0;
+    height: 0px;
+    overflow: hidden;
   }
 }
 
@@ -308,6 +384,9 @@ div.container a.menu-opener span.menu-stick {
 }
 
 @media all and (max-width: 768px) {
+  div.container a.menu-opener {
+    top: 18.5px;
+  }
   div.container a.menu-opener span.menu-stick {
     width: 20px;
     height: 1px;

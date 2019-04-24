@@ -15,105 +15,119 @@
   <div class="hero">
     <h1>Global Knowledge<span>enterprise</span></h1>
   </div>
-  <header class="main-header"open>
+  <header class="main-header" open>
     <!-- container/wrapper/wrap 영역임 -->
     <div class="container">
       <h1 class="logo">
-        <a href="#">Ware<span>Valley</span></a>
+        <a href="javascript:;">Ware<span>Valley</span></a>
       </h1>
       <nav class="gnb">
         <ul class="gnb-menu">
           <!-- li.menu-item -->
           <!-- a class명이 없어도 무방하고 css는 >a 로 표현 -->
-          <li class="menu-item"><a href="product.html">Product</a>
-            <ul class="sub-menu">
+          <li class="menu-item"><a href="javascript:;">Product</a>
+            <ul class="sub-menu" hover>
               <li>
-                <a href="#">cyclone</a>
+                <a href="javascript:;">cyclone</a>
               </li>
               <li>
-                <a href="#">chakra max</a>
+                <a href="javascript:;">chakra max</a>
               </li>
               <li>
-                <a href="#">galea</a>
+                <a href="javascript:;">galea</a>
               </li>
               <li>
-                <a href="#">trusted orange</a>
+                <a href="javascript:;">trusted orange</a>
               </li>
               <li>
-                <a href="#">orange</a>
+                <a href="javascript:;">orange</a>
               </li>
               <li>
-                <a href="#">petaSQL</a>
+                <a href="javascript:;">petaSQL</a>
               </li>
               <li>
-                <a href="#">lora</a>
-              </li>
-            </ul>
-          </li>
-          <li class="menu-item">
-            <a href="#">Solutions</a>
-            <ul class="sub-menu">
-              <li>
-                <a href="#">WISS</a>
+                <a href="javascript:;">lora</a>
               </li>
             </ul>
           </li>
           <li class="menu-item">
-            <a href="#">Support</a>
+            <a href="javascript:;">Solutions</a>
             <ul class="sub-menu">
               <li>
-                <a href="#">traning</a>
-              </li>
-              <li>
-                <a href="#">download</a>
-              </li>
-              <li>
-                <a href="#">orange board</a>
+                <a href="javascript:;">WISS</a>
               </li>
             </ul>
           </li>
           <li class="menu-item">
-            <a href="#">About us</a>
+            <a href="javascript:;">Support</a>
             <ul class="sub-menu">
               <li>
-                <a href="#">CEO greetings</a>
+                <a href="javascript:;">traning</a>
               </li>
               <li>
-                <a href="#">history</a>
+                <a href="javascript:;">download</a>
               </li>
               <li>
-                <a href="#">partners</a>
+                <a href="javascript:;">orange board</a>
+              </li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <a href="javascript:;">About us</a>
+            <ul class="sub-menu">
+              <li>
+                <a href="javascript:;">CEO greetings</a>
               </li>
               <li>
-                <a href="#">news</a>
+                <a href="javascript:;">history</a>
               </li>
               <li>
-                <a href="#">contact us</a>
+                <a href="javascript:;">partners</a>
+              </li>
+              <li>
+                <a href="javascript:;">news</a>
+              </li>
+              <li>
+                <a href="javascript:;">contact us</a>
               </li>
             </ul>
           </li>
         </ul>
       </nav>
   
-      <a href="#" class="menu-opener" role="button">
+      <a href="javascript:;" class="menu-opener" role="button">
         <!-- item이라는 말은 데이터의 의미가 강함 menu-stick / line -->
         <span class="menu-stick" role="image"></span>
         <span class="menu-stick" role="image"></span>
         <span class="menu-stick" role="image"></span>
       </a>
       <nav class="tnb">
-        <a href="#"><i class="far fa-file-alt"></i> Warevalley Data</a>
-        <a href="#"><i class="fas fa-fingerprint"></i> Login</a>
-        <a href="#"><i class="fas fa-globe"></i> Language</a>
+        <a href="javascript:;"><i class="far fa-file-alt"></i> Warevalley Data</a>
+        <a href="javascript:;"><i class="fas fa-fingerprint"></i> Login</a>
+        <a href="javascript:;"><i class="fas fa-globe"></i> Language</a>
       </nav>
     </div>
   </header>
 
   <script> 
       //메뉴 click 효과
+
       $(document).on('click','.menu-opener',function(){
         $('.main-header').attr('open');
       });
+
+      //pc버전일때가 전제조건임 아래껀 적용안됌
+      false && $(document).on('click','.menu-item',function(){
+        $('.main-header').attr('open');
+      });
+
+      //mobile버전일때가 전제조건임
+      false && $(document).on('click','.menu-item', function(){
+        var subMenuOpen = $(this).index();
+        $('.sub-menu').eq(subMenuOpen).addClass('.sub-menu-open');
+      });
+
+      
     
       //메뉴열기
       $(document).on('click','.menu-opener',function(){

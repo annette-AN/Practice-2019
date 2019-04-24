@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR|Raleway');
 
-@mixin media-tablet {
-  @media all and (min-width:769px) and (max-width:1200px) {
-    @content;
-  }
-}
-
 @mixin media-mobile {
   @media all and (max-width:768px) {
     @content;
@@ -28,40 +22,264 @@ a img {border: 0;}
 img {vertical-align: middle;} //인라인요소에 middle 기본 리셋
 body {font: 15px/1.6 'Noto Sans KR';}
 
-
-header#main-header {
-  position: relative;
+div.hero {
+  background: url(../img/main_img2.png) no-repeat center / cover;
   width: 100%;
   height: 840px;
-  background: url(../img/main_img2.png) no-repeat center / cover;
+  transition: all .4s;
 
-  nav#main-nav, nav#hidden-nav {
-    height: 120px;
-    background: rgba(0,0,0,0.6);
+  h1 {
+    position: absolute;
+    //세로를 줄였을 때 header영역을 침범하지 않았으면해서 아래처럼 함
+    top: calc(50% + 30px);
+    left: 50%;
+    transform: translate(-50%,-50%);
+    line-height: 1.3;
+    //fit-content 적용, 개행이 안됌
+    width:fit-content;
+    font-size: 50px;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 3px;
+    text-shadow: -2px 2px 5px rgba(0,0,0,0.6);
+    transition: all .4s;
 
-    div.inner-nav {
-      position: relative;
-      max-width: calc(100% - 40px);
-      width: 1200px;
-      height: 100%;
-      color: #fff;
-      margin: 0 auto;
+    span {
+      display: block;
+      font-size: 30px;
+      font-weight: lighter;
+      letter-spacing: 8px;
+      margin-left: 4px;
+      text-transform: uppercase;
+      text-shadow: -2px 2px 5px rgba(145, 144, 144, 0.6);
+      transition: all .4s;
     }
   }
 
-
-  //header#main-header
+  
   @include media-mobile(){
     height: 400px;
+    position: relative;
+    
+    h1{
+      top: calc(50% + 50px);
+      font-size: 30px;
 
-    nav#main-nav {
-      height: 50px;
+      span {
+        font-size: 20px;
+        line-height: 2;
+      }
+    }
+  }
+}
+
+header.main-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: rgba(0,0,0,0.6);
+  transition: all .4s;
+  
+  div.container {
+    position: relative;
+    max-width: calc(100% - 40px);
+    width: 1200px;
+    height: 100%;
+    color: #fff;
+    margin: 0 auto;
+  }
+  
+  //header.main-header
+  @include media-mobile(){
+    height: 50px;
+  }
+}
+
+//헤더가 오픈일때
+header.main-header {
+  &[open] {
+    background-color: #F5F6F8;
+    height: 480px;
+
+    h1.logo {
+      //패딩효과가 부자연스러움
+      padding-left: 30px;
+
+      a {
+        transform: scale(1.5) translateY(-50%);
+        color: #949592;
+
+        span {
+          //색이 늦게 바뀜
+          color: #949592;
+        }
+      }
+
+      //h1
+      @include media-mobile(){
+        height: 50px;
+        position: relative;
+
+
+        a{
+          padding-top: 30px;
+          font-size: 14px;
+  
+          span {
+            font-size: 13px;
+            padding-left: 10px;
+          }
+        }
+      }
+    }
+
+    //header.main-header
+    @include media-mobile(){
+      position: fixed;
+      right: 0;
+      left: auto;
+      width: 85%;
+      height: 100%;
+  
+      div.container {
+        height: 100%;
+      }
+    }
+
+    .menu-opener {
+      top: 65px;
+
+      .menu-stick {
+        background-color: #646464;
+      }
+        //click할때 transition 적용
+      .menu-stick:nth-child(1) {
+        transform: rotate(45deg);
+        transform-origin: 2px;
+      }
+
+      .menu-stick:nth-child(2) {
+        opacity: 0; 
+      }
+
+      .menu-stick:nth-child(3) {
+        transform: rotate(-45deg);
+        transform-origin: 2px;
+      }
+
+      @include media-mobile(){
+        top: 16.5px;
+      }
+    }
+
+    nav.tnb {
+      a {
+        color: #949592;
+      }
+    }
+
+    nav.gnb {
+
+      ul.gnb-menu {
+        li.menu-item {
+          
+          a{
+            color: #110c0c;
+            font-weight: bold;
+          }
+
+          ul.sub-menu {
+            background-color: transparent;
+            padding: 15px 30px;
+            height: auto;
+            margin-left: 30px;
+            white-space: nowrap;
+            
+            li {
+              display: block;
+              height: 45px;
+              transition: height .4s;
+
+              a{
+                color: #646464;
+              }
+            }
+          }
+        }
+      }
+
+      //nav.gnb
+      @include media-mobile(){
+        width: 200px;
+        left: 0;
+        height: 100%;
+        margin-left: 20px;
+        z-index: 999;
+        opacity: 1;
+    
+        >ul.gnb-menu{
+          margin-top: 20px;
+          height: 100%;
+          display: block;
+    
+          >li.menu-item{
+            width: 100%;
+            text-align: left;
+            float: none;
+            transition: all .2s;
+    
+            &.sub-menu-open {
+              > ul.sub-menu {
+                opacity: 1;
+                height: auto;
+                padding: 0;
+                
+                >li {
+                  height: 45px;
+
+                  a{
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+    
+            >a {
+              font-weight: normal;
+              font-size: 20px;
+              letter-spacing: 3px;
+              padding: 15px 15px 10px 15px;
+            }
+            
+            >ul.sub-menu{
+              height: 0px;
+              opacity: 0;
+              padding: 0px;
+    
+              >li{
+                height: 40px;
+
+    
+                >a{
+                  font-size: 16px;
+                  font-weight: normal;
+                  line-height: 40px;
+                  letter-spacing: 1.5px;   
+                  opacity: 0;             
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
 
 
-div.inner-nav {
+div.container {
   h1.logo {
     height: 100%;
 
@@ -73,11 +291,13 @@ div.inner-nav {
       font: bold 36px 'Raleway';
       color: #fff;
       line-height: 0.9;
+      transition: all .4s;
 
       span {
         display: block;
         padding-left: 30px;
         font-size: 30px;
+        transition: all .4s;
       }
     }
     @include media-mobile(){
@@ -93,7 +313,7 @@ div.inner-nav {
   }
 }
 
-div.inner-nav {
+div.container {
   >nav.gnb {
     position: absolute;
     top: 58px;
@@ -106,23 +326,12 @@ div.inner-nav {
       overflow: hidden;
       max-width: calc(100% - 10px);
 
-      >li.menus{
+      >li.menu-item{
         width: 25%;
         float: left;
         text-align: center;
 
-        &:hover{
-          >ul.sub-menus {
-            height: calc(100% + 0px);
-            padding: 15px 30px;
-            
-            >li {
-              height: 45px;
-            }
-          }
-        }
-
-        >a.menus-a{
+        >a{
           display: block;
           color: #fff;
           font-size: 14px;
@@ -130,18 +339,16 @@ div.inner-nav {
           padding: 20px 40px;
         }
         
-        >ul.sub-menus{
+        >ul.sub-menu{
           position: relative;
           height: 0px;
           overflow: hidden;
           background-color: #fff;
-          transition: all .2s;
           padding: 0px 30px;
 
           >li{
             height: 0px;
             text-align: left;
-            transition: all .2s;
 
             >a{
               color: #898989;
@@ -152,32 +359,38 @@ div.inner-nav {
           }
         }
       }
+    }
 
-      //ul.gnb-menu
-      @include media-mobile(){
-        display: none;
-      }
+    @include media-mobile(){
+      opacity: 0;
+      height: 0px;
+      overflow: hidden;
     }
   }
 }
 
 
-div.inner-nav {
-  a.menu {
+div.container {
+  a.menu-opener {
     position: absolute;
-    bottom: 15px;
+    top: 65px;
     right: 0;
 
-    span.item {
+    span.menu-stick {
       background: #fff;
       display: block;
       width: 40px;
       height: 3px;
       margin: 0 0 10px;
-      transition: all .3s;
+      transition: all .4s;
       //click할때 transition 적용
 
-      @include media-mobile(){
+    }
+
+    @include media-mobile(){
+      top: 18.5px;
+
+      span.menu-stick {
         width: 20px;
         height: 1px;
         margin: 0 0 5px;
@@ -186,7 +399,7 @@ div.inner-nav {
   }
 }
 
-div.inner-nav {
+div.container {
   nav.tnb {
     position: absolute;
     top: 0;
@@ -204,291 +417,12 @@ div.inner-nav {
   }
 }
 
-//hidden-nav 영역
-
-header#main-header{
-  nav#hidden-nav {
-    z-index: 1;
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow: hidden; // 아래에 글로벌 메뉴가 표시됌
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    display: none;
-
-    &[open] {
-      display: block;
-    }
-
-    div.inner-nav{
-      position: relative;
-      max-width: calc(100% - 40px);
-      width: 1200px;
-      height: 120px;
-      color: #fff;
-      margin: 0 auto;
-
-      h1.logo {
-        height: 100%;
-    
-        a {
-          color: #949592;
-        }
-      }
-
-      a.menu {
-        span.item {
-          background-color: #646464;
-        }
-         //click할때 transition 적용
-        .item:nth-child(1) {
-          transform: rotate(45deg);
-          transform-origin: 2px;
-        }
-
-        .item:nth-child(2) {
-          opacity: 0; 
-        }
-
-        .item:nth-child(3) {
-          transform: rotate(-45deg);
-          transform-origin: 2px;
-        }
-      }
-    }
-
-    div.tnb-wrap {
-      position: relative;
-      top: 0;
-      max-width: calc(100% - 40px);
-      width: 1200px;
-      height: 0px;
-      margin: 0 auto;
-
-      nav.tnb {
-        position: absolute;
-        top: -120px;
-        right: 0;
-
-        a {
-          color: #949592;
-          padding: 5px 15px;
-          margin-right: 10px;
-          font-size: 12px;
-        }
-      }
-    }
-
-    div.gnb-wrap{ //gnb가 1200px 기준으로 width가 줄어듬
-      width:100%;
-      height: 100%;
-      background-color: #F5F6F8;
-      overflow: hidden;
-      
-      nav.gnb {
-        width: 1200px;
-        margin: 0 auto;
-        overflow: hidden;
-        @include media-tablet(){
-          width: 800px;
-        }
-
-        a {
-          text-transform: capitalize;
-          display: block;
-          letter-spacing: 1px;
-
-          @include media-tablet(){
-            letter-spacing: 0;
-          }
-        }
-
-        ul.gnb-menu {
-          padding-top: 10px;
-          padding-left: 60px;
-          @include media-tablet(){
-            padding-left: 15px;
-          }
-
-
-          li.menus {
-            width: 25%;
-            float: left;
-            
-            a.menus-a {
-              padding: 45px 0;
-              color: #333333;
-              font-weight: bold;
-              font-size: 37px;
-              @include media-tablet(){
-                font-size: 32px;
-              }
-            }
-
-            ul.sub-menus {
-              li {
-                padding: 16px 0;
-
-                a {
-                  color: #646464;
-                  font-size: 30px;
-                  @include media-tablet(){
-                    font-size: 23px;
-                  }
-                  
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-
-    // hidden-nav
-    @include media-mobile(){
-      width: 85%;
-      right: 0;
-      left: auto;
-      background: #F5F6F8;
-
-      div.inner-nav {
-        height: 50px;
-
-        h1.logo {
-          display: none;
-        }
-      }
-
-      div.tnb-wrap {
-        max-width: 100%;
-        width: 100%;
-  
-        nav.tnb {
-          position: fixed;
-          top:auto;
-          bottom: 0%;
-          width: 85%;
-          height: 55px;
-          overflow: hidden;
-          border-top: 1px solid #bbbbbb;
-
-          a {
-            display: block;
-            float: left;
-            width: 50%;
-            margin: 0;
-            padding: 0;
-            color: #949592;
-            line-height: 55px;
-            font-size: 12px;
-            text-align: center;
-            border-right: 1px solid #bbbbbb;
-
-            &:first-child {
-              display: none;
-            }
-
-            &:last-child {
-              border-right: none;
-            }
-
-            i {
-              margin-right: 5px;
-            }
-          }
-        }
-      }
-
-      div.gnb-wrap {
-        background: #F5F6F8;
-        margin-left: 40px;
-
-        nav.gnb {
-          margin-top: 5px;
-
-          ul.gnb-menu{
-            li.menus {
-              float: none;
-              width: 100%;
-              margin: 0;
-              
-              a.menus-a {
-                font-size: 20px;
-                font-weight: normal;
-                padding: 14px 0px;
-                letter-spacing: 5px;
-              }
-
-              ul.sub-menus {
-
-                li { //click하면 나와야함
-                  display: none;
-                  padding: 14px 0px;
-
-                  a{
-                    font-size: 13px;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    //include-mobile end
-  }
-}
-
-header#main-header {
-  >div.mainTitle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    line-height: 1.3;
-    width:fit-content;
-
-    h1{
-      font-size: 50px;
-      text-align: center;
-      color: #fff;
-      letter-spacing: 3px;
-      margin-left: 1.5px;
-      text-shadow: -2px 2px 5px rgba(0,0,0,0.6);
-    }
-
-    span {
-      display: block;
-      font-size: 30px;
-      font-weight: lighter;
-      letter-spacing: 8px;
-      margin-left: 4px;
-      text-transform: uppercase;
-      text-shadow: -2px 2px 5px rgba(145, 144, 144, 0.6);
-    }
-
-    @include media-mobile(){
-      line-height: 2;
-      
-      h1 {
-        font-size: 30px;
-      }
-
-      span {
-        font-size: 20px;
-      }
-    }
-  }
-}
-
 section {
   padding-top: 100px;
   padding-bottom: 100px;
 }
 
-h2.subTitle {
+h2 {
   font: bold 25px;
   text-align: center;
   margin-bottom: 100px;
@@ -548,14 +482,6 @@ section#product {
           }
         }
       }
-
-      // ul  
-      @include media-mobile(){
-        li p {
-          display: none;
-        }
-    
-      }
     }
 
     li.cyclone {
@@ -574,11 +500,50 @@ section#product {
       background: url(../img/ico5.png) center top no-repeat /200px 200px ;
     }
   }
+
+  //product
+  @include media-mobile(){
+    height: 440px;
+    padding: 40px 0px 20px 0px;
+
+    article {
+      height: 100%;
+
+      h2{
+        margin-bottom: 35px;
+
+      }
+      
+      ul {
+        height: 245px;
+        // overflow: hidden;
+
+        li{
+          width: 130px;
+          
+          h3{
+            padding-top: 160px;
+          }
+          p{
+            display: none;
+          }
+          a{
+            margin-top: 30px;
+          }
+        }
+
+        li.cyclone, li.chakra-max, li.galea, li.trusted-orange, li.orange  {
+          background-size: 130px 130px;
+        }
+
+      }
+    }
+  }
 }
 
 
 
-section#boardList {
+section.board-list {
   background-color: #f5f6f8;
 
 
@@ -609,21 +574,24 @@ section#boardList {
         }
 
         p{
-          color: #fff;
+          color: rgba(255, 255, 255, 0.8);
           font-size: 15px;
           letter-spacing: 0.5px;
           line-height: 1.5;
-          padding-top: 20px;
+          padding-top: 10px;
         }
       }
 
+      //ul.utill-wrap
       @include media-mobile{
         display: block;
         width: 100%;
+        margin-bottom: 0px;
         
         li {
           width: 100%;
           height: auto;
+          min-height: 100px;
           margin-bottom: 10px;
           padding: 15px 20px;
 
@@ -632,6 +600,7 @@ section#boardList {
           }
           
           p {
+            padding-top: 20px;
             font-size: 14px;
 
             br {
@@ -642,7 +611,7 @@ section#boardList {
       }
     }
 
-    div.left, div.right {
+    div {
       width: 45%;
       
       h3 {
@@ -678,23 +647,32 @@ section#boardList {
       }
     }
 
-    div.left {
+    div.orange-board {
       float: left;
       margin-left: 30px;
     }
 
-    div.right {
+    div.news {
       float: right;
       margin-right: 30px;
     }
+  }
 
-    @include media-mobile{
-      
-      div.left, div.right {
-        float: none;
-        max-width: 100%;
-        width: 100%;
-        margin: 0;
+  @include media-mobile{
+    padding-top: 40px; 
+    padding-bottom: 40px; 
+  
+    div{
+      div.orange-board, div.news {
+      float: none;
+      max-width: 100%;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+
+        h3 {
+          padding-left: 10px;
+        }
 
         ul li {
           padding: 10px;
@@ -710,7 +688,7 @@ section#boardList {
 
 
 
-section#aboutus {
+section.aboutus {
 
   h2 {
     margin-bottom: 0;
@@ -771,6 +749,10 @@ section#aboutus {
       }
     }
   }
+
+  @include media-mobile(){
+    display: none;
+  }
 }
 
 footer {
@@ -779,7 +761,7 @@ footer {
   overflow: hidden;
 
 
-  div.btnSet{
+  div.btn-set{
     margin: 40px auto 0;
 
     a {
@@ -796,7 +778,7 @@ footer {
     }
   }
 
-  address.mainFooter {
+  address.main-footer {
     margin: 20px auto 0;
 
     span {
@@ -815,12 +797,54 @@ footer {
       }
     }
   }
+  
   div.valleyLogo {
     width: 190px;
     height: 45px;
     margin: 30px auto 40px;
     background-color: #fff;
     border-radius: 30px;
+  }
+
+  //footer
+  @include media-mobile(){
+
+    div.btn-set {
+      width: 100%;
+      margin: 0;
+
+      a{
+        display: block;
+        border: 1px solid #5A5A5A;
+        border-radius: 0;
+        height: 55px;
+        line-height: 55px;
+        background-color: #545454;
+        margin: 0px;
+        padding: 0px;
+        font-size: 15px;
+
+      }
+    }
+
+    address.main-footer {
+      margin: 0px;
+
+      span{
+        padding: 15px 0px 0px 0px;
+        display: block;
+        font-size: 14px;
+        color: #fff;
+
+        a{
+          color: #fff;
+        }
+      }
+
+      br {
+        display: none;
+      }
+    }
   }
 }
 

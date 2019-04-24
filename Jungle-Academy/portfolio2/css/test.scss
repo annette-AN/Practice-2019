@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR|Raleway');
 
-@mixin media-tablet {
-  @media all and (min-width:769px) and (max-width:1200px) {
-    @content;
-  }
-}
-
 @mixin media-mobile {
   @media all and (max-width:768px) {
     @content;
@@ -64,7 +58,7 @@ div.hero {
 
   
   @include media-mobile(){
-    height: 500px;
+    height: 400px;
     position: relative;
     
     h1{
@@ -107,11 +101,7 @@ header.main-header {
 header.main-header {
   &[open] {
     background-color: #F5F6F8;
-    height: 500px;
-
-    div.container {
-      // height: 100%;
-    }
+    height: 480px;
 
     h1.logo {
       //패딩효과가 부자연스러움
@@ -125,6 +115,36 @@ header.main-header {
           //색이 늦게 바뀜
           color: #949592;
         }
+      }
+
+      //h1
+      @include media-mobile(){
+        height: 50px;
+        position: relative;
+
+
+        a{
+          padding-top: 7.75px;
+          font-size: 14px;
+  
+          span {
+            font-size: 13px;
+            padding-left: 10px;
+          }
+        }
+      }
+    }
+
+    //header.main-header
+    @include media-mobile(){
+      position: fixed;
+      right: 0;
+      left: auto;
+      width: 85%;
+      height: 100%;
+  
+      div.container {
+        height: 100%;
       }
     }
 
@@ -148,6 +168,10 @@ header.main-header {
         transform: rotate(-45deg);
         transform-origin: 2px;
       }
+
+      @include media-mobile(){
+        top: 16.5px;
+      }
     }
 
     nav.tnb {
@@ -167,24 +191,86 @@ header.main-header {
           }
 
           ul.sub-menu {
-            //css속성 초기화하기
             background-color: transparent;
             padding: 15px 30px;
             height: auto;
             margin-left: 30px;
             white-space: nowrap;
-            transition: height .4s , background-color .000001s;
             
             li {
               display: block;
               height: 45px;
               transition: height .4s;
-              // padding: 16px;
 
               a{
                 color: #646464;
               }
+            }
+          }
+        }
+      }
 
+      //nav.gnb
+      @include media-mobile(){
+        width: 200px;
+        left: 0;
+        height: 100%;
+        margin-left: 20px;
+        z-index: 999;
+        opacity: 1;
+    
+        >ul.gnb-menu{
+          margin-top: 20px;
+          height: 100%;
+          display: block;
+    
+          >li.menu-item{
+            width: 100%;
+            text-align: left;
+            float: none;
+            transition: all .2s;
+            
+    
+            &.sub-menu-open, &:hover {
+              >ul.sub-menu {
+                opacity: 1;
+                height: auto;
+                padding: 0;
+                
+                >li {
+                  height: 45px;
+
+                  a{
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+    
+            >a {
+              font-weight: normal;
+              font-size: 20px;
+              letter-spacing: 3px;
+              padding: 15px 15px 10px 15px;
+            }
+            
+            >ul.sub-menu{
+              height: 0px;
+              opacity: 0;
+              padding: 0px;
+    
+              >li{
+                height: 40px;
+
+    
+                >a{
+                  font-size: 16px;
+                  font-weight: normal;
+                  line-height: 40px;
+                  letter-spacing: 1.5px;   
+                  opacity: 0;             
+                }
+              }
             }
           }
         }
@@ -246,17 +332,6 @@ div.container {
         float: left;
         text-align: center;
 
-        &:hover{
-          >ul.sub-menu {
-            height: calc(100% + 0px);
-            padding: 15px 30px;
-            
-            >li {
-              height: 45px
-            }
-          }
-        }
-
         >a{
           display: block;
           color: #fff;
@@ -270,13 +345,11 @@ div.container {
           height: 0px;
           overflow: hidden;
           background-color: #fff;
-          transition: padding .2s;
           padding: 0px 30px;
 
           >li{
             height: 0px;
             text-align: left;
-            transition: height .2s;
 
             >a{
               color: #898989;
@@ -287,11 +360,12 @@ div.container {
           }
         }
       }
+    }
 
-      //ul.gnb-menu
-      @include media-mobile(){
-        display: none;
-      }
+    @include media-mobile(){
+      opacity: 0;
+      height: 0px;
+      overflow: hidden;
     }
   }
 }
@@ -312,7 +386,12 @@ div.container {
       transition: all .4s;
       //click할때 transition 적용
 
-      @include media-mobile(){
+    }
+
+    @include media-mobile(){
+      top: 18.5px;
+
+      span.menu-stick {
         width: 20px;
         height: 1px;
         margin: 0 0 5px;
