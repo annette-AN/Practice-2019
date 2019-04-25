@@ -1,0 +1,300 @@
+h1, h2, h3, h4, div, ul, ol, li, dl, dt, dd, p, address, header, nav, main,
+section, article, footer, aside, figure, a {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header, body, nav, main, section, article, footer, aside, figure {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #898989;
+}
+
+a img {
+  border: 0;
+}
+
+img {
+  vertical-align: middle;
+}
+
+body {
+  font: 15px/1.6 'Noto Sans KR';
+}
+
+header.main-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: #fff;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+header.main-header div.container {
+  position: relative;
+  max-width: calc(100% - 40px);
+  width: 1200px;
+  height: 100%;
+  color: #fff;
+  margin: 0 auto;
+}
+
+header.main-header div.container h1.logo {
+  height: 100%;
+}
+
+header.main-header div.container h1.logo a {
+  position: absolute;
+  vertical-align: middle;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font: bold 36px 'Raleway';
+  color: #949592;
+  line-height: 0.9;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+header.main-header div.container h1.logo a span {
+  display: block;
+  padding-left: 30px;
+  font-size: 30px;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+@media all and (max-width: 768px) {
+  header.main-header div.container h1.logo a {
+    font-size: 14px;
+  }
+  header.main-header div.container h1.logo a span {
+    font-size: 13px;
+    padding-left: 10px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  header.main-header {
+    height: 50px;
+  }
+}
+
+div.container > nav.gnb {
+  position: absolute;
+  top: 58px;
+  right: 80px;
+  width: 690px;
+  overflow: hidden;
+  z-index: 999;
+}
+
+div.container > nav.gnb > ul.gnb-menu {
+  overflow: hidden;
+  max-width: calc(100% - 10px);
+}
+
+div.container > nav.gnb > ul.gnb-menu > li.menu-item {
+  width: 25%;
+  float: left;
+  text-align: center;
+}
+
+div.container > nav.gnb > ul.gnb-menu > li.menu-item > a {
+  display: block;
+  color: #110c0c;
+  font-size: 14px;
+  text-transform: capitalize;
+  padding: 20px 40px;
+}
+
+div.container > nav.gnb > ul.gnb-menu > li.menu-item > ul.sub-menu {
+  position: relative;
+  height: 0px;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 0px 30px;
+}
+
+div.container > nav.gnb > ul.gnb-menu > li.menu-item > ul.sub-menu > li {
+  height: 0px;
+  text-align: left;
+}
+
+div.container > nav.gnb > ul.gnb-menu > li.menu-item > ul.sub-menu > li > a {
+  color: #898989;
+  font-size: 12px;
+  text-transform: capitalize;
+  line-height: 45px;
+}
+
+@media all and (max-width: 768px) {
+  div.container > nav.gnb {
+    opacity: 0;
+    height: 0px;
+    overflow: hidden;
+  }
+}
+
+div.container a.menu-opener {
+  position: absolute;
+  top: 65px;
+  right: 0;
+}
+
+div.container a.menu-opener span.menu-stick {
+  background: #646464;
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin: 0 0 10px;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+@media all and (max-width: 768px) {
+  div.container a.menu-opener {
+    top: 18.5px;
+  }
+  div.container a.menu-opener span.menu-stick {
+    width: 20px;
+    height: 1px;
+    margin: 0 0 5px;
+  }
+}
+
+div.container nav.tnb {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+div.container nav.tnb a {
+  color: #949592;
+  padding: 5px 15px;
+  margin-right: 10px;
+  font-size: 12px;
+}
+
+@media all and (max-width: 768px) {
+  div.container nav.tnb {
+    display: none;
+  }
+}
+
+footer {
+  background-color: #5a5a5a;
+  text-align: center;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+footer div.btn-set {
+  margin: 40px auto 0;
+}
+
+footer div.btn-set a {
+  border: 1px solid #9c9c9c;
+  border-radius: 30px;
+  padding: 6px 18px;
+  margin: 0 5px;
+  color: #fff;
+  font-size: 12px;
+}
+
+footer div.btn-set a i {
+  padding-left: 5px;
+}
+
+footer address.main-footer {
+  margin: 20px auto 0;
+}
+
+footer address.main-footer span {
+  font-style: normal;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 0 10px;
+  border-right: 1px solid #9c9c9c;
+}
+
+footer address.main-footer span a {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+footer address.main-footer span:nth-child(4), footer address.main-footer span:last-child {
+  border: none;
+}
+
+footer div.valleyLogo {
+  width: 190px;
+  height: 45px;
+  margin: 30px auto 40px;
+  background-color: #fff;
+  border-radius: 30px;
+}
+
+@media all and (max-width: 768px) {
+  footer div.btn-set {
+    width: 100%;
+    margin: 0;
+  }
+  footer div.btn-set a {
+    display: block;
+    border: 1px solid #5A5A5A;
+    border-radius: 0;
+    height: 55px;
+    line-height: 55px;
+    background-color: #545454;
+    margin: 0px;
+    padding: 0px;
+    font-size: 15px;
+  }
+  footer address.main-footer {
+    margin: 0px;
+  }
+  footer address.main-footer span {
+    padding: 15px 0px 0px 0px;
+    display: block;
+    font-size: 14px;
+    color: #fff;
+  }
+  footer address.main-footer span a {
+    color: #fff;
+  }
+  footer address.main-footer br {
+    display: none;
+  }
+}
+
+div.logo-Top {
+  z-index: 9999;
+  position: fixed;
+  right: 0;
+  bottom: 30px;
+  width: 55px;
+  height: 55px;
+  background-color: #333333;
+  color: #fff;
+  line-height: 55px;
+  font-size: 10px;
+  text-align: center;
+}
+/*# sourceMappingURL=sign-in.css.map */
