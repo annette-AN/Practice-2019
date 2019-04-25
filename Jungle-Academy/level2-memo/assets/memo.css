@@ -272,9 +272,43 @@ section.memo-show .memo-body div#btn-set button {
   outline: none;
 }
 
-@media all and (min-width: 768px) and (max-width: 1024px) {
+@media all and (max-width: 768px) {
   section.memo-show .memo-body {
-    display: inline-block;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    min-height: 60px;
+  }
+  section.memo-show .memo-body:hover {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  section.memo-show .memo-body .blind-sec {
+    width: 75%;
+  }
+  section.memo-show .memo-body .blind-sec #fixed-icon {
+    display: none;
+  }
+  section.memo-show .memo-body .memo-description, section.memo-show .memo-body .memo-mid-icons {
+    display: none;
+  }
+  section.memo-show .memo-body div#btn-set {
+    display: block;
+    width: 25%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  section.memo-show .memo-body div#btn-set button {
+    display: block;
+    line-height: 20px;
+    margin: 0;
+    padding: 5px 0;
+    border-left: 1px solid #c4c4c4;
+    border-bottom: 1px solid #c4c4c4;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
   }
 }
 /*# sourceMappingURL=memo.css.map */

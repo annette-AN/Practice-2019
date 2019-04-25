@@ -1,3 +1,9 @@
+@mixin media-mobile {
+  @media all and (max-width:768px) {
+    @content;
+  }
+}
+
 section.memo-write {
 
   .memo-body {
@@ -129,7 +135,7 @@ section.memo-write {
 }
 
 
-//메모쇼
+//memo-show
 section.memo-show {
 
   .no-memo {
@@ -281,8 +287,54 @@ section.memo-show {
   }
 }
 
-@media all and (min-width:768px) and (max-width:1024px){
-  section.memo-show .memo-body {
-    display: inline-block;
+@include media-mobile{
+
+  section.memo-show {
+    .memo-body{
+      height: auto;
+      overflow: hidden;
+      //
+      position: relative;
+      min-height: 60px;
+
+      &:hover {
+        box-shadow: none;
+      }
+
+      .blind-sec {
+        width: 75%;
+
+        #fixed-icon {
+          display: none;
+        }
+      }
+
+      .memo-description, .memo-mid-icons {
+        display: none;
+      }
+
+      div#btn-set {
+        display: block;
+        width: 25%;
+        //추가
+        position: absolute;
+        top: 0px;
+        right: 0px;
+
+        button {
+          //저장과 삭제가 되면 좋겠다
+          display: block;
+          line-height: 20px;
+          margin: 0;
+          padding: 5px 0;
+          //추가
+          border-left: 1px solid #c4c4c4;
+          border-bottom: 1px solid #c4c4c4;
+          box-sizing: border-box;
+          width: 100%;
+          
+        }
+      }
+    }
   }
 }
