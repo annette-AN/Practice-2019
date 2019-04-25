@@ -22,8 +22,10 @@ a img {border: 0;}
 img {vertical-align: middle;} //인라인요소에 middle 기본 리셋
 body {font: 15px/1.6 'Noto Sans KR';}
 
-div.hero {
-  background: url(../img/main_img2.png) no-repeat center / cover;
+//top-hero 공통
+div.top-hero {
+  display: none;
+  background: url(../img/main_img2.png) no-repeat center top ;
   width: 100%;
   height: 840px;
   transition: all .4s;
@@ -31,7 +33,7 @@ div.hero {
   h1 {
     position: absolute;
     //세로를 줄였을 때 header영역을 침범하지 않았으면해서 아래처럼 함
-    top: calc(50% + 30px);
+    top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     line-height: 1.3;
@@ -56,19 +58,117 @@ div.hero {
     }
   }
 
-  
+  .hero-btn {
+    display: block;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid #fff;
+    border-radius: 20px;
+    padding: 5px 40px;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
   @include media-mobile(){
+    background-size: cover;
     height: 400px;
     position: relative;
-    
-    h1{
-      top: calc(50% + 50px);
+
+    h1 {
+      top: 50%;
       font-size: 30px;
 
       span {
         font-size: 20px;
         line-height: 2;
       }
+    }
+
+    .hero-btn {
+      top : 82%;
+      right: auto;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 12px;
+      padding: 9px 40px;
+    }
+  }
+}
+
+//hero1,2,3 각각의 style
+.top-hero.hero1{
+  // display: block;
+
+  h1 {
+    top: calc(50% + 120px);
+
+    @include media-mobile(){
+      top: 50%;  
+    }
+  }
+}
+
+.top-hero.hero2{
+  // display: block;
+  background-image: url(../img/download/common/slide_visual02.jpg);
+
+  @include media-mobile(){
+
+    h1 {
+      span{
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.top-hero.hero3{
+  display: block;
+  background-image: url(../img/download/common/slide_visual03.jpg);
+
+  h1, .hero-btn {
+    left: auto;
+    transform: none;
+  }
+
+  h1 {
+    top: 30%;
+    right: 150px;
+
+    img {
+      //이미지 깨짐
+      width: 450px;
+    }
+  }
+
+  .hero-btn {
+    top: 70%;
+    right: 345px;
+  }
+
+ //hero3
+  @include media-mobile(){
+    h1{
+      right: auto;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      span {
+        font-size: 18px;
+        line-height: 2;
+        opacity: 0.8;
+      }
+    }
+    .hero-btn {
+      top: 82%;
+      right: auto;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 }
@@ -425,7 +525,7 @@ section {
 h2 {
   font: bold 25px;
   text-align: center;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 section#product {
@@ -436,7 +536,7 @@ section#product {
     margin: 0 auto;
     overflow: hidden;
 
-    ul {
+    ul {//스와이퍼로 적용할 예정
       display: block;
       height: 400px;
       text-align: center;
@@ -448,8 +548,17 @@ section#product {
         margin: 0 auto;
         height: 100%;
 
+        .image-wrap {
+          background: #f5f6f8 url(../img/download/common/icon_solutions1.png) center no-repeat /80px 80px;
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          margin: 0 auto;
+         
+        }
+
         h3{
-          padding-top: 230px;
+          padding-top: 30px;
           font-size: 15px;
           color: #333333;
         }
@@ -484,20 +593,26 @@ section#product {
       }
     }
 
-    li.cyclone {
-      background: url(../img/ico1.png) center top no-repeat /200px 200px ;
+    li.cyclone > .image-wrap {
     }
-    li.chakra-max {
-      background: url(../img/ico2.png) center top no-repeat /200px 200px ;
+    li.chakra-max > .image-wrap {
+      background-image: url(../img/download/common/icon_solutions2.png);
     }
-    li.galea {
-      background: url(../img/ico3.png) center top no-repeat /200px 200px ;
+    li.galea > .image-wrap {
+      background-image: url(../img/download/common/icon_solutions3.png);
     }
-    li.trusted-orange {
-      background: url(../img/ico4.png) center top no-repeat /200px 200px ;
+    li.trusted-orange > .image-wrap {
+      background-image: url(../img/download/common/icon_solutions4.png);
     }
-    li.orange {
-      background: url(../img/ico5.png) center top no-repeat /200px 200px ;
+    li.orange > .image-wrap {
+      background-image: url(../img/download/common/icon_solutions5.png);
+    }
+    li.petasql > .image-wrap {
+      background-image: url(../img/download/common/icon_solutions6.png);
+    }
+    li.lora > .image-wrap {
+      background-image: url(../img/download/common/icon_solutions7.png);
+      background-size: 100px auto;
     }
   }
 
@@ -520,6 +635,10 @@ section#product {
 
         li{
           width: 130px;
+
+          .image-wrap {
+            background-size: 130px 130px;
+          }
           
           h3{
             padding-top: 160px;
@@ -531,11 +650,6 @@ section#product {
             margin-top: 30px;
           }
         }
-
-        li.cyclone, li.chakra-max, li.galea, li.trusted-orange, li.orange  {
-          background-size: 130px 130px;
-        }
-
       }
     }
   }
@@ -564,21 +678,38 @@ section.board-list {
         height: 180px;
         background-color: #9f9f9f;
         padding: 40px;
+        position: relative;
 
-        h3 {
-          color: #fff;
-          font-size: 18px;
-          letter-spacing: 1.5px;
-          font-weight: bold;
-          text-transform: capitalize;
+        a{
+          display: inline-block;
+          width: 280px;
+          height: 100%;
+
+          h3 {
+            color: #fff;
+            font-size: 18px;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+            text-transform: capitalize;
+          }
+
+          p{
+            //화면이 작아져도 형태유지함 쪼그라들었으면 좋겠음
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            line-height: 1.5;
+            padding-top: 10px;
+            height: 100%;
+          }
         }
-
-        p{
-          color: rgba(255, 255, 255, 0.8);
-          font-size: 15px;
-          letter-spacing: 0.5px;
-          line-height: 1.5;
-          padding-top: 10px;
+        
+        img {
+          //화면작아지면 떨어짐
+          position: absolute;
+          right: 40px;
+          vertical-align: top;
+          width: 100px;
         }
       }
 
@@ -594,6 +725,11 @@ section.board-list {
           min-height: 100px;
           margin-bottom: 10px;
           padding: 15px 20px;
+
+          img {
+            background-size: 50px;
+          }
+
 
           h3 {
             font-size: 15px;
@@ -620,13 +756,6 @@ section.board-list {
         margin-bottom: 10px;
         text-transform: capitalize;
         letter-spacing: 1.2px;
-
-        &:after {
-          margin-left: 10px;
-          content:'\f138';
-          font-family: 'Font Awesome 5 Free';
-          font-weight: 600;
-        }
       }
 
       ul{
@@ -650,11 +779,20 @@ section.board-list {
     div.orange-board {
       float: left;
       margin-left: 30px;
+
+      >h3 {
+        background: url(../img/download/icon/right-arrow.png) 160px center no-repeat / 20px;
+      }
+      
     }
 
     div.news {
       float: right;
       margin-right: 30px;
+
+      >h3 {
+        background: url(../img/download/icon/right-arrow.png) 75px center no-repeat / 20px;
+      }
     }
   }
 
@@ -690,14 +828,14 @@ section.board-list {
 
 section.aboutus {
 
-  h2 {
+  >h2 {
     margin-bottom: 0;
   }
 
-  p {
+  >p {
     font-size: 15px;
     color: #929292;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     text-align: center;
   }
 
@@ -721,6 +859,7 @@ section.aboutus {
       h3, p {
         color: rgba(255, 255, 255, 0.74);
         height: 100%;
+        user-select: none;
       }
 
       h3 {
@@ -740,12 +879,11 @@ section.aboutus {
       }
 
       p {
-        text-align: unset;
-        width: 520px;
-        font-size: 12px;
-        float: left;
+        //width가 좁아지면 떨어짐
+        display: inline-block;
+        font-size: 14px;
+        padding-left: 40px;
         padding-top: 40px;
-        padding-left: 45px;
       }
     }
   }
