@@ -104,6 +104,7 @@
     </div>
   </header>
 
+
   <section>
     <form class="sign-wrap">
       <fieldset class="sign-in">
@@ -116,15 +117,15 @@
       </fieldset>
       <fieldset class="sign-up">
         <strong>웨어밸리 계정이 없습니까?</strong>
-        <p>아직 회원가입을 하시지 않았다면 <em>[회원가입]</em>을 하세요.
-        트라이얼 버전 다운로드, 무료교육 등 웨어밸리에서 제공하는
-        다양한 서비스를 지원 받을 수 있습니다.</p>
+        <p>아직 회원가입을 하시지 않았다면 <em>[회원가입]</em>을 하세요.</p>
+        <p>
+          트라이얼 버전 다운로드, 무료교육 등 웨어밸리에서 제공하는<br>
+          다양한 서비스를 지원 받을 수 있습니다.
+        </p>
         <a href="javasctipt:;">회원가입</a>
       </fieldset>
     </form>
   </section>
-
-
 
 
   <footer>
@@ -144,6 +145,35 @@
   </footer>
 
   <div class="logo-Top">TOP</div>
+
+  <script>
+  function isDesktop (){
+    return window.innerWidth > 768;
+  }
+
+  function toggleMenuOpenClose (){
+    if($('.main-header').is('[open]')){
+      $('.main-header').removeAttr('open');
+    } else {
+      $('.main-header').attr('open','');
+    }
+  }
+
+  //메뉴열기
+  $(document).on('click','.menu-opener', toggleMenuOpenClose);
+  $(document).on('click','li.menu-item', function(){
+    if(isDesktop() === true){
+      toggleMenuOpenClose();
+    } else {
+      if($(this).is('.sub-menu-open')) {
+        $(this).removeClass('sub-menu-open');
+      } else {
+        $(this).addClass('sub-menu-open');
+      }
+    }
+  })
+
+  </script>
 
 </body>
 </html>
