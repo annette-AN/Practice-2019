@@ -34,7 +34,7 @@ body {
 }
 
 header.main-header {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   height: 120px;
@@ -42,6 +42,7 @@ header.main-header {
   -webkit-transition: all .4s;
   transition: all .4s;
   border-bottom: 1px solid #dbdbdb;
+  z-index: 999;
 }
 
 header.main-header div.container {
@@ -100,7 +101,6 @@ div.container > nav.gnb {
   right: 80px;
   width: 690px;
   overflow: hidden;
-  z-index: 999;
 }
 
 div.container > nav.gnb > ul.gnb-menu {

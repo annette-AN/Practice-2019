@@ -183,7 +183,7 @@ div.top-hero .hero-btn {
 }
 
 header.main-header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -191,6 +191,7 @@ header.main-header {
   background: rgba(0, 0, 0, 0.6);
   -webkit-transition: all .4s;
   transition: all .4s;
+  z-index: 999;
 }
 
 header.main-header div.container {
@@ -291,6 +292,23 @@ header.main-header[open] nav.tnb a {
   color: #949592;
 }
 
+@media all and (max-width: 768px) {
+  header.main-header[open] nav.tnb {
+    display: block;
+    background: pink;
+    top: auto;
+    bottom: 0px;
+  }
+  header.main-header[open] nav.tnb a:nth-child(2), header.main-header[open] nav.tnb a:nth-child(3) {
+    background: red;
+    display: block;
+    float: left;
+    padding: 0px;
+    margin: 0px;
+    width: 50%;
+  }
+}
+
 header.main-header[open] nav.gnb ul.gnb-menu li.menu-item a {
   color: #110c0c;
   font-weight: bold;
@@ -321,7 +339,6 @@ header.main-header[open] nav.gnb ul.gnb-menu li.menu-item ul.sub-menu li a {
     left: 0;
     height: 100%;
     margin-left: 20px;
-    z-index: 999;
     opacity: 1;
   }
   header.main-header[open] nav.gnb > ul.gnb-menu {

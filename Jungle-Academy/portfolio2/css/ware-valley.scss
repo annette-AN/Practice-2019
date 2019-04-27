@@ -173,13 +173,14 @@ div.top-hero {
 }
 
 header.main-header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 120px;
   background: rgba(0,0,0,0.6);
   transition: all .4s;
+  z-index: 999;
   
   div.container {
     position: relative;
@@ -277,6 +278,30 @@ header.main-header {
       a {
         color: #949592;
       }
+
+      @include media-mobile(){
+        display: block;
+        background: pink;
+        top: auto;
+        bottom: 0px;
+        max-width: clac(100% + 0px);
+
+        a{
+
+          &:first-child {
+            display: none;
+          }
+
+          &:nth-child(2), &:nth-child(3) {
+            // background: red;
+            display: block;
+            float: left;
+            padding: 0px;
+            margin: 0px;
+            width: 50%;
+          }
+        }
+      }
     }
 
     nav.gnb {
@@ -315,7 +340,6 @@ header.main-header {
         left: 0;
         height: 100%;
         margin-left: 20px;
-        z-index: 999;
         opacity: 1;
     
         >ul.gnb-menu{
@@ -512,7 +536,8 @@ div.container {
     }
 
     @include media-mobile(){
-      display: none;    }
+      display: none;
+    }
   }
 }
 
