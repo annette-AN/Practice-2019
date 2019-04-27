@@ -281,24 +281,33 @@ header.main-header {
 
       @include media-mobile(){
         display: block;
-        background: pink;
         top: auto;
+        right: -20px;
         bottom: 0px;
-        max-width: clac(100% + 0px);
+        width: 100%;
+        min-width: calc(100% + 40px);
 
         a{
+          width: 50%;
+          height: 50px;
+          line-height: 50px;
+          border-top: 1px solid #DCDCDC;
 
           &:first-child {
             display: none;
           }
 
           &:nth-child(2), &:nth-child(3) {
-            // background: red;
             display: block;
             float: left;
             padding: 0px;
             margin: 0px;
-            width: 50%;
+            text-align: center;
+          }
+
+          //2번째 자식 cursor가 안바뀜 
+          &:nth-child(2) {
+            border-right: 1px solid #DCDCDC;
           }
         }
       }

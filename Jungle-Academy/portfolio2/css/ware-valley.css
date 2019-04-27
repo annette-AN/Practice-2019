@@ -295,17 +295,30 @@ header.main-header[open] nav.tnb a {
 @media all and (max-width: 768px) {
   header.main-header[open] nav.tnb {
     display: block;
-    background: pink;
     top: auto;
+    right: -20px;
     bottom: 0px;
+    width: 100%;
+    min-width: calc(100% + 40px);
+  }
+  header.main-header[open] nav.tnb a {
+    width: 50%;
+    height: 50px;
+    line-height: 50px;
+    border-top: 1px solid #DCDCDC;
+  }
+  header.main-header[open] nav.tnb a:first-child {
+    display: none;
   }
   header.main-header[open] nav.tnb a:nth-child(2), header.main-header[open] nav.tnb a:nth-child(3) {
-    background: red;
     display: block;
     float: left;
     padding: 0px;
     margin: 0px;
-    width: 50%;
+    text-align: center;
+  }
+  header.main-header[open] nav.tnb a:nth-child(2) {
+    border-right: 1px solid #DCDCDC;
   }
 }
 

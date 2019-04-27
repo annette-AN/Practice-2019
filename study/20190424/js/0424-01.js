@@ -15,7 +15,7 @@ $(document).ready(function() {
     $('section > div').removeClass('section-on');
     $('section > div').removeClass('div-on');
     $('section > div').eq(i).addClass('div-on');
-  });
+  })
 
 });
 
