@@ -106,6 +106,11 @@
       $('.memo-body').attr('open','');
     });
 
+      //이거 되게하고싶음
+    false && $(document).on('click', '.memo-show .memo-description', function(){
+      $('.memo-show .memo-body').attr('open','');
+    });
+
     //메모닫기
     $(document).on('click','#memo-close',function(){
       $('.memo-body').removeAttr('open','');
@@ -130,7 +135,7 @@
     $('.memo-body .memo-description').val('안녕 난 내용');
     $('.memo-write .memo-body #memo-save').trigger('click');
     $('.memo-write .memo-body #memo-save').trigger('click');
-    $('.memo-show .memo-body:last-child').attr('hover','');
+    //$('.memo-show .memo-body:last-child').attr('hover','');
     
     //호버 왜 안먹힘
     

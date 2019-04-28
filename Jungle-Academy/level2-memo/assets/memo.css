@@ -11,6 +11,7 @@ section.memo-write .memo-body {
 
 section.memo-write .memo-body[open] {
   height: auto;
+  overflow: hidden;
 }
 
 section.memo-write .memo-body[open] .blind-sec {
@@ -277,14 +278,13 @@ section.memo-show .memo-body div#btn-set button {
     height: auto;
     overflow: hidden;
     position: relative;
-    min-height: 60px;
   }
   section.memo-show .memo-body:hover {
     -webkit-box-shadow: none;
             box-shadow: none;
   }
   section.memo-show .memo-body .blind-sec {
-    width: 75%;
+    width: 70%;
   }
   section.memo-show .memo-body .blind-sec #fixed-icon {
     display: none;
@@ -294,21 +294,74 @@ section.memo-show .memo-body div#btn-set button {
   }
   section.memo-show .memo-body div#btn-set {
     display: block;
-    width: 25%;
+    width: 30%;
     position: absolute;
     top: 0px;
     right: 0px;
   }
   section.memo-show .memo-body div#btn-set button {
     display: block;
-    line-height: 20px;
+    float: left;
+    line-height: 27px;
     margin: 0;
     padding: 5px 0;
     border-left: 1px solid #c4c4c4;
     border-bottom: 1px solid #c4c4c4;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+    width: 50%;
+  }
+  section.memo-show .memo-body[open] {
+    height: auto;
+  }
+  section.memo-show .memo-body[open]:hover {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  section.memo-show .memo-body[open] .blind-sec {
     width: 100%;
+  }
+  section.memo-show .memo-body[open] .blind-sec .memo-title {
+    font-size: 16px;
+    color: gray;
+  }
+  section.memo-show .memo-body[open] .blind-sec #fixed-icon {
+    display: block;
+    opacity: 1;
+    line-height: 36px;
+  }
+  section.memo-show .memo-body[open] .blind-sec #fixed-icon a.input-icon {
+    opacity: 1;
+    margin-right: 0px;
+  }
+  section.memo-show .memo-body[open] div.memo-description {
+    display: block;
+    margin-top: 10px;
+  }
+  section.memo-show .memo-body[open] div.memo-mid-icons {
+    display: block;
+    margin-top: 10px;
+  }
+  section.memo-show .memo-body[open] div.memo-mid-icons a.input-icon {
+    opacity: 1;
+  }
+  section.memo-show .memo-body[open] div#btn-set {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    margin: 10px 0px 0px 0px;
+    border-top: 1px solid #c4c4c4;
+  }
+  section.memo-show .memo-body[open] div#btn-set button {
+    line-height: 25px;
+    margin: 0px;
+    padding: 3px 0;
+    border: none;
+    width: 50%;
+  }
+  section.memo-show .memo-body[open] div#btn-set button:first-child {
+    border-right: 1px solid #c4c4c4;
   }
 }
 /*# sourceMappingURL=memo.css.map */

@@ -17,6 +17,7 @@ section.memo-write {
 
     &[open] {
       height: auto;
+      overflow: hidden;
 
       .blind-sec { //인풋이라 부모 width를 안받음
         width: 100%;
@@ -295,14 +296,14 @@ section.memo-show {
       overflow: hidden;
       //
       position: relative;
-      min-height: 60px;
 
       &:hover {
+        //박스 쉐도우 확인필요
         box-shadow: none;
       }
 
       .blind-sec {
-        width: 75%;
+        width: 70%;
 
         #fixed-icon {
           display: none;
@@ -315,7 +316,7 @@ section.memo-show {
 
       div#btn-set {
         display: block;
-        width: 25%;
+        width: 30%;
         //추가
         position: absolute;
         top: 0px;
@@ -324,15 +325,84 @@ section.memo-show {
         button {
           //저장과 삭제가 되면 좋겠다
           display: block;
-          line-height: 20px;
+          float: left;
+          line-height: 27px;
           margin: 0;
           padding: 5px 0;
           //추가
           border-left: 1px solid #c4c4c4;
           border-bottom: 1px solid #c4c4c4;
           box-sizing: border-box;
+          width: 50%;
+        }
+      }
+
+      &[open] {
+        height: auto;
+        // overflow: hidden;
+        // //
+        // position: relative;
+
+        &:hover {
+          box-shadow: none;
+        }
+
+        .blind-sec {
           width: 100%;
-          
+
+          .memo-title {
+            font-size: 16px;
+            color: gray;
+          }
+
+          #fixed-icon {
+            display: block;
+            opacity: 1;
+            line-height: 36px;
+
+            a.input-icon {
+              opacity: 1;
+              margin-right: 0px;
+            }
+          }
+        }
+
+        div.memo-description{
+          display: block;
+          margin-top: 10px;
+        }
+
+        div.memo-mid-icons {
+          display: block;
+          margin-top: 10px;
+
+          a.input-icon {
+            opacity: 1;
+          }
+        }
+
+
+        div#btn-set {
+          position: relative;
+          top: auto;
+          right: auto;
+          width: 100%;
+          margin: 10px 0px 0px 0px;
+          border-top: 1px solid #c4c4c4;
+
+          button {
+            line-height: 25px;
+            margin: 0px;
+            padding: 3px 0;
+            border: none;
+            //추가
+
+            width: 50%;
+
+            &:first-child {
+              border-right: 1px solid #c4c4c4;
+            }
+          }
         }
       }
     }
