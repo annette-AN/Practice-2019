@@ -62,7 +62,7 @@ section .sign-wrap .sign-in input {
   margin-top: 30px;
   padding-left: 20px;
   border: 1px solid #DCDCDC;
-  color: #DCDCDC;
+  color: gray;
 }
 
 section .sign-wrap .sign-in input:nth-child(3) {

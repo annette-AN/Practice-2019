@@ -50,6 +50,11 @@ section .sign-up-wrap .sign-up {
   border: none;
 }
 
+section .sign-up-wrap .sign-up i {
+  font-size: 10px;
+  color: red;
+}
+
 section .sign-up-wrap .sign-up legend {
   text-align: center;
   font-size: 40px;
@@ -80,7 +85,7 @@ section .sign-up-wrap .sign-up input {
   margin-top: 10px;
   padding-left: 20px;
   border: 1px solid #DCDCDC;
-  color: #DCDCDC;
+  color: gray;
 }
 
 section .sign-up-wrap .sign-up button {

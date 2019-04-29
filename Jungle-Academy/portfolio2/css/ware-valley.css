@@ -690,16 +690,17 @@ section.board-list div ul.utill-wrap {
 }
 
 section.board-list div ul.utill-wrap li {
-  width: calc(33.3333% - 15px);
-  height: 180px;
-  background-color: #9f9f9f;
-  padding: 40px;
+  overflow: hidden;
   position: relative;
+  width: calc(33.3333% - 15px);
+  background-color: #9f9f9f;
+  padding: 30px 40px;
 }
 
 section.board-list div ul.utill-wrap li a {
+  float: left;
   display: inline-block;
-  width: 280px;
+  width: 60%;
   height: 100%;
 }
 
@@ -721,10 +722,11 @@ section.board-list div ul.utill-wrap li a p {
 }
 
 section.board-list div ul.utill-wrap li img {
+  display: block;
+  width: 100px;
   position: absolute;
   right: 40px;
   vertical-align: top;
-  width: 100px;
 }
 
 @media all and (max-width: 768px) {

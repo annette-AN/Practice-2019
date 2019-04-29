@@ -34,6 +34,11 @@ section{
     .sign-up {
       border: none;
 
+      i {
+        font-size: 10px;
+        color: red;
+      }
+
       legend {
         text-align: center;
         font-size: 40px;
@@ -65,7 +70,7 @@ section{
         margin-top: 10px;
         padding-left: 20px;
         border: 1px solid #DCDCDC;
-        color: #DCDCDC;
+        color: gray;
       }
   
       button {

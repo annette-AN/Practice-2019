@@ -703,19 +703,22 @@ section.board-list {
 
     ul.utill-wrap{
       display: flex;
+      //justify에 대해 확인
       justify-content: space-between;
       margin-bottom: 50px;
 
       li {
-        width: calc(33.3333% - 15px);
-        height: 180px;
-        background-color: #9f9f9f;
-        padding: 40px;
+        overflow: hidden;
         position: relative;
+        width: calc(33.3333% - 15px);
+        background-color: #9f9f9f;
+        padding: 30px 40px;
+
 
         a{
+          float: left;
           display: inline-block;
-          width: 280px;
+          width: 60%;
           height: 100%;
 
           h3 {
@@ -727,7 +730,6 @@ section.board-list {
           }
 
           p{
-            //화면이 작아져도 형태유지함 쪼그라들었으면 좋겠음
             color: rgba(255, 255, 255, 0.8);
             font-size: 15px;
             letter-spacing: 0.5px;
@@ -738,11 +740,11 @@ section.board-list {
         }
         
         img {
-          //화면작아지면 떨어짐
+          display: block;
+          width: 100px;
           position: absolute;
           right: 40px;
           vertical-align: top;
-          width: 100px;
         }
       }
 

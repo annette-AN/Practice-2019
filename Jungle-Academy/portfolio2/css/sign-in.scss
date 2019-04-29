@@ -46,7 +46,7 @@ section{
         margin-top: 30px;
         padding-left: 20px;
         border: 1px solid #DCDCDC;
-        color: #DCDCDC;
+        color: gray;
 
         //여기에 쓰는건 맞는데 왜 세번째 자식이 2번째 input으로 인식하는지 모르겠음
         &:nth-child(3){
