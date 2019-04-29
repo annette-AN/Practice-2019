@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <title>Document</title>
+  <script src="js/jquery-3.4.0.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+
+  <style>
+
+    div {
+      padding: 50px;
+    }
+
+    /* basic */
+    li.css {
+      line-height: 50px;
+      font-size: 20px;
+    }
+
+    /* attr */
+    button {
+      margin: 10px;
+    }
+    .frame {
+      width: 460px;
+      border: 10px solid #fff;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    }
+
+    /* traverse */
+    .traverse li {
+      line-height: 40px;
+    }
+
+    .traverse div {
+      margin-top: 40px;
+    }
+
+    .traverse div p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    
+    /* effect */
+    .effect {
+      overflow: hidden;   
+    } 
+
+    .effect div {
+      width: 150px;
+      height: 150px;
+      margin: 30px;
+      background: coral;
+      float: left;
+    }
+
+    .effect > div + div {
+      background: gold;
+    }
+
+    .effect li:hover {
+      cursor: pointer;
+    }
+
+    /* animate */
+    .animate div {
+      width: 200px;
+      height: 200px;
+      margin: 100px auto;
+      background: pink;
+    }
+
+    /* if */
+    .if h1 {
+      text-align: center;
+    }
+
+    .if input {
+      width: 150px;
+      height: 30px;
+      font-size: 18px;
+      border: 1px solid #444;
+      margin: 10px;
+    }
+
+    .if p {
+      font-size: 20px;
+      color: #d02e2e;
+      margin-left: 20px;
+    }
+
+    /* html-tag-change */
+    .html-tag-change {
+    }
+    .html-tag-change span {
+      color: green;
+      background: gold;
+    }
+    .html-tag-change p {
+      background: red;
+    }
+
+    /* text-method */
+    .text-method .wrap {
+      width: 500px;
+      margin: 50px auto;
+    }
+
+    .text-method .wrap h1 {
+      text-align: center;
+    }
+    .text-method .wrap ul {
+      margin-top: 30px;
+    }
+    .text-method .wrap li {
+      line-height: 50px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .text-method .color-box {
+      width: 200px;
+      height: 200px;
+      margin: 30px auto;
+      line-height: 200px;
+      font-size: 22px;
+      text-align: center;
+      background: #f79e95;
+      color: #fff;
+    }
+
+    /* video-tag */
+    .video-tag li {
+      cursor: pointer;
+    }
+
+    /* test1 */
+    .test1 div {
+      width: 200px;
+      height: 200px;
+      background: greenyellow;
+      margin: 0 auto;
+    }
+
+    /* test2 */
+    .test2 div {
+      width: 600px;
+      height: 20px;
+      background: gray;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .test2 .slide {
+      border-top: 1px solid #fff;
+      display: none;
+      height: 200px;
+    }
+
+  </style>
+  
+</head>
+<body>
+  <ul>
+    <li class="css"><span>list1</span></li>
+    <li class="css">list2</li>
+    <li class="css">list3</li>
+  </ul>
+
+
+  <div class="attr">
+    <h1>제이쿼리로 선택한 요소의 attr 속성 변경하기</h1>
+    <button class="btn1">이미지1</button>
+    <button class="btn2">이미지2</button>
+    <div class="frame">
+      <img src="img/w5.jpg" alt="w5">
+    </div>
+  </div>
+
+
+  <div class="traverse">
+    <h1>제이쿼리로 traverse 이용하기</h1>
+    <ul>
+      <li><span>list</span><em>siblings</em></li>
+      <li>list</li>
+      <li>list</li>
+      <li>list</li>
+    </ul>
+    <div>
+      <p><span class="text1">text1</span></p>
+      <p><span class="text2">text2</span></p>
+    </div>
+  </div>
+
+
+  <div class="effect">
+    <h1>제이쿼리로 effect 넣기</h1>
+    <ul>
+      <li>box1 hide()</li>
+      <li>box1 show()</li>
+      <li>box2 fadeOut()</li>
+      <li>box2 fadeIn()</li>
+      <li>box1 slideUp()</li>
+      <li>box1 slideDown()</li>
+    </ul>
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+  </div>
+
+
+  <div class="animate">
+    <h1>제이쿼리로 animate 넣기</h1>
+    <div></div>
+  </div>
+  
+
+  <div class="if">
+    <h1>if문 - 다양한 조건에 따라 명령문 실행</h1>
+    <input type="text">
+    <button>성인인증</button>
+    <p>나이를 입력한 후 성인인증 버튼을 눌러주세요.</p>
+  </div>
+
+
+  <div class="html-tag-change">
+    <h1>선택자 안의 html구조를 가져오거나 변경</h1>
+    <button>태그 구조 변경</button>
+    <div><span>태그 구조 변경전에는 span 태그였음</span></div>
+  </div>
+
+  
+  <div class="text-method">
+    <h1>Text method</h1>
+    <div class="wrap">
+      <h2>What is your favorit color?</h2>
+      <ul>
+        <li>Orange?</li>
+        <li>Gold?</li>
+        <li>Purple?</li>
+        <li>Skyblue?</li>
+      </ul>
+      <div class="color-box"></div>
+    </div>
+  </div>
+
+  <div class="video-tag">
+    <h1>비디오 play/stop</h1>
+    <div class="wrap">
+      <video>
+        <source src="mp4/vid.mp4" type="video/mp4">
+      </video>
+      <ul>
+        <li class="load">load</li>
+        <li class="play">play</li>
+        <li class="stop">stop</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="test1">
+    <h1>text1</h1>
+    <button>Start Animation</button>
+    <div></div>
+  </div>
+
+ <div class="test2">
+   <h1>test2</h1>
+   <button>stop sliding</button>
+   <div class="slide-start">Click to slide down panel</div>
+   <div class="slide">Hello world!</div>
+ </div>
+
+  <script>
+    //css
+    $(function() {
+      $('li.css').css({
+        background: 'red',
+        color: 'white'
+      });
+
+      // 값이 하나 일 때는 아래처럼 표현도 가능
+      $('.css:nth-child(2)').css('fontSize', '30px');
+    });
+
+    //attr , if로 적용해보기
+    $(function(){
+      $('.btn1').on('click', function() {
+        $('.frame').css({width: '500px', });
+        $('.frame img').attr({
+          src: 'img/w7.jpg',
+          alt: 'w7',
+        });
+      });
+
+      $('.btn2').on('click', function() {
+        $('.frame').css({width: '460px', });
+        $('.frame img').attr({
+          src: 'img/w5.jpg',
+          alt: 'w7',
+        });
+      });
+    });
+
+    //traverse
+    $(function(){
+      $('.traverse li').children('span').css({
+        background: 'red',
+      });
+      $('.traverse li').parent().css({
+        background: 'gold',
+      });
+      $('span').siblings().fadeOut('slow');
+      $('.traverse ul').next().fadeOut();
+      $('.traverse div').fadeIn();
+      $('div').find('.text1').slideUp('slow');
+    });
+
+    //effect
+    $(function(){
+      $('.effect ul li').eq(0).on('click', function(){
+        $('.effect .box1').hide();
+      });
+      $('.effect ul li').eq(1).on('click', function(){
+        $('.effect .box1').show();
+      });
+      $('.effect ul li').eq(2).on('click', function(){
+        $('.effect .box2').fadeOut();
+      });
+      $('.effect ul li').eq(3).on('click', function(){
+        $('.effect .box2').fadeIn();
+      });
+      $('.effect ul li').eq(4).on('click', function(){
+        $('.effect .box1').slideUp();
+      });
+      $('.effect ul li').eq(5).on('click', function(){
+        $('.effect .box1').slideDown();
+      });
+    });
+
+    //animate 기본값은 .4s
+    $(function(){
+      $('.animate div').on('mouseenter', function(){
+        $(this).stop().animate({
+          width: '400px',
+          height: '400px',
+        }, 600, function(){
+          $(this).animate({
+            backgroundColor: 'red',
+          }, 300, 'easeOutBounce');
+        });
+      });
+      
+      //왜 아예 없어지는지 모르겠음
+      $('.animate div').on('mouseout', function(){
+        $(this).stop().animate({
+          backgroundColor: 'pink',
+          width: '150px',
+          height: '150px',
+        }, 600, 'easeOutBounce');
+      });
+    });
+
+    //if
+    $(function(){
+      $('.if button').on('click', function(){
+        var num = $('input').val();
+
+        if(num == '') {
+          alert('나이를 숫자로 입력해주세요.');
+        } else if (num >=19) {
+          alert ('성인인증 완료');
+        } else if (num < 19) {
+          alert ('성인인증 실패');
+        } else {
+          alert ('숫자로 입력해주세요.');
+        };
+      });
+    });
+
+    //html-tag-change
+    $(function(){
+      $('.html-tag-change button').on('click', function(){
+        $('.html-tag-change').html('<p> 변경 후에는 html구문으로 p태그가 되었습니다. </p>');
+      });
+      $('.html-tag-change div').on('mouseenter', function(){
+        var text = $(this).html();
+        alert(text);
+      });
+    });
+
+    //text-method
+    $(function(){
+      //제이쿼리 앞에 $를 붙힌 것은 제이쿼리 개체변수라고 한다
+      var $colorBox = $('.text-method .color-box');
+      $('.text-method li').on('click', function(){
+        var color = $(this).text();
+        $colorBox.text(color);
+      });
+
+      $('.text-method li').eq(0).on('click', function(){
+        $colorBox.css({
+          background: 'orange',
+        });
+      });
+    });
+
+
+    //video tag
+    $(function(){
+      var videoBox = $('video').get(0);
+      $('.video-tag .play').on('click', function(){
+        videoBox.play();
+      });
+
+      $('.video-tag .stop').on('click', function(){
+        videoBox.pause();
+      });
+    });
+
+
+    //test1
+    $(function(){
+      $('.test1 button').on('click', function(){
+        $('.test1 div').stop().animate({
+          width: '250px',
+          height: '250px',
+          marginRight: '0px',
+          opacity: '0.5',
+        }, 600, function(){
+          //돌아오질않음
+          $('.test1 div').animate({
+          width: '200px',
+          height: '200px',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          opacity: '1',
+          });
+        });
+      });
+    });
+
+    //test2
+    $(function(){
+      $('.test2 .slide-start').on('click', function(){
+        $('.test2 .slide').slideToggle(2000);
+      });
+
+      $('.test2 button').on('click', function(){
+        $('.test2 .slide').stop();
+      });
+    });
+
+  </script>
+  
+</body>
+</html>

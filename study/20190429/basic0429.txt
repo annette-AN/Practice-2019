@@ -1,0 +1,59 @@
+jquery 장점
+-호환성이 우수 (크로스브라우징이 가능)
+-디자이너가 사용할 줄 아는 선택자 / css요소를 사용
+-플러그인이 많음
+
+단점
+-프로그램 언어이므로 기본적인 논리와 문법이 필요
+
+기본문법
+$('선택자').method()
+
+$('선택자')
+달러 앞 선택자는 css요소 부르는 것과 동일하게 부르면 됌
+.method()
+->method == (css, attr, index traverse, effect 등)
+1) css 메소드
+  .css({
+    backgroundColor:'red',
+    color:'white',
+  })
+
+2) attr 메소드  (요소가 가지는 속성을 추가, 변경할 수 있다)
+  .attr('open','')
+  .attr({
+    src: 'img/w7.jpg',
+    alt: 'w7')
+  }};
+
+3) traverse 메소드 (탐색구문)
+  .parent() == 부모찾기
+  .siblings() == 형제찾기
+  .children() == 자식찾기
+  .find() == 후속선택자찾기
+    ex) $('div').find('span').css()
+  .eq() == nth-child() 순번을 매김, nth-child와 개념은 동일하나 차이점은 순번이 0부터 시작
+  .index() == 
+  .next() == 다음찾기 (슬라이드에서 >)
+  .prev() == 이전찾기 (슬라이드에서 <)
+  .not() == 특정요소를 제외한 나머지한테 적용
+  $('div p') == 하위요소
+
+4) effect
+  hide()
+  show()
+  fadeOut()
+  fadeIn()
+  slideUp()
+  slideDown()
+
+5) animate
+
+6) if
+
+7) 요소의 내용을 가져오거나 변경하는 method
+  .html() == html 태그
+  .text() == text
+  
+
+
