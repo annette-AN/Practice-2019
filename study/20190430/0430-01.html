@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../js/jquery-3.4.0.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="css/0430-01.css">
+  <title>jquery</title>
+</head>
+<body>
+  <div class="scroll-top">
+    <h1>Scroll-top</h1>
+    <p></p>
+  </div>
+
+  <script>
+
+  //scroll-top
+  $(function(){
+    $(window).on('scroll', function(){
+      var height = $(this).scrollTop();
+
+      $('p').text(height);
+    });
+  });
+
+  </script>
+</body>
+</html>
