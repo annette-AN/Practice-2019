@@ -50,6 +50,10 @@ section#main-door {
       left:50%;
     }
   }
+
+  &.cloud-bg {
+    background-image: url(../img/main/img_smart_intro02.jpg);
+  }
 }
 
 section#main-door {
@@ -126,7 +130,7 @@ section#main-door {
 }
 
 section#main-door {
-  .actor-1 {
+  .actor-1, .actor-2 {
     position: absolute;
     background-image: url(../img/main/img_intro_model01.png);
     width: 1176px;
@@ -139,6 +143,11 @@ section#main-door {
     &.actor-active{
       bottom: -50px;
     }
+  }
+
+  .actor-2 {
+    background-image: url(../img/main/img_intro_model02.png);
+    transition: bottom .4s; 
   }
 }
 
@@ -153,5 +162,28 @@ section#main-door {
       opacity: 1;
     }
   }
+
+  img#uniform-2 {
+    position: absolute;
+    left: 100%;
+    width: 100%;
+    transition: left .5s;
+
+    &.uniform-active-2 {
+      left:0;
+    }
+  }
 }
 
+//분홍텍스트배너
+.text-banner-pink {
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 792px;
+  height: 180px;
+  opacity: 0;
+  background: url(../img/main/img_intro02_txt.png);
+  background-origin: cover;
+}

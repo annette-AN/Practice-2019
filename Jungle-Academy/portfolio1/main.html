@@ -350,11 +350,13 @@
 
   //부모님메뉴 오픈
   $(document).on('click', '#blue-gnb', function () {
+    $('.menu').removeClass('menu-active');
     $('.menu.parents').addClass('menu-active');
   });
 
   //학생들메뉴 오픈
   $(document).on('click','#pink-gnb',function(){
+    $('.menu').removeClass('menu-active');
     $('.menu.students').addClass('menu-active');
   });
 
