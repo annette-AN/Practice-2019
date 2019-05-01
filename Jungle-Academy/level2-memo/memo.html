@@ -62,7 +62,8 @@
         </a>
       </div>
       <div id="btn-set">
-        <button id="memo-save">저장</button><button id="memo-close">닫기</button>
+        <button id="memo-save">저장</button>
+        <button id="memo-close">닫기</button>
       </div>
     </form>
   </section>
@@ -101,15 +102,11 @@
     });
 
 
-    //메모열기
+    //새로만들기 메모열기
     $(document).on('focus','.memo-description',function(){
-      $('.memo-body').attr('open','');
+      $(this).parent('.memo-body').attr('open','');
     });
 
-      //이거 되게하고싶음
-    false && $(document).on('click', '.memo-show .memo-description', function(){
-      $('.memo-show .memo-body').attr('open','');
-    });
 
     //메모닫기
     $(document).on('click','#memo-close',function(){
