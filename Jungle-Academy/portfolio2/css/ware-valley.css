@@ -34,13 +34,45 @@ body {
   font: 15px/1.6 'Noto Sans KR';
 }
 
+.hero-wrap {
+  position: relative;
+}
+
+.hero-wrap aside {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.hero-wrap aside a {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+
+.hero-wrap aside a + a {
+  margin-left: 20px;
+}
+
+.hero-wrap aside a.active {
+  background: #fff;
+}
+
 div.top-hero {
   display: none;
-  background: url(../img/main_img2.png) no-repeat center top;
+  background: url(../img/main_img2.png) no-repeat center top/cover;
   width: 100%;
   height: 840px;
   -webkit-transition: all .4s;
   transition: all .4s;
+}
+
+div.top-hero.active {
+  display: block;
 }
 
 div.top-hero h1 {
@@ -136,7 +168,6 @@ div.top-hero .hero-btn {
 }
 
 .top-hero.hero3 {
-  display: block;
   background-image: url(../img/download/common/slide_visual03.jpg);
 }
 
@@ -350,7 +381,7 @@ header.main-header[open] nav.gnb ul.gnb-menu li.menu-item ul.sub-menu li a {
   header.main-header[open] nav.gnb {
     width: 200px;
     left: 0;
-    height: 100%;
+    height: auto;
     margin-left: 20px;
     opacity: 1;
   }
@@ -419,6 +450,7 @@ div.container h1.logo a {
 
 div.container h1.logo a span {
   display: block;
+  color: #fff;
   padding-left: 30px;
   font-size: 30px;
   -webkit-transition: all .4s;
@@ -698,9 +730,7 @@ section.board-list div ul.utill-wrap li {
 }
 
 section.board-list div ul.utill-wrap li a {
-  float: left;
   display: inline-block;
-  width: 60%;
   height: 100%;
 }
 
@@ -725,8 +755,12 @@ section.board-list div ul.utill-wrap li img {
   display: block;
   width: 100px;
   position: absolute;
+  top: 30px;
   right: 40px;
-  vertical-align: top;
+}
+
+section.board-list div ul.utill-wrap li img + a {
+  max-width: calc(100% - 110px);
 }
 
 @media all and (max-width: 768px) {
@@ -743,7 +777,8 @@ section.board-list div ul.utill-wrap li img {
     padding: 15px 20px;
   }
   section.board-list div ul.utill-wrap li img {
-    background-size: 50px;
+    width: 50px;
+    top: 30px;
   }
   section.board-list div ul.utill-wrap li h3 {
     font-size: 15px;
@@ -879,6 +914,7 @@ section.aboutus div.hero div.innerBox h3 span {
 }
 
 section.aboutus div.hero div.innerBox p {
+  max-width: calc(100% - 375px);
   display: inline-block;
   font-size: 14px;
   padding-left: 40px;

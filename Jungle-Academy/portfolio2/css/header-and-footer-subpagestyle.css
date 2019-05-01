@@ -338,7 +338,7 @@ header.main-header[open] nav.gnb ul.gnb-menu li.menu-item ul.sub-menu li a {
   header.main-header[open] nav.gnb {
     width: 200px;
     left: 0;
-    height: 100%;
+    height: auto;
     margin-left: 20px;
     z-index: 999;
     opacity: 1;

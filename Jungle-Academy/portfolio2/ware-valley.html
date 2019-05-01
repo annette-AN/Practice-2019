@@ -10,17 +10,26 @@
   <title>WareValley</title>
   </head>
   <body>
-    <div class="top-hero hero1">
-      <h1>Global Knowledge<span>enterprise</span></h1>
-    </div>
-    <div class="top-hero hero2">
-      <h1>Orange<span>데이터베이스 개발과 관리 도구</span></h1>
-      <a class="hero-btn" href="javascript:;">view more</a>
-    </div>
-    <div class="top-hero hero3">
-      <!-- img바꿧음 위치 다시 지정필요 -->
-      <h1><img src="img/download/common/slide_visual03_1.png" alt="hero3"><span>웨어밸리 정보 보안 통합 솔루션</span></h1>
-      <a class="hero-btn" href="javascript:;">view more</a>
+    <div class="hero-wrap">
+      <div class="hero-screen">
+        <div class="top-hero hero1 active">
+          <h1>Global Knowledge<span>enterprise</span></h1>
+        </div>
+        <div class="top-hero hero2">
+          <h1>Orange<span>데이터베이스 개발과 관리 도구</span></h1>
+          <a class="hero-btn" href="javascript:;">view more</a>
+        </div>
+        <div class="top-hero hero3">
+          <!-- img바꿧음 위치 다시 지정필요 -->
+          <h1><img src="img/download/common/slide_visual03_1.png" alt="hero3"><span>웨어밸리 정보 보안 통합 솔루션</span></h1>
+          <a class="hero-btn" href="javascript:;">view more</a>
+        </div>
+      </div>
+      <aside class="hero-indicator">
+        <a class="active"></a>
+        <a></a>
+        <a></a>
+      </aside>
     </div>
     <header class="main-header">
       <!-- container/wrapper/wrap 영역임 -->
@@ -177,18 +186,19 @@
           </a>
         </li>
         <li class="utill traning">
+          <img src="img/download/common/icon_support1.png" alt="icon1">
           <a href="javascript:;">
             <h3>training</h3>
             <p>전문가들로 구성된 강사진들의 교육을<br> 무료로 받으실 수 있습니다.</p>
           </a>
-          <img src="img/download/common/icon_support1.png" alt="icon1">
+          
         </li>
         <li class="utill download">
+          <img src="img/download/common/icon_support2.png" alt="icon2">
           <a href="javascript:;">
             <h3>download</h3>
             <p>홈페이지를 방문하시는 모든 분들께<br> 회원가입 이후 무상 제공됩니다.</p>
           </a>
-          <img src="img/download/common/icon_support2.png" alt="icon2">
         </li>
       </ul>
 
@@ -233,7 +243,6 @@
     <!-- footer-buttons -->
     <div class="btn-set">
       <a href="javascript:;">개인정보 취급방침</a>
-      <a href="javascript:;">Warevalley Data <i class="far fa-copy"></i></a>
     </div>
     <address class="main-footer">
       <span>대표이사 손삼수</span>
@@ -290,13 +299,69 @@
       
     });
 
+    // indicator slide
+    var indicatorTimer = null;
+    var indicatorList = $('.hero-indicator > a');
+
+    // 다음 슬라이드 몇 초후 이동 예약
+    // == var reserveSlideNext = function()
     
-  
+    function reserveSlideNext (){
+      // 원래 존재했던 타이머를 취소
+      if(indicatorTimer){
+        clearTimeout(indicatorTimer);
+      }
+      
+      // 새 타이머 등록
+      indicatorTimer = setTimeout(function(){
+        var targetIndex = indicatorList.filter('.active').index() + 1;
+        if(targetIndex >= indicatorList.length){
+          targetIndex = 0;
+        }
+        indicatorList.eq(targetIndex).trigger('click');
+      },5000);
+    }
 
-  
+    reserveSlideNext();
+
+    
+    
+    // indicator 클릭할때
+    $('.hero-wrap .hero-indicator a').on('click',function(){
+      var indicatorIndex = $(this).index();
+    
+      $('.hero-wrap .hero-screen > div').removeClass('active');
+      $('.hero-wrap .hero-screen > div').eq(indicatorIndex).addClass('active');
+
+      $('.hero-indicator > a').removeClass('active');
+      $(this).addClass('active');
+      reserveSlideNext();
+    });
+
+
+    //top btn 활성화
+
+    var autoFadeoutTopButton = function(){
+      if($(window).scrollTop() === 0){
+        $('.logo-Top').fadeOut();
+      } else {
+        $('.logo-Top').fadeIn();
+      };
+    };
+
+    $(window).on('scroll', autoFadeoutTopButton);
+    autoFadeoutTopButton();
+      
+    $('.logo-Top').on('click', function(){
+      $(window).scrollTop(0);
+    });
 
 
 
+
+
+
+    
   </script>
 </body>
 </html>

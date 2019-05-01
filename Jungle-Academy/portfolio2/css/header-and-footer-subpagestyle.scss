@@ -179,7 +179,8 @@ div.container {
     }
 
     @include media-mobile(){
-      display: none;    }
+      display: none;    
+    }
   }
 }
 //header end
@@ -337,7 +338,7 @@ header.main-header {
       @include media-mobile(){
         width: 200px;
         left: 0;
-        height: 100%;
+        height: auto;
         margin-left: 20px;
         z-index: 999;
         opacity: 1;
