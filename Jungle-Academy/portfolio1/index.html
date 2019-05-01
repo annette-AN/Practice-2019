@@ -76,14 +76,14 @@
     })
     .then(function(){
       //배너 제거
-      $('.text-banner').animate({opacity: '0',});
+      $('.text-banner').animate({opacity: '0'});
       return promise.timeout(300); 
     })
     .then(function(){
       //배경바뀌고 여자모델과 분홍배너 나옴
       //배경이 안바뀜
       $('#main.door').addClass('cloud-bg');
-      $('.text-banner-pink').animate({opacity:1});
+      $('.text-banner-pink').animate({opacity: '1'});
       $('.actor-2').addClass('actor-active');
       return promise.timeout(1000);
     })
@@ -96,9 +96,9 @@
       //배경바뀌고 여자모델과 분홍배너 제거
       //배경이 안바뀜
       $('#main.door').removeClass('cloud-bg');
-      $('.text-banner-pink').animate({top:'-50%',});
+      $('.text-banner-pink').animate({top:'-50%'});
       $('.actor-2').removeClass('actor-active');
-      $('#uniform-2').animate({opacity: '0',});
+      $('#uniform-2').animate({opacity: '0'});
       return promise.timeout(1000);
     })
 
