@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../js/jquery-3.4.0.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  <style>
+  *{margin: 0; padding: 0;}
+
+  .wrap {
+    height: 3000px;
+  }
+
+  .up {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transition: all .5s;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .up.on {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .up a {
+    display: block;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    background: rgba(0,0,0,0.6);
+    color: #eee;
+  }
+
+  </style>
+</head>
+<body>
+  <div class="wrap"></div>
+  <div class="up"><a href="javascript:;">TOP</a></div>
+
+  <script>
+  $(window).scroll(function(){
+    if ($(this).scrollTop() > 0){
+      $('.up').addClass('on');
+    } else {
+      $('.up').removeClass('on');
+    };
+  });
+
+  $('.up').on('click', function(){
+    $(window).scrollTop(0);
+  });
+
+
+  </script>
+  
+</body>
+</html>
