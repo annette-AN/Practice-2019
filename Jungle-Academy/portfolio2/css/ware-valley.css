@@ -137,7 +137,7 @@ div.top-hero .hero-btn {
     line-height: 2;
   }
   div.top-hero .hero-btn {
-    top: 82%;
+    top: 75%;
     right: auto;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
@@ -169,6 +169,8 @@ div.top-hero .hero-btn {
 
 .top-hero.hero3 {
   background-image: url(../img/download/common/slide_visual03.jpg);
+  background-position: top center;
+  background-size: 130% 100%;
 }
 
 .top-hero.hero3 h1, .top-hero.hero3 .hero-btn {
@@ -180,6 +182,7 @@ div.top-hero .hero-btn {
 .top-hero.hero3 h1 {
   top: 30%;
   right: 150px;
+  height: 180px;
 }
 
 .top-hero.hero3 h1 img {
@@ -187,17 +190,22 @@ div.top-hero .hero-btn {
 }
 
 .top-hero.hero3 .hero-btn {
-  top: 70%;
+  top: 60%;
   right: 345px;
 }
 
 @media all and (max-width: 768px) {
   .top-hero.hero3 h1 {
+    color: #fff;
     right: auto;
-    top: 45%;
+    top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
+  }
+  .top-hero.hero3 h1 img {
+    width: 200px;
+    margin-bottom: 10px;
   }
   .top-hero.hero3 h1 span {
     font-size: 18px;
@@ -205,7 +213,7 @@ div.top-hero .hero-btn {
     opacity: 0.8;
   }
   .top-hero.hero3 .hero-btn {
-    top: 82%;
+    top: 75%;
     right: auto;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
