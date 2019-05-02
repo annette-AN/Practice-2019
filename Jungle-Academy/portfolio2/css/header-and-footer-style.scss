@@ -38,6 +38,12 @@ header.main-header.first {
     height: 100%;
     color: #fff;
     margin: 0 auto;
+
+    h1.logo {
+      a{
+        color: #fff;
+      }
+    }
   }
   
   //header.main-header

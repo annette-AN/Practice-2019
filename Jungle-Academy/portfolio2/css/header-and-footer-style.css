@@ -55,6 +55,10 @@ header.main-header.first div.container {
   margin: 0 auto;
 }
 
+header.main-header.first div.container h1.logo a {
+  color: #fff;
+}
+
 @media all and (max-width: 768px) {
   header.main-header.first {
     height: 50px;
