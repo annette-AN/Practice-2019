@@ -14,10 +14,9 @@ section.memo-write {
     border: 1px solid rgb(196, 196, 196);
     border-radius: 10px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.1);
-
+    
     &[open] {
-      height: auto;
-      overflow: hidden;
+      height: 121px;
 
       .blind-sec { //인풋이라 부모 width를 안받음
         width: 100%;
@@ -303,51 +302,18 @@ section.memo-show {
       }
 
       .blind-sec {
-        width: 70%;
-
-        #fixed-icon {
-          display: none;
-        }
-      }
-
-      .memo-description, .memo-mid-icons {
         display: none;
       }
 
-      div#btn-set {
-        display: block;
-        width: 30%;
-        //추가
-        position: absolute;
-        top: 0px;
-        right: 0px;
-
-        button {
-          //저장과 삭제가 되면 좋겠다
-          display: block;
-          float: left;
-          line-height: 27px;
-          margin: 0;
-          padding: 5px 0;
-          //추가
-          border-left: 1px solid #c4c4c4;
-          border-bottom: 1px solid #c4c4c4;
-          box-sizing: border-box;
-          width: 50%;
-        }
+      .memo-mid-icons{
+        display: none;
       }
 
       &[open] {
         height: auto;
-        // overflow: hidden;
-        // //
-        // position: relative;
-
-        &:hover {
-          box-shadow: none;
-        }
-
+        
         .blind-sec {
+          display: block;
           width: 100%;
 
           .memo-title {
@@ -383,9 +349,7 @@ section.memo-show {
 
 
         div#btn-set {
-          position: relative;
-          top: auto;
-          right: auto;
+          display: block;
           width: 100%;
           margin: 10px 0px 0px 0px;
           border-top: 1px solid #c4c4c4;
@@ -395,12 +359,19 @@ section.memo-show {
             margin: 0px;
             padding: 3px 0;
             border: none;
-            //추가
-
-            width: 50%;
+            width: 49%;
+            box-sizing: border-box;
 
             &:first-child {
               border-right: 1px solid #c4c4c4;
+            }
+
+            #memo-save {
+              float: left;
+            }
+
+            #memo-close {
+              float: right;
             }
           }
         }

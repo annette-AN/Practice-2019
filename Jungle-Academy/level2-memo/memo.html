@@ -89,6 +89,12 @@
       }
     };
 
+    //메모열때 height가 161px 121px 이어야함
+    function isDescTop() {
+      window.innerWidth > 768 ;
+    }
+    
+
     //툴팁 mouseenter
     $(document).on('mouseenter','[data-tooltip]',function(){
       var tooltipText = $(this).attr('data-tooltip');

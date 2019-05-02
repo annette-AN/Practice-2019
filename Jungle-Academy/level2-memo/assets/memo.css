@@ -10,8 +10,7 @@ section.memo-write .memo-body {
 }
 
 section.memo-write .memo-body[open] {
-  height: auto;
-  overflow: hidden;
+  height: 121px;
 }
 
 section.memo-write .memo-body[open] .blind-sec {
@@ -284,41 +283,16 @@ section.memo-show .memo-body div#btn-set button {
             box-shadow: none;
   }
   section.memo-show .memo-body .blind-sec {
-    width: 70%;
-  }
-  section.memo-show .memo-body .blind-sec #fixed-icon {
     display: none;
   }
-  section.memo-show .memo-body .memo-description, section.memo-show .memo-body .memo-mid-icons {
+  section.memo-show .memo-body .memo-mid-icons {
     display: none;
-  }
-  section.memo-show .memo-body div#btn-set {
-    display: block;
-    width: 30%;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-  }
-  section.memo-show .memo-body div#btn-set button {
-    display: block;
-    float: left;
-    line-height: 27px;
-    margin: 0;
-    padding: 5px 0;
-    border-left: 1px solid #c4c4c4;
-    border-bottom: 1px solid #c4c4c4;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    width: 50%;
   }
   section.memo-show .memo-body[open] {
     height: auto;
   }
-  section.memo-show .memo-body[open]:hover {
-    -webkit-box-shadow: none;
-            box-shadow: none;
-  }
   section.memo-show .memo-body[open] .blind-sec {
+    display: block;
     width: 100%;
   }
   section.memo-show .memo-body[open] .blind-sec .memo-title {
@@ -346,9 +320,7 @@ section.memo-show .memo-body div#btn-set button {
     opacity: 1;
   }
   section.memo-show .memo-body[open] div#btn-set {
-    position: relative;
-    top: auto;
-    right: auto;
+    display: block;
     width: 100%;
     margin: 10px 0px 0px 0px;
     border-top: 1px solid #c4c4c4;
@@ -358,10 +330,18 @@ section.memo-show .memo-body div#btn-set button {
     margin: 0px;
     padding: 3px 0;
     border: none;
-    width: 50%;
+    width: 49%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
   }
   section.memo-show .memo-body[open] div#btn-set button:first-child {
     border-right: 1px solid #c4c4c4;
+  }
+  section.memo-show .memo-body[open] div#btn-set button #memo-save {
+    float: left;
+  }
+  section.memo-show .memo-body[open] div#btn-set button #memo-close {
+    float: right;
   }
 }
 /*# sourceMappingURL=memo.css.map */
