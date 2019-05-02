@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://unpkg.com/jquery@3"></script>
+  <script type="text/javascript" src="js/menu-active.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/header-and-footer-style.css">
   <link rel="stylesheet" href="css/ware-valley.css">
   <title>WareValley</title>
   </head>
@@ -20,7 +22,6 @@
           <a class="hero-btn" href="javascript:;">view more</a>
         </div>
         <div class="top-hero hero3">
-          <!-- img바꿧음 위치 다시 지정필요 -->
           <h1><img src="img/download/common/slide_visual03_1.png" alt="hero3"><span>웨어밸리 정보 보안 통합 솔루션</span></h1>
           <a class="hero-btn" href="javascript:;">view more</a>
         </div>
@@ -31,7 +32,7 @@
         <a></a>
       </aside>
     </div>
-    <header class="main-header">
+    <header class="main-header first">
       <!-- container/wrapper/wrap 영역임 -->
       <div class="container">
         <h1 class="logo">
@@ -257,47 +258,6 @@
   <div class="logo-Top">TOP</div>
   
   <script> 
-    function isDesktop (){
-      return window.innerWidth > 768;
-    }
-
-    function toggleMenuOpenClose (){
-      if($('.main-header').is('[open]')){
-        $('.main-header').removeAttr('open');
-      } else {
-        $('.main-header').attr('open','');
-      };
-    }
-
-    //메뉴 click 효과
-    //메뉴열기
-    $(document).on('click','.menu-opener',toggleMenuOpenClose);
-
-    //pc버전이고 open이 아닐때 메뉴 click
-    $(document).on('click','li.menu-item',function(){
-      if(isDesktop() === true){
-        toggleMenuOpenClose();
-      } else {
-        if($(this).is('.sub-menu-open')){
-          $(this).removeClass('sub-menu-open');
-        } else {
-          $('li.menu-item').removeClass('sub-menu-open');
-          $(this).addClass('sub-menu-open');
-        }
-        
-        //var subMenuOpen = $(this).index();
-        //console.log('subMenuOpen',subMenuOpen);
-        //$('.sub-menu').removeClass('.sub-menu-open');
-        //$('.sub-menu').eq(subMenuOpen).addClass('.sub-menu-open');
-        //한개가 틀렸어
-      };
-    });
-
-
-    //mobile버전일때가 전제조건임
-    false && $(document).on('click','li.menu-item', function(){
-      
-    });
 
     // indicator slide
     var indicatorTimer = null;
@@ -339,29 +299,6 @@
     });
 
 
-    //top btn 활성화
-
-    var autoFadeoutTopButton = function(){
-      if($(window).scrollTop() === 0){
-        $('.logo-Top').fadeOut();
-      } else {
-        $('.logo-Top').fadeIn();
-      };
-    };
-
-    $(window).on('scroll', autoFadeoutTopButton);
-    autoFadeoutTopButton();
-      
-    $('.logo-Top').on('click', function(){
-      $(window).scrollTop(0);
-    });
-
-
-
-
-
-
-    
   </script>
 </body>
 </html>

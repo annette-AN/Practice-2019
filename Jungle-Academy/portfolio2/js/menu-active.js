@@ -1,23 +1,25 @@
-function isDesktop() {
-  return window.innerWidth > 768;
+$(function(){
+
+  function isDesktop() {
+    return window.innerWidth > 768;
   }
 
   function toggleMenuOpenClose() {
-  if ($('.main-header').is('[open]')) {
-      $('.main-header').removeAttr('open');
-  } else {
-      $('.main-header').attr('open', '');
-  }
-}
+    if ($('.main-header').is('[open]')) {
+        $('.main-header').removeAttr('open');
+    } else {
+        $('.main-header').attr('open', '');
+    }
+  };
 
-$(document).ready(function() {
+
 
   //메뉴열기
   $(document).on('click', '.menu-opener', toggleMenuOpenClose);
   $(document).on('click', 'li.menu-item', function () {
-  if (isDesktop() === true) {
-      toggleMenuOpenClose();
-  } else {
+    if (isDesktop() === true) {
+        toggleMenuOpenClose();
+    } else {
       if ($(this).is('.sub-menu-open')) {
       $(this).removeClass('sub-menu-open');
       } else {
@@ -25,4 +27,22 @@ $(document).ready(function() {
       }
     }
   });
-};
+
+  //top btn 활성화
+
+  var autoFadeoutTopButton = function(){
+    if($(window).scrollTop() === 0){
+      $('.logo-Top').fadeOut();
+    } else {
+      $('.logo-Top').fadeIn();
+    };
+  };
+
+  $(window).on('scroll', autoFadeoutTopButton);
+  autoFadeoutTopButton();
+    
+  $('.logo-Top').on('click', function(){
+    $(window).scrollTop(0);
+  });
+});
+

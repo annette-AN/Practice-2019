@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://unpkg.com/jquery@3"></script>
+  <script type="text/javascript" src="js/menu-active.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/header-and-footer-subpagestyle.css">
+  <link rel="stylesheet" href="css/header-and-footer-style.css">
   <link rel="stylesheet" href="css/sign-in.css">
   <title>login</title>
 </head>
@@ -147,34 +148,6 @@
 
   <div class="logo-Top">TOP</div>
 
-  <script>
-  function isDesktop (){
-    return window.innerWidth > 768;
-  }
-
-  function toggleMenuOpenClose (){
-    if($('.main-header').is('[open]')){
-      $('.main-header').removeAttr('open');
-    } else {
-      $('.main-header').attr('open','');
-    }
-  }
-
-  //메뉴열기
-  $(document).on('click','.menu-opener', toggleMenuOpenClose);
-  $(document).on('click','li.menu-item', function(){
-    if(isDesktop() === true){
-      toggleMenuOpenClose();
-    } else {
-      if($(this).is('.sub-menu-open')) {
-        $(this).removeClass('sub-menu-open');
-      } else {
-        $(this).addClass('sub-menu-open');
-      }
-    }
-  })
-
-  </script>
 
 </body>
 </html>
