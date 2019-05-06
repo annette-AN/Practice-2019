@@ -13,6 +13,12 @@ section.memo-write .memo-body[open] {
   height: 121px;
 }
 
+@media all and (max-width: 768px) {
+  section.memo-write .memo-body[open] {
+    height: 161px;
+  }
+}
+
 section.memo-write .memo-body[open] .blind-sec {
   width: 100%;
   display: inline-block;
@@ -26,7 +32,7 @@ section.memo-write .memo-body[open] .memo-mid-icons {
   display: inline-block;
 }
 
-section.memo-write .memo-body[open] div#btn-set {
+section.memo-write .memo-body[open] div.btn-set {
   display: block;
 }
 
@@ -80,7 +86,7 @@ section.memo-write .memo-body .blind-sec {
   position: relative;
 }
 
-section.memo-write .memo-body .blind-sec #fixed-icon {
+section.memo-write .memo-body .blind-sec .fixed-icon {
   color: gray;
   font-size: 20px;
   line-height: 40px;
@@ -110,12 +116,12 @@ section.memo-write .memo-body div.memo-mid-icons a.input-icon {
   font-size: 15px;
 }
 
-section.memo-write .memo-body div#btn-set {
+section.memo-write .memo-body div.btn-set {
   display: none;
   float: right;
 }
 
-section.memo-write .memo-body div#btn-set button {
+section.memo-write .memo-body div.btn-set button {
   display: inline-block;
   margin-right: 20px;
   padding: 0 15px;
@@ -216,7 +222,7 @@ section.memo-show .memo-body .blind-sec {
   position: relative;
 }
 
-section.memo-show .memo-body .blind-sec #fixed-icon {
+section.memo-show .memo-body .blind-sec .fixed-icon {
   opacity: 0;
   line-height: 40px;
   position: absolute;
@@ -255,12 +261,12 @@ section.memo-show .memo-body div.memo-mid-icons a.input-icon-l {
   display: none;
 }
 
-section.memo-show .memo-body div#btn-set {
+section.memo-show .memo-body div.btn-set {
   display: none;
   float: right;
 }
 
-section.memo-show .memo-body div#btn-set button {
+section.memo-show .memo-body div.btn-set button {
   display: inline-block;
   margin-right: 20px;
   padding: 0 15px;
@@ -299,12 +305,12 @@ section.memo-show .memo-body div#btn-set button {
     font-size: 16px;
     color: gray;
   }
-  section.memo-show .memo-body[open] .blind-sec #fixed-icon {
+  section.memo-show .memo-body[open] .blind-sec .fixed-icon {
     display: block;
     opacity: 1;
     line-height: 36px;
   }
-  section.memo-show .memo-body[open] .blind-sec #fixed-icon a.input-icon {
+  section.memo-show .memo-body[open] .blind-sec .fixed-icon a.input-icon {
     opacity: 1;
     margin-right: 0px;
   }
@@ -319,13 +325,13 @@ section.memo-show .memo-body div#btn-set button {
   section.memo-show .memo-body[open] div.memo-mid-icons a.input-icon {
     opacity: 1;
   }
-  section.memo-show .memo-body[open] div#btn-set {
+  section.memo-show .memo-body[open] div.btn-set {
     display: block;
     width: 100%;
     margin: 10px 0px 0px 0px;
     border-top: 1px solid #c4c4c4;
   }
-  section.memo-show .memo-body[open] div#btn-set button {
+  section.memo-show .memo-body[open] div.btn-set button {
     line-height: 25px;
     margin: 0px;
     padding: 3px 0;
@@ -334,13 +340,13 @@ section.memo-show .memo-body div#btn-set button {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
-  section.memo-show .memo-body[open] div#btn-set button:first-child {
+  section.memo-show .memo-body[open] div.btn-set button:first-child {
     border-right: 1px solid #c4c4c4;
   }
-  section.memo-show .memo-body[open] div#btn-set button #memo-save {
+  section.memo-show .memo-body[open] div.btn-set button .memo-save {
     float: left;
   }
-  section.memo-show .memo-body[open] div#btn-set button #memo-close {
+  section.memo-show .memo-body[open] div.btn-set button .memo-close {
     float: right;
   }
 }
