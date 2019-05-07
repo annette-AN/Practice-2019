@@ -1,0 +1,271 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+html > body {
+  margin: 0;
+  height: 100%;
+  overflow: scroll;
+}
+
+html > body > header {
+  margin: 0;
+  height: 100%;
+}
+
+html > body > header > nav.gnb {
+  height: 100%;
+}
+
+html > body > header > nav.gnb > div.menu {
+  width: 100%;
+  height: 100%;
+  color: #FFFFFF;
+}
+
+html > body > header > nav.gnb > div.menu > .menu-body {
+  overflow: hidden;
+  height: 100%;
+}
+
+nav.gnb {
+  position: relative;
+}
+
+nav.gnb > .gnb-menu {
+  position: fixed;
+  width: 120px;
+  right: 0;
+  left: auto;
+  height: 100%;
+  z-index: 999;
+}
+
+nav.gnb > .gnb-menu a#blue-gnb, nav.gnb > .gnb-menu a#pink-gnb {
+  display: block;
+  height: 300px;
+  cursor: pointer;
+}
+
+nav.gnb > .gnb-menu a#blue-gnb:after, nav.gnb > .gnb-menu a#pink-gnb:after {
+  content: url(/Practice-2019/Jungle-Academy/portfolio1/img/bg_mnavi_p.png);
+}
+
+nav.gnb > .gnb-menu a#blue-gnb span, nav.gnb > .gnb-menu a#pink-gnb span {
+  display: inline-block;
+  width: 84px;
+  letter-spacing: 6px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #FFFFFF;
+  line-height: 1.5em;
+}
+
+nav.gnb > .gnb-menu a#blue-gnb {
+  background-color: #1573AA;
+}
+
+nav.gnb > .gnb-menu a#pink-gnb {
+  background-color: #E7437D;
+}
+
+nav.gnb > div.menu .btnBox {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 130px;
+  padding-top: 50px;
+  margin-right: 200px;
+  float: right;
+}
+
+nav.gnb > div.menu .btnBox > a {
+  vertical-align: top;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  color: #eee;
+  opacity: 0.8;
+  text-decoration: none;
+  margin-top: 3px;
+  margin-left: 30px;
+}
+
+nav.gnb > div.menu .btnBox > a.closeBtn {
+  width: 30px;
+  margin: 0 0 0 40px;
+}
+
+nav.gnb > div.menu .btnBox > a.closeBtn > img {
+  width: 100%;
+}
+
+nav.gnb > div.menu .main-body {
+  height: 480px;
+  margin: 0 180px 0 40px;
+  clear: both;
+}
+
+nav.gnb > div.menu .main-body > h2.headerLogo {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.7em;
+  word-spacing: 7px;
+  float: left;
+  margin: 0;
+}
+
+nav.gnb > div.menu .main-body > .gnbMenu {
+  height: 100%;
+  float: right;
+  width: 1230px;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+nav.gnb > div.menu .main-body > .gnbMenu > ul {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  width: 270px;
+  border: 1px solid white;
+  vertical-align: top;
+  margin-top: 0;
+  margin-right: 28px;
+}
+
+nav.gnb > div.menu .main-body > .gnbMenu > ul h3, nav.gnb > div.menu .main-body > .gnbMenu > ul p, nav.gnb > div.menu .main-body > .gnbMenu > ul li {
+  letter-spacing: -1px;
+}
+
+nav.gnb > div.menu .main-body > .gnbMenu > ul h3 {
+  font-size: 1.3em;
+  margin-top: 30px;
+}
+
+nav.gnb > div.menu .main-body > .gnbMenu > ul p {
+  font-size: 12px;
+  line-height: 1.5em;
+  margin-top: 0;
+}
+
+nav.gnb > div.menu .main-body > .gnbMenu > ul span {
+  display: block;
+  width: 55px;
+  height: 1px;
+  margin: 25px 0;
+  border-bottom: 1px solid white;
+  opacity: 0.3;
+}
+
+nav.gnb > div.menu .main-body > .gnbMenu > ul > li.contentsList {
+  list-style: none;
+}
+
+nav.gnb > div.menu .main-body > .gnbMenu > ul > li.contentsList > a.insideList {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 0.8em;
+  color: white;
+  line-height: 2em;
+  padding-left: 10px;
+  background-image: url(/Practice-2019/Jungle-Academy/portfolio1/img/bg_hmenu_sub_a.png);
+  background-repeat: no-repeat;
+  background-position: 0 11px;
+}
+
+nav.gnb > div.menu .main-body > .gnbMenu > ul > li.contentsList > a.insideList:hover {
+  color: #FFFE8E;
+}
+
+nav.gnb > div.menu .main-body > .gnbMenu ul.contents-top {
+  min-height: 285px;
+}
+
+nav.gnb > div.menu .main-body > .gnbMenu ul.contents-buttom {
+  margin-top: 30px;
+  min-height: 340px;
+}
+
+nav.gnb > div.menu div.snb {
+  margin-top: 50px;
+  overflow: hidden;
+}
+
+nav.gnb > div.menu div.snb > .snb-center {
+  width: 410px;
+  margin-left: 590px;
+  overflow: hidden;
+  float: left;
+}
+
+nav.gnb > div.menu div.snb > .snb-center > a.snb-btn {
+  display: block;
+  float: left;
+  width: 20%;
+  text-decoration: none;
+}
+
+nav.gnb > div.menu div.snb a.snb-right-btn {
+  display: block;
+  float: right;
+  margin-right: 200px;
+}
+
+nav.gnb > div.menu.parents {
+  position: absolute;
+  left: 100%;
+  background-color: #1E75A8;
+  -webkit-transition: left .5s;
+  transition: left .5s;
+}
+
+nav.gnb > div.menu.parents.menu-active {
+  left: 0;
+}
+
+nav.gnb > div.menu.students {
+  position: absolute;
+  left: 100%;
+  background-color: #E7437D;
+  -webkit-transition: left .5s;
+  transition: left .5s;
+}
+
+nav.gnb > div.menu.students.menu-active {
+  left: 0;
+}
+
+footer {
+  background: #272d32;
+  height: 370px;
+  color: #fff;
+}
+
+footer .footer-wrap {
+  width: 620px;
+  background: red;
+  margin: 80px auto;
+}
+
+footer .footer-wrap > div {
+  background: black;
+  width: 443px;
+  margin: 0px auto;
+}
+
+footer .footer-wrap > div img {
+  margin-left: 30px;
+}
+
+footer .footer-wrap > div img:first-child {
+  margin-left: 0px;
+}
+/*# sourceMappingURL=headerandfooter.css.map */

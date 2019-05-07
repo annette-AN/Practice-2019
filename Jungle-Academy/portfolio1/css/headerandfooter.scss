@@ -1,0 +1,269 @@
+
+a {text-decoration: none; color: inherit;}
+
+html {
+  width: 100%;
+  height: 100%;
+
+  >body {
+    margin: 0;
+    height: 100%;
+    overflow: scroll;
+
+    >header {
+      margin: 0;
+      height: 100%;
+
+      >nav.gnb {
+        height: 100%;
+
+        >div.menu {
+          width: 100%;
+          height: 100%;
+          color: #FFFFFF;
+
+          >.menu-body {
+            overflow: hidden;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+nav.gnb {
+  position: relative;
+
+  >.gnb-menu {
+    position: fixed;
+    width: 120px;
+    right: 0;
+    left: auto;
+    height: 100%;
+    z-index: 999; 
+    //z-index 를 999를 주는이유
+
+    a#blue-gnb, a#pink-gnb {
+      display: block;
+      height: 300px;
+      cursor: pointer;
+
+      &:after {//위치조정 필요
+        content: url(/Practice-2019/Jungle-Academy/portfolio1/img/bg_mnavi_p.png);
+      }
+
+      span { //aline 정렬 제대로 하고싶음
+        display: inline-block;
+        width: 84px;
+        letter-spacing: 6px;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        color: #FFFFFF;
+        line-height: 1.5em;
+      }
+    }
+
+    a#blue-gnb {
+      background-color:#1573AA;
+    }
+
+    a#pink-gnb {
+      background-color:#E7437D;
+    }
+  }
+
+  >div.menu { //아래에 스크롤이 생김
+    
+    .btnBox {
+      box-sizing: border-box;
+      height: 130px;
+      padding-top: 50px;
+      margin-right: 200px;
+      float: right;
+
+      >a {
+        vertical-align: top;
+        display: inline-block;
+        font-size: 15px;
+        font-weight: bold;
+        color: #eee;
+        opacity: 0.8;
+        text-decoration: none;
+        margin-top: 3px;
+        margin-left: 30px;
+      }
+
+      >a.closeBtn {
+        width: 30px;
+        margin: 0 0 0 40px;
+
+        >img {
+          width:100%;
+        }
+      }
+    }
+    
+    .main-body {
+      height: 480px;
+      margin: 0 180px 0 40px;
+      clear: both;
+
+      >h2.headerLogo { //좀더 위로 올리고 싶음
+        font-size: 28px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 1.7em;
+        word-spacing: 7px;
+        float: left;
+        margin: 0;
+      }
+
+      >.gnbMenu { //스크롤 바꾸기
+        height: 100%;
+        float: right;
+        width: 1230px;
+        margin: 0 auto;
+        overflow: auto; 
+
+        >ul {
+          box-sizing: border-box;
+          display: inline-block;
+          width: 270px;
+          border: 1px solid white;
+          vertical-align: top;
+          margin-top: 0;
+          margin-right: 28px;
+
+          h3, p, li {
+            letter-spacing: -1px;
+          }
+
+          h3 {
+            font-size: 1.3em;
+            margin-top: 30px;
+          }
+
+          p {
+            font-size: 12px;
+            line-height: 1.5em;
+            margin-top: 0;
+          }
+
+          span {
+            display: block;
+            width: 55px;
+            height: 1px;
+            margin: 25px 0;
+            border-bottom: 1px solid white;
+            opacity: 0.3;
+          }
+
+          >li.contentsList {
+            list-style: none;
+
+            >a.insideList {
+              display: inline-block;
+              text-decoration: none;
+              font-size: 0.8em;
+              color: white;
+              line-height: 2em;
+              padding-left: 10px;
+              background-image: url(/Practice-2019/Jungle-Academy/portfolio1/img/bg_hmenu_sub_a.png);
+              background-repeat: no-repeat;
+              background-position: 0 11px;
+
+              &:hover {
+                color: #FFFE8E;
+              }
+            }
+          }
+        }
+
+        ul.contents-top {
+          min-height: 285px;
+        }
+        
+        ul.contents-buttom {
+          margin-top: 30px;
+          min-height: 340px;
+        }
+      }
+    }
+
+    div.snb {
+      margin-top: 50px;
+      overflow: hidden;
+
+      >.snb-center {
+        width: 410px;
+        margin-left: 590px;
+        overflow: hidden;
+        float: left;
+
+        >a.snb-btn {
+          display: block;
+          float: left;
+          width: 20%;
+          text-decoration: none;
+        }
+      }
+
+      a.snb-right-btn {
+        display: block;
+        float: right;
+        margin-right: 200px;
+      }
+    }
+  }
+  
+  >div.menu.parents {
+    position: absolute;
+    left: 100%;
+    background-color: #1E75A8;
+    transition: left .5s;
+
+    &.menu-active {
+      left: 0;
+    }
+  }
+
+  >div.menu.students {
+    position: absolute;
+    left: 100%;
+    background-color: #E7437D;
+    transition: left .5s;
+
+    &.menu-active {
+      left: 0;
+    }
+  }
+}
+
+footer {
+  background: #272d32;
+  height: 370px;
+  color: #fff;
+
+  .footer-wrap {
+    width: 620px;
+    background: red;
+    
+    margin: 80px auto;
+
+    >div {
+      background: black;
+      width: 443px;
+      margin: 0px auto;
+
+      img {
+        margin-left: 30px;
+
+        &:first-child {
+          margin-left: 0px;
+        }
+      }
+    }    
+  }
+}
