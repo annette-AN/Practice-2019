@@ -17,8 +17,14 @@
 <body>
   <section id="main-door">
   <!-- 파란 문 양옆에서 닫침 -->
-    <div class="left-door"></div>
-    <div class="right-door"></div>
+    <div class="door-bg">
+      <div class="left-door"></div>
+      <div class="right-door"></div>
+    </div>
+    <div class="cloud-bg">
+      <div class="left-cloud"></div>
+      <div class="right-cloud"></div>
+    </div>
       
     <!-- 스마트 로고 -->
     <div class="logo"></div>
@@ -41,6 +47,8 @@
     <div class="text-banner-pink"></div>
   </section> 
 
+  <a class="skip" href="main.html"></a>
+
 
   <script>
 
@@ -49,11 +57,12 @@
     promise(function(resolve){ $(window).on('load',resolve) })
     .then(function(){
       //파란 문 양옆에서 닫침
-      $('#main-door').addClass('door-active');
+      $('.door-bg').addClass('door-active');
       return promise.timeout(500);
     })
     .then(function(){
-      //로고나옴
+      //파란배너 skip 나옴
+      $('.skip').addClass('show');
       $('.text-banner').addClass('banner-active');
       return promise.timeout(1300);
     })
@@ -76,33 +85,35 @@
     })
     .then(function(){
       //배너 제거
-      $('.text-banner').animate({opacity: '0'});
+      $('.text-banner').addClass('hide');
       return promise.timeout(300); 
     })
     .then(function(){
       //배경바뀌고 여자모델과 분홍배너 나옴
-      //배경이 안바뀜
-      $('#main.door').addClass('cloud-bg');
-      $('.text-banner-pink').animate({opacity: '1'});
+      $('.door-bg').addClass('hide');
+      $('.cloud-bg').addClass('show');
+      $('.text-banner-pink').addClass('show');
       $('.actor-2').addClass('actor-active');
       return promise.timeout(1000);
     })
     .then(function(){
       //여자 유니폼 나옴
-      $('#uniform-2').addClass('uniform-active-2');
+      $('#uniform-2').addClass('uniform-active');
       return promise.timeout(1500);
     })
     .then(function(){
-      //배경바뀌고 여자모델과 분홍배너 제거
-      //배경이 안바뀜
-      $('#main.door').removeClass('cloud-bg');
-      $('.text-banner-pink').animate({top:'-50%'});
+      //배경바뀌고 여자모델과 배너 로고 제거
+      $('.cloud-bg').addClass('cloud-active');
       $('.actor-2').removeClass('actor-active');
-      $('#uniform-2').animate({opacity: '0'});
-      return promise.timeout(1000);
-    })
+      $('#uniform-2').addClass('hide');
+      $('.text-banner-pink').addClass('active');
+      $('.logo').addClass('hide');
+      //스킵 클릭이 안됌
+      $('.skip').click();
+    });
+    
 
-    ;
+
 
     //chrome, ie edge에서만 가능한 문법 (es6)
     // $(window).on("load", async function(){

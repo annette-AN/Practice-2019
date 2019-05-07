@@ -10,8 +10,13 @@ section.memo-write .memo-body {
 }
 
 section.memo-write .memo-body[open] {
-  height: auto;
-  overflow: hidden;
+  height: 121px;
+}
+
+@media all and (max-width: 768px) {
+  section.memo-write .memo-body[open] {
+    height: 161px;
+  }
 }
 
 section.memo-write .memo-body[open] .blind-sec {
@@ -27,7 +32,7 @@ section.memo-write .memo-body[open] .memo-mid-icons {
   display: inline-block;
 }
 
-section.memo-write .memo-body[open] div#btn-set {
+section.memo-write .memo-body[open] div.btn-set {
   display: block;
 }
 
@@ -81,7 +86,7 @@ section.memo-write .memo-body .blind-sec {
   position: relative;
 }
 
-section.memo-write .memo-body .blind-sec #fixed-icon {
+section.memo-write .memo-body .blind-sec .fixed-icon {
   color: gray;
   font-size: 20px;
   line-height: 40px;
@@ -111,12 +116,12 @@ section.memo-write .memo-body div.memo-mid-icons a.input-icon {
   font-size: 15px;
 }
 
-section.memo-write .memo-body div#btn-set {
+section.memo-write .memo-body div.btn-set {
   display: none;
   float: right;
 }
 
-section.memo-write .memo-body div#btn-set button {
+section.memo-write .memo-body div.btn-set button {
   display: inline-block;
   margin-right: 20px;
   padding: 0 15px;
@@ -217,7 +222,7 @@ section.memo-show .memo-body .blind-sec {
   position: relative;
 }
 
-section.memo-show .memo-body .blind-sec #fixed-icon {
+section.memo-show .memo-body .blind-sec .fixed-icon {
   opacity: 0;
   line-height: 40px;
   position: absolute;
@@ -256,12 +261,12 @@ section.memo-show .memo-body div.memo-mid-icons a.input-icon-l {
   display: none;
 }
 
-section.memo-show .memo-body div#btn-set {
+section.memo-show .memo-body div.btn-set {
   display: none;
   float: right;
 }
 
-section.memo-show .memo-body div#btn-set button {
+section.memo-show .memo-body div.btn-set button {
   display: inline-block;
   margin-right: 20px;
   padding: 0 15px;
@@ -284,53 +289,28 @@ section.memo-show .memo-body div#btn-set button {
             box-shadow: none;
   }
   section.memo-show .memo-body .blind-sec {
-    width: 70%;
-  }
-  section.memo-show .memo-body .blind-sec #fixed-icon {
     display: none;
   }
-  section.memo-show .memo-body .memo-description, section.memo-show .memo-body .memo-mid-icons {
+  section.memo-show .memo-body .memo-mid-icons {
     display: none;
-  }
-  section.memo-show .memo-body div#btn-set {
-    display: block;
-    width: 30%;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-  }
-  section.memo-show .memo-body div#btn-set button {
-    display: block;
-    float: left;
-    line-height: 27px;
-    margin: 0;
-    padding: 5px 0;
-    border-left: 1px solid #c4c4c4;
-    border-bottom: 1px solid #c4c4c4;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    width: 50%;
   }
   section.memo-show .memo-body[open] {
     height: auto;
   }
-  section.memo-show .memo-body[open]:hover {
-    -webkit-box-shadow: none;
-            box-shadow: none;
-  }
   section.memo-show .memo-body[open] .blind-sec {
+    display: block;
     width: 100%;
   }
   section.memo-show .memo-body[open] .blind-sec .memo-title {
     font-size: 16px;
     color: gray;
   }
-  section.memo-show .memo-body[open] .blind-sec #fixed-icon {
+  section.memo-show .memo-body[open] .blind-sec .fixed-icon {
     display: block;
     opacity: 1;
     line-height: 36px;
   }
-  section.memo-show .memo-body[open] .blind-sec #fixed-icon a.input-icon {
+  section.memo-show .memo-body[open] .blind-sec .fixed-icon a.input-icon {
     opacity: 1;
     margin-right: 0px;
   }
@@ -345,23 +325,29 @@ section.memo-show .memo-body div#btn-set button {
   section.memo-show .memo-body[open] div.memo-mid-icons a.input-icon {
     opacity: 1;
   }
-  section.memo-show .memo-body[open] div#btn-set {
-    position: relative;
-    top: auto;
-    right: auto;
+  section.memo-show .memo-body[open] div.btn-set {
+    display: block;
     width: 100%;
     margin: 10px 0px 0px 0px;
     border-top: 1px solid #c4c4c4;
   }
-  section.memo-show .memo-body[open] div#btn-set button {
+  section.memo-show .memo-body[open] div.btn-set button {
     line-height: 25px;
     margin: 0px;
     padding: 3px 0;
     border: none;
-    width: 50%;
+    width: 49%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
   }
-  section.memo-show .memo-body[open] div#btn-set button:first-child {
+  section.memo-show .memo-body[open] div.btn-set button:first-child {
     border-right: 1px solid #c4c4c4;
+  }
+  section.memo-show .memo-body[open] div.btn-set button .memo-save {
+    float: left;
+  }
+  section.memo-show .memo-body[open] div.btn-set button .memo-close {
+    float: right;
   }
 }
 /*# sourceMappingURL=memo.css.map */

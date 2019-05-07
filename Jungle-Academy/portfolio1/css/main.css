@@ -237,4 +237,8 @@ nav.gnb > div.menu.students {
 nav.gnb > div.menu.students.menu-active {
   left: 0;
 }
+
+.hide {
+  opacity: 0;
+}
 /*# sourceMappingURL=main.css.map */
