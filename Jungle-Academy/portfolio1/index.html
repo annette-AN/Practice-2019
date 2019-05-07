@@ -108,8 +108,10 @@
       $('#uniform-2').addClass('hide');
       $('.text-banner-pink').addClass('active');
       $('.logo').addClass('hide');
-      $('.skip').click();
-    });
+      //skip btn 안먹힘
+      $('.skip').trigger('click');
+    })
+    ;
     
 
 
