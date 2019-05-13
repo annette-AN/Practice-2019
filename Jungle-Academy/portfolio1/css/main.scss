@@ -10,7 +10,7 @@ html {
     margin: 0;
     height: 100%;
 
-    >header {
+    > header {
       // background: silver;
       margin: 0;
       height: 100%;
@@ -39,6 +39,7 @@ html {
 
 nav.gnb {
   position: relative;
+  z-index: 998;
 
   >.gnb-menu { //click effect 넣기
     position: fixed;
@@ -46,7 +47,7 @@ nav.gnb {
     right: 0;
     left: auto;
     height: 100%;
-    z-index: 999; 
+    z-index: 999;
 
     a#blue-gnb, a#pink-gnb {
       position: relative;

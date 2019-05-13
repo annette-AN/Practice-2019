@@ -38,6 +38,7 @@ html > body > header > nav.gnb > div.menu > .menu-body {
 
 nav.gnb {
   position: relative;
+  z-index: 998;
 }
 
 nav.gnb > .gnb-menu {
