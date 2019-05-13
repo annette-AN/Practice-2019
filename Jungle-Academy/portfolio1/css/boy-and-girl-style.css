@@ -1,1 +1,13 @@
-/* No CSS *//*# sourceMappingURL=boy-and-girl-style.css.map */
+.hero {
+  background: #f6f0dc;
+}
+
+.hero img {
+  display: block;
+  margin: 0px auto;
+}
+
+.test {
+  height: 150px;
+}
+/*# sourceMappingURL=boy-and-girl-style.css.map */

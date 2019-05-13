@@ -12,7 +12,7 @@ html {
 
     >header {
       margin: 0;
-      height: 100%;
+      height: 600px;
 
       >nav.gnb {
         height: 100%;
@@ -33,15 +33,15 @@ html {
 }
 
 nav.gnb {
-  position: relative;
+  //.gnb-menu안에 있던 포지션 및 값을 gnb로 옮김
+  position: fixed;
+  right: 0;
+  left: auto;
+  height: 100%;
 
   >.gnb-menu {
-    position: fixed;
     width: 120px;
-    right: 0;
-    left: auto;
-    height: 100%;
-    z-index: 999; 
+    z-index: 999;
     //z-index 를 999를 주는이유
 
     a#blue-gnb, a#pink-gnb {
@@ -241,29 +241,70 @@ nav.gnb {
   }
 }
 
+
+@keyframes mask {
+  from {width: 0%;}
+  to {width: 100%;}
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 35px;
+  display: block;
+  width: 180px;
+  height: 80px;
+  transition: opacity 1s;
+
+  &:after {
+    content: url(../img/hero/img_logo.png);
+    display: block;
+    overflow: hidden;
+    animation-name: mask;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  }
+}
+
 footer {
   background: #272d32;
   height: 370px;
   color: #fff;
+  overflow: hidden;
 
   .footer-wrap {
     width: 620px;
-    background: red;
-    
     margin: 80px auto;
 
     >div {
-      background: black;
       width: 443px;
       margin: 0px auto;
 
       img {
+        cursor: pointer;
         margin-left: 30px;
 
         &:first-child {
           margin-left: 0px;
         }
       }
-    }    
+    }
+
+    p {
+      text-align: center;
+
+      span {
+        display: inline-block;
+        padding: 5px 5px;
+      }
+    }
+
+    p+p {
+      margin-top: 30px;
+      font-size: 14px;
+      letter-spacing: 5px;
+    }
   }
 }
+
+

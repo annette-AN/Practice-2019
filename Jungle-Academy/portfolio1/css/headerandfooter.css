@@ -16,7 +16,7 @@ html > body {
 
 html > body > header {
   margin: 0;
-  height: 100%;
+  height: 600px;
 }
 
 html > body > header > nav.gnb {
@@ -35,15 +35,14 @@ html > body > header > nav.gnb > div.menu > .menu-body {
 }
 
 nav.gnb {
-  position: relative;
-}
-
-nav.gnb > .gnb-menu {
   position: fixed;
-  width: 120px;
   right: 0;
   left: auto;
   height: 100%;
+}
+
+nav.gnb > .gnb-menu {
+  width: 120px;
   z-index: 999;
 }
 
@@ -243,29 +242,85 @@ nav.gnb > div.menu.students.menu-active {
   left: 0;
 }
 
+@-webkit-keyframes mask {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes mask {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 35px;
+  display: block;
+  width: 180px;
+  height: 80px;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+.logo:after {
+  content: url(../img/hero/img_logo.png);
+  display: block;
+  overflow: hidden;
+  -webkit-animation-name: mask;
+          animation-name: mask;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
 footer {
   background: #272d32;
   height: 370px;
   color: #fff;
+  overflow: hidden;
 }
 
 footer .footer-wrap {
   width: 620px;
-  background: red;
   margin: 80px auto;
 }
 
 footer .footer-wrap > div {
-  background: black;
   width: 443px;
   margin: 0px auto;
 }
 
 footer .footer-wrap > div img {
+  cursor: pointer;
   margin-left: 30px;
 }
 
 footer .footer-wrap > div img:first-child {
   margin-left: 0px;
+}
+
+footer .footer-wrap p {
+  text-align: center;
+}
+
+footer .footer-wrap p span {
+  display: inline-block;
+  padding: 5px 5px;
+}
+
+footer .footer-wrap p + p {
+  margin-top: 30px;
+  font-size: 14px;
+  letter-spacing: 5px;
 }
 /*# sourceMappingURL=headerandfooter.css.map */
