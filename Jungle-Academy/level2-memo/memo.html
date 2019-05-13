@@ -77,6 +77,11 @@
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
+    //initmemo
+    var memoTemplate = $(".memo-write .memo-body").clone();
+    function initMemo(){
+      $(".memo-write .memo-body").replaceWith(memoTemplate.clone());
+    };
     
     //no-memo 가 적용되려면 저장할때 함수가 실행되도록 해줘야함
     function checkNocContent(){
@@ -90,10 +95,9 @@
     };
 
     //메모열때 
-    function isDescTop() {
-      window.innerWidth > 768 ;
+    function isDesktop() {
+      return window.innerWidth > 768;
     }
-    
 
     //툴팁 mouseenter
     $(document).on('mouseenter','[data-tooltip]',function(){
@@ -109,28 +113,63 @@
 
     //새로만들기 메모열기
     $(document).on('focus','.memo-description',function(){
-      $(this).parent('.memo-body').attr('open','');
+      var $memoBody = $(this).parents('.memo-body');
+      
+      //open
+      $memoBody.attr('open','');
+
+      //cache
+      var data = {
+        title: $memoBody.find('.memo-title').val(),
+        description: $memoBody.find('.memo-description').val()
+      };
+      $memoBody.data('cache', data);
     });
 
-    //메모닫기, 뭐가 틀린건지 모르겠음
+    //메모닫기
     $(document).on('click','.memo-close',function(){
-      $(this).parent('.memo-body').removeAttr('open','');
+      var $memoBody = $(this).parents('.memo-body');
+
+      //close
+      $(this).parents('.memo-body').removeAttr('open','');
+
+      //cache
+      var cacheData = $memoBody.data('cache');
+      $memoBody.find('.memo-title').val(cacheData.title);
+      $memoBody.find('.memo-description').val(cacheData.description);
     });
 
     //메모저장
     $(document).on('click','.memo-save',function(){
-      console.log('memo save')
-      var saveMemo = $('.memo-write .memo-body').clone();
-      $(saveMemo).removeAttr('open','');
-      $('.memo-show').append(saveMemo);
-      checkNocContent();
+      if($(this).parents('.memo-write')[0]){
+        //신규
+        var saveMemo = $('.memo-write .memo-body').clone();
+        $(saveMemo).removeAttr('open','');
+        $('.memo-show').append(saveMemo);
+        checkNocContent();
+        initMemo();
+      } else {
+        //수정
+        $(this).parents('.memo-body').removeAttr('open','');
+      }
     });
 
+    $('.memo-show').on('focusout', '.memo-title, .memo-description', function(){
+      if(!isDesktop()){
+        return; // 아랫줄이 실행 안됨
+      }
+      $(this).parents('.memo-body').find('.memo-save').trigger('click');
+    });
+
+
+    
     //폼 액션을 막아줌
     $(document).on('submit','form.memo-body',function(e){
       e.preventDefault();
     });
 
+
+    
     //가짜로 내용넣기
     $('.memo-body .memo-title').val("안녕 난 타이틀")
     $('.memo-body .memo-description').val('안녕 난 내용');
