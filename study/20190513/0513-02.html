@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../js/jquery-3.4.0.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="../css/0513-02.css">
+</head>
+<body>
+  <ul class="gnb">
+    <li class="m">
+      <a href="">메뉴1</a>
+      <ul>
+        <li><a href="">메뉴1-1</a></li>
+        <li><a href="">메뉴1-2</a></li>
+        <li><a href="">메뉴1-3</a></li>
+        <li><a href="">메뉴1-4</a></li>
+        <li><a href="">메뉴1-5</a></li>
+      </ul>
+    </li>
+
+    <li class="m">
+      <a href="">메뉴2</a>
+      <ul>
+        <li><a href="">메뉴2-1</a></li>
+        <li><a href="">메뉴2-2</a></li>
+        <li><a href="">메뉴2-3</a></li>
+        <li><a href="">메뉴2-4</a></li>
+        <li><a href="">메뉴2-5</a></li>
+      </ul>
+    </li>
+
+    <li class="m">
+      <a href="">메뉴3</a>
+      <ul>
+        <li><a href="">메뉴3-1</a></li>
+        <li><a href="">메뉴3-2</a></li>
+        <li><a href="">메뉴3-3</a></li>
+        <li><a href="">메뉴3-4</a></li>
+        <li><a href="">메뉴3-5</a></li>
+      </ul>
+    </li>
+
+    <li class="m">
+      <a href="">메뉴4</a>
+      <ul>
+        <li><a href="">메뉴4-1</a></li>
+        <li><a href="">메뉴4-2</a></li>
+        <li><a href="">메뉴4-3</a></li>
+        <li><a href="">메뉴4-4</a></li>
+        <li><a href="">메뉴4-5</a></li>
+      </ul>
+    </li>
+
+    <li class="m">
+      <a href="">메뉴5</a>
+      <ul>
+        <li><a href="">메뉴5-1</a></li>
+        <li><a href="">메뉴5-2</a></li>
+        <li><a href="">메뉴5-3</a></li>
+        <li><a href="">메뉴5-4</a></li>
+        <li><a href="">메뉴5-5</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="main"><a href="">비주얼이미지</a></div>
+  
+  <script>
+  $(function(){
+    $('.gnb .m').on('mouseenter', function(){
+      $('ul', this).show();
+      $(this).siblings('li').find('ul').hide();
+      $(this).addClass('on').siblings('li').removeClass('on');
+    }).on('mouseleave', function(){
+      //ul 하이드 하고 .gnb .m을 추가해서 리무브클래스하겠다
+      $('.gnb ul').hide().add('.gnb .m').removeClass('on');
+    });
+
+    false && $("*:not('.gnb a')").on('focus', function(){
+      $('.gnb ul').hide().add('.gnb .m').removeClass('on');
+    });
+  });
+  
+  </script>
+</body>
+</html>

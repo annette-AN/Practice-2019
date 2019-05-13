@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../js/jquery-3.4.0.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    li {list-style: none;}
+    html {height: 100%;}
+    body {
+      font-size: 12px;
+      color: #333;
+      height: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .select {
+      width: 200px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      background: #fff;
+      z-index: 100;
+    }
+
+    .select a {
+      display: block;
+      height: 20px;
+    }
+
+    .select .title {
+      border: 1px solid #ccc;
+      padding-left: 10px;
+    }
+
+    .select .list {
+      border: 1px solid #ccc;
+      background: #fff;
+      position: absolute;
+      left: 0px;
+      top: -94px;
+      width: 200px;
+      box-sizing: border-box;
+      display: none;
+    }
+
+    .select .list.on {
+      display: block;
+    }
+
+    .select .list a {
+      padding: 5px 10px;
+      border-bottom: 1ps solid #ddd;
+    }
+
+    .select .list a:hover, .select .list a:focus {
+      background: #ff6600;
+      color: #fff;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="select">
+    <div class="title"><a href="">계열사</a></div>
+    <ul class="list">
+      <li><a href="https://www.ejungle.co.kr/" target="_blank" title="새창으로이동">아카데미정글</a></li>
+      <li><a href="http://www.hrd.go.kr/" target="_blank" title="새창으로이동">직업훈련교육</a></li>
+      <li><a href="http://w3schools.com" target="_blank" title="새창으로이동">html튜토리얼</a></li>
+    </ul>
+  </div>
+
+  <script>
+    $(function(){
+      $('.title a').on('click', function(e){
+        if ($(this).hasClass('on')){
+          $(this).add('.list').removeClass('on');
+        }else {
+          $(this).add('.list').addClass('on');
+        }
+        e.preventDefault();
+      });
+    });
+  </script>
+</body>
+</html>
