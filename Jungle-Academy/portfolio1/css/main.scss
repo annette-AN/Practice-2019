@@ -1,3 +1,5 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
 html {
   // background: silver;
   width: 100%;
@@ -7,7 +9,6 @@ html {
     // background: silver;
     margin: 0;
     height: 100%;
-    overflow: hidden;
 
     >header {
       // background: silver;
@@ -17,6 +18,7 @@ html {
       >nav.gnb {
         // background: silver;
         height: 100%;
+        overflow: hidden;
 
         >div.menu {
           // background: silver;
@@ -38,33 +40,44 @@ html {
 nav.gnb {
   position: relative;
 
-  >.gnb-menu {
+  >.gnb-menu { //click effect 넣기
     position: fixed;
     width: 120px;
     right: 0;
     left: auto;
     height: 100%;
     z-index: 999; 
-    //z-index 를 999를 주는이유
 
     a#blue-gnb, a#pink-gnb {
+      position: relative;
       display: block;
       height: 50%;
       cursor: pointer;
 
-      &:after {//위치조정 필요
-        content: url(/Practice-2019/Jungle-Academy/portfolio1/img/bg_mnavi_p.png);
-      }
 
-      span { //aline 정렬 제대로 하고싶음
-        display: inline-block;
-        width: 84px;
-        letter-spacing: 6px;
+      span { //완전 가운데로 가지를 않음
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        width: 80px;
+        letter-spacing: 9px;
         font-size: 20px;
         font-weight: bold;
-        text-align: center;
         color: #FFFFFF;
         line-height: 1.5em;
+
+        &:after {
+          content: url(../img/bg_mnavi_p.png);
+          width: 10px;
+          height: 17px;
+          display: block;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          padding-top: 10px;
+        }
       }
     }
 
@@ -248,3 +261,175 @@ nav.gnb {
   opacity: 0;
 }
 
+// section
+.intro-1 { //header영역때문에 absolute로 자리잡음
+  background: wheat;
+  position: absolute;
+  width: 100%;
+  font-family: 'Gothic A1', sans-serif;
+  top: 0;
+  height: 960px;
+
+  .intro1-bg {
+    &.on {
+      
+    }
+  }
+
+  .logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 180px;
+    height: 80px;
+    z-index: 5;
+  }
+
+  .left {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+
+    >div {
+      position: absolute;
+      top: 50%;
+      margin-left: 120px;
+      transform: translateY(-50%);
+      width: 400px;
+      height: 430px;
+    }
+  }
+
+  .right {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0%;
+    left: 50%;
+  }
+}
+
+// intro-1 bg
+.intro1-bg.bg1 {
+  >.bg-img {
+    position: absolute;
+    bottom: 0%;
+    left: 43%;
+  }
+  >.left {
+    background: #C9EBF7;
+
+    h2 {
+      font-size: 50px;
+      font-weight: lighter;
+
+      strong {
+        color: #085EA9;
+      }
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+      letter-spacing: 1px;
+      margin-top: 40px;
+    }
+    >div >div {
+      margin-top: 40px;
+      img {
+        margin-right: 20px;
+      }
+    }
+  }
+  >.right {
+    background: #ECEDEF;
+  }
+}
+
+
+.intro1-bg.bg2 {
+  >.bg-img {
+    position: absolute;
+    bottom: 0%;
+    left: 30%;
+  }
+  >.left {
+    background: #F2D6D5;
+    h2 {
+      font-size: 48px;
+      font-weight: lighter;
+      strong {
+        color: #D93F75;
+      }
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+      letter-spacing: 1px;
+      margin-top: 40px;
+    }
+    >div >div {
+      margin-top: 40px;
+      img {
+        margin-right: 20px;
+      }
+    }
+  }
+  >.right {
+    background: #ECEDEF;
+  }
+}
+
+.intro1-bg.bg3 {
+  >.bg-img {
+    position: absolute;
+    bottom: 0%;
+    left: 43%;
+  }
+  >.left {
+    background: #BAEBF0;
+    >div{
+      width: 550px;
+      height: 500px;
+      h2 {
+        font-size: 50px;
+        font-weight: lighter;
+        strong {
+          color: #127D84;
+        }
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.5;
+        letter-spacing: 1px;
+        margin-top: 40px;
+      }
+      img {
+        margin-top: 20px;
+      }
+    }
+  }
+  >.right {
+    background: #ECEDEF;
+  }
+}
+
+.intro1-bg.bg4 {
+  >.bg-img {
+    position: absolute;
+    bottom: 0%;
+    margin-left: 20px;
+  }
+  >.left {
+    background: #D7DFF8;
+  }
+  >.right {
+    background: #ECEDEF;
+  }
+  >img+img {
+    position: absolute;
+    top: 270px;
+    margin-left: 600px;
+  }
+}
