@@ -1,4 +1,3 @@
-*{margin: 0; padding: 0; box-sizing: border-box;}
 
 html {
   // background: silver;
@@ -55,19 +54,21 @@ nav.gnb {
       height: 50%;
       cursor: pointer;
 
-
       span { //완전 가운데로 가지를 않음
+        display: block;
+        width: 95px;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        display: block;
-        width: 80px;
         letter-spacing: 9px;
+        box-sizing: border-box;
+        padding-left: 4.5px;
         font-size: 20px;
         font-weight: bold;
         color: #FFFFFF;
         line-height: 1.5em;
+
 
         &:after {
           content: url(../img/bg_mnavi_p.png);
@@ -92,6 +93,8 @@ nav.gnb {
   }
 
   >div.menu { //아래에 스크롤이 생김
+    //fixed 해도 스크롤이 아래로 내려감
+    position: fixed;
     
     .btnBox {
       box-sizing: border-box;
@@ -123,25 +126,25 @@ nav.gnb {
     }
     
     .main-body {
-      height: 480px;
-      margin: 0 180px 0 40px;
+      height: 500px;
+      margin-left: 80px;
       clear: both;
 
-      >h2.headerLogo { //좀더 위로 올리고 싶음
+      >.headerLogo { //좀더 위로 올리고 싶음
         font-size: 28px;
         font-weight: bold;
         text-align: center;
         line-height: 1.7em;
-        word-spacing: 7px;
+        letter-spacing: 15px;
         float: left;
         margin: 0;
       }
 
       >.gnbMenu { //스크롤 바꾸기
         height: 100%;
-        float: right;
+        float: left;
         width: 1230px;
-        margin: 0 auto;
+        margin-left: 140px;
         overflow: auto; 
 
         >ul {
@@ -210,14 +213,12 @@ nav.gnb {
     }
 
     div.snb {
-      margin-top: 50px;
+      margin-top: 100px;
       overflow: hidden;
 
       >.snb-center {
         width: 410px;
-        margin-left: 590px;
-        overflow: hidden;
-        float: left;
+        margin: 0 auto;
 
         >a.snb-btn {
           display: block;
@@ -229,8 +230,8 @@ nav.gnb {
 
       a.snb-right-btn {
         display: block;
-        float: right;
-        margin-right: 200px;
+        float: left;
+        margin-left: 300px;
       }
     }
   }
