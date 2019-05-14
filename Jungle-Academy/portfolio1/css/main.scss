@@ -42,7 +42,7 @@ nav.gnb {
 
   >.gnb-menu { //click effect 넣기
     position: fixed;
-    width: 120px;
+    width: 140px;
     right: 0;
     left: auto;
     height: 100%;
@@ -56,14 +56,14 @@ nav.gnb {
 
       span { //완전 가운데로 가지를 않음
         display: block;
-        width: 95px;
+        width: 85px;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        letter-spacing: 9px;
+        letter-spacing: 6px;
+        margin-left: -3px;
         box-sizing: border-box;
-        padding-left: 4.5px;
         font-size: 20px;
         font-weight: bold;
         color: #FFFFFF;
@@ -273,15 +273,16 @@ nav.gnb {
   height: 960px;
 
   .intro1-bg {
-    &.on {
-      
-    }
+    display: none;
+  }
+  .intro1-bg.show {
+    display: block;
   }
 
   .logo {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 20px;
+    left: 30px;
     width: 180px;
     height: 80px;
     z-index: 5;
@@ -296,9 +297,8 @@ nav.gnb {
 
     >div {
       position: absolute;
-      top: 50%;
-      margin-left: 120px;
-      transform: translateY(-50%);
+      top: 200px;
+      margin-left: 270px;
       width: 400px;
       height: 430px;
     }
@@ -354,7 +354,7 @@ nav.gnb {
   >.bg-img {
     position: absolute;
     bottom: 0%;
-    left: 30%;
+    left: 35%;
   }
   >.left {
     background: #F2D6D5;
@@ -387,8 +387,9 @@ nav.gnb {
   >.bg-img {
     position: absolute;
     bottom: 0%;
-    left: 43%;
+    left: 44.5%;
   }
+
   >.left {
     background: #BAEBF0;
     >div{
@@ -421,7 +422,7 @@ nav.gnb {
   >.bg-img {
     position: absolute;
     bottom: 0%;
-    margin-left: 20px;
+    margin-left: 120px;
   }
   >.left {
     background: #D7DFF8;
@@ -431,7 +432,7 @@ nav.gnb {
   }
   >img+img {
     position: absolute;
-    top: 270px;
-    margin-left: 600px;
+    top: 300px;
+    margin-left: 730px;
   }
 }
