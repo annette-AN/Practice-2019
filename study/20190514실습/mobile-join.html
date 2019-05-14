@@ -27,6 +27,7 @@
       <a><span>03</span>가입완료</a>
     </div>
     <article>
+      <!-- label과 input div로 묶기 -->
       <label for="id">아이디</label>
       <input type="text" required id="id">
 
@@ -42,10 +43,12 @@
       <label for="email">이메일</label>
       <input type="email" required id="email">
 
-      <label for="mail-accept">
-      <input type="checkbox" id="mail-accept">
-      <i class="fas fa-check-square" id="mail-accept"></i>
-      정보/이벤트 메일 수신에 동의합니다.</label>
+      <div class="accept">
+        <label for="mail-accept">
+        <input type="checkbox" id="mail-accept">
+        <i class="fas fa-check-square" id="mail-accept"></i>
+        정보/이벤트 메일 수신에 동의합니다.</label>
+      </div>
 
       <p>
         <i class="fas fa-exclamation-circle"></i>
@@ -58,10 +61,12 @@
       <label for="cell-phone">휴대전화</label>
       <input type="tel" required id="cell-phone" placeholder="-없이 입력하세요">
       
-      <label for="sms-accept">
-      <input type="checkbox" id="sms-accept">
-      <i class="fas fa-check-square" id="sms-accept"></i>
-      정보/이벤트 SMS 수신에 동의합니다.</label>
+      <div class="accept">
+        <label for="sms-accept">
+        <input type="checkbox" id="sms-accept">
+        <i class="fas fa-check-square" id="sms-accept"></i>
+        정보/이벤트 SMS 수신에 동의합니다.</label>
+      </div>
 
       <label for="adress">주소</label>
       <input type="tel" required id="adress">

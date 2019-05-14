@@ -15,7 +15,7 @@ section, footer {
 }
 
 header {
-  position: fixed;
+  position: absolute;
   top: 0px;
   width: 100%;
   height: 90px;
@@ -132,20 +132,10 @@ article label {
   font-size: 14px;
 }
 
-article label[for="mail-accept"], article label[for="sms-accept"] {
-  height: 30px;
-  background: wheat;
-  width: 70%;
-}
-
 article input {
   width: 70%;
   height: 35px;
   border: 1px solid #e5e5e5;
   outline: none;
-}
-
-article input[type="checkbox"] {
-  width: 15px;
 }
 /*# sourceMappingURL=mobile-join.css.map */
