@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://unpkg.com/jquery@3"></script>
+  <script src="js/swiper.js"></script>
   <script type="text/javascript" src="js/menu-active.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="css/header-and-footer-style.css">
   <link rel="stylesheet" href="css/ware-valley.css">
+  <link rel="stylesheet" href="css/swiper.css">
   <title>WareValley</title>
   </head>
   <body>
@@ -130,50 +132,54 @@
     <article>
       <!-- 겹칠일이 없어 class명을 굳이 줄 필요없음 -->
       <h2>Products</h2>
-      <ul>
-        <li class="cyclone">
-          <div class="image-wrap"></div>
-          <h3>Cyclone</h3>
-          <p>데이터 보안 진단 솔루션</p>
-          <a class="btnMore">MORE</a>
-        </li>
-        <li class="chakra-max">
-          <div class="image-wrap"></div>
-          <h3>Chakra max</h3>
-          <p>세계 최고 데이터베이스 보안 솔루션</p>
-          <a class="btnMore">MORE</a>
-        </li>
-        <li class="galea">
-          <div class="image-wrap"></div>
-          <h3>Galea</h3>
-          <p>중요 DBMS의 컬럼 암/복호화 솔루션</p>
-          <a class="btnMore">MORE</a>
-        </li>
-        <li class="trusted-orange">
-          <div class="image-wrap"></div>
-          <h3>Trusted orange</h3>
-          <p>데이터베이스 작업 결재 솔루션</p>
-          <a class="btnMore">MORE</a>
-        </li>
-        <li class="orange">
-          <div class="image-wrap"></div>
-          <h3>Orange</h3>
-          <p>DB개발, 성능관리 TOOL 오렌지</p>
-          <a class="btnMore">MORE</a>
-        </li>
-        <li class="petasql">
-          <div class="image-wrap"></div>
-          <h3>peta SQL</h3>
-          <p>분석용 데이터베이스</p>
-          <a class="btnMore">MORE</a>
-        </li>
-        <li class="lora">
-          <div class="image-wrap"></div>
-          <h3>lora</h3>
-          <p>실시간 데이터 복제 솔루션</p>
-          <a class="btnMore">MORE</a>
-        </li>
-      </ul>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide cyclone">
+            <div class="image-wrap"></div>
+            <h3>Cyclone</h3>
+            <p>데이터 보안 진단 솔루션</p>
+            <a class="btnMore">MORE</a>
+          </div>
+          <div class="swiper-slide chakra-max">
+            <div class="image-wrap"></div>
+            <h3>Chakra max</h3>
+            <p>세계 최고 데이터베이스 보안 솔루션</p>
+            <a class="btnMore">MORE</a>
+          </div>
+          <div class="swiper-slide galea">
+            <div class="image-wrap"></div>
+            <h3>Galea</h3>
+            <p>중요 DBMS의 컬럼 암/복호화 솔루션</p>
+            <a class="btnMore">MORE</a>
+          </div>
+          <div class="swiper-slide trusted-orange">
+            <div class="image-wrap"></div>
+            <h3>Trusted orange</h3>
+            <p>데이터베이스 작업 결재 솔루션</p>
+            <a class="btnMore">MORE</a>
+          </div>
+          <div class="swiper-slide orange">
+            <div class="image-wrap"></div>
+            <h3>Orange</h3>
+            <p>DB개발, 성능관리 TOOL 오렌지</p>
+            <a class="btnMore">MORE</a>
+          </div>
+          <div class="swiper-slide petasql">
+            <div class="image-wrap"></div>
+            <h3>peta SQL</h3>
+            <p>분석용 데이터베이스</p>
+            <a class="btnMore">MORE</a>
+          </div>
+          <div class="swiper-slide lora">
+            <div class="image-wrap"></div>
+            <h3>lora</h3>
+            <p>실시간 데이터 복제 솔루션</p>
+            <a class="btnMore">MORE</a>
+          </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
     </article>
   </section>
 
@@ -296,6 +302,28 @@
       $('.hero-indicator > a').removeClass('active');
       $(this).addClass('active');
       reserveSlideNext();
+    });
+
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 5,
+      spaceBetween: 30,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+      
+        // when window width is <= 640px
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+
+        960: {
+          slidesPerView: 3,
+          spaceBetween: 20
+        }
+      }
     });
 
 

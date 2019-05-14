@@ -361,21 +361,32 @@ h2 {
 
 section#product {
 
+  .swiper-container {
+    max-width: calc(100% - 40px);
+    width: 1500px;
+    height: 420px;
+
+    .swiper-slide {
+      //width: 200px;
+    }
+  }
+
   article {
     max-width: calc(100% - 40px);
     width: 1500px;
     margin: 0 auto;
-    overflow: hidden;
+    //overflow: hidden;
 
-    ul {//스와이퍼로 적용할 예정
-      display: block;
-      height: 400px;
-      text-align: center;
+    .swiper-wrapper {//스와이퍼로 적용할 예정
+      //display: block;
+      //height: 400px;
+      //text-align: center;
 
-      li {
-        margin-left: 33.3333px;
-        width: 20%;
-        float: left;
+      .swiper-slide {
+        //margin-left: 33.3333px;
+        //width: 20%;
+        //float: left;
+        text-align: center;
         margin: 0 auto;
         height: 100%;
 
@@ -424,24 +435,31 @@ section#product {
       }
     }
 
-    li.cyclone > .image-wrap {
+    .swiper-pagination {
+      top: 400px;
+      .swiper-pagination-bullet {
+       margin: 0 5px;
+      }
     }
-    li.chakra-max > .image-wrap {
+
+    .swiper-slide.cyclone > .image-wrap {
+    }
+    .swiper-slide.chakra-max > .image-wrap {
       background-image: url(../img/download/common/icon_solutions2.png);
     }
-    li.galea > .image-wrap {
+    .swiper-slide.galea > .image-wrap {
       background-image: url(../img/download/common/icon_solutions3.png);
     }
-    li.trusted-orange > .image-wrap {
+    .swiper-slide.trusted-orange > .image-wrap {
       background-image: url(../img/download/common/icon_solutions4.png);
     }
-    li.orange > .image-wrap {
+    .swiper-slide.orange > .image-wrap {
       background-image: url(../img/download/common/icon_solutions5.png);
     }
-    li.petasql > .image-wrap {
+    .swiper-slide.petasql > .image-wrap {
       background-image: url(../img/download/common/icon_solutions6.png);
     }
-    li.lora > .image-wrap {
+    .swiper-slide.lora > .image-wrap {
       background-image: url(../img/download/common/icon_solutions7.png);
       background-size: 100px auto;
     }
