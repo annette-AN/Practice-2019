@@ -69,7 +69,7 @@ section#main-door {
       width: 50%;
       left: 0%;
       height: 100%;
-      background: url(../img/main/img_smart_intro02.jpg) no-repeat;
+      background: url(../img/main/img_smart_intro02-l.jpg) no-repeat right top ;
       transition: left .4s;
     }
 
@@ -78,7 +78,7 @@ section#main-door {
       width: 50%;
       left: 50%;
       height: 100%;
-      background: url(../img/main/img_smart_intro02.jpg) no-repeat;
+      background: url(../img/main/img_smart_intro02-r.jpg) no-repeat left top ;
       transition: left .4s;
     }
 
@@ -115,7 +115,7 @@ section#main-door {
     transition: opacity 1s;
 
     &:after {
-      content: url(../img/hero/img_logo.png);
+      content: url(../img/main/img_logo.png);
       display: block;
       overflow: hidden;
       animation-name: mask;
@@ -182,17 +182,17 @@ section#main-door {
     height: 589px;
     left: 50%;
     transform: translateX(-50%);
-    bottom: -1500px;
-    transition: bottom 1s;
+    top: 100%;
+    transition: top 1s;
 
     &.actor-active{
-      bottom: -50px;
+      top: 35%;
     }
   }
 
   .actor-2 {
     background-image: url(../img/main/img_intro_model02.png);
-    transition: bottom .4s; 
+    transition: top .4s; 
   }
 }
 

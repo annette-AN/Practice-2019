@@ -73,7 +73,7 @@ section#main-door .cloud-bg .left-cloud {
   width: 50%;
   left: 0%;
   height: 100%;
-  background: url(../img/main/img_smart_intro02.jpg) no-repeat;
+  background: url(../img/main/img_smart_intro02-l.jpg) no-repeat right top;
   -webkit-transition: left .4s;
   transition: left .4s;
 }
@@ -83,7 +83,7 @@ section#main-door .cloud-bg .right-cloud {
   width: 50%;
   left: 50%;
   height: 100%;
-  background: url(../img/main/img_smart_intro02.jpg) no-repeat;
+  background: url(../img/main/img_smart_intro02-r.jpg) no-repeat left top;
   -webkit-transition: left .4s;
   transition: left .4s;
 }
@@ -132,7 +132,7 @@ section#main-door .logo {
 }
 
 section#main-door .logo:after {
-  content: url(../img/hero/img_logo.png);
+  content: url(../img/main/img_logo.png);
   display: block;
   overflow: hidden;
   -webkit-animation-name: mask;
@@ -203,19 +203,19 @@ section#main-door .actor-1, section#main-door .actor-2 {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  bottom: -1500px;
-  -webkit-transition: bottom 1s;
-  transition: bottom 1s;
+  top: 100%;
+  -webkit-transition: top 1s;
+  transition: top 1s;
 }
 
 section#main-door .actor-1.actor-active, section#main-door .actor-2.actor-active {
-  bottom: -50px;
+  top: 35%;
 }
 
 section#main-door .actor-2 {
   background-image: url(../img/main/img_intro_model02.png);
-  -webkit-transition: bottom .4s;
-  transition: bottom .4s;
+  -webkit-transition: top .4s;
+  transition: top .4s;
 }
 
 section#main-door img#uniform-1 {
