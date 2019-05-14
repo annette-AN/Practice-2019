@@ -108,11 +108,12 @@
       $('#uniform-2').addClass('hide');
       $('.text-banner-pink').addClass('active');
       $('.logo').addClass('hide');
+      return promise.timeout(1000);
     })
     // 이걸 넣으면 마지막 액션이 적용되지 않음
-    // .then(function(){
-    //  location.href = 'main.html';
-    // })
+    .then(function(){
+     location.href = 'main.html';
+    })
     ;
 
     //chrome, ie edge에서만 가능한 문법 (es6)
