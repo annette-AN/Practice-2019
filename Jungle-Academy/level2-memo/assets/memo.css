@@ -142,6 +142,7 @@ section.memo-write .memo-body div.btn-set button {
 section.memo-show {
   width: 800px;
   max-width: calc(100%);
+  margin: 0 auto;
 }
 
 section.memo-show .no-memo {
