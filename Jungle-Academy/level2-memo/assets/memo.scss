@@ -15,11 +15,15 @@ section.memo-write {
     border-radius: 10px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.1);
     
+    @include media-mobile(){
+      width: 800px;
+    }
+
     &[open] {
       height: 121px;
 
-            @include media-mobile(){
-        height: 161px;
+        @include media-mobile(){
+          height: 161px;
       }
 
       .blind-sec { //인풋이라 부모 width를 안받음
@@ -141,6 +145,8 @@ section.memo-write {
 
 //memo-show
 section.memo-show {
+  width: 800px;
+  max-width: calc(100%);
 
   .no-memo {
   margin: 200px auto;
@@ -160,7 +166,8 @@ section.memo-show {
   }
 
   .memo-body {
-    margin: 20px auto;
+    display: inline-block;
+    margin: 20px;
     width: 300px;
     max-width: calc(100% - 40px);
     height: 125px;
@@ -288,12 +295,15 @@ section.memo-show {
 @include media-mobile{
 
   section.memo-show {
+    margin-left: 20px;
+
     .memo-body{
       height: auto;
       overflow: hidden;
       position: relative;
       width: 100%;
       max-width: calc(100% - 80px);
+      margin: 0px 0px 0px 20px;
       
       &:hover {
         box-shadow: none;

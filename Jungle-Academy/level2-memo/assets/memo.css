@@ -9,6 +9,12 @@ section.memo-write .memo-body {
           box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.1);
 }
 
+@media all and (max-width: 768px) {
+  section.memo-write .memo-body {
+    width: 800px;
+  }
+}
+
 section.memo-write .memo-body[open] {
   height: 121px;
 }
@@ -133,6 +139,11 @@ section.memo-write .memo-body div.btn-set button {
   outline: none;
 }
 
+section.memo-show {
+  width: 800px;
+  max-width: calc(100%);
+}
+
 section.memo-show .no-memo {
   margin: 200px auto;
   width: 800px;
@@ -151,7 +162,8 @@ section.memo-show .no-memo i {
 }
 
 section.memo-show .memo-body {
-  margin: 20px auto;
+  display: inline-block;
+  margin: 20px;
   width: 300px;
   max-width: calc(100% - 40px);
   height: 125px;
@@ -281,12 +293,16 @@ section.memo-show .memo-body div.btn-set button {
 }
 
 @media all and (max-width: 768px) {
+  section.memo-show {
+    margin-left: 20px;
+  }
   section.memo-show .memo-body {
     height: auto;
     overflow: hidden;
     position: relative;
     width: 100%;
     max-width: calc(100% - 80px);
+    margin: 0px 0px 0px 20px;
   }
   section.memo-show .memo-body:hover {
     -webkit-box-shadow: none;
