@@ -1,4 +1,3 @@
-
 html {
   width: 100%;
   height: 100%;
@@ -150,6 +149,7 @@ nav.gnb {
           vertical-align: top;
           margin-top: 0;
           margin-right: 28px;
+          padding-left: 40px;
 
           h3, p, li {
             letter-spacing: -1px;
@@ -163,7 +163,7 @@ nav.gnb {
           p {
             font-size: 12px;
             line-height: 1.5em;
-            margin-top: 0;
+            margin-top: 20px;;
           }
 
           span {

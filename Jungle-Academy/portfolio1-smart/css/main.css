@@ -157,6 +157,7 @@ nav.gnb > div.menu .main-body > .gnbMenu > ul {
   vertical-align: top;
   margin-top: 0;
   margin-right: 28px;
+  padding-left: 40px;
 }
 
 nav.gnb > div.menu .main-body > .gnbMenu > ul h3, nav.gnb > div.menu .main-body > .gnbMenu > ul p, nav.gnb > div.menu .main-body > .gnbMenu > ul li {
@@ -171,7 +172,7 @@ nav.gnb > div.menu .main-body > .gnbMenu > ul h3 {
 nav.gnb > div.menu .main-body > .gnbMenu > ul p {
   font-size: 12px;
   line-height: 1.5em;
-  margin-top: 0;
+  margin-top: 20px;
 }
 
 nav.gnb > div.menu .main-body > .gnbMenu > ul span {
