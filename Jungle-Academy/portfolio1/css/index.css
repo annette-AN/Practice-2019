@@ -209,7 +209,7 @@ section#main-door .actor-1, section#main-door .actor-2 {
 }
 
 section#main-door .actor-1.actor-active, section#main-door .actor-2.actor-active {
-  top: 35%;
+  top: 30%;
 }
 
 section#main-door .actor-2 {
