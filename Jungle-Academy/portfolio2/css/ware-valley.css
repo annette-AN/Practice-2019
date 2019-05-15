@@ -472,25 +472,23 @@ section#product article .swiper-slide.lora > .image-wrap {
     height: 100%;
   }
   section#product article h2 {
-    margin-bottom: 35px;
+    margin-bottom: 30px;
   }
-  section#product article ul {
-    height: 245px;
+  section#product article .swiper-wrapper .swiper-slide .image-wrap {
+    width: 150px;
+    height: 150px;
   }
-  section#product article ul li {
-    width: 130px;
-  }
-  section#product article ul li .image-wrap {
-    background-size: 130px 130px;
-  }
-  section#product article ul li h3 {
-    padding-top: 160px;
-  }
-  section#product article ul li p {
+  section#product article .swiper-wrapper .swiper-slide p {
     display: none;
   }
-  section#product article ul li a {
-    margin-top: 30px;
+  section#product article .swiper-wrapper .swiper-slide a {
+    margin-top: 20px;
+  }
+  section#product article .swiper-pagination {
+    top: 280px;
+  }
+  section#product article .swiper-pagination .swiper-pagination-bullet {
+    margin: 0 5px;
   }
 }
 

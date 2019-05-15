@@ -304,6 +304,8 @@
       reserveSlideNext();
     });
 
+
+    //스와이퍼
     var swiper = new Swiper('.swiper-container', {
       slidesPerView: 5,
       spaceBetween: 30,
@@ -312,16 +314,20 @@
         clickable: true,
       },
       breakpoints: {
-      
         // when window width is <= 640px
-        640: {
+        500: {
           slidesPerView: 2,
           spaceBetween: 20
         },
 
-        960: {
+        640: {
           slidesPerView: 3,
           spaceBetween: 20
+        },
+
+        960: {
+          slidesPerView: 5,
+          spaceBetween: 30
         }
       }
     });

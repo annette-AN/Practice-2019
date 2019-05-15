@@ -375,17 +375,9 @@ section#product {
     max-width: calc(100% - 40px);
     width: 1500px;
     margin: 0 auto;
-    //overflow: hidden;
 
     .swiper-wrapper {//스와이퍼로 적용할 예정
-      //display: block;
-      //height: 400px;
-      //text-align: center;
-
       .swiper-slide {
-        //margin-left: 33.3333px;
-        //width: 20%;
-        //float: left;
         text-align: center;
         margin: 0 auto;
         height: 100%;
@@ -473,31 +465,33 @@ section#product {
     article {
       height: 100%;
 
-      h2{
-        margin-bottom: 35px;
-
+      h2 {
+        margin-bottom: 30px;
       }
       
-      ul {
-        height: 245px;
-        // overflow: hidden;
-
-        li{
-          width: 130px;
+      .swiper-wrapper {
+        .swiper-slide {
 
           .image-wrap {
-            background-size: 130px 130px;
+            width: 150px;
+            height: 150px;
           }
-          
-          h3{
-            padding-top: 160px;
-          }
-          p{
+
+          p {
             display: none;
           }
-          a{
-            margin-top: 30px;
+
+          a {
+            margin-top: 20px;
           }
+
+        }
+      }
+
+      .swiper-pagination {
+        top: 280px;
+        .swiper-pagination-bullet {
+         margin: 0 5px;
         }
       }
     }
