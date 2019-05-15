@@ -424,7 +424,7 @@ section {
   }
 }
 
-.intro1-bg.bg4 {
+.intro1.bg4 {
   >.bg-img {
     position: absolute;
     bottom: 0%;
@@ -674,48 +674,5 @@ a {text-decoration: none; color: inherit;}
         }
       }
     }
-  }
-}
-
-footer {
-  height: 350px;
-  background: #272D31;
-  overflow: hidden;
-  color: #F4F4F4;
-
-  .footer-snb {
-    margin-top: 80px;
-    overflow: hidden;
-
-    >div {
-      width: 450px;
-      margin: 0 auto;
-
-      >a.snb-btn {
-        display: block;
-        float: left;
-        width: 20%;
-        text-decoration: none;
-      }
-    }
-  }
-
-  div+div {
-    margin-top: 20px;
-    text-align: center;
-
-    span {
-      //adress 색 왜저래
-      display: inline-block;
-      padding: 5px 10px;
-
-    }
-  }
-
-  p {
-    margin-top: 20px;
-    letter-spacing: 5px;
-    text-align: center;
-    text-transform: uppercase;
   }
 }
