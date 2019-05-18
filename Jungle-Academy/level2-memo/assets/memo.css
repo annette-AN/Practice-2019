@@ -3,6 +3,7 @@ section.memo-write .memo-body {
   margin: 80px auto;
   width: 800px;
   max-width: calc(100% - 80px);
+  min-width: 350px;
   border: 1px solid #c4c4c4;
   border-radius: 10px;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.1);
@@ -13,13 +14,6 @@ section.memo-write .memo-body {
   section.memo-write .memo-body {
     width: 800px;
   }
-}
-
-section.memo-write .memo-body[open] {
-  height: 121px;
-}
-
-@media all and (max-width: 768px) {
   section.memo-write .memo-body[open] {
     height: 161px;
   }
@@ -30,16 +24,40 @@ section.memo-write .memo-body[open] .blind-sec {
   display: inline-block;
 }
 
-section.memo-write .memo-body[open] .memo-front-icons {
+section.memo-write .memo-body[open] div.memo-front-icons {
   display: none;
+}
+
+@media all and (max-width: 768px) {
+  section.memo-write .memo-body[open] div.memo-front-icons {
+    display: block;
+  }
+  section.memo-write .memo-body[open] div.memo-front-icons a.input-icon {
+    font-size: 15px;
+    margin-right: 15px;
+  }
 }
 
 section.memo-write .memo-body[open] .memo-mid-icons {
   display: inline-block;
 }
 
+@media all and (max-width: 768px) {
+  section.memo-write .memo-body[open] .memo-mid-icons {
+    margin-right: 20px;
+  }
+}
+
 section.memo-write .memo-body[open] div.btn-set {
   display: block;
+}
+
+@media all and (max-width: 768px) {
+  section.memo-write .memo-body[open] div.btn-set {
+    float: none;
+    position: absolute;
+    right: 0px;
+  }
 }
 
 section.memo-write .memo-body a.input-icon {
@@ -89,16 +107,6 @@ section.memo-write .memo-body .memo-description, section.memo-write .memo-body .
 
 section.memo-write .memo-body .blind-sec {
   display: none;
-  position: relative;
-}
-
-section.memo-write .memo-body .blind-sec .fixed-icon {
-  color: gray;
-  font-size: 20px;
-  line-height: 40px;
-  position: absolute;
-  right: 0;
-  top: 0;
 }
 
 section.memo-write .memo-body .blind-sec .memo-description:focus, section.memo-write .memo-body .blind-sec .memo-title:focus {
@@ -113,6 +121,12 @@ section.memo-write .memo-body div.memo-front-icons {
   line-height: 40px;
 }
 
+@media all and (max-width: 768px) {
+  section.memo-write .memo-body div.memo-front-icons {
+    display: none;
+  }
+}
+
 section.memo-write .memo-body div.memo-mid-icons {
   display: none;
   margin: 10px 10px 10px 20px;
@@ -120,6 +134,7 @@ section.memo-write .memo-body div.memo-mid-icons {
 
 section.memo-write .memo-body div.memo-mid-icons a.input-icon {
   font-size: 15px;
+  margin-right: 20px;
 }
 
 section.memo-write .memo-body div.btn-set {
@@ -231,18 +246,6 @@ section.memo-show .memo-body .memo-title {
   font-size: 13px;
 }
 
-section.memo-show .memo-body .blind-sec {
-  position: relative;
-}
-
-section.memo-show .memo-body .blind-sec .fixed-icon {
-  opacity: 0;
-  line-height: 40px;
-  position: absolute;
-  right: 30px;
-  top: 0;
-}
-
 section.memo-show .memo-body div.memo-front-icons {
   display: none;
 }
@@ -312,7 +315,7 @@ section.memo-show .memo-body div.btn-set button {
   section.memo-show .memo-body .blind-sec {
     display: none;
   }
-  section.memo-show .memo-body .memo-mid-icons {
+  section.memo-show .memo-body div.memo-mid-icons {
     display: none;
   }
   section.memo-show .memo-body[open] {
@@ -326,18 +329,9 @@ section.memo-show .memo-body div.btn-set button {
     font-size: 16px;
     color: gray;
   }
-  section.memo-show .memo-body[open] .blind-sec .fixed-icon {
-    display: block;
-    opacity: 1;
-    line-height: 36px;
-  }
-  section.memo-show .memo-body[open] .blind-sec .fixed-icon a.input-icon {
+  section.memo-show .memo-body[open] .blind-sec a.input-icon {
     opacity: 1;
     margin-right: 0px;
-  }
-  section.memo-show .memo-body[open] div.memo-description {
-    display: block;
-    margin-top: 10px;
   }
   section.memo-show .memo-body[open] div.memo-mid-icons {
     display: block;
@@ -369,6 +363,10 @@ section.memo-show .memo-body div.btn-set button {
   }
   section.memo-show .memo-body[open] div.btn-set button .memo-close {
     float: right;
+  }
+  section.memo-show .memo-body div.memo-description {
+    display: block;
+    margin-top: 10px;
   }
 }
 /*# sourceMappingURL=memo.css.map */
