@@ -1,0 +1,92 @@
+@charset "utf-8";
+
+/*reset*/
+* {margin: 0; padding: 0;}
+li {list-style: none;}
+a {text-decoration: none;}
+
+.slideshow {
+	background: mistyrose;
+	height: 860px;
+	min-width: 960px;
+	overflow: hidden;
+	position: relative;
+}
+.slideshow-slides {
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	/*left: javascript 로 선언*/
+}
+.slideshow-slides .slide {
+	display: block;
+	position: absolute;
+	width: 100%;
+}
+.slideshow-slides .slide img {
+	display: block;
+	/*left: 50%;
+	margin-left: -1000px;
+	position: absolute;*/
+	width: 100%
+}
+/*slideshow_nav*/
+.slideshow_nav a,
+.slideshow_indicator a {
+	background: rgba(0,0,0,0);
+	overflow: hidden;
+}
+.slideshow_nav a:before {
+	content: url(../img/sprites.png);
+	display: inline-block;
+	font-size: 0; 
+	line-height: 0;
+}
+.slideshow_nav a {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 72px;
+	height: 72px;
+	margin-top: -36px;
+}
+.slideshow_nav .prev {margin-left: -480px;}
+.slideshow_nav .prev:before {margin-top: -20px;}
+.slideshow_nav .next {margin-left: 408px;}
+.slideshow_nav .next:before {margin: -20px 0 0 -80px;}
+.slideshow_nav a.on {display: none;}
+/*슬라이드 처음이거나 마지막일경우 버튼이 사라지게하는 클래스*/
+
+/*indicator*/
+.slideshow > .slideshow_indicator {
+	position: absolute;
+	bottom: 30px;
+	left: 0; right: 0;
+	text-align: center;
+	height: 16px;
+}
+.slideshow_indicator a {
+	display: inline-block;
+	width: 16px; height: 16px;
+	overflow: hidden; /*sprite의 다른 이미지가 숨김처리되도록*/
+	margin: 0 3px;
+}
+.slideshow_indicator a:before {
+	content: url(../img/sprites.png);
+	display: inline-block;
+	font-size: 0; 
+	line-height: 0;
+	margin-left: -110px
+}
+.slideshow_indicator a.on {
+	cursor: default;
+}
+.slideshow_indicator a.on:before {
+	margin-left: -130px;
+	/*sprite 이미지에서 검은색 인디케이터 이미지가 있는 위치까지 이동하기 위한 거리*/
+}
+
+
+
+
+
