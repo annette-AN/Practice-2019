@@ -47,6 +47,51 @@
 <script>
 'use strict';
 
+//alert('test');
+// console.log('test');
+
+var value1 = 60;
+var value2 = 50;
+var result = value1 + value2;
+value1 += 100;
+
+var car = [30, [100, 200, 300], 'LEE', 'Seoul'];
+var person = {age: 56, name: 'LEE', height: 190, job: 'Dev'};
+
+//json 문법은 쌍따옴표만 가능
+
+var sum = showResult(14, 29)
+
+// if (value1 > 50) {
+//     alert('50');
+// } else if (value1 < 30) {
+//     alert('30');
+// } else {
+//     alert('no');
+// }
+
+for (var i = 0; i < 10; i++) {
+    console.log('3 x ' + i + ' = ' + (3 * i));
+}
+
+showMultiple(15);
+function showMultiple(n) {
+    for (var i = 1; i < 10; i++){
+        console.log(n + ' x ' + i + ' = ' + (n * i));
+    }
+}
+
+// console.log(sum);
+// console.log(value1);
+
+function showResult(a, b) {
+    var sum = a + b + value1;
+    value1 -= 100;
+    return sum;
+}
+
+
+
     
 /*
 $('div.image-slide ul.indicator li a').on('click', function() {
