@@ -11,36 +11,55 @@ section.memo-write {
     margin: 80px auto;
     width: 800px;
     max-width: calc(100% - 80px);
+    min-width: 350px;
     border: 1px solid rgb(196, 196, 196);
     border-radius: 10px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.1);
     
     @include media-mobile(){
       width: 800px;
+
+      &[open] {
+        height: 161px;
+      }
     }
 
     &[open] {
-      height: 121px;
-
-        @include media-mobile(){
-          height: 161px;
-      }
 
       .blind-sec { //인풋이라 부모 width를 안받음
         width: 100%;
         display: inline-block;
       }
 
-      .memo-front-icons {
+      div.memo-front-icons {
         display: none;
+
+        @include media-mobile(){
+          display: block;
+
+          a.input-icon{
+            font-size: 15px;
+            margin-right: 15px;
+          }
+        }
       }
 
       .memo-mid-icons {
         display: inline-block;
+
+        @include media-mobile(){
+          margin-right: 20px;
+        }
       }
 
       div.btn-set {
         display: block;
+
+        @include media-mobile(){
+          float: none;
+          position: absolute;
+          right: 0px;
+        }
       }
     }
 
@@ -89,16 +108,6 @@ section.memo-write {
 
     .blind-sec {
       display: none;
-      position: relative;
-
-      .fixed-icon {
-        color: gray;
-        font-size: 20px;
-        line-height: 40px;
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
 
       .memo-description:focus , .memo-title:focus {
         outline: none;
@@ -111,6 +120,10 @@ section.memo-write {
       top:0px;
       right: 0px;
       line-height: 40px;
+
+      @include media-mobile(){
+        display: none;
+      }
     }
 
 
@@ -120,6 +133,7 @@ section.memo-write {
 
       a.input-icon {
         font-size: 15px;
+        margin-right: 20px;
       }
     }
       
@@ -229,18 +243,6 @@ section.memo-show {
       font-size: 13px;
     }
 
-    .blind-sec {
-      position: relative;
-
-      .fixed-icon {
-        opacity: 0;
-        line-height: 40px;
-        position: absolute;
-        right: 30px;
-        top: 0;
-      }
-    }
-
     div.memo-front-icons {
       display: none; //hover 및 open일 때도 안보임
     }
@@ -314,7 +316,7 @@ section.memo-show {
         display: none;
       }
 
-      .memo-mid-icons{
+      div.memo-mid-icons{
         display: none;
       }
 
@@ -330,39 +332,27 @@ section.memo-show {
             color: gray;
           }
 
-          .fixed-icon {
-            display: block;
+          a.input-icon {
             opacity: 1;
-            line-height: 36px;
-
-            a.input-icon {
-              opacity: 1;
-              margin-right: 0px;
-            }
+            margin-right: 0px;
           }
-        }
-
-        div.memo-description{
-          display: block;
-          margin-top: 10px;
         }
 
         div.memo-mid-icons {
           display: block;
           margin-top: 10px;
-
+  
           a.input-icon {
             opacity: 1;
           }
         }
-
 
         div.btn-set {
           display: block;
           width: 100%;
           margin: 10px 0px 0px 0px;
           border-top: 1px solid #c4c4c4;
-
+  
           button {
             line-height: 25px;
             margin: 0px;
@@ -370,20 +360,25 @@ section.memo-show {
             border: none;
             width: 49%;
             box-sizing: border-box;
-
+  
             &:first-child {
               border-right: 1px solid #c4c4c4;
             }
-
+  
             .memo-save {
               float: left;
             }
-
+  
             .memo-close {
               float: right;
             }
           }
         }
+      }
+
+      div.memo-description{
+        display: block;
+        margin-top: 10px;
       }
     }
   }

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>toggle() 메소드로 만드는 아코디언 메뉴 스타일</title>
+	<script src="js/jquery-3.4.0.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<style>
+		* {margin: 0; padding: 0}
+		li {list-style: none;}
+		a {
+			font-family: 'Arial', 'sans-serif';
+			color: #999;
+			text-decoration: none;
+		}
+		#menu {
+			position: absolute;
+			width: 50%;
+			height: 100%;
+			background: #262626;
+		}
+		#menu a {
+			display: block;
+			padding: 20px;
+			border-top: 1px solid #2e2e2e;
+			border-bottom: 1px solid #2e2e2e;
+		}
+		#menu a.m {
+			background: #111;
+			font-weight: bold;
+		}
+		#menu a.m.on {color: #fc73b2;}
+		#menu ul a {
+			background: #3a3a3a;
+			text-indent: 20px;
+		}
+		#menu li ul {
+			display: none;
+		}
+		#menu li ul.on {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<ul id="menu">
+		<li>
+			<a href="#" class="m">메뉴1</a>
+			<ul>
+				<li>
+					<a href="#" class="m">메뉴 1-1</a>
+					<ul>
+						<li>
+							<a href="#" class="m">메뉴1-1-1</a>
+						</li>
+						<li>
+							<a href="#" class="m">메뉴1-1-2</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<a href="#" class="m">메뉴2</a>
+			<ul>
+				<li>
+					<a href="#" class="m">메뉴2-1</a>
+				</li>
+				<li>
+					<a href="#" class="m">메뉴2-2</a>
+				</li>
+				<li>
+					<a href="#" class="m">메뉴2-3</a>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<a href="#" class="m">메뉴3</a>
+			<ul>
+				<li>
+					<a href="#" class="m">메뉴3-1</a>
+				</li>
+				<li>
+					<a href="#" class="m">메뉴3-2</a>
+				</li>
+				<li>
+					<a href="#" class="m">메뉴3-3</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+	<script>
+		$(function(){
+			$('#menu a.m').on('click', function() {
+				$(this).next().addBack().toggleClass('on').end()
+					.find('.m,ul').removeClass('on').end()
+					.parent().siblings().find('.m, ul').removeClass('on');
+				return false();
+			});
+		});
+	
+		/*기타탐색 선택자
+		add - $('div').add('p') -> div요소와 p요소 선택
+		addBack() - $('div').children('p').addBack() -> p요소와 이전 선택요소 div 선택
+		end() - $('div').find('span').css(....).end().find('em').css(...)
+		--> div에서 span을 찾아 선언한 css를 적용 후 다시 div로 돌아와서 em을 찾아 css 적용 후 종료
+																																 
+		$(this).next().addBack().toggleClass('on').end()
+		-> ul > li > a.m (메뉴 1/2/3)을 클릭하면 on클래스 붙이고 종료
+		
+		.find('.m, ul').removeClass('on')
+		--> 다시 ul > li > a.m으로 돌아가서 3depth에 있는 a.m + ul에 있는 on 클래스 제거
+		
+		.parent().siblings().find('.m, ul').removeClass('on')
+		--> 다시 ul > li > a.m으로 돌아가서 a부모인 li를 찾고 li의 형제요소인 다른 li요소들 중에 있는 클래스 m과 ul에 있는 on 클래스를 제거*/
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

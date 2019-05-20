@@ -372,19 +372,22 @@ section#product {
   }
 
   article {
-    max-width: calc(100% - 40px);
+    max-width: 100%;
     width: 1500px;
     margin: 0 auto;
 
     .swiper-wrapper {//스와이퍼로 적용할 예정
       .swiper-slide {
+        max-width: 100%;
         text-align: center;
         margin: 0 auto;
         height: 100%;
 
         .image-wrap {
           background: #f5f6f8 url(../img/download/common/icon_solutions1.png) center no-repeat /80px 80px;
-          width: 200px;
+          max-width: calc(100% - 10px);
+          width: 210px;
+          //width랑 동일하게 height가 줄어들었으면 함
           height: 200px;
           border-radius: 50%;
           margin: 0 auto;
