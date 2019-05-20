@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../js/jquery-3.4.0.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0;}
+
+    .wrap {
+      height: 620px;
+      background: blanchedalmond;
+    }
+
+    .banner{
+      position: relative;
+      overflow: hidden;
+      width: 510px;
+      height: 620px;
+      margin: 0 auto;
+    }
+
+    .banner img {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="banner">
+      <img src="../img/20190508/44d47cf9c968bc8a21c842114c3ccd67.jpg" alt="">
+      <img src="../img/20190508/52dd501b945adcf426d507d828bc6e9f.jpg" alt="">
+      <img src="../img/20190508/7f3429c1adf31af9a82d2eb05e5f8976.jpg" alt="">
+      <img src="../img/20190508/a5dd2bf4ec043a2afc36e59ad6f9658e.jpg" alt="">
+      <img src="../img/20190508/b797f7c28804b844fc69f6907e2ceb5b.jpg" alt="">
+    </div>
+  </div>
+  
+  <script>
+    $(function(){
+      $('.banner').each(function(){
+        var $pic = $(this).find('img');
+        var count = $pic.length;
+        var currentIndex = 0; //현재 이미지 슬라이드 번호
+        var sp = 1500; //슬라이딩 속도
+
+        $pic.eq(currentIndex).fadeIn(sp);
+        setInterval(slideShow, 2000); //지정된 시간마다 지정된 작업을 수행하는 함수
+
+        function slideShow() {
+          var nextIndex = (currentIndex + 1) % count;
+          $pic.eq(currentIndex).fadeOut(sp);
+          $pic.eq(nextIndex).fadeIn(sp);
+
+          currentIndex = nextIndex;
+        };
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../js/jquery-3.4.0.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?gamily=Play">
+  <style>
+    *{margin: 0;padding: 0;}
+    li {list-style: none;}
+    a {text-decoration: none; color: inherit;}
+
+    body {
+      font: 18px 'Play', 'sans-serif';
+      color: #898989;
+      background: #eee;
+    }
+
+    header {
+      width: 95%;
+      position: fixed;
+      background: #fff;
+      box-shadow: 0 1px 5px #777;
+      padding: 0% 2.5%;
+    }
+
+    h1 {
+      text-transform: capitalize;
+      line-height: 70px;
+      text-align: center;
+    }
+
+    section{
+      position: absolute;
+      padding: 100px;
+      font-size: 25px;
+    }
+
+    aside {
+      width: 192px;
+      height: 100%;
+      position: fixed;
+      left: -292px;
+      padding: 100px 50px 20px;
+      background: #92c32e;
+    }
+
+    aside h2 {
+      color: #fff;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 0 0 5px #434343;
+      text-transform: capitalize;
+    }
+
+    aside ul li {
+      margin-bottom: 30px;
+      width: 100%;
+      height: 200px;
+    }
+
+    aside ul li a{
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    aside ul li img{
+      opacity: 0.8;
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      transition: all .2s;
+    }
+
+    aside ul li a:hover img,
+    aside ul li.on a
+    {
+      opacity: 1;
+      transform: scale(1.1);
+      box-shadow: 3px 3px 10px rgba(0,0,0,0.4);
+    }
+
+    aside button {
+      position: absolute;
+      top: 150px;
+      right: -52px;
+      cursor: pointer;
+      border-radius: 0 30px 30px 0;
+      border: none;
+      box-shadow: 1px 0 5px rgba(0,0,0,0.3);
+    }
+    footer {
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      background: #222;
+      color: #eee;
+    }
+
+    footer p {
+      text-align: center;
+      line-height: 50px;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Toggle Slide Menu</h1>
+  </header>
+  <section>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quaerat laborum quae accusamus itaque at laboriosam beatae perferendis quia recusandae! At quaerat eum sapiente nam cumque sed itaque quibusdam non?
+  </section>
+  <aside>
+    <h2>wish List</h2>
+    <ul>
+      <li>
+        <a href="javascript:;">
+          <img src="../img/project02.jpg" alt="">
+        </a>
+      </li>
+      <li>
+        <a href="javascript:;">
+          <img src="../img/project03.jpg" alt="">
+        </a>
+      </li>
+      <li>
+        <a href="javascript:;">
+          <img src="../img/project04.jpg" alt="">
+        </a>
+      </li>
+    </ul>
+    <button>
+      <img src="../img/btn_open.png" alt="위시리스트 열기">
+    </button>
+  </aside>
+  <footer>footer<p>footer</p></footer>
+
+  <script>
+    $(function(){
+      var sp = 1000, //애니메이션 실행속도
+          easeEffect = 'easeInOutExpo',
+          $aside = $('aside'),
+          $btn = $aside.find('button');
+      
+      $btn.click(function(){
+        $aside.toggleClass('on');
+
+        if($aside.hasClass('on')){
+          $aside.stop().animate({
+            left: '0'
+          }, sp, easeEffect);
+        
+        $btn.find('img').attr({
+          src: '../img/btn_close.png',
+          alt: '위시리스트 닫기'
+        });
+      }
+        else {
+          $aside.stop().animate({
+            left: '-292px'
+          }, sp, easeEffect);
+
+            $btn.find('img').attr({
+            src: '../img/btn_open.png',
+            alt: '위시리스트 열기'
+          });
+        };
+      });
+    });
+    
+  </script>
+
+</body>
+</html>

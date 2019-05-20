@@ -1,0 +1,150 @@
+@import url(http://fonts.googleapis.com/css?family=Audiowide|Roboto);
+
+* {margin: 0; padding: 0;}
+li {list-style: none;}
+a {text-decoration: none; color: inherit;}
+
+body {
+  font: 20px/1.6 Roboto, sans-serif;
+  background: #fff;
+  color: #222;
+}
+
+.menu {
+  position: relative;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+
+header {
+  position: relative;
+  line-height: 70px;
+  background: linear-gradient(#ededed, #d8d8d8 80%);
+  height: 70px;
+  box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+  z-index: 11;
+
+  .inner-box {
+    width: 960px;
+    margin: auto;
+
+    h1 {
+      float: left;
+      font: normal 30px/70px 'Audiowide', 'sans-serif';
+      cursor: pointer;
+      transition: all .2s;
+
+      &:hover {
+        letter-spacing: 1px;
+        color: #00abcc;
+      }
+    }
+
+    nav {
+      
+      .gnb {
+        float: right;
+        border-left: 2px solid #bbb;
+        box-shadow: inset 1px 0 #fff;
+        // inset은 그림자가 안으로
+
+        li {
+          float: left;
+          border-right: 2px solid #bbb;
+          box-shadow: inset 1px 0 #fff;
+
+          a{
+            display: block;
+            position: relative;
+            padding: 0px 15px;
+            font-family: 'Audiowide', 'sans-serif';
+            transition: all .2s;
+
+            &:hover, &:focus, &.on {
+              background: #222;
+              color: #fff;
+            }
+
+            &:hover:after {
+              content: '';
+              display: block;
+              position: absolute;
+              left: 50%;
+              margin-left: -15px;
+              width: 0;
+              height: 0;
+              border-style: solid;
+              border-width: 15px;
+              border-color: #222 transparent transparent transparent ;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.contents {
+  position: relative;
+  width: 100%;
+  height: 640px;
+  overflow: hidden;
+  background: #111;
+
+  .bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+    }
+  }
+
+  .box-wrap {
+    position: relative;
+    width: 960px;
+    margin: auto;
+
+    >.box {
+      position: absolute;
+      top: 150px;
+      width: 250px;
+      background: #fff;
+      padding: 20px 30px;
+      box-shadow: 3px 3px 10px rgba(0,0,0,0.4);
+
+      h3 {
+        color: #222;
+        font-size: 25px;
+        font-weight: normal;
+      }
+
+      p {
+        font-size: 14px;
+        margin: 10px 0px;
+        color: #898989;
+      }
+
+      a{
+        display: inline-block;
+        font-size: 20px;
+        background: #2a6b8e;
+        color: #eee;
+        padding: 5px 15px;
+        border-radius: 5px;
+        transition: all .2s;
+
+        &:hover {
+          transform: scale(1.1);
+          background: #194c67;
+        }
+      }
+    }
+  }
+}

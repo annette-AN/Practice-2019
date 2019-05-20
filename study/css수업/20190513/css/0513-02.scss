@@ -1,0 +1,81 @@
+* {margin: 0;padding: 0;}
+li {list-style: none;}
+a {text-decoration: none; color: inherit;}
+
+body {
+  font: 14px;
+  margin: 0 auto;
+
+  .gnb {
+    width: 960px;
+    margin: 0 auto;
+
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    >.m {
+      float: left;
+      width: 192px;
+      text-align: center;
+      position: relative;
+
+      >a {
+        display: block;
+        height: 50px;
+        line-height: 50px;
+        font-size: 18px;
+      }
+
+      ul {
+        position: absolute;
+        left: 0px;
+        top: 50px;
+        width: 100%;
+        background: #222;
+        display: none;
+
+        li {
+          a {
+            display: block;
+            color: #fff;
+            padding: 12px 0px;
+            border-bottom: 1px solid #333;
+
+            &:last-child {
+              border-bottom: none;
+            }
+
+            &:hover {
+              background: #fff;
+              color: #000;
+            }
+          }
+        }
+      }
+    }
+
+    >.m.on {
+      >a {
+        border-bottom: 4px solid #8c34a7;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+
+.main {
+  background: url(../img/project03.jpg) no-repeat center top/cover;
+  height: 500px;
+
+  a {
+    display: block;
+    width: 1000px;
+    height: 100%;
+    margin: 0px auto;
+    text-indent: -9999%;
+    overflow: hidden;
+  }
+}
