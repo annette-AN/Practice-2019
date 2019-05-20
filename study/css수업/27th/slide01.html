@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>기본형 슬라이드 배너</title>
+	<script src="js/jquery-3.4.0.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<style>
+		* {margin: 0; padding: 0}
+		.banner {
+			position: relative;
+			height: 840px;
+			width: 100%;
+			overflow: hidden;
+		}
+		.banner img {
+			position: absolute;
+			top: 0; left: 0; 
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="banner">
+		<img src="img/main_img01.jpg" alt="">
+		<img src="img/main_img02.jpg" alt="">
+		<img src="img/main_img03.jpg" alt="">
+		<img src="img/main_img04.jpg" alt="">
+		<img src="img/main_img.jpg" alt="">
+	</div>
+	<script>
+		$(function(){
+			//배너만들기
+			$('.banner').each(function() {
+				var $pic = $(this).find('img'); //이미지요소 찾아서 변수로 저장
+				var count = $pic.length //length는 속성이므로 괄호를 붙이지않음 - 이미지 개수
+				var currentIndex = 0; //현재이미지 슬라이드 번호
+				var sp = 1500; //슬라이딩 속도
+				
+				//1. 첫번째 이미지 나타내기
+				$pic.eq(currentIndex).fadeIn(sp);
+				
+				//반복실행 (첫번째 이미지 나타났다가 사라지면서 두번째 이미지 나타나기)
+				setInterval(slideShow, 2000);
+				/*
+				setInterval- 지정된 시간마다 지정된 작업을 수행하는 함수
+				- 자바스크립트 내장함수(네이티브 함수)
+				slideShow - 실행할 함수명
+				2000 - 실행시간				
+				*/
+				//사용자정의함수 slideShow 실행
+				function slideShow() {
+					var nextIndex = (currentIndex + 1) % count;
+					/*
+					var nextInext = (currentIndex + 1) % count
+					     	1										0   + 1 % 5
+								2									  1   + 1 % 5
+								3									  2   + 1 % 5
+								4									  3   + 1 % 5
+								0									  4   + 1 % 5					
+					*/
+					$pic.eq(currentIndex).fadeOut(sp);
+					$pic.eq(nextIndex).fadeIn(sp);
+					
+					currentIndex = nextIndex;
+				}
+			});
+		});
+	
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
