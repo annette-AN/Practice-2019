@@ -2,6 +2,16 @@
 $(function() {
     new fullpage('#fullpage', {
         navigation: true,
-        scrollOverflow: true
+        scrollOverflow: true,
+        anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage'],
+        afterLoad: function(origin, destination, direction) {
+            var loadedSection = this;
+
+            if(origin.anchor == 'thirdPage' && direction == 'down') {
+                $('.next-btn').css({display: 'none'});
+            } else {
+                $('.next-btn').css({display: 'inline'});
+            }
+        }
     });
 });

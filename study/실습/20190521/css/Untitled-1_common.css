@@ -29,7 +29,7 @@ header {
 }
 
 .section4 {
-  background: url(../img/itary4.jpg) no-repeat center bottom/cover;
+  background: #51cdd6;
 }
 
 .inner-section {
@@ -109,6 +109,46 @@ header {
   font-size: 16px;
 }
 
+.inner-box .wrap-youtube {
+  position: relative;
+  height: 0px;
+  padding-bottom: 56.25%;
+  text-align: center;
+}
+
+.inner-box .wrap-youtube iframe {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.next-btn {
+  position: fixed;
+  left: 50%;
+  bottom: 5%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 70px;
+  cursor: pointer;
+}
+
+.next-btn img {
+  width: 100%;
+}
+
+footer {
+  margin-top: 50px;
+}
+
+footer p {
+  border-top: 1px solid #fff;
+  padding: 40px 0px;
+  text-align: center;
+  color: #fff;
+}
+
 @media all and (min-width: 769px) and (max-width: 1023px) {
   .inner-section, .inner-box {
     width: 90%;
@@ -151,6 +191,11 @@ header {
   }
   .inner-box ul {
     width: 100%;
+  }
+  .inner-box ul li {
+    width: 100%;
+    margin-left: 0%;
+    margin-top: 10px;
   }
   .inner-box ul li .sub-title {
     font-size: 1em;
