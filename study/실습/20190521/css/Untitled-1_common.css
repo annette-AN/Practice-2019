@@ -113,6 +113,18 @@ header {
   .inner-section, .inner-box {
     width: 90%;
   }
+  .inner-box .inner-bg {
+    width: 90%;
+  }
+  .inner-box .inner-bg img {
+    width: 100%;
+  }
+  .inner-box .title {
+    font-size: 2em;
+  }
+  .inner-box .sub-title {
+    font-size: 14px;
+  }
 }
 
 @media all and (max-width: 768px) {
@@ -127,6 +139,21 @@ header {
   }
   .inner-section p {
     font-size: 1.3em;
+  }
+  .inner-box .inner-bg {
+    width: 100%;
+  }
+  .inner-box .inner-bg img {
+    width: 100%;
+  }
+  .inner-box .title {
+    font-size: 1.5em;
+  }
+  .inner-box ul {
+    width: 100%;
+  }
+  .inner-box ul li .sub-title {
+    font-size: 1em;
   }
 }
 /*# sourceMappingURL=Untitled-1_common.css.map */

@@ -117,6 +117,25 @@ header {
   .inner-section, .inner-box {
     width: 90%;
   }
+
+  .inner-box {
+
+    .inner-bg {
+      width: 90%;
+  
+      img {
+        width: 100%;
+      }
+    }
+
+    .title {
+      font-size: 2em;
+    }
+
+    .sub-title {
+      font-size: 14px;
+    }
+  }
 }
 
 //모바일
@@ -138,6 +157,30 @@ header {
 
     p {
       font-size: 1.3em;
+    }
+  }
+
+  .inner-box {
+
+    .inner-bg {
+      width: 100%;
+  
+      img {
+        width: 100%;
+      }
+    }
+
+    .title {
+      font-size: 1.5em;
+    }
+
+    ul {
+      width: 100%;
+      li {
+        .sub-title {
+          font-size: 1em;
+        }
+      }
     }
   }
 }
