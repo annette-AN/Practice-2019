@@ -9,33 +9,39 @@
   <link rel="stylesheet" href="css/index.css">
   <title>index/admin/portfolio</title>
   <!-- http://webarch.revox.io/3.0/html/index.html# -->
-  <!-- 5/20 1h, 5/21 8:30~ -->
-  <!-- 브라우저 크기 -->
+  <!-- 5/20 1h, 5/21 8:30~1:00 -->
+  <!-- 브라우저 크기 1600px -->
 </head>
 <body>
   <header>
     <nav class="main-tnb">
-      <div><i class="fas fa-bars"></i><span class="text-ir">메뉴바 아이콘</span></div>
-      <div><i class="fas fa-redo"></i><span class="text-ir">새로고침 아이콘</span></div>
-      <!-- 알림이 있으면 빨간점 -->
-      <div><i class="far fa-bell"></i><span class="text-ir">알림종 아이콘</span></div>
-      <div>
-        <input type="text" placeholder="Search Eashboard">
-        <a><i class="fas fa-search"></i><span class="text-ir">돋보기 아이콘</span></a>
-      </div>
-      <!-- 로그인상태면 녹색점 -->
-      <div class="user-profile"><span class="text-ir">사용자프로필사진</span></div>
-      <ul class="user-info">
-        <li>
-          <a href="javascript:;">gragh ico</a>
+      <ul class="tnb-wrap">
+        <li class="menu-bar" title="메뉴바 아이콘" aria-label="메뉴바 아이콘"><i class="fas fa-bars"></i><span class="text-ir">메뉴바 아이콘</span></li>
+        <li class="refresh"><i class="fas fa-redo"></i><span class="text-ir">새로고침 아이콘</span></li>
+        <!-- bell .on 을 넣으면 신호등 표시가 나옴 -->
+        <li class="bell"><i class="far fa-bell"></i><span class="text-ir">알림종 아이콘</span></li>
+        <li class="dash-board">
+          <!-- float나 flex로 바꾸기 -->
+          <input type="text" placeholder="Search Dashboard">
+          <a><i class="fas fa-search"></i><span class="text-ir">돋보기 아이콘</span></a>
+        </li>
+      </ul>
+
+      <div class="user-wrap">
+        <!-- user-profile .on 을 넣으면 신호등 표시가 나옴 -->
+        <div class="user-profile"><span class="text-ir">사용자프로필사진</span></div>     
+        <ul class="user-info">
+          <li>
+            <a href="javascript:;"><i class="fas fa-cogs"></i></i><span class="text-ir">사용자 정보</span></a>
             <ul>
               <li><a href="javascript:;">my account</a></li>
               <li><a href="javascript:;">my calendar</a></li>
               <li><a href="javascript:;">my inbox <span>2</span></a></li>
               <li><a href="javascript:;">전원 ico / log out</a></li>
             </ul>
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </div>
     </nav>
 
     <nav class="main-gnb">
