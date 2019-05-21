@@ -4,22 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/index.css">
   <title>index/admin/portfolio</title>
   <!-- http://webarch.revox.io/3.0/html/index.html# -->
-  <!-- 5/21 1h -->
+  <!-- 5/20 1h, 5/21 8:30~ -->
+  <!-- 브라우저 크기 -->
 </head>
 <body>
   <header>
     <nav class="main-tnb">
-      <div>삼지창 ico</div>
-      <div>새로고침 ico</div>
-      <div>종 ico <span>알림있으면 옆에 빨간점</span></div>
+      <div><i class="fas fa-bars"></i><span class="text-ir">메뉴바 아이콘</span></div>
+      <div><i class="fas fa-redo"></i><span class="text-ir">새로고침 아이콘</span></div>
+      <!-- 알림이 있으면 빨간점 -->
+      <div><i class="far fa-bell"></i><span class="text-ir">알림종 아이콘</span></div>
       <div>
         <input type="text" placeholder="Search Eashboard">
-        <button>돋보기 ico</button>
+        <a><i class="fas fa-search"></i><span class="text-ir">돋보기 아이콘</span></a>
       </div>
-      <div>프로필사진 <span>로그인 상태면 녹색 점</span></div>
+      <!-- 로그인상태면 녹색점 -->
+      <div class="user-profile"><span class="text-ir">사용자프로필사진</span></div>
       <ul class="user-info">
         <li>
           <a href="javascript:;">gragh ico</a>
@@ -33,7 +38,7 @@
       </ul>
     </nav>
 
-    <nav>
+    <nav class="main-gnb">
       <div>
         <h1>admin</h1>
         <div>
@@ -45,7 +50,7 @@
       <div>
         <div>프로필사진 <span>로그인 상태면 녹색 점</span></div>
         <h2>fred smith <span>Life goes on...</span></h2>
-        <ul class="main-gnb">
+        <ul>
           <li><a href="javascript:;">home</a></li>
           <li><a href="javascript:;">widgets</a></li>
           <li><a href="javascript:;">themes</a>

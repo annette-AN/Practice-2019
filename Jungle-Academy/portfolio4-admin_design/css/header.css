@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.text-ir {
+  display: inline-block;
+  width: 100%;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+header {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 61px;
+  background: pink;
+}
+
+.main-tnb div {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  color: #7A7F8B;
+  margin-top: 18px;
+  text-align: center;
+}
+
+.main-tnb div:first-child {
+  margin-left: 25px;
+}
+
+.main-tnb div:nth-child(2) {
+  margin-left: 35px;
+}
+
+.main-tnb div:nth-child(3) {
+  margin-left: 31px;
+}
+
+.main-tnb div:nth-child(4) {
+  position: relative;
+  width: 320px;
+  margin-left: 40px;
+  background: black;
+}
+
+.main-tnb div:nth-child(4) input {
+  width: 280px;
+}
+
+.main-tnb .user-profile {
+  width: 40px;
+  height: 40px;
+  background: url(../img/avatar_small.jpg) no-repeat center/cover;
+}
+/*# sourceMappingURL=header.css.map */

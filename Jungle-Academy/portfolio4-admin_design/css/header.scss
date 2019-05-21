@@ -1,0 +1,97 @@
+header, nav, div, ul, li, h1, h2, h3, h4, h5, h6, main {margin: 0; padding: 0; box-sizing: border-box;}
+li {list-style: none;}
+a {text-decoration: none; color: inherit;}
+input {
+  display: inline-block;
+  box-sizing: border-box;
+  border: 0;
+  vertical-align: middle;
+  white-space: normal;
+  background: none;
+  line-height: 1;
+  font-size: 13px;
+
+  &:focus {outline: none;}
+}
+
+.text-ir {
+  display: inline-block;
+  width: 100%;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+header {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 61px;
+  background: pink;
+}
+
+.main-tnb {
+
+  div {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    color: #7A7F8B;
+    margin-top: 18px;
+    text-align: center;
+
+    &:first-child {
+      margin-left: 25px;
+    }
+
+    &:nth-child(2) {
+      //font 살짝 줄이면 좋겠음
+      margin-left: 35px;
+    }
+
+    &:nth-child(3) { 
+      //왼쪽에 라인 1px로 넣어주기
+      margin-left: 31px;
+    }
+
+    &:nth-child(4) {
+      position: relative;
+      width: 300px;
+      margin-left: 40px;
+
+      input {
+        width: 80%;
+      }
+
+      a {
+        display: inline-block
+        width: 18%;
+        // position: absolute;
+        // margin-left: 250px;
+      }
+    }
+  }
+
+  ul {
+
+
+  }
+
+
+  .user-profile {
+    width: 40px;
+    height: 40px;
+    background: url(../img/avatar_small.jpg) no-repeat center/cover;
+  }
+
+  .user-info {
+    li {
+      ul {
+        li {
+
+        }
+      }
+    }
+  }
+}
