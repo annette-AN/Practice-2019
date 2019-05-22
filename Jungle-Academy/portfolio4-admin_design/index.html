@@ -7,37 +7,41 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/index.css">
+  <script src="js/jquery-3.4.1.min.js"></script>
   <title>index/admin/portfolio</title>
   <!-- http://webarch.revox.io/3.0/html/index.html# -->
-  <!-- 5/20 1h, 5/21 8:30~1:00 -->
+  <!-- 5/20 1h, 5/21 20:30~1:00 4.5h, 5/22 22:00~ -->
   <!-- 브라우저 크기 1600px -->
 </head>
 <body>
   <header>
     <nav class="main-tnb">
       <ul class="tnb-wrap">
-        <li class="menu-bar"><i class="fas fa-bars"><span>메뉴바 아이콘</span></i></li>
-        <li class="refresh"><i class="fas fa-redo"><span>새로고침 아이콘</span></i></li>
-        <!-- bell .on 을 넣으면 신호등 표시가 나옴 -->
-        <li class="bell"><i class="far fa-bell"><span>알림종 아이콘</span></i></li>
-        <li class="dash-board">
-          <!-- float나 flex로 바꾸기 -->
+        <li class="menu-bar"><i class="fas fa-bars"><span class="child-text-ir">메뉴바 아이콘</span></i></li>
+        <li class="refresh"><i class="fas fa-redo"><span class="child-text-ir">새로고침 아이콘</span></i></li>
+        <!-- bell .notice 를 넣으면 신호등 표시가 나옴 -->
+        <li class="bell"><i class="far fa-bell"><span class="child-text-ir">알림종 아이콘</span></i></li>
+        <li class="search-board">
           <input type="text" placeholder="Search Dashboard">
-          <a><i class="fas fa-search"><span>돋보기 아이콘</span></i></a>
+          <a><i class="fas fa-search"><span class="child-text-ir">돋보기 아이콘</span></i></a>
         </li>
       </ul>
 
       <div class="user-wrap">
-        <!-- user-profile .on 을 넣으면 신호등 표시가 나옴 -->
-        <div class="user-profile"><span class="text-ir">사용자프로필사진</span></div>     
+        <!-- user-profile .notice 를 넣으면 신호등 표시가 나옴 -->
+        <!-- 사용자 사진도 때에따라 바껴야하는데 어떻게? -->
+        <div class="user-profile"><span class="child-text-ir">사용자프로필사진</span></div>     
         <ul class="user-info">
           <li>
-            <a href="javascript:;"><i class="fas fa-cogs"><span>사용자 정보</span></i></a>
+            <a href="javascript:;"><i class="fas fa-cogs"><span class="child-text-ir">사용자 정보</span></i></a>
             <ul>
+              <li id="triangle-border"><span class="child-text-ir">리스트표시디자인</span></li>
               <li><a href="javascript:;">my account</a></li>
               <li><a href="javascript:;">my calendar</a></li>
-              <li><a href="javascript:;">my inbox <span>2</span></a></li>
-              <li><a href="javascript:;">전원 ico / log out</a></li>
+              <!-- inbox .notice 를 넣으면 신호등 표시가 나옴, 알림 개수는 contents에 적으면 적용됨 -->
+              <li class="inbox"><a href="javascript:;">my inbox</a></li>
+              <li id="design-line-1"><span class="child-text-ir">라인표시디자인</span></li>
+              <li><a href="javascript:;"><i class="fas fa-power-off"><span class="child-text-ir">로그아웃 아이콘</span></i>log out</a></li>
             </ul>
           </li>
         </ul>
@@ -45,102 +49,166 @@
     </nav>
 
     <nav class="main-gnb">
-      <div>
-        <h1>admin</h1>
-        <div>
-          <a href="javasctipt:;">home ico</a>
-          <a href="javasctipt:;">mail ico</a>
+      <div id="main-gnb-header">
+        <div id="main-gnb-header-wrap">
+          <h1>web<span><span class="child-text-ir">동그라미 아이콘</span></span><strong>Admin</strong></h1>
+          <div>
+            <a href="javasctipt:;"><i class="fas fa-home"><span class="child-text-ir">홈 바로가기 아이콘</span></i></a>
+            <!-- mail .notice 를 넣으면 신호등 표시가 나옴 -->
+            <a class="mail" href="javasctipt:;"><i class="fas fa-envelope"><span class="child-text-ir">메일 바로가기 아이콘</span></i></a>
+          </div>
         </div>
       </div>
 
-      <div>
-        <div>프로필사진 <span>로그인 상태면 녹색 점</span></div>
-        <h2>fred smith <span>Life goes on...</span></h2>
-        <ul>
-          <li><a href="javascript:;">home</a></li>
-          <li><a href="javascript:;">widgets</a></li>
-          <li><a href="javascript:;">themes</a>
+      <div id="main-gnb-contents">
+        <div id="gnb-user-profile">
+          <!-- user-profile .notice 를 넣으면 신호등 표시가 나옴 -->
+          <!-- 사용자 사진도 때에따라 바껴야하는데 어떻게? -->
+          <div class="user-profile">
+            <span class="child-text-ir">사용자프로필사진</span>
+          </div>
+          <h2>fred smith 
+            <span>Life goes on...</span>
+          </h2>
+        </div>
+
+        <ul id="main-gnb-menu">
+          <li>
+            <a href="javascript:;">
+              <i class="fas fa-home"></i>
+              home
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <i class="fas fa-cube"></i>
+              widgets
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <i class="fas fa-envelope"></i>
+              email
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <i class="fab fa-ethereum"></i>
+              themes
+            </a>
             <ul>
-              <li>coporate</li>
-              <li>simple</li>
-              <li>elegant</li>
+              <li><a href="javascript:;">coporate</a></li>
+              <li><a href="javascript:;">simple</a></li>
+              <li><a href="javascript:;">elegant</a></li>
             </ul>
           </li>
-          <li><a href="javascript:;">layouts</a>
+          <li>
+            <a href="javascript:;">
+              <i class="fas fa-layer-group"></i>
+              layouts
+              </a>
             <ul>
-              <li>layout options</li>
-              <li>boxed layout</li>
-              <li>inner boxed layout</li>
-              <li>extended layout</li>
-              <li>RTL layout</li>
-              <li>horizontal menu</li>
-              <li>horizontal menu &amp; boxed</li>
+              <li><a href="javascript:;">layout options</a></li>
+              <li><a href="javascript:;">boxed layout</a></li>
+              <li><a href="javascript:;">inner boxed layout</a></li>
+              <li><a href="javascript:;">extended layout</a></li>
+              <li><a href="javascript:;">RTL layout</a></li>
+              <li><a href="javascript:;">horizontal menu</a></li>
+              <li><a href="javascript:;">horizontal menu &amp; boxed</a></li>
             </ul>
           </li>
-          <li><a href="javascript:;">UI elements</a>
+          <li>
+            <a href="javascript:;">
+              <i class="fas fa-tablet-alt"></i>
+              UI elements
+            </a>
             <ul>
-              <li>typography</li>
-              <li>messages &amp; notifications</li>
-              <li>notifications</li>
-              <li>icons</li>
-              <li>buttons</li>
-              <li>tabs &amp; accordions</li>
-              <li>sliders</li>
-              <li>group list</li>
+              <li><a href="javascript:;">typography</a></li>
+              <li><a href="javascript:;">messages &amp; notifications</a></li>
+              <li><a href="javascript:;">notifications</a></li>
+              <li><a href="javascript:;">icons</a></li>
+              <li><a href="javascript:;">buttons</a></li>
+              <li><a href="javascript:;">tabs &amp; accordions</a></li>
+              <li><a href="javascript:;">sliders</a></li>
+              <li><a href="javascript:;">group list</a></li>
             </ul>
           </li>
-          <li><a href="javascript:;">forms</a>
+          <li>
+            <a href="javascript:;">
+                <i class="fas fa-share-square"></i>
+                forms
+              </a>
             <ul>
-              <li>form elements</li>
-              <li>form validations</li>
+              <li><a href="javascript:;">form elements</a></li>
+              <li><a href="javascript:;">form validations</a></li>
             </ul>
           </li>
-          <li><a href="javascript:;">grids</a>
+          <li>
+            <a href="javascript:;">
+                <i class="fas fa-th"></i>
+                grids
+              </a>
             <ul>
-              <li>simple grids</li>
-              <li>draggable grids</li>
+              <li><a href="javascript:;">simple grids</a></li>
+              <li><a href="javascript:;">draggable grids</a></li>
             </ul>
           </li>
-          <li><a href="javascript:;">tables</a>
+          <li>
+            <a href="javascript:;">
+                <i class="fas fa-th-list"></i>
+                tables
+              </a>
             <ul>
-              <li>basic tables</li>
-              <li>data tables</li>
+              <li><a href="javascript:;">basic tables</a></li>
+              <li><a href="javascript:;">data tables</a></li>
             </ul>
           </li>
-          <li><a href="javascript:;">maps</a>
+          <li>
+            <a href="javascript:;">
+                <i class="fas fa-map-marker-alt"></i>
+                maps
+              </a>
             <ul>
-              <li>google maps</li>
-              <li>vector maps</li>
+              <li><a href="javascript:;">google maps</a></li>
+              <li><a href="javascript:;">vector maps</a></li>
             </ul>
           </li>
-          <li><a href="javascript:;">extra</a>
+          <li>
+            <a href="javascript:;">
+                <i class="fab fa-sketch"></i>
+                extra
+              </a>
             <ul>
-              <li>user profile</li>
-              <li>time line</li>
-              <li>support ticket</li>
-              <li>gallery</li>
-              <li>calendar</li>
-              <li>search results</li>
-              <li>invoice</li>
-              <li>404 page</li>
-              <li>500 page</li>
-              <li>blank page</li>
-              <li>login</li>
-              <li>login v2</li>
-              <li>lockscreen</li>
+              <li><a href="javascript:;">user profile</a></li>
+              <li><a href="javascript:;">time line</a></li>
+              <li><a href="javascript:;">support ticket</a></li>
+              <li><a href="javascript:;">gallery</a></li>
+              <li><a href="javascript:;">calendar</a></li>
+              <li><a href="javascript:;">search results</a></li>
+              <li><a href="javascript:;">invoice</a></li>
+              <li><a href="javascript:;">404 page</a></li>
+              <li><a href="javascript:;">500 page</a></li>
+              <li><a href="javascript:;">blank page</a></li>
+              <li><a href="javascript:;">login</a></li>
+              <li><a href="javascript:;">login v2</a></li>
+              <li><a href="javascript:;">lockscreen</a></li>
             </ul>
           </li>
-          <li><a href="javascript:;">manu levels</a>
+          <li>
+            <a href="javascript:;">
+                <i class="fas fa-ellipsis-h"></i>
+                manu levels
+              </a>
             <ul>
-              <li>level 1</li>
-              <li>level 2</li>
+              <li><a href="javascript:;">level 1</a></li>
+              <li><a href="javascript:;">level 2</a></li>
             </ul>
           </li>
         </ul>
       </div>
 
       <div>
-        <a href="javascript:;">전원 ico</a>
+        <a href="javascript:;">원 ico</a>
       </div>
     </nav>
   </header>
@@ -149,5 +217,6 @@
 
   </main>
   
+  <script src="js/index.js"></script>
 </body>
 </html>
