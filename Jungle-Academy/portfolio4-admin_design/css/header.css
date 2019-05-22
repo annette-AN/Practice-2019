@@ -30,13 +30,6 @@ input:focus {
   outline: none;
 }
 
-.text-ir {
-  display: inline-block;
-  overflow: hidden;
-  width: 0px;
-  height: 0px;
-}
-
 header {
   position: fixed;
   top: 0px;
@@ -46,9 +39,22 @@ header {
 }
 
 i {
+  position: relative;
   font-size: 20px;
   color: #7A7F8B;
   text-align: center;
+}
+
+i span {
+  position: absolute;
+  left: -9999px;
+}
+
+.text-ir {
+  display: inline-block;
+  overflow: hidden;
+  width: 0px;
+  height: 0px;
 }
 
 .main-tnb {
@@ -119,26 +125,15 @@ i {
 .main-tnb .tnb-wrap .dash-board input {
   width: 270px;
   height: 100%;
+  padding-left: 15px;
 }
 
 .main-tnb .tnb-wrap .dash-board input:focus {
   background: #F4F5F7;
 }
 
-.main-tnb .tnb-wrap .dash-board input::-webkit-input-placeholder {
-  padding-left: 15px;
-}
-
-.main-tnb .tnb-wrap .dash-board input:-ms-input-placeholder {
-  padding-left: 15px;
-}
-
-.main-tnb .tnb-wrap .dash-board input::-ms-input-placeholder {
-  padding-left: 15px;
-}
-
-.main-tnb .tnb-wrap .dash-board input::placeholder {
-  padding-left: 15px;
+.main-tnb .tnb-wrap .dash-board input:focus a {
+  background: #F4F5F7;
 }
 
 .main-tnb .tnb-wrap .dash-board a {

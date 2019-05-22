@@ -47,6 +47,7 @@
 <script>
 'use strict';
 
+
 //alert('test');
 // console.log('test');
 
@@ -100,8 +101,8 @@ for (var i = 1; i < 10; i++) for (var n = 1; n < 10; n++) {
 
 multipleArea(3, 7);
 
-function multipleArea(a, b) {
-    for (var i = a; i <= b; i++) for (var n = 1; n < 10; n++) {
+function multipleArea(start, end) {
+    for (var i = start; i <= end; i++) for (var n = 1; n < 10; n++) {
         console.log(i + ' x ' + n + ' = ' + (i*n));
     }
 }

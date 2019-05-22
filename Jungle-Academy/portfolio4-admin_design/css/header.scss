@@ -14,16 +14,6 @@ input {
   &:focus {outline: none;}
 }
 
-.text-ir {
-  display: inline-block;
-  // width: 100%;
-  // text-indent: 100%;
-  // white-space: nowrap;
-  overflow: hidden;
-  width: 0px;
-  height: 0px;
-}
-
 header {
   position: fixed;
   top: 0px;
@@ -33,9 +23,22 @@ header {
 }
 
 i {
+  position: relative;
   font-size: 20px;
   color: #7A7F8B;
   text-align: center;
+
+  span {
+    position: absolute;
+    left: -9999px;
+  }
+}
+
+.text-ir {
+  display: inline-block;
+  overflow: hidden;
+  width: 0px;
+  height: 0px;
 }
 
 .main-tnb {
@@ -104,13 +107,15 @@ i {
       input {
         width: 270px;
         height: 100%;
+        padding-left: 15px;
   
         &:focus {
           background: #F4F5F7;
-        }
-  
-        &::placeholder {
-          padding-left: 15px;
+
+          a {
+            //왜 적용 안되는지 모르겠음
+            background: #F4F5F7;
+          }
         }
       }
   

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../script수업/js/jquery-3.4.1.min.js"></script>
+  <title>jquery basic</title>
+  <style>
+    a {text-decoration: none; color: inherit; border-bottom: 1px solid black;}
+    ul {
+      /* background: red; */
+      /* height: 21px; */
+    }
+
+    li {
+      padding: 2px;
+      margin: 2px;
+      /* display: inline-block */
+    }
+
+
+    .on {
+      background: red;
+    }
+
+  </style>
+</head>
+<body>
+  <div>
+    <a href="#" class="prev">prev</a>
+    <a href="#" class="next">next</a>
+    <a href="#" class="play">play</a>
+  </div>
+
+  <ul class="indicator">
+    <li><a href="#">1번 비주얼</a></li>
+    <li><a href="#">2번 비주얼</a></li>
+    <li><a href="#">3번 비주얼</a></li>
+    <li><a href="#">4번 비주얼</a></li>
+  </ul>
+
+  <div>
+    <span>가</span>
+    <span>나</span>
+    <span>다</span>
+    <span>라</span>
+  </div>
+
+  <script>
+    'use strict';
+
+    //each
+
+    $('div').find('span').each(function(i, e){
+      console.log($(this).text());
+    });
+
+    false && $('ul.indicator li').each(function(i) {
+      if (i !== 2) {
+        $(this).find('a').text(i);
+      }
+    });
+
+    false && $('ul.indicator li').each(function(i) {
+      alert(i);
+    });
+
+    false && $('ul.indicator li').each(function(i) {
+      $(this).find('a').text(i + 1 + '번 슬라이드');
+    });
+
+    false && $('ul.indicator li a').on('click', function() {
+      var index = $('ul.indicator li').index($(this).parent());
+      alert(index);
+    });
+
+
+    //index
+    false && $('ul.indicator li').on('click', function() {
+      var index = $('ul.indicator li').index($(this));
+      alert(index);
+    });
+
+    false && $('ul.indicator li a').on('click', function() {
+      var index = $('ul.indicator li').find('a').index($(this));
+      alert(index);
+    });
+
+    //*click event
+
+    // $('a.play').on('click', function() {
+    //   alert('test');
+    // });
+
+    // $('a.prev').on('click', function() {
+    //   $('a.play').off('click');
+    // });
+
+    // $('a.play').one('click', function() {
+    //   alert('test');
+    // });
+
+
+    $('a.play').on('click', function() {
+
+      //*text, html
+      // alert('test233');
+      // var text = $('ul.indicator').html();
+      // var attribute = $('ul.indicator').attr('class');
+      // alert(attribute);
+
+      // $('ul.indicator').text('TEST');
+      // $('ul.indicator').html('<li><a href="#">1번 슬라이드</a></li>');
+      // $('ul.indicator').attr({
+      //   'id': 'test',
+      //   'class': 'abc',
+      //   'title': '인디케이터'
+      // });
+      
+      //띄어쓰기 한번 하면 반영됨, \n 엔터기능 
+      // $('ul.indicator').append('<li><a href="#">n번 비주얼</a></li>\n');
+      // $('ul.indicator').prepend('<li><a href="#">n번 비주얼</a></li>\n');
+      // $('ul.indicator').after('<li><a href="#">n번 비주얼</a></li>\n');
+      // $('ul.indicator li:eq(0)').after('\n<li><a href="#">n번 비주얼</a></li>');
+      // $('ul.indicator li:eq(0)').before('<li><a href="#">n번 비주얼</a></li> ');
+
+      // $('ul.indicator').remove();
+      // $('ul.indicator').empty();
+
+
+      //*addClass
+      // $('ul.indicator li:eq(0)').addClass('on');
+      // $('ul.indicator li:eq(3)').toggleClass('on');
+
+
+      //*css, animate
+      // $('ul li').css({'height': '500px', 'width': '200px', 'opacity': 0.5});
+      // $('ul').stop().animate({'height': '500px', 'width': '200px', 'opacity': 0.5}, 2000, function(){
+      //   alert('finished!');
+      // });
+
+
+      //*traverse
+      // $('ul.indicator li:eq(2)').parent().css({'background': 'pink'});
+      // $('ul.indicator li:eq(2)').prev().css({'background': 'pink'});
+      // $('ul.indicator li:eq(2)').prev().prev().css({'background': 'pink'});
+      //작동안함
+      // $('ul.indicator li').find('a').css({'background': 'pink'});
+
+
+      //*width
+      var width = $('ul.indicator li').width();
+      var innerwidth = $('ul.indicator li').innerWidth();
+      var outerwidth = $('ul.indicator li').outerWidth();
+      var outerwidth = $('ul.indicator li').outerWidth(true);
+      // alert(outerwidth, true);
+
+
+      //*offset, position
+      var top = $('a.play').offset().top;
+      var left = $('a.play').offset().left;
+      var ptop = $('a.play').position().top;
+      var pleft = $('a.play').position().left;
+      // alert(pleft);
+
+    });
+
+    //변수
+    var value1 = 60;
+    var value2 = 50;
+    var result = value1 + value2;
+    value1 += 100;
+
+    var car = [30, [100, 200, 300], 'LEE', 'Seoul'];
+    var person = {age: 56, name: 'LEE', height: 190, job: 'Dev'};
+
+    var sum = showResult(14, 29)
+
+
+    //콘솔 구구단
+
+    function showResult(a, b) {
+        var sum = a + b + value1;
+        value1 -= 100;
+        return sum;
+    }
+
+    //1단부터 9단까지 콘솔창에 띄우기
+
+    for (var i = 1; i < 10; i++) for (var n = 1; n < 10; n++) {
+      console.log(i + ' x ' + n + ' = ' + (i*n));
+    }
+
+    //3단부터 7단까지 콘솔창에 띄우기
+
+    multipleArea(3, 7);
+
+    function multipleArea(start, end) {
+        for (var i = start; i <= end; i++) for (var n = 1; n < 10; n++) {
+            console.log(i + ' x ' + n + ' = ' + (i*n));
+        }
+    }
+
+      
+  </script>
+</body>
+</html>
