@@ -371,6 +371,8 @@ i {
 }
 
 #main-gnb-menu {
+  // overflow: scroll;
+
   * {
     font-size: 15px;
     color: #8B919F;
@@ -412,7 +414,7 @@ i {
     }
 
     ul {
-      display: none;
+      // display: none;
       width: 100%;
       background: #21262D;
 
