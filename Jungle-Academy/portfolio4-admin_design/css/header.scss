@@ -249,7 +249,7 @@ i {
   }
 }
 
-.main-gnb {
+#main-gnb {
   // display: none;
   position: fixed;
   top: 0px;
@@ -259,72 +259,85 @@ i {
   background: #1B1E24;
 
   #main-gnb-header {
+    position: relative;
     height: 60px;
     background: #21262D;
 
-    #main-gnb-header-wrap {
-      padding-top: 15px;
-      overflow: hidden;
+    h1 {
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      transform: translateY(-50%);
+      float: left;
+      color: #fff;
+      font-size: 25px;
+      font-weight: normal;
+      
+      span {
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        border-radius: 2.5px;
+        margin-left: 1px;
+        background: #fff;
+        vertical-align: middle;
+      }
+    }
 
-      h1 {
-        float: left;
-        color: #fff;
-        padding-left: 15px;
-        font-size: 25px;
-        font-weight: normal;
-        
-        span {
-          display: inline-block;
-          width: 5px;
-          height: 5px;
-          border-radius: 2.5px;
-          margin-left: 1px;
-          background: #fff;
-          vertical-align: middle;
-        }
+    ul {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      float: right;
+
+      li+li {
+        margin-left: 5px;
       }
 
-      div {
-        float: right;
-        padding: 0px 15px;
+      li {
+        position: relative;
+        display: block;
+        float: left;
+        width: 32px;
+        height: 32px;
+        background: black;
+        text-align: center;
 
         a {
           display: block;
-          float: left;
-          width: 32px;
-          height: 32px;
-          background: black;
-          text-align: center;
-          padding-top: 8px;
-
+          width: 100%;
+          height: 100%;
 
           i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             font-size: 15px;
             color: #fff;
           }
         }
+      }
 
-        .mail {
-          position: relative;
-          margin-left: 5px;
-
-          &.notice:after {
-            content: "";
-            display: block;
-            background-color: #EF5B5C;
-            width: 10px;
-            height: 10px;
-            position: absolute;
-            top: 5px;
-            bottom: auto;
-            right: 3px;
-            border-radius: 5px;
-          }
+      .mail {
+        &.notice:after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 5px;
+          bottom: auto;
+          right: 3px;
+          width: 10px;
+          height: 10px;
+          background-color: #EF5B5C;
+          border-radius: 5px;
         }
       }
     }
   }
 }
+
 
 
 #main-gnb-contents {
