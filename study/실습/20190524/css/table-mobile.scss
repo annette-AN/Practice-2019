@@ -1,0 +1,110 @@
+@media all and (max-width: 768px) {
+
+  #container {
+    width: 100%;
+  }
+
+  #left-menu {
+    display: none;
+  }
+
+  .contents {
+    left: 0px;
+    margin: 0px 16px;
+
+    .basic-table, .table-step2, .table-step3 {
+      width: 100%;
+    }
+  
+
+    table {
+      min-width: 320px;
+      margin: 20px 0px;
+
+      th {
+        // visibility: hidden;
+        display: none;
+      }
+
+      td {
+        display: block;
+      }
+    }
+
+    .basic-table {
+      tr {
+        &:first-child {
+          border-top: 2px solid #323232;
+        }
+
+        td {
+          position: relative;
+          display: block;
+          text-align: left;
+          padding-left: 33%;
+
+          
+          &:last-child {
+            margin-bottom: 10px;
+          }
+
+          button {
+            width: 30%;
+          }
+        }
+
+        td:before {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          display: inline-block;
+          width: 30%;
+          height: 100%;
+          border-right: 1px solid #d3d3d3;
+          background: #f3f3f3;
+          font-weight: bold;
+          padding: 10px 0px;
+          text-align: center;
+          box-sizing: border-box;
+        }
+
+        td:first-child:before {
+          content: '실습';
+        }
+
+        td:nth-child(2):before {
+          content: '상호';
+        }
+
+        td:nth-child(3):before {
+          content: '주소';
+
+        }
+
+        td:nth-child(4):before {
+          content: '전화번호';
+
+        }
+
+        td:nth-child(5):before {
+          content: '지도보기';
+          padding-top: 15px;
+        }
+      }
+    }
+  }
+
+  .table-step2 {
+    display: none;
+
+  }
+
+  .table-step3 {
+    display: none;
+  }
+
+
+
+
+
+}
