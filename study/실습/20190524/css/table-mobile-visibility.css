@@ -17,7 +17,7 @@
     margin: 20px 0px;
   }
   .contents table th {
-    visibility: hidden;
+    visibility: collapse;
   }
   .contents table td {
     display: block;
