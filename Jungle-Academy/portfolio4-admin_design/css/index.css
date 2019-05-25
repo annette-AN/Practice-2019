@@ -1,1 +1,115 @@
-/* No CSS *//*# sourceMappingURL=index.css.map */
+#main-wrap {
+  position: absolute;
+  top: 61px;
+  left: 50px;
+  right: 0px;
+  padding: 30px;
+  background: #E5E9EC;
+  z-index: 1;
+}
+
+header[open] + main > #main-wrap {
+  left: 250px;
+}
+
+.overall {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 155px;
+}
+
+.overall article {
+  position: relative;
+  width: 24.5%;
+  background: #27A599;
+  padding: 20px;
+}
+
+.overall article h2 {
+  color: #1A1D23;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.overall article ul:first-of-type {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  overflow: hidden;
+}
+
+.overall article ul:first-of-type li {
+  float: left;
+}
+
+.overall article ul:first-of-type li:nth-child(2) i {
+  font-size: 13px;
+  margin-left: 5px;
+}
+
+.overall article ul:first-of-type li i {
+  vertical-align: middle;
+  font-size: 10px;
+  color: #1A6F66;
+}
+
+.overall article ul:nth-of-type(2) {
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.overall article ul:nth-of-type(2) li {
+  position: relative;
+  float: left;
+  margin-right: 10px;
+}
+
+.overall article ul:nth-of-type(2) li h3 {
+  text-transform: capitalize;
+  margin-bottom: 5px;
+  color: #e4f5f3;
+}
+
+.overall article ul:nth-of-type(2) li span {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+
+.overall article ul:nth-of-type(2) li + li {
+  margin-left: 11px;
+}
+
+.overall article ul:nth-of-type(2) li + li:before {
+  position: absolute;
+  left: -11px;
+  content: '';
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: #218D83;
+}
+
+.overall article p {
+  margin-top: 25px;
+  color: #17645C;
+  font-size: 13px;
+}
+
+.overall article p span:first-of-type {
+  display: block;
+  width: 290px;
+  height: 2px;
+  background: #1C776F;
+  margin-bottom: 10px;
+}
+
+.overall article p span:nth-of-type(2) {
+  color: #fff;
+}
+/*# sourceMappingURL=index.css.map */
