@@ -10,12 +10,12 @@
   <script src="js/jquery-3.4.1.min.js"></script>
   <title>index/admin/portfolio</title>
   <!-- http://webarch.revox.io/3.0/html/index.html# -->
-  <!-- 5/20 1h, 5/21 20:30~1:00 4.5h, 5/22 22:00~2:00 4hs -->
+  <!-- 5/20 1h, 5/21 20:30~1:00 4.5h, 5/22 22:00~2:00 4hs, 5/25 13:00~ -->
   <!-- 브라우저 크기 1600px -->
 </head>
 <body>
   <header>
-    <nav class="main-tnb">
+    <nav id="main-tnb">
       <ul class="tnb-wrap">
         <li class="menu-bar"><i class="fas fa-bars"><span class="child-text-ir">메뉴바 아이콘</span></i></li>
         <li class="refresh"><i class="fas fa-redo"><span class="child-text-ir">새로고침 아이콘</span></i></li>
@@ -35,12 +35,10 @@
           <li>
             <a href="#"><i class="fas fa-cogs"><span class="child-text-ir">사용자 정보</span></i></a>
             <ul>
-              <li id="triangle-border"><span class="child-text-ir">리스트표시디자인</span></li>
               <li><a href="#">my account</a></li>
               <li><a href="#">my calendar</a></li>
               <!-- inbox .notice 를 넣으면 신호등 표시가 나옴, 알림 개수는 content에 적으면 적용됨 -->
               <li class="inbox"><a href="#">my inbox</a></li>
-              <li id="design-line-1"><span class="child-text-ir">라인표시디자인</span></li>
               <li><a href="#"><i class="fas fa-power-off"><span class="child-text-ir">로그아웃 아이콘</span></i>log out</a></li>
             </ul>
           </li>
@@ -59,7 +57,7 @@
       </div>
 
       <div id="main-gnb-contents">
-        <div id="gnb-user-profile">
+        <div class="gnb-user-profile">
           <!-- user-profile .notice 를 넣으면 신호등 표시가 나옴 -->
           <!-- 회원 프로필 사진영역 -->
           <div class="user-profile">
@@ -70,7 +68,7 @@
           </h2>
         </div>
 
-        <ul id="main-gnb-menu">
+        <ul class="main-gnb-menu">
           <li>
             <a href="#">
               <i class="fas fa-home"></i>
@@ -204,15 +202,11 @@
           </li>
         </ul>
       </div>
-
-      <div>
-        <a href="#">원 ico</a>
-      </div>
     </nav>
   </header>
 
   <main>
-
+    
   </main>
   
   <script src="js/index.js"></script>

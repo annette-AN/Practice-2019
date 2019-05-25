@@ -37,7 +37,7 @@ i {
   height: 0px;
 }
 
-.main-tnb {
+#main-tnb {
   height: 100%;
 
   .tnb-wrap {
@@ -144,10 +144,10 @@ i {
   }
 }
 
-.user-wrap{
+.user-wrap {
   position: absolute;
   top: 0px;
-  right: 60px;
+  right: 5%;
   height: 61px;
 
   > * {
@@ -178,20 +178,26 @@ i {
         box-shadow: -1px -1px 2px rgba(0,0,0,0.2), 1px 1px 2px rgba(0,0,0,0.2);
         border-radius: 2px;
 
-        #triangle-border {
+        &:before {
+          content: '';
           display: block;
           position: absolute;
-          top: -16px;
+          top: -14px;
           left: 140px;
-          width: 12px;
-          height: 16px;
-          margin: 0px;
-          padding: 0px;
-          //색상 어떻게 할지 결정하기
-          border: 8px solid gray;
+          border: 7px solid gray;
           border-right-color: transparent;
           border-left-color: transparent;
           border-top-color: transparent;
+        }
+
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 75%;
+          width: 100%;
+          height: 1px;
+          background: #EAEDF0;
         }
 
         li {
@@ -205,7 +211,7 @@ i {
           }
 
           &.notice:after {
-            content: "";
+            content: '';
             display: inline-block;
             position: absolute;
             top: 12px;
@@ -218,7 +224,7 @@ i {
             font-size: 12px;
             padding-left: 5px;
             padding-top: 1px;
-            //width, height랑 padding 이랑 더해서 크기확인
+            //width, height, padding 더해서 크기확인
           }
 
           a{
@@ -237,220 +243,290 @@ i {
           }
         }
 
-        #design-line-1 {
-          display: block;
-          height: 1px;
-          margin: 0px;
-          padding: 0px;
-          border-top: 1px solid #EAEDF0;
+        li+li {
+          margin-top: 10px;
         }
       }
     }
   }
 }
 
+//#main-gnb
 #main-gnb {
-  // display: none;
   position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 250px;
+  top: 61px;
+  width: 50px;
   height: 100%;
-  background: #1B1E24;
+  background: #27A599;
 
   #main-gnb-header {
-    position: relative;
-    height: 60px;
-    background: #21262D;
+    display: none;
+  }
 
-    h1 {
-      position: absolute;
-      top: 50%;
-      left: 15px;
-      transform: translateY(-50%);
-      float: left;
-      color: #fff;
-      font-size: 25px;
-      font-weight: normal;
-      
-      span {
-        display: inline-block;
-        width: 5px;
-        height: 5px;
-        border-radius: 2.5px;
-        margin-left: 1px;
-        background: #fff;
-        vertical-align: middle;
-      }
+  #main-gnb-contents {
+    .gnb-user-profile {
+      display: none;
     }
+  }
 
-    ul {
-      position: absolute;
-      top: 50%;
-      right: 15px;
-      transform: translateY(-50%);
-      float: right;
+  .main-gnb-menu {
+    margin-top: 20px;
 
-      li+li {
-        margin-left: 5px;
-      }
+    > li {
+      position: relative;
 
-      li {
-        position: relative;
-        display: block;
-        float: left;
-        width: 32px;
-        height: 32px;
-        background: black;
+      > a {
+        display: inline-block;
+        width: 100%;
+        line-height: 50px;
         text-align: center;
 
-        a {
-          display: block;
-          width: 100%;
-          height: 100%;
-
-          i {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 15px;
-            color: #fff;
-          }
-        }
-      }
-
-      .mail {
-        &.notice:after {
-          content: "";
-          display: block;
-          position: absolute;
-          top: 5px;
-          bottom: auto;
-          right: 3px;
-          width: 10px;
-          height: 10px;
-          background-color: #EF5B5C;
-          border-radius: 5px;
-        }
-      }
-    }
-  }
-}
-
-
-
-#main-gnb-contents {
-  top: 60px;
-  
-  #gnb-user-profile {
-    height: 90px;
-    padding-top: 22px;
-
-    .user-profile {
-      float: left;
-      background-image: url(../img/avatar.jpg);
-      width: 46px;
-      height: 46px;
-      border-radius: 23px;
-      margin: 0px 0px 0px 25px;
-
-      &.notice:after {
-        width: 13px;
-        height: 13px;
-        bottom: -3px;
-        right: -1px;
-        border: none;
-        border-radius: 6px;
-      }
-    }
-
-    h2 {
-      float: left;
-      color: #fff;
-      text-transform: capitalize;
-      font-weight: normal;
-      font-size: 20px;
-      margin-left: 15px;
-
-      span {
-        display: block;
-        padding-top: 5px;
-        color: #8B919F;
-        font-size: 14px;
-      }
-    }
-  }
-}
-
-#main-gnb-menu {
-  // overflow: scroll;
-
-  * {
-    font-size: 15px;
-    color: #8B919F;
-    text-transform: capitalize;
-  }
-
-  > li {
-    position: relative;
-    width: 100%;
-
-    > &:nth-child(4), &:nth-child(10) {
-      i {
-        margin-left: 2px;
-      }
-    }
-
-    > a {
-      display: block;
-      width: 100%;
-      padding: 14px 0px 14px 30px;
-
-      i {
-        padding-right: 5px;
-      }
-
-      &:hover {
-        color: #fff;
-
         i {
+          font-size: 15px;
           color: #fff;
         }
-      }
-    }
 
-    //2번째 ul
-    //click하면 나타나게 해야함
-    ul.show {
-      display: block;
-    }
-
-    ul {
-      // display: none;
-      width: 100%;
-      background: #21262D;
-
-      //두번째 li부터 보더탑 적용하고싶음
-      li+li:first-child {
-        // border-top: 1px solid #fff;
+        span {
+          display: none;
+        }
       }
 
-      li {
+      ul.show {
+        display: block;
+      }
 
-        a {
-          display: block;
-          padding: 8px 0px 8px 45px;
-          transition: border .2s;
-          font-size: 14px;
-          color: #AFB7BF;
-          transition: padding-left .2s;
+      ul {
+        display: none;
+        position: absolute;
+        top: 0%;
+        left: 100%;
+        width: 250px;
+        background: #20252C;
 
-          &:hover {
+        li {
+          a {
+            display: block;
             padding-left: 55px;
+            color: #AFB7BF;
+            line-height: 40px;
+
+            &:hover {
+              background: #1C2026;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//header [open]
+header {
+  &[open] {
+    width: calc(100% - 250px);
+    left: 250px;
+    right: 0px;
+
+    #main-gnb {
+      top: 0px;
+      left: 0px;
+      width: 250px;
+      background: #1B1E24;
+
+      #main-gnb-header {
+        display: block;
+        position: relative;
+        height: 60px;
+        background: #21262D;
+
+        h1 {
+          position: absolute;
+          top: 50%;
+          left: 15px;
+          transform: translateY(-50%);
+          float: left;
+          color: #fff;
+          font-size: 25px;
+          font-weight: lighter;
+          
+          span {
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            border-radius: 2.5px;
+            margin-left: 1px;
+            background: #fff;
+            vertical-align: middle;
           }
         }
 
+        ul {
+          position: absolute;
+          top: 50%;
+          right: 15px;
+          transform: translateY(-50%);
+          float: right;
+
+          li+li {
+            margin-left: 5px;
+          }
+
+          li {
+            position: relative;
+            display: block;
+            float: left;
+            width: 32px;
+            height: 32px;
+            background: black;
+            text-align: center;
+
+            a {
+              display: block;
+              width: 100%;
+              height: 100%;
+
+              i {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 15px;
+                color: #fff;
+              }
+            }
+          }
+
+          .mail {
+            &.notice:after {
+              content: "";
+              display: block;
+              position: absolute;
+              top: 5px;
+              bottom: auto;
+              right: 3px;
+              width: 10px;
+              height: 10px;
+              background-color: #EF5B5C;
+              border-radius: 5px;
+            }
+          }
+        }
+      }
+
+      #main-gnb-contents {
+        top: 60px;
+        
+        .gnb-user-profile {
+          display: block;
+          height: 90px;
+          padding-top: 22px;
+
+          .user-profile {
+            float: left;
+            background-image: url(../img/avatar.jpg);
+            width: 46px;
+            height: 46px;
+            border-radius: 23px;
+            margin: 0px 0px 0px 25px;
+
+            &.notice:after {
+              width: 13px;
+              height: 13px;
+              bottom: -3px;
+              right: -1px;
+              border: none;
+              border-radius: 6px;
+            }
+          }
+
+          h2 {
+            float: left;
+            color: #fff;
+            text-transform: capitalize;
+            font-weight: normal;
+            font-size: 20px;
+            margin-left: 15px;
+
+            span {
+              display: block;
+              padding-top: 5px;
+              color: #8B919F;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+
+      .main-gnb-menu {
+        //scroll 생기게 하기
+        margin-top: 0px;
+
+        * {
+          font-size: 15px;
+          color: #8B919F;
+          text-transform: capitalize;
+        }
+
+        > li {
+          width: 100%;
+
+          > &:nth-child(4), &:nth-child(10) {
+            i {
+              margin-left: 2px;
+            }
+          }
+
+          > a {
+            line-height: initial;
+            text-align: left;
+            padding: 14px 0px 14px 30px;
+
+            &:hover {
+              //왜 a는 색이 안변하는지 모르겠음
+              color: #fff;
+
+              i {
+                color: #fff;
+              }
+            }
+
+            i {
+              padding-right: 5px;
+            }
+
+            span {
+              display: inline;
+            }
+          }
+
+          ul.show {
+            display: block;
+          }
+
+          ul {
+            position: static;
+            display: none;
+            width: 100%;
+            background: #21262D;
+            padding: 10px 0px;
+
+            li {
+              a {
+                padding: 8px 0px 8px 45px;
+                line-height: initial;
+                transition: border .2s;
+                font-size: 14px;
+                transition: padding-left .2s;
+
+                &:hover {
+                  background: none;
+                  padding-left: 55px;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

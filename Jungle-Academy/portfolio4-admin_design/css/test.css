@@ -1,0 +1,64 @@
+#main-gnb {
+  position: fixed;
+  top: 61px;
+  width: 50px;
+  height: 100%;
+  background: #27A599;
+}
+
+#main-gnb #main-gnb-header {
+  display: none;
+}
+
+#main-gnb #main-gnb-contents .gnb-user-profile {
+  display: none;
+}
+
+#main-gnb .main-gnb-menu {
+  margin-top: 20px;
+}
+
+#main-gnb .main-gnb-menu > li {
+  position: relative;
+}
+
+#main-gnb .main-gnb-menu > li > a {
+  display: inline-block;
+  width: 100%;
+  line-height: 50px;
+  text-align: center;
+}
+
+#main-gnb .main-gnb-menu > li > a i {
+  font-size: 15px;
+  color: #fff;
+}
+
+#main-gnb .main-gnb-menu > li > a span {
+  display: none;
+}
+
+#main-gnb .main-gnb-menu > li ul.show {
+  display: block;
+}
+
+#main-gnb .main-gnb-menu > li ul {
+  display: none;
+  position: absolute;
+  top: 0%;
+  left: 100%;
+  width: 250px;
+  background: #20252C;
+}
+
+#main-gnb .main-gnb-menu > li ul li a {
+  padding-left: 55px;
+  color: #AFB7BF;
+  line-height: 35px;
+}
+
+#main-gnb .main-gnb-menu > li ul li a:hover {
+  background: #1C2026;
+  color: #fff;
+}
+/*# sourceMappingURL=test.css.map */
