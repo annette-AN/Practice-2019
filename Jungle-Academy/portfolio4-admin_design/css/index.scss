@@ -168,36 +168,38 @@ header[open] + main > #main-wrap {
         }
       }
     }
-
-    table {
-      // width 100%인데 왜 영역밖까지 나가는지 모르겠음
-      width: 100%;
+    
+    .table-wrap {
       margin: 0px 20px;
 
-      tbody {
-        tr {
-          td {
-            padding: 10px;
-            color: rgba(0,0,0,0.4);
-            font-size: 13px;
+      table {
+        width: 100%;
+
+        tbody {
+          tr {
+            td {
+              padding: 10px;
+              color: rgba(0,0,0,0.4);
+              font-size: 13px;
+            }
+
+            td:first-child, td:nth-child(3) {
+              color: #27A599;
+            }
           }
 
-          td:first-child, td:nth-child(3) {
-            color: #27A599;
+          tr:first-child {
+            td {
+              padding-bottom: 15px;
+              text-transform: uppercase;
+              font-size: 14px;
+              color: rgba(0,0,0,0.7);
+            }
           }
-        }
 
-        tr:first-child {
-          td {
-            text-transform: uppercase;
-            font-size: 14px;
-            padding-left: 5px;
-            color: rgba(0,0,0,0.7);
+          tr+tr {
+            border-top: 1px solid rgba(0,0,0,0.1);
           }
-        }
-
-        tr+tr {
-          border-top: 1px solid rgba(0,0,0,0.2);
         }
       }
     }

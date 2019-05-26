@@ -188,29 +188,32 @@ header[open] + main > #main-wrap {
   font-weight: 400;
 }
 
-#sales-info .sales table {
-  width: 100%;
+#sales-info .sales .table-wrap {
   margin: 0px 20px;
 }
 
-#sales-info .sales table tbody tr td {
+#sales-info .sales .table-wrap table {
+  width: 100%;
+}
+
+#sales-info .sales .table-wrap table tbody tr td {
   padding: 10px;
   color: rgba(0, 0, 0, 0.4);
   font-size: 13px;
 }
 
-#sales-info .sales table tbody tr td:first-child, #sales-info .sales table tbody tr td:nth-child(3) {
+#sales-info .sales .table-wrap table tbody tr td:first-child, #sales-info .sales .table-wrap table tbody tr td:nth-child(3) {
   color: #27A599;
 }
 
-#sales-info .sales table tbody tr:first-child td {
+#sales-info .sales .table-wrap table tbody tr:first-child td {
+  padding-bottom: 15px;
   text-transform: uppercase;
   font-size: 14px;
-  padding-left: 5px;
   color: rgba(0, 0, 0, 0.7);
 }
 
-#sales-info .sales table tbody tr + tr {
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
+#sales-info .sales .table-wrap table tbody tr + tr {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 /*# sourceMappingURL=index.css.map */
