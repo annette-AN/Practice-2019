@@ -10,7 +10,8 @@
   <script src="js/jquery-3.4.1.min.js"></script>
   <title>index/admin/portfolio</title>
   <!-- http://webarch.revox.io/3.0/html/index.html# -->
-  <!-- 5/20 1h, 5/21 20:30~1:00 4.5h, 5/22 22:00~2:00 4h, 5/25 13:00~16:00 3h 20:00~ -->
+  <!-- 5/20 1h, 5/21 20:30~1:00 4.5h, 5/22 22:00~2:00 4h, 5/25 13:00~16:00 3h 20:00~22:30 2.5h,
+  5/26 14:00~14:30 0.5h 15:00~ -->
   <!-- 브라우저 크기 1600px -->
 </head>
 <body>
@@ -207,8 +208,8 @@
 
   <main>
     <div id="main-wrap">
-      <section class="overall">
-        <article class="overall-box1">
+      <section id="overall">
+        <article>
           <h2>OVERALL SALES</h2>
           <ul>
             <li><i class="fas fa-redo"></i><span class="child-text-ir">새로고침 아이콘</span></i></li>
@@ -235,7 +236,7 @@
           </p>
         </article>
 
-        <article class="overall-box2">
+        <article>
           <h2>OVERALL VISIT</h2>
           <ul>
             <li><i class="fas fa-redo"></i><span class="child-text-ir">새로고침 아이콘</span></i></li>
@@ -262,7 +263,7 @@
           </p>
         </article>
 
-        <article class="overall-box3">
+        <article>
           <h2>SERVER LOAD</h2>
           <ul>
             <li><i class="fas fa-redo"></i><span class="child-text-ir">새로고침 아이콘</span></i></li>
@@ -289,7 +290,7 @@
           </p>
         </article>
 
-        <article class="overall-box4">
+        <article>
           <h2>OVERALL SALES</h2>
           <ul>
             <li><i class="fas fa-redo"></i><span class="child-text-ir">새로고침 아이콘</span></i></li>
@@ -317,25 +318,61 @@
         </article>
       </section>
 
-      <section>
-        <article>
-          <div>map</div>
-        </article>
-        <article>
+      <section id="sales-info">
+        <article class="map-area">
           <div>
+            <!-- 확대 축소 어떻게 하는지랑 pointer 설정 어떻게 하는지-->
+            <img src="img/map.png" alt="지점 정보 지도">
+          </div>
+          <div>
+            <h3><em>quick</em>view</h3>
             <p>
-              <h3></h3>
-              <span>15,489</span> USD
-            </p>
-            <p>
-              <h3></h3>
-              <span>15,489</span> USD
-            </p>
-            <p>
-              <h3></h3>
-              <span>15,489</span> USD
+              <span class="child-text-ir">지점 정보</span>
             </p>
           </div>
+        </article>
+        <article class="sales">
+          <ul>
+            <!-- li > span -->
+            <li>
+              <h3>You have earned</h3>
+              <span>15,489</span> USD
+            </li>
+            <li>
+              <h3>TODAY</h3>
+              <span>15,489</span> USD
+            </li>
+            <li>
+              <h3>THIS MONTH</h3>
+              <span>15,489</span> USD
+            </li>
+          </ul>
+
+          <table>
+            <colgroup>
+              <col style="width:25%;">
+              <col style="width:55%;">
+              <col style="width:20%;">
+            </colgroup>
+            <tbody>
+              <tr>
+                <td>last sale</td>
+              </tr>
+              <tr>
+                <td>25601</td>
+                <td>Redesign projuct template</td>
+                <td>$<span>4500</span></td>
+              </tr>
+              <tr>
+                <td>25602</td>
+                <td>Redesign projuct template</td>
+                <td>$<span>4700</span></td>
+              </tr>            
+            </tbody>
+          </table>
+
+          <!-- 움직이는거 구현하기 -->
+          <div><span class="child-text-ir">디자인용 그림</span></div>
         </article>
       </section>
 

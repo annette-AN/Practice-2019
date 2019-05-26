@@ -1,4 +1,6 @@
+//<reset>
 body, header, nav, div, ul, li, h1, h2, h3, h4, h5, h6, main, a, section, article, p {margin: 0; padding: 0; box-sizing: border-box;}
+body {font-size: 14px;}
 li {list-style: none;}
 a {text-decoration: none; color: inherit;}
 input {
@@ -11,8 +13,13 @@ input {
   line-height: 1;
   font-size: 13px;
 }
-body {font-size: 14px;}
 h1, h2, h3, h4, h5, h6 {font-size: inherit; font-weight: normal;}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 0 none;
+}
+//</reset>
 
 header {
   position: fixed;

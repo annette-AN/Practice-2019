@@ -12,7 +12,7 @@ header[open] + main > #main-wrap {
   left:250px;
 }
 
-.overall {
+#overall {
   display: flex;
   justify-content: space-between;
   height: 155px;
@@ -49,7 +49,7 @@ header[open] + main > #main-wrap {
         i {
           vertical-align: middle;
           font-size: 10px;
-          color: #1A6F66;
+          color: rgba(0,0,0,0.4);
         }
       }
     }
@@ -66,7 +66,7 @@ header[open] + main > #main-wrap {
         h3 {
           text-transform: capitalize;
           margin-bottom: 5px;
-          color: rgb(228, 245, 243);
+          color: rgba(255,255,255,0.9);
         }
 
         span {
@@ -86,7 +86,7 @@ header[open] + main > #main-wrap {
           display: block;
           width: 1px;
           height: 40px;
-          background: #218D83;
+          background: rgba(0,0,0,0.2);
         }
       }
     }
@@ -94,19 +94,111 @@ header[open] + main > #main-wrap {
     p {
       // background: pink;
       margin-top: 25px;
-      color: #17645C;
+      color: rgba(0,0,0,0.4);
       font-size: 13px;
 
       span:first-of-type {
         display: block;
         width: 290px;
         height: 2px;
-        background: #1C776F;
+        background: rgba(0,0,0,0.3);
         margin-bottom: 10px;
       }
 
       span:nth-of-type(2) {
-        color: #fff;
+        color: rgba(255,255,255,0.9);
+      }
+    }
+  }
+  article:nth-child(2) {background: #1992D6;}
+  article:nth-child(3) {background: #726186;}
+  article:nth-child(4) {background: #E9595A;}
+}
+
+#sales-info {
+  display: flex;
+  justify-content: space-between;
+  height: 343px;
+  margin-top: 10px;
+
+  .map-area {
+    width: 66.3%;
+    overflow: hidden;
+
+    div {
+      float: left;
+      width: 65%;
+      background: #47B2A8;
+
+      img {
+        width: 100%;
+
+      }
+    }
+
+    div+div {
+      width: 35%;
+      height: 100%;
+      background: #21262D;
+    }
+  }
+
+  .sales {
+    width: 33%;
+    background: white;
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      margin: 30px;
+
+      li {
+        font-size: 18px;
+        font-weight: 300;
+
+        h3 {
+          color: rgba(0,0,0,0.4);
+          font-size: 13px;
+          margin-bottom: 10px;
+        }
+
+        span {
+          color: rgba(0,0,0,0.7);
+          font-weight: 400;
+        }
+      }
+    }
+
+    table {
+      // width 100%인데 왜 영역밖까지 나가는지 모르겠음
+      width: 100%;
+      margin: 0px 20px;
+
+      tbody {
+        tr {
+          td {
+            padding: 10px;
+            color: rgba(0,0,0,0.4);
+            font-size: 13px;
+          }
+
+          td:first-child, td:nth-child(3) {
+            color: #27A599;
+          }
+        }
+
+        tr:first-child {
+          td {
+            text-transform: uppercase;
+            font-size: 14px;
+            padding-left: 5px;
+            color: rgba(0,0,0,0.7);
+          }
+        }
+
+        tr+tr {
+          border-top: 1px solid rgba(0,0,0,0.2);
+        }
       }
     }
   }

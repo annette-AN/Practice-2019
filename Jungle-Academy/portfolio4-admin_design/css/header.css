@@ -5,6 +5,10 @@ body, header, nav, div, ul, li, h1, h2, h3, h4, h5, h6, main, a, section, articl
           box-sizing: border-box;
 }
 
+body {
+  font-size: 14px;
+}
+
 li {
   list-style: none;
 }
@@ -26,13 +30,15 @@ input {
   font-size: 13px;
 }
 
-body {
-  font-size: 14px;
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-size: inherit;
   font-weight: normal;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 0 none;
 }
 
 header {

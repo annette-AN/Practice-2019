@@ -30,9 +30,9 @@ $('.main-gnb-menu > li > a').on('click', function(){
 
 //focusout 할때
 false && $('.user-info > ul').on('focusout', function(){
-  $('.user-info > li ul').toggleClass('on');
+  $('.user-info > li ul').removeClass('on');
 });
 
 false && $('header').on('focusout', function(){
   $('header').removeAttr('open','');
-})
+});
