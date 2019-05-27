@@ -342,20 +342,20 @@ i {
   color: #fff;
 }
 
-header[open] {
+header.open {
   width: calc(100% - 250px);
   left: 250px;
   right: 0px;
 }
 
-header[open] #main-gnb {
+header.open #main-gnb {
   top: 0px;
   left: 0px;
   width: 250px;
   background: #1B1E24;
 }
 
-header[open] #main-gnb #main-gnb-header {
+header.open #main-gnb #main-gnb-header {
   display: block;
   position: relative;
   height: 60px;
@@ -366,7 +366,7 @@ header[open] #main-gnb #main-gnb-header {
           user-select: none;
 }
 
-header[open] #main-gnb #main-gnb-header h1 {
+header.open #main-gnb #main-gnb-header h1 {
   position: absolute;
   top: 50%;
   left: 15px;
@@ -378,7 +378,7 @@ header[open] #main-gnb #main-gnb-header h1 {
   font-weight: lighter;
 }
 
-header[open] #main-gnb #main-gnb-header h1 span {
+header.open #main-gnb #main-gnb-header h1 span {
   display: inline-block;
   width: 5px;
   height: 5px;
@@ -388,7 +388,7 @@ header[open] #main-gnb #main-gnb-header h1 span {
   vertical-align: middle;
 }
 
-header[open] #main-gnb #main-gnb-header ul {
+header.open #main-gnb #main-gnb-header ul {
   position: absolute;
   top: 50%;
   right: 15px;
@@ -397,11 +397,11 @@ header[open] #main-gnb #main-gnb-header ul {
   float: right;
 }
 
-header[open] #main-gnb #main-gnb-header ul li + li {
+header.open #main-gnb #main-gnb-header ul li + li {
   margin-left: 5px;
 }
 
-header[open] #main-gnb #main-gnb-header ul li {
+header.open #main-gnb #main-gnb-header ul li {
   position: relative;
   display: block;
   float: left;
@@ -411,13 +411,13 @@ header[open] #main-gnb #main-gnb-header ul li {
   text-align: center;
 }
 
-header[open] #main-gnb #main-gnb-header ul li a {
+header.open #main-gnb #main-gnb-header ul li a {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-header[open] #main-gnb #main-gnb-header ul li a i {
+header.open #main-gnb #main-gnb-header ul li a i {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -427,7 +427,7 @@ header[open] #main-gnb #main-gnb-header ul li a i {
   color: #fff;
 }
 
-header[open] #main-gnb #main-gnb-header ul .mail.notice:after {
+header.open #main-gnb #main-gnb-header ul .mail.notice:after {
   content: "";
   display: block;
   position: absolute;
@@ -440,17 +440,17 @@ header[open] #main-gnb #main-gnb-header ul .mail.notice:after {
   border-radius: 5px;
 }
 
-header[open] #main-gnb #main-gnb-contents {
+header.open #main-gnb #main-gnb-contents {
   top: 60px;
 }
 
-header[open] #main-gnb #main-gnb-contents .gnb-user-profile {
+header.open #main-gnb #main-gnb-contents .gnb-user-profile {
   display: block;
   height: 90px;
   padding-top: 22px;
 }
 
-header[open] #main-gnb #main-gnb-contents .gnb-user-profile .user-profile {
+header.open #main-gnb #main-gnb-contents .gnb-user-profile .user-profile {
   float: left;
   background-image: url(../img/avatar.jpg);
   width: 46px;
@@ -459,7 +459,7 @@ header[open] #main-gnb #main-gnb-contents .gnb-user-profile .user-profile {
   margin: 0px 0px 0px 25px;
 }
 
-header[open] #main-gnb #main-gnb-contents .gnb-user-profile .user-profile.notice:after {
+header.open #main-gnb #main-gnb-contents .gnb-user-profile .user-profile.notice:after {
   width: 13px;
   height: 13px;
   bottom: -3px;
@@ -468,7 +468,7 @@ header[open] #main-gnb #main-gnb-contents .gnb-user-profile .user-profile.notice
   border-radius: 6px;
 }
 
-header[open] #main-gnb #main-gnb-contents .gnb-user-profile h2 {
+header.open #main-gnb #main-gnb-contents .gnb-user-profile h2 {
   float: left;
   color: #fff;
   text-transform: capitalize;
@@ -477,60 +477,60 @@ header[open] #main-gnb #main-gnb-contents .gnb-user-profile h2 {
   margin-left: 15px;
 }
 
-header[open] #main-gnb #main-gnb-contents .gnb-user-profile h2 span {
+header.open #main-gnb #main-gnb-contents .gnb-user-profile h2 span {
   display: block;
   padding-top: 5px;
   color: #8B919F;
   font-size: 14px;
 }
 
-header[open] #main-gnb .main-gnb-menu {
+header.open #main-gnb .main-gnb-menu {
   height: calc(100vh - 150px);
   overflow: auto;
   margin-top: 0px;
 }
 
-header[open] #main-gnb .main-gnb-menu * {
+header.open #main-gnb .main-gnb-menu * {
   font-size: 15px;
   color: #8B919F;
   text-transform: capitalize;
 }
 
-header[open] #main-gnb .main-gnb-menu > li {
+header.open #main-gnb .main-gnb-menu > li {
   width: 100%;
 }
 
-> header[open] #main-gnb .main-gnb-menu > li:nth-child(4) i, header[open] #main-gnb .main-gnb-menu > li:nth-child(10) i {
+> header.open #main-gnb .main-gnb-menu > li:nth-child(4) i, header.open #main-gnb .main-gnb-menu > li:nth-child(10) i {
   margin-left: 2px;
 }
 
-header[open] #main-gnb .main-gnb-menu > li > a {
+header.open #main-gnb .main-gnb-menu > li > a {
   line-height: initial;
   text-align: left;
   padding: 14px 0px 14px 30px;
 }
 
-header[open] #main-gnb .main-gnb-menu > li > a:hover {
+header.open #main-gnb .main-gnb-menu > li > a:hover {
   color: #fff;
 }
 
-header[open] #main-gnb .main-gnb-menu > li > a:hover i {
+header.open #main-gnb .main-gnb-menu > li > a:hover i {
   color: #fff;
 }
 
-header[open] #main-gnb .main-gnb-menu > li > a i {
+header.open #main-gnb .main-gnb-menu > li > a i {
   padding-right: 5px;
 }
 
-header[open] #main-gnb .main-gnb-menu > li > a span {
+header.open #main-gnb .main-gnb-menu > li > a span {
   display: inline;
 }
 
-header[open] #main-gnb .main-gnb-menu > li ul.show {
+header.open #main-gnb .main-gnb-menu > li ul.show {
   display: block;
 }
 
-header[open] #main-gnb .main-gnb-menu > li ul {
+header.open #main-gnb .main-gnb-menu > li ul {
   position: static;
   display: none;
   width: 100%;
@@ -538,7 +538,7 @@ header[open] #main-gnb .main-gnb-menu > li ul {
   padding: 10px 0px;
 }
 
-header[open] #main-gnb .main-gnb-menu > li ul li a {
+header.open #main-gnb .main-gnb-menu > li ul li a {
   padding: 8px 0px 8px 45px;
   line-height: initial;
   -webkit-transition: border .2s;
@@ -548,7 +548,7 @@ header[open] #main-gnb .main-gnb-menu > li ul li a {
   transition: padding-left .2s;
 }
 
-header[open] #main-gnb .main-gnb-menu > li ul li a:hover {
+header.open #main-gnb .main-gnb-menu > li ul li a:hover {
   background: none;
   padding-left: 55px;
 }

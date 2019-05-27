@@ -47,6 +47,41 @@
 <script>
 'use strict';
 
+//click indicator act (+change slide)
+$('.indicator li a').on('click', function(){
+    var index = $('.indicator li').index($(this).parent());
+    $('.slide li').css({'display': 'none'});
+
+    // $('.slide li').eq(index).css({'display': 'block'});
+    $('.slide li:eq(' + index + ')').css({'display': 'block'});
+
+    $('.indicator li').removeClass('on');
+    $(this).parent().addClass('on');
+});
+
+//click prev
+$('.prev').on('click', function(){
+    var index = $('.indicator li').index($('.indicator li.on'));
+    index = (index <= 0) ? 3 : index - 1;
+    showSlide(index + 1);
+});
+
+//click next
+$('.next').on('click', function(){
+    var index = $('.indicator li').index($('.indicator li.on'));
+    index = (index >= 3) ? 0 : index + 1;
+    showSlide(index + 1);
+});
+
+
+function showSlide(n) {
+    $('.slide li').css({'display': 'none'});
+    $('.slide li').eq(n - 1).css({'display': 'block'});
+    $('.indicator li').removeClass();
+    $('.indicator li').eq(n - 1).addClass('on');
+};
+
+
 /*
 $('div.image-slide ul.indicator li a').on('click', function() {
     var index = $('div.image-slide ul.indicator li').index($(this).parent());

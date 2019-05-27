@@ -329,9 +329,9 @@ i {
   }
 }
 
-//header [open]
+//header .open
 header {
-  &[open] {
+  &.open {
     width: calc(100% - 250px);
     left: 250px;
     right: 0px;

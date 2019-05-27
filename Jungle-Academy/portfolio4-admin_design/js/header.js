@@ -4,10 +4,10 @@ $('a').on('click', function(e){
 });
 
 $('.menu-bar').on('click', function(){
-  if ($('header').attr('open')) {
-    $('header').removeAttr('open','');
+  if ($('header').hasClass('open')) {
+    $('header').removeClass('open','');
   } else {
-    $('header').attr('open','');
+    $('header').addClass('open','');
   }
 
   if ($('.main-gnb-menu > li > ul').hasClass('show')) {
@@ -28,11 +28,11 @@ $('.main-gnb-menu > li > a').on('click', function(){
   }
 });
 
-//focusout 할때
-false && $('.user-info > ul').on('focusout', function(){
-  $('.user-info > li ul').removeClass('on');
+//header가 open일 때 다른 영역을 클릭하면 자동닫힘
+$(document).on('click', function(){
+  $('header').removeClass('open','');
 });
 
-false && $('header').on('focusout', function(){
-  $('header').removeAttr('open','');
+$('header').on('click', function(e){
+  e.stopPropagation();
 });
