@@ -1,0 +1,62 @@
+.section1 {
+  background: #AAB3AB;
+
+  div {
+    .content {
+      width: 90%;
+      margin: 30px auto 10px;
+
+      img {
+        display: block;
+        width: 60%;
+        margin: 0 auto;
+      }
+
+      div {
+        margin-top: 14px;
+        p{
+          line-height: 1.8;
+
+          span {
+            display: block;
+            font-size: 30px;
+          }
+        }
+
+        ul {
+          li {
+            width: 100%;
+            text-align: center;
+            font-weight: 500;
+          }
+        }
+
+        > ul {
+          margin-top: 14px;
+
+          > li {
+            padding-bottom: 10px;
+            font-size: 18px;
+            text-align: left;
+          }
+
+          ul {
+            li {
+              a {
+                display: block;
+                padding: 15px;
+                margin-top: 10px;
+                background: #EEE0B7;
+                font-size: 18px;
+
+                &:hover {
+                  background: #EBEFC9;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

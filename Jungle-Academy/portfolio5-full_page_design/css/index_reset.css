@@ -1,0 +1,24 @@
+@import url("http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700");
+@import url("http://fonts.googleapis.com/earlyaccess/notosanskr.css");
+div, section, p, span, ul, li {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: 'Roboto', 'Noto Sans KR', 'sans-serif';
+  font-size: 14px;
+  min-width: 320px;
+}
+/*# sourceMappingURL=index_reset.css.map */

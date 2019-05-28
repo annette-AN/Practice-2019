@@ -1,0 +1,65 @@
+.section1 {
+  background: #AAB3AB;
+}
+
+.section1 div .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 75%;
+  margin: 0px auto;
+  overflow: hidden;
+}
+
+.section1 div .content img {
+  display: block;
+  float: left;
+  width: 50%;
+}
+
+.section1 div .content div {
+  float: left;
+  width: 50%;
+  padding: 50px;
+}
+
+.section1 div .content div p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.section1 div .content div p span {
+  display: block;
+  font-size: 60px;
+}
+
+.section1 div .content div ul li {
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+
+.section1 div .content div > ul {
+  margin-top: 50px;
+}
+
+.section1 div .content div > ul > li {
+  padding-bottom: 20px;
+  font-size: 20px;
+  text-align: left;
+}
+
+.section1 div .content div > ul ul li a {
+  display: block;
+  padding: 15px;
+  margin-top: 10px;
+  background: #EEE0B7;
+  font-size: 18px;
+}
+
+.section1 div .content div > ul ul li a:hover {
+  background: #EBEFC9;
+}
+/*# sourceMappingURL=index_p.css.map */
