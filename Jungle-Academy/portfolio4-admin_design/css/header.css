@@ -19,7 +19,7 @@ a {
   color: inherit;
 }
 
-input {
+input, button {
   display: inline-block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
