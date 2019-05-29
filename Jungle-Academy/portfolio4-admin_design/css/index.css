@@ -136,11 +136,12 @@ section + section {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 343px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 #sales-info .map-area {
-  width: 66.3%;
+  width: 66.4%;
   overflow: hidden;
 }
 
@@ -161,7 +162,7 @@ section + section {
 }
 
 #sales-info .sales {
-  width: 33%;
+  width: 32.85%;
   background: white;
 }
 
@@ -176,6 +177,7 @@ section + section {
 }
 
 #sales-info .sales ul li {
+  width: 49%;
   font-size: 18px;
   font-weight: 300;
 }
@@ -221,16 +223,18 @@ section + section {
 }
 
 .joing {
-  width: 74%;
-  background: wheat;
-  overflow: hidden;
+  position: relative;
+}
+
+.joing > div, .joing > ul {
+  width: 32.85%;
 }
 
 .joing .post {
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 245px;
+  width: 51%;
   padding: 18px;
   background: rgba(40, 162, 224, 0.85);
   color: #fff;
@@ -267,11 +271,6 @@ section + section {
 
 .joing .joing-group {
   position: relative;
-  float: left;
-  width: 44%;
-  height: auto;
-  margin-right: 10px;
-  overflow: hidden;
   -webkit-transition: scale .4s;
   transition: scale .4s;
 }
@@ -308,10 +307,12 @@ section + section {
 }
 
 .joing .joing-group div:nth-of-type(3) span {
+  font-size: 12px;
   font-weight: bold;
 }
 
 .joing .joing-group div:nth-of-type(3) .user-profile {
+  margin-top: 18px;
   width: 35px;
   height: 35px;
 }
@@ -337,21 +338,118 @@ section + section {
 }
 
 .joing > ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 100%;
 }
 
 .joing > ul li {
-  float: left;
+  position: absolute;
+  width: calc(50% - 5px);
+  height: calc(50% - 5px);
+  background: white;
+  padding: 18px;
 }
 
-.joing > ul li .post {
-  position: static;
+.joing > ul li div {
   width: 100%;
+  height: 100%;
+}
+
+.joing > ul li div:nth-child(2) {
+  display: none;
+}
+
+.joing > ul li:first-child {
+  top: 0%;
+  left: 0%;
+  background: #bcbcbc;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.joing > ul li:first-child i {
+  display: inline-block;
+  color: #fff;
+}
+
+.joing > ul li:first-child span:first-of-type {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.joing > ul li:first-child p {
+  margin-top: 10px;
+  font-size: 25px;
+  line-height: 1.3;
+}
+
+.joing > ul li:first-child p em {
+  font-style: normal;
+}
+
+.joing > ul li:first-child span:nth-of-type(2) {
+  display: inline-block;
+  margin: 30px 5px 5px 0px;
+}
+
+.joing > ul li:nth-child(2) {
+  top: 0%;
+  right: 0%;
+  background: #0090d9;
+  color: #fff;
+}
+
+.joing > ul li:nth-child(2) div {
+  padding-top: 5px;
+}
+
+.joing > ul li:nth-child(2) div .user {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.joing > ul li:nth-child(2) div .user img {
+  width: 100%;
+}
+
+.joing > ul li:nth-child(2) div h2 {
+  display: inline-block;
+  text-transform: capitalize;
+}
+
+.joing > ul li:nth-child(2) div span {
+  display: block;
+}
+
+.joing > ul li:nth-child(3) {
+  bottom: 0%;
+  left: 0%;
+}
+
+.joing > ul li:nth-child(4) {
+  bottom: 0%;
+  right: 0%;
+}
+
+.joing > ul li:nth-child(4) img {
+  width: 100%;
+}
+
+.joing .weather {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  background: white;
+  font-size: 60px;
 }
 /*# sourceMappingURL=index.css.map */
