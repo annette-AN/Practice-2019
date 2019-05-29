@@ -51,7 +51,7 @@ div.image-slide p.control a.play i.fa-pause {display: none;}
 div.image-slide p.control a.play i.fa-play {display: inline-block;}
 div.image-slide p.control a.play.on i.fa-pause {display: inline-block;}
 div.image-slide p.control a.play.on i.fa-play {display: none;}
-div.image-slide p.control a i {position: relative;}
+div.image-slide p.control a img {position: relative;}
 
 
 

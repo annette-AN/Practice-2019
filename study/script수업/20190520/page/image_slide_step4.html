@@ -29,7 +29,6 @@
                             <li><a href="#"><img alt="송지아리조트 골프장 호텔 전경" src="../img/image_slide/main_visual_04.jpg" /></a></li>
                         </ul>
                         <ul class="indicator">
-                            
                         </ul>
                     </div>
                     <p class="control">
@@ -44,7 +43,75 @@
 <script>
 'use strict';
 
+var numSlide = $('.slide li').length;
+var slideNow = 0;
+var slideNext = 0;
+var slidePrev = 0;
+var slideFirst = 3;
+var timerId = '';
+var timerSpeed = 3000;
+var isTimerOn = true;
+
+if (isTimerOn === true) {
+    $('.play').addClass('on');
+} else {
+    $('.play').removeClass('on');
+}
+
+$('.slide li').each(function(i){
+    $('.indicator').append('<li><a href="#">' + (i + 1) + '번 슬라이드</a></li>\n');
+});
+
+
+showSlide(slideFirst);
+
+$('.indicator li a').on('click', function(){
+    var index = $('.indicator li').index($(this).parent());
+
+    showSlide(index + 1);
+});
+
+$('.prev').on('click', function(){
+    showSlide(slidePrev);
+    $(this).find('img').stop().animate({'left': '-10px'}, 200).animate({'left': '0px'}, 200);
+});
+
+$('.next').on('click', function(){
+    showSlide(slideNext);
+    $(this).find('img').stop().animate({'right': '-10px'}, 200).animate({'right': '0px'}, 200);
+}); 
+
+$('.play').on('click', function(){
+    if (isTimerOn === true) {
+        clearTimeout(timerId);
+        isTimerOn = false;
+        $('.play').removeClass('on');
+
+    } else {
+        timerId = setTimeout(function(){showSlide(slideNext)}, timerSpeed);
+        isTimerOn = true;
+        $('.play').addClass('on');
+    }
+});
+
+function showSlide(n) {
+    clearTimeout(timerId);
+    $('.indicator li').removeClass('on');
+    $('.indicator li:eq(' + (n - 1) + ')').addClass('on');
+    $('.slide li').css({'display': 'none'});
+    $('.slide li:eq(' + (n - 1) + ')').css({'display': 'block'});
     
+    slideNow = n;
+    slidePrev = (n - 1) < 1 ? numSlide : n - 1;
+    slideNext = (n + 1) > numSlide ? 1 : n + 1;
+    if (isTimerOn === true) {
+        timerId = setTimeout(function(){showSlide(slideNext)}, timerSpeed);
+    }
+
+    console.log(slidePrev + '/' + slideNow + '/' + slideNext);
+};
+
+
 /*
 var numSlide = $('div.image-slide ul.slide li').length;
 var slideNow = 0;
