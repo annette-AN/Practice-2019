@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=1200" />
+        <meta name="author" content="DinoWorks Inc. 디노웍스(주)" />
+        <meta name="apple-mobile-web-app-title" content="디노웍스UI" />
+        <title>스크롤 UI(기본) | 디노웍스(주) UI 라이브러리</title>
+        <meta name="description" content="디노웍스(주) UI 라이브러리 : 스크롤 UI(기본)" />
+        <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
+        <link href="../css/scroll_basic.css" rel="stylesheet" />
+        <script src="../js/jquery-3.4.1.min.js"></script>
+        <script src="../js/ui_library_common.js"></script>
+    </head>
+    <body class="sub scroll-basic">
+        <div id="wrapper">
+            <a href="#main" id="skip-nav">본문 바로가기</a>
+            <a href="../index.html" id="go-home" title="홈 화면"><i class="fas fa-home"></i></a>
+            
+            <header id="header">
+                <h1><a href="../index.html"><img alt="DinoWorks" src="../img/logo.png" /><img alt="DinoWorks" src="../img/logo_color.png" /></a></h1>
+                <nav id="gnb">
+                    <ul>
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">제품소개</a></li>
+                        <li><a href="#">고객센터</a></li>
+                    </ul>
+                </nav>
+            </header>
+            
+            <main id="main">
+                <section id="page1" class="scroll-page">
+                    <h2><a href="#">Page1</a></h2>
+                    <p class="content"><img alt="" src="../img/logo_color.png" /></p>
+                </section>
+                <section id="page2" class="scroll-page">
+                    <h2><a href="#">Page2</a></h2>
+                    <p class="content"><img alt="" src="../img/logo_color.png" /></p>
+                </section>
+                <section id="page3" class="scroll-page">
+                    <h2><a href="#">Page3</a></h2>
+                    <p class="content"><img alt="" src="../img/logo_color.png" /></p>
+                </section>
+                <section id="page4" class="scroll-page">
+                    <h2><a href="#">Page4</a></h2>
+                    <p class="content"><img alt="" src="../img/logo_color.png" /></p>
+                </section>
+                <section id="page5" class="scroll-page">
+                    <h2><a href="#">Page5</a></h2>
+                    <p class="content"><img alt="" src="../img/logo_color.png" /></p>
+                </section>
+                <section id="page6" class="scroll-page">
+                    <h2><a href="#">Page6</a></h2>
+                    <p class="content"><img alt="" src="../img/logo_color.png" /></p>
+                </section>
+                <section id="page7" class="scroll-page">
+                    <h2><a href="#">Page7</a></h2>
+                    <p class="content"><img alt="" src="../img/logo_color.png" /></p>
+                </section>
+                <aside id="aside">
+                    <h3><a href="#">Aside</a></h3>
+                </aside>
+            </main>
+            
+            <footer id="footer">
+                <p class="copyright">2019 Dinoworks Inc.</p>
+            </footer>
+            
+        </div> <!-- #wrapper  -->
+        
+<script>
+'use strict';
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+/*
+var scrollTop = 0;
+scrollTop = $(document).scrollTop();
+checkHeaderStatus();
+checkAsideStatus();
+checkVisibility('p.content');
+
+$(window).on('scroll resize', function() {
+    scrollTop = $(document).scrollTop();
+    checkHeaderStatus();
+    checkAsideStatus();
+    checkVisibility('p.content');
+});
+
+function checkVisibility(selector) {
+    $(selector).each(function() {
+        var $selector = $(this);
+        var minShow = $selector.offset().top - $(window).height();
+        var maxShow = $selector.offset().top + $selector.outerHeight();
+        //console.log(minShow + ' / ' + maxShow);
+        $selector.removeClass('down show up');
+        if (scrollTop < minShow) {
+            $selector.addClass('down');
+        } else if (scrollTop > maxShow) {
+            $selector.addClass('up');
+        } else {
+            $selector.addClass('show');
+        }
+    });
+}
+    
+function checkHeaderStatus() {
+    if (scrollTop > 200) {
+        $('#header').addClass('on');
+    } else {
+        $('#header').removeClass('on');
+    }
+}
+
+function checkAsideStatus() {
+    $('#aside').css({'top': (scrollTop + 150) + 'px'});
+}
+*/
+
+
+</script>
+    </body>
+</html>
+
+

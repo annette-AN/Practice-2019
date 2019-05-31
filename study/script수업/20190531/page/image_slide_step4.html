@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=1200" />
+        <meta name="author" content="DinoWorks Inc. 디노웍스(주)" />
+        <meta name="apple-mobile-web-app-title" content="디노웍스UI" />
+        <title>이미지 슬라이드(Step4) | 디노웍스(주) UI 라이브러리</title>
+        <meta name="description" content="디노웍스(주) UI 라이브러리 : 이미지 슬라이드(Step4)" />
+        <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
+        <link href="../css/image_slide.css" rel="stylesheet" />
+        <script src="../js/jquery-3.4.1.min.js"></script>
+        <script src="../js/ui_library_common.js"></script>
+    </head>
+    <body class="sub image-slide step4">
+        <div id="wrapper">
+            <a href="#main" id="skip-nav">본문 바로가기</a>
+            <a href="../index.html" id="go-home" title="홈 화면"><i class="fas fa-home"></i></a>
+            
+            <main id="main">
+                <div class="image-slide">
+                    <div class="box">
+                        <ul class="slide">
+                            <li><a href="#"><img alt="송지아리조트 골프장 전경(오션코스)" src="../img/image_slide/main_visual_01.jpg" /></a></li>
+                            <li><a href="#"><img alt="송지아리조트 골프장 빌라 전경" src="../img/image_slide/main_visual_02.jpg" /></a></li>
+                            <li><a href="#"><img alt="송지아리조트 골프장 전경(리버코스)" src="../img/image_slide/main_visual_03.jpg" /></a></li>
+                            <li><a href="#"><img alt="송지아리조트 골프장 호텔 전경" src="../img/image_slide/main_visual_04.jpg" /></a></li>
+                        </ul>
+                        <ul class="indicator">
+                            
+                        </ul>
+                    </div>
+                    <p class="control">
+                        <a href="#" class="prev"><img alt="이전 이미지" src="../img/image_slide/btn_left.png" /></a>
+                        <a href="#" class="next"><img alt="다음 이미지" src="../img/image_slide/btn_right.png" /></a>
+                        <a href="#" class="play"><i class="fas fa-pause"><span>정지</span></i><i class="fas fa-play"><span>플레이</span></i></a>
+                    </p>
+                </div>
+            </main>
+        </div> <!-- #wrapper  -->
+        
+<script>
+'use strict';
+
+
+var numSlide = $('.slide li').length;
+var slideNow = 0;
+var slideNext = 0;
+var slidePrev = 0;
+var slideFirst = 3;
+var timerId = '';
+var timerSpeed = 3000;
+var isTimerOn = true;
+
+if (isTimerOn === true) {
+    $('.play').addClass('on');
+} else {
+    $('.play').removeClass('on');
+}
+
+$('.slide li').each(function(i){
+    $('.indicator').append('<li><a href="#">' + (i + 1) + '번 슬라이드</a></li>\n');
+});
+
+
+showSlide(slideFirst);
+
+$('.indicator li a').on('click', function(){
+    var index = $('.indicator li').index($(this).parent());
+
+    showSlide(index + 1);
+});
+
+$('.prev').on('click', function(){
+    showSlide(slidePrev);
+    $(this).find('img').stop().animate({'left': '-10px'}, 200).animate({'left': '0px'}, 200);
+});
+
+$('.next').on('click', function(){
+    showSlide(slideNext);
+    $(this).find('img').stop().animate({'right': '-10px'}, 200).animate({'right': '0px'}, 200);
+}); 
+
+$('.play').on('click', function(){
+    if (isTimerOn === true) {
+        clearTimeout(timerId);
+        isTimerOn = false;
+        $('.play').removeClass('on');
+
+    } else {
+        timerId = setTimeout(function(){showSlide(slideNext)}, timerSpeed);
+        isTimerOn = true;
+        $('.play').addClass('on');
+    }
+});
+
+function showSlide(n) {
+    clearTimeout(timerId);
+    $('.indicator li').removeClass('on');
+    $('.indicator li:eq(' + (n - 1) + ')').addClass('on');
+    $('.slide li').css({'display': 'none'});
+    $('.slide li:eq(' + (n - 1) + ')').css({'display': 'block'});
+    
+    slideNow = n;
+    slidePrev = (n - 1) < 1 ? numSlide : n - 1;
+    slideNext = (n + 1) > numSlide ? 1 : n + 1;
+    if (isTimerOn === true) {
+        timerId = setTimeout(function(){showSlide(slideNext)}, timerSpeed);
+    }
+
+    console.log(slidePrev + '/' + slideNow + '/' + slideNext);
+};
+
+
+/*
+var numSlide = $('div.image-slide ul.slide li').length;
+var slideNow = 0;
+var slidePrev = 0;
+var slideNext = 0;
+var slideFirst = 1;
+var timerId = '';
+var timerSpeed = 2000;
+var isTimerOn = true;
+
+$('div.image-slide ul.slide li').each(function(i) {
+    $('div.image-slide ul.indicator').append('<li><a href="#">' + (i + 1) + '번 슬라이드</a></li>\n');
+});
+if (isTimerOn === true) {
+    $('div.image-slide p.control a.play').addClass('on');
+} else {
+    $('div.image-slide p.control a.play').removeClass('on');
+}
+showSlide(slideFirst);
+    
+$('div.image-slide ul.indicator li a').on('click', function() {
+    var index = $('div.image-slide ul.indicator li').index($(this).parent());
+    showSlide(index + 1);
+});
+$('div.image-slide p.control a.prev').on('click', function() {
+    $(this).find('img').stop(true).animate({'left': '-10px'}, 50).animate({'left': 0}, 100);
+    showSlide(slidePrev);
+});
+$('div.image-slide p.control a.next').on('click', function() {
+    $(this).find('img').stop(true).animate({'right': '-10px'}, 50).animate({'right': 0}, 100);
+    showSlide(slideNext);
+});
+$('div.image-slide p.control a.play').on('click', function() {
+    if (isTimerOn === true) {
+        clearTimeout(timerId);
+        isTimerOn = false;
+        $(this).removeClass('on');
+    } else {
+        timerId = setTimeout(function() {showSlide(slideNext);}, timerSpeed);
+        isTimerOn = true;
+        $(this).addClass('on');
+    }
+});
+    
+function showSlide(n) {
+    clearTimeout(timerId);
+    $('div.image-slide ul.slide li').css({'display': 'none'});
+    $('div.image-slide ul.slide li:eq(' + (n - 1) + ')').css({'display': 'block'});
+    $('div.image-slide ul.indicator li').removeClass('on');
+    $('div.image-slide ul.indicator li:eq(' + (n - 1) + ')').addClass('on');
+    slideNow = n;
+    slidePrev = (n - 1) < 1 ? numSlide : n - 1;
+    slideNext = (n + 1) > numSlide ? 1 : n + 1;
+    if (isTimerOn === true) {
+        timerId = setTimeout(function() {showSlide(slideNext);}, timerSpeed);
+    }
+    //console.log(slidePrev + ' / ' + slideNow + ' / ' + slideNext);
+}
+*/
+
+</script>
+    </body>
+</html>
+
+

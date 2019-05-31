@@ -109,11 +109,11 @@ function setImageSlide(selector, first, status, speed) {
         showSlide(index + 1);
     });
     $(selector).find('p.control a.prev').on('click', function() {
-        $(this).stop(true).animate({'left': '-70px'}, 50).animate({'left': '-60px'}, 100);
+    $(this).find('img').stop(true).animate({'left': '-10px'}, 50).animate({'left': 0}, 100);
         showSlide(slidePrev);
     });
     $(selector).find('p.control a.next').on('click', function() {
-        $(this).stop(true).animate({'right': '-70px'}, 50).animate({'right': '-60px'}, 100);
+    $(this).find('img').stop(true).animate({'right': '-10px'}, 50).animate({'right': 0}, 100);
         showSlide(slideNext);
     });
     $(selector).find('p.control a.play').on('click', function() {
