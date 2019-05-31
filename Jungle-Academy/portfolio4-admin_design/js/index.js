@@ -45,6 +45,7 @@ setInterval(joingBoardEffect);
 function joingBoardEffect() {
 }
 
+  //왜 첫번째 li만 적용되는지 모르겠음
 $('.joing-board li div:eq(0)').animate({'top': -100 + '%'}, 500, function(){
    $(this).css({'top': 100 + '%'});
 });

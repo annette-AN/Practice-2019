@@ -342,7 +342,7 @@ section + section {
   font-weight: 100;
 }
 
-.joing > ul {
+.joing .joing-board {
   position: absolute;
   top: 0px;
   left: 50%;
@@ -351,148 +351,52 @@ section + section {
   height: 100%;
 }
 
-.joing > ul li {
+.joing .joing-board li {
   position: absolute;
   width: calc(50% - 5px);
   height: calc(50% - 5px);
   overflow: hidden;
 }
 
-.joing > ul li div {
+.joing .joing-board li div {
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-<<<<<<< HEAD
-.joing > ul li div:nth-child(2) {
-  display: none;
-}
-
-.joing > ul li:first-child {
-  top: 0%;
-  left: 0%;
-  background: #bcbcbc;
-  color: #fff;
-}
-
-.joing > ul li:first-child i {
-  display: inline-block;
-  color: #fff;
-}
-
-.joing > ul li:first-child span:first-of-type {
-=======
-.joing > ul li div img {
->>>>>>> cc027e77f7e4b776c7626c0644d92170c04f3465
-  display: block;
+.joing .joing-board li div img {
   width: 100%;
   height: 100%;
 }
 
-<<<<<<< HEAD
-.joing > ul li:first-child p {
-  margin-top: 10px;
-  font-size: 22px;
-  font-weight: 100;
-  line-height: 1.3;
-}
-
-.joing > ul li:first-child p em {
-  font-style: normal;
-  font-weight: 400;
-=======
-.joing > ul li div:first-child {
+.joing .joing-board li div:nth-child(1) {
   top: 0%;
 }
 
-.joing > ul li div:nth-child(2) {
+.joing .joing-board li div:nth-child(2) {
   top: 100%;
 }
 
-.joing > ul li:first-child {
+.joing .joing-board li:first-child {
   top: 0%;
   left: 0%;
->>>>>>> cc027e77f7e4b776c7626c0644d92170c04f3465
 }
 
-.joing > ul li:nth-child(2) {
+.joing .joing-board li:nth-child(2) {
   top: 0%;
   right: 0%;
-  background: #0090d9;
-  color: #fff;
 }
 
-.joing > ul li:nth-child(2) div .user {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  border-radius: 15px;
-  overflow: hidden;
-}
-
-.joing > ul li:nth-child(2) div .user img {
-  width: 100%;
-}
-
-.joing > ul li:nth-child(2) div h2 {
-  position: absolute;
-  top: 18px;
-  left: 50px;
-  text-transform: capitalize;
-  margin-left: 5px;
-  font-size: 16px;
-}
-
-.joing > ul li:nth-child(2) div h2 span {
-  font-weight: bold;
-}
-
-.joing > ul li:nth-child(2) div .revox {
-  display: inline-block;
-  position: absolute;
-  top: 35px;
-  left: 55px;
-  opacity: 0.5;
-}
-
-.joing > ul li:nth-child(2) p {
-  position: absolute;
-  bottom: 18px;
-  width: 85%;
-  font-size: 18px;
-  font-weight: 100;
-}
-
-.joing > ul li:nth-child(2) p em {
-  font-style: normal;
-  font-weight: 400;
-}
-
-.joing > ul li:nth-child(3) {
+.joing .joing-board li:nth-child(3) {
   bottom: 0%;
   left: 0%;
-  background: #27A599;
-  color: #fff;
 }
 
-.joing > ul li:nth-child(4) {
+.joing .joing-board li:nth-child(4) {
   bottom: 0%;
   right: 0%;
-  padding: 0px;
 }
 
-<<<<<<< HEAD
-.joing > ul li:nth-child(4) > div img {
-  width: 100%;
-}
-
-.joing > ul li:nth-child(4) > div > div {
-  background: red;
-}
-
-=======
->>>>>>> cc027e77f7e4b776c7626c0644d92170c04f3465
 .joing .weather {
   position: absolute;
   top: 0px;
