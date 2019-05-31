@@ -234,8 +234,9 @@ section + section {
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 51%;
-  padding: 18px;
+  width: 240px;
+  height: 230px;
+  padding: 22px;
   background: rgba(40, 162, 224, 0.85);
   color: #fff;
 }
@@ -268,16 +269,14 @@ section + section {
   margin: 30px 5px 5px 0px;
 }
 
-.joing .joing-group.img-effect {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
 .joing .joing-group {
   position: relative;
   overflow: hidden;
-  -webkit-transition: scale .4s;
-  transition: scale .4s;
+}
+
+.joing .joing-group:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .joing .joing-group em {
@@ -286,6 +285,8 @@ section + section {
 
 .joing .joing-group img {
   width: 100%;
+  -webkit-transition: scale .4s;
+  transition: scale .4s;
 }
 
 .joing .joing-group div:nth-of-type(2) {
@@ -307,26 +308,29 @@ section + section {
 .joing .joing-group div:nth-of-type(3) {
   position: absolute;
   bottom: 3%;
-  left: 4%;
+  width: 100%;
+  padding-left: 4%;
   color: #fff;
 }
 
 .joing .joing-group div:nth-of-type(3) span {
-  font-size: 12px;
+  display: block;
   font-weight: bold;
 }
 
 .joing .joing-group div:nth-of-type(3) .user-profile {
-  margin-top: 18px;
   width: 35px;
   height: 35px;
+  margin-top: 18px;
+  margin-right: 0px;
+  border-radius: 17px;
 }
 
 .joing .joing-group div:nth-of-type(3) input {
   position: absolute;
   bottom: 8%;
-  left: 9%;
-  width: 56%;
+  left: 13%;
+  width: 55%;
   background: #fff;
   padding: 10px;
 }
@@ -334,12 +338,13 @@ section + section {
 .joing .joing-group div:nth-of-type(3) button {
   position: absolute;
   bottom: 8%;
-  left: 67%;
+  left: 70%;
   width: 20%;
+  height: 35px;
   background: #27A599;
-  padding: 11px;
   color: #fff;
   font-weight: 100;
+  border-radius: 3px;
 }
 
 .joing .joing-board {
