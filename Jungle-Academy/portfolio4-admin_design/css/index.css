@@ -419,7 +419,6 @@ section + section {
 .joing > ul li:nth-child(2) {
   top: 0%;
   right: 0%;
-<<<<<<< HEAD
   background: #0090d9;
   color: #fff;
 }
@@ -468,8 +467,6 @@ section + section {
 .joing > ul li:nth-child(2) p em {
   font-style: normal;
   font-weight: 400;
-=======
->>>>>>> cc027e77f7e4b776c7626c0644d92170c04f3465
 }
 
 .joing > ul li:nth-child(3) {
