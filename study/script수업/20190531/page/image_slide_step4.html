@@ -29,6 +29,7 @@
                             <li><a href="#"><img alt="송지아리조트 골프장 호텔 전경" src="../img/image_slide/main_visual_04.jpg" /></a></li>
                         </ul>
                         <ul class="indicator">
+                            
                         </ul>
                     </div>
                     <p class="control">
@@ -42,6 +43,7 @@
         
 <script>
 'use strict';
+
 
 var numSlide = $('.slide li').length;
 var slideNow = 0;
@@ -137,20 +139,22 @@ $('div.image-slide ul.indicator li a').on('click', function() {
     showSlide(index + 1);
 });
 $('div.image-slide p.control a.prev').on('click', function() {
+    $(this).find('img').stop(true).animate({'left': '-10px'}, 50).animate({'left': 0}, 100);
     showSlide(slidePrev);
 });
 $('div.image-slide p.control a.next').on('click', function() {
+    $(this).find('img').stop(true).animate({'right': '-10px'}, 50).animate({'right': 0}, 100);
     showSlide(slideNext);
 });
 $('div.image-slide p.control a.play').on('click', function() {
     if (isTimerOn === true) {
         clearTimeout(timerId);
         isTimerOn = false;
-        $('div.image-slide p.control a.play').removeClass('on');
+        $(this).removeClass('on');
     } else {
         timerId = setTimeout(function() {showSlide(slideNext);}, timerSpeed);
         isTimerOn = true;
-        $('div.image-slide p.control a.play').addClass('on');
+        $(this).addClass('on');
     }
 });
     

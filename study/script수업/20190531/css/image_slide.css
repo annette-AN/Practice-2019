@@ -13,7 +13,7 @@ li {list-style: none;}
 address, em, i, cite {font-style: normal;}
 table {border-collapse: collapse;}
 table caption {overflow: hidden; width: 0; height: 0;}
-i.fas, i.far, i.fab {vertical-align: middle; display: inline-block;}
+i.fas, i.far, i.fab {vertical-align: middle; display: inline-block; position: relative;}
 i.fas span, i.far span, i.fab span {position: absolute; overflow: hidden; text-indent: -999px;}
 .mobile {display: none !important;}
 br.only-m {content: '';}

@@ -256,11 +256,12 @@ section+section {
   }
 
   .joing-group.img-effect {
-    transform: scale(1.1);
+    transform: scale(1.1);//
   }
 
   .joing-group {
     position: relative;
+    overflow: hidden;//
     transition: scale .4s;
     
     em {
@@ -337,14 +338,14 @@ section+section {
       position: absolute;
       width: calc(50% - 5px);
       height: calc(50% - 5px);
-      background: white;
-      padding: 18px;
+      overflow: hidden;
 
       div {
+        position: absolute;
         width: 100%;
         height: 100%;
-      }
 
+<<<<<<< HEAD
       div:nth-child(1) {
         // display: none;
       }
@@ -464,6 +465,28 @@ section+section {
         }
       }
     }
+=======
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      div:first-child {
+        top: 0%;
+      }
+
+      div:nth-child(2) {
+        top: 100%;
+      }
+    }
+
+    li:first-child {top: 0%; left: 0%;}
+    li:nth-child(2) {top: 0%; right: 0%;}
+    li:nth-child(3) {bottom: 0%; left: 0%;}
+    li:nth-child(4) {bottom: 0%; right: 0%;}
+>>>>>>> cc027e77f7e4b776c7626c0644d92170c04f3465
   }
 
   .weather {
