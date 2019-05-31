@@ -1,8 +1,9 @@
 //click 할때
-$('a').on('click', function(e){
+$(document).on('click', 'a[href="#"]', function(e){
   e.preventDefault();
 });
 
+//header js
 $('.menu-bar').on('click', function(){
   if ($('header').hasClass('open')) {
     $('header').removeClass('open','');
@@ -28,7 +29,7 @@ $('.main-gnb-menu > li > a').on('click', function(){
   }
 });
 
-//header가 open일 때 다른 영역을 클릭하면 자동닫힘
+  //header가 open일 때 다른 영역을 클릭하면 자동닫힘
 $(document).on('click', function(){
   $('header').removeClass('open','');
 });
@@ -36,3 +37,16 @@ $(document).on('click', function(){
 $('header').on('click', function(e){
   e.stopPropagation();
 });
+
+//main js
+
+setInterval(joingBoardEffect);
+
+function joingBoardEffect() {
+}
+
+$('.joing-board li div:eq(0)').animate({'top': -100 + '%'}, 500, function(){
+   $(this).css({'top': 100 + '%'});
+});
+$('.joing-board li div:eq(1)').animate({'top': 0 + '%'}, 500);
+

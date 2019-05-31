@@ -271,6 +271,7 @@ section + section {
 
 .joing .joing-group {
   position: relative;
+  overflow: hidden;
   -webkit-transition: scale .4s;
   transition: scale .4s;
 }
@@ -350,84 +351,37 @@ section + section {
   position: absolute;
   width: calc(50% - 5px);
   height: calc(50% - 5px);
-  background: white;
-  padding: 18px;
+  overflow: hidden;
 }
 
 .joing > ul li div {
+  position: absolute;
   width: 100%;
   height: 100%;
 }
 
+.joing > ul li div img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.joing > ul li div:first-child {
+  top: 0%;
+}
+
 .joing > ul li div:nth-child(2) {
-  display: none;
+  top: 100%;
 }
 
 .joing > ul li:first-child {
   top: 0%;
   left: 0%;
-  background: #bcbcbc;
-  color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.joing > ul li:first-child i {
-  display: inline-block;
-  color: #fff;
-}
-
-.joing > ul li:first-child span:first-of-type {
-  display: block;
-  margin-top: 5px;
-  font-size: 12px;
-  opacity: 0.7;
-}
-
-.joing > ul li:first-child p {
-  margin-top: 10px;
-  font-size: 25px;
-  line-height: 1.3;
-}
-
-.joing > ul li:first-child p em {
-  font-style: normal;
-}
-
-.joing > ul li:first-child span:nth-of-type(2) {
-  display: inline-block;
-  margin: 30px 5px 5px 0px;
 }
 
 .joing > ul li:nth-child(2) {
   top: 0%;
   right: 0%;
-  background: #0090d9;
-  color: #fff;
-}
-
-.joing > ul li:nth-child(2) div {
-  padding-top: 5px;
-}
-
-.joing > ul li:nth-child(2) div .user {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.joing > ul li:nth-child(2) div .user img {
-  width: 100%;
-}
-
-.joing > ul li:nth-child(2) div h2 {
-  display: inline-block;
-  text-transform: capitalize;
-}
-
-.joing > ul li:nth-child(2) div span {
-  display: block;
 }
 
 .joing > ul li:nth-child(3) {
@@ -438,10 +392,6 @@ section + section {
 .joing > ul li:nth-child(4) {
   bottom: 0%;
   right: 0%;
-}
-
-.joing > ul li:nth-child(4) img {
-  width: 100%;
 }
 
 .joing .weather {
