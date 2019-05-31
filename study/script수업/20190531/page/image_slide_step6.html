@@ -73,10 +73,84 @@
 <script>
 'use strict';
 
+setImageSlide('.image-slide:eq(0)');
 
-    
-    
-    
+//셀렉터로 바꾸는거 안됌
+function setImageSlide(selector){
+    var numSlide = $(selector).find('.slide li').length; //$(selector).find('.slide li').length;
+    var slideNow = 0;
+    var slideNext = 0;
+    var slidePrev = 0;
+    var slideFirst = 3;
+    var timerId = '';
+    var timerSpeed = 3000;
+    var isTimerOn = true;
+
+    if (isTimerOn === true) {
+        $(selector).find('.play').addClass('on');
+    } else {
+        $(selector).find('.play').removeClass('on');
+    }
+
+    $(selector).find('.slide li').each(function(i){
+        $(this).css({'left': (i * 100) + '%', 'display': 'block'});
+        $(selector).find('.indicator').append('<li><a href="#">' + (i + 1) + '번 슬라이드</a></li>\n');
+    });
+
+
+    showSlide(slideFirst);
+
+    $(selector).find('.indicator li a').on('click', function(){
+        var index = $(selector).find('.indicator li').index($(this).parent());
+
+        showSlide(index + 1);
+    });
+
+    $(selector).find('.prev').on('click', function(){
+        showSlide(slidePrev);
+        $(this).find('img').stop().animate({'left': '-10px'}, 200).animate({'left': '0px'}, 200);
+    });
+
+    $(selector).find('.next').on('click', function(){
+        showSlide(slideNext);
+        $(this).find('img').stop().animate({'right': '-10px'}, 200).animate({'right': '0px'}, 200);
+    }); 
+
+    $(selector).find('.play').on('click', function(){
+        if (isTimerOn === true) {
+            clearTimeout(timerId);
+            isTimerOn = false;
+            $(this).removeClass('on');
+
+        } else {
+            timerId = setTimeout(function(){showSlide(slideNext)}, timerSpeed);
+            isTimerOn = true;
+            $(this).addClass('on');
+        }
+    });
+
+    function showSlide(n) {
+        clearTimeout(timerId);
+        if (slideNow === 0){
+            $(selector).find('.slide').css({'left': ( -(n - 1) * 100) + '%', 'transition': 'none'});
+        } else {
+            $(selector).find('.slide').css({'left': ( -(n - 1) * 100) + '%', 'transition': 'left .3s'});
+        }
+        $(selector).find('.indicator li').removeClass('on');
+        $(selector).find('.indicator li:eq(' + (n - 1) + ')').addClass('on');
+        $('.slide li:eq(' + (n - 1) + ')').css({'display': 'block'});
+        
+        slideNow = n;
+        slidePrev = (n - 1) < 1 ? numSlide : n - 1;
+        slideNext = (n + 1) > numSlide ? 1 : n + 1;
+        if (isTimerOn === true) {
+            timerId = setTimeout(function(){showSlide(slideNext)}, timerSpeed);
+        }
+
+        console.log(slidePrev + '/' + slideNow + '/' + slideNext);
+    };
+    alert(selector);
+}    
     
 /*
 setImageSlide('div.image-slide:eq(0)', 1, true, 2000);
