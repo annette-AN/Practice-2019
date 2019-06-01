@@ -36,37 +36,6 @@
           transform: translateY(-50%);
 }
 
-.section > div .content-wrap .indicator {
-  position: absolute;
-  left: 0;
-  bottom: 20px;
-  width: 100%;
-  text-align: center;
-}
-
-.section > div .content-wrap .indicator li {
-  display: inline-block;
-  border-radius: 20px;
-}
-
-.section > div .content-wrap .indicator li.on {
-  background: #1F1D17;
-}
-
-.section > div .content-wrap .indicator li a {
-  display: block;
-  width: 10px;
-  height: 10px;
-  border: 3px solid #1F1D17;
-  border-radius: 20px;
-  overflow: hidden;
-  text-indent: -999px;
-}
-
-.section > div .content-wrap .indicator li + li {
-  margin-left: 3px;
-}
-
 .intro {
   background: #F8F8F8;
 }
@@ -143,27 +112,24 @@
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 100%;
-  padding: 0% 5%;
+  padding: 5%;
 }
 
 .portfolio4 .content-wrap .content li {
-  position: relative;
   overflow: hidden;
 }
 
 .portfolio4 .content-wrap .content li img {
   display: block;
-  position: absolute;
-  top: 50%;
-  left: 0%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  float: left;
   width: 53%;
+  background: pink;
 }
 
 .portfolio4 .content-wrap .content li .desk {
   float: right;
   width: 45%;
+  background: pink;
 }
 
 .portfolio4 .content-wrap .content li .desk table {
@@ -175,8 +141,7 @@
   text-align: left;
   font-size: 60px;
   font-weight: 300;
-  margin-bottom: 50px;
-  line-height: 1.1;
+  margin-bottom: 30px;
 }
 
 .portfolio4 .content-wrap .content li .desk table caption span {
@@ -198,27 +163,13 @@
   color: #555555;
 }
 
-.portfolio4 .content-wrap .content li .desk table tbody tr td a {
-  background: url(../img/icon/click-icon.png) no-repeat right center/25px 25px;
-  margin-left: 5px;
-  padding: 0px 18px 4px 4px;
-  border-bottom: 1px dotted #555555;
-  font-weight: 500;
-}
-
 .portfolio4 .content-wrap .content li .desk .sub-title {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .portfolio4 .content-wrap .content li .desk .sub-title li {
-  background: url(../img/icon/importance-icon.svg) no-repeat left center/25px 25px;
-  font-size: 23px;
-  padding-left: 35px;
-  color: #333333;
-}
-
-.portfolio4 .content-wrap .content li .desk .sub-title li span {
-  color: red;
+  background: url(../img/icon/importance-icon.png) no-repeat left center/5px 5px;
+  font-size: 22px;
 }
 
 .portfolio4 .content-wrap .content li .desk .btn {

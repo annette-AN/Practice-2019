@@ -7,7 +7,7 @@
 
   <link rel="stylesheet" href="css/fullpage.min.css">
   <link rel="stylesheet" href="css/index_reset.css">
-  <link rel="stylesheet" href="css/index_p.css" media="screen and (min-width : 851px) and (max-width: 2000px)">
+  <link rel="stylesheet" href="css/index_p.css" media="screen and (min-width : 851px)">
   <link rel="stylesheet" href="css/index_m.css" media="screen and (min-width : 320px) and (max-width : 850px)">
 
   <script src="js/jquery-3.4.1.min.js"></script>
@@ -19,9 +19,10 @@
 </head>
 <body>
   <div id="fullpage">
-    <section class="section section1">
-      <div class="content">
+    <section class="section intro">
+      <div class="content-wrap">
         <img src="img/profile.jpg" alt="프로필사진">
+        <!-- 가운데로 보내고 싶음 -->
         <div>
           <p>
             <span>안 미 례</span>
@@ -31,20 +32,123 @@
             아래로 내리면 제가 만든 포트폴리오와 함께 설명이 보입니다.<br>
           </p>
           <ul>
-            <li>포트폴리오</li>
+            <li>포트폴리오 설명 바로가기</li>
             <ul>
-              <li><a href="#">WARE-VALLEY</a></li>
-              <li><a href="#">MEMO-SCRIPT</a></li>
-              <li><a href="#">SMART-UNIFORM</a></li>
+              <li><a href="#portfolio1">WARE-VALLEY</a></li>
+              <li><a href="#portfolio2">MEMO-SCRIPT</a></li>
+              <li><a href="#portfolio3">SMART-UNIFORM</a></li>
+              <li><a href="#portfolio4">ADMIN-DESIGN</a></li>
+              <li><a href="#portfolio5">PORTFOLIO FULL PAGE</a></li>
             </ul>
           </ul>
         </div>
       </div>
     </section>
-    <section class="section section2">
+    <section class="section portfolio1" id="portfolio1">
+      <div class="content-wrap">
 
+      </div>
     </section>
-    <section class="section section3">
+    <section class="section portfolio2" id="portfolio2">
+      <div class="content-wrap">
+      </div>
+    </section>
+    <section class="section portfolio3" id="portfolio3">
+      <div class="content-wrap">
+      </div>
+    </section>
+
+    <section class="section portfolio4" id="portfolio4">
+      <div class="content-wrap">
+        <ul class="content">
+          <li>
+            <img src="img/device/device.png" alt="device">
+            <div class="desk">
+              <table>
+                <colgroup>
+                  <col style="width: 150px">
+                </colgroup>
+                <caption>ADIMIN DESIGN<span>Copy</span></caption>
+                <!-- thead 생략함 -->
+                <tbody>
+                  <tr>
+                    <th>Viewport</th>
+                    <td>PC / Tablet / Mobile</td>
+                  </tr>
+                  <tr>
+                    <th>IE Surpport</th>
+                    <td>IE10+ / Chrome</td>
+                  </tr>
+                  <tr>
+                    <th>참여도</th>
+                    <td>디자인, 퍼블리싱 100%</td>
+                  </tr>
+                  <tr>
+                    <th>구성(링크)</th>
+                    <td>main-page
+                      <a href="#">sub-page1</a>
+                      <a href="#">sub-page2</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <!-- class명 어떻게 해야할지 모르겠음 -->
+              <ul class="sub-title">
+                <li>메인 메뉴 구조의 통일</li>
+                <li><span>웹 접근성 관리(WAI-ARIA)</span></li>
+                <li>jQuery 사용자 정의 함수로 만든 슬라이드 (Mobile Swipe)</li>
+                <li>CSS3와 jQuery 사용자 정의 함수를 이용한 인터렉티브 모션</li>
+                <li>카운팅 애니메이션</li>
+              </ul>
+
+              <div class="btn">
+                <a href="#">Go to Website</a>
+                <a href="#">Go to Github</a>
+              </div>
+            </div>
+          </li>
+          <!-- <li>
+            두번째 슬라이드
+            <div class="btn">
+              <a href="#">Go to Website</a>
+              <a href="#">Go to Github</a>
+            </div>
+          </li>
+          <li>
+            세번째 슬라이드
+            <div class="btn">
+              <a href="#">Go to Website</a>
+              <a href="#">Go to Github</a>
+            </div>
+          </li>
+          <li>
+            네번째 슬라이드
+            <div class="btn">
+              <a href="#">Go to Website</a>
+              <a href="#">Go to Github</a>
+            </div>
+          </li>
+          <li>
+            다섯번째 슬라이드
+            <div class="btn">
+              <a href="#">Go to Website</a>
+              <a href="#">Go to Github</a>
+            </div>
+          </li> -->
+        </ul>
+
+        <p class="control">
+          <a href="#" class="prev"><img alt="이전 이미지" src="img/image-slide/btn_left.png" /></a>
+          <a href="#" class="next"><img alt="다음 이미지" src="img/image-slide/btn_right.png" /></a>
+        </p>
+
+        <!-- li개수에 따라 인디케이터 생기게 -->
+        <ul class="indicator">               
+          <li class="on"><a href="#">1번 비주얼</a></li>
+        </ul>
+      </div>
+    </section>
 
     </div>
   </div>
