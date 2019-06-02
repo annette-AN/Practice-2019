@@ -257,14 +257,17 @@ section.intro > div .content-wrap div + div > ul ul li a {
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 90%;
-  padding: 5%;
+  padding: 3%;
 }
 
 .content .explain-wrap > li {
   position: relative;
   width: 30%;
   height: 100%;
+  padding: 3%;
   overflow: hidden;
+  border: 1px dotted gray;
+  color: #333333;
 }
 
 .content .explain-wrap > li > img, .content .explain-wrap > li > ul {

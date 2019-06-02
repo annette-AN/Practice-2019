@@ -274,13 +274,16 @@ section.intro {
     display: flex;
     justify-content: space-between;
     height: 90%;
-    padding: 5%;
+    padding: 3%;
 
     > li {
       position: relative;
       width: 30%;
       height: 100%;
+      padding: 3%;
       overflow: hidden;
+      border: 1px dotted gray;
+      color: #333333;
 
       > img, > ul  {
         position: absolute;
