@@ -129,23 +129,40 @@ section.intro {
   }
 }
 
+.pp1 {
+  .content-wrap {
+    .content {
+      li {
+        &:nth-child(2) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.pp2 {
+  .content-wrap {
+    .content {
+      li {
+        &:first-child {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
 // 첫번째 li style
 .content {
-
   > li {
     position: absolute;
     top: 50%;
     left: 5%;
     transform: translateY(-50%);
     width: 90%;
+    height: 80%;
     overflow: hidden;
-
-    &:first-child {
-      display: none;
-    }
-    &:nth-child(2) {
-      // display: none;
-    }
 
     img {
       //img 적용할 때 공간없게 자르기
@@ -256,8 +273,6 @@ section.intro {
 // 두번째 li style ~
 .content {
   li+li {
-    height: 80%;
-
     .btn {
       //저 오른쪽 공간이 뭔지 모르겠음
       position: absolute;

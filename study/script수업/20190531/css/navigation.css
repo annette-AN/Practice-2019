@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* reset */
+body {margin: 0;}
+h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, table {margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 600;}
+header, main, footer, section, article, aside, nav {display: block;}
+a {color: inherit; text-decoration: inherit;}
+a img {border: none;}
+img {vertical-align: middle; max-width: 100%;}
+li {list-style: none;}
+address, em, i, cite {font-style: normal;}
+table {border-collapse: collapse;}
+table caption {overflow: hidden; width: 0; height: 0;}
+i.fas, i.far, i.fab {vertical-align: middle; display: inline-block;}
+.mobile {display: none !important;}
+br.only-m {content: '';}
+br.only-m:after {content: '\00a0';}
+div.hidden {position: absolute; left: -9999px;}
+
+
+/* common */
+body {font-family: '맑은 고딕', 'Malgun Gothic', '돋움', Dotum, Helvetica, AppleSDGothicNeo, Sans-serif; color: #666666; font-size: 13px; background-color: #f2f4f7;}
+#wrapper {min-width: 1100px; overflow: hidden; min-height: 500px;}
+#skip-nav {position: fixed; left: 0; top: -36px; width: 100%; line-height: 35px; font-size: 16px; border-bottom: 1px solid #ffffff; color: #ffffff; background: #999999; background: rgba(0, 0, 0, 0.6); text-align: center; z-index: 10000; transition: top 0.3s;}
+#skip-nav:focus {top: 0;}
+#go-home {position: fixed; right: 20px; top: 20px; width: 60px; height: 60px; font-size: 24px; text-align: center; line-height: 56px; border-radius: 100px; color: #ffffff; background: #ffcc00; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); z-index: 10000;}
+#header {border-bottom: 1px solid #d1d8e4; background: #ffffff; position: relative; z-index: 100;}
+#header.on:before {content: ''; position: absolute; left: 0; bottom: -41px; width: 100%; height: 40px; background: rgba(28, 92, 176, 0.8);}
+#header-top {border-bottom: 1px solid #f1f3f6; background: #1c5cb0; color: #eeeeee;}
+#header-top-box {height: 30px; width: 1100px; margin: 0 auto; position: relative;}
+#top-nav {position: absolute; right: 0; top: 0;}
+#top-nav li {float: left; font-size: 12px; line-height: 30px;}
+#top-nav li + li:before {content: "|"; margin: 0 10px; font-size: 10px; color: #f9f9f9;}
+#top-nav li a:hover {color: #ffffff;}
+#header-bottom {}
+#header-bottom-box {position: relative; height: 70px; width: 1100px; margin: 0 auto;}
+#header h1 {position: absolute; left: 0; top: 14px; width: 140px;}
+#gnb {position: absolute; right: 0; top: 26px;}
+#gnb > ul > li {float: left;}
+#gnb > ul > li + li {margin-left: 60px;}
+#gnb > ul > li > a {font-size: 17px; font-weight: bold; transition: all 0.3s;}
+#gnb > ul > li.on > a,
+#gnb > ul > li > a:hover {color: #1c5cb0;}
+#gnb > ul > li > ul {position: absolute; top: 45px; display: none;}
+#gnb > ul > li > ul > li {float: left; line-height: 40px; color: #ffffff;}
+#gnb > ul > li > ul > li + li:before {content: '|'; margin: 0 20px; color: #d1d8e4; font-size: 11px;}
+#gnb > ul > li > ul > li.on > a,
+#gnb > ul > li > ul > li > a:hover {color: #ffcc33;}
+#gnb > ul > li.sub1 > ul {left: -160px;}
+#gnb > ul > li.sub2 > ul {left: 20px;}
+#gnb > ul > li.sub3 > ul {left: 120px;}
+#gnb > ul > li.sub4 > ul {right: 50px;}
+#gnb > ul > li.sub5 > ul {right: 0;}
+#gnb span.bar {position: absolute; left: 0; bottom: -21px; width: 0; height: 3px; background: #ffcc33; transition: all 0.3s;}
+
+#footer {position: fixed; left: 0; bottom: 0; width: 100%; z-index: 1000; background: rgba(0, 0, 0, 0.3);}
+#footer p.copyright {line-height: 40px; text-align: center; font-size: 16px; color: #ffffff; text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);}
