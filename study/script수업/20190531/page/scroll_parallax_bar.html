@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=1200" />
+        <meta name="author" content="DinoWorks Inc. 디노웍스(주)" />
+        <meta name="apple-mobile-web-app-title" content="디노웍스UI" />
+        <title>스크롤 UI(패럴랙스 + 스크롤바) | 디노웍스(주) UI 라이브러리</title>
+        <meta name="description" content="디노웍스(주) UI 라이브러리 : 스크롤 UI(패럴랙스 + 스크롤바)" />
+        <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
+        <link href="../css/scroll_parallax_bar.css" rel="stylesheet" />
+        <script src="../js/jquery-3.4.1.min.js"></script>
+        <script src="../js/ui_library_common.js"></script>
+    </head>
+    <body class="sub scroll-parallax">
+        <div id="wrapper">
+            <a href="#main" id="skip-nav">본문 바로가기</a>
+            <a href="../index.html" id="go-home" title="홈 화면"><i class="fas fa-home"></i></a>
+            
+            <header id="header">
+                <h1><a href="../index.html"><img alt="DinoWorks" src="../img/logo.png" /><img alt="DinoWorks" src="../img/logo_color.png" /></a></h1>
+                <nav id="gnb">
+                    <ul>
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">제품소개</a></li>
+                        <li><a href="#">고객센터</a></li>
+                    </ul>
+                </nav>
+            </header>
+            
+            <main id="main">
+                <ul id="page-indicator">
+                    <!--
+                    <li><a href="#">1 페이지</a></li>
+                    <li><a href="#">2 페이지</a></li>
+                    <li><a href="#">3 페이지</a></li>
+                    <li><a href="#">4 페이지</a></li>
+                    <li><a href="#">5 페이지</a></li>
+                    <li><a href="#">6 페이지</a></li>
+                    <li><a href="#">7 페이지</a></li>
+-->
+                </ul>
+                <section id="page1" class="scroll-page">
+                    <h2><a href="#">Page1</a></h2>
+                    <p class="content"><img alt="" src="../img/logo_color.png" /></p>
+                </section>
+                <section id="page2" class="scroll-page">
+                    <h2><a href="#">Page2</a></h2>
+                    <p class="content"><img alt="" src="../img/logo_color.png" /></p>
+                </section>
+                <section id="page3" class="scroll-page">
+                    <h2><a href="#">Page3</a></h2>
+                    <p class="content"><img alt="" src="../img/logo_color.png" /></p>
+                </section>
+                <section id="page4" class="scroll-page">
+                    <h2><a href="#">Page4</a></h2>
+                    <p class="content"><img alt="" src="../img/logo_color.png" /></p>
+                </section>
+                <section id="page5" class="scroll-page">
+                    <h2><a href="#">Page5</a></h2>
+                    <p class="content"><img alt="" src="../img/logo_color.png" /></p>
+                </section>
+                <section id="page6" class="scroll-page">
+                    <h2><a href="#">Page6</a></h2>
+                    <p class="content"><img alt="" src="../img/logo_color.png" /></p>
+                </section>
+                <section id="page7" class="scroll-page">
+                    <h2><a href="#">Page7</a></h2>
+                    <p class="content"><img alt="" src="../img/logo_color.png" /></p>
+                </section>
+            </main>
+            
+            <footer id="footer">
+                <div class="sitemap">Sitemap</div>
+                <p class="copyright">2019 Dinoworks Inc.</p>
+            </footer>
+            
+        </div> <!-- #wrapper  -->
+        
+<script>
+'use strict';
+
+
+setParallaxWithBar();
+
+function setParallaxWithBar() {
+    var numPage = $('.scroll-page').length;
+    var pagePrev = 0;
+    var pageNow = 0;
+    var pageNext = 0;
+    var isWheelBlocked = false;
+    var isFooterVisible = false;
+    var timerId = 0;
+    
+    $('.scroll-page').each(function(i) {
+        $('#page-indicator').append('<li><a href="#">' + (i + 1) + ' 페이지 보기</a></li>\n');
+    });
+    checkScroll();
+
+    // indicator click 이벤트
+    $('#page-indicator li a').on('click', function() {
+        var index = $('#page-indicator li').index($(this).parent());
+        showPage(index + 1);
+    });
+
+    // mousewheel 이벤트
+    $(window).on('mousewheel DOMMouseScroll', function(e) {
+        e.preventDefault();
+        clearTimeout(timerId);
+        timerId = setTimeout(function() {isWheelBlocked = false;}, 300);
+        if (isWheelBlocked === true) return false;
+        isWheelBlocked = true;
+        var delta = 0;
+        if (e.originalEvent.wheelDelta) {  // 일반 브라우저
+            delta = e.originalEvent.wheelDelta / -120;
+        } else {  // 파이어폭스
+            delta = e.originalEvent.detail / 3;
+        }
+        if (delta > 0) {
+            if (pageNow === numPage) {
+                showPage('footer');
+            } else {
+                showPage(pageNext);
+            }
+        } else {
+            if (pageNow === numPage && isFooterVisible === true) {
+                showPage(pageNow);
+            } else {
+                showPage(pagePrev);
+            }
+        }
+    });
+    
+    // 상태체크(이동시)
+    $(window).on('scroll resize', function() {
+        checkScroll();
+    });
+    
+    
+    function checkScroll() {
+        var scrollTop = $(document).scrollTop();
+        var startFooterVisible = $('.scroll-page:eq(' + (numPage - 1) + ')').offset().top + $('#footer').outerHeight() / 2;
+        var minScroll = 0;
+        var maxScroll = 0;
+        // 현재 페이지 확인
+        $('.scroll-page').each(function(i) {
+            minScroll = (i * $(window).outerHeight()) - ($(this).outerHeight() / 2);
+            maxScroll = (i * $(window).outerHeight()) + ($(this).outerHeight() / 2);
+            if (scrollTop >= minScroll && scrollTop < maxScroll) {
+                pageNow = (i + 1);
+                $('#page-indicator li').removeClass('on');
+                $('#page-indicator li:eq(' + i + ')').addClass('on');
+                pageNow = (i + 1);
+                pagePrev = ((i + 1) - 1) < 1 ? 1 : (i + 1) - 1;
+                pageNext = ((i + 1) + 1) > numPage ? numPage : (i + 1) + 1;
+            }
+        });
+        if (scrollTop > startFooterVisible) {
+            isFooterVisible = true;
+        } else {
+            isFooterVisible = false;
+        }
+        console.log(pagePrev + ' / ' + pageNow + ' / ' + pageNext);
+    }
+    
+    function showPage(n) {
+        var scrollTo = 0;
+        if (n === 'footer') {
+            scrollTo = $('.scroll-page:eq(' + (numPage - 1) + ')').offset().top + $('#footer').outerHeight();
+        } else {
+            scrollTo = $('.scroll-page:eq(' + (n - 1) + ')').offset().top;
+        }
+        $('html').stop(true).animate({scrollTop: scrollTo}, 500);
+    }
+}
+
+</script>
+    </body>
+</html>
+
+

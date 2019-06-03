@@ -193,32 +193,36 @@ section + section {
   font-weight: 400;
 }
 
-#sales-info .sales .table-wrap {
+section .table-wrap {
   margin: 0px 20px;
 }
 
-#sales-info .sales .table-wrap table {
+section .table-wrap table {
   width: 100%;
 }
 
-#sales-info .sales .table-wrap table tbody tr td {
+section .table-wrap table tbody tr + tr:hover {
+  background-color: #f5f5f5;
+}
+
+section .table-wrap table tbody tr td {
   padding: 10px;
   color: rgba(0, 0, 0, 0.4);
   font-size: 13px;
 }
 
-#sales-info .sales .table-wrap table tbody tr td:first-child, #sales-info .sales .table-wrap table tbody tr td:nth-child(3) {
+section .table-wrap table tbody tr td:first-child, section .table-wrap table tbody tr td:nth-child(3) {
   color: #27A599;
 }
 
-#sales-info .sales .table-wrap table tbody tr:first-child td {
+section .table-wrap table tbody tr:first-child td {
   padding-bottom: 15px;
   text-transform: uppercase;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.7);
 }
 
-#sales-info .sales .table-wrap table tbody tr + tr {
+section .table-wrap table tbody tr + tr {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -234,11 +238,11 @@ section + section {
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 51%;
-  padding: 18px;
+  width: 240px;
+  height: 230px;
+  padding: 22px;
   background: rgba(40, 162, 224, 0.85);
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .joing .post i {
@@ -256,7 +260,12 @@ section + section {
 .joing .post p {
   margin-top: 15px;
   font-size: 21px;
+  font-weight: 100;
   line-height: 1.3;
+}
+
+.joing .post p em {
+  font-weight: 400;
 }
 
 .joing .post span {
@@ -264,15 +273,14 @@ section + section {
   margin: 30px 5px 5px 0px;
 }
 
-.joing .joing-group.img-effect {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
 .joing .joing-group {
   position: relative;
-  -webkit-transition: scale .4s;
-  transition: scale .4s;
+  overflow: hidden;
+}
+
+.joing .joing-group:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .joing .joing-group em {
@@ -281,6 +289,8 @@ section + section {
 
 .joing .joing-group img {
   width: 100%;
+  -webkit-transition: scale .4s;
+  transition: scale .4s;
 }
 
 .joing .joing-group div:nth-of-type(2) {
@@ -302,26 +312,29 @@ section + section {
 .joing .joing-group div:nth-of-type(3) {
   position: absolute;
   bottom: 3%;
-  left: 4%;
+  width: 100%;
+  padding-left: 4%;
   color: #fff;
 }
 
 .joing .joing-group div:nth-of-type(3) span {
-  font-size: 12px;
+  display: block;
   font-weight: bold;
 }
 
 .joing .joing-group div:nth-of-type(3) .user-profile {
-  margin-top: 18px;
   width: 35px;
   height: 35px;
+  margin-top: 18px;
+  margin-right: 0px;
+  border-radius: 17px;
 }
 
 .joing .joing-group div:nth-of-type(3) input {
   position: absolute;
   bottom: 8%;
-  left: 9%;
-  width: 56%;
+  left: 13%;
+  width: 55%;
   background: #fff;
   padding: 10px;
 }
@@ -329,15 +342,16 @@ section + section {
 .joing .joing-group div:nth-of-type(3) button {
   position: absolute;
   bottom: 8%;
-  left: 67%;
+  left: 70%;
   width: 20%;
+  height: 35px;
   background: #27A599;
-  padding: 11px;
   color: #fff;
   font-weight: 100;
+  border-radius: 3px;
 }
 
-.joing > ul {
+.joing .joing-board {
   position: absolute;
   top: 0px;
   left: 50%;
@@ -346,102 +360,50 @@ section + section {
   height: 100%;
 }
 
-.joing > ul li {
+.joing .joing-board li {
   position: absolute;
   width: calc(50% - 5px);
   height: calc(50% - 5px);
-  background: white;
-  padding: 18px;
+  overflow: hidden;
 }
 
-.joing > ul li div {
+.joing .joing-board li div {
+  position: absolute;
   width: 100%;
   height: 100%;
 }
 
-.joing > ul li div:nth-child(2) {
-  display: none;
+.joing .joing-board li div img {
+  width: 100%;
+  height: 100%;
 }
 
-.joing > ul li:first-child {
+.joing .joing-board li div:nth-child(1) {
+  top: 0%;
+}
+
+.joing .joing-board li div:nth-child(2) {
+  top: 100%;
+}
+
+.joing .joing-board li:first-child {
   top: 0%;
   left: 0%;
-  background: #bcbcbc;
-  color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-.joing > ul li:first-child i {
-  display: inline-block;
-  color: #fff;
-}
-
-.joing > ul li:first-child span:first-of-type {
-  display: block;
-  margin-top: 5px;
-  font-size: 12px;
-  opacity: 0.7;
-}
-
-.joing > ul li:first-child p {
-  margin-top: 10px;
-  font-size: 25px;
-  line-height: 1.3;
-}
-
-.joing > ul li:first-child p em {
-  font-style: normal;
-}
-
-.joing > ul li:first-child span:nth-of-type(2) {
-  display: inline-block;
-  margin: 30px 5px 5px 0px;
-}
-
-.joing > ul li:nth-child(2) {
+.joing .joing-board li:nth-child(2) {
   top: 0%;
   right: 0%;
-  background: #0090d9;
-  color: #fff;
 }
 
-.joing > ul li:nth-child(2) div {
-  padding-top: 5px;
-}
-
-.joing > ul li:nth-child(2) div .user {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.joing > ul li:nth-child(2) div .user img {
-  width: 100%;
-}
-
-.joing > ul li:nth-child(2) div h2 {
-  display: inline-block;
-  text-transform: capitalize;
-}
-
-.joing > ul li:nth-child(2) div span {
-  display: block;
-}
-
-.joing > ul li:nth-child(3) {
+.joing .joing-board li:nth-child(3) {
   bottom: 0%;
   left: 0%;
 }
 
-.joing > ul li:nth-child(4) {
+.joing .joing-board li:nth-child(4) {
   bottom: 0%;
   right: 0%;
-}
-
-.joing > ul li:nth-child(4) img {
-  width: 100%;
 }
 
 .joing .weather {
@@ -451,5 +413,29 @@ section + section {
   height: 100%;
   background: white;
   font-size: 60px;
+}
+
+.desc .desc-content {
+  float: left;
+  width: 40%;
+}
+
+.desc .desc-content .table-wrap {
+  width: 100%;
+  margin: 0px;
+  padding: 20px;
+  background: white;
+}
+
+.desc .desc-content p {
+  font-size: 30px;
+  margin-top: 10px;
+  background: white;
+}
+
+.desc ul {
+  float: right;
+  width: calc(60% - 10px);
+  background: red;
 }
 /*# sourceMappingURL=index.css.map */

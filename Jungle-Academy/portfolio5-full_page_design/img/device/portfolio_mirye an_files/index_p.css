@@ -1,0 +1,206 @@
+.section {
+  background: #FFEDC2;
+}
+
+.section > div .content-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  margin: 0px auto;
+  -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1), 1px 1px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1), 1px 1px 10px rgba(0, 0, 0, 0.1);
+  background: #F8F8F8;
+}
+
+.section > div .content-wrap .control .prev img, .section > div .content-wrap .control .next img {
+  width: 80px;
+}
+
+.section > div .content-wrap .control .prev {
+  position: absolute;
+  top: 50%;
+  left: -90px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.section > div .content-wrap .control .next {
+  position: absolute;
+  top: 50%;
+  right: -90px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.intro {
+  background: #F8F8F8;
+}
+
+.intro > div .content-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 90%;
+  margin: 0px auto;
+  overflow: hidden;
+  -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1), 1px 1px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1), 1px 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.intro > div .content-wrap img {
+  display: block;
+  float: left;
+  width: 50%;
+}
+
+.intro > div .content-wrap > div {
+  float: left;
+  width: 50%;
+  height: 100%;
+  padding: 3%;
+  background: #FCFBFC;
+}
+
+.intro > div .content-wrap > div p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.intro > div .content-wrap > div p span {
+  display: block;
+  font-size: 60px;
+}
+
+.intro > div .content-wrap > div ul li {
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+
+.intro > div .content-wrap > div > ul {
+  margin-top: 50px;
+}
+
+.intro > div .content-wrap > div > ul > li {
+  padding-bottom: 20px;
+  font-size: 20px;
+  text-align: left;
+}
+
+.intro > div .content-wrap > div > ul ul li a {
+  display: block;
+  padding: 15px;
+  margin-top: 10px;
+  background: #ABCCB1;
+  font-size: 18px;
+}
+
+.portfolio4 .content-wrap {
+  position: relative;
+}
+
+.portfolio4 .content-wrap .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 5%;
+}
+
+.portfolio4 .content-wrap .content li {
+  overflow: hidden;
+}
+
+.portfolio4 .content-wrap .content li img {
+  display: block;
+  float: left;
+  width: 53%;
+  background: pink;
+}
+
+.portfolio4 .content-wrap .content li .desk {
+  float: right;
+  width: 45%;
+  background: pink;
+}
+
+.portfolio4 .content-wrap .content li .desk table {
+  width: 100%;
+  line-height: 1.3;
+}
+
+.portfolio4 .content-wrap .content li .desk table caption {
+  text-align: left;
+  font-size: 60px;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.portfolio4 .content-wrap .content li .desk table caption span {
+  display: block;
+  font-weight: 100;
+}
+
+.portfolio4 .content-wrap .content li .desk table tbody tr {
+  line-height: 1.5;
+}
+
+.portfolio4 .content-wrap .content li .desk table tbody tr th {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.portfolio4 .content-wrap .content li .desk table tbody tr td {
+  font-size: 18px;
+  color: #555555;
+}
+
+.portfolio4 .content-wrap .content li .desk .sub-title {
+  margin-top: 30px;
+}
+
+.portfolio4 .content-wrap .content li .desk .sub-title li {
+  background: url(../img/icon/importance-icon.png) no-repeat left center/5px 5px;
+  font-size: 22px;
+}
+
+.portfolio4 .content-wrap .content li .desk .btn {
+  width: 80%;
+  margin-top: 50px;
+}
+
+.portfolio4 .content-wrap .content li .desk .btn a {
+  display: block;
+  float: left;
+  width: 40%;
+  padding: 3.5%;
+  margin-top: 10px;
+  background: #FCFBFC;
+  font-size: 18px;
+  text-align: center;
+  border: 2px solid #7D7563;
+  border-radius: 8px;
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4), 1px 1px 5px rgba(0, 0, 0, 0.4);
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4), 1px 1px 5px rgba(0, 0, 0, 0.4);
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.portfolio4 .content-wrap .content li .desk .btn a:first-child {
+  margin-right: 3%;
+}
+
+.portfolio4 .content-wrap .content li .desk .btn a:hover {
+  background: #7D7563;
+  color: #fff;
+  border-color: #FCFBFC;
+}
+/*# sourceMappingURL=index_p.css.map */

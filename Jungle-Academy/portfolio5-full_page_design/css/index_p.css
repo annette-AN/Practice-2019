@@ -1,65 +1,297 @@
-.section1 {
-  background: #AAB3AB;
+section.intro {
+  background: #F8F8F8;
 }
 
-.section1 div .content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 75%;
-  margin: 0px auto;
-  overflow: hidden;
+section.intro > div .content-wrap {
+  padding: 5%;
 }
 
-.section1 div .content img {
+section.intro > div .content-wrap .img-wrap {
+  position: relative;
   display: block;
   float: left;
   width: 50%;
+  height: 100%;
+  overflow: hidden;
 }
 
-.section1 div .content div {
+section.intro > div .content-wrap .img-wrap img {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 100%;
+}
+
+section.intro > div .content-wrap div + div {
   float: left;
   width: 50%;
-  padding: 50px;
+  height: 100%;
+  padding: 3%;
+  background: #FCFBFC;
 }
 
-.section1 div .content div p {
+section.intro > div .content-wrap div + div p {
   font-size: 18px;
   line-height: 1.8;
 }
 
-.section1 div .content div p span {
+section.intro > div .content-wrap div + div p span {
   display: block;
   font-size: 60px;
 }
 
-.section1 div .content div ul li {
+section.intro > div .content-wrap div + div ul li {
   width: 100%;
   text-align: center;
   font-weight: 500;
 }
 
-.section1 div .content div > ul {
+section.intro > div .content-wrap div + div > ul {
   margin-top: 50px;
 }
 
-.section1 div .content div > ul > li {
+section.intro > div .content-wrap div + div > ul > li {
   padding-bottom: 20px;
   font-size: 20px;
   text-align: left;
 }
 
-.section1 div .content div > ul ul li a {
+section.intro > div .content-wrap div + div > ul ul li a {
   display: block;
   padding: 15px;
   margin-top: 10px;
-  background: #EEE0B7;
+  background: #ABCCB1;
   font-size: 18px;
 }
 
-.section1 div .content div > ul ul li a:hover {
-  background: #EBEFC9;
+.section {
+  background: #FFEDC2;
+}
+
+.section .content-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  background: #F8F8F8;
+}
+
+.section .content-wrap .content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.section .content-wrap .control .prev img, .section .content-wrap .control .next img {
+  width: 80px;
+}
+
+.section .content-wrap .control .prev {
+  position: absolute;
+  top: 50%;
+  left: -90px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.section .content-wrap .control .next {
+  position: absolute;
+  top: 50%;
+  right: -90px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.section .content-wrap .indicator {
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+}
+
+.pp1 .content-wrap .content li:nth-child(2) {
+  display: none;
+}
+
+.pp2 .content-wrap .content li:first-child {
+  display: none;
+}
+
+.content > li {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 90%;
+  height: 80%;
+  overflow: hidden;
+}
+
+.content > li img {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 53%;
+}
+
+.content > li .desk {
+  float: right;
+  width: 45%;
+}
+
+.content > li .desk table {
+  width: 100%;
+  line-height: 1.3;
+}
+
+.content > li .desk table caption {
+  text-align: left;
+  font-size: 60px;
+  font-weight: 300;
+  margin-bottom: 50px;
+  line-height: 1.1;
+}
+
+.content > li .desk table caption span {
+  display: block;
+  font-size: 50px;
+  font-weight: 100;
+}
+
+.content > li .desk table tbody tr {
+  line-height: 1.5;
+}
+
+.content > li .desk table tbody tr th {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.content > li .desk table tbody tr td {
+  font-size: 18px;
+  color: #555555;
+}
+
+.content > li .desk table tbody tr td a {
+  background: url(../img/icon/click-icon.png) no-repeat right center/25px 25px;
+  margin-left: 5px;
+  padding: 0px 18px 4px 4px;
+  border-bottom: 1px dotted #555555;
+  font-weight: 500;
+}
+
+.content > li .desk .sub-title {
+  margin-top: 50px;
+}
+
+.content > li .desk .sub-title li {
+  background: url(../img/icon/importance-icon.svg) no-repeat left center/25px 25px;
+  font-size: 23px;
+  padding-left: 35px;
+  color: #333333;
+}
+
+.content > li .desk .sub-title li span {
+  color: red;
+}
+
+.content > li .btn {
+  width: 80%;
+  margin-top: 50px;
+}
+
+.content > li .btn a {
+  display: block;
+  float: right;
+  width: 40%;
+  padding: 3.5%;
+  margin-top: 10px;
+  background: #FCFBFC;
+  font-size: 18px;
+  text-align: center;
+  border: 2px solid #7D7563;
+  border-radius: 8px;
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4), 1px 1px 5px rgba(0, 0, 0, 0.4);
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4), 1px 1px 5px rgba(0, 0, 0, 0.4);
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.content > li .btn a:first-child {
+  float: left;
+}
+
+.content > li .btn a:hover {
+  background: #7D7563;
+  color: #fff;
+  border-color: #FCFBFC;
+}
+
+.content li + li .btn {
+  position: absolute;
+  left: 50%;
+  bottom: 2%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 30%;
+  overflow: hidden;
+  margin-top: 0px;
+}
+
+.content .explain-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 90%;
+  padding: 3%;
+}
+
+.content .explain-wrap > li {
+  position: relative;
+  width: 30%;
+  height: 100%;
+  padding: 3%;
+  overflow: hidden;
+  border: 1px dotted gray;
+  color: #333333;
+}
+
+.content .explain-wrap > li > img, .content .explain-wrap > li > ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.content .explain-wrap .sub-explain ul {
+  padding-left: 5%;
+}
+
+.content .explain-wrap .sub-explain ul li {
+  background: url(../img/icon/importance-icon.svg) no-repeat left center/25px 25px;
+  font-size: 23px;
+  padding-left: 35px;
+  color: #333333;
+}
+
+.pp1 .content-wrap .content li .desk table tbody tr td a {
+  padding: 0px 25px 4px 4px;
 }
 /*# sourceMappingURL=index_p.css.map */
