@@ -419,6 +419,7 @@ section .table-wrap table tbody tr + tr {
   top: 0%;
   right: 13.5%;
   height: 100%;
+  padding: 2% 0%;
   background: white;
   font-size: 60px;
   text-align: center;
@@ -439,10 +440,12 @@ section .table-wrap table tbody tr + tr {
 .joing .weather-today h2 {
   padding: 6%;
   font-size: 17px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .joing .weather-today div:first-of-type {
+  padding-top: 10px;
   color: #F36564;
   font-size: 15px;
 }
@@ -475,7 +478,7 @@ section .table-wrap table tbody tr + tr {
   position: absolute;
   top: 0%;
   width: 30%;
-  height: 100%;
+  padding: 2% 0%;
   font-size: 13px;
   font-weight: bold;
   background-size: cover;
@@ -483,6 +486,8 @@ section .table-wrap table tbody tr + tr {
 
 .joing .weather-today div:nth-of-type(2) > span:first-child {
   left: 0%;
+  height: 100%;
+  padding: 0%;
 }
 
 .joing .weather-today div:nth-of-type(2) > span:nth-child(2) {
@@ -499,8 +504,11 @@ section .table-wrap table tbody tr + tr {
   width: 95%;
   height: 45%;
   margin: 0 auto;
-  padding-top: 15px;
+  padding: 15px 0px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 
@@ -518,17 +526,34 @@ section .table-wrap table tbody tr + tr {
   color: rgba(0, 0, 0, 0.5);
 }
 
-.joing .weather-today ul li > span {
+.joing .weather-today ul li > span, .joing .weather-today ul li > em {
   position: absolute;
-  height: 30%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 14px;
 }
 
-.joing .weather-today ul li > span:first-child {
-  top: 0%;
-  background: red;
+.joing .weather-today ul li span:first-of-type {
+  top: 15%;
+  font-weight: 400;
+}
+
+.joing .weather-today ul li span:first-of-type span {
+  margin-top: 5px;
+}
+
+.joing .weather-today ul li span:nth-of-type(2) {
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background-size: 40px;
 }
 
 .joing .weather-today ul li > em {
+  bottom: 30%;
   color: #F36564;
 }
 

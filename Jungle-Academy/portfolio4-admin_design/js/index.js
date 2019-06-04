@@ -1,4 +1,5 @@
 //click 할때
+  //일부에서 튐
 $(document).on('click', 'a[href="#"]', function(e){
   e.preventDefault();
 });

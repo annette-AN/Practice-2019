@@ -162,13 +162,25 @@ i {
     vertical-align: top;
   }
 
+  .user-profile {
+    position: absolute;
+    top: 50%;
+    right: 55px;
+    transform: translateY(-50%);
+    margin: 0px;
+  }
+
   .user-info {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%);
     display: inline-block;
     width: 25px;
 
     li {
       a {
-        line-height: 61px;
+        height: 100%;
       }
 
       ul.on {
@@ -176,9 +188,9 @@ i {
       }
 
       ul {
-        display: none;
+        display: none;ㅑ
         position: absolute;
-        top: 100%;
+        top: 200%;
         right: 0%;
         width: 160px;
         background: #FFFFFF;
@@ -211,7 +223,7 @@ i {
         li {
           position: relative;
           margin: 5px;
-          padding: 5px 0px 5px 20px;
+          height: 35px;
 
           &:hover {
             background: #F4F6F7;
@@ -237,8 +249,10 @@ i {
 
           a{
             display: block;
-            height: 30px;
-            line-height: 30px;
+            width: 100%;
+            height: 100%;
+            padding: 0px 0px 5px 20px;
+            line-height: 35px;
             text-transform: capitalize;
             font-size: 14px;
             color: #2D3138;

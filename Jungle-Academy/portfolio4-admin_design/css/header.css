@@ -184,13 +184,27 @@ i {
   vertical-align: top;
 }
 
+.user-wrap .user-profile {
+  position: absolute;
+  top: 50%;
+  right: 55px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin: 0px;
+}
+
 .user-wrap .user-info {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   display: inline-block;
   width: 25px;
 }
 
 .user-wrap .user-info li a {
-  line-height: 61px;
+  height: 100%;
 }
 
 .user-wrap .user-info li ul.on {
@@ -200,7 +214,7 @@ i {
 .user-wrap .user-info li ul {
   display: none;
   position: absolute;
-  top: 100%;
+  top: 200%;
   right: 0%;
   width: 160px;
   background: #FFFFFF;
@@ -234,7 +248,7 @@ i {
 .user-wrap .user-info li ul li {
   position: relative;
   margin: 5px;
-  padding: 5px 0px 5px 20px;
+  height: 35px;
 }
 
 .user-wrap .user-info li ul li:hover {
@@ -260,8 +274,10 @@ i {
 
 .user-wrap .user-info li ul li a {
   display: block;
-  height: 30px;
-  line-height: 30px;
+  width: 100%;
+  height: 100%;
+  padding: 0px 0px 5px 20px;
+  line-height: 35px;
   text-transform: capitalize;
   font-size: 14px;
   color: #2D3138;
