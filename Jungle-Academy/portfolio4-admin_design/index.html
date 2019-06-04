@@ -11,11 +11,8 @@
   <title>index/admin/portfolio</title>
   <!-- http://webarch.revox.io/3.0/html/index.html# -->
   <!-- 5/20 1h, 5/21 20:30~1:00 4.5h, 5/22 22:00~2:00 4h, 5/25 13:00~16:00 3h 20:00~22:30 2.5h,
-<<<<<<< HEAD
-  5/26 14:00~14:30 0.5h 15:00~18:00 3h 5/27 14:00~17:00 3h 5/28 10:30~11:30 1h 5/29 14:30~17:00 2.5h 10:30~12:00 1.5h -->
-=======
-  5/26 14:00~14:30 0.5h 15:00~18:00 3h 5/27 14:00~17:00 3h 5/28 10:30~11:30 1h 5/31 15:10~ -->
->>>>>>> cc027e77f7e4b776c7626c0644d92170c04f3465
+  5/26 14:00~14:30 0.5h 15:00~18:00 3h 5/27 14:00~17:00 3h 5/28 10:30~11:30 1h 5/29 14:30~17:00 2.5h 10:30~12:00 1.5h
+  5/31 15:10~17:00 6/4 13:30~ -->
   <!-- 브라우저 크기 1600px -->
 </head>
 <body>
@@ -441,11 +438,97 @@
           </li>
         </ul>
 
-        <div class="weather">
-          <p>날씨</p>
+        <div class="weather-today">
+          <h2>California USA</h2>
+          <div>
+            <span>sunday</span>
+            <em>32<span class="inline">&#176;</span></em>
+            <span>partly cloudy</span>
+          </div>
+          <div>
+            <!-- 날씨 class넣으면 icon나옴 -->
+            <span class="w-partly-cloudy"></span>
+            <span><span>54</span>MPH</span>
+            <span><span>53</span>MM</span>
+          </div>
+
+          <ul>
+            <li>
+              <span>11:30<span>PM</span></span>
+              <span class="w-rain"></span>
+              <em>32<span class="inline">&#176;</span></em>
+            </li>
+            <li>
+              <span>11:30<span>PM</span></span>
+              <span class="w-rain"></span>
+              <em>32<span class="inline">&#176;</span></em>
+            </li>
+            <li>
+              <span>11:30<span>PM</span></span>
+              <span class="w-rain"></span>
+              <em>32<span class="inline">&#176;</span></em>
+            </li>
+            <li>
+              <span>11:30<span>PM</span></span>
+              <span class="w-rain"></span>
+              <em>32<span class="inline">&#176;</span></em>
+            </li>
+            <li>
+              <span>11:30<span>PM</span></span>
+              <span class="w-rain"></span>
+              <em>32<span class="inline">&#176;</span></em>
+            </li>
+          </ul>
+        </div>
+
+        <div class="weather-weak">
+          <table>
+            <colgroup>
+              <col style="width:25%;">
+              <col style="width:30%;">
+              <col style="width:45%;">
+            </colgroup>
+            <tr>
+              <td>sun</td>
+              <!-- span에 날씨 class넣으면 icon나옴 -->
+              <td class="w-icon"><span class="w-sunny"></span></td>
+              <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
+            </tr>
+            <tr>
+              <td>mon</td>
+              <td class="w-icon"><span class="w-rain"></span></td>
+              <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
+            </tr>
+            <tr>
+              <td>tue</td>
+              <td class="w-icon"><span class="w-cloudy"></span></td>
+              <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
+            </tr>
+            <tr>
+              <td>wed</td>
+              <td class="w-icon"><span class="w-partly-cloudy"></span></td>
+              <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
+            </tr>
+            <tr>
+              <td>thur</td>
+              <td class="w-icon"><span></span></td>
+              <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
+            </tr>
+            <tr>
+              <td>fri</td>
+              <td class="w-icon"><span></span></td>
+              <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
+            </tr>
+            <tr>
+              <td>sat</td>
+              <td class="w-icon"><span></span></td>
+              <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
+            </tr>
+          </table>
         </div>
       </section>
 
+<!--       
       <section class="desc">
         <div class="desc-content">
           <div class="table-wrap">
@@ -455,8 +538,8 @@
                 <col style="width:55%;">
                 <col style="width:20%;">
               </colgroup>
-              <!-- table > span 에 금액 천단위 , 넣기 -->
-              <!-- 말줄임 나올 수 있게 적용하기 -->
+              //table > span 에 금액 천단위 , 넣기
+              //말줄임 나올 수 있게 적용하기
               <tbody>
                 <tr>
                   <td>No.</td>
@@ -511,6 +594,7 @@
           <li></li>
         </ul>
       </section>
+-->
 
     </div>
   </main>

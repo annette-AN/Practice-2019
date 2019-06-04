@@ -220,8 +220,16 @@ section {
 .joing {
   position: relative;
   
-  >div, >ul {
+  > div, > ul {
     width: 32.85%;
+  }
+
+  > .weather-today {
+    width: 19.35%;
+  }
+
+  > .weather-weak {
+    width: 13.5%;
   }
 
   .post {
@@ -382,40 +390,215 @@ section {
     li:nth-child(4) {bottom: 0%; right: 0%;}
   }
 
-  .weather {
+  .weather-today {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 0%;
+  right: 13.5%;
   height: 100%;
   background: white;
   font-size: 60px;
+  text-align: center;
+
+    em {
+      font-style: normal;
+    }
+
+    span, em {
+      display: block;
+    }
+
+    .inline {
+      display: inline;
+    }
+
+    h2 {
+      padding: 6%;
+      font-size: 17px;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    div:first-of-type {
+      color: #F36564;
+      font-size: 15px;
+
+      span, em {
+        margin-top: 10px;
+      }
+
+      em {
+        font-size: 34px;
+      }
+
+      span:first-child {
+        text-transform: capitalize;
+      }
+
+      span:nth-child(3) {
+        font-size: 13px;
+      }
+    }
+    
+    div:nth-of-type(2) {
+      position: relative;
+      height: 10%;
+      width: 70%;
+      margin: 10px auto;
+      color: rgba(0,0,0,0.5);
+
+      > span {
+        position: absolute;
+        top: 0%;
+        width: 30%;
+        height: 100%;
+        font-size: 13px;
+        font-weight: bold;
+        background-size: cover;
+      }
+
+      > span:first-child {
+        left: 0%;
+      }
+
+      > span:nth-child(2) {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      > span:nth-child(3) {
+        right: 0%;
+      }
+    }
+
+    ul {
+      width: 95%;
+      height: 45%;
+      margin: 0 auto;
+      padding-top: 15px;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      overflow: hidden;
+
+      li+li {
+        border-left: 1px solid rgba(0,0,0,0.1);
+      }
+
+      li {
+        position: relative;
+        float: left;
+        width: 20%;
+        height: 100%;
+        font-size: 12px;
+        font-weight: bold;
+        color: rgba(0,0,0,0.5);
+        
+        > span {
+          position: absolute;
+          height: 30%;
+        }
+
+        > span:first-child {
+          top: 0%;
+          background: red;
+        }
+
+        > em {
+          color: #F36564;
+        }
+
+      }
+    }
   }
-}
 
-.desc {
-  .desc-content {
-    float: left;
-    width: 40%;
+  .weather-weak {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    padding: 2% 1%;
 
-    .table-wrap {
+    table {
       width: 100%;
-      margin: 0px;
-      padding: 20px;
-      background: white;
+      height: 100%;
+
+      tr {
+        height: 5%;
+        color: rgba(0,0,0,0.7);
+
+        span {
+          color: rgba(0,0,0,0.7);
+          font-weight: normal;
+        }
+
+        td:first-child {
+          text-transform: capitalize;
+          font-weight: bold;
+          color: #1A1D23;
+          font-size: 12px;
+        }
+
+        .w-icon {
+          display: block;
+          width: 100%;
+          height: 100%;
+
+          span {
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .w-deg {
+          text-align: right;
+          color: #F36564;
+          font-weight: bold;
+        }
+      }
     }
-
-    p {
-      // height: 150px;
-      font-size: 30px;
-      margin-top: 10px;
-      background: white;
-    }
-  }
-
-
-  ul {
-    float: right;
-    width: calc(60% - 10px);
-    background: red;
   }
 }
+
+//날씨 class
+.w-sunny {
+  background: url(../img/icon/weather/SVG/Sun.svg) no-repeat center / 35px;
+}
+
+.w-rain {
+  background: url(../img/icon/weather/SVG/Cloud-Rain.svg) no-repeat center / 35px;
+}
+
+.w-cloudy {
+  background: url(../img/icon/weather/SVG/Cloud.svg) no-repeat center / 35px;
+}
+
+.w-partly-cloudy {
+  background: url(../img/icon/weather/SVG/Cloud-Sun.svg) no-repeat center / 35px;
+}
+
+
+// .desc {
+//   .desc-content {
+//     float: left;
+//     width: 40%;
+
+//     .table-wrap {
+//       width: 100%;
+//       margin: 0px;
+//       padding: 20px;
+//       background: white;
+//     }
+
+//     p {
+//       // height: 150px;
+//       font-size: 30px;
+//       margin-top: 10px;
+//       background: white;
+//     }
+//   }
+
+
+//   ul {
+//     float: right;
+//     width: calc(60% - 10px);
+//     background: red;
+//   }
+// }
