@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=1200" />
+        <meta name="author" content="DinoWorks Inc. 디노웍스(주)" />
+        <meta name="apple-mobile-web-app-title" content="디노웍스UI" />
+        <title>배너 슬라이드(Step2) | 디노웍스(주) UI 라이브러리</title>
+        <meta name="description" content="디노웍스(주) UI 라이브러리 : 배너 슬라이드(Step2)" />
+        <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
+        <link href="../css/banner_slide.css" rel="stylesheet" />
+        <script src="../js/jquery-3.4.1.min.js"></script>
+        <script src="../js/ui_library_common.js"></script>
+    </head>
+    <body class="sub banner-slide step2">
+        <div id="wrapper">
+            <a href="#main" id="skip-nav">본문 바로가기</a>
+            <a href="../index.html" id="go-home" title="홈 화면"><i class="fas fa-home"></i></a>
+            
+            <main id="main">
+                <div class="banner-slide">
+                    <div class="box">
+                        <ul class="banner">
+                            <li><a href="#"><img alt="0000" src="../img/banner_slide/rel_logo1.jpg" /></a></li>
+                            <li><a href="#"><img alt="0000" src="../img/banner_slide/rel_logo2.jpg" /></a></li>
+                            <li><a href="#"><img alt="0000" src="../img/banner_slide/rel_logo3.jpg" /></a></li>
+                            <li><a href="#"><img alt="0000" src="../img/banner_slide/rel_logo4.jpg" /></a></li>
+                            <li><a href="#"><img alt="0000" src="../img/banner_slide/rel_logo5.jpg" /></a></li>
+                            <li><a href="#"><img alt="0000" src="../img/banner_slide/rel_logo6.jpg" /></a></li>
+                            <li><a href="#"><img alt="0000" src="../img/banner_slide/rel_logo1.jpg" /></a></li>
+                            <li><a href="#"><img alt="0000" src="../img/banner_slide/rel_logo2.jpg" /></a></li>
+                            <li><a href="#"><img alt="0000" src="../img/banner_slide/rel_logo3.jpg" /></a></li>
+                            <li><a href="#"><img alt="0000" src="../img/banner_slide/rel_logo4.jpg" /></a></li>
+                            <li><a href="#"><img alt="0000" src="../img/banner_slide/rel_logo5.jpg" /></a></li>
+                            <li><a href="#"><img alt="0000" src="../img/banner_slide/rel_logo6.jpg" /></a></li>
+                        </ul>
+                    </div>
+                    <p class="control">
+                        <a href="#" class="prev" title="이전배너"><i class="fas fa-chevron-left"></i></a>
+                        <a href="#" class="next" title="다음배너"><i class="fas fa-chevron-right"></i></a>
+                        <a href="#" class="play" title="자동넘김/정지"><i class="fa fa-pause"></i><i class="fa fa-play"></i></a>
+                    </p>
+                </div>
+                
+            </main>
+        </div> <!-- #wrapper  -->
+<script>
+'use strict';
+
+var offsetLeft = 0;
+var boxWidth = $('div.banner-slide div.box').innerWidth();
+var barWidth = 0;
+var minOffsetLeft = 0;
+var moveDistance = 300;
+var timerId = 0;
+var isTimerOn = true;
+var timerSpeed = 3000;
+
+// 초기화
+$('div.banner-slide ul.banner li').each(function() {
+    barWidth += $(this).outerWidth(true);
+});
+$('div.banner-slide ul.banner').css({'width': barWidth + 'px'});
+minOffsetLeft = -(barWidth - boxWidth);
+if (isTimerOn === true) {
+    $('div.banner-slide p.control a.play').addClass('on');
+    timerId = setTimeout(function() {moveBanner('next', 'auto');}, timerSpeed);
+} else {
+    $('div.banner-slide p.control a.play').removeClass('on');
+}
+
+// 이벤트
+$('div.banner-slide p.control a.prev').on('click', function() {
+    $(this).find('i').stop(true).animate({'left': '-3px'}, 50).animate({'left': 0}, 100);
+    moveBanner('prev', 'manual');
+});
+$('div.banner-slide p.control a.next').on('click', function() {
+    $(this).find('i').stop(true).animate({'right': '-3px'}, 50).animate({'right': 0}, 100);
+    moveBanner('next', 'manual');
+});
+$('div.banner-slide p.control a.play').on('click', function() {
+    if (isTimerOn === true) {  // 끄기
+        clearTimeout(timerId);
+        $(this).removeClass('on');
+        isTimerOn = false;
+    } else {  // 켜기
+        timerId = setTimeout(function() {moveBanner('next', 'auto');}, timerSpeed);
+        $(this).addClass('on');
+        isTimerOn = true;
+    }
+});
+
+function moveBanner(direction, type) {
+    clearTimeout(timerId);
+    if (direction === 'prev') {
+        if (offsetLeft === 0) {
+            $('div.banner-slide ul.banner').stop(true).animate({'left': '10px'}, 50).animate({'left': 0}, 100);
+        } else {
+            offsetLeft += moveDistance;
+            if (offsetLeft > 0) offsetLeft = 0;
+            $('div.banner-slide ul.banner').stop().animate({'left': offsetLeft + 'px'}, 500);
+        }
+    } else if (direction === 'next') {
+        if (offsetLeft === minOffsetLeft) {
+            if (type === 'auto') {
+                offsetLeft = 0;
+                $('div.banner-slide ul.banner').stop().animate({'left': offsetLeft + 'px'}, 500);
+            } else {
+                $('div.banner-slide ul.banner').stop(true).animate({'left': (minOffsetLeft - 10) + 'px'}, 50).animate({'left': minOffsetLeft + 'px'}, 100);
+            }
+        } else {
+            offsetLeft -= moveDistance;
+            if (offsetLeft < minOffsetLeft) offsetLeft = minOffsetLeft;
+            $('div.banner-slide ul.banner').stop().animate({'left': offsetLeft + 'px'}, 500);
+        }
+    }
+    if (isTimerOn === true) {
+        timerId = setTimeout(function() {moveBanner('next', 'auto');}, timerSpeed);
+    }
+}
+    
+</script>
+    </body>
+</html>
+
+

@@ -50,6 +50,9 @@ section#page4 {background: red;}
 section#page5 {background: gray;}
 section#page6 {background: white;}
 section#page7 {background: orange;}
+ul.num {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 100%; text-align: center;}
+ul.num li {display: inline-block; font-size: 100px; width: 200px;}
+ul.num li + li {margin-left: 100px;}
 #aside {position: absolute; right: 50px; top: 150px; width: 100px; height: 400px; background: pink; border: 2px solid #000000; transition: top 0.3s;}
 #footer p.copyright {line-height: 50px; font-size: 16px; text-align: center; color: #999999;}
 

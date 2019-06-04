@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=1200" />
+        <meta name="author" content="DinoWorks Inc. 디노웍스(주)" />
+        <meta name="apple-mobile-web-app-title" content="디노웍스UI" />
+        <title>내비게이션(반응형) | 디노웍스(주) UI 라이브러리</title>
+        <meta name="description" content="디노웍스(주) UI 라이브러리 : 네비게이션(반응형)" />
+        <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
+        <link href="../css/navigation.css" rel="stylesheet" media="screen and (min-width : 851px)" />
+        <link href="../css/navigation_mobile.css" rel="stylesheet" media="screen and (max-width : 850px)" />
+        <script src="../js/jquery-3.4.1.min.js"></script>
+        <script src="../js/ui_library_common.js"></script>
+    </head>
+    <body class="main">
+        <div id="wrapper">
+            <a href="#main" id="skip-nav">본문 바로가기</a>
+            <a href="../index.html" id="go-home" title="홈 화면"><i class="fas fa-home"></i></a>
+            <header id="header">
+                <div id="header-top">
+                    <div id="header-top-box">
+                        <ul id="top-nav">
+                            <li><a href="#">HOME</a></li>
+                            <li><a href="#">로그인</a></li>
+                            <li><a href="#">회원가입</a></li>
+                            <li><a href="#">CONTACT US</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="header-bottom">
+                    <div id="header-bottom-box">
+                        <h1><a href="#"><img alt="한국생산기술연구원" src="../img/navigation/logo.png" /></a></h1>
+                        <a href="#" class="menu mobile"><span>메뉴열기/닫기</span></a>
+                        <nav id="gnb">
+                            <ul>
+                                <li class="sub1" data-menu="intro">
+                                    <a href="navigation_responsive.html">뿌리산업소개</a>
+                                    <ul>
+                                        <li data-menu="greeting"><a href="#">인사말</a></li>
+                                        <li data-menu="organization"><a href="#">기관소개</a></li>
+                                        <li data-menu="map"><a href="#">찾아오시는 길</a></li>
+                                        <li data-menu="pr"><a href="#">센터별 홍보자료</a></li>
+                                    </ul>
+                                </li>
+                                <li class="sub2" data-menu="equipment">
+                                    <a href="#">장비이용신청</a>
+                                    <ul>
+                                        <li data-menu="reservation"><a href="#">뿌리장비예약</a></li>
+                                        <li data-menu="process"><a href="#">장비예약절차 안내</a></li>
+                                        <li data-menu="etube"><a href="#">E-tube 장비검색</a></li>
+                                    </ul>                    
+                                </li>
+                                <li class="sub3" data-menu="tech">
+                                    <a href="#">기술서비스</a>
+                                    <ul>
+                                        <li data-menu="expert"><a href="#">전문가검색</a></li>
+                                        <li data-menu="counseling"><a href="#">상담신청</a></li>
+                                        <li data-menu="agora"><a href="#">기술토론방</a></li>
+                                        <li data-menu="process"><a href="#">기술의뢰절차 안내</a></li>
+                                    </ul>
+                                </li>
+                                <li class="sub4" data-menu="prototype">
+                                    <a href="#">시제품제작</a>
+                                    <ul>
+                                        <li data-menu="request"><a href="#">시제품제작 요청</a></li>
+                                        <li data-menu="guide"><a href="#">시제품제작 안내</a></li>
+                                    </ul>
+                                </li>
+                                <li class="sub5" data-menu="notice">
+                                    <a href="#">알림마당</a>
+                                    <ul>
+                                        <li data-menu="event"><a href="#">행사일정</a></li>
+                                        <li data-menu="data"><a href="#">자료실</a></li>
+                                        <li data-menu="press"><a href="#">언론자료</a></li>
+                                        <li data-menu="notice"><a href="#">공지사항</a></li>
+                                        <li data-menu="business"><a href="#">사업안내</a></li>
+                                        <li data-menu="qna"><a href="#">Q&amp;A</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <span class="bar"></span>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            
+            <main id="main">
+                
+                
+                
+            </main>
+            
+        </div> <!-- #wrapper  -->
+        
+<script>
+'use strict';
+
+setCurrentPage();
+function setCurrentPage() {
+    var bodyClass = $('body').attr('class');
+    var arrayClass = bodyClass.split(' ');
+    if (arrayClass[0] === 'main') return false;  // 메인화면에서는 적용하지 않음
+    
+    $('#gnb > ul > li').each(function() {
+        if ($(this).attr('data-menu') === arrayClass[1]) {
+            $(this).addClass('on');
+        } else {
+            $(this).removeClass('on');
+        }
+    });
+    $('#gnb > ul > li.on > ul > li').each(function() {
+        if ($(this).attr('data-menu') === arrayClass[2]) {
+            $(this).addClass('on');
+        } else {
+            $(this).removeClass('on');
+        }
+    });
+}
+
+setGnb();
+function setGnb() {
+    $('#gnb > ul > li > a').on('mouseenter focus', function() {
+        if ($(window).width() < 850) return false;
+        var offsetLeft = $(this).position().left;
+        var width = $(this).width();
+        $('#gnb > ul > li > ul').css({'display': 'none'});
+        $(this).next().css({'display': 'block'});
+        $('#header').addClass('on');
+        $('#gnb span.bar').css({'left': offsetLeft + 'px', 'width': width + 'px'});
+    });
+    $('#header').on('mouseleave', function() {
+        if ($(window).width() < 850) return false;
+        $('#gnb > ul > li > ul').css({'display': 'none'});
+        $('#header').removeClass('on');
+        $('#gnb span.bar').css({'left': 0, 'width': 0});
+    });
+    
+    // 모바일
+    $('#header a.menu').on('click', function() {
+        $(this).toggleClass('open');
+    });
+    $('#gnb > ul > li > a').on('click', function(e) {
+        if ($(window).width() < 850) {
+            e.preventDefault();
+            $('#gnb > ul > li > ul').css({'display': 'none'});
+            $(this).next().css({'display': 'block'});
+            $('#header').addClass('on');
+        }
+    });
+}
+
+</script>
+    </body>
+</html>
+
+
