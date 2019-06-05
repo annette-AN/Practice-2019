@@ -96,27 +96,64 @@
 <script>
 'use strict';
 
+// $('#gnb > ul > li > a').on('mouseenter', function(){
+//     $('header').addClass('on');
+//     $('#gnb > ul > li > ul').css({'display': 'none'});
+//     $(this).next().css({'display': 'block'});
+// });
+
+// $('header').on('mouseleave', function(){
+//     $('header').removeClass('on');
+//     $('#gnb > ul > li > ul').css({'display': 'none'});
+// });
+
 setCurrentPage();
 function setCurrentPage() {
     var bodyClass = $('body').attr('class');
     var arrayClass = bodyClass.split(' ');
-    if (arrayClass[0] === 'main') return false;  // 메인화면에서는 적용하지 않음
-    
-    $('#gnb > ul > li').each(function() {
+
+    if (arrayClass[0] === 'main') return false;
+
+    $('#gnb > ul > li').each(function(){
         if ($(this).attr('data-menu') === arrayClass[1]) {
             $(this).addClass('on');
         } else {
             $(this).removeClass('on');
         }
     });
-    $('#gnb > ul > li.on > ul > li').each(function() {
-        if ($(this).attr('data-menu') === arrayClass[2]) {
+
+    $('#gnb > ul > li.on > ul > li').each(function(){
+        if ($(this).attr('data-menu') === arrayClass[1]) {
             $(this).addClass('on');
         } else {
             $(this).removeClass('on');
         }
-    });
+    })
+    console.log(arrayClass);
 }
+
+// setCurrentPage();
+// function setCurrentPage() {
+
+//     var bodyClass = $('body').attr('class');
+//     var arrayClass = bodyClass.split(' ');
+//     if (arrayClass[0] === 'main') return false;  // 메인화면에서는 적용하지 않음
+    
+//     $('#gnb > ul > li').each(function() {
+//         if ($(this).attr('data-menu') === arrayClass[1]) {
+//             $(this).addClass('on');
+//         } else {
+//             $(this).removeClass('on');
+//         }
+//     });
+//     $('#gnb > ul > li.on > ul > li').each(function() {
+//         if ($(this).attr('data-menu') === arrayClass[2]) {
+//             $(this).addClass('on');
+//         } else {
+//             $(this).removeClass('on');
+//         }
+//     });
+// }
 
 setGnb();
 function setGnb() {

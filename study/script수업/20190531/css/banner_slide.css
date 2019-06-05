@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* reset */
+body {margin: 0;}
+h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, table {margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 600;}
+header, main, footer, section, article, aside, nav {display: block;}
+a {color: inherit; text-decoration: inherit;}
+a img {border: none;}
+img {vertical-align: middle;}
+li {list-style: none;}
+address, em, i, cite {font-style: normal;}
+table {border-collapse: collapse;}
+table caption {overflow: hidden; width: 0; height: 0;}
+i.fas, i.far, i.fab {vertical-align: middle; display: inline-block;}
+.mobile {display: none !important;}
+br.only-m {content: '';}
+br.only-m:after {content: '\00a0';}
+div.hidden {position: absolute; left: -9999px;}
+
+
+/* common */
+body {font-family: '맑은 고딕', 'malgun gothic', '돋움', Dotum, 'Apple SD Gothic Neo', Helvetica, sans-serif; font-weight: 400; font-size: 14px; color: #333333 ; background: #ffffff;}
+#wrapper {min-width: 1200px; overflow: hidden;}
+#skip-nav {position: fixed; left: 0; top: -41px; width: 100%; line-height: 40px; text-align: center; font-size: 16px; color: #ffffff; background: rgba(0, 0, 0, 0.6); border-bottom: 1px solid #ffffff; z-index: 100000; transition: top 0.3s;}
+#skip-nav:focus {top: 0;}
+#go-home {position: fixed; right: 20px; top: 20px; width: 60px; height: 60px; font-size: 24px; text-align: center; line-height: 56px; border-radius: 100px; color: #ffffff; background: #ffcc00; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); z-index: 10000;}
+#main {width: 1200px; margin: 0 auto; padding: 60px 0 60px 0;}
+
+
+/* banner-slide */
+div.banner-slide {border: 1px solid #e0e0e0; margin: 20px; width: 800px; position: relative; box-sizing: border-box; padding: 0 30px;}
+div.banner-slide > div.box {position: relative; height: 69px; overflow: hidden;}
+div.banner-slide ul.banner {position: absolute; left: 0; top: 0; width: 5000px;}
+div.banner-slide ul.banner li {float: left; padding: 5px 0; margin: 0 10px;}
+div.banner-slide ul.banner li a {display: block; width: 170px; height: 57px; border: 1px solid #f5f5f5;}
+div.banner-slide p.control a.prev {position: absolute; left: 0; top: 0; border-right: 1px solid #e0e0e0; width: 30px; height: 100%; box-sizing: border-box; color: #bbbbbb; font-size: 20px; text-align: center; line-height: 70px;}
+div.banner-slide p.control a.next {position: absolute; right: 0; top: 0; border-left: 1px solid #e0e0e0; width: 30px; height: 100%; box-sizing: border-box; color: #bbbbbb; font-size: 20px; text-align: center; line-height: 70px;}
+div.banner-slide p.control a.prev i,
+div.banner-slide p.control a.next i {position: relative;}
+div.banner-slide p.control a.play {position: absolute; right: 35px; bottom: 2px; width: 20px; height: 20px; text-align: center; line-height: 18px; border: 1px solid #e0e0e0; background: #ffffff; box-sizing: border-box; font-size: 12px; color: #bbbbbb;}
+div.banner-slide p.control a.play i:first-child {display: none;}
+div.banner-slide p.control a.play.on i:first-child {display: inline-block;}
+div.banner-slide p.control a.play.on i + i {display: none;}
+div.banner-slide p.control a:hover {color: #999999;}
+
+
+
+

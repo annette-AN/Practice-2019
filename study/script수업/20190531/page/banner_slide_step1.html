@@ -50,6 +50,44 @@
 'use strict';
 
 var offsetLeft = 0;
+var boxWidth = $('.banner-slide .box').innerWidth();
+var barWidth = 0;
+var minOffsetLeft = 0;
+console.log(boxWidth);
+
+
+
+$('.banner-slide ul.banner li').each(function(){
+    barWidth += $(this).outerWidth(true)
+    console.log(barWidth);
+});
+
+$('.banner-slide ul.banner').css({'width': barWidth + 'px'});
+minOffsetLeft = -(barWidth - boxWidth);
+
+$('.banner-slide .control .prev').on('click', function(){
+    if (offsetLeft === 0) {
+        $('.banner-slide ul.banner').stop(true).animate({'left': '10px'}, 50).animate({'left': '0px'});
+    } else {
+        offsetLeft += 200;
+        if (offsetLeft > 0) offsetLeft = 0;
+        $('.banner-slide ul.banner').stop(true).animate({'left': offsetLeft + 'px'}, 500);
+    }
+});
+
+$('.banner-slide .control .next').on('click', function(){
+    if (offsetLeft === minOffsetLeft) {
+        $('.banner-slide ul.banner').stop(true).animate({'left': minOffsetLeft - 10 + 'px'}, 50).animate({'left': minOffsetLeft});
+    } else {
+        offsetLeft -= 200;
+        if (offsetLeft < minOffsetLeft) offsetLeft = minOffsetLeft;
+        $('.banner-slide ul.banner').stop(true).animate({'left': offsetLeft + 'px'}, 500);
+    }
+});
+
+
+/*
+var offsetLeft = 0;
 var boxWidth = $('div.banner-slide div.box').innerWidth();
 var barWidth = 0;
 var minOffsetLeft = 0;
@@ -80,7 +118,7 @@ $('div.banner-slide p.control a.next').on('click', function() {
         $('div.banner-slide ul.banner').stop().animate({'left': offsetLeft + 'px'}, 500);
     }
 });
-
+*/
     
 </script>
     </body>

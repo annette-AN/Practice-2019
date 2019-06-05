@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=1200" />
+        <meta name="author" content="DinoWorks Inc. 디노웍스(주)" />
+        <meta name="apple-mobile-web-app-title" content="디노웍스UI" />
+        <title>숫자 회전 | 디노웍스(주) UI 라이브러리</title>
+        <meta name="description" content="디노웍스(주) UI 라이브러리 : 스크롤 UI(기본)" />
+        <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
+        <link href="../css/digit_rolling.css" rel="stylesheet" />
+        <script src="../js/jquery-3.4.1.min.js"></script>
+        <script src="../js/ui_library_common.js"></script>
+    </head>
+    <body class="sub scroll-basic">
+        <div id="wrapper">
+            <a href="#main" id="skip-nav">본문 바로가기</a>
+            <a href="../index.html" id="go-home" title="홈 화면"><i class="fas fa-home"></i></a>
+            
+            <header id="header">
+                <h1><a href="../index.html"><img alt="DinoWorks" src="../img/logo.png" /><img alt="DinoWorks" src="../img/logo_color.png" /></a></h1>
+            </header>
+            
+            <main id="main">
+                <section id="history">
+                    <div class="content-box">
+                        <div class="history-ui">
+                            <ul class="indicator">
+                                <li><a href="#"><em>1987</em></a></li>
+                                <li><a href="#"><em>1990</em></a></li>
+                                <li><a href="#"><em>1995</em></a></li>
+                                <li><a href="#"><em>2007</em></a></li>
+                                <li><a href="#"><em>2018</em></a></li>
+                            </ul>
+                            <ul class="year">
+                                <li><ul class="num"></ul></li>
+                                <li><ul class="num"></ul></li>
+                                <li><ul class="num"></ul></li>
+                                <li><ul class="num"></ul></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            
+            <footer id="footer">
+                <p class="copyright">2019 Dinoworks Inc.</p>
+                <a href="#" id="scroll-top">TOP</a>
+            </footer>
+            
+        </div> <!-- #wrapper  -->
+        
+<script>
+'use strict';
+
+var numSlide = $('div.history-ui ul.indicator li').length;
+var slideNow = 0;
+var slideNext = 0;
+var timerId = '';
+var timerSpeed = 6000;
+var isTimerOn = true;
+
+showYear(1);    
+    
+// 이벤트
+$('div.history-ui ul.indicator li a').on('click', function() {
+    var index = $('div.history-ui ul.indicator li').index($(this).parent());
+    showYear(index + 1);
+});
+
+function showYear(n) {
+    clearTimeout(timerId);
+    
+    var arrayTop = [];
+    var year = $('div.history-ui ul.indicator li:eq(' + (n - 1) + ') a').text();
+    var textSpeed = (slideNow === 0) ? 0 : 2000;
+    arrayTop.push(2000 + Number(year[0]) * 100);
+    arrayTop.push(2000 + Number(year[1]) * 100);
+    arrayTop.push(2000 + Number(year[2]) * 100);
+    arrayTop.push(2000 + Number(year[3]) * 100);
+    
+    $('ul.year > li > ul.num').empty().stop(true).css({'top': 0});
+    appendNumber('ul.year > li > ul.num');
+    
+    $('ul.year > li:eq(0)> ul.num').stop(true).delay(0).animate({'top': -arrayTop[0] + '%'}, textSpeed);
+    $('ul.year > li:eq(1)> ul.num').stop(true).delay(200).animate({'top': -arrayTop[1] + '%'}, textSpeed);
+    $('ul.year > li:eq(2)> ul.num').stop(true).delay(400).animate({'top': -arrayTop[2] + '%'}, textSpeed);
+    $('ul.year > li:eq(3)> ul.num').stop(true).delay(600).animate({'top': -arrayTop[3] + '%'}, textSpeed);
+    $('div.history-ui ul.indicator li').removeClass('on');
+    $('div.history-ui ul.indicator li:eq(' + (n - 1) + ')').addClass('on');
+    slideNow = n;
+    slideNext = (n + 1) > numSlide ? 1 : n + 1;
+    if (isTimerOn === true) {
+        timerId = setTimeout(function() {showYear(slideNext);}, timerSpeed);
+    }
+}
+    
+function appendNumber(selector) {
+    for (var j = 0; j < 5; j++) {
+        for (var i = 0; i < 10; i++) {
+            $(selector).append('<li>' + i + '</li>');
+        }
+    }
+}
+    
+    
+    
+</script>
+    </body>
+</html>
+
+
