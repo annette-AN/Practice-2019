@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/sub-page/subpage-list.css">
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <title>list/admin/portfolio</title>
+</head>
+<body>
+  <header>
+    <nav id="main-tnb">
+      <ul class="tnb-wrap">
+        <li class="menu-bar"><i class="fas fa-bars"><span class="child-text-ir">메뉴바 아이콘</span></i></li>
+        <li class="refresh"><i class="fas fa-redo"><span class="child-text-ir">새로고침 아이콘</span></i></li>
+        <!-- bell .notice 를 넣으면 신호등 표시가 나옴 -->
+        <li class="bell"><i class="far fa-bell"><span class="child-text-ir">알림종 아이콘</span></i></li>
+        <li class="search-board">
+          <input type="text" placeholder="Search Dashboard">
+          <a href="#"><i class="fas fa-search"><span class="child-text-ir">돋보기 아이콘</span></i></a>
+        </li>
+      </ul>
+
+      <div class="user-wrap">
+        <!-- user-profile .notice 를 넣으면 신호등 표시가 나옴 -->
+        <!-- 사용자 사진도 때에따라 바껴야하는데 어떻게? -->
+        <div class="user-profile"><span class="child-text-ir">사용자프로필사진</span></div>     
+        <ul class="user-info">
+          <li>
+            <a href="#"><i class="fas fa-cogs"><span class="child-text-ir">사용자 정보</span></i></a>
+            <ul>
+              <li><a href="#">my account</a></li>
+              <li><a href="#">my calendar</a></li>
+              <!-- inbox .notice 를 넣으면 신호등 표시가 나옴, 알림 개수는 content에 적으면 적용됨 -->
+              <li class="inbox"><a href="#">my inbox</a></li>
+              <li><a href="#"><i class="fas fa-power-off"><span class="child-text-ir">로그아웃 아이콘</span></i>log out</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <nav id="main-gnb">
+      <div id="main-gnb-header">
+        <h1>web<span><span class="child-text-ir">동그라미 아이콘</span></span><strong>Admin</strong></h1>
+        <ul>
+          <li><a href="#"><i class="fas fa-home"><span class="child-text-ir">홈 바로가기 아이콘</span></i></a></li>
+          <!-- mail .notice 를 넣으면 신호등 표시가 나옴 -->
+          <li><a class="mail" href="#"><i class="fas fa-envelope"><span class="child-text-ir">메일 바로가기 아이콘</span></i></a></li>
+        </ul>
+      </div>
+
+      <div id="main-gnb-contents">
+        <div class="gnb-user-profile">
+          <!-- user-profile .notice 를 넣으면 신호등 표시가 나옴 -->
+          <!-- 회원 프로필 사진영역 -->
+          <div class="user-profile">
+            <span class="child-text-ir">사용자프로필사진</span>
+          </div>
+          <h2>fred smith 
+            <span>Life goes on...</span>
+          </h2>
+        </div>
+
+        <ul class="main-gnb-menu">
+          <li>
+            <a href="#">
+              <i class="fas fa-home"></i>
+              <span>home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-cube"></i>
+              <span>widgets</span>
+            </a>
+          </li>
+          <li>
+            <a href="page/subpage-list.html">
+              <i class="fas fa-list-alt"></i>
+              <span>list</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fab fa-ethereum"></i>
+              <span>themes</span>
+            </a>
+            <ul>
+              <li><a href="#">coporate</a></li>
+              <li><a href="#">simple</a></li>
+              <li><a href="#">elegant</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-layer-group"></i>
+              <span>layouts</span>
+              </a>
+            <ul>
+              <li><a href="#">layout options</a></li>
+              <li><a href="#">boxed layout</a></li>
+              <li><a href="#">inner boxed layout</a></li>
+              <li><a href="#">extended layout</a></li>
+              <li><a href="#">RTL layout</a></li>
+              <li><a href="#">horizontal menu</a></li>
+              <li><a href="#">horizontal menu &amp; boxed</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-tablet-alt"></i>
+              <span>UI elements</span>
+            </a>
+            <ul>
+              <li><a href="#">typography</a></li>
+              <li><a href="#">messages &amp; notifications</a></li>
+              <li><a href="#">notifications</a></li>
+              <li><a href="#">icons</a></li>
+              <li><a href="#">buttons</a></li>
+              <li><a href="#">tabs &amp; accordions</a></li>
+              <li><a href="#">sliders</a></li>
+              <li><a href="#">group list</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+                <i class="fas fa-share-square"></i>
+                <span>forms</span>
+              </a>
+            <ul>
+              <li><a href="#">form elements</a></li>
+              <li><a href="#">form validations</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+                <i class="fas fa-th"></i>
+                <span>grids</span>
+              </a>
+            <ul>
+              <li><a href="#">simple grids</a></li>
+              <li><a href="#">draggable grids</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+                <i class="fas fa-table"></i>
+                <span>tables</span>
+              </a>
+            <ul>
+              <li><a href="#">basic tables</a></li>
+              <li><a href="#">data tables</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>maps</span>
+              </a>
+            <ul>
+              <li><a href="#">google maps</a></li>
+              <li><a href="#">vector maps</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+                <i class="fab fa-sketch"></i>
+                <span>extra</span>
+              </a>
+            <ul>
+              <li><a href="#">user profile</a></li>
+              <li><a href="#">time line</a></li>
+              <li><a href="#">support ticket</a></li>
+              <li><a href="#">gallery</a></li>
+              <li><a href="#">calendar</a></li>
+              <li><a href="#">search results</a></li>
+              <li><a href="#">invoice</a></li>
+              <li><a href="#">404 page</a></li>
+              <li><a href="#">500 page</a></li>
+              <li><a href="#">blank page</a></li>
+              <li><a href="#">login</a></li>
+              <li><a href="#">login v2</a></li>
+              <li><a href="#">lockscreen</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+                <i class="fas fa-ellipsis-h"></i>
+                <span>menu levels</span>
+              </a>
+            <ul>
+              <li><a href="#">level 1</a></li>
+              <li><a href="#">level 2</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div id="main-wrap">
+      <section class="list-search">
+        <a href="#">작성하기</a>
+        <h2>게시판 검색</h2>
+        <table>
+          <colgroup>
+          <col style="width:15%">
+          <col style="width:35%">
+          <col style="width:15%">
+          <col style="width:35%">
+          </colgroup>
+          <tbody>
+            <tr>
+              <td>검색어</td>
+              <td>
+                <label for="list-search">
+                  <!-- placeholder안먹힘 -->
+                  <select name="list-search" id="list-search">
+                    <option value="all">-전체검색-</option>
+                    <option value="title">제목</option>
+                    <option value="content">내용</option>
+                    <option value="writer">작성자</option>
+                  </select>
+                  <input type="text" id="list-search">
+                </label>
+              </td>
+              <td>게시판스킨</td>
+              <td>
+                <label for="list-skin">
+                  <select name="list-skin" id="list-skin">
+                    <option value="choose">-스킨선택-</option>
+                    <option value="--1">--</option>
+                    <option value="--2">--</option>
+                  </select>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>노출여부</td>
+              <td>
+                <label for="show">
+                  <input type="radio" name="s/h" id="show">노출
+                </label>
+                <label for="hide">
+                  <input type="radio" name="s/h" id="hide">숨김
+                </label>
+              </td>
+              <td colspan="2" class="no-design"></td>
+            </tr>
+            <tr>
+              <td colspan="4">순위변경의 경우 노출구분 검색시에만 변경 가능합니다.</td>
+            </tr>
+          </tbody>
+        </table>
+        <button>검색</button>
+      </section>
+  
+      <section class="list-board">
+        <table>
+          <tr>
+            <td>번호</td>
+            <td><span>제목</span></td>
+            <td><span>작성자</span></td>
+            <td>등록일시</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><span>전사 windows 업그레이드 안내</span></td>
+            <td><span>전산팀 박태훈</span></td>
+            <td><span>2019-02-10</span> <span>09:30</span></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><span>불법소프트웨어 사용금지 및 소프트웨어 사용요령</span></td>
+            <td><span>전산팀 박태훈</span></td>
+            <td><span>2019-02-10</span> <span>09:12</span></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><span>수습사원 관리 지침</span></td>
+            <td><span>인사팀 이희성</span></td>
+            <td><span>2019-01-25</span> <span>13:12</span></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><span>인사평가 제도 지침 v1.3</span></td>
+            <td><span>인사팀 전영조</span></td>
+            <td><span>2019-01-02</span> <span>09:12</span></td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td><span>사내 동호회 운영규칙 v1.0</span></td>
+            <td><span>인사팀 이희성</span></td>
+            <td><span>2018-09-27</span> <span>14:12</span></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span> <span></span></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span> <span></span></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span> <span></span></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span> <span></span></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span> <span></span></td>
+          </tr>
+        </table>
+        <ul>
+          <li>1</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <script src="../js/index.js"></script>
+</body>
+</html>

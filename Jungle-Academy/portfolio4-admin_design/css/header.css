@@ -28,7 +28,14 @@ input, button {
   white-space: normal;
   background: none;
   line-height: 1;
-  font-size: 13px;
+  font: inherit;
+}
+
+select {
+  vertical-align: middle;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font: inherit;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -567,5 +574,19 @@ header.open #main-gnb .main-gnb-menu > li ul li a {
 header.open #main-gnb .main-gnb-menu > li ul li a:hover {
   background: none;
   padding-left: 55px;
+}
+
+main {
+  position: absolute;
+  top: 61px;
+  left: 50px;
+  right: 0px;
+  padding: 30px;
+  background: #E5E9EC;
+  z-index: 1;
+}
+
+header.open + main {
+  left: 250px;
 }
 /*# sourceMappingURL=header.css.map */

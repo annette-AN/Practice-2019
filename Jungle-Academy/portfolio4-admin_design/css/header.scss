@@ -11,8 +11,11 @@ input, button {
   white-space: normal;
   background: none;
   line-height: 1;
-  font-size: 13px;
+  font: inherit;
 }
+
+select {vertical-align: middle; box-sizing: border-box; font: inherit;}
+
 h1, h2, h3, h4, h5, h6 {font-size: inherit; font-weight: normal;}
 table {
   border-collapse: collapse;
@@ -188,7 +191,7 @@ i {
       }
 
       ul {
-        display: none;ㅑ
+        display: none;
         position: absolute;
         top: 200%;
         right: 0%;
@@ -554,4 +557,18 @@ header {
       }
     }
   }
+}
+
+main {
+  position: absolute;
+  top: 61px;
+  left: 50px;
+  right: 0px;
+  padding: 30px;
+  background: #E5E9EC;
+  z-index: 1;
+}
+
+header.open + main {
+  left:250px;
 }

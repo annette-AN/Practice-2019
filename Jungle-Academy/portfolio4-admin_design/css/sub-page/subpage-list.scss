@@ -1,0 +1,82 @@
+main {
+  height: calc(100% - 61px);
+  padding: 2% 12%;
+}
+
+#main-wrap {
+  height: 100%;
+  padding: 2%;
+  background: #fff;
+}
+
+header.open + main {
+  padding: 2% 8%;
+}
+
+.list-search {
+  position: relative;
+  height: 30%;
+  // background: wheat;
+
+  > a {
+    position: absolute;
+    right: 0%;
+    display: block;
+    width: 8%;
+    padding: 0.8% 0%;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    background: #F40000;
+  }
+
+  h2 {
+    padding: 0.8% 0%;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  table {
+    width: 100%;
+    font-size: 12px;
+
+    tr {
+      line-height: 25px;
+
+      // td가 verticla 가운데로 안감
+      td {
+        padding-left: 14px;
+        border: 1px solid rgba(0,0,0,0.2);
+
+        input[type="text"] {
+          width: calc(100% - 110px);
+          line-height: 20px;
+        }
+      }
+
+      td:nth-child(2n-1) {
+        background: #F4F5F7;
+      }
+    }
+  }
+
+  button {
+    display: block;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6%;
+    padding: 0.6% 0%;
+    font-size: 12px;
+    background: #888;
+    color: #fff;
+  }
+}
+
+.list-board {
+  margin-top: 2%;
+  height: 66%;
+  background: pink;
+}
