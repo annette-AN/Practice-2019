@@ -1,12 +1,29 @@
 main {
-  height: calc(100% - 61px);
+  min-height: calc(100vh - 61px);
   padding: 2% 12%;
 }
 
 #main-wrap {
-  height: 100%;
   padding: 2%;
   background: #fff;
+}
+
+table {
+  width: 100%;
+  border-top: 2px solid rgba(0,0,0,0.1);
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+
+  tr+tr {
+    border-top: 1px solid rgba(0,0,0,0.1);
+  }
+
+  th {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+
+  td+td, th+th {
+    // border-left: 1px solid rgba(0,0,0,0.2);
+  }
 }
 
 header.open + main {
@@ -16,7 +33,6 @@ header.open + main {
 .list-search {
   position: relative;
   height: 30%;
-  // background: wheat;
 
   > a {
     position: absolute;
@@ -32,41 +48,53 @@ header.open + main {
   }
 
   h2 {
-    padding: 0.8% 0%;
+    padding: 3% 0.8% 0.8%;
     font-size: 15px;
     font-weight: bold;
   }
 
+  //border 색이 일정하지 않음
   table {
-    width: 100%;
     font-size: 12px;
 
-    tr {
-      line-height: 25px;
+    td {
+      padding-left: 14px;
+      height: 35px;
 
-      // td가 verticla 가운데로 안감
-      td {
-        padding-left: 14px;
-        border: 1px solid rgba(0,0,0,0.2);
-
-        input[type="text"] {
-          width: calc(100% - 110px);
-          line-height: 20px;
-        }
+      input[type="text"] {
+        width: calc(100% - 110px);
       }
 
-      td:nth-child(2n-1) {
-        background: #F4F5F7;
+      //select에 after로 화살표 넣기
+      input[type="text"], select {
+        border: 1px solid gray;
+        border-radius: 0;
+        height: 20px;
       }
+
+      label+label {
+        margin-left: 10px;
+      }
+
+      i {
+        font-size: 12px;
+      }
+    }
+
+    td:nth-child(2n-1) {
+      background: #F4F5F7;
+    }
+
+
+    td.no-design {
+      background: none;
+      border: none;
     }
   }
 
   button {
     display: block;
-    position: absolute;
-    bottom: 0%;
-    left: 50%;
-    transform: translateX(-50%);
+    margin: 3% auto 0%;
     width: 6%;
     padding: 0.6% 0%;
     font-size: 12px;
@@ -76,7 +104,71 @@ header.open + main {
 }
 
 .list-board {
+  position: relative;
   margin-top: 2%;
   height: 66%;
-  background: pink;
+  // background: pink;
+
+  table {
+    font-size: 13px;
+
+    th {
+      height: 30px;
+      background: #F4F5F7;
+    }
+
+    td {
+      text-align: center;
+      height: 35px;
+
+      &:nth-child(2) {
+        text-align: left;
+        padding-left: 14px;
+
+        a {
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      &:last-child {
+        span+span {
+          display: block;
+          color: gray;
+        }
+      }
+    }
+  }
+
+  ul {
+    margin: 20px auto 0px;
+    text-align:center;
+    font-size:0px;
+
+    li {
+      display: inline-block;
+      font-size: 13px;
+
+      a {
+        display: inline-block;
+        color: #777;
+        padding: 5px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    
+    li+li {
+      &:before {
+        display: inline-block;
+        content: '';
+        width: 1px;
+        height: 8px;
+        background: #777;
+      }
+    }
+  }
 }

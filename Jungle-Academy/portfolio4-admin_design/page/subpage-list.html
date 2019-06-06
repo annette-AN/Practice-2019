@@ -26,7 +26,6 @@
 
       <div class="user-wrap">
         <!-- user-profile .notice 를 넣으면 신호등 표시가 나옴 -->
-        <!-- 사용자 사진도 때에따라 바껴야하는데 어떻게? -->
         <div class="user-profile"><span class="child-text-ir">사용자프로필사진</span></div>     
         <ul class="user-info">
           <li>
@@ -47,7 +46,7 @@
       <div id="main-gnb-header">
         <h1>web<span><span class="child-text-ir">동그라미 아이콘</span></span><strong>Admin</strong></h1>
         <ul>
-          <li><a href="#"><i class="fas fa-home"><span class="child-text-ir">홈 바로가기 아이콘</span></i></a></li>
+          <li><a href="../index.html"><i class="fas fa-home"><span class="child-text-ir">홈 바로가기 아이콘</span></i></a></li>
           <!-- mail .notice 를 넣으면 신호등 표시가 나옴 -->
           <li><a class="mail" href="#"><i class="fas fa-envelope"><span class="child-text-ir">메일 바로가기 아이콘</span></i></a></li>
         </ul>
@@ -67,7 +66,7 @@
 
         <ul class="main-gnb-menu">
           <li>
-            <a href="#">
+            <a href="../index.html">
               <i class="fas fa-home"></i>
               <span>home</span>
             </a>
@@ -218,13 +217,13 @@
             <tr>
               <td>검색어</td>
               <td>
-                <label for="list-search">
-                  <!-- placeholder안먹힘 -->
-                  <select name="list-search" id="list-search">
-                    <option value="all">-전체검색-</option>
-                    <option value="title">제목</option>
-                    <option value="content">내용</option>
-                    <option value="writer">작성자</option>
+                <label for="kind-of-search">
+                  <select name="list-search" id="kind-of-search">
+                    <!-- option 안에는 text랑 숫자만 들어가나 -->
+                    <option value="all">-전체검색- ↕︎</option>
+                    <option value="title">제목 ↕︎</option>
+                    <option value="content">내용 ↕︎</option>
+                    <option value="writer">작성자 ↕︎</option>
                   </select>
                   <input type="text" id="list-search">
                 </label>
@@ -233,9 +232,10 @@
               <td>
                 <label for="list-skin">
                   <select name="list-skin" id="list-skin">
-                    <option value="choose">-스킨선택-</option>
-                    <option value="--1">--</option>
-                    <option value="--2">--</option>
+                    <!-- 화살표가 끝에가도록 고민 -->
+                    <option value="choose">-스킨선택- ↕︎</option>
+                    <option value="--1">-- ↕︎</option>
+                    <option value="--2">-- ↕︎</option>
                   </select>
                 </label>
               </td>
@@ -252,85 +252,124 @@
               </td>
               <td colspan="2" class="no-design"></td>
             </tr>
-            <tr>
-              <td colspan="4">순위변경의 경우 노출구분 검색시에만 변경 가능합니다.</td>
-            </tr>
           </tbody>
+          <!-- tfoot으로 내리기 -->
+          <tfoot>
+            <tr>
+              <td colspan="4" class="no-design">
+                <i class="fas fa-exclamation-circle"><span class="child-text-ir">느낌표</span></i>
+                순위변경의 경우 노출구분 검색시에만 변경 가능합니다.
+              </td>
+            </tr>
+          </tfoot>
         </table>
         <button>검색</button>
       </section>
   
       <section class="list-board">
         <table>
-          <tr>
-            <td>번호</td>
-            <td><span>제목</span></td>
-            <td><span>작성자</span></td>
-            <td>등록일시</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td><span>전사 windows 업그레이드 안내</span></td>
-            <td><span>전산팀 박태훈</span></td>
-            <td><span>2019-02-10</span> <span>09:30</span></td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td><span>불법소프트웨어 사용금지 및 소프트웨어 사용요령</span></td>
-            <td><span>전산팀 박태훈</span></td>
-            <td><span>2019-02-10</span> <span>09:12</span></td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td><span>수습사원 관리 지침</span></td>
-            <td><span>인사팀 이희성</span></td>
-            <td><span>2019-01-25</span> <span>13:12</span></td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td><span>인사평가 제도 지침 v1.3</span></td>
-            <td><span>인사팀 전영조</span></td>
-            <td><span>2019-01-02</span> <span>09:12</span></td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td><span>사내 동호회 운영규칙 v1.0</span></td>
-            <td><span>인사팀 이희성</span></td>
-            <td><span>2018-09-27</span> <span>14:12</span></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td><span></span></td>
-            <td><span></span></td>
-            <td><span></span> <span></span></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td><span></span></td>
-            <td><span></span></td>
-            <td><span></span> <span></span></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td><span></span></td>
-            <td><span></span></td>
-            <td><span></span> <span></span></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td><span></span></td>
-            <td><span></span></td>
-            <td><span></span> <span></span></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td><span></span></td>
-            <td><span></span></td>
-            <td><span></span> <span></span></td>
-          </tr>
+          <colgroup>
+            <col style="width: 5%;">
+            <col style="width: 65%;">
+            <col style="width: 15%;">
+            <col style="width: 15%;">
+          </colgroup>
+          <thead>
+            <!-- thead로 만들기 -->
+            <tr>
+              <th>번호</th>
+              <!-- 이렇게 넣어도 괜찮은지 -->
+              <th><span>제목</span></th>
+              <th><span>작성자</span></th>
+              <th>등록일시</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- 게시글 1페이지 당 13개 -->
+            <tr>
+              <td>5</td>
+              <td><a href="#"><span>전사 windows 업그레이드 안내</span></a></td>
+              <td><span>전산팀 박태훈</span></td>
+              <td><span>2019-02-10</span> <span>09:30</span></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><a href="#"><span>불법소프트웨어 사용금지 및 소프트웨어 사용요령</span></a></td>
+              <td><span>전산팀 박태훈</span></td>
+              <td><span>2019-02-10</span> <span>09:12</span></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><a href="#"><span>수습사원 관리 지침</span></a></td>
+              <td><span>인사팀 이희성</span></td>
+              <td><span>2019-01-25</span> <span>13:12</span></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><a href="#"><span>인사평가 제도 지침 v1.3</span></a></td>
+              <td><span>인사팀 전영조</span></td>
+              <td><span>2019-01-02</span> <span>09:12</span></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td><a href="#"><span>사내 동호회 운영규칙 v1.0</span></a></td>
+              <td><span>인사팀 이희성</span></td>
+              <td><span>2018-09-27</span> <span>14:12</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><a href="#"><span></span></a></td>
+              <td><span></span></td>
+              <td><span></span> <span></span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><a href="#"><span></span></a></td>
+              <td><span></span></td>
+              <td><span></span> <span></span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><a href="#"><span></span></a></td>
+              <td><span></span></td>
+              <td><span></span> <span></span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><a href="#"><span></span></a></td>
+              <td><span></span></td>
+              <td><span></span> <span></span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><a href="#"><span></span></a></td>
+              <td><span></span></td>
+              <td><span></span> <span></span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><a href="#"><span></span></a></td>
+              <td><span></span></td>
+              <td><span></span> <span></span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><a href="#"><span></span></a></td>
+              <td><span></span></td>
+              <td><span></span> <span></span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><a href="#"><span></span></a></td>
+              <td><span></span></td>
+              <td><span></span> <span></span></td>
+            </tr>
+          </tbody>
         </table>
         <ul>
-          <li>1</li>
+          <li><a href="#">1</a></li>
+          <!-- <li><a href="#">2</a></li> -->
+          <!-- <li><a href="#">3</a></li> -->
         </ul>
       </section>
     </div>

@@ -19,12 +19,13 @@ a {
   color: inherit;
 }
 
-input, button {
+input, button, select {
   display: inline-block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: 0;
-  vertical-align: middle;
+  border: 0 none;
+  border-radius: none;
+  vertical-align: baseline;
   white-space: normal;
   background: none;
   line-height: 1;
@@ -32,10 +33,13 @@ input, button {
 }
 
 select {
-  vertical-align: middle;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font: inherit;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+button {
+  cursor: pointer;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -142,7 +146,7 @@ i {
   background: #F4F5F7;
 }
 
-#main-tnb .tnb-wrap .search-board input:focus a {
+#main-tnb .tnb-wrap .search-board input:focus + a {
   background: #F4F5F7;
 }
 
@@ -533,11 +537,7 @@ header.open #main-gnb .main-gnb-menu > li > a {
   padding: 14px 0px 14px 30px;
 }
 
-header.open #main-gnb .main-gnb-menu > li > a:hover {
-  color: #fff;
-}
-
-header.open #main-gnb .main-gnb-menu > li > a:hover i {
+header.open #main-gnb .main-gnb-menu > li > a:hover span, header.open #main-gnb .main-gnb-menu > li > a:hover i {
   color: #fff;
 }
 

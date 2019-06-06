@@ -119,7 +119,6 @@ section+section {
       background: #47B2A8;
 
       img {
-        // 이미지크기가 조금 이상한듯
         width: 100%;
       }
     }
@@ -259,11 +258,14 @@ section {
 
   .joing-group {
     position: relative;
-    overflow: hidden;//
+    overflow: hidden;
+    background: #fff;
 
     &:hover {
       img {
-        transform: scale(1.1);//
+        transform: scale(1.1);
+        //opacity: 0.9;
+        -webkit-filter: contrast(130%);
       }
     }
     
@@ -273,7 +275,9 @@ section {
 
     img {
       width: 100%;
-      transition: transform .4s;
+      transition: transform .4s, opacity .4s, -webkit-filter .4s;
+      //opacity: 1;
+      -webkit-filter: contrast(100%);
     }
 
     div:nth-of-type(2) {

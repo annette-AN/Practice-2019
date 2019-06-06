@@ -270,11 +270,13 @@ section .table-wrap table tbody tr + tr {
 .joing .joing-group {
   position: relative;
   overflow: hidden;
+  background: #fff;
 }
 
 .joing .joing-group:hover img {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+  -webkit-filter: contrast(130%);
 }
 
 .joing .joing-group em {
@@ -283,10 +285,8 @@ section .table-wrap table tbody tr + tr {
 
 .joing .joing-group img {
   width: 100%;
-  -webkit-transition: -webkit-transform .4s;
-  transition: -webkit-transform .4s;
-  transition: transform .4s;
-  transition: transform .4s, -webkit-transform .4s;
+  transition: transform .4s, opacity .4s, -webkit-filter .4s;
+  -webkit-filter: contrast(100%);
 }
 
 .joing .joing-group div:nth-of-type(2) {

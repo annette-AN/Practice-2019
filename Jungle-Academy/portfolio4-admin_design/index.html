@@ -52,7 +52,7 @@
       <div id="main-gnb-header">
         <h1>web<span><span class="child-text-ir">동그라미 아이콘</span></span><strong>Admin</strong></h1>
         <ul>
-          <li><a href="#"><i class="fas fa-home"><span class="child-text-ir">홈 바로가기 아이콘</span></i></a></li>
+          <li><a href="index.html"><i class="fas fa-home"><span class="child-text-ir">홈 바로가기 아이콘</span></i></a></li>
           <!-- mail .notice 를 넣으면 신호등 표시가 나옴 -->
           <li><a class="mail" href="#"><i class="fas fa-envelope"><span class="child-text-ir">메일 바로가기 아이콘</span></i></a></li>
         </ul>
@@ -72,7 +72,7 @@
 
         <ul class="main-gnb-menu">
           <li>
-            <a href="#">
+            <a href="index.html">
               <i class="fas fa-home"></i>
               <span>home</span>
             </a>
@@ -322,7 +322,6 @@
       <section id="sales-info">
         <article class="map-area">
           <div>
-            <!-- 확대 축소 어떻게 하는지랑 pointer 설정 어떻게 하는지-->
             <img src="img/map.png" alt="지점 정보 지도">
           </div>
           <div>
@@ -356,7 +355,6 @@
                 <col style="width:55%;">
                 <col style="width:20%;">
               </colgroup>
-              <!-- table > span 에 금액 천단위 , 넣기 -->
               <!-- 말줄임 나올 수 있게 적용하기 -->
               <tbody>
                 <tr>
@@ -365,12 +363,12 @@
                 <tr>
                   <td>25601</td>
                   <td>Redesign product template</td>
-                  <td>$<span>4700</span></td>
+                  <td>$<span>4,700</span></td>
                 </tr>
                 <tr>
                   <td>25602</td>
                   <td>Redesign product template</td>
-                  <td>$<span>4700</span></td>
+                  <td>$<span>4,700</span></td>
                 </tr>            
               </tbody>
             </table>
@@ -490,8 +488,13 @@
             </colgroup>
             <tr>
               <td>sun</td>
-              <!-- span에 날씨 class넣으면 icon나옴 -->
-              <td class="w-icon"><span class="w-cloudy"></span></td>
+              <!-- span에 날씨 class넣으면 icon나옴 
+                w-sunny - 맑음
+                w-rain - 비
+                w-cloudy - 구름
+                w-partly-cloudy - 해+구름
+              -->
+              <td class="w-icon"><span class="w-sunny"></span></td>
               <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
             </tr>
             <tr>
