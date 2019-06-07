@@ -9,10 +9,10 @@
         <title>이미지 슬라이드(드래그) | 디노웍스(주) UI 라이브러리</title>
         <meta name="description" content="디노웍스(주) UI 라이브러리 : 이미지 슬라이드(드래그)" />
         <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
+        <link href="../fa/css/all.min.css" rel="stylesheet" />
         <link href="../css/image_slide.css" rel="stylesheet" />
         <script src="../js/jquery-3.4.1.min.js"></script>
-        <script src="../js/ui_library_common.js"></script>
+        <script src="../js/ui_common.js"></script>
     </head>
     <body class="sub image-slide drag">
         <div id="wrapper">
@@ -73,8 +73,6 @@
 <script>
 'use strict';
 
-
-
 setImageSlide('div.image-slide:eq(0)', 1, true, 2000);
 setImageSlide('div.image-slide:eq(1)', 3, false, 3000);
 
@@ -87,81 +85,10 @@ function setImageSlide(selector, first, status, speed) {
     var timerId = null;
     var isTimerOn = status;
     var timerSpeed = speed;
-
-    // 초기화
-    $(selector).find('ul.slide li').each(function(i) {
-        $(this).css({'left': (i * 100) + '%', 'display': 'block'});
-        $(selector).find('ul.indicator').append('<li><a href="#">' + (i + 1) + '번 슬라이드</a></li>\n');
-    });
-    if (isTimerOn === true) {
-        $(selector).find('p.control a.play').addClass('on');
-    } else {
-        $(selector).find('p.control a.play').removeClass('on');
-    }
-    showSlide(slideFirst);
-
-    $(selector).find('ul.indicator li a').on('click', function() {
-        var index = $(selector).find('ul.indicator li').index($(this).parent());
-        showSlide(index + 1);
-    });
-    $(selector).find('p.control a.prev').on('click', function() {
-        $(this).find('img').stop(true).animate({'left': '-10px'}, 50).animate({'left': 0}, 100);
-        showSlide(slidePrev);
-    });
-    $(selector).find('p.control a.next').on('click', function() {
-        $(this).find('img').stop(true).animate({'right': '-10px'}, 50).animate({'right': 0}, 100);
-        showSlide(slideNext);
-    });
-    $(selector).find('p.control a.play').on('click', function() {
-        if (isTimerOn === true) {
-            clearTimeout(timerId);
-            $(this).removeClass('on');
-            isTimerOn = false;
-        } else {
-            timerId = setTimeout(function() {showSlide(slideNext);}, timerSpeed);
-            $(this).addClass('on');
-            isTimerOn = true;
-        }
-    });
-
-    function showSlide(n) {
-        clearTimeout(timerId);
-        if (slideNow === 0) {
-            $(selector).find('ul.slide').css({'transition': 'none', 'left': -((n - 1) * 100) + '%'});
-        } else {
-            $(selector).find('ul.slide').css({'transition': 'left 0.3s', 'left': -((n - 1) * 100) + '%'});
-        }
-        $(selector).find('ul.indicator li').removeClass('on');
-        $(selector).find('ul.indicator li:eq(' + (n - 1) + ')').addClass('on');
-        slideNow = n;
-        slidePrev = (n - 1) < 1 ? numSlide : n - 1;
-        slideNext = (n + 1) > numSlide ? 1 : n + 1;
-        //console.log(slidePrev + ' / ' + slideNow + ' / ' + slideNext);
-        if (isTimerOn === true) {
-            timerId = setTimeout(function() {showSlide(slideNext);}, timerSpeed);
-        }
-    }
-}
-    
-    
-    
-    
-    
-    
-/*
-function setImageSlide(selector, first, status, speed) {
-    var numSlide = $(selector).find('ul.slide li').length;
-    var slideNow = 0;
-    var slidePrev = 0;
-    var slideNext = 0;
-    var slideFirst = first;
-    var timerId = null;
-    var isTimerOn = status;
-    var timerSpeed = speed;
     var startX = 0;
     var delX = 0;
     var offsetX = 0;
-    var isClickBlocked = false;
+    var isClickBlocked = true;
 
     // 초기화
     $(selector).find('ul.slide li').each(function(i) {
@@ -180,11 +107,11 @@ function setImageSlide(selector, first, status, speed) {
         showSlide(index + 1);
     });
     $(selector).find('p.control a.prev').on('click', function() {
-    $(this).stop(true).animate({'left': '-70px'}, 50).animate({'left': '-60px'}, 100);
+    $(this).find('img').stop(true).animate({'left': '-10px'}, 50).animate({'left': 0}, 100);
         showSlide(slidePrev);
     });
     $(selector).find('p.control a.next').on('click', function() {
-    $(this).stop(true).animate({'right': '-70px'}, 50).animate({'right': '-60px'}, 100);
+    $(this).find('img').stop(true).animate({'right': '-10px'}, 50).animate({'right': 0}, 100);
         showSlide(slideNext);
     });
     $(selector).find('p.control a.play').on('click', function() {
@@ -198,21 +125,26 @@ function setImageSlide(selector, first, status, speed) {
             isTimerOn = true;
         }
     });
-    $(selector).find('ul.slide').on('mousedown', function(e) {
+
+    //swipe event
+    $(selector).find('.slide').on('mousedown', function(e){
+        e.preventDefault();
+        $(this).css({'transition': 'none'});
         clearTimeout(timerId);
-        $(selector).find('ul.slide').css({'transition': 'none'});
         startX = e.clientX;
         offsetX = $(this).position().left;
-        $(document).on('mousemove', function(e) {
-            e.preventDefault();
+
+        $(document).on('mousemove', function(e){
             delX = e.clientX - startX;
             if (Math.abs(delX) > 10) isClickBlocked = true;
-            if ((delX < 0 && slideNow === numSlide) || (delX > 0 && slideNow === 1)) {
+            if ((slideNow === 1 && delX > 0) || (slideNow === numSlide && delX < 0)) {
                 delX = delX / 10;
-            }
-            $(selector).find('ul.slide').css({'left': (offsetX + delX) + 'px'});
+            } 
+            $(selector).find('.slide').css({'left': (offsetX + delX) + 'px'});
         });
-        $(document).on('mouseup', function(e) {
+
+        $(document).on('mouseup', function(){
+            $(document).off('mousemove mouseup');
             if (delX < -50 && slideNow !== numSlide) {
                 showSlide(slideNext);
             } else if (delX > 50 && slideNow !== 1) {
@@ -220,12 +152,12 @@ function setImageSlide(selector, first, status, speed) {
             } else {
                 showSlide(slideNow);
             }
-            $(document).off('mousemove mouseup');
-        });
-    });
-    $(selector).find('ul.slide li a').on('click', function(e) {
-        if (isClickBlocked === true) e.preventDefault();
-        isClickBlocked = false;
+        }).on('click', function(e){
+            if (isClickBlocked === true) {
+                e.preventDefault();
+                isClickBlocked = false;
+            }
+        })
     });
 
     function showSlide(n) {
@@ -246,7 +178,108 @@ function setImageSlide(selector, first, status, speed) {
         }
     }
 }
-*/
+
+// setImageSlide('div.image-slide:eq(0)', 1, true, 2000);
+// setImageSlide('div.image-slide:eq(1)', 3, false, 3000);
+
+
+// function setImageSlide(selector, first, status, speed) {
+//     var numSlide = $(selector).find('ul.slide li').length;
+//     var slideNow = 0;
+//     var slidePrev = 0;
+//     var slideNext = 0;
+//     var slideFirst = first;
+//     var timerId = null;
+//     var isTimerOn = status;
+//     var timerSpeed = speed;
+//     var startX = 0;
+//     var delX = 0;
+//     var offsetX = 0;
+//     var isClickBlocked = false;
+
+//     // 초기화
+//     $(selector).find('ul.slide li').each(function(i) {
+//         $(this).css({'left': (i * 100) + '%', 'display': 'block'});
+//         $(selector).find('ul.indicator').append('<li><a href="#">' + (i + 1) + '번 슬라이드</a></li>\n');
+//     });
+//     if (isTimerOn === true) {
+//         $(selector).find('p.control a.play').addClass('on');
+//     } else {
+//         $(selector).find('p.control a.play').removeClass('on');
+//     }
+//     showSlide(slideFirst);
+
+//     $(selector).find('ul.indicator li a').on('click', function() {
+//         var index = $(selector).find('ul.indicator li').index($(this).parent());
+//         showSlide(index + 1);
+//     });
+//     $(selector).find('p.control a.prev').on('click', function() {
+//     $(this).stop(true).animate({'left': '-70px'}, 50).animate({'left': '-60px'}, 100);
+//         showSlide(slidePrev);
+//     });
+//     $(selector).find('p.control a.next').on('click', function() {
+//     $(this).stop(true).animate({'right': '-70px'}, 50).animate({'right': '-60px'}, 100);
+//         showSlide(slideNext);
+//     });
+//     $(selector).find('p.control a.play').on('click', function() {
+//         if (isTimerOn === true) {
+//             clearTimeout(timerId);
+//             $(this).removeClass('on');
+//             isTimerOn = false;
+//         } else {
+//             timerId = setTimeout(function() {showSlide(slideNext);}, timerSpeed);
+//             $(this).addClass('on');
+//             isTimerOn = true;
+//         }
+//     });
+//     $(selector).find('ul.slide').on('mousedown', function(e) {
+//         clearTimeout(timerId);
+//         $(selector).find('ul.slide').css({'transition': 'none'});
+//         startX = e.clientX;
+//         offsetX = $(this).position().left;
+//         $(document).on('mousemove', function(e) {
+//             e.preventDefault();
+//             delX = e.clientX - startX;
+//             if (Math.abs(delX) > 10) isClickBlocked = true;
+//             if ((delX < 0 && slideNow === numSlide) || (delX > 0 && slideNow === 1)) {
+//                 delX = delX / 10;
+//             }
+//             $(selector).find('ul.slide').css({'left': (offsetX + delX) + 'px'});
+//         });
+//         $(document).on('mouseup', function(e) {
+//             if (delX < -50 && slideNow !== numSlide) {
+//                 showSlide(slideNext);
+//             } else if (delX > 50 && slideNow !== 1) {
+//                 showSlide(slidePrev);
+//             } else {
+//                 showSlide(slideNow);
+//             }
+//             $(document).off('mousemove mouseup');
+//         });
+//     });
+//     $(selector).find('ul.slide li a').on('click', function(e) {
+//         if (isClickBlocked === true) e.preventDefault();
+//         isClickBlocked = false;
+//     });
+
+//     function showSlide(n) {
+//         clearTimeout(timerId);
+//         if (slideNow === 0) {
+//             $(selector).find('ul.slide').css({'transition': 'none', 'left': -((n - 1) * 100) + '%'});
+//         } else {
+//             $(selector).find('ul.slide').css({'transition': 'left 0.3s', 'left': -((n - 1) * 100) + '%'});
+//         }
+//         $(selector).find('ul.indicator li').removeClass('on');
+//         $(selector).find('ul.indicator li:eq(' + (n - 1) + ')').addClass('on');
+//         slideNow = n;
+//         slidePrev = (n - 1) < 1 ? numSlide : n - 1;
+//         slideNext = (n + 1) > numSlide ? 1 : n + 1;
+//         //console.log(slidePrev + ' / ' + slideNow + ' / ' + slideNext);
+//         if (isTimerOn === true) {
+//             timerId = setTimeout(function() {showSlide(slideNext);}, timerSpeed);
+//         }
+//     }
+// }
 </script>
     </body>
 </html>

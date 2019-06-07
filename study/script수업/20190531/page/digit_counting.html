@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=1200" />
+        <meta name="author" content="DinoWorks Inc. 디노웍스(주)" />
+        <meta name="apple-mobile-web-app-title" content="디노웍스UI" />
+        <title>카운팅 (스크롤) | 디노웍스(주) UI 라이브러리</title>
+        <meta name="description" content="디노웍스(주) UI 라이브러리 : 카운팅 (스크롤)" />
+        <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="../fa/css/all.min.css" rel="stylesheet" />
+        <link href="../css/digit_counting.css" rel="stylesheet" />
+        <script src="../js/jquery-3.4.1.min.js"></script>
+        <script src="../js/ui_common.js"></script>
+    </head>
+    <body class="sub scroll-basic">
+        <div id="wrapper">
+            <a href="#main" id="skip-nav">본문 바로가기</a>
+            <a href="../index.html" id="go-home" title="홈 화면"><i class="fas fa-home"></i></a>
+            
+            <header id="header">
+                <h1><a href="../index.html"><img alt="DinoWorks" src="../img/logo.png" /><img alt="DinoWorks" src="../img/logo_color.png" /></a></h1>
+                <nav id="gnb">
+                    <ul>
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">제품소개</a></li>
+                        <li><a href="#">고객센터</a></li>
+                    </ul>
+                </nav>
+            </header>
+            
+            <main id="main">
+                <section id="page1" class="scroll-page">
+                    <h2>Page1</h2>
+                    <p class="counting">3245</p>
+                </section>
+                <section id="page2" class="scroll-page">
+                    <h2>Page2</h2>
+                </section>
+                <section id="page3" class="scroll-page">
+                    <h2>Page3</h2>
+                </section>
+                <section id="page4" class="scroll-page">
+                    <h2>Page4</h2>
+                    <ul class="counting">
+                        <li>2355</li>
+                        <li>1054</li>
+                        <li>500</li>
+                    </ul>
+                </section>
+                <section id="page5" class="scroll-page">
+                    <h2>Page5</h2>
+                </section>
+                <section id="page6" class="scroll-page">
+                    <h2><a href="#">Page6</a></h2>
+                </section>
+                <section id="page7" class="scroll-page">
+                    <h2>Page7</h2>
+                </section>
+            </main>
+            
+            <footer id="footer">
+                <p class="copyright">2019 Dinoworks Inc.</p>
+            </footer>
+            
+        </div> <!-- #wrapper  -->
+        
+<script>
+'use strict';
+/*
+setDigitCount('p.counting', 100, 2000);
+
+function setDigitCount(selector, numStep, duration) {
+    var target = Number($(selector).text());
+    var numNow = 0;
+    var numNowComma = '';
+    var timerId = 0;
+    var step = Math.round(target / numStep);
+    var timerSpeed = duration / numStep;
+    
+    $(selector).text(0);
+    timerId = setInterval(function() {
+        numNow += step;
+        if (numNow > target) {
+            numNow = target;
+            numNowComma = numNow.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            $(selector).text(numNowComma);
+            clearInterval(timerId);
+        } else {
+            numNowComma = numNow.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            $(selector).text(numNowComma);
+        }
+    }, timerSpeed);
+}  
+    
+setDigitCount('#page1 p.counting', 27, 1000);
+
+function setDigitCount(selector, step, duration) {
+    var target = Number($(selector).text());
+    var numNow = 0;
+    var numNowComma = '';
+    var countStep = step;
+    var timerSpeed = Math.round(duration / (target / countStep));
+    $(selector).text(0);
+    
+    addNumber();
+    
+    function addNumber() {
+        numNow += countStep;
+        if (numNow >= target) {
+            numNow = target;
+            numNowComma = numNow.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            $(selector).text(numNowComma);
+        } else {
+            numNowComma = numNow.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            $(selector).text(numNowComma);
+            setTimeout(function() {addNumber();}, timerSpeed);
+        }
+    }
+}
+*/
+    
+    
+    
+scrollCounting('p.counting', 33, 2000);
+scrollCounting('ul.counting li', 27, 1500);
+
+function scrollCounting(selector, step, duration) {
+    $(selector).each(function() {
+        var scrollTop = $(document).scrollTop();
+        var $selector = $(this);
+        var target = Number($selector.text());
+        var numNow = 0;
+        var numNowComma = '';
+        var countStep = step;
+        var timerSpeed = Math.round(duration / (target / countStep));
+        var isCounting = false;
+        
+        checkVisibility();
+        
+        $(window).on('scroll resize', function() {
+            scrollTop = $(document).scrollTop();
+            checkVisibility();
+        });
+        
+        function checkVisibility() {
+            var minShow = $selector.offset().top - $(window).height();
+            var maxShow = $selector.offset().top + $selector.outerHeight();
+            if (scrollTop >= minShow && scrollTop <= maxShow) {
+                if (isCounting === false) {
+                    isCounting = true;
+                    addNumber();
+                }
+            } else {
+                numNow = 0;
+            }
+        }
+        
+        function addNumber() {
+            numNow += countStep;
+            if (numNow >= target) {
+                numNow = target;
+                numNowComma = numNow.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                $selector.text(numNowComma);
+                isCounting = false;
+            } else {
+                numNowComma = numNow.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                $selector.text(numNowComma);
+                setTimeout(function() {addNumber();}, timerSpeed);
+            }
+        }
+    });
+}
+</script>
+    </body>
+</html>
+
+

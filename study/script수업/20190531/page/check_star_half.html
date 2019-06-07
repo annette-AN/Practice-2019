@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=1200" />
+        <meta name="author" content="DinoWorks Inc. 디노웍스(주)" />
+        <meta name="apple-mobile-web-app-title" content="디노웍스UI" />
+        <title>별점 UI (0.5점 단위) | 디노웍스(주) UI 라이브러리</title>
+        <meta name="description" content="디노웍스(주) UI 라이브러리 : 별점 UI (0.5점 단위)" />
+        <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="../fa/css/all.min.css" rel="stylesheet" />
+        <link href="../css/check_star.css" rel="stylesheet" />
+        <script src="../js/jquery-3.4.1.min.js"></script>
+        <script src="../js/ui_common.js"></script>
+    </head>
+    <body class="sub banner-slide">
+        <div id="wrapper">
+            <a href="#main" id="skip-nav">본문 바로가기</a>
+            <a href="../index.html" id="go-home" title="홈 화면"><i class="fas fa-home"></i></a>
+            
+            <main id="main">
+                <ul class="movie-list">
+                    <li>
+                        <p class="poster"><img alt="" src="" /></p>
+                        <p class="star"><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a></p>
+                        <input type="hidden" name="movie-1" value="3.5" />
+                    </li>
+                    <li>
+                        <p class="poster"><img alt="" src="" /></p>
+                        <p class="star"><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a></p>
+                        <input type="hidden" name="movie-2" value="4.5" />
+                    </li>
+                    <li>
+                        <p class="poster"><img alt="" src="" /></p>
+                        <p class="star"><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a></p>
+                        <input type="hidden" name="movie-3" value="0" />
+                    </li>
+                    <li>
+                        <p class="poster"><img alt="" src="" /></p>
+                        <p class="star"><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a></p>
+                        <input type="hidden" name="movie-4" value="0" />
+                    </li>
+                    <li>
+                        <p class="poster"><img alt="" src="" /></p>
+                        <p class="star"><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a></p>
+                        <input type="hidden" name="movie-5" value="0" />
+                    </li>
+                    <li>
+                        <p class="poster"><img alt="" src="" /></p>
+                        <p class="star"><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a></p>
+                        <input type="hidden" name="movie-6" value="2" />
+                    </li>
+                    <li>
+                        <p class="poster"><img alt="" src="" /></p>
+                        <p class="star"><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a></p>
+                        <input type="hidden" name="movie-7" value="" />
+                    </li>
+                    <li>
+                        <p class="poster"><img alt="" src="" /></p>
+                        <p class="star"><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a></p>
+                        <input type="hidden" name="movie-8" value="4" />
+                    </li>
+                    <li>
+                        <p class="poster"><img alt="" src="" /></p>
+                        <p class="star"><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a></p>
+                        <input type="hidden" name="movie-9" value="0" />
+                    </li>
+                    <li>
+                        <p class="poster"><img alt="" src="" /></p>
+                        <p class="star"><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a></p>
+                        <input type="hidden" name="movie-10" value="0" />
+                    </li>
+                </ul>
+                
+            </main>
+        </div> <!-- #wrapper  -->
+<script>
+'use strict';
+
+setCheckStar('ul.movie-list li p.star');
+
+function setCheckStar(selector) {
+    
+    // 다수 요소에 동시 적용
+    $(selector).each(function() {
+        var $selector = $(this);    // 선택된 개별요소 별도 저장(이후의 $(this)와 구분되어야 함)
+        var starPoint = Number($(this).parent().find('input').val());
+        var isFixed = (starPoint > 0) ? true : false;
+        //console.log(starPoint + '/' + typeof(starPoint));
+        
+        // 초기 점수값 설정(0이 아닌 점수가 사전에 입력된 경우)
+        if (isFixed === true) {
+            setStarPoint(starPoint);
+        }
+        
+        // 이벤트
+        $selector.find('a').on('mouseenter', function(e) {
+            if (isFixed === true) return false;
+            starPoint = checkPosition($(this), e);
+            setStarPoint(starPoint);
+            
+            $(this).on('mousemove', function(e) {
+                starPoint = checkPosition($(this), e)
+                setStarPoint(starPoint);
+            });
+            
+            $(this).on('mouseleave', function() {
+                starPoint = 0;
+                setStarPoint(starPoint);
+                $(this).off('mousemove mouseleave');
+            });
+        }).on('click', function(e) {
+            if (isFixed === false) {
+                isFixed = true;
+                $(this).closest('li').find('input').val(starPoint);
+                $(this).off('mousemove mouseleave');
+            } else {
+                isFixed = false;
+                starPoint = 0;
+                setStarPoint(starPoint);
+                $(this).closest('li').find('input').val(starPoint);
+            }
+        }).on('keydown', function(e) {
+            if (e.keyCode === 32 && isFixed === false) { // 스페이스바를 클릭한 경우만 실행(Fixed 아닌 경우)
+                var index = $(this).parent().find('a').index($(this));
+                var classNow = $(this).attr('class');   // setStarPoint(index) 실행시 class가 지워지므로 미리 저장
+                switch (classNow) {
+                    case 'half': starPoint = index + 1; break;
+                    case 'full': starPoint = index; break;
+                    default: starPoint = index + 0.5;
+                }
+                setStarPoint(starPoint);
+            }
+        });
+        
+        // 이벤트 발생 위치에 따른 별점 계산
+        function checkPosition(element, event) {
+            var index = element.parent().find('a').index(element);
+            var offsetBox = element.offset().left;
+            var offsetPointer = event.clientX - offsetBox;
+            if (offsetPointer < 13.5) {
+                return (index + 0.5);
+            } else {
+                return (index + 1);
+            }
+        }
+        
+        // 별점 체크(0 ~ 5)
+        function setStarPoint(n) {
+            $selector.find('a').each(function(i) {
+                if ((i + 1) <= n) {
+                    $(this).attr({'class': 'full'});
+                } else if ((i + 1) > n && ((i + 1) - n) === 0.5) {
+                    $(this).attr({'class': 'half'});
+                } else {
+                    $(this).removeClass();
+                }
+            });
+        }
+        
+    });
+}
+
+</script>
+    </body>
+</html>
+
+

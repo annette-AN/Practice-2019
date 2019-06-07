@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=1200" />
+        <meta name="author" content="DinoWorks Inc. 디노웍스(주)" />
+        <meta name="apple-mobile-web-app-title" content="디노웍스UI" />
+        <title>텍스트 애니메이션 | 디노웍스(주) UI 라이브러리</title>
+        <meta name="description" content="디노웍스(주) UI 라이브러리 : 텍스트 애니메이션" />
+        <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="../fa/css/all.min.css" rel="stylesheet" />
+        <link href="../css/text_animation.css" rel="stylesheet" />
+        <script src="../js/jquery-3.4.1.min.js"></script>
+        <script src="../js/ui_common.js"></script>
+    </head>
+    <body class="sub text-animation">
+        <div id="wrapper">
+            <a href="#main" id="skip-nav">본문 바로가기</a>
+            <a href="../index.html" id="go-home" title="홈 화면"><i class="fas fa-home"></i></a>
+            
+            <main id="main">
+                <p class="text type1">TEXT ANIMATION</p>
+                <p class="text type2">TEXT ANIMATION</p>
+                <p class="text type3">TEXT ANIMATION</p>
+                <p class="text type4">TEXT ANIMATION</p>
+                <p class="text type5">TEXT ANIMATION</p>                
+            </main>
+            
+        </div> <!-- #wrapper  -->
+        
+<script>
+'use strict';
+
+setTextAnimation('p.text.type1', 'show-up');
+setTextAnimation('p.text.type2', 'fly-in');
+setTextAnimation('p.text.type3', 'rotate-in');
+
+function setTextAnimation(selector, className) {
+    var text = $(selector).text();
+    var numText = text.length;
+    var newHtml = '';
+    var effectType = className;
+    
+    for (var i = 0; i < numText; i++) {
+        if (text[i] === ' ') {
+            newHtml += '<span class="blank"></span>';
+        } else {
+            newHtml += '<span>' + text[i] + ' </span>';
+        }
+    }
+    $(selector).html(newHtml);
+    $(selector).find('span').each(function(i) {
+        setTimeout(function() {$(selector).find('span:eq(' + i + ')').addClass(effectType);}, (i * 80));
+    });
+}
+    
+    
+    
+    
+</script>
+    </body>
+</html>
+
+

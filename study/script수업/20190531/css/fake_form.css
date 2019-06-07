@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* reset */
+body {margin: 0;}
+h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, table {margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 600;}
+main {display: block;}
+a {color: inherit; text-decoration: inherit;}
+a img {border: none;}
+img {vertical-align: middle;}
+li {list-style: none;}
+address, em, i, cite {font-style: normal;}
+table {border-collapse: collapse;}
+table caption {overflow: hidden; width: 0; height: 0;}
+i.fas, i.far, i.fab {vertical-align: middle; display: inline-block;}
+i.fas span, i.far span, i.fab span {position: absolute; overflow: hidden; text-indent: -999px;}
+.mobile {display: none !important;}
+br.only-m {content: '';}
+br.only-m:after {content: '\00a0';}
+div.hidden {position: absolute; left: -9999px;}
+
+
+/* common */
+body {font-family: '맑은 고딕', 'Malgun Gothic', '돋움', Dotum, Helvetica, AppleSDGothicNeo, Sans-serif; color: #666666; font-size: 13px; background-color: #ffffff;}
+#wrapper {min-width: 1100px; overflow: hidden; min-height: 500px;}
+#skip-nav {position: fixed; left: 0; top: -36px; width: 100%; line-height: 35px; font-size: 16px; border-bottom: 1px solid #ffffff; color: #ffffff; background: #999999; background: rgba(0, 0, 0, 0.6); text-align: center; z-index: 10000; transition: top 0.3s;}
+#skip-nav:focus {top: 0;}
+#go-home {position: fixed; right: 20px; top: 20px; width: 60px; height: 60px; font-size: 24px; text-align: center; line-height: 56px; border-radius: 100px; color: #ffffff; background: #ffcc00; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); z-index: 10000;}
+
+#main {padding: 50px;}
+
+
+div.check-box {background: #ffffff; border: 1px solid #e2e3e3; border-radius: 3px; font-size: 16px; margin: 30px 0;}
+div.check-box p.check-all {padding: 0 12px; font-size: 18px; line-height: 40px; border-bottom: 1px dashed #6e6e6e;}
+div.check-box ul.check-list {padding: 10px 12px;}
+div.check-box ul.check-list li {position: relative;}
+div.check-box ul.check-list li + li {margin-top: 10px;}
+div.check-box ul.check-list li a {position: absolute; right: 0; color: #395aff;}
+
+input[type=checkbox] {position: absolute; opacity: 0;}
+input[type=checkbox] + label span.check {display: inline-block; vertical-align: middle; width: 39px; height: 30px; background: url(../img/fake_form/bg_checkbox_off.png) 0 0 no-repeat; background-size: 100% auto; margin-right: 15px; position: relative; z-index: 10; box-sizing: border-box;}
+input[type=checkbox] + label span.check:after {content: ''; position: absolute; left: 0; top: 0; width: 30px; height: 30px; box-sizing: border-box; border: 2px solid #e4007f; opacity: 0;}
+input[type=checkbox] + label span.check.on {background-image: url(../img/fake_form/bg_checkbox_on.png);}
+input[type=checkbox]:focus + label span.check:after {opacity: 1;}
+input[type=radio] {position: absolute; opacity: 0;}
+input[type=radio] + label span.check {display: inline-block; vertical-align: middle; width: 25px; height: 25px; background: url(../img/fake_form/bg_radio_off.png) 0 0 no-repeat; background-size: 100% auto; margin-right: 12px; position: relative; z-index: 10; box-sizing: border-box;}
+input[type=radio] + label span.check:after {content: ''; position: absolute; left: 0; top: 0; width: 25px; height: 25px; box-sizing: border-box; border: 2px solid #e4007f; opacity: 0; border-radius: 20px;}
+input[type=radio] + label span.check.on {background-image: url(../img/fake_form/bg_radio_on.png);}
+input[type=radio]:focus + label span.check:after {opacity: 1;}
+

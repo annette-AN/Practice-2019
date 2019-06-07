@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=1200" />
+        <meta name="author" content="DinoWorks Inc. 디노웍스(주)" />
+        <meta name="apple-mobile-web-app-title" content="디노웍스UI" />
+        <title>리스트 UI (드래그) | 디노웍스(주) UI 라이브러리</title>
+        <meta name="description" content="디노웍스(주) UI 라이브러리 : 리스트 UI (드래그)" />
+        <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
+        <link href="../css/list_drag.css" rel="stylesheet" />
+        <script src="../js/jquery-3.3.1.min.js"></script>
+        <script src="../js/ui_library_common.js"></script>
+    </head>
+    <body class="sub scroll-basic">
+        <div id="wrapper">
+            <a href="#main" id="skip-nav">본문 바로가기</a>
+            <a href="../index.html" id="go-home" title="홈 화면"><i class="fas fa-home"></i></a>
+            
+            <main id="main">
+                <ul class="list-drag">
+                    <li>
+                        <a href="#" class="move" title="1번 리스트 이동"><i class="fas fa-bars"></i></a>
+                        <a href="#" class="detail">list 1</a>
+                        <p class="function">
+                            <a href="#" class="delete">삭제</a>
+                            <a href="#" class="save">저장</a>
+                            <a href="#" class="cancel">취소</a>
+                        </p>
+                        <input type="hidden" name="list_order[]" id="" class="" value="" />
+                    </li>
+                    <li>
+                        <a href="#" class="move" title="2번 리스트 이동"><i class="fas fa-bars"></i></a>
+                        <a href="#" class="detail">list 2</a>
+                        <p class="function">
+                            <a href="#" class="delete">삭제</a>
+                            <a href="#" class="save">저장</a>
+                            <a href="#" class="cancel">취소</a>
+                        </p>
+                        <input type="hidden" name="list_order[]" id="" class="" value="" />
+                    </li>
+                    <li>
+                        <a href="#" class="move" title="3번 리스트 이동"><i class="fas fa-bars"></i></a>
+                        <a href="#" class="detail">list 3</a>
+                        <p class="function">
+                            <a href="#" class="delete">삭제</a>
+                            <a href="#" class="save">저장</a>
+                            <a href="#" class="cancel">취소</a>
+                        </p>
+                        <input type="hidden" name="list_order[]" id="" class="" value="" />
+                    </li>
+                    <li>
+                        <a href="#" class="move" title="4번 리스트 이동"><i class="fas fa-bars"></i></a>
+                        <a href="#" class="detail">list 4</a>
+                        <p class="function">
+                            <a href="#" class="delete">삭제</a>
+                            <a href="#" class="save">저장</a>
+                            <a href="#" class="cancel">취소</a>
+                        </p>
+                        <input type="hidden" name="list_order[]" id="" class="" value="" />
+                    </li>
+                    <li>
+                        <a href="#" class="move" title="5번 리스트 이동"><i class="fas fa-bars"></i></a>
+                        <a href="#" class="detail">list 5</a>
+                        <p class="function">
+                            <a href="#" class="delete">삭제</a>
+                            <a href="#" class="save">저장</a>
+                            <a href="#" class="cancel">취소</a>
+                        </p>
+                        <input type="hidden" name="list_order[]" id="" class="" value="" />
+                    </li>
+                    <li>
+                        <a href="#" class="move" title="6번 리스트 이동"><i class="fas fa-bars"></i></a>
+                        <a href="#" class="detail">list 6</a>
+                        <p class="function">
+                            <a href="#" class="delete">삭제</a>
+                            <a href="#" class="save">저장</a>
+                            <a href="#" class="cancel">취소</a>
+                        </p>
+                        <input type="hidden" name="list_order[]" id="" class="" value="" />
+                    </li>
+                    <li>
+                        <a href="#" class="move" title="7번 리스트 이동"><i class="fas fa-bars"></i></a>
+                        <a href="#" class="detail">list 7</a>
+                        <p class="function">
+                            <a href="#" class="delete">삭제</a>
+                            <a href="#" class="save">저장</a>
+                            <a href="#" class="cancel">취소</a>
+                        </p>
+                        <input type="hidden" name="list_order[]" id="" class="" value="" />
+                    </li>
+                    <li>
+                        <a href="#" class="move" title="8번 리스트 이동"><i class="fas fa-bars"></i></a>
+                        <a href="#" class="detail">list 8</a>
+                        <p class="function">
+                            <a href="#" class="delete">삭제</a>
+                            <a href="#" class="save">저장</a>
+                            <a href="#" class="cancel">취소</a>
+                        </p>
+                        <input type="hidden" name="list_order[]" id="" class="" value="" />
+                    </li>
+                    <li>
+                        <a href="#" class="move" title="9번 리스트 이동"><i class="fas fa-bars"></i></a>
+                        <a href="#" class="detail">list 9</a>
+                        <p class="function">
+                            <a href="#" class="delete">삭제</a>
+                            <a href="#" class="save">저장</a>
+                            <a href="#" class="cancel">취소</a>
+                        </p>
+                        <input type="hidden" name="list_order[]" id="" class="" value="" />
+                    </li>
+                    <li>
+                        <a href="#" class="move" title="10번 리스트 이동"><i class="fas fa-bars"></i></a>
+                        <a href="#" class="detail">list 10</a>
+                        <p class="function">
+                            <a href="#" class="delete">삭제</a>
+                            <a href="#" class="save">저장</a>
+                            <a href="#" class="cancel">취소</a>
+                        </p>
+                        <input type="hidden" name="list_order[]" id="" class="" value="" />
+                    </li>
+                    <li>
+                        <a href="#" class="move" title="11번 리스트 이동"><i class="fas fa-bars"></i></a>
+                        <a href="#" class="detail">list 11</a>
+                        <p class="function">
+                            <a href="#" class="delete">삭제</a>
+                            <a href="#" class="save">저장</a>
+                            <a href="#" class="cancel">취소</a>
+                        </p>
+                        <input type="hidden" name="list_order[]" id="" class="" value="" />
+                    </li>
+                </ul>
+                
+            </main>
+            
+        </div> <!-- #wrapper  -->
+        
+<script>
+'use strict';
+
+setListDrag('ul.list-drag');    
+
+function setListDrag(selector) {
+    var startY = 0;
+    var delY = 0;
+    var offsetY = 0;
+    var dragList = null;
+    var eachHeight = $(selector).find('li:eq(0)').outerHeight();
+    console.log(eachHeight);
+    
+    $(selector).find('li').each(function() {
+        
+    });
+    
+    $(selector).find('li a.move').on('mousedown', function(e) {
+        dragList = $(this).parent();
+        dragList.css({'transition': 'none'});
+        startY = e.clientY;
+        offsetY = dragList.position().top;
+        dragList.addClass('move');
+        $(document).on('mousemove', function(e) {
+            e.preventDefault();
+            offsetY = dragList.position().top;
+            console.log(offsetY);
+            delY = e.clientY - startY;
+            dragList.css({'top': delY + 'px'});
+        });
+        $(document).on('mouseup', function(e) {
+            dragList.removeClass('move');
+            dragList.css({'transition': 'top 0.5s', 'top': 0}).one('transitionend', function() {
+                $(this).css({'transition': 'none'});
+            });
+            $(document).off('mousemove mouseup')
+        });
+    });
+    
+    
+    
+}
+    
+    
+    
+    
+</script>
+    </body>
+</html>
+
+

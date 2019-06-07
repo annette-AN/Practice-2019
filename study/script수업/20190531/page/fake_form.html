@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=1200" />
+        <meta name="author" content="DinoWorks Inc. 디노웍스(주)" />
+        <meta name="apple-mobile-web-app-title" content="디노웍스UI" />
+        <title>Fake Form | 디노웍스(주) UI 라이브러리</title>
+        <meta name="description" content="디노웍스(주) UI 라이브러리 : Fake Form" />
+        <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="../fa/css/all.min.css" rel="stylesheet" />
+        <link href="../css/fake_form.css" rel="stylesheet" />
+        <script src="../js/jquery-3.4.1.min.js"></script>
+        <script src="../js/ui_common.js"></script>
+    </head>
+    <body class="sub scroll-basic">
+        <div id="wrapper">
+            <a href="#main" id="skip-nav">본문 바로가기</a>
+            <a href="../index.html" id="go-home" title="홈 화면"><i class="fas fa-home"></i></a>
+            
+            <main id="main">
+                
+                <div class="check-box">
+                    <p class="check-all"><input type="checkbox" name="" id="agree-all" /><label for="agree-all"><span class="check"></span>아래 내용에모두 동의합니다. (전체동의)</label></p>
+                    <ul class="check-list">
+                        <li><input type="checkbox" name="" id="agree1" /><label for="agree1"><span class="check"></span>카드사 서비스 이용약관</label></li>
+                        <li><input type="checkbox" name="" id="agree2" /><label for="agree2"><span class="check"></span>본인확인 서비스 이용약관</label></li>
+                        <li><input type="checkbox" name="" id="agree3" /><label for="agree3"><span class="check"></span>개인정보 수집 및 이용동의</label></li>
+                        <li><input type="checkbox" name="" id="agree4" /><label for="agree4"><span class="check"></span>고유식별정보 처리동의</label></li>
+                    </ul>
+                </div>
+                
+                <div class="check-box">
+                    <ul class="check-list">
+                        <li><input type="radio" name="os" id="os1" checked="checked" /><label for="os1"><span class="check"></span>Android</label></li>
+                        <li><input type="radio" name="os" id="os2" /><label for="os2"><span class="check"></span>iOS</label></li>
+                        <li><input type="radio" name="os" id="os3" /><label for="os3"><span class="check"></span>Window</label></li>
+                        <li><input type="radio" name="os" id="os4" /><label for="os4"><span class="check"></span>Linux</label></li>
+                    </ul>
+                </div>
+                
+                
+            </main>
+            
+        </div> <!-- #wrapper  -->
+        
+<script>
+'use strict';
+    
+    
+    
+    
+setFakeCheckBox();
+function setFakeCheckBox() {
+    // 진입시 상태를 체크하여 표시
+    $('input[type=checkbox]').each(function() {
+        if ($(this).prop('checked') === true) {
+            $(this).next().find('span.check').addClass('on');
+        } else {
+            $(this).next().find('span.check').addClass('off');
+        }
+    });
+    
+    // 전체동의
+    $('p.check-all input[type=checkbox]').on('change', function() {
+        if ($(this).prop('checked') === true) {
+            $(this).closest('div').find('input[type=checkbox]').prop({'checked': true});
+        } else {
+            $(this).closest('div').find('input[type=checkbox]').prop({'checked': false});
+        }
+    });
+    
+    // 변화시 상태 반영
+    $('input[type=checkbox]').on('change', function() {
+        $('input[type=checkbox]').each(function() {
+            $(this).next().find('span.check').removeClass('on off');
+            if ($(this).prop('checked') === true) {
+                $(this).next().find('span.check').addClass('on');
+            } else {
+                $(this).next().find('span.check').addClass('off');
+            }
+        });
+    });
+}
+
+setFakeRadioButton();
+function setFakeRadioButton() {
+    // 진입시 상태를 체크하여 표시
+    $('input[type=radio]').each(function() {
+        if ($(this).prop('checked') === true) {
+            $(this).next().find('span.check').addClass('on');
+        } else {
+            $(this).next().find('span.check').addClass('off');
+        }
+    });
+    
+    // 변화시 상태 반영
+    $('input[type=radio]').on('change', function() {
+        $('input[type=radio]').each(function() {
+            $(this).next().find('span.check').removeClass('on off');
+            if ($(this).prop('checked') === true) {
+                $(this).next().find('span.check').addClass('on');
+            } else {
+                $(this).next().find('span.check').addClass('off');
+            }
+        });
+    });
+}
+
+</script>
+    </body>
+</html>
+
+

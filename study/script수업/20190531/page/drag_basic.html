@@ -31,42 +31,91 @@
 <script>
 'use strict';
 
-    
-setDrag('a.box1');
-setDrag('a.box2');
 
+var startX = 0;
+var startY = 0;
+var delX = 0;
+var delY = 0;
+var offsetX = 0;
+var offsetY = 0;
+var isClickBlocked = true;
+
+setDrag('.box1');
+setDrag('.box2');
 function setDrag(selector) {
-    var startX = 0;
-    var startY = 0;
-    var delX = 0;
-    var delY = 0;
-    var offsetX = 0;
-    var offsetY = 0;
-    var isClickAllowed = true;
 
-    $(selector).on('mousedown', function(e) {
+    $(selector).on('mousedown', function(e){
+        e.preventDefault();
         startX = e.clientX;
         startY = e.clientY;
-        offsetX = $(selector).position().left;
-        offsetY = $(selector).position().top;
-        //console.log(startX + ' / ' + startY);
-        $(document).on('mousemove', function(e) {
-            e.preventDefault();
+        offsetX = $(this).position().left;
+        offsetY = $(this).position().top;
+        
+        // console.log(startX +'/'+ startY)
+
+        $(document).on('mousemove', function(e){
             delX = e.clientX - startX;
             delY = e.clientY - startY;
+
+            // console.log('move');
+            if (Math.abs(delX) > 10 || Math.abs(delY) > 10) {
+                isClickBlocked = true;
+            }
             $(selector).css({'left': (offsetX + delX) + 'px', 'top': (offsetY + delY) + 'px'});
-            if (Math.abs(delX) > 10 || Math.abs(delY) > 10) isClickAllowed = false;
+            console.log(delX +'/'+ delY);
         });
-        $(document).on('mouseup', function(e) {
+
+        $(document).on('mouseup', function(){
             $(document).off('mousemove mouseup');
+            // console.log('up');
         });
-    }).on('click', function(e) {
-        if (isClickAllowed === false) {
+    }).on('click', function(e){
+        if (isClickBlocked === true) {
             e.preventDefault();
-            isClickAllowed = true;
+            isClickBlocked = false;
         }
     });
 }
+
+
+
+
+    
+// setDrag('a.box1');
+// setDrag('a.box2');
+
+// function setDrag(selector) {
+//     var startX = 0;
+//     var startY = 0;
+//     var delX = 0;
+//     var delY = 0;
+//     var offsetX = 0;
+//     var offsetY = 0;
+//     var isClickAllowed = true;
+
+//     $(selector).on('mousedown', function(e) {
+//         startX = e.clientX;
+//         startY = e.clientY;
+//         offsetX = $(selector).position().left;
+//         offsetY = $(selector).position().top;
+//         //console.log(startX + ' / ' + startY);
+//         $(document).on('mousemove', function(e) {
+//             e.preventDefault();
+//             delX = e.clientX - startX;
+//             delY = e.clientY - startY;
+//             $(selector).css({'left': (offsetX + delX) + 'px', 'top': (offsetY + delY) + 'px'});
+//             if (Math.abs(delX) > 10 || Math.abs(delY) > 10) isClickAllowed = false;
+//         });
+//         $(document).on('mouseup', function(e) {
+//             $(document).off('mousemove mouseup');
+//         });
+//     }).on('click', function(e) {
+//         if (isClickAllowed === false) {
+//             e.preventDefault();
+//             isClickAllowed = true;
+//         }
+//     });
+// }
 
 </script>
     </body>

@@ -21,11 +21,13 @@ a {
 
 input, button, select {
   display: inline-block;
+  margin: 0px;
+  padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: 0 none;
   border-radius: none;
-  vertical-align: baseline;
+  vertical-align: middle;
   white-space: normal;
   background: none;
   line-height: 1;

@@ -1,0 +1,94 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* reset */
+body {margin: 0;}
+h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, table {margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 600;}
+main {display: block;}
+a {color: inherit; text-decoration: inherit;}
+a img {border: none;}
+img {vertical-align: middle;}
+li {list-style: none;}
+address, em, i, cite {font-style: normal;}
+table {border-collapse: collapse;}
+table caption {overflow: hidden; width: 0; height: 0;}
+i.fas, i.far, i.fab {vertical-align: middle; display: inline-block;}
+i.fas span, i.far span, i.fab span {position: absolute; overflow: hidden; text-indent: -999px;}
+.mobile {display: none !important;}
+br.only-m {content: '';}
+br.only-m:after {content: '\00a0';}
+div.hidden {position: absolute; left: -9999px;}
+
+
+/* common */
+body {font-family: '맑은 고딕', 'Malgun Gothic', '돋움', Dotum, Helvetica, AppleSDGothicNeo, Sans-serif; color: #666666; font-size: 13px; background-color: #ffffff;}
+#wrapper {min-width: 1100px; overflow: hidden; min-height: 500px;}
+#skip-nav {position: fixed; left: 0; top: -36px; width: 100%; line-height: 35px; font-size: 16px; border-bottom: 1px solid #ffffff; color: #ffffff; background: #999999; background: rgba(0, 0, 0, 0.6); text-align: center; z-index: 10000; transition: top 0.3s;}
+#skip-nav:focus {top: 0;}
+#go-home {position: fixed; right: 20px; top: 20px; width: 60px; height: 60px; font-size: 24px; text-align: center; line-height: 56px; border-radius: 100px; color: #ffffff; background: #ffcc00; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); z-index: 10000;}
+
+#header {position: fixed; left: 0; top: 0; width: 100%; height: 100px; background: rgba(0, 0, 0, 0.6); z-index: 100; transition: all 0.5s;}
+#header h1 {position: absolute; left: 30px; top: 50%; transform: translate(0, -50%); width: 180px; height: 56px;}
+#header h1 img {width: 100%; position: absolute; left: 0; top: 0; opacity: 0; transition: all 0.5s;}
+#header h1 img:first-child {opacity: 1;}
+#gnb {color: #ffffff; font-size: 20px; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); transition: all 0.5s;}
+#gnb ul li {float: left;}
+#gnb ul li + li {margin-left: 100px;}
+#header.on {height: 70px; background: #ffffff; box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);}
+#header.on h1 img {opacity: 0;}
+#header.on h1 img + img {opacity: 1;}
+#header.on #gnb {color: #666666; font-size: 16px;}
+
+#main {position: relative;}
+
+p.text {font-size: 80px; text-align: center; font-weight: bold; margin: 20px 0;}
+p.text span {display: inline-block; opacity: 0;}
+p.text span.blank {width: 0.3em;}
+p.text span.show-up {animation: show-up 0.8s ease-out 0s 1 normal forwards;}
+p.text span.fly-in {animation: fly-in 0.8s ease-out 0s 1 normal forwards;}
+p.text span.rotate-in {animation: rotate-in 1s ease-out 0s 1 normal forwards;}
+
+
+@keyframes show-up {
+    0% {opacity: 0; transform: translate(0, 20px);}
+    100% {opacity: 1; transform: translate(0, 0);}
+}
+@keyframes fly-in {
+    0% {opacity: 0; transform: scale(2);}
+    100% {opacity: 1; transform: scale(1);}
+}
+@keyframes rotate-in {
+    0% {opacity: 0; transform: rotate(40deg);}
+    10% {opacity: 0.5; transform: rotate(-30deg);}
+    25% {opacity: 0.6; transform: rotate(20deg);}
+    60% {opacity: 0.8; transform: rotate(-10deg);}
+    100% {opacity: 1; transform: rotate(0deg);}
+}
+
+
+
+
+/*
+animation 축약 표현
+animation: main-bg-animation 3s ease-out 0.1s 1 normal forwards running;
+animation: name duration timing-function delay iteration-count direction fill-mode play-state
+duration: 0(default), time, initial, inherit
+timing-function: ease(default), linear, ease-in, ease-out, ease-in-out, step-start, step-end, steps(int, start|end), cubic-bezier(n, n, n, n), initial, inherit
+deley: 0s(default), time, initial, inherit
+direction: normal(default), reverse, alternate, alternate-reverse, initial, inherit
+iteration-count: 1(default), number, infinite, initial, inherit
+fill-mode: none(default), forwards, backwards, both, initial, inherit
+play-state: running(default), paused, initial, inherit  (IE에서는 축약표현에 포함시 동작하지 않음, 별도로 사용)
+
+[최종 사용 예시]
+animation: main-bg-animation 3s ease-out 0s 1 normal forwards;
+animation-play-state: running;
+*/
+
+
+
+
+
+
+

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=1200" />
+        <meta name="author" content="DinoWorks Inc. 디노웍스(주)" />
+        <meta name="apple-mobile-web-app-title" content="디노웍스UI" />
+        <title>레이어 팝업(Step1) | 디노웍스(주) UI 라이브러리</title>
+        <meta name="description" content="디노웍스(주) UI 라이브러리 : 레이어 팝업(Step1)" />
+        <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="../fa/css/all.min.css" rel="stylesheet" />
+        <link href="../css/layer_popup.css" rel="stylesheet" />
+        <script src="../js/jquery-3.4.1.min.js"></script>
+        <script src="../js/ui_common.js"></script>
+    </head>
+    <body class="sub layer-popup step1">
+        <div id="wrapper">
+            <a href="#main" id="skip-nav">본문 바로가기</a>
+            <a href="../index.html" id="go-home" title="홈 화면"><i class="fas fa-home"></i></a>
+            
+            <main id="main">
+                <ul class="popup-button">
+                    <li><a href="#" class="btn" onclick="openLayerPopup('#layer-popup1', this, 500, 500);">레이어 팝업창1</a></li>
+                    <li><a href="#" class="btn" onclick="openLayerPopup('#layer-popup2', this, 800, 600);">레이어 팝업창2</a></li>
+                    <li><a href="#" class="btn" onclick="openLayerPopup('#layer-popup3', this, 400, 400);">레이어 팝업창3</a></li>
+                    <li><a href="#" class="btn" onclick="openLayerPopup('#layer-popup1', this, 1000, 400);">레이어 팝업창4</a></li>
+                    <li><a href="#" class="btn" onclick="openLayerPopup('#layer-popup3', this);">레이어 팝업창5</a></li>
+                </ul>
+                
+                
+            </main>
+            
+        </div> <!-- #wrapper  -->
+        
+        <div id="layer-popup1" class="layer-popup">
+            <div class="header">
+                <h3>레이어 팝업창 1</h3>
+                <a href="#" class="close"><i class="fas fa-times"></i></a>
+            </div>
+            <div class="body">
+                <h4>레이어 팝업창 콘텐츠</h4>
+                <ul class="content">
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                </ul>
+                <h4>레이어 팝업창 콘텐츠</h4>
+                <ul class="content">
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                </ul>
+            </div>
+            <div class="footer">
+                <p><img alt="" src="../img/logo.png" /></p>
+            </div>
+        </div>
+        
+        <div id="layer-popup2" class="layer-popup">
+            <div class="header">
+                <h3>레이어 팝업창 2</h3>
+                <a href="#" class="close"><i class="fas fa-times"></i></a>
+            </div>
+            <div class="body">
+                <h4>레이어 팝업창 콘텐츠</h4>
+                <ul class="content">
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                </ul>
+            </div>
+            <div class="footer">
+                <p><img alt="" src="../img/logo.png" /></p>
+            </div>
+        </div>
+        
+        <div id="layer-popup3" class="layer-popup">
+            <div class="header">
+                <h3>레이어 팝업창 2</h3>
+                <a href="#" class="close"><i class="fas fa-times"></i></a>
+            </div>
+            <div class="body">
+                <h4>레이어 팝업창 콘텐츠</h4>
+                <ul class="content">
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                    <li><a href="#">내용 000</a></li>
+                </ul>
+            </div>
+            <div class="footer">
+                <p><img alt="" src="../img/logo.png" /></p>
+            </div>
+        </div>
+        
+<script>
+'use strict';
+
+function openLayerPopup(selector, returnElement, width, height) {
+    // 창크기 조정
+    if (width === undefined) width = 500;
+    if (height === undefined) height = 600;
+    $(selector).css({'width': width + 'px', 'height': height + 'px'});
+    
+    // 마스크 및 창 표시
+    $(selector).before('<div id="layer-mask"></div>').attr({'tabIndex': 0}).css({'display': 'block'});
+    $(selector).trigger('focus');
+    
+    // 창닫기
+    $(selector).find('a.close').one('click', function() {
+        $(returnElement).trigger('focus');
+        $('#layer-mask').remove();
+        $(selector).find('a.return').remove();
+        $(selector).css({'display': 'none'});
+    });
+}
+
+
+</script>
+    </body>
+</html>
+
+

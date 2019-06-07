@@ -1,3 +1,7 @@
+body {
+  color: #2D3138;
+}
+
 main {
   min-height: calc(100vh - 61px);
   padding: 2% 12%;
@@ -14,11 +18,7 @@ table {
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
 
-table tr + tr {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-table th {
+table td, table th {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -36,12 +36,12 @@ header.open + main {
   right: 0%;
   display: block;
   width: 8%;
-  padding: 0.8% 0%;
+  line-height: 30px;
   color: #fff;
   text-align: center;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: bold;
-  background: #F40000;
+  background: #E9595A;
 }
 
 .list-search h2 {
@@ -59,6 +59,10 @@ header.open + main {
   height: 35px;
 }
 
+.list-search table td label + label {
+  margin-left: 10px;
+}
+
 .list-search table td input[type="text"] {
   width: calc(100% - 110px);
 }
@@ -67,10 +71,12 @@ header.open + main {
   border: 1px solid gray;
   border-radius: 0;
   height: 20px;
+  line-height: 13px;
 }
 
-.list-search table td label + label {
-  margin-left: 10px;
+.list-search table td select {
+  padding: 0px 15px 0px 5px;
+  background: url(../../img/icon/arrow-both.png) no-repeat right center/15px;
 }
 
 .list-search table td i {
@@ -81,16 +87,15 @@ header.open + main {
   background: #F4F5F7;
 }
 
-.list-search table td.no-design {
+.list-search table td.no-bg {
   background: none;
-  border: none;
 }
 
 .list-search button {
   display: block;
   margin: 3% auto 0%;
   width: 6%;
-  padding: 0.6% 0%;
+  line-height: 30px;
   font-size: 12px;
   background: #888;
   color: #fff;
@@ -106,6 +111,14 @@ header.open + main {
   font-size: 13px;
 }
 
+.list-board table tr:hover {
+  background: #f5f5f5;
+}
+
+.list-board table tr a:hover {
+  text-decoration: underline;
+}
+
 .list-board table th {
   height: 30px;
   background: #F4F5F7;
@@ -119,10 +132,14 @@ header.open + main {
 .list-board table td:nth-child(2) {
   text-align: left;
   padding-left: 14px;
+  max-width: 1px;
 }
 
-.list-board table td:nth-child(2) a:hover {
-  text-decoration: underline;
+.list-board table td:nth-child(2) a {
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .list-board table td:last-child span + span {

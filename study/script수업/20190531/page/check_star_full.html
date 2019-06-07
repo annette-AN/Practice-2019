@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=1200" />
+        <meta name="author" content="DinoWorks Inc. 디노웍스(주)" />
+        <meta name="apple-mobile-web-app-title" content="디노웍스UI" />
+        <title>별점 UI (1점 단위) | 디노웍스(주) UI 라이브러리</title>
+        <meta name="description" content="디노웍스(주) UI 라이브러리 : 별점 UI (1점 단위)" />
+        <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="../fa/css/all.min.css" rel="stylesheet" />
+        <link href="../css/check_star.css" rel="stylesheet" />
+        <script src="../js/jquery-3.4.1.min.js"></script>
+        <script src="../js/ui_common.js"></script>
+    </head>
+    <body class="sub banner-slide">
+        <div id="wrapper">
+            <a href="#main" id="skip-nav">본문 바로가기</a>
+            <a href="../index.html" id="go-home" title="홈 화면"><i class="fas fa-home"></i></a>
+            
+            <main id="main">
+                <ul class="movie-list">
+                    <li>
+                        <p class="poster"><img alt="" src="" /></p>
+                        <p class="star"><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a></p>
+                        <input type="hidden" name="movie-1" value="3" />
+                    </li>
+                    <li>
+                        <p class="poster"><img alt="" src="" /></p>
+                        <p class="star"><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a></p>
+                        <input type="hidden" name="movie-2" value="4" />
+                    </li>
+                    <li>
+                        <p class="poster"><img alt="" src="" /></p>
+                        <p class="star"><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a></p>
+                        <input type="hidden" name="movie-3" value="0" />
+                    </li>
+                    <li>
+                        <p class="poster"><img alt="" src="" /></p>
+                        <p class="star"><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a></p>
+                        <input type="hidden" name="movie-4" value="0" />
+                    </li>
+                    <li>
+                        <p class="poster"><img alt="" src="" /></p>
+                        <p class="star"><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a></p>
+                        <input type="hidden" name="movie-5" value="0" />
+                    </li>
+                    <li>
+                        <p class="poster"><img alt="" src="" /></p>
+                        <p class="star"><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a></p>
+                        <input type="hidden" name="movie-6" value="0" />
+                    </li>
+                    <li>
+                        <p class="poster"><img alt="" src="" /></p>
+                        <p class="star"><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a></p>
+                        <input type="hidden" name="movie-7" value="" />
+                    </li>
+                    <li>
+                        <p class="poster"><img alt="" src="" /></p>
+                        <p class="star"><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a></p>
+                        <input type="hidden" name="movie-8" value="4" />
+                    </li>
+                    <li>
+                        <p class="poster"><img alt="" src="" /></p>
+                        <p class="star"><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a></p>
+                        <input type="hidden" name="movie-9" value="0" />
+                    </li>
+                    <li>
+                        <p class="poster"><img alt="" src="" /></p>
+                        <p class="star"><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a><a href="#">★</a></p>
+                        <input type="hidden" name="movie-10" value="0" />
+                    </li>
+                </ul>
+                
+            </main>
+        </div> <!-- #wrapper  -->
+<script>
+'use strict';
+
+setCheckStar('ul.movie-list li p.star');
+    
+function setCheckStar(selector) {
+    $(selector).each(function() {
+        var $selector = $(this);
+        var starPoint = Number($selector.next().val());
+        var isFixed = false;
+        
+        if (starPoint > 0) {
+            isFixed = true;
+            $selector.find('a:eq(' + starPoint + ')').prevAll().addClass('full');
+        }
+
+        $selector.find('a').on('mouseenter', function() {
+            if (isFixed === true) return false;
+            $(this).prevAll().addClass('full');
+            $(this).addClass('full');
+            $(this).nextAll().removeClass('full');
+        });
+        $selector.on('mouseleave', function() {
+            if (isFixed === true) return false;
+            $(this).find('a').removeClass('full');
+        });
+
+        $selector.find('a').on('click', function() {
+            if (isFixed === false) {
+                $(this).trigger('mouseenter');
+                isFixed = true;
+                var score = $selector.find('a').index($(this)) + 1;
+                $selector.next().val(score);
+            } else {
+                isFixed = false;
+                $(this).parent().find('a').removeClass('full');
+            }
+        });
+    });
+}
+
+</script>
+    </body>
+</html>
+
+

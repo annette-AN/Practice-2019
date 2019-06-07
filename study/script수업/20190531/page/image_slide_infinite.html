@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=1200" />
+        <meta name="author" content="DinoWorks Inc. 디노웍스(주)" />
+        <meta name="apple-mobile-web-app-title" content="디노웍스UI" />
+        <title>이미지 슬라이드(드래그) | 디노웍스(주) UI 라이브러리</title>
+        <meta name="description" content="디노웍스(주) UI 라이브러리 : 이미지 슬라이드(드래그)" />
+        <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="../fa/css/all.min.css" rel="stylesheet" />
+        <link href="../css/image_slide.css" rel="stylesheet" />
+        <script src="../js/jquery-3.4.1.min.js"></script>
+        <script src="../js/ui_common.js"></script>
+    </head>
+    <body class="sub image-slide drag">
+        <div id="wrapper">
+            <a href="#main" id="skip-nav">본문 바로가기</a>
+            <a href="../index.html" id="go-home" title="홈 화면"><i class="fas fa-home"></i></a>
+            
+            <main id="main">
+                <div class="image-slide">
+                    <div class="box">
+                        <ul class="slide">
+                            <li><a href="image_slide_infinite.html"><img alt="송지아리조트 골프장 전경(오션코스)" src="../img/image_slide/main_visual_01.jpg" /></a></li>
+                            <li><a href="image_slide_infinite.html"><img alt="송지아리조트 골프장 빌라 전경" src="../img/image_slide/main_visual_02.jpg" /></a></li>
+                            <li><a href="image_slide_infinite.html"><img alt="송지아리조트 골프장 전경(리버코스)" src="../img/image_slide/main_visual_03.jpg" /></a></li>
+                            <li><a href="image_slide_infinite.html"><img alt="송지아리조트 골프장 호텔 전경" src="../img/image_slide/main_visual_04.jpg" /></a></li>
+                        </ul>
+                        <ul class="indicator">
+                            <!--
+                            <li class="on"><a href="#">1번 비주얼</a></li>
+                            <li><a href="#">2번 비주얼</a></li>
+                            <li><a href="#">3번 비주얼</a></li>
+                            <li><a href="#">4번 비주얼</a></li>
+-->
+                        </ul>
+                    </div>
+                    <p class="control">
+                        <a href="#" class="prev"><img alt="이전 이미지" src="../img/image_slide/btn_left.png" /></a>
+                        <a href="#" class="next"><img alt="다음 이미지" src="../img/image_slide/btn_right.png" /></a>
+                        <a href="#" class="play"><i class="fas fa-pause"></i><i class="fas fa-play"></i></a>
+                    </p>
+                </div>
+                
+                <div class="image-slide">
+                    <div class="box">
+                        <ul class="slide">
+                            <li><a href="image_slide_infinite.html"><img alt="송지아리조트 골프장 전경(오션코스)" src="../img/image_slide/main_visual_01.jpg" /></a></li>
+                            <li><a href="image_slide_infinite.html"><img alt="송지아리조트 골프장 빌라 전경" src="../img/image_slide/main_visual_02.jpg" /></a></li>
+                            <li><a href="image_slide_infinite.html"><img alt="송지아리조트 골프장 전경(리버코스)" src="../img/image_slide/main_visual_03.jpg" /></a></li>
+                            <li><a href="image_slide_infinite.html"><img alt="송지아리조트 골프장 호텔 전경" src="../img/image_slide/main_visual_04.jpg" /></a></li>
+                        </ul>
+                        <ul class="indicator">
+                            <!--
+                            <li class="on"><a href="#">1번 비주얼</a></li>
+                            <li><a href="#">2번 비주얼</a></li>
+                            <li><a href="#">3번 비주얼</a></li>
+                            <li><a href="#">4번 비주얼</a></li>
+-->
+                        </ul>
+                    </div>
+                    <p class="control">
+                        <a href="#" class="prev"><img alt="이전 이미지" src="../img/image_slide/btn_left.png" /></a>
+                        <a href="#" class="next"><img alt="다음 이미지" src="../img/image_slide/btn_right.png" /></a>
+                        <a href="#" class="play"><i class="fas fa-pause"></i><i class="fas fa-play"></i></a>
+                    </p>
+                </div>
+            </main>
+        </div> <!-- #wrapper  -->
+        
+<script>
+'use strict';
+
+
+setImageSlide('div.image-slide:eq(0)', 1, true, 2000);
+setImageSlide('div.image-slide:eq(1)', 3, false, 3000);
+
+function setImageSlide(selector, first, status, speed) {
+    var numSlide = $(selector).find('ul.slide li').length;
+    var slideNow = 0;
+    var slidePrev = 0;
+    var slideNext = 0;
+    var slideFirst = first;
+    var timerId = null;
+    var isTimerOn = status;
+    var timerSpeed = speed;
+    var startX = 0;
+    var delX = 0;
+    var offsetX = 0;
+    var isClickBlocked = false;
+    var isAnimaionOn = false;
+
+    // 초기화
+    $(selector).find('ul.slide li').each(function(i) {
+        //$(this).css({'left': (i * 100) + '%', 'display': 'block'});
+        $(selector).find('ul.indicator').append('<li><a href="#">' + (i + 1) + '번 슬라이드</a></li>\n');
+    });
+    if (isTimerOn === true) {
+        $(selector).find('p.control a.play').addClass('on');
+    } else {
+        $(selector).find('p.control a.play').removeClass('on');
+    }
+    showSlide(slideFirst);
+
+    $(selector).find('ul.indicator li a').on('click', function() {
+        var index = $(selector).find('ul.indicator li').index($(this).parent());
+        showSlide(index + 1);
+    });
+    $(selector).find('p.control a.prev').on('click', function() {
+    $(this).stop(true).animate({'left': '-70px'}, 50).animate({'left': '-60px'}, 100);
+        showSlide('prev');
+    });
+    $(selector).find('p.control a.next').on('click', function() {
+    $(this).stop(true).animate({'right': '-70px'}, 50).animate({'right': '-60px'}, 100);
+        showSlide('next');
+    });
+    $(selector).find('p.control a.play').on('click', function() {
+        if (isTimerOn === true) {
+            clearTimeout(timerId);
+            $(this).removeClass('on');
+            isTimerOn = false;
+        } else {
+            timerId = setTimeout(function() {showSlide('next');}, timerSpeed);
+            $(this).addClass('on');
+            isTimerOn = true;
+        }
+    });
+    $(selector).find('ul.slide').on('mousedown', function(e) {
+        clearTimeout(timerId);
+        setSlide(slideNow);
+        $(selector).find('ul.slide').css({'transition': 'none'});
+        startX = e.clientX;
+        offsetX = $(this).position().left;
+        $(document).on('mousemove', function(e) {
+            e.preventDefault();
+            delX = e.clientX - startX;
+            if (Math.abs(delX) > 10) isClickBlocked = true;
+            $(selector).find('ul.slide').css({'left': (offsetX + delX) + 'px'});
+        });
+        $(document).on('mouseup', function(e) {
+            if (delX < -50) {
+                showSlide('next');
+            } else if (delX > 50) {
+                showSlide('prev');
+            } else {
+                showSlide(slideNow);
+            }
+            $(document).off('mousemove mouseup');
+        });
+    });
+    $(selector).find('ul.slide li a').on('click', function(e) {
+        if (isClickBlocked === true) e.preventDefault();
+        isClickBlocked = false;
+    });
+
+    function showSlide(n) {
+        clearTimeout(timerId);
+        if (isAnimaionOn === true) return false;
+        isAnimaionOn = true;
+        if (n === 'prev') {
+            n = slidePrev;
+            $(selector).find('ul.slide').css({'transition': 'left 0.5s', 'left': '100%'}).one('transitionend', function() {
+                setSlide(n);
+            });
+        } else if (n === 'next') {
+            n = slideNext;
+            $(selector).find('ul.slide').css({'transition': 'left 0.5s', 'left': '-100%'}).one('transitionend', function() {
+                setSlide(n);
+            });
+        } else {
+            if (slideNow === 0) {
+                $(selector).find('ul.slide li').css({'display': 'none'});
+                $(selector).find('ul.slide li:eq(' + (n - 1) + ')').css({'display': 'block'});
+                setSlide(n);
+            } else {
+                $(selector).find('ul.slide li:eq(' + (slideNow - 1) + ')').stop().animate({'opacity': 0}, 500, function() {
+                    setSlide(n);
+                });
+                $(selector).find('ul.slide li:eq(' + (n - 1) + ')').css({'display': 'block', 'opacity': 0, 'left': 0}).stop().animate({'opacity': 1}, 500);
+            }
+        }
+        $(selector).find('ul.indicator li').removeClass('on');
+        $(selector).find('ul.indicator li:eq(' + (n - 1) + ')').addClass('on');
+        slideNow = n;
+        slidePrev = (n - 1) < 1 ? numSlide : n - 1;
+        slideNext = (n + 1) > numSlide ? 1 : n + 1;
+        if (isTimerOn === true) {
+            timerId = setTimeout(function() {showSlide('next');}, timerSpeed);
+        }
+        //console.log(slidePrev + ' / ' + slideNow + ' / ' + slideNext);
+    }
+    
+    function setSlide(n) {
+        var now = n;
+        var prev = (n - 1) < 1 ? numSlide : n - 1;
+        var next = (n + 1) > numSlide ? 1 : n + 1;
+        $(selector).find('ul.slide').css({'transition': 'none', 'left': 0});
+        $(selector).find('ul.slide li').css({'display': 'none', 'left': 0});
+        $(selector).find('ul.slide li:eq(' + (prev - 1) + ')').stop().css({'display': 'block', 'opacity': 1, 'left': '-100%'});
+        $(selector).find('ul.slide li:eq(' + (now - 1) + ')').stop().css({'display': 'block', 'opacity': 1, 'left': 0});
+        $(selector).find('ul.slide li:eq(' + (next - 1) + ')').stop().css({'display': 'block', 'opacity': 1, 'left': '100%'});
+        isAnimaionOn = false;
+    }
+}
+</script>
+    </body>
+</html>
+
+

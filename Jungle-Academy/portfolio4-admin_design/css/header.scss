@@ -5,10 +5,12 @@ li {list-style: none;}
 a {text-decoration: none; color: inherit;}
 input, button, select {
   display: inline-block;
+  margin: 0px;
+  padding: 0px;
   box-sizing: border-box;
   border: 0 none;
   border-radius: none;
-  vertical-align: baseline;
+  vertical-align: middle;
   white-space: normal;
   background: none;
   line-height: 1;

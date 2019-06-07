@@ -208,10 +208,11 @@
         <h2>게시판 검색</h2>
         <table>
           <colgroup>
-          <col style="width:15%">
-          <col style="width:35%">
-          <col style="width:15%">
-          <col style="width:35%">
+            <!-- 이거 no-bg colspan했더니 이상하게 먹히는거 같음 -->
+            <col style="width:150px">
+            <col>
+            <col style="width:150px">
+            <col>
           </colgroup>
           <tbody>
             <tr>
@@ -219,11 +220,10 @@
               <td>
                 <label for="kind-of-search">
                   <select name="list-search" id="kind-of-search">
-                    <!-- option 안에는 text랑 숫자만 들어가나 -->
-                    <option value="all">-전체검색- ↕︎</option>
-                    <option value="title">제목 ↕︎</option>
-                    <option value="content">내용 ↕︎</option>
-                    <option value="writer">작성자 ↕︎</option>
+                    <option value="all">-전체검색-</option>
+                    <option value="title">제목</option>
+                    <option value="content">내용</option>
+                    <option value="writer">작성자</option>
                   </select>
                   <input type="text" id="list-search">
                 </label>
@@ -232,10 +232,9 @@
               <td>
                 <label for="list-skin">
                   <select name="list-skin" id="list-skin">
-                    <!-- 화살표가 끝에가도록 고민 -->
-                    <option value="choose">-스킨선택- ↕︎</option>
-                    <option value="--1">-- ↕︎</option>
-                    <option value="--2">-- ↕︎</option>
+                    <option value="choose">-스킨선택-</option>
+                    <option value="--1">01</option>
+                    <option value="--2">02</option>
                   </select>
                 </label>
               </td>
@@ -244,19 +243,18 @@
               <td>노출여부</td>
               <td>
                 <label for="show">
-                  <input type="radio" name="s/h" id="show">노출
+                  <input type="radio" name="s/h" id="show"> 노출
                 </label>
                 <label for="hide">
-                  <input type="radio" name="s/h" id="hide">숨김
+                  <input type="radio" name="s/h" id="hide"> 숨김
                 </label>
               </td>
-              <td colspan="2" class="no-design"></td>
+              <td colspan="2" class="no-bg"></td>
             </tr>
           </tbody>
-          <!-- tfoot으로 내리기 -->
           <tfoot>
             <tr>
-              <td colspan="4" class="no-design">
+              <td colspan="4" class="no-bg">
                 <i class="fas fa-exclamation-circle"><span class="child-text-ir">느낌표</span></i>
                 순위변경의 경우 노출구분 검색시에만 변경 가능합니다.
               </td>
@@ -268,101 +266,98 @@
   
       <section class="list-board">
         <table>
+          <caption class="child-text-ir">게시글 리스트</caption>
           <colgroup>
-            <col style="width: 5%;">
-            <col style="width: 65%;">
-            <col style="width: 15%;">
-            <col style="width: 15%;">
+            <col span="1" style="width: 50px;">
+            <col span="1">
+            <col span="2" style="width: 150px;">
           </colgroup>
           <thead>
-            <!-- thead로 만들기 -->
             <tr>
               <th>번호</th>
-              <!-- 이렇게 넣어도 괜찮은지 -->
               <th><span>제목</span></th>
               <th><span>작성자</span></th>
               <th>등록일시</th>
             </tr>
           </thead>
           <tbody>
-            <!-- 게시글 1페이지 당 13개 -->
             <tr>
               <td>5</td>
-              <td><a href="#"><span>전사 windows 업그레이드 안내</span></a></td>
+              <td><a href="#">전사 windows 업그레이드 안내</a></td>
               <td><span>전산팀 박태훈</span></td>
-              <td><span>2019-02-10</span> <span>09:30</span></td>
+              <td><span>2019-02-10</span></td>
             </tr>
             <tr>
               <td>4</td>
-              <td><a href="#"><span>불법소프트웨어 사용금지 및 소프트웨어 사용요령</span></a></td>
+              <td><a href="#">불법소프트웨어 사용금지 및 소프트웨어 사용요령 불법소프트웨어 사용금지 및 소프트웨어 사용요령</a></td>
               <td><span>전산팀 박태훈</span></td>
-              <td><span>2019-02-10</span> <span>09:12</span></td>
+              <td><span>2019-02-10</span></td>
             </tr>
             <tr>
               <td>3</td>
-              <td><a href="#"><span>수습사원 관리 지침</span></a></td>
+              <td><a href="#">수습사원 관리 지침</a></td>
               <td><span>인사팀 이희성</span></td>
-              <td><span>2019-01-25</span> <span>13:12</span></td>
+              <td><span>2019-01-25</span></td>
             </tr>
             <tr>
               <td>2</td>
-              <td><a href="#"><span>인사평가 제도 지침 v1.3</span></a></td>
+              <td><a href="#">인사평가 제도 지침 v1.3</a></td>
               <td><span>인사팀 전영조</span></td>
-              <td><span>2019-01-02</span> <span>09:12</span></td>
+              <td><span>2019-01-02</span></td>
             </tr>
             <tr>
               <td>1</td>
-              <td><a href="#"><span>사내 동호회 운영규칙 v1.0</span></a></td>
+              <td><a href="#">사내 동호회 운영규칙 v1.0</a></td>
               <td><span>인사팀 이희성</span></td>
-              <td><span>2018-09-27</span> <span>14:12</span></td>
+              <td><span>2018-09-27</span></td>
             </tr>
             <tr>
               <td></td>
-              <td><a href="#"><span></span></a></td>
+              <td><a href="#"></a></td>
               <td><span></span></td>
-              <td><span></span> <span></span></td>
+              <td><span></span></td>
             </tr>
             <tr>
               <td></td>
-              <td><a href="#"><span></span></a></td>
+              <td><a href="#"></a></td>
               <td><span></span></td>
-              <td><span></span> <span></span></td>
+              <td><span></span></td>
             </tr>
             <tr>
               <td></td>
-              <td><a href="#"><span></span></a></td>
+              <td><a href="#"></a></td>
               <td><span></span></td>
-              <td><span></span> <span></span></td>
+              <td><span></span></td>
             </tr>
             <tr>
               <td></td>
-              <td><a href="#"><span></span></a></td>
+              <td><a href="#"></a></td>
               <td><span></span></td>
-              <td><span></span> <span></span></td>
+              <td><span></span></td>
             </tr>
             <tr>
               <td></td>
-              <td><a href="#"><span></span></a></td>
+              <td><a href="#"></a></td>
               <td><span></span></td>
-              <td><span></span> <span></span></td>
+              <td><span></span></td>
             </tr>
             <tr>
               <td></td>
-              <td><a href="#"><span></span></a></td>
+              <td><a href="#"></a></td>
               <td><span></span></td>
-              <td><span></span> <span></span></td>
+              <td><span></span></td>
             </tr>
             <tr>
               <td></td>
-              <td><a href="#"><span></span></a></td>
+              <td><a href="#"></a></td>
               <td><span></span></td>
-              <td><span></span> <span></span></td>
+              <td><span></span></td>
             </tr>
             <tr>
               <td></td>
-              <td><a href="#"><span></span></a></td>
+              <td><a href="#"></a></td>
               <td><span></span></td>
-              <td><span></span> <span></span></td>
+              <td><span></span></td>
             </tr>
           </tbody>
         </table>
@@ -370,6 +365,12 @@
           <li><a href="#">1</a></li>
           <!-- <li><a href="#">2</a></li> -->
           <!-- <li><a href="#">3</a></li> -->
+
+          <!-- 위치를 어떻게 잡아야할지 -->
+          <div class="page-control">
+            <a class="page-prev" href="#"><img src="../img/icon/Arrow-Gray-Left.png" alt="리스트 이전버튼"></a>
+            <a class="page-next" href="#"><img src="../img/icon/Arrow-Gray-Right.png" alt="리스트 다음버튼"></a>
+          </div>
         </ul>
       </section>
     </div>
