@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/header.css" media="screen and (max-width : 2560px)">
+  <link rel="stylesheet" href="css/index.css" media="screen and (max-width : 2560px)">
+  <link rel="stylesheet" href="css/index-reactive.css">
   <script src="js/jquery-3.4.1.min.js"></script>
   <title>index/admin/portfolio</title>
   <!-- http://webarch.revox.io/3.0/html/index.html# -->
@@ -355,26 +356,23 @@
                 <col style="width:55%;">
                 <col style="width:20%;">
               </colgroup>
-              <!-- 말줄임 나올 수 있게 적용하기 -->
               <tbody>
                 <tr>
                   <td>last sale</td>
                 </tr>
                 <tr>
                   <td>25601</td>
-                  <td>Redesign product template</td>
+                  <td><a href="#">Redesign product template</a></td>
                   <td>$<span>4,700</span></td>
                 </tr>
                 <tr>
                   <td>25602</td>
-                  <td>Redesign product template</td>
+                  <td><a href="#">Redesign product template</a></td>
                   <td>$<span>4,700</span></td>
                 </tr>            
               </tbody>
             </table>
           </div>
-
-          <!-- 움직이는거 구현하기 -->
           <div><span class="child-text-ir">디자인용 그림</span></div>
         </article>
       </section>
@@ -436,98 +434,100 @@
           </li>
         </ul>
 
-        <div class="weather-today">
-          <h2>California USA</h2>
-          <div>
-            <span>sunday</span>
-            <em>32<span class="inline">&#176;</span></em>
-            <span>partly cloudy</span>
+        <div class="weather-wrap">
+          <div class="weather-today">
+            <h2>California USA</h2>
+            <div>
+              <span>sunday</span>
+              <em>32<span class="inline">&#176;</span></em>
+              <span>partly cloudy</span>
+            </div>
+            <div>
+              <!-- 날씨 class넣으면 icon나옴 -->
+              <span class="w-partly-cloudy"></span>
+              <span><span>54</span>MPH</span>
+              <span><span>53</span>MM</span>
+            </div>
+  
+            <ul>
+              <li>
+                <span>11:30<span>PM</span></span>
+                <span class="w-rain"></span>
+                <em>32<span class="inline">&#176;</span></em>
+              </li>
+              <li>
+                <span>11:30<span>PM</span></span>
+                <span class="w-rain"></span>
+                <em>32<span class="inline">&#176;</span></em>
+              </li>
+              <li>
+                <span>11:30<span>PM</span></span>
+                <span class="w-rain"></span>
+                <em>32<span class="inline">&#176;</span></em>
+              </li>
+              <li>
+                <span>11:30<span>PM</span></span>
+                <span class="w-rain"></span>
+                <em>32<span class="inline">&#176;</span></em>
+              </li>
+              <li>
+                <span>11:30<span>PM</span></span>
+                <span class="w-rain"></span>
+                <em>32<span class="inline">&#176;</span></em>
+              </li>
+            </ul>
           </div>
-          <div>
-            <!-- 날씨 class넣으면 icon나옴 -->
-            <span class="w-partly-cloudy"></span>
-            <span><span>54</span>MPH</span>
-            <span><span>53</span>MM</span>
+  
+          <div class="weather-weak">
+            <table>
+              <colgroup>
+                <col style="width:25%;">
+                <col style="width:30%;">
+                <col style="width:45%;">
+              </colgroup>
+              <tr>
+                <td>sun</td>
+                <!-- span에 날씨 class넣으면 icon나옴 
+                  w-sunny - 맑음
+                  w-rain - 비
+                  w-cloudy - 구름
+                  w-partly-cloudy - 해+구름
+                -->
+                <td class="w-icon"><span class="w-sunny"></span></td>
+                <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
+              </tr>
+              <tr>
+                <td>mon</td>
+                <td class="w-icon"><span class="w-rain"></span></td>
+                <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
+              </tr>
+              <tr>
+                <td>tue</td>
+                <td class="w-icon"><span class="w-cloudy"></span></td>
+                <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
+              </tr>
+              <tr>
+                <td>wed</td>
+                <td class="w-icon"><span class="w-partly-cloudy"></span></td>
+                <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
+              </tr>
+              <tr>
+                <td>thur</td>
+                <td class="w-icon"><span class="w-rain"></span></td>
+                <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
+              </tr>
+              <tr>
+                <td>fri</td>
+                <td class="w-icon"><span class="w-sunny"></span></td>
+                <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
+              </tr>
+              <tr>
+                <td>sat</td>
+                <td class="w-icon"><span class="w-sunny"></span></td>
+                <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
+              </tr>
+            </table>
           </div>
-
-          <ul>
-            <li>
-              <span>11:30<span>PM</span></span>
-              <span class="w-rain"></span>
-              <em>32<span class="inline">&#176;</span></em>
-            </li>
-            <li>
-              <span>11:30<span>PM</span></span>
-              <span class="w-rain"></span>
-              <em>32<span class="inline">&#176;</span></em>
-            </li>
-            <li>
-              <span>11:30<span>PM</span></span>
-              <span class="w-rain"></span>
-              <em>32<span class="inline">&#176;</span></em>
-            </li>
-            <li>
-              <span>11:30<span>PM</span></span>
-              <span class="w-rain"></span>
-              <em>32<span class="inline">&#176;</span></em>
-            </li>
-            <li>
-              <span>11:30<span>PM</span></span>
-              <span class="w-rain"></span>
-              <em>32<span class="inline">&#176;</span></em>
-            </li>
-          </ul>
-        </div>
-
-        <div class="weather-weak">
-          <table>
-            <colgroup>
-              <col style="width:25%;">
-              <col style="width:30%;">
-              <col style="width:45%;">
-            </colgroup>
-            <tr>
-              <td>sun</td>
-              <!-- span에 날씨 class넣으면 icon나옴 
-                w-sunny - 맑음
-                w-rain - 비
-                w-cloudy - 구름
-                w-partly-cloudy - 해+구름
-              -->
-              <td class="w-icon"><span class="w-sunny"></span></td>
-              <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
-            </tr>
-            <tr>
-              <td>mon</td>
-              <td class="w-icon"><span class="w-rain"></span></td>
-              <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
-            </tr>
-            <tr>
-              <td>tue</td>
-              <td class="w-icon"><span class="w-cloudy"></span></td>
-              <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
-            </tr>
-            <tr>
-              <td>wed</td>
-              <td class="w-icon"><span class="w-partly-cloudy"></span></td>
-              <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
-            </tr>
-            <tr>
-              <td>thur</td>
-              <td class="w-icon"><span class="w-rain"></span></td>
-              <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
-            </tr>
-            <tr>
-              <td>fri</td>
-              <td class="w-icon"><span class="w-sunny"></span></td>
-              <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
-            </tr>
-            <tr>
-              <td>sat</td>
-              <td class="w-icon"><span class="w-sunny"></span></td>
-              <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
-            </tr>
-          </table>
         </div>
       </section>
 

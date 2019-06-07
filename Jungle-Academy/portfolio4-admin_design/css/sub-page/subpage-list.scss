@@ -78,7 +78,7 @@ header.open + main {
 
       select {
         padding: 0px 15px 0px 5px;
-        background: url(../../img/icon/arrow-both.png) no-repeat right center / 15px;
+        background: url(../../img/icon/arrow-both.png) no-repeat right center / 14px;
       }
 
       i {
@@ -159,34 +159,48 @@ header.open + main {
     }
   }
 
-  ul {
-    // position: relative;
-    margin: 20px auto 0px;
-    text-align:center;
-    font-size:0px;
+  .page-control {
+    position: relative;
+    text-align: center;
 
-    li {
+    ul {
       display: inline-block;
-      font-size: 13px;
-
-      a {
+      margin: 20px auto 0px;
+      text-align:center;
+      font-size:0px;
+  
+      li {
         display: inline-block;
-        color: #777;
-        padding: 5px;
-
-        &:hover {
-          text-decoration: underline;
+        font-size: 13px;
+  
+        a {
+          display: inline-block;
+          color: #777;
+          padding: 5px;
+  
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      
+      li+li {
+        &:before {
+          display: inline-block;
+          content: '';
+          width: 1px;
+          height: 8px;
+          background: #777;
         }
       }
     }
-    
-    li+li {
-      &:before {
-        display: inline-block;
-        content: '';
-        width: 1px;
-        height: 8px;
-        background: #777;
+
+    > a {
+      display: inline-block;
+      width: 10px;
+
+      img {
+        width: 100%;
       }
     }
   }

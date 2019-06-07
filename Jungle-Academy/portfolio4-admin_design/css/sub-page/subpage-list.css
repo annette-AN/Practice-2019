@@ -76,7 +76,7 @@ header.open + main {
 
 .list-search table td select {
   padding: 0px 15px 0px 5px;
-  background: url(../../img/icon/arrow-both.png) no-repeat right center/15px;
+  background: url(../../img/icon/arrow-both.png) no-repeat right center/14px;
 }
 
 .list-search table td i {
@@ -147,32 +147,47 @@ header.open + main {
   color: gray;
 }
 
-.list-board ul {
+.list-board .page-control {
+  position: relative;
+  text-align: center;
+}
+
+.list-board .page-control ul {
+  display: inline-block;
   margin: 20px auto 0px;
   text-align: center;
   font-size: 0px;
 }
 
-.list-board ul li {
+.list-board .page-control ul li {
   display: inline-block;
   font-size: 13px;
 }
 
-.list-board ul li a {
+.list-board .page-control ul li a {
   display: inline-block;
   color: #777;
   padding: 5px;
 }
 
-.list-board ul li a:hover {
+.list-board .page-control ul li a:hover {
   text-decoration: underline;
 }
 
-.list-board ul li + li:before {
+.list-board .page-control ul li + li:before {
   display: inline-block;
   content: '';
   width: 1px;
   height: 8px;
   background: #777;
+}
+
+.list-board .page-control > a {
+  display: inline-block;
+  width: 10px;
+}
+
+.list-board .page-control > a img {
+  width: 100%;
 }
 /*# sourceMappingURL=subpage-list.css.map */
