@@ -6,14 +6,28 @@ $(document).on('click', 'a[href="#"]', function(e){
 
 //header js
 $('.menu-bar').on('click', function(){
-  if ($('header').hasClass('open')) {
-    $('header').removeClass('open','');
-  } else {
-    $('header').addClass('open','');
-  }
+  var width = window.innerWidth;
+  console.log(width);
 
-  if ($('.main-gnb-menu > li > ul').hasClass('show')) {
-    $('ul').removeClass('show');
+  if (width < 767) {
+    console.log('width767');
+    if ($('#main-gnb').hasClass('open')) {
+      $('#main-gnb').removeClass('open','');
+      $('main').css({'left': 0 + 'px'})
+    } else {
+      $('#main-gnb').addClass('open','');
+      $('main').css({'left': 50 + 'px'})
+    }
+  } else {
+    if ($('header').hasClass('open')) {
+      $('header').removeClass('open','');
+    } else {
+      $('header').addClass('open','');
+    }
+
+    if ($('.main-gnb-menu > li > ul').hasClass('show')) {
+      $('ul').removeClass('show');
+    }
   }
 });
 

@@ -16,30 +16,6 @@
       letter-spacing: 0.5px;
     }
 
-    ul:first-of-type {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      overflow: hidden;
-
-      li {
-        float: left;
-
-        &:nth-child(2) {
-          i {
-            font-size: 13px;
-            margin-left: 5px;
-          }
-        }
-
-        i {
-          vertical-align: middle;
-          font-size: 10px;
-          color: rgba(0,0,0,0.4);
-        }
-      }
-    }
-
     ul:nth-of-type(2) {
       overflow: hidden;
       margin-top: 10px;
@@ -58,7 +34,7 @@
         span {
           font-weight: 600;
           letter-spacing: 0.5px;
-          color: #fff;
+          color: #f5f5f5;
         }
       }
 
@@ -98,6 +74,37 @@
   article:nth-child(2) {background: #1992D6;}
   article:nth-child(3) {background: #726186;}
   article:nth-child(4) {background: #E9595A;}
+}
+
+.re-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  overflow: hidden;
+  z-index: 1;
+
+  li {
+    float: left;
+
+    &:nth-child(2) {
+      i {
+        font-size: 13px;
+        margin-left: 5px;
+      }
+    }
+
+    a {
+      i {
+        vertical-align: middle;
+        font-size: 10px;
+        color: rgba(0,0,0,0.4);
+
+        &:hover {
+          color: #f5f5f5;
+        }
+      }
+    }
+  }
 }
 
 section+section {
@@ -243,11 +250,11 @@ section {
     height: 230px;
     padding: 22px;
     background: rgba(40, 162, 224, 0.85);
-    color: #fff;
+    color: #f5f5f5;
 
     i {
       display: inline-block;
-      color: #fff;
+      color: #f5f5f5;
     }
 
     span:first-of-type {
@@ -292,6 +299,7 @@ section {
     }
 
     img {
+      //img 밑에 공간이 남음?
       width: 100%;
       transition: transform .4s, opacity .4s, -webkit-filter .4s;
       //opacity: 1;
@@ -306,9 +314,9 @@ section {
       span {
         display: inline-block;
         padding: 4px 8px;
-        border: 2px solid #fff;
+        border: 2px solid #f5f5f5;
         border-radius: 18px;
-        color: #fff;
+        color: #f5f5f5;
         font-size: 12px;
         font-weight: bold;
       }
@@ -319,7 +327,7 @@ section {
       bottom: 3%;
       width: 100%;
       padding-left: 4%;
-      color: #fff;
+      color: #f5f5f5;
 
       span {
         display: block;
@@ -350,7 +358,7 @@ section {
         width: 20%;
         height: 35px;
         background: #27A599;
-        color: #fff;
+        color: #f5f5f5;
         font-weight: 100;
         border-radius: 3px;
       }
@@ -590,17 +598,18 @@ section {
 
 //날씨 class
 .w-sunny {
-  background: url(../img/icon/weather/SVG/Sun.svg) no-repeat center / 35px;
+  background: url(../img/icon/weather/SVG/Sun.svg) no-repeat center / contain;
 }
 
 .w-rain {
-  background: url(../img/icon/weather/SVG/Cloud-Rain.svg) no-repeat center / 35px;
+  background: url(../img/icon/weather/SVG/Cloud-Rain.svg) no-repeat center / contain;
 }
 
 .w-cloudy {
-  background: url(../img/icon/weather/SVG/Cloud.svg) no-repeat center / 35px;
+  background: url(../img/icon/weather/SVG/Cloud.svg) no-repeat center / contain;
 }
 
 .w-partly-cloudy {
-  background: url(../img/icon/weather/SVG/Cloud-Sun.svg) no-repeat center / 35px;
+  background: url(../img/icon/weather/SVG/Cloud-Sun.svg) no-repeat center / contain;
 }
+

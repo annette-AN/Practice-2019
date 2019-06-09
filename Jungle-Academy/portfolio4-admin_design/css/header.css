@@ -118,7 +118,7 @@ i {
 }
 
 #main-tnb .tnb-wrap .bell.notice:after {
-  content: "";
+  content: '';
   display: block;
   background-color: #EF5B5C;
   width: 10px;
@@ -172,7 +172,7 @@ i {
 }
 
 .user-profile.notice:after {
-  content: "";
+  content: '';
   display: block;
   background-color: #27A498;
   width: 10px;
@@ -181,7 +181,7 @@ i {
   top: auto;
   bottom: 0px;
   right: -3px;
-  border: 2px solid #fff;
+  border: 2px solid #f5f5f5;
   border-radius: 10px;
 }
 
@@ -313,6 +313,10 @@ i {
   background: #27A599;
 }
 
+#main-gnb.open {
+  display: block;
+}
+
 #main-gnb #main-gnb-header {
   display: none;
 }
@@ -338,7 +342,7 @@ i {
 
 #main-gnb .main-gnb-menu > li > a i {
   font-size: 15px;
-  color: #fff;
+  color: #f5f5f5;
 }
 
 #main-gnb .main-gnb-menu > li > a span {
@@ -367,7 +371,7 @@ i {
 
 #main-gnb .main-gnb-menu > li ul li a:hover {
   background: #1C2026;
-  color: #fff;
+  color: #f5f5f5;
 }
 
 header.open {
@@ -401,7 +405,7 @@ header.open #main-gnb #main-gnb-header h1 {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   float: left;
-  color: #fff;
+  color: #f5f5f5;
   font-size: 25px;
   font-weight: lighter;
 }
@@ -452,11 +456,11 @@ header.open #main-gnb #main-gnb-header ul li a i {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   font-size: 15px;
-  color: #fff;
+  color: #f5f5f5;
 }
 
 header.open #main-gnb #main-gnb-header ul .mail.notice:after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   top: 5px;
@@ -498,7 +502,7 @@ header.open #main-gnb #main-gnb-contents .gnb-user-profile .user-profile.notice:
 
 header.open #main-gnb #main-gnb-contents .gnb-user-profile h2 {
   float: left;
-  color: #fff;
+  color: #f5f5f5;
   text-transform: capitalize;
   font-weight: normal;
   font-size: 20px;
@@ -539,7 +543,7 @@ header.open #main-gnb .main-gnb-menu > li > a {
 }
 
 header.open #main-gnb .main-gnb-menu > li > a:hover span, header.open #main-gnb .main-gnb-menu > li > a:hover i {
-  color: #fff;
+  color: #f5f5f5;
 }
 
 header.open #main-gnb .main-gnb-menu > li > a i {
@@ -582,6 +586,7 @@ main {
   top: 61px;
   left: 50px;
   right: 0px;
+  height: 100%;
   padding: 30px;
   background: #E5E9EC;
   z-index: 1;

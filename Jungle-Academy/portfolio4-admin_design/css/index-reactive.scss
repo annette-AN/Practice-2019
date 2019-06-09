@@ -1,149 +1,323 @@
 //max-width : 2560
 //media-1150 ~ 1600 {
-  @media all and (min-width: 1150px) and (max-width: 1600px) {
-    #overall {
-      article {
-        width: 32.85%;
+@media all and (min-width: 1150px) and (max-width: 1600px) {
+  #overall {
+    article {
+      width: 32.85%;
+    }
+
+    article:nth-child(4) {
+      display: none;
+    }
+  }
+}
+
+
+//media-768 ~ 1149 
+@media all and (min-width: 768px) and (max-width: 1149px) {
+  #overall {
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    article {
+      width: 49.5%;
+    }
+
+    article:nth-child(3), article:nth-child(4) {
+      margin-top: 10px;
+    }
+
+    article:nth-child(4) {
+      display: block;
+    }
+  }
+
+  #sales-info {
+    .map-area {
+      width: 100%;
+    }
+
+    .sales {
+      width: 49.5%;
+      margin-top: 10px;
+
+      ul {
+        li {
+          font-size: 16px;
+
+          h3 {
+            font-size: 11px;
+          }
+        }
+      }
+    }
+
+    .table-wrap {
+      table {
+        tbody {
+          tr:first-child {
+            td {
+              white-space: nowrap;
+              font-size: 13px;
+            }
+          }
+
+          tr {
+            td {
+              padding: 10px 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .joing {
+    margin-bottom: 10px;
+
+    > div, > ul {
+      width: 49.5%;
+    }
+
+    .joing-board {
+      left: auto;
+      right: 0px;
+      transform: none;
+    }
+
+    .weather-wrap {
+      top: calc(-322px - 10px);
+      height: 322px;
+
+      .weather-today {
+        h2 {
+          padding: 4%;
+        }
+        div:first-of-type {
+          padding-top: 5px;
+
+          span, em {
+            margin-top: 5px;
+          }
+        }
+
+        div:nth-of-type(2) {
+          margin: 5px auto;
+        }
+
+        ul {
+          height: 40%;
+          padding: 5px 0px;
+
+          li {
+            span:first-of-type {
+              top: 10%;
+            }
+
+            span:nth-of-type(2) {
+              top: 55%;
+            }
+
+            > em {
+              bottom: 15%;
+            }
+          }
+        }
       }
 
-      article:nth-child(4) {
+      .weather-weak {
+        table {
+          tr {
+            .w-deg {
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//media-768 ~  991 
+@media all and (min-width: 768px) and (max-width: 991px) {
+  .joing {
+    //bg인식하게 해야함
+    .joing-group {
+      width: 100%;
+    }
+
+    .joing-board {
+      width: 100%;
+      top: calc(100% + 10px);
+      margin-bottom: 10px;
+    }
+  }
+}
+
+//media-320 ~ 767 
+@media all and (min-width: 320px) and (max-width: 767px) {
+  #overall {
+    display: block;
+    justify-content: inherit;
+
+    article+article {
+      margin-top: 10px;
+    }
+
+    article {
+      width: 100%;
+    }
+  }
+
+  #sales-info {
+    display: block;
+    justify-content: inherit;
+
+    .map-area {
+      width: 100%;
+      float: none;
+
+      div {
+        width: 100%;
+        float: none;
+      }
+
+      div+div {
+        width: 100%;
+        height: 375px;
+      }
+    }
+
+    .sales {
+      width: 100%;
+
+      ul {
+        display: block;
+        justify-content: initial;
+        margin: 10px 0px 0px 0px;
+        padding: 30px;
+
+        li+li {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  .joing {
+
+    > div, > ul {
+      width: 100%;
+    }
+
+    .joing-board {
+      position: relative;
+      top: auto;
+      left: auto;
+      transform: none;
+      margin-top: 10px;
+
+      li {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        li+li {
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .weather-wrap {
+      position: static;
+
+      .weather-today {
+        float: none;
+        width: 100%;
+
+        h2 {
+          padding: 3%;
+        }
+
+        div:nth-of-type(2) {
+          display: flex;
+          justify-content: space-between;
+          position: relative;
+          height: auto;
+
+          > span {
+            position: static;
+            vertical-align: middle;
+          }
+
+          > span:first-child {
+            box-sizing: border-box;
+            padding: 8% 5%;
+            left: auto;
+            background-origin: content-box;
+            
+          }
+  
+          > span:nth-child(2) {
+            left: auto;
+            transform: none;
+          }
+  
+          > span:nth-child(3) {
+            right: auto;
+          }
+        }
+
+        ul {
+          height: 200px;
+        }
+      }
+
+      .weather-weak {
+        float: none;
+        width: 100%;
+        height: 350px;
+      }
+    }
+  }
+}
+
+//media-768 ~  991 header
+@media all and (min-width: 320px) and (max-width: 767px) {
+  main {
+    left: 0px;
+    padding: 16px;
+  }
+
+  header {
+    background: #21262D;
+  }
+
+  i {
+    color: #f5f5f5;
+  }
+
+  #main-tnb {
+    .tnb-wrap {
+      .refresh {
+        display: none;
+      }
+      .bell {
+        display: none;
+      }
+      .search-board {
+        display: none;
+      }
+    }
+    .user-wrap {
+      .user-profile {
         display: none;
       }
     }
   }
-  
-  
-  //media-768 ~ 1149 
-  @media all and (min-width: 768px) and (max-width: 1149px) {
-    #overall {
-      flex-wrap: wrap;
-      justify-content: space-between;
 
-      article {
-        width: 49.5%;
-      }
-
-      article:nth-child(3), article:nth-child(4) {
-        margin-top: 10px;
-      }
-
-      article:nth-child(4) {
-        display: block;
-      }
-    }
-
-    #sales-info {
-      .map-area {
-        width: 100%;
-      }
-
-      .sales {
-        width: 49.5%;
-        margin-top: 10px;
-
-        ul {
-          li {
-            font-size: 16px;
-
-            h3 {
-              font-size: 11px;
-            }
-          }
-        }
-      }
-
-      .table-wrap {
-        table {
-          tbody {
-            tr:first-child {
-              td {
-                white-space: nowrap;
-                font-size: 13px;
-              }
-            }
-
-            tr {
-              td {
-                padding: 10px 5px;
-              }
-            }
-          }
-        }
-      }
-    }
-
-    .joing {
-      > div, > ul {
-        width: 49.5%;
-      }
-
-      .joing-board {
-        left: auto;
-        right: 0px;
-        transform: none;
-      }
-
-      .weather-wrap {
-        top: calc(-322px - 10px);
-        height: 322px;
-
-        .weather-today {
-          h2 {
-            padding: 4%;
-          }
-          div:first-of-type {
-            padding-top: 5px;
-
-            span, em {
-              margin-top: 5px;
-            }
-          }
-
-          div:nth-of-type(2) {
-            margin: 5px auto;
-          }
-
-          ul {
-            height: 40%;
-            padding: 5px 0px;
-
-            li {
-              span:first-of-type {
-                top: 10%;
-              }
-
-              span:nth-of-type(2) {
-                top: 55%;
-              }
-
-              > em {
-                bottom: 15%;
-              }
-            }
-          }
-        }
-
-        .weather-weak {
-          table {
-            tr {
-              .w-deg {
-                vertical-align: middle;
-              }
-            }
-          }
-        }
-      }
-    }
-
-    //joing-board 떨어뜨리는것부터 시작
+  #main-gnb {
+    display: none;
   }
-  
-  
-  //media-320 ~ 767 
-  @media all and (min-width: 320px) and (max-width: 767px) {
-    
-  }
-  
-  
-  
-
+}

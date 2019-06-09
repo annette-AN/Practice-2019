@@ -22,28 +22,6 @@
   letter-spacing: 0.5px;
 }
 
-#overall article ul:first-of-type {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  overflow: hidden;
-}
-
-#overall article ul:first-of-type li {
-  float: left;
-}
-
-#overall article ul:first-of-type li:nth-child(2) i {
-  font-size: 13px;
-  margin-left: 5px;
-}
-
-#overall article ul:first-of-type li i {
-  vertical-align: middle;
-  font-size: 10px;
-  color: rgba(0, 0, 0, 0.4);
-}
-
 #overall article ul:nth-of-type(2) {
   overflow: hidden;
   margin-top: 10px;
@@ -64,7 +42,7 @@
 #overall article ul:nth-of-type(2) li span {
   font-weight: 600;
   letter-spacing: 0.5px;
-  color: #fff;
+  color: #f5f5f5;
 }
 
 #overall article ul:nth-of-type(2) li + li {
@@ -109,6 +87,33 @@
 
 #overall article:nth-child(4) {
   background: #E9595A;
+}
+
+.re-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.re-close-btn li {
+  float: left;
+}
+
+.re-close-btn li:nth-child(2) i {
+  font-size: 13px;
+  margin-left: 5px;
+}
+
+.re-close-btn li a i {
+  vertical-align: middle;
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.re-close-btn li a i:hover {
+  color: #f5f5f5;
 }
 
 section + section {
@@ -254,12 +259,12 @@ section .table-wrap table tbody tr + tr {
   height: 230px;
   padding: 22px;
   background: rgba(40, 162, 224, 0.85);
-  color: #fff;
+  color: #f5f5f5;
 }
 
 .joing .post i {
   display: inline-block;
-  color: #fff;
+  color: #f5f5f5;
 }
 
 .joing .post span:first-of-type {
@@ -316,9 +321,9 @@ section .table-wrap table tbody tr + tr {
 .joing .joing-group div:nth-of-type(2) span {
   display: inline-block;
   padding: 4px 8px;
-  border: 2px solid #fff;
+  border: 2px solid #f5f5f5;
   border-radius: 18px;
-  color: #fff;
+  color: #f5f5f5;
   font-size: 12px;
   font-weight: bold;
 }
@@ -328,7 +333,7 @@ section .table-wrap table tbody tr + tr {
   bottom: 3%;
   width: 100%;
   padding-left: 4%;
-  color: #fff;
+  color: #f5f5f5;
 }
 
 .joing .joing-group div:nth-of-type(3) span {
@@ -360,7 +365,7 @@ section .table-wrap table tbody tr + tr {
   width: 20%;
   height: 35px;
   background: #27A599;
-  color: #fff;
+  color: #f5f5f5;
   font-weight: 100;
   border-radius: 3px;
 }
@@ -615,18 +620,18 @@ section .table-wrap table tbody tr + tr {
 }
 
 .w-sunny {
-  background: url(../img/icon/weather/SVG/Sun.svg) no-repeat center/35px;
+  background: url(../img/icon/weather/SVG/Sun.svg) no-repeat center/contain;
 }
 
 .w-rain {
-  background: url(../img/icon/weather/SVG/Cloud-Rain.svg) no-repeat center/35px;
+  background: url(../img/icon/weather/SVG/Cloud-Rain.svg) no-repeat center/contain;
 }
 
 .w-cloudy {
-  background: url(../img/icon/weather/SVG/Cloud.svg) no-repeat center/35px;
+  background: url(../img/icon/weather/SVG/Cloud.svg) no-repeat center/contain;
 }
 
 .w-partly-cloudy {
-  background: url(../img/icon/weather/SVG/Cloud-Sun.svg) no-repeat center/35px;
+  background: url(../img/icon/weather/SVG/Cloud-Sun.svg) no-repeat center/contain;
 }
 /*# sourceMappingURL=index.css.map */

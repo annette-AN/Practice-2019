@@ -44,6 +44,9 @@
   #sales-info .table-wrap table tbody tr td {
     padding: 10px 5px;
   }
+  .joing {
+    margin-bottom: 10px;
+  }
   .joing > div, .joing > ul {
     width: 49.5%;
   }
@@ -84,6 +87,159 @@
   }
   .joing .weather-wrap .weather-weak table tr .w-deg {
     vertical-align: middle;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+  .joing .joing-group {
+    width: 100%;
+  }
+  .joing .joing-board {
+    width: 100%;
+    top: calc(100% + 10px);
+    margin-bottom: 10px;
+  }
+}
+
+@media all and (min-width: 320px) and (max-width: 767px) {
+  #overall {
+    display: block;
+    -webkit-box-pack: inherit;
+        -ms-flex-pack: inherit;
+            justify-content: inherit;
+  }
+  #overall article + article {
+    margin-top: 10px;
+  }
+  #overall article {
+    width: 100%;
+  }
+  #sales-info {
+    display: block;
+    -webkit-box-pack: inherit;
+        -ms-flex-pack: inherit;
+            justify-content: inherit;
+  }
+  #sales-info .map-area {
+    width: 100%;
+    float: none;
+  }
+  #sales-info .map-area div {
+    width: 100%;
+    float: none;
+  }
+  #sales-info .map-area div + div {
+    width: 100%;
+    height: 375px;
+  }
+  #sales-info .sales {
+    width: 100%;
+  }
+  #sales-info .sales ul {
+    display: block;
+    -webkit-box-pack: initial;
+        -ms-flex-pack: initial;
+            justify-content: initial;
+    margin: 10px 0px 0px 0px;
+    padding: 30px;
+  }
+  #sales-info .sales ul li + li {
+    margin-top: 10px;
+  }
+  .joing > div, .joing > ul {
+    width: 100%;
+  }
+  .joing .joing-board {
+    position: relative;
+    top: auto;
+    left: auto;
+    -webkit-transform: none;
+            transform: none;
+    margin-top: 10px;
+  }
+  .joing .joing-board li {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .joing .joing-board li li + li {
+    margin-top: 10px;
+  }
+  .joing .weather-wrap {
+    position: static;
+  }
+  .joing .weather-wrap .weather-today {
+    float: none;
+    width: 100%;
+  }
+  .joing .weather-wrap .weather-today h2 {
+    padding: 3%;
+  }
+  .joing .weather-wrap .weather-today div:nth-of-type(2) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    position: relative;
+    height: auto;
+  }
+  .joing .weather-wrap .weather-today div:nth-of-type(2) > span {
+    position: static;
+    vertical-align: middle;
+  }
+  .joing .weather-wrap .weather-today div:nth-of-type(2) > span:first-child {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 8% 5%;
+    left: auto;
+    background-origin: content-box;
+  }
+  .joing .weather-wrap .weather-today div:nth-of-type(2) > span:nth-child(2) {
+    left: auto;
+    -webkit-transform: none;
+            transform: none;
+  }
+  .joing .weather-wrap .weather-today div:nth-of-type(2) > span:nth-child(3) {
+    right: auto;
+  }
+  .joing .weather-wrap .weather-today ul {
+    height: 200px;
+  }
+  .joing .weather-wrap .weather-weak {
+    float: none;
+    width: 100%;
+    height: 350px;
+  }
+}
+
+@media all and (min-width: 320px) and (max-width: 767px) {
+  main {
+    left: 0px;
+    padding: 16px;
+  }
+  header {
+    background: #21262D;
+  }
+  i {
+    color: #f5f5f5;
+  }
+  #main-tnb .tnb-wrap .refresh {
+    display: none;
+  }
+  #main-tnb .tnb-wrap .bell {
+    display: none;
+  }
+  #main-tnb .tnb-wrap .search-board {
+    display: none;
+  }
+  #main-tnb .user-wrap .user-profile {
+    display: none;
+  }
+  #main-gnb {
+    display: none;
   }
 }
 /*# sourceMappingURL=index-reactive.css.map */
