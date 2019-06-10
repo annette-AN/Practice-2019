@@ -1,0 +1,70 @@
+@charset 'utf-8';
+/* CSS Document */
+
+/* reset */
+html {-webkit-text-size-adjust: none; text-size-adjust: none;}
+body {margin: 0;}
+h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, table, blockquote {margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 600;}
+header, main, footer, section, article, aside, nav {display: block;}
+a {color: inherit; text-decoration: inherit;}
+a img {border: none;}
+img {vertical-align: middle; max-width: 100%;}
+li {list-style: none;}
+address, em, i, cite {font-style: normal;}
+table {border-collapse: collapse;}
+table caption {overflow: hidden; width: 0; height: 0;}
+i.fas, i.far, i.fab {vertical-align: middle; display: inline-block;}
+i.fas span, i.far span, i.fab span {position: absolute; overflow: hidden; text-indent: -999px;}
+.pc {display: none !important;}
+br.only-w {content: '';}
+br.only-w:after {content: '\00a0';}
+div.hidden {position: absolute; left: -9999px;}
+
+
+/* common */
+body {font-family: '맑은 고딕', 'malgun gothic', '돋움', Dotum, 'Apple SD Gothic Neo', Helvetica, sans-serif; font-weight: 400; font-size: 14px; color: #333333 ; background: #ffffff;}
+#wrapper{overflow: hidden; min-width: 320px; max-width: 850px; margin: 0 auto;}
+#skip-nav {position: fixed; left: 0; top: -41px; width: 100%; line-height: 40px; text-align: center; font-size: 16px; color: #ffffff; background: rgba(0, 0, 0, 0.6); border-bottom: 1px solid #ffffff; z-index: 100000; transition: top 0.3s;}
+#skip-nav:focus {top: 0;}
+#header {position: fixed; left: 0; top: 0; width: 100%; height: 60px; background: rgba(0, 0, 0, 0.2); z-index: 10000;}
+#header h1 {position: absolute; left: 15px; top: 50%; transform: translate(0, -50%); width: 120px;}
+
+#footer {position: fixed; left: 0; bottom: 0; width: 100%; z-index: 1000;}
+#footer p.copyright {line-height: 40px; text-align: center; font-size: 14px; color: #ffffff; text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);}
+
+
+
+/* sub(common) */
+body.sub #main {padding-top: 60px; padding-bottom: 100px;}
+
+#main-visual {position: relative; overflow: hidden;}
+#main-visual p.dummy {opacity: 0;}
+#main-visual ul.slide {position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+#main-visual ul.slide li {position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: none;}
+#main-visual ul.slide li:first-child {display: block;}
+#main-visual ul.slide li a {display: block;}
+#main-visual ul.slide li a img {width: 100%; display: block;}
+#main-visual ul.indicator {position: absolute; left: 0; bottom: 0; height: 50px; padding-top: 16px; width: 100%; text-align: center; box-sizing: border-box;}
+#main-visual ul.indicator li {display: inline-block; vertical-align: top; margin: 0 3px;}
+#main-visual ul.indicator li a {display: block; width: 16px; height: 16px; text-indent: -999px; overflow: hidden; background: #ffffff; border: 1px solid #e0e0e0; border-radius: 50%;}
+#main-visual ul.indicator li.on a {background: #ffa9b0;}
+#main-visual p.control a {transition: background 0.3s;}
+#main-visual p.control a.prev,
+#main-visual p.control a.next {position: absolute; top: 50%; transform: translate(0, -50%); width: 30px; padding: 10px 3px; border-radius: 3px;}
+#main-visual p.control a.prev {left: 5px;}
+#main-visual p.control a.next {right: 5px;}
+#main-visual p.control a.play {position: absolute; right: 5px; bottom: 5px; color: #ffffff; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); font-size: 16px; width: 30px; line-height: 30px; text-align: center; border-radius: 3px;}
+#main-visual p.control a.play:hover {background: rgba(0, 0, 0, 0.2);}
+#main-visual p.control a.play i:first-child {display: none;}
+#main-visual p.control a.play i:last-child {display: inline-block;}
+#main-visual p.control a.play.on i:first-child {display: inline-block;}
+#main-visual p.control a.play.on i:last-child {display: none;}
+#main-visual p.control a img {position: relative;}
+#main-visual p.control span.bar {background: #ffa9b0; position: absolute; left: 0; bottom: 0; height: 1px; width: 0;}
+
+section.content {padding: 15px; background: yellow; height: 800px;}
+
+
+
+

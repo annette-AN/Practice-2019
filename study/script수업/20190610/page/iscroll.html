@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="DinoWorks Inc. 디노웍스(주)" />
+        <meta name="apple-mobile-web-app-title" content="디노웍스 모바일 UI" />
+        <title>iScroll | 디노웍스(주) 모바일 UI 라이브러리</title>
+        <meta name="description" content="디노웍스(주) 모바일 UI 라이브러리 : iScroll" />
+        <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="../fa/css/all.min.css" rel="stylesheet" />
+        <link href="../css/iscroll.css" rel="stylesheet" media="screen and (min-width : 851px)" />
+        <link href="../css/iscroll_mobile.css" rel="stylesheet" media="screen and (max-width : 850px)" />
+        <script src="../js/jquery-3.4.1.min.js"></script>
+        <script src="../js/iscroll.js"></script>
+        <script src="../js/ui_common.js"></script>
+    </head>
+    <body class="main">
+        <div id="wrapper">
+            <a href="#" id="skip-nav">본문 바로가기</a>
+            <a href="../index.html" id="go-home" title="홈 화면"><i class="fas fa-home"></i></a>
+            
+            <div id="iscroll-vertical" class="iscroll">
+                <ul class="slide">
+                    <li><a href="iscroll.html"><img alt="000" src="../img/iscroll/main_visual_01.jpg" /></a></li>
+                    <li><a href="iscroll.html"><img alt="000" src="../img/iscroll/main_visual_02.jpg" /></a></li>
+                    <li><a href="iscroll.html"><img alt="000" src="../img/iscroll/main_visual_03.jpg" /></a></li>
+                    <li><a href="iscroll.html"><img alt="000" src="../img/iscroll/main_visual_04.jpg" /></a></li>
+                    <li><a href="iscroll.html"><img alt="000" src="../img/iscroll/main_visual_05.jpg" /></a></li>
+                    <li><a href="iscroll.html"><img alt="000" src="../img/iscroll/main_visual_06.jpg" /></a></li>
+                    <li><a href="iscroll.html"><img alt="000" src="../img/iscroll/main_visual_07.jpg" /></a></li>
+                    <li><a href="iscroll.html"><img alt="000" src="../img/iscroll/main_visual_08.jpg" /></a></li>
+                    <li><a href="iscroll.html"><img alt="000" src="../img/iscroll/main_visual_09.jpg" /></a></li>
+                    <li><a href="iscroll.html"><img alt="000" src="../img/iscroll/main_visual_10.jpg" /></a></li>
+                    <li><a href="iscroll.html"><img alt="000" src="../img/iscroll/main_visual_11.jpg" /></a></li>
+                    <li><a href="iscroll.html"><img alt="000" src="../img/iscroll/main_visual_12.jpg" /></a></li>
+                </ul>
+            </div>
+            
+            <div id="iscroll-horizon" class="iscroll">
+                <div class="wrapper">
+                    <ul class="slide">
+                        <li><a href="iscroll.html"><img alt="000" src="../img/iscroll/main_visual_01.jpg" /></a></li>
+                        <li><a href="iscroll.html"><img alt="000" src="../img/iscroll/main_visual_02.jpg" /></a></li>
+                        <li><a href="iscroll.html"><img alt="000" src="../img/iscroll/main_visual_03.jpg" /></a></li>
+                        <li><a href="iscroll.html"><img alt="000" src="../img/iscroll/main_visual_04.jpg" /></a></li>
+                        <li><a href="iscroll.html"><img alt="000" src="../img/iscroll/main_visual_05.jpg" /></a></li>
+                        <li><a href="iscroll.html"><img alt="000" src="../img/iscroll/main_visual_06.jpg" /></a></li>
+                        <li><a href="iscroll.html"><img alt="000" src="../img/iscroll/main_visual_07.jpg" /></a></li>
+                        <li><a href="iscroll.html"><img alt="000" src="../img/iscroll/main_visual_08.jpg" /></a></li>
+                        <li><a href="iscroll.html"><img alt="000" src="../img/iscroll/main_visual_09.jpg" /></a></li>
+                        <li><a href="iscroll.html"><img alt="000" src="../img/iscroll/main_visual_10.jpg" /></a></li>
+                        <li><a href="iscroll.html"><img alt="000" src="../img/iscroll/main_visual_11.jpg" /></a></li>
+                        <li><a href="iscroll.html"><img alt="000" src="../img/iscroll/main_visual_12.jpg" /></a></li>
+                    </ul>
+                </div>
+                <p class="control">
+                    <a href="#" class="prev"><i class="fas fa-chevron-left"></i></a>
+                    <a href="#" class="next"><i class="fas fa-chevron-right"></i></a>
+                </p>
+            </div>
+            
+            
+        </div> <!-- #wrapper  -->
+        
+<script>
+'use strict';
+    
+// 참조 : https://github.com/cubiq/iscroll
+setTimeout(function() {
+    var myScroll = new IScroll('#iscroll-vertical', {
+        click: true,
+        scrollbars: true,
+        mouseWheel: true,
+        fadeScrollbars: true,
+        interactiveScrollbars: true,
+        shrinkScrollbars: 'scale'
+    });
+}, 500);
+
+setTimeout(function() {
+    var barWidth = 0;
+    $('#iscroll-horizon').find('ul.slide li').each(function() {
+        barWidth += $(this).outerWidth(true);
+    });
+    $('#iscroll-horizon').find('ul.slide').css({'width': barWidth + 'px'});
+    
+    var myScroll = new IScroll('#iscroll-horizon div.wrapper', {
+        scrollX: true,
+        scrollY: false,
+        click: true
+    });
+    
+    $('#iscroll-horizon').find('a.prev').on('click', function() {
+        myScroll.scrollBy(400, 0, 500);
+    });
+    $('#iscroll-horizon').find('a.next').on('click', function() {
+        myScroll.scrollBy(-400, 0, 500);
+    });
+    $(window).on('resize', function() {
+        barWidth = 0;
+        $('#iscroll-horizon').find('ul.slide li').each(function() {
+            barWidth += $(this).outerWidth(true);
+        });
+        $('#iscroll-horizon').find('ul.slide').css({'width': barWidth + 'px'});
+        myScroll.refresh();
+    });
+}, 500);
+
+
+    
+    
+    
+</script>
+    </body>
+</html>
+
+

@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "header-reactive.scss"
-    ],
-    "names": [],
-    "file": "header-reactive.css"
-}

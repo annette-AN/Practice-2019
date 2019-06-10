@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="DinoWorks Inc. 디노웍스(주)" />
+        <meta name="apple-mobile-web-app-title" content="디노웍스UI" />
+        <title>Drag | 디노웍스(주) UI 라이브러리</title>
+        <meta name="description" content="디노웍스(주) UI 라이브러리" />
+        <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="../fa/css/all.min.css" rel="stylesheet" />
+        <link href="../css/drag.css" rel="stylesheet" />
+        <script src="../js/jquery-3.4.1.min.js"></script>
+        <script src="../js/ui_common.js"></script>
+    </head>
+    <body class="sub drag">
+        <div id="wrapper">
+            <a href="#main" id="skip-nav">본문 바로가기</a>
+            <header id="header">
+                <h1><a href="../index.html"><img alt="DinoWorks(디노웍스)" src="../img/logo.png" /></a></h1>
+            </header>
+            <main id="main">
+                <div class="drag-box">
+                    <a href="#" class="box1">BOX1</a>
+                    <a href="#" class="box2">BOX2</a>
+                </div>
+            </main>
+            <footer id="footer">
+                <p class="copyright">2019 DinoWorks Inc.</p>
+            </footer>
+        </div> <!-- #wrapper  -->
+        
+<script>
+'use strict';
+
+setDrag('a.box1');
+setDrag('a.box2');
+
+function setDrag(selector) {
+    var startX = 0;
+    var startY = 0;
+    var delX = 0;
+    var delY = 0;
+    var offsetX = 0;
+    var offsetY = 0;
+
+    $(selector).on('touchstart', function(e){
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        // console.log(startX + '/' + startY);
+        $(document).on('touchmove', function(e){
+            delX = e.touches[0].clientX - startX;
+            delY = e.touches[0].clientY - startY;
+            //offset 넣으면 왜 안되냐
+            offsetX = $(this).position().left;
+            offsetY = $(this).position().top;
+            $(selector).css({'left': (offsetX + delX) + 'px', 'top': (offsetY + delY) + 'px'});
+        });
+
+        $(document).on('touchmove', function(){
+            $(document).off('touchstart touchend');
+        });
+    });
+}
+
+
+
+
+
+    
+// function setDrag(selector) {
+//     var startX = 0;
+//     var startY = 0;
+//     var delX = 0;
+//     var delY = 0;
+//     var offsetX = 0;
+//     var offsetY = 0;
+//     $(selector).on('touchstart', function(e) {
+//         e.preventDefault();
+//         startX = e.touches[0].clientX;
+//         startY = e.touches[0].clientY;
+//         offsetX = $(this).position().left;
+//         offsetY = $(this).position().top;
+//         $(document).on('touchmove', function(e) {
+//             delX = e.touches[0].clientX - startX;
+//             delY = e.touches[0].clientY - startY;
+//             $(selector).css({'left': (delX + offsetX) + 'px', 'top': (delY + offsetY) + 'px'});
+//         });
+//         $(document).on('touchend', function() {
+//             $(document).off('touchmove touchend');
+//         });    
+//     });
+// }
+
+
+</script>
+    </body>
+</html>
+
+

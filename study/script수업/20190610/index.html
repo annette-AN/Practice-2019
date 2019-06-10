@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="DinoWorks Inc. 디노웍스(주)" />
+        <meta name="apple-mobile-web-app-title" content="디노웍스UI" />
+        <title>디노웍스(주) UI 라이브러리</title>
+        <meta name="description" content="디노웍스(주) UI 라이브러리" />
+        <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="fa/css/all.min.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" media="screen and (min-width : 851px)" />
+        <link href="css/style_mobile.css" rel="stylesheet" media="screen and (max-width : 850px)" />
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/ui_common.js"></script>
+    </head>
+    <body class="main">
+        <div id="wrapper">
+            <a href="#main" id="skip-nav">본문 바로가기</a>
+            <header id="header">
+                <h1><a href="index.html"><img alt="DinoWorks(디노웍스)" src="img/logo.png" /></a></h1>
+            </header>
+            <main id="main">
+                <section id="main-visual">
+                    <ul class="slide">
+                        <li><img alt="" src="img/main_visual_01.jpg" /></li>
+                        <li><img alt="" src="img/main_visual_02.jpg" /></li>
+                        <li><img alt="" src="img/main_visual_03.jpg" /></li>
+                        <li><img alt="" src="img/main_visual_04.jpg" /></li>
+                    </ul>
+                </section>
+                <section id="main-link">
+                    <ul>
+                        <li><a href="page/drag.html">Drag</a></li>
+                        <li><a href="page/swipe_step1.html">Swipe(기초)</a></li>
+                        <li><a href="page/swipe_step2.html">Swipe(실무)</a></li>
+                        <li><a href="page/gnb1.html">GNB(메인메뉴)</a></li>
+                        <li><a href="page/gnb2.html">GNB(서브메뉴)</a></li>
+                        <li><a href="page/multi_touch_coord.html">멀티터치(좌표)</a></li>
+                        <li><a href="page/multi_touch_zoom.html">멀티터치(Zoom)</a></li>
+                        <li><a href="page/multi_touch_rotate.html">멀티터치(Rotate)</a></li>
+                        <li><a href="page/multi_touch_translate.html">멀티터치(Translate)</a></li>
+                        <li><a href="page/multi_touch_total.html">멀티터치(종합)</a></li>
+                        <li><a href="page/iscroll.html">iScroll</a></li>
+                        <li><a href="page/device_api.html">Device API</a></li>
+                    </ul>
+                </section>
+            </main>
+            <footer id="footer">
+                <p class="copyright">2019 DinoWorks Inc.</p>
+            </footer>
+        </div> <!-- #wrapper  -->
+        
+<script>
+'use strict';
+
+
+$.fn.setVisualEffect = function(options) {
+    var settings = $.extend({
+        firstSlide: 1,
+        timerStatus: true,
+        timerSpeed: 8000
+    }, options);
+    
+    this.each(function() {
+        var $selector = $(this);
+        var numSlide = $selector.find('ul.slide li').length;
+        var slideNow = 0;
+        var slideNext = 0;
+        var slidePrev = 0;
+        var firstSlide = settings.firstSlide;
+        var timerId = '';
+        var timerStatus = settings.timerStatus;
+        var timerSpeed = settings.timerSpeed;
+        
+        showSlide(firstSlide);
+        
+        function showSlide(n) {
+            clearTimeout(timerId);
+            if (slideNow === n) return false;
+            if (slideNow === 0) {
+                $selector.find('ul.slide li').css({'display': 'none'});
+                $selector.find('ul.slide li:eq(' + (n - 1) + ')').css({'display': 'block'});
+            } else {
+                $selector.find('ul.slide li:eq(' + (slideNow - 1) + ')').css({'z-index': 0}).removeClass('show').addClass('hide').one('animationend', function() {
+                    $(this).css({'display': 'none'});
+                });
+                $selector.find('ul.slide li:eq(' + (n - 1) + ')').css({'display': 'block', 'z-index': 10}).removeClass('hide').addClass('show');
+            }
+            $selector.find('ul.indicator li').removeClass('on');
+            $selector.find('ul.indicator li:eq(' + (n - 1) + ')').addClass('on');
+            slideNow = n;
+            slideNext = (n + 1) > numSlide ? 1 : n + 1;
+            slidePrev = (n - 1) < 1 ? numSlide : n - 1;
+            if (timerStatus === true) {
+                timerId = setTimeout(function() {showSlide(slideNext);}, timerSpeed);
+            }
+        }
+    });
+}
+$('#main-visual').setVisualEffect();
+
+</script>
+    </body>
+</html>
+
+

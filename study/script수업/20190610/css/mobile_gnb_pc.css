@@ -1,0 +1,75 @@
+@charset 'utf-8';
+/* CSS Document */
+
+/* reset */
+body {margin: 0;}
+h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, table {margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700;}
+header, main, footer, section, article, aside, nav {display: block;}
+a {color: inherit; text-decoration: inherit;}
+a img {border: none;}
+img {vertical-align: middle;}
+li {list-style: none;}
+address, em, i, cite {font-style: normal;}
+table {border-collapse: collapse;}
+table caption {overflow: hidden; width: 0; height: 0;}
+i.fas, i.far, i.fab {vertical-align: middle; display: inline-block;}
+.mobile {display: none !important;}
+br.only-m {content: '';}
+br.only-m:after {content: '\00a0';}
+div.hidden {position: absolute; left: -9999px;}
+
+
+/* common */
+body {font-family: 'Noto Sans KR', '나눔고딕', '맑은 고딕', 'malgun gothic', '돋움', 'Dotum', 'Apple SD Gothic Neo', 'Helvetica', sans-serif; font-weight: 400; font-size: 13px; color: #333333; background: #ffffff;}
+#wrapper {min-width: 1024px; overflow: hidden;}
+#skip-nav {position: fixed; left: 0; top: -41px; width: 100%; line-height: 40px; text-align: center; font-size: 16px; color: #ffffff; background: rgba(0, 0, 0, 0.6); border-bottom: 1px solid #ffffff; z-index: 100000; transition: top 0.3s;}
+#skip-nav:focus {top: 0;}
+#go-home {position: fixed; right: 20px; bottom: 20px; width: 60px; height: 60px; font-size: 24px; text-align: center; line-height: 56px; border-radius: 100px; color: #ffffff; background: #ffcc00; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); z-index: 10000;}
+
+#header {position: fixed; left: 0; top: 0; width: 100%; height: 100px; min-width: 1024px; background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)); color: #ffffff; z-index: 10000; transition: all 0.3s; box-sizing: border-box;}
+#header:after {content: ''; position: absolute; left: 0; bottom: 0; width: 0; height: 1px; animation: header-line 3s linear 0.5s 1 normal forwards;}
+#header.white {height: 80px; background: #ffffff; color: #333333; box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1); border-bottom: 1px solid #e0e0e0;}
+#header h1 {position: absolute; left: 50px; top: 22px; width: 220px;}
+#header.white h1 {top: 16px;}
+#header h1 img {width: 100%; transition: opacity 0.3s;}
+#header h1 img + img {position: absolute; left: 0; top: 0; opacity: 0;}
+#header.white h1 img {opacity: 0;}
+#header.white h1 img + img {opacity: 1;}
+#header.open:before {content: ''; position: absolute; left: 0; bottom: -80px; width: 100%; height: 80px; background: #5f5f6b;}
+@keyframes header-line {
+    0% {width: 0; background: rgba(255, 255, 255, 0.1);}
+    50% {width: 50%; background: rgba(255, 255, 255, 0.8);}
+    100% {width: 100%; background: rgba(255, 255, 255, 0.3);}
+}
+
+#gnb {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 18px;}
+#gnb > ul > li {float: left;}
+#gnb > ul > li + li {margin-left: 80px;}
+#gnb > ul > li > ul {position: absolute; top: 90px; color: #ffffff; font-size: 16px; display: none;}
+#header.white #gnb > ul > li > ul {top: 80px;}
+#gnb > ul > li.sub1 > ul {left: 0; width: 800px;}
+#gnb > ul > li.sub2 > ul {left: 0; width: 800px;}
+#gnb > ul > li.sub3 > ul {left: 60px; width: 800px;}
+#gnb > ul > li.sub5 > ul {right: 0;}
+#gnb > ul > li > ul > li {float: left;}
+#gnb > ul > li > ul > li + li:before {content: '|'; margin: 0 30px; font-size: 10px; color: #80808d; position: relative; top: -3px;}
+#gnb > ul > li > ul > li > a {transition: color 0.3s;}
+#gnb > ul > li > ul > li.on > a,
+#gnb > ul > li > ul > li > a:hover {color: #ffc20f;}
+#gnb span.bar {position: absolute; left: 0; bottom: -36px; width: 0; height: 4px; background: #ffc20f; transition: all 0.3s;}
+#header.white #gnb span.bar {bottom: -26px;}
+@media screen and (max-width: 1350px) {
+    #header h1 {width: 180px;}
+    #gnb {font-size: 16px;}
+    #gnb > ul > li + li {margin-left: 40px;}
+    #gnb > ul > li > ul {font-size: 14px;}
+    #gnb > ul > li > ul > li + li:before {margin: 0 20px;}
+}
+
+#top-menu {position: absolute; right: 50px; top: 50%; transform: translate(0, -50%);}
+#top-menu > li {float: left;}
+#top-menu > li + li {margin-left: 30px;}
+#top-menu > li i {margin-right: 8px; position: relative; top: -1px;}
+#top-menu a {transition: color 0.3s;}
+#top-menu a:hover {color: #ffc20f;}

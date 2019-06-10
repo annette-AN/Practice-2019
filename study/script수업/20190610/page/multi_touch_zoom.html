@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="DinoWorks Inc. 디노웍스(주)" />
+        <meta name="apple-mobile-web-app-title" content="디노웍스 모바일 UI" />
+        <title>멀티터치(Zoom) | 디노웍스(주) 모바일 UI 라이브러리</title>
+        <meta name="description" content="디노웍스(주) 모바일 UI 라이브러리 : 멀티터치(Zoom)" />
+        <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="../fa/css/all.min.css" rel="stylesheet" />
+        <link href="../css/multi_touch.css" rel="stylesheet" />
+        <script src="../js/jquery-3.4.1.min.js"></script>
+        <script src="../js/ui_common.js"></script>
+    </head>
+    <body class="main">
+        <div id="wrapper">
+            <a href="#main" id="skip-nav">본문 바로가기</a>
+            <a href="../index.html" id="go-home" title="홈 화면"><i class="fas fa-home"></i></a>
+            
+            <header id="header">
+                <h1><a href="#"><img alt="CELL BLOOM" src="../img/swipe/logo.png" /></a></h1>
+            </header>
+            <main id="main">
+                <div class="content-box"><img alt="" src="../img/swipe/main_visual_01.jpg" /></div>
+                <div class="event-type"></div>
+            </main>
+        </div> <!-- #wrapper  -->
+        
+<script>
+'use strict';
+    
+applyZoom('div.content-box');
+    
+function applyZoom(selector) {
+    var startDist = 0;
+    var delDist = 0;
+    var scaleNow = 1;
+    var scalePrev = 1;
+    
+    $(selector).on('touchstart', function(e) {
+        if (e.touches.length === 2) {
+            e.preventDefault();
+            var startX1 = e.touches[0].clientX;
+            var startY1 = e.touches[0].clientY;
+            var startX2 = e.touches[1].clientX;
+            var startY2 = e.touches[1].clientY;
+            startDist = Math.sqrt(Math.pow(startX2 - startX1, 2) + Math.pow(startY2 - startY1, 2));
+            
+            //$('div.event-type').append('<span>' + startDist +'</span> ');
+            $(document).on('touchmove', function(e) {
+                var startX1 = e.touches[0].clientX;
+                var startY1 = e.touches[0].clientY;
+                var startX2 = e.touches[1].clientX;
+                var startY2 = e.touches[1].clientY;
+                delDist = Math.sqrt(Math.pow(startX2 - startX1, 2) + Math.pow(startY2 - startY1, 2));
+                scaleNow = scalePrev * (delDist / startDist);
+                $(selector).find('img').css({'transform': 'scale(' + scaleNow + ')'});
+                //$('div.event-type').append('<span>' + delDist +'</span> ');
+            });
+            $(document).on('touchend', function() {
+                scalePrev = scaleNow;
+                $(document).off('touchmove touchend');
+            });
+        }
+    });
+    
+    
+    
+}
+    
+/*
+applyZoom('div.content-box');
+
+function applyZoom(selector) {
+    var startDist = 0;
+    var delDist = 0;
+    var scaleNow = 1;   // 시작상태가 1임(배율)
+    var scalePrev = 1;  // 시작상태가 1임(배율)
+    var scaleMin = 1;   // 최소크기의 배율
+    
+    $(selector).on('touchstart', function(e) {
+        // touch start가 2번 발생하니 이벤트 부착시 유의 --> 모든 동작은 2번째 touch 중심으로 설계
+        // if (e.originalEvent.touches.length !== 2) return false   시 e.preventDefault 효과(아예 기본동작도 막힘)
+        if (e.originalEvent.touches.length == 2) {
+            e.preventDefault();
+            var startX1 = e.originalEvent.touches[0].clientX;
+            var startX2 = e.originalEvent.touches[1].clientX;
+            var startY1 = e.originalEvent.touches[0].clientY;
+            var startY2 = e.originalEvent.touches[1].clientY;
+            startDist = Math.sqrt(Math.pow(startX2 - startX1, 2) + Math.pow(startY2 - startY1, 2));  // x^2 + y^2 = z^2
+            //$('div.event-type').append('<span>거리(시작) : ' + startDist + '</span> ');
+            
+            var centerX = ((startX1 + ((startX2 - startX1) / 2)) / $(selector).innerWidth()) * 100;
+            var centerY = ((startY1 + ((startY2 - startY1) / 2)) / $(selector).innerHeight()) * 100;
+            $('div.event-type').append('<span>이미지크기 : ' + centerX + '%, ' + centerY + '%</span> ');
+            
+            
+            $(selector).on('touchmove', function(e) {  // 2번째 touch가 start된 이후에 move 동작 반영
+                var startX1 = e.originalEvent.touches[0].clientX;
+                var startX2 = e.originalEvent.touches[1].clientX;
+                var startY1 = e.originalEvent.touches[0].clientY;
+                var startY2 = e.originalEvent.touches[1].clientY;
+                var widthContent = $(selector).find('img').width();
+                delDist = Math.sqrt(Math.pow(startX2 - startX1, 2) + Math.pow(startY2 - startY1, 2)) - startDist;
+                scaleNow = ((startDist + delDist) / startDist) * scalePrev;  // 현재 변화량(백분율)에서 기존 변화량 반영
+                if (scaleNow < scaleMin) scaleNow = scaleMin;   // 축소할 수 있는 최소크기(배율) 지정
+                $(selector).find('img').css({
+                    '-webkit-transform': 'scale(' + scaleNow + ')',
+                    'transform': 'scale(' + scaleNow + ')'
+                });
+                //$('div.event-type').append('<span>거리(변화량) : ' + delDist + 'px / ' + scaleNow + '배</span> ');
+            });
+            
+            $(selector).on('touchend', function(e) {  // 2번째 touch가 떨어지는 경우
+                //$('p.event-type').append('<span>touchend : ' + e.originalEvent.touches.length + '</span> ');  // 떨어진 이후에 남아 있는 touch 수 표시
+                scalePrev = scaleNow;
+                $(selector).off('touchmove touchend');
+            });
+        }
+    });
+}
+    
+*/
+    
+    
+    
+</script>
+    </body>
+</html>
+
+

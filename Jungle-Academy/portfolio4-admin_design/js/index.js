@@ -13,10 +13,10 @@ $('.menu-bar').on('click', function(){
     console.log('width767');
     if ($('#main-gnb').hasClass('open')) {
       $('#main-gnb').removeClass('open','');
-      $('main').css({'left': 0 + 'px'})
+      $('main').css({'left': 0 + 'px'});
     } else {
       $('#main-gnb').addClass('open','');
-      $('main').css({'left': 50 + 'px'})
+      $('main').css({'left': 50 + 'px'});
     }
   } else {
     if ($('header').hasClass('open')) {
@@ -55,13 +55,32 @@ $(document).on('click', 'header.open', function(e){
 
 //main js
 
-setInterval(joingBoardEffect);
+var animateSpeed = 1000;
+var delay = 3000;
 
-function joingBoardEffect() {
+setInterval(function(){joingBoardEffect('.joing-board li:eq(0)', 0, animateSpeed)}, 5000);
+setInterval(function(){joingBoardEffect('.joing-board li:eq(1)', 500, animateSpeed)}, 5500);
+setInterval(function(){joingBoardEffect('.joing-board li:eq(2)', 1000, animateSpeed)}, 6000);
+setInterval(function(){joingBoardEffect('.joing-board li:eq(3)', 100, animateSpeed)}, 4000);
+
+function joingBoardEffect(selector, startDelay, animateSpeed) {
+  $(selector).find('div:eq(0)').delay(startDelay).animate({'top': -100 + '%'}, animateSpeed, function(){
+    $(this).css({'top': 100 + '%'});
+    $(this).delay(delay).animate({'top': 0 + '%'}, animateSpeed);
+  });
+
+  $(selector).find('div:eq(1)').delay(startDelay).animate({'top': 0 + '%'}, animateSpeed).delay(delay).animate({'top': -100 + '%'}, animateSpeed, function(){
+      $(this).css({'top': 100 + '%'});
+  });
 }
 
+
+
+
   //왜 첫번째 li만 적용되는지 모르겠음
-$('.joing-board li div:eq(1)').animate({'top': 0 + '%'}, 500);
-$('.joing-board li div:eq(0)').animate({'top': -100 + '%'}, 500, function(){
-   $(this).css({'top': 100 + '%'});
-});
+
+
+  // $('.joing-board li div:eq(1)').animate({'top': 0 + '%'}, 500);
+  // $('.joing-board li div:eq(0)').animate({'top': -100 + '%'}, 500, function(){
+  //   $(this).css({'top': 100 + '%'});
+  // });

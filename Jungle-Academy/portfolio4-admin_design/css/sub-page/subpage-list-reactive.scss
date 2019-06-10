@@ -1,0 +1,28 @@
+//max-width : 2560
+//media-1150 ~ 1600 {
+@media all and (min-width: 1150px) and (max-width: 1600px) {
+
+}
+
+
+//media-768 ~ 1149 
+@media all and (min-width: 768px) and (max-width: 1149px) {
+
+}
+
+
+//media-768 ~  991 
+@media all and (min-width: 768px) and (max-width: 991px) {
+  //게시판 스킨을 중간으로 내리고 싶음
+  main {
+    padding: 2% 5%;
+  }
+}
+
+//media-320 ~ 767 
+@media all and (min-width: 320px) and (max-width: 767px) {
+  main {
+    padding: 0%;
+    margin: 16px;
+  }
+}

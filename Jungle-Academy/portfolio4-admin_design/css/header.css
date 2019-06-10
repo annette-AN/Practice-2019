@@ -34,12 +34,6 @@ input, button, select {
   font: inherit;
 }
 
-select {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-}
-
 button {
   cursor: pointer;
 }
@@ -91,8 +85,6 @@ i {
   display: inline-block;
   vertical-align: middle;
   width: 20px;
-  height: 20px;
-  line-height: initial;
   cursor: pointer;
 }
 
@@ -131,15 +123,16 @@ i {
 }
 
 #main-tnb .tnb-wrap .search-board {
+  display: inline-block;
   position: relative;
   width: 300px;
-  height: 36px;
   margin-left: 40px;
 }
 
 #main-tnb .tnb-wrap .search-board input {
   width: 100%;
-  height: 100%;
+  height: 36px;
+  line-height: 36px;
   padding: 0px 35px 0px 15px;
 }
 
@@ -152,12 +145,23 @@ i {
 }
 
 #main-tnb .tnb-wrap .search-board a {
-  position: absolute;
-  top: 1px;
-  right: 10px;
   display: block;
-  float: left;
-  margin-top: 7px;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  height: 50%;
+  line-height: 30px;
+  vertical-align: baseline;
+}
+
+#main-tnb .tnb-wrap .search-board a i {
+  position: absolute;
+  top: 60%;
+  right: 0px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .user-profile {
@@ -586,7 +590,7 @@ main {
   top: 61px;
   left: 50px;
   right: 0px;
-  height: 100%;
+  height: auto;
   padding: 30px;
   background: #E5E9EC;
   z-index: 1;
@@ -594,5 +598,33 @@ main {
 
 header.open + main {
   left: 250px;
+}
+
+@media all and (min-width: 320px) and (max-width: 767px) {
+  main {
+    left: 0px;
+    padding: 16px;
+  }
+  header {
+    background: #21262D;
+  }
+  i {
+    color: #f5f5f5;
+  }
+  #main-tnb .tnb-wrap .refresh {
+    display: none;
+  }
+  #main-tnb .tnb-wrap .bell {
+    display: none;
+  }
+  #main-tnb .tnb-wrap .search-board {
+    display: none;
+  }
+  #main-tnb .user-wrap .user-profile {
+    display: none;
+  }
+  #main-gnb {
+    display: none;
+  }
 }
 /*# sourceMappingURL=header.css.map */

@@ -77,8 +77,8 @@ header.open + main {
       }
 
       select {
-        padding: 0px 15px 0px 5px;
-        background: url(../../img/icon/arrow-both.png) no-repeat right center / 14px;
+        // padding: 0px 15px 0px 5px;
+        // background: url(../../img/icon/arrow-both.png) no-repeat right center / 14px;
       }
 
       i {
@@ -124,6 +124,7 @@ header.open + main {
       a {
         &:hover {
           text-decoration: underline;
+          text-decoration-color: #E9595A;
         }
       }
     }

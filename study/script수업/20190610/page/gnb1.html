@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="DinoWorks Inc. 디노웍스(주)" />
+        <meta name="apple-mobile-web-app-title" content="디노웍스UI" />
+        <title>Drag | 디노웍스(주) UI 라이브러리</title>
+        <meta name="description" content="디노웍스(주) UI 라이브러리" />
+        <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="../fa/css/all.min.css" rel="stylesheet" />
+        <link href="../css/gnb.css" rel="stylesheet" />
+        <script src="../js/jquery-3.4.1.min.js"></script>
+        <script src="../js/ui_common.js"></script>
+    </head>
+    <body class="sub drag">
+        <div id="wrapper">
+            <a href="#main" id="skip-nav">본문 바로가기</a>
+            <header id="header">
+                <h1><a href="../index.html"><img alt="DinoWorks(디노웍스)" src="../img/logo.png" /></a></h1>
+                <a href="#" class="menu"><span>메뉴 열기/닫기</span></a>
+                <nav id="gnb">
+                    <ul>
+                        <li><a href="#">신용카드 인증</a></li>
+                        <li><a href="#">카카오 인증</a></li>
+                        <li><a href="#">인증활용</a></li>
+                        <li><a href="#">제휴문의</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main id="main">
+                <section>contents</section>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <div id="function">
+                    <a href="#"><i class="fas fa-plus"><span>기능버튼 열기/닫기</span></i></a>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-bell"><span></span></i></a></li>
+                        <li><a href="#"><i class="fas fa-bullhorn"><span></span></i></a></li>
+                        <li><a href="#"><i class="fas fa-calendar-alt"><span></span></i></a></li>
+                        <li><a href="#"><i class="fas fa-cart-arrow-down"><span></span></i></a></li>
+                    </ul>
+                </div>
+            </main>
+            <footer id="footer">
+                <p class="copyright">2019 DinoWorks Inc.</p>
+            </footer>
+        </div> <!-- #wrapper  -->
+        
+<script>
+'use strict';
+
+$('#header a.menu').on('click', function() {
+    $(this).toggleClass('close');
+    $('#gnb').toggleClass('open');
+});
+
+$('#function > a').on('click', function() {
+    $('#function').toggleClass('open');
+});
+    
+    
+    
+    
+
+</script>
+    </body>
+</html>
+
+

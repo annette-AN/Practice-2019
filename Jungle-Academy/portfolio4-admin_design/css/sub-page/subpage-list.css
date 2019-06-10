@@ -74,11 +74,6 @@ header.open + main {
   line-height: 13px;
 }
 
-.list-search table td select {
-  padding: 0px 15px 0px 5px;
-  background: url(../../img/icon/arrow-both.png) no-repeat right center/14px;
-}
-
 .list-search table td i {
   font-size: 12px;
 }
@@ -117,6 +112,8 @@ header.open + main {
 
 .list-board table tr a:hover {
   text-decoration: underline;
+  -webkit-text-decoration-color: #E9595A;
+          text-decoration-color: #E9595A;
 }
 
 .list-board table th {

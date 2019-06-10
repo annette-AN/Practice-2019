@@ -1,0 +1,83 @@
+@charset 'utf-8';
+/* CSS Document */
+
+/* reset */
+html {-webkit-text-size-adjust: none; text-size-adjust: none;}
+body {margin: 0;}
+h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, table, blockquote {margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 600;}
+header, main, footer, section, article, aside, nav {display: block;}
+a {color: inherit; text-decoration: inherit;}
+a img {border: none;}
+img {vertical-align: middle; max-width: 100%;}
+li {list-style: none;}
+address, em, i, cite {font-style: normal;}
+table {border-collapse: collapse;}
+table caption {overflow: hidden; width: 0; height: 0;}
+i.fas, i.far, i.fab {vertical-align: middle; display: inline-block;}
+.pc {display: none !important;}
+br.only-w {content: '';}
+br.only-w:after {content: '\00a0';}
+div.hidden {position: absolute; left: -9999px;}
+
+
+/* common */
+body {font-family: '맑은 고딕', 'malgun gothic', '돋움', Dotum, 'Apple SD Gothic Neo', Helvetica, sans-serif; font-weight: 400; font-size: 14px; color: #333333 ; background: #ffffff;}
+#wrapper{overflow: hidden; min-width: 320px; max-width: 850px; margin: 0 auto;}
+#skip-nav {position: fixed; left: 0; top: -41px; width: 100%; line-height: 40px; text-align: center; font-size: 16px; color: #ffffff; background: rgba(0, 0, 0, 0.6); border-bottom: 1px solid #ffffff; z-index: 100000; transition: top 0.3s;}
+#skip-nav:focus {top: 0;}
+#go-home {position: fixed; right: 20px; bottom: 20px; width: 60px; height: 60px; font-size: 24px; text-align: center; line-height: 56px; border-radius: 100px; color: #ffffff; background: #ffcc00; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); z-index: 10000;}
+
+#header {position: fixed; left: 0; top: 0; width: 100%; height: 60px; box-sizing: border-box; background: #ffffff; border-bottom: 1px solid #e0e0e0; z-index: 1000;}
+#header h1 {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); line-height: 0; width: 120px;}
+#main {padding-top: 60px;}
+
+
+
+/* touch event */
+div.content-box {border: 2px solid #e0e0e0; margin: 10px; overflow: hidden; position: relative;}
+div.content-box a.reset {position: absolute; right: 10px; top: 10px; width: 30px; height: 30px; border: 1px solid #cccccc; background: rgba(0, 0, 0, 0.3); color: #ffffff; box-sizing: border-box; text-align: center; line-height: 28px; font-size: 16px;}
+div.event-type {border: 2px solid #e0e0e0; margin: 10px; overflow: hidden; background: yellow; min-height: 200px; position: relative;}
+
+div.touch-box {margin: 10px; border: 1px solid #e0e0e0; overflow: hidden; position: relative;}
+div.touch-box div.content {}
+div.touch-box span.center {position: absolute; left: 0; top: 0; width: 4px; height: 4px; background: #ff0000; z-index: 100;}
+
+
+/* device orientation */
+#box {height: 300px; border: 2px solid #e0e0e0; position: relative; perspective: 150px;}
+#box1 {position: absolute; left: 50%; top: 50%; width: 100px; height: 100px; margin: -50px 0 0 -50px; background: blue;}
+
+/* device api */
+ul.api {padding: 20px;}
+ul.api li + li {margin-top: 30px;}
+ul.api li a {display: inline-block; line-height: 40px; font-size: 20px; border: 2px solid #e0e0e0; padding: 0 20px; border-radius: 5px;}
+
+
+
+
+/* animation */
+/*
+@keyframes visual-show {
+    0% {opacity: 0; transform: rotate(3deg) scale(1.2);}
+    100% {opacity: 1; transform: rotate(0) scale(1);}
+}
+@keyframes visual-hide {
+    0% {opacity: 1; transform: rotate(0) scale(1);}
+    100% {opacity: 0; transform: rotate(-3deg) scale(1.2);}
+}
+animation 축약 표현
+animation: main-bg-animation 3s ease-out 0.1s 1 normal forwards running;
+animation: name duration timing-function delay iteration-count direction fill-mode play-state
+duration: 0(default), time, initial, inherit
+timing-function: ease(default), linear, ease-in, ease-out, ease-in-out, step-start, step-end, steps(int, start|end), cubic-bezier(n, n, n, n), initial, inherit
+deley: 0s(default), time, initial, inherit
+direction: normal(default), reverse, alternate, alternate-reverse, initial, inherit
+iteration-count: 1(default), number, infinite, initial, inherit
+fill-mode: none(default), forwards, backwards, both, initial, inherit
+play-state: running(default), paused, initial, inherit  (IE에서는 축약표현에 포함시 동작하지 않음, 별도로 사용)
+
+[최종 사용 예시]
+animation: main-bg-animation 3s ease-out 0s 1 normal forwards;
+animation-play-state: running;
+*/

@@ -392,6 +392,14 @@ section .table-wrap table tbody tr + tr {
   height: 100%;
 }
 
+.joing .joing-board li div.board-active-top0 {
+  top: 0%;
+}
+
+.joing .joing-board li div.board-active-top100 {
+  top: -100%;
+}
+
 .joing .joing-board li div img {
   width: 100%;
   height: 100%;

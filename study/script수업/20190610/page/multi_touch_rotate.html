@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="DinoWorks Inc. 디노웍스(주)" />
+        <meta name="apple-mobile-web-app-title" content="디노웍스 모바일 UI 멀티터치(Rotate)" />
+        <title>멀티터치(Rotate) | 디노웍스(주) 모바일 UI 라이브러리</title>
+        <meta name="description" content="디노웍스(주) 모바일 UI 라이브러리 : 멀티터치(Rotate)" />
+        <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="../fa/css/all.min.css" rel="stylesheet" />
+        <link href="../css/multi_touch.css" rel="stylesheet" />
+        <script src="../js/jquery-3.4.1.min.js"></script>
+        <script src="../js/ui_common.js"></script>
+    </head>
+    <body class="main">
+        <div id="wrapper">
+            <a href="#main" id="skip-nav">본문 바로가기</a>
+            <a href="../index.html" id="go-home" title="홈 화면"><i class="fas fa-home"></i></a>
+            
+            <header id="header">
+                <h1><a href="#"><img alt="CELL BLOOM" src="../img/swipe/logo.png" /></a></h1>
+            </header>
+            <main id="main">
+                <div class="content-box"><img alt="" src="../img/swipe/main_visual_01.jpg" /></div>
+                <div class="event-type"></div>
+            </main>
+        </div> <!-- #wrapper  -->
+        
+<script>
+'use strict';
+    
+applyRotate('div.content-box');
+    
+function applyRotate(selector) {
+    var startDeg = 0;   // 시작각도
+    var movingDeg = 0;  // 변화후 각도 (경계지점 통과여부 판단용)
+    var movingDegPrev = 0;  // 변화 직전의 각도 (경계지점 통과여부 판단용)
+    var delDeg = 0;   // 각도 변화량
+    var degNow = 0;   // 현재 각도변화량
+    var degPrev = 0;  // 기존 시작시점 각도
+    
+    $(selector).on('touchstart', function(e) {
+        // touch start가 2번 발생하니 이벤트 부착시 유의 --> 모든 동작은 2번째 touch 중심으로 설계
+        // if (e.originalEvent.touches.length !== 2) return false   시 e.preventDefault 효과(아예 기본동작도 막힘)
+        if (e.originalEvent.touches.length == 2) {
+            e.preventDefault();
+            var startX1 = e.originalEvent.touches[0].clientX;
+            var startX2 = e.originalEvent.touches[1].clientX;
+            var startY1 = e.originalEvent.touches[0].clientY;
+            var startY2 = e.originalEvent.touches[1].clientY;
+            startDeg = Math.atan((startY2 - startY1) / (startX2 - startX1)) * (180 / Math.PI);
+            // 시계방향으로의 표시 각도 ==> 1사분면:-90~0, 2사분면:0~90, 3사분면: -90~0, 4사분면:0 ~ 90
+            // 시계방향 회전시 각도 증가, 반시계방향시 각도 감소하나 12시, 6시 방향에서 튐현상 발생
+            $('div.event-type').append('<span>각도(시작) : ' + startDeg + '</span> ');
+            $(selector).on('touchmove', function(e) {  // 2번째 touch가 start된 이후에 move 동작 반영
+                var startX1 = e.originalEvent.touches[0].clientX;
+                var startX2 = e.originalEvent.touches[1].clientX;
+                var startY1 = e.originalEvent.touches[0].clientY;
+                var startY2 = e.originalEvent.touches[1].clientY;
+                movingDeg =  Math.atan((startY2 - startY1) / (startX2 - startX1)) * (180 / Math.PI);  // 움직이고 있는 현재 시점의 각도
+                delDeg = movingDeg - startDeg;
+                if (movingDegPrev !== 0) { // 최초 + 가로 기준점 통과시 제외
+                    if ((movingDegPrev <= 90 && movingDegPrev >= 80) && (movingDeg >= -90 && movingDeg <= -80)){ // 우측으로 기준점 통과시
+                        degPrev += 180;
+                        $('div.event-type').append('<span>시계방향통과! : ' + degPrev + '</span> ');
+                    } else if ((movingDegPrev >= -90 && movingDegPrev <= -80) && (movingDeg <= 90 && movingDeg >= 80)) {
+                        degPrev -= 180;
+                        $('div.event-type').append('<span>시계반대방향통과! : ' + degPrev + '</span> ');
+                    }
+                }
+                movingDegPrev = movingDeg;   // 이동 직전의 각도 업데이트
+                $('div.event-type').append('<span>각도(변화량) : ' + movingDeg + '</span> ');
+                degNow = delDeg + degPrev;
+                $(selector).find('img').css({
+                    '-webkit-transform': 'rotate(' + degNow + 'deg)',
+                    'transform': 'rotate(' + degNow + 'deg)'
+                });
+            });
+            
+            $(selector).on('touchend', function() {  // 2번째 touch가 떨어지는 경우
+                degPrev = degNow;
+                $(selector).off('touchmove touchend');
+                $('div.event-type').append('<span>각도(최종) : ' + degPrev + '</span> ');
+            });
+        }
+    });
+}
+    
+    
+    
+</script>
+    </body>
+</html>
+
+

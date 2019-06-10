@@ -1,0 +1,58 @@
+@charset 'utf-8';
+/* CSS Document */
+
+/* reset */
+body {margin: 0;}
+h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, table {margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700;}
+header, main, footer, section, article, aside, nav {display: block;}
+a {color: inherit; text-decoration: inherit;}
+a img {border: none;}
+img {vertical-align: middle;}
+li {list-style: none;}
+address, em, i, cite {font-style: normal;}
+table {border-collapse: collapse;}
+table caption {overflow: hidden; width: 0; height: 0;}
+i.fas, i.far, i.fab {vertical-align: middle; display: inline-block;}
+.mobile {display: none !important;}
+br.only-m {content: '';}
+br.only-m:after {content: '\00a0';}
+div.hidden {position: absolute; left: -9999px;}
+
+
+/* common */
+body {font-family: 'Noto Sans KR', '나눔고딕', '맑은 고딕', 'malgun gothic', '돋움', 'Dotum', 'Apple SD Gothic Neo', 'Helvetica', sans-serif; font-weight: 400; font-size: 13px; color: #333333; background: #ffffff;}
+#wrapper {min-width: 1024px; overflow: hidden;}
+#skip-nav {position: fixed; left: 0; top: -41px; width: 100%; line-height: 40px; text-align: center; font-size: 16px; color: #ffffff; background: rgba(0, 0, 0, 0.6); border-bottom: 1px solid #ffffff; z-index: 100000; transition: top 0.3s;}
+#skip-nav:focus {top: 0;}
+#go-home {position: fixed; right: 20px; bottom: 20px; width: 60px; height: 60px; font-size: 24px; text-align: center; line-height: 56px; border-radius: 100px; color: #ffffff; background: #ffcc00; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); z-index: 10000;}
+
+
+#iscroll-vertical {margin: 50px; border: 2px solid #e0e0e0; position: relative; width: 300px; max-height: 600px; overflow: hidden;}
+#iscroll-vertical ul {background: yellow;}
+#iscroll-vertical ul li + li {margin-top: 20px;}
+#iscroll-vertical img {width: 100%;}
+
+
+#iscroll-horizon {margin: 50px; border: 2px solid #e0e0e0; position: relative; overflow: hidden;}
+#iscroll-horizon div.wrapper {height: 100%; position: relative; overflow: hidden;}
+#iscroll-horizon ul {position: relative; width: 10000px; background: yellow; overflow: hidden;}
+#iscroll-horizon ul li {float: left; width: 200px;}
+#iscroll-horizon ul li + li {margin-left: 20px;}
+#iscroll-horizon img {width: 100%;}
+#iscroll-horizon p.control a {position: absolute; top: 0; width: 40px; height: 100%; background: rgba(0, 0, 0, 0.3); color: #ffffff; font-size: 24px; z-index: 10;}
+#iscroll-horizon p.control a.prev {left: 0;}
+#iscroll-horizon p.control a.next {right: 0;}
+#iscroll-horizon p.control a i {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+
+
+
+
+
+
+
+
+
+
+
+
