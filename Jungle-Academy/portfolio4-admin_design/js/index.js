@@ -59,9 +59,9 @@ var animateSpeed = 1000;
 var delay = 3000;
 
 setInterval(function(){joingBoardEffect('.joing-board li:eq(0)', 0, animateSpeed)}, 5000);
-setInterval(function(){joingBoardEffect('.joing-board li:eq(1)', 500, animateSpeed)}, 5500);
-setInterval(function(){joingBoardEffect('.joing-board li:eq(2)', 1000, animateSpeed)}, 6000);
-setInterval(function(){joingBoardEffect('.joing-board li:eq(3)', 100, animateSpeed)}, 4000);
+setInterval(function(){joingBoardEffect('.joing-board li:eq(1)', 500, animateSpeed)}, 6000);
+setInterval(function(){joingBoardEffect('.joing-board li:eq(2)', 1000, animateSpeed)}, 7000);
+setInterval(function(){joingBoardEffect('.joing-board li:eq(3)', 100, animateSpeed)}, 5200);
 
 function joingBoardEffect(selector, startDelay, animateSpeed) {
   $(selector).find('div:eq(0)').delay(startDelay).animate({'top': -100 + '%'}, animateSpeed, function(){
@@ -75,10 +75,7 @@ function joingBoardEffect(selector, startDelay, animateSpeed) {
 }
 
 
-
-
   //왜 첫번째 li만 적용되는지 모르겠음
-
 
   // $('.joing-board li div:eq(1)').animate({'top': 0 + '%'}, 500);
   // $('.joing-board li div:eq(0)').animate({'top': -100 + '%'}, 500, function(){
