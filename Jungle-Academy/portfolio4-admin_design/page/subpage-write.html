@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="../css/header.css"> -->
+  <!-- <link rel="stylesheet" href="../css/sub-page/subpage-list.css"> -->
+  <!-- <link rel="stylesheet" href="../css/sub-page/subpage-list-reactive.css"> -->
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <title>write/admin/portfolio</title>
+</head>
+<body>
+  <header>
+    <nav id="main-tnb">
+      <ul class="tnb-wrap">
+        <li class="menu-bar"><i class="fas fa-bars"><span class="child-text-ir">메뉴바 아이콘</span></i></li>
+        <li class="refresh"><i class="fas fa-redo"><span class="child-text-ir">새로고침 아이콘</span></i></li>
+        <!-- bell .notice 를 넣으면 신호등 표시가 나옴 -->
+        <li class="bell"><i class="far fa-bell"><span class="child-text-ir">알림종 아이콘</span></i></li>
+        <li class="search-board">
+          <input type="text" placeholder="Search Dashboard">
+          <a href="#"><i class="fas fa-search"><span class="child-text-ir">돋보기 아이콘</span></i></a>
+        </li>
+      </ul>
+
+      <div class="user-wrap">
+        <!-- user-profile .notice 를 넣으면 신호등 표시가 나옴 -->
+        <!-- 사용자 사진도 때에따라 바껴야하는데 어떻게? -->
+        <div class="user-profile"><span class="child-text-ir">사용자프로필사진</span></div>     
+        <ul class="user-info">
+          <li>
+            <a href="#"><i class="fas fa-cogs"><span class="child-text-ir">사용자 정보</span></i></a>
+            <ul>
+              <li><a href="#">my account</a></li>
+              <li><a href="#">my calendar</a></li>
+              <!-- inbox .notice 를 넣으면 신호등 표시가 나옴, 알림 개수는 content에 적으면 적용됨 -->
+              <li class="inbox"><a href="#">my inbox</a></li>
+              <li><a href="#"><i class="fas fa-power-off"><span class="child-text-ir">로그아웃 아이콘</span></i>log out</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <nav id="main-gnb">
+      <div id="main-gnb-header">
+        <h1>web<span><span class="child-text-ir">동그라미 아이콘</span></span><strong>Admin</strong></h1>
+        <ul>
+          <li><a href="index.html"><i class="fas fa-home"><span class="child-text-ir">홈 바로가기 아이콘</span></i></a></li>
+          <!-- mail .notice 를 넣으면 신호등 표시가 나옴 -->
+          <li><a class="mail" href="#"><i class="fas fa-envelope"><span class="child-text-ir">메일 바로가기 아이콘</span></i></a></li>
+        </ul>
+      </div>
+
+      <div id="main-gnb-contents">
+        <div class="gnb-user-profile">
+          <!-- user-profile .notice 를 넣으면 신호등 표시가 나옴 -->
+          <!-- 회원 프로필 사진영역 -->
+          <div class="user-profile">
+            <span class="child-text-ir">사용자프로필사진</span>
+          </div>
+          <h2>fred smith 
+            <span>Life goes on...</span>
+          </h2>
+        </div>
+
+        <ul class="main-gnb-menu">
+          <li>
+            <a href="index.html">
+              <i class="fas fa-home"></i>
+              <span>home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-cube"></i>
+              <span>widgets</span>
+            </a>
+          </li>
+          <li>
+            <a href="page/subpage-list.html">
+              <i class="fas fa-list-alt"></i>
+              <span>list</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fab fa-ethereum"></i>
+              <span>themes</span>
+            </a>
+            <ul>
+              <li><a href="#">coporate</a></li>
+              <li><a href="#">simple</a></li>
+              <li><a href="#">elegant</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-layer-group"></i>
+              <span>layouts</span>
+              </a>
+            <ul>
+              <li><a href="#">layout options</a></li>
+              <li><a href="#">boxed layout</a></li>
+              <li><a href="#">inner boxed layout</a></li>
+              <li><a href="#">extended layout</a></li>
+              <li><a href="#">RTL layout</a></li>
+              <li><a href="#">horizontal menu</a></li>
+              <li><a href="#">horizontal menu &amp; boxed</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-tablet-alt"></i>
+              <span>UI elements</span>
+            </a>
+            <ul>
+              <li><a href="#">typography</a></li>
+              <li><a href="#">messages &amp; notifications</a></li>
+              <li><a href="#">notifications</a></li>
+              <li><a href="#">icons</a></li>
+              <li><a href="#">buttons</a></li>
+              <li><a href="#">tabs &amp; accordions</a></li>
+              <li><a href="#">sliders</a></li>
+              <li><a href="#">group list</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+                <i class="fas fa-share-square"></i>
+                <span>forms</span>
+              </a>
+            <ul>
+              <li><a href="#">form elements</a></li>
+              <li><a href="#">form validations</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+                <i class="fas fa-th"></i>
+                <span>grids</span>
+              </a>
+            <ul>
+              <li><a href="#">simple grids</a></li>
+              <li><a href="#">draggable grids</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+                <i class="fas fa-table"></i>
+                <span>tables</span>
+              </a>
+            <ul>
+              <li><a href="#">basic tables</a></li>
+              <li><a href="#">data tables</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>maps</span>
+              </a>
+            <ul>
+              <li><a href="#">google maps</a></li>
+              <li><a href="#">vector maps</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+                <i class="fab fa-sketch"></i>
+                <span>extra</span>
+              </a>
+            <ul>
+              <li><a href="#">user profile</a></li>
+              <li><a href="#">time line</a></li>
+              <li><a href="#">support ticket</a></li>
+              <li><a href="#">gallery</a></li>
+              <li><a href="#">calendar</a></li>
+              <li><a href="#">search results</a></li>
+              <li><a href="#">invoice</a></li>
+              <li><a href="#">404 page</a></li>
+              <li><a href="#">500 page</a></li>
+              <li><a href="#">blank page</a></li>
+              <li><a href="#">login</a></li>
+              <li><a href="#">login v2</a></li>
+              <li><a href="#">lockscreen</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+                <i class="fas fa-ellipsis-h"></i>
+                <span>menu levels</span>
+              </a>
+            <ul>
+              <li><a href="#">level 1</a></li>
+              <li><a href="#">level 2</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div id="main-wrap">
+      <section class="list-search">
+        <h2>게시글 양식 등록</h2>
+        <table>
+          <colgroup>
+            <!-- 이거 no-bg colspan했더니 이상하게 width이상하게 먹힘 -->
+            <col span="1" style="width:150px">
+          </colgroup>
+          <tbody>
+            <tr>
+              <td>제목</td>
+              <td>
+                <label for="title">
+                  <input type="text" id="title">
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>분류</td>
+              <td>
+                <label for="use-information">
+                  <input type="radio" name="kind-of" id="use-information">
+                  이용안내
+                </label>
+                <label for="about-member">
+                  <input type="radio" name="kind-of" id="about-member">
+                  회원관련
+                </label>
+                <label for="order-etc">
+                  <input type="radio" name="kind-of" id="order-etc">
+                  주문/결제/배송
+                </label>
+                <label for="refund-etc">
+                  <input type="radio" name="kind-of" id="refund-etc">
+                  교환/환불/반품
+                </label>
+                <label for="saving-money">
+                  <input type="radio" name="kind-of" id="saving-money">
+                  적립금관련
+                </label>
+                <label for="other">
+                  <input type="radio" name="kind-of" id="other">
+                  기타
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>내용</td>
+              <td class="write-box">
+                <div class="tool-wrap">
+                  <div>돋움</div>
+                  <div>9pt</div>
+                  <!-- button안에 ul을 넣는건가 -->
+                  <div>
+                    <button>굵게</button>
+                    <button>밑줄</button>
+                    <button>기울기</button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                  </div>
+                  <div>
+                    <button>왼쪽정렬</button>
+                    <button>가운데정렬</button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                  </div>
+                  <div>
+                    <button>쌍따옴표</button>
+                  </div>
+                </div>
+                <label for="editor"><textarea name="editor" id="editor" cols="30" rows="10"></textarea></label>
+              </td>
+              <td class="write-box">
+                <label for="html"><textarea name="html" id="html" cols="30" rows="10"></textarea></label>
+              </td>
+              <td class="write-box">
+                <label for="text"><textarea name="text" id="text" cols="30" rows="10"></textarea></label>
+              </td>
+              <td>
+                <!-- 입력창 크기 조절 -->
+                <div><button>Editor</button></div>
+                <div><button>HTML</button></div>
+                <div><button>TEXT</button></div>
+              </td>
+            </tr>
+            <tr>
+              <td>이미지 첨부</td>
+              <td>
+                <div>
+                  <ul class="file-preview">
+                    <li class="no-file"><span><span>icon</span><em>no file</em></span></li>
+                    <li class="file-uploading"><span><span>icon</span><em>uploading...</em></span></li>
+                    <li>파일첨부된 생김새</li>
+                    <li>파일첨부된 생김새</li>
+                  </ul>
+                  <input type="file" multiple="multiple">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>파일 첨부</td>
+              <td>
+                <div>
+                  <ul class="image-preview">
+                    <li class="no-image">
+                      <div>
+                        <!-- 이미지 미리보기 공간 -->
+                        <div><img src="" alt=""></div>
+                        <span><span>icon</span><em>no image</em></span>
+                      </div>
+                    </li>
+                    <li class="image-uploading">
+                      <div>
+                        <!-- 이미지 미리보기 공간 -->
+                        <div><img src="" alt=""></div>
+                        <span><span>icon</span><em>uploading...</em></span>
+                      </div>
+                    </li>
+                    <!-- 이미지 첨부된 생김새01 -->
+                    <li>
+                      <div>
+                        <!-- 이미지 미리보기 공간 -->
+                        <div><img src="" alt=""></div>
+                        <span><span>icon</span><em>파일명</em></span>
+                        <span><span>용량</span><em>MB</em></span>
+                      </div>
+                    </li>
+                    <!-- 이미지 첨부된 생김새02/삭제버튼추가 -->
+                    <li>
+                      <div>
+                        <!-- 이미지 미리보기 공간 -->
+                        <div><img src="" alt=""></div>
+                        <span><span>icon</span><em>파일명</em></span>
+                        <span><span>용량</span><em>MB</em></span>
+                        <span>삭제버튼</span>
+                      </div>
+                    </li>
+                  </ul>
+                  <input type="file" multiple="multiple">
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button>등록</button>
+      </section>
+  
+    </div>
+  </main>
+</body>
+</html>
