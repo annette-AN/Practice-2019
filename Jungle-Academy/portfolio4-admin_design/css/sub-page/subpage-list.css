@@ -23,6 +23,11 @@ table {
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
 
+table th {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: #F4F5F7;
+}
+
 table td, table th {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -59,14 +64,15 @@ header.open + main {
           box-shadow: 0 2px #ab3c3c;
 }
 
-.list-horizon h2 {
+.list-horizon table {
+  font-size: 12px;
+}
+
+.list-horizon table caption {
   padding: 3% 0.8% 0.8%;
   font-size: 15px;
   font-weight: bold;
-}
-
-.list-horizon table {
-  font-size: 12px;
+  text-align: left;
 }
 
 .list-horizon table td {
@@ -92,10 +98,6 @@ header.open + main {
 
 .list-horizon table td i {
   font-size: 12px;
-}
-
-.list-horizon table td:nth-child(2n-1) {
-  background: #F4F5F7;
 }
 
 .list-horizon table td.no-bg {

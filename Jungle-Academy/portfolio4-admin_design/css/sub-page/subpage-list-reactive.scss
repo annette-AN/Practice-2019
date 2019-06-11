@@ -1,16 +1,4 @@
 //max-width : 2560
-//media-1150 ~ 1600 {
-@media all and (min-width: 1150px) and (max-width: 1600px) {
-
-}
-
-
-//media-768 ~ 1149 
-@media all and (min-width: 768px) and (max-width: 1149px) {
-
-}
-
-
 //media-768 ~  991 
 @media all and (min-width: 768px) and (max-width: 991px) {
   //게시판 스킨을 중간으로 내리고 싶음
@@ -24,5 +12,77 @@
   main {
     padding: 0%;
     margin: 16px;
+  }
+
+  table {
+    max-width: 100%;
+    overflow: hidden;
+
+    tr, th, td {
+      display: block;
+    }
+  }
+
+  .list-horizon table {
+    overflow: hidden;
+    
+    tr, th, td {
+      float: left;
+      line-height: 35px;
+    }
+
+    tr {
+      width: 100%;
+    }
+
+    th {
+      width: 80px;
+      height: 35px;
+      text-align: left;
+      padding-left: 10px;
+    }
+
+    td {
+      width: calc(100% - 80px);
+    }
+  }
+
+  .list-board table {
+    table-layout: fixed;
+
+    colgroup {
+      display: none;
+    }
+
+    thead {
+      th {
+        visibility: hidden;
+        width: 0px;
+        height: 0px;
+        margin: 0px;
+        padding: 0px;
+        text-indent: -9999px;
+        font-size: 0px;
+      }
+    }
+
+    tbody {
+      tr {
+        td:first-child {
+          display: none;
+        }
+
+        td:nth-child(2) {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+//~320
+@media all and (max-width: 320px) {
+  * {
+    display: none;
   }
 }

@@ -16,7 +16,6 @@ main {
   background: #fff;
 }
 
-
   //border 색이 일정하지 않음
 table {
   width: 100%;
@@ -24,7 +23,8 @@ table {
   border-bottom: 2px solid rgba(0,0,0,0.1);
 
   th {
-    // border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    background: #F4F5F7;
   }
 
   td, th {
@@ -61,14 +61,16 @@ header.open + main {
     }
   }
 
-  h2 {
-    padding: 3% 0.8% 0.8%;
-    font-size: 15px;
-    font-weight: bold;
-  }
 
   table {
     font-size: 12px;
+
+    caption {
+      padding: 3% 0.8% 0.8%;
+      font-size: 15px;
+      font-weight: bold;
+      text-align: left;
+    }
 
     td {
       padding-left: 14px;
@@ -99,11 +101,6 @@ header.open + main {
         font-size: 12px;
       }
     }
-
-    td:nth-child(2n-1) {
-      background: #F4F5F7;
-    }
-
 
     td.no-bg {
       background: none;

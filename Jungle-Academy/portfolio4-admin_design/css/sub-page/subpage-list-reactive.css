@@ -9,5 +9,58 @@
     padding: 0%;
     margin: 16px;
   }
+  table {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  table tr, table th, table td {
+    display: block;
+  }
+  .list-horizon table {
+    overflow: hidden;
+  }
+  .list-horizon table tr, .list-horizon table th, .list-horizon table td {
+    float: left;
+    line-height: 35px;
+  }
+  .list-horizon table tr {
+    width: 100%;
+  }
+  .list-horizon table th {
+    width: 80px;
+    height: 35px;
+    text-align: left;
+    padding-left: 10px;
+  }
+  .list-horizon table td {
+    width: calc(100% - 80px);
+  }
+  .list-board table {
+    table-layout: fixed;
+  }
+  .list-board table colgroup {
+    display: none;
+  }
+  .list-board table thead th {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+    margin: 0px;
+    padding: 0px;
+    text-indent: -9999px;
+    font-size: 0px;
+  }
+  .list-board table tbody tr td:first-child {
+    display: none;
+  }
+  .list-board table tbody tr td:nth-child(2) {
+    max-width: 100%;
+  }
+}
+
+@media all and (max-width: 320px) {
+  * {
+    display: none;
+  }
 }
 /*# sourceMappingURL=subpage-list-reactive.css.map */

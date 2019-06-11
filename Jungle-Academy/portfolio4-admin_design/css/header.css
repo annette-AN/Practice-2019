@@ -1,4 +1,4 @@
-body, header, nav, div, ul, li, h1, h2, h3, h4, h5, h6, main, a, section, article, p {
+body, header, nav, div, ul, li, h1, h2, h3, h4, h5, h6, main, a, section, article, p, table, tr, th, td {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -68,6 +68,13 @@ i {
 .child-text-ir {
   position: absolute;
   left: -9999px;
+  width: 0px;
+  height: 0px;
+}
+
+caption.child-text-ir {
+  position: initial;
+  text-indent: -9999px;
   width: 0px;
   height: 0px;
 }

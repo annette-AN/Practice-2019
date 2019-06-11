@@ -1,5 +1,5 @@
 //<reset>
-body, header, nav, div, ul, li, h1, h2, h3, h4, h5, h6, main, a, section, article, p {margin: 0; padding: 0; box-sizing: border-box;}
+body, header, nav, div, ul, li, h1, h2, h3, h4, h5, h6, main, a, section, article, p, table, tr, th, td {margin: 0; padding: 0; box-sizing: border-box;}
 body {font-family: sans-serif; font-size: 13px;}
 li {list-style: none;}
 a {text-decoration: none; color: inherit;}
@@ -52,6 +52,13 @@ i {
 .child-text-ir {
   position: absolute;
   left: -9999px;
+  width: 0px;
+  height: 0px;
+}
+
+caption.child-text-ir {
+  position: initial;
+  text-indent: -9999px;
   width: 0px;
   height: 0px;
 }
