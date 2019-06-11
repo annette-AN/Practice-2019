@@ -1,3 +1,7 @@
+body.index {
+  background: #E5E9EC;
+}
+
 #overall {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -293,7 +297,6 @@ section .table-wrap table tbody tr + tr {
 .joing .joing-group {
   position: relative;
   overflow: hidden;
-  background: #fff;
 }
 
 .joing .joing-group:hover img {
@@ -310,6 +313,7 @@ section .table-wrap table tbody tr + tr {
   width: 100%;
   transition: transform .4s, opacity .4s, -webkit-filter .4s;
   -webkit-filter: contrast(100%);
+  vertical-align: top;
 }
 
 .joing .joing-group div:nth-of-type(2) {

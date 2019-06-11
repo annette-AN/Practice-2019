@@ -153,7 +153,6 @@ i {
           transform: translateY(-50%);
   height: 50%;
   line-height: 30px;
-  vertical-align: baseline;
 }
 
 #main-tnb .tnb-wrap .search-board a i {

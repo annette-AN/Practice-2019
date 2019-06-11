@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-  <!-- <link rel="stylesheet" href="../css/header.css"> -->
-  <!-- <link rel="stylesheet" href="../css/sub-page/subpage-list.css"> -->
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/sub-page/subpage-list.css">
   <!-- <link rel="stylesheet" href="../css/sub-page/subpage-list-reactive.css"> -->
   <script src="../js/jquery-3.4.1.min.js"></script>
   <title>write/admin/portfolio</title>
@@ -68,7 +68,7 @@
 
         <ul class="main-gnb-menu">
           <li>
-            <a href="index.html">
+            <a href="../index.html">
               <i class="fas fa-home"></i>
               <span>home</span>
             </a>
@@ -80,7 +80,7 @@
             </a>
           </li>
           <li>
-            <a href="page/subpage-list.html">
+            <a href="subpage-list.html">
               <i class="fas fa-list-alt"></i>
               <span>list</span>
             </a>
@@ -202,10 +202,10 @@
       </div>
     </nav>
   </header>
-  <main>
+  <main class="sub write">
     <div id="main-wrap">
-      <section class="list-search">
-        <h2>게시글 양식 등록</h2>
+      <section class="list-horizon">
+        <h2>게시글 등록</h2>
         <table>
           <colgroup>
             <!-- 이거 no-bg colspan했더니 이상하게 width이상하게 먹힘 -->
@@ -251,102 +251,54 @@
             </tr>
             <tr>
               <td>내용</td>
-              <td class="write-box">
-                <div class="tool-wrap">
-                  <div>돋움</div>
-                  <div>9pt</div>
-                  <!-- button안에 ul을 넣는건가 -->
-                  <div>
-                    <button>굵게</button>
-                    <button>밑줄</button>
-                    <button>기울기</button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                  </div>
-                  <div>
-                    <button>왼쪽정렬</button>
-                    <button>가운데정렬</button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                  </div>
-                  <div>
-                    <button>쌍따옴표</button>
-                  </div>
-                </div>
-                <label for="editor"><textarea name="editor" id="editor" cols="30" rows="10"></textarea></label>
-              </td>
-              <td class="write-box">
-                <label for="html"><textarea name="html" id="html" cols="30" rows="10"></textarea></label>
-              </td>
-              <td class="write-box">
-                <label for="text"><textarea name="text" id="text" cols="30" rows="10"></textarea></label>
-              </td>
               <td>
-                <!-- 입력창 크기 조절 -->
-                <div><button>Editor</button></div>
-                <div><button>HTML</button></div>
-                <div><button>TEXT</button></div>
-              </td>
-            </tr>
-            <tr>
-              <td>이미지 첨부</td>
-              <td>
-                <div>
-                  <ul class="file-preview">
-                    <li class="no-file"><span><span>icon</span><em>no file</em></span></li>
-                    <li class="file-uploading"><span><span>icon</span><em>uploading...</em></span></li>
-                    <li>파일첨부된 생김새</li>
-                    <li>파일첨부된 생김새</li>
-                  </ul>
-                  <input type="file" multiple="multiple">
-                </div>
+                <label for="editor"><textarea name="editor" id="editor" cols="50" rows="10"></textarea></label>
               </td>
             </tr>
             <tr>
               <td>파일 첨부</td>
               <td>
                 <div>
+                  <ul class="file-preview">
+                    <li class="no-file"><span><i class="fas fa-exclamation-triangle d-yellow"><span class="child-text-ir">빈 파일 아이콘</span></i><em>No file</em></span></li>
+                    <li class="file-uploading"><span><i class="fas fa-spinner d-yellow"><span class="child-text-ir">로딩중 아이콘</span></i><em>Uploading...</em></span></li>
+                    <li class="text-file"><span><i class="far fa-file-alt"><span class="child-text-ir">파일 아이콘</span></i><em>선택한 파일명.word</em>
+                      <span class="file-size"><span>1.44</span><em>MB</em></span>
+                    </li>
+                    <li class="ppt-file"><span><i class="far fa-file-powerpoint"><span class="child-text-ir">파일 아이콘</span></i><em>선택한 파일명.ppt</em>
+                      <span class="file-size"><span>1.44</span><em>MB</em></span>
+                      <button class="file-delete"><i class="fas fa-times"><span class="child-text-ir">닫기 아이콘</span></i></button>
+                    </li>
+                  </ul>
+                  <input type="file" multiple="multiple">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>이미지 첨부</td>
+              <td>
+                <div>
                   <ul class="image-preview">
                     <li class="no-image">
-                      <div>
-                        <!-- 이미지 미리보기 공간 -->
-                        <div><img src="" alt=""></div>
-                        <span><span>icon</span><em>no image</em></span>
-                      </div>
+                      <div><i class="far fa-file d-yellow"><span class="child-text-ir">빈 이미지 아이콘</span></i></div>
+                      <span><i class="fas fa-exclamation-triangle d-yellow"><span class="child-text-ir">빈 파일 아이콘</span></i><em>No image</em></span>
                     </li>
                     <li class="image-uploading">
-                      <div>
-                        <!-- 이미지 미리보기 공간 -->
-                        <div><img src="" alt=""></div>
-                        <span><span>icon</span><em>uploading...</em></span>
-                      </div>
+                      <div><i class="fas fa-spinner d-green"><span class="child-text-ir">로딩중 아이콘</span></i></div>
+                      <span><i class="fas fa-spinner d-yellow"><span class="child-text-ir">로딩중 아이콘</span></i><em>Uploading...</em></span>
                     </li>
                     <!-- 이미지 첨부된 생김새01 -->
-                    <li>
-                      <div>
-                        <!-- 이미지 미리보기 공간 -->
-                        <div><img src="" alt=""></div>
-                        <span><span>icon</span><em>파일명</em></span>
-                        <span><span>용량</span><em>MB</em></span>
-                      </div>
+                    <li class="attached-image">
+                      <div><img src="../img/c.jpg" alt=""></div>
+                      <span><i class="fas fa-file-image"><span class="child-text-ir">이미지 아이콘</span></i><em>파일명</em></span>
+                      <span class="file-size"><span>1.44</span><em>MB</em></span>
                     </li>
                     <!-- 이미지 첨부된 생김새02/삭제버튼추가 -->
-                    <li>
-                      <div>
-                        <!-- 이미지 미리보기 공간 -->
-                        <div><img src="" alt=""></div>
-                        <span><span>icon</span><em>파일명</em></span>
-                        <span><span>용량</span><em>MB</em></span>
-                        <span>삭제버튼</span>
-                      </div>
+                    <li class="attached-image-fix">
+                      <div><img src="../img/c.jpg" alt=""></div>
+                      <span><i class="fas fa-file-image"><span class="child-text-ir">이미지 아이콘</span></i><em>파일명</em></span>
+                      <span class="file-size"><span>1.44</span><em>MB</em></span>
+                      <button class="file-delete"><i class="fas fa-times"><span class="child-text-ir">닫기 아이콘</span></i></button>
                     </li>
                   </ul>
                   <input type="file" multiple="multiple">
