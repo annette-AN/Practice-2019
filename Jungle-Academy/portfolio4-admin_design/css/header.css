@@ -34,6 +34,16 @@ input, button, select {
   font: inherit;
 }
 
+select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
 button {
   cursor: pointer;
 }
@@ -47,6 +57,25 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   border: 0 none;
+}
+
+#skip-nav {
+  position: fixed;
+  top: -41px;
+  left: 0px;
+  width: 100%;
+  line-height: 40px;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  -webkit-transition: top .3s;
+  transition: top .3s;
+}
+
+#skip-nav:focus {
+  top: 0px;
 }
 
 header {
@@ -72,11 +101,10 @@ i {
   height: 0px;
 }
 
-caption.child-text-ir {
-  position: initial;
-  text-indent: -9999px;
-  width: 0px;
-  height: 0px;
+caption.child-text-ir, label.child-text-ir {
+  overflow: hidden;
+  width: 0;
+  height: 0;
 }
 
 #main-tnb {
@@ -181,20 +209,6 @@ caption.child-text-ir {
   margin-right: 30px;
 }
 
-.user-profile.notice:after {
-  content: '';
-  display: block;
-  background-color: #27A498;
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  top: auto;
-  bottom: 0px;
-  right: -3px;
-  border: 2px solid #f5f5f5;
-  border-radius: 10px;
-}
-
 .user-wrap {
   position: absolute;
   top: 0px;
@@ -279,7 +293,7 @@ caption.child-text-ir {
 }
 
 .user-wrap .user-info li ul li.notice:after {
-  content: '';
+  content: '110';
   display: inline-block;
   position: absolute;
   top: 12px;

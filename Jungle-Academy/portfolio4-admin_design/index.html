@@ -18,22 +18,23 @@
   <!-- 브라우저 크기 1600px -->
 </head>
 <body class="index">
+  <!-- notice 일괄로 만들기 -->
+  <a href="#main" id="skip-nav">본문 바로가기</a>
   <header>
     <nav id="main-tnb">
       <ul class="tnb-wrap">
-        <li class="menu-bar"><i class="fas fa-bars"><span class="child-text-ir">메뉴바 아이콘</span></i></li>
-        <li class="refresh"><i class="fas fa-redo"><span class="child-text-ir">새로고침 아이콘</span></i></li>
+        <li class="menu-bar"><a href="#"><i class="fas fa-bars"><span class="child-text-ir">메뉴바 아이콘</span></i></a></li>
+        <li class="refresh"><a href="#"><i class="fas fa-redo"><span class="child-text-ir">새로고침 아이콘</span></i></a></li>
         <!-- bell .notice 를 넣으면 신호등 표시가 나옴 -->
-        <li class="bell"><i class="far fa-bell"><span class="child-text-ir">알림종 아이콘</span></i></li>
+        <li class="bell"><a href="#"><i class="far fa-bell"><span class="child-text-ir">알림종 아이콘</span></i></a></li>
         <li class="search-board">
-          <input type="text" placeholder="Search Dashboard">
+          <label for="search-dashboard" class="child-text-ir">사이트 내 검색</label>
+          <input type="text" placeholder="Search Dashboard" id="search-dashboard">
           <a href="#"><i class="fas fa-search"><span class="child-text-ir">돋보기 아이콘</span></i></a>
         </li>
       </ul>
 
       <div class="user-wrap">
-        <!-- user-profile .notice 를 넣으면 신호등 표시가 나옴 -->
-        <!-- 사용자 사진도 때에따라 바껴야하는데 어떻게? -->
         <div class="user-profile"><span class="child-text-ir">사용자프로필사진</span></div>     
         <ul class="user-info">
           <li>
@@ -42,7 +43,7 @@
               <li><a href="#">my account</a></li>
               <li><a href="#">my calendar</a></li>
               <!-- inbox .notice 를 넣으면 신호등 표시가 나옴, 알림 개수는 content에 적으면 적용됨 -->
-              <li class="inbox"><a href="#">my inbox</a></li>
+              <li class="inbox notice"><a href="#">my inbox</a></li>
               <li><a href="#"><i class="fas fa-power-off"><span class="child-text-ir">로그아웃 아이콘</span></i>log out</a></li>
             </ul>
           </li>
@@ -62,7 +63,6 @@
 
       <div id="main-gnb-contents">
         <div class="gnb-user-profile">
-          <!-- user-profile .notice 를 넣으면 신호등 표시가 나옴 -->
           <!-- 회원 프로필 사진영역 -->
           <div class="user-profile">
             <span class="child-text-ir">사용자프로필사진</span>
@@ -209,13 +209,13 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main">
     <div id="main-wrap">
       <section id="overall">
         <article>
           <h2>OVERALL SALES</h2>
           <ul class="re-close-btn">
-            <li><a href="#"><i class="fas fa-redo"></i><span class="child-text-ir">새로고침 아이콘</span></i></a></li>
+            <li><a href="#"><i class="fas fa-redo"><span class="child-text-ir">새로고침 아이콘</span></i></a></li>
             <li><a href="#"><i class="fas fa-times"><span class="child-text-ir">닫기 버튼</span></i></a></li>
           </ul>
           
@@ -242,7 +242,7 @@
         <article>
           <h2>OVERALL VISIT</h2>
           <ul class="re-close-btn">
-            <li><a href="#"><i class="fas fa-redo"></i><span class="child-text-ir">새로고침 아이콘</span></i></a></li>
+            <li><a href="#"><i class="fas fa-redo"><span class="child-text-ir">새로고침 아이콘</span></i></a></li>
             <li><a href="#"><i class="fas fa-times"><span class="child-text-ir">닫기 버튼</span></i></a></li>
           </ul>
           
@@ -269,7 +269,7 @@
         <article>
           <h2>SERVER LOAD</h2>
           <ul class="re-close-btn">
-            <li><a href="#"><i class="fas fa-redo"></i><span class="child-text-ir">새로고침 아이콘</span></i></a></li>
+            <li><a href="#"><i class="fas fa-redo"><span class="child-text-ir">새로고침 아이콘</span></i></a></li>
             <li><a href="#"><i class="fas fa-times"><span class="child-text-ir">닫기 버튼</span></i></a></li>
           </ul>
           
@@ -296,7 +296,7 @@
         <article>
           <h2>OVERALL SALES</h2>
           <ul class="re-close-btn">
-            <li><a href="#"><i class="fas fa-redo"></i><span class="child-text-ir">새로고침 아이콘</span></i></a></li>
+            <li><a href="#"><i class="fas fa-redo"><span class="child-text-ir">새로고침 아이콘</span></i></a></li>
             <li><a href="#"><i class="fas fa-times"><span class="child-text-ir">닫기 버튼</span></i></a></li>
           </ul>
           
@@ -359,7 +359,7 @@
               </colgroup>
               <tbody>
                 <tr>
-                  <td>last sale</td>
+                  <td colspan="3">last sale</td>
                 </tr>
                 <tr>
                   <td>25601</td>
@@ -381,7 +381,7 @@
       <section class="joing">
         <div class="joing-group">
           <ul class="re-close-btn">
-            <li><a href="#"><i class="fas fa-redo"></i><span class="child-text-ir">새로고침 아이콘</span></i></a></li>
+            <li><a href="#"><i class="fas fa-redo"><span class="child-text-ir">새로고침 아이콘</span></i></a></li>
             <li><a href="#"><i class="fas fa-times"><span class="child-text-ir">닫기 버튼</span></i></a></li>
           </ul>
           <img src="img/9.jpg" alt="로봇과 아이">
@@ -400,7 +400,8 @@
           <div>
             <span>Jane Smith, John Smith, David Jester, pepper post and 214 others join this.</span>
             <div class="user-profile"><span class="child-text-ir">사용자프로필사진</span></div>
-            <input type="text" placeholder="Write a comment">
+            <label for="comment" class="child-text-ir">댓글달기</label>
+            <input type="text" placeholder="Write a comment" id="comment">
             <button>Join Group</button>
           </div>
         </div>
@@ -451,8 +452,22 @@
               <span>partly cloudy</span>
             </div>
             <div>
-              <!-- 날씨 class넣으면 icon나옴 -->
-              <span class="w-partly-cloudy"></span>
+              <!-- 날씨 class넣으면 icon나옴 
+
+                1. 맑음
+                <span class="w-sunny"><span class="child-text-ir">맑음</span>
+
+                2. 비
+                <span class="w-rain">
+                
+                3. 흐림
+                <span class="w-cloudy">
+                
+                4. 약간흐림
+                <span class="w-partly-cloudy"><span class="child-text-ir">약간흐림</span>
+                  
+              -->
+              <span class="w-partly-cloudy"><span class="child-text-ir">약간흐림</span></span>
               <span><span>54</span>MPH</span>
               <span><span>53</span>MM</span>
             </div>
@@ -460,27 +475,27 @@
             <ul>
               <li>
                 <span>11:30<span>PM</span></span>
-                <span class="w-rain"></span>
+                <span class="w-rain"><span class="child-text-ir">비</span></span>
                 <em>32<span class="inline">&#176;</span></em>
               </li>
               <li>
                 <span>11:30<span>PM</span></span>
-                <span class="w-rain"></span>
+                <span class="w-rain"><span class="child-text-ir">비</span></span>
                 <em>32<span class="inline">&#176;</span></em>
               </li>
               <li>
                 <span>11:30<span>PM</span></span>
-                <span class="w-rain"></span>
+                <span class="w-rain"><span class="child-text-ir">비</span></span>
                 <em>32<span class="inline">&#176;</span></em>
               </li>
               <li>
                 <span>11:30<span>PM</span></span>
-                <span class="w-rain"></span>
+                <span class="w-rain"><span class="child-text-ir">비</span></span>
                 <em>32<span class="inline">&#176;</span></em>
               </li>
               <li>
                 <span>11:30<span>PM</span></span>
-                <span class="w-rain"></span>
+                <span class="w-rain"><span class="child-text-ir">비</span></span>
                 <em>32<span class="inline">&#176;</span></em>
               </li>
             </ul>
@@ -497,41 +512,41 @@
                 <td>sun</td>
                 <!-- span에 날씨 class넣으면 icon나옴 
                   w-sunny - 맑음
-                  w-rain - 비
+                  w-rain -<span class="child-text-ir">비</span> 비
                   w-cloudy - 구름
                   w-partly-cloudy - 해+구름
                 -->
-                <td class="w-icon"><span class="w-sunny"></span></td>
+                <td class="w-icon"><span class="w-sunny"><span class="child-text-ir">맑음</span></span></td>
                 <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
               </tr>
               <tr>
                 <td>mon</td>
-                <td class="w-icon"><span class="w-rain"></span></td>
+                <td class="w-icon"><span class="w-rain"><span class="child-text-ir">비</span></span></td>
                 <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
               </tr>
               <tr>
                 <td>tue</td>
-                <td class="w-icon"><span class="w-cloudy"></span></td>
+                <td class="w-icon"><span class="w-cloudy"><span class="child-text-ir">흐림</span></span></td>
                 <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
               </tr>
               <tr>
                 <td>wed</td>
-                <td class="w-icon"><span class="w-partly-cloudy"></span></td>
+                <td class="w-icon"><span class="w-partly-cloudy"><span class="child-text-ir">약간흐림</span></span></td>
                 <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
               </tr>
               <tr>
                 <td>thur</td>
-                <td class="w-icon"><span class="w-rain"></span></td>
+                <td class="w-icon"><span class="w-rain"><span class="child-text-ir">비</span></span></td>
                 <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
               </tr>
               <tr>
                 <td>fri</td>
-                <td class="w-icon"><span class="w-sunny"></span></td>
+                <td class="w-icon"><span class="w-sunny"><span class="child-text-ir">맑음</span></span></td>
                 <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
               </tr>
               <tr>
                 <td>sat</td>
-                <td class="w-icon"><span class="w-sunny"></span></td>
+                <td class="w-icon"><span class="w-sunny"><span class="child-text-ir">맑음</span></span></td>
                 <td class="w-deg"><span>32</span>-<span>28</span> C&#176;</td>
               </tr>
             </table>

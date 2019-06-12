@@ -1,4 +1,4 @@
-body {
+body.sub {
   color: #2D3138;
 }
 
@@ -32,6 +32,10 @@ table td, table th {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+table i {
+  font-size: inherit;
+}
+
 header.open + main {
   padding: 2% 8%;
 }
@@ -42,26 +46,48 @@ header.open + main {
   padding-bottom: 50px;
 }
 
-.list-horizon > a {
+.list-horizon .list-btn-style {
   position: absolute;
-  right: 0%;
   display: block;
-  width: 8%;
+  width: 80px;
   line-height: 30px;
+  font-size: 12px;
   color: #fff;
-  text-align: center;
-  font-size: 11px;
-  font-weight: bold;
-  background: #E9595A;
   border-radius: 0px 0px 3px 3px;
+  background: #E9595A;
   -webkit-box-shadow: 0px 4px #ab3c3c;
           box-shadow: 0px 4px #ab3c3c;
 }
 
-.list-horizon > a:hover {
+.list-horizon .list-btn-style:hover {
   top: 2px;
   -webkit-box-shadow: 0 2px #ab3c3c;
           box-shadow: 0 2px #ab3c3c;
+}
+
+.list-horizon .write-btn {
+  right: 0%;
+  color: #fff;
+  text-align: center;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.list-horizon .search-btn {
+  left: 50%;
+  bottom: 8px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: #888;
+  -webkit-box-shadow: 0px 4px #222222;
+          box-shadow: 0px 4px #222222;
+}
+
+.list-horizon .search-btn:hover {
+  top: auto;
+  bottom: 6px;
+  -webkit-box-shadow: 0 2px #222222;
+          box-shadow: 0 2px #222222;
 }
 
 .list-horizon table {
@@ -75,13 +101,14 @@ header.open + main {
   text-align: left;
 }
 
+.list-horizon table tr:nth-child(2) label {
+  display: inline-block;
+  margin-right: 10px;
+}
+
 .list-horizon table td {
   padding-left: 14px;
   height: 35px;
-}
-
-.list-horizon table td label + label {
-  margin-left: 10px;
 }
 
 .list-horizon table td input[type="text"] {
@@ -96,36 +123,17 @@ header.open + main {
   line-height: 13px;
 }
 
-.list-horizon table td i {
+.list-horizon table td select {
+  padding: 0px 15px 0px 5px;
+  background: url(../../img/icon/arrow-both.png) no-repeat right center/14px;
+}
+
+.list-horizon table td .sub.list i {
   font-size: 12px;
 }
 
 .list-horizon table td.no-bg {
   background: none;
-}
-
-.list-horizon button {
-  position: absolute;
-  left: 50%;
-  bottom: 2px;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  display: block;
-  margin: 3% auto 0%;
-  width: 6%;
-  line-height: 30px;
-  font-size: 12px;
-  background: #888;
-  color: #fff;
-  border-radius: 0px 0px 3px 3px;
-  -webkit-box-shadow: 0px 4px #222222;
-          box-shadow: 0px 4px #222222;
-}
-
-.list-horizon button:hover {
-  bottom: 0px;
-  -webkit-box-shadow: 0 2px #222222;
-          box-shadow: 0 2px #222222;
 }
 
 .list-board {
@@ -230,6 +238,14 @@ header.open + main {
   width: 100%;
 }
 
+.write ul li span em {
+  display: inline-block;
+  width: 80%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .write .list-horizon h2 {
   padding: 1% 0.8% 0.8%;
 }
@@ -258,23 +274,45 @@ header.open + main {
   font-style: normal;
 }
 
-.write .file-preview li + li, .write .image-preview li + li {
+.write .file-preview li + li {
   margin-top: 5px;
 }
 
 .write .file-preview li {
+  position: relative;
   width: 95%;
   padding: 7px;
 }
 
+.write .file-preview li .file-size {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+  margin: 0px;
+}
+
+.write .file-preview li .file-delete {
+  top: 50%;
+  right: 70px;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+}
+
+.write .image-preview {
+  overflow: hidden;
+}
+
 .write .image-preview li {
-  display: inline-block;
+  position: relative;
+  display: block;
+  float: left;
   width: 200px;
   height: 210px;
-  margin-right: 10px;
+  margin: 5px 10px 0px 0px;
   padding: 5px;
   background: #FAFCFE;
-  vertical-align: bottom;
 }
 
 .write .image-preview li div {
@@ -302,8 +340,26 @@ header.open + main {
   font-size: 70px;
 }
 
+.write .image-preview li .file-delete {
+  bottom: 5px;
+  right: 5px;
+}
+
 .write .image-preview .attached-image-fix {
   position: relative;
+}
+
+.write .list-btn-style {
+  bottom: 0px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  font-weight: bold;
+}
+
+.write .list-btn-style:hover {
+  top: auto;
+  bottom: -2px;
 }
 
 .d-green {
@@ -328,24 +384,15 @@ header.open + main {
 }
 
 .file-delete {
-  top: auto;
-  left: auto;
-  right: 10px;
-  bottom: 10px;
-  -webkit-transform: none;
-          transform: none;
-  margin: 0%;
-  width: auto;
-  line-height: 1;
-  background: none;
-  border-radius: 0px;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  color: inherit;
+  position: absolute;
 }
 
 .file-delete i {
   font-size: 20px;
   color: red;
+}
+
+.file-delete:hover {
+  background: yellow;
 }
 /*# sourceMappingURL=subpage-list.css.map */

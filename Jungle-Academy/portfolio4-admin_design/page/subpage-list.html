@@ -12,21 +12,22 @@
   <title>list/admin/portfolio</title>
 </head>
 <body>
+  <a href="#main" id="skip-nav">본문 바로가기</a>
   <header>
     <nav id="main-tnb">
       <ul class="tnb-wrap">
-        <li class="menu-bar"><i class="fas fa-bars"><span class="child-text-ir">메뉴바 아이콘</span></i></li>
-        <li class="refresh"><i class="fas fa-redo"><span class="child-text-ir">새로고침 아이콘</span></i></li>
+        <li class="menu-bar"><a href="#"><i class="fas fa-bars"><span class="child-text-ir">메뉴바 아이콘</span></i></a></li>
+        <li class="refresh"><a href="#"><i class="fas fa-redo"><span class="child-text-ir">새로고침 아이콘</span></i></a></li>
         <!-- bell .notice 를 넣으면 신호등 표시가 나옴 -->
-        <li class="bell"><i class="far fa-bell"><span class="child-text-ir">알림종 아이콘</span></i></li>
+        <li class="bell"><a href="#"><i class="far fa-bell"><span class="child-text-ir">알림종 아이콘</span></i></a></li>
         <li class="search-board">
-          <input type="text" placeholder="Search Dashboard">
+          <label for="search-dashboard" class="child-text-ir">사이트 내 검색</label>
+          <input type="text" placeholder="Search Dashboard" id="search-dashboard">
           <a href="#"><i class="fas fa-search"><span class="child-text-ir">돋보기 아이콘</span></i></a>
         </li>
       </ul>
 
       <div class="user-wrap">
-        <!-- user-profile .notice 를 넣으면 신호등 표시가 나옴 -->
         <div class="user-profile"><span class="child-text-ir">사용자프로필사진</span></div>     
         <ul class="user-info">
           <li>
@@ -35,7 +36,7 @@
               <li><a href="#">my account</a></li>
               <li><a href="#">my calendar</a></li>
               <!-- inbox .notice 를 넣으면 신호등 표시가 나옴, 알림 개수는 content에 적으면 적용됨 -->
-              <li class="inbox"><a href="#">my inbox</a></li>
+              <li class="inbox notice"><a href="#">my inbox</a></li>
               <li><a href="#"><i class="fas fa-power-off"><span class="child-text-ir">로그아웃 아이콘</span></i>log out</a></li>
             </ul>
           </li>
@@ -47,7 +48,7 @@
       <div id="main-gnb-header">
         <h1>web<span><span class="child-text-ir">동그라미 아이콘</span></span><strong>Admin</strong></h1>
         <ul>
-          <li><a href="../index.html"><i class="fas fa-home"><span class="child-text-ir">홈 바로가기 아이콘</span></i></a></li>
+          <li><a href="index.html"><i class="fas fa-home"><span class="child-text-ir">홈 바로가기 아이콘</span></i></a></li>
           <!-- mail .notice 를 넣으면 신호등 표시가 나옴 -->
           <li><a class="mail" href="#"><i class="fas fa-envelope"><span class="child-text-ir">메일 바로가기 아이콘</span></i></a></li>
         </ul>
@@ -55,7 +56,6 @@
 
       <div id="main-gnb-contents">
         <div class="gnb-user-profile">
-          <!-- user-profile .notice 를 넣으면 신호등 표시가 나옴 -->
           <!-- 회원 프로필 사진영역 -->
           <div class="user-profile">
             <span class="child-text-ir">사용자프로필사진</span>
@@ -67,7 +67,7 @@
 
         <ul class="main-gnb-menu">
           <li>
-            <a href="../index.html">
+            <a href="index.html">
               <i class="fas fa-home"></i>
               <span>home</span>
             </a>
@@ -202,42 +202,42 @@
     </nav>
   </header>
 
-  <main class="sub list">
+  <main class="sub list" id="main">
     <div id="main-wrap">
       <section class="list-horizon">
-        <a href="subpage-write.html">작성하기</a>
-        <!-- <h2>게시판 검색</h2> -->
+        <a href="subpage-write.html" class="list-btn-style write-btn">작성하기</a>
         <table>
           <caption>게시판 검색</caption>
           <colgroup>
-            <!-- 이거 no-bg colspan했더니 이상하게 width이상하게 먹힘 -->
             <col span="1" style="width:150px">
             <col span="1" style="width:35%">
             <col span="1" style="width:150px;">
+            <col span="1" style="width:35%">
           </colgroup>
           <tbody>
             <tr>
-              <th>검색어</th>
+              <th>
+                <label for="kind-of-search">검색어</label>
+              </th>
               <td>
-                <label for="kind-of-search">
-                  <select name="list-search" id="kind-of-search">
-                    <option value="all">-전체검색-</option>
-                    <option value="title">제목</option>
-                    <option value="content">내용</option>
-                    <option value="writer">작성자</option>
-                  </select>
-                  <input type="text" id="list-search">
-                </label>
+                <label for="list-search" class="child-text-ir">검색종류 선택</label>
+                <select name="list-search" id="list-search">
+                  <option value="all">-전체검색-</option>
+                  <option value="title">제목</option>
+                  <option value="content">내용</option>
+                  <option value="writer">작성자</option>
+                </select>
+                <input type="text" id="kind-of-search">
               </td>
-              <th>게시판스킨</th>
+              <th>
+                <label for="list-skin">게시판스킨</label></th>
               <td>
-                <label for="list-skin">
-                  <select name="list-skin" id="list-skin">
-                    <option value="choose">-스킨선택-</option>
-                    <option value="--1">01</option>
-                    <option value="--2">02</option>
-                  </select>
-                </label>
+                <label for="list-skin" class="child-text-ir">스킨선택</label>
+                <select name="list-skin" id="list-skin">
+                  <option value="choose">-스킨선택-</option>
+                  <option value="--1">01</option>
+                  <option value="--2">02</option>
+                </select>
               </td>
             </tr>
             <tr>
@@ -252,7 +252,6 @@
                   숨김
                 </label>
               </td>
-            
             </tr>
           </tbody>
           <tfoot>
@@ -264,14 +263,14 @@
             </tr>
           </tfoot>
         </table>
-        <button>검색</button>
+        <button class="list-btn-style search-btn">검색</button>
       </section>
   
       <section class="list-board">
         <table>
           <caption class="child-text-ir">게시글 리스트</caption>
           <colgroup>
-            <col span="1" style="width: 50px;">
+            <col style="width: 50px;">
             <col>
             <col span="2" style="width: 150px;">
           </colgroup>
@@ -313,54 +312,6 @@
               <td><a href="#">사내 동호회 운영규칙 v1.0</a></td>
               <td><span>인사팀 이희성</span></td>
               <td><span>2018-09-27</span></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><a href="#"></a></td>
-              <td><span></span></td>
-              <td><span></span></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><a href="#"></a></td>
-              <td><span></span></td>
-              <td><span></span></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><a href="#"></a></td>
-              <td><span></span></td>
-              <td><span></span></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><a href="#"></a></td>
-              <td><span></span></td>
-              <td><span></span></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><a href="#"></a></td>
-              <td><span></span></td>
-              <td><span></span></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><a href="#"></a></td>
-              <td><span></span></td>
-              <td><span></span></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><a href="#"></a></td>
-              <td><span></span></td>
-              <td><span></span></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><a href="#"></a></td>
-              <td><span></span></td>
-              <td><span></span></td>
             </tr>
           </tbody>
         </table>

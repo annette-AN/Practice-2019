@@ -7,27 +7,27 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/sub-page/subpage-list.css">
-  <!-- <link rel="stylesheet" href="../css/sub-page/subpage-list-reactive.css"> -->
+  <link rel="stylesheet" href="../css/sub-page/subpage-list-reactive.css">
   <script src="../js/jquery-3.4.1.min.js"></script>
   <title>write/admin/portfolio</title>
 </head>
 <body>
+  <a href="#main" id="skip-nav">본문 바로가기</a>
   <header>
     <nav id="main-tnb">
       <ul class="tnb-wrap">
-        <li class="menu-bar"><i class="fas fa-bars"><span class="child-text-ir">메뉴바 아이콘</span></i></li>
-        <li class="refresh"><i class="fas fa-redo"><span class="child-text-ir">새로고침 아이콘</span></i></li>
+        <li class="menu-bar"><a href="#"><i class="fas fa-bars"><span class="child-text-ir">메뉴바 아이콘</span></i></a></li>
+        <li class="refresh"><a href="#"><i class="fas fa-redo"><span class="child-text-ir">새로고침 아이콘</span></i></a></li>
         <!-- bell .notice 를 넣으면 신호등 표시가 나옴 -->
-        <li class="bell"><i class="far fa-bell"><span class="child-text-ir">알림종 아이콘</span></i></li>
+        <li class="bell"><a href="#"><i class="far fa-bell"><span class="child-text-ir">알림종 아이콘</span></i></a></li>
         <li class="search-board">
-          <input type="text" placeholder="Search Dashboard">
+          <label for="search-dashboard" class="child-text-ir">사이트 내 검색</label>
+          <input type="text" placeholder="Search Dashboard" id="search-dashboard">
           <a href="#"><i class="fas fa-search"><span class="child-text-ir">돋보기 아이콘</span></i></a>
         </li>
       </ul>
 
       <div class="user-wrap">
-        <!-- user-profile .notice 를 넣으면 신호등 표시가 나옴 -->
-        <!-- 사용자 사진도 때에따라 바껴야하는데 어떻게? -->
         <div class="user-profile"><span class="child-text-ir">사용자프로필사진</span></div>     
         <ul class="user-info">
           <li>
@@ -36,7 +36,7 @@
               <li><a href="#">my account</a></li>
               <li><a href="#">my calendar</a></li>
               <!-- inbox .notice 를 넣으면 신호등 표시가 나옴, 알림 개수는 content에 적으면 적용됨 -->
-              <li class="inbox"><a href="#">my inbox</a></li>
+              <li class="inbox notice"><a href="#">my inbox</a></li>
               <li><a href="#"><i class="fas fa-power-off"><span class="child-text-ir">로그아웃 아이콘</span></i>log out</a></li>
             </ul>
           </li>
@@ -56,7 +56,6 @@
 
       <div id="main-gnb-contents">
         <div class="gnb-user-profile">
-          <!-- user-profile .notice 를 넣으면 신호등 표시가 나옴 -->
           <!-- 회원 프로필 사진영역 -->
           <div class="user-profile">
             <span class="child-text-ir">사용자프로필사진</span>
@@ -68,7 +67,7 @@
 
         <ul class="main-gnb-menu">
           <li>
-            <a href="../index.html">
+            <a href="index.html">
               <i class="fas fa-home"></i>
               <span>home</span>
             </a>
@@ -80,7 +79,7 @@
             </a>
           </li>
           <li>
-            <a href="subpage-list.html">
+            <a href="page/subpage-list.html">
               <i class="fas fa-list-alt"></i>
               <span>list</span>
             </a>
@@ -202,22 +201,22 @@
       </div>
     </nav>
   </header>
-  <main class="sub write">
+
+  <main class="sub write" id="main">
     <div id="main-wrap">
       <section class="list-horizon">
         <h2>게시글 등록</h2>
         <table>
           <colgroup>
-            <!-- 이거 no-bg colspan했더니 이상하게 width이상하게 먹힘 -->
-            <col span="1" style="width:150px">
+            <!-- 모바일버전일때 width 100으로 스크립트 -->
+            <col style="width:150px">
+            <col>
           </colgroup>
           <tbody>
             <tr>
-              <td>제목</td>
+              <td><label for="title">제목</label></td>
               <td>
-                <label for="title">
-                  <input type="text" id="title">
-                </label>
+                <input type="text" id="title">
               </td>
             </tr>
             <tr>
@@ -250,9 +249,9 @@
               </td>
             </tr>
             <tr>
-              <td>내용</td>
+              <td><label for="editor">내용</label></td>
               <td>
-                <label for="editor"><textarea name="editor" id="editor" cols="50" rows="10"></textarea></label>
+                <textarea name="editor" id="editor" cols="30" rows="10"></textarea>
               </td>
             </tr>
             <tr>
@@ -260,17 +259,32 @@
               <td>
                 <div>
                   <ul class="file-preview">
-                    <li class="no-file"><span><i class="fas fa-exclamation-triangle d-yellow"><span class="child-text-ir">빈 파일 아이콘</span></i><em>No file</em></span></li>
-                    <li class="file-uploading"><span><i class="fas fa-spinner d-yellow"><span class="child-text-ir">로딩중 아이콘</span></i><em>Uploading...</em></span></li>
-                    <li class="text-file"><span><i class="far fa-file-alt"><span class="child-text-ir">파일 아이콘</span></i><em>선택한 파일명.word</em>
-                      <span class="file-size"><span>1.44</span><em>MB</em></span>
+                  <!--  
+                    파일 첨부 상태
+
+                    1. 파일없음 : no-file
+                      <li class="status-no-file">
+
+                    2. 파일 업로드중: file-uploading
+                      <li class="status-file-uploading">
+
+                    3. 완료 (text or ppt) : status-text-file / status-ppt-file
+                      <li class="status-text-file">
+                      <li class="status-ppt-file">
+                        
+                   -->
+                    <li class="status-no-file"><span><i class="fas fa-exclamation-triangle d-yellow"><span class="child-text-ir">빈 파일 아이콘</span></i><em>No file</em></span></li>
+                    <li class="status-file-uploading"><span><i class="fas fa-spinner d-yellow"><span class="child-text-ir">로딩중 아이콘</span></i><em>Uploading...</em></span></li>
+                    <li class="status-text-file"><span><i class="far fa-file-alt"><span class="child-text-ir">파일 아이콘</span></i><em>선택한 파일명.word</em></span>
+                      <span class="file-size"><span>1.44</span> <span>MB</span></span>
                     </li>
-                    <li class="ppt-file"><span><i class="far fa-file-powerpoint"><span class="child-text-ir">파일 아이콘</span></i><em>선택한 파일명.ppt</em>
-                      <span class="file-size"><span>1.44</span><em>MB</em></span>
+                    <li class="status-ppt-file"><span><i class="far fa-file-powerpoint"><span class="child-text-ir">파일 아이콘</span></i><em>선택한 파일명.ppt</em></span>
+                      <span class="file-size"><span>1.44</span> <span>MB</span></span>
                       <button class="file-delete"><i class="fas fa-times"><span class="child-text-ir">닫기 아이콘</span></i></button>
                     </li>
                   </ul>
-                  <input type="file" multiple="multiple">
+                  <label for="file-up" class="child-text-ir">파일업로드</label>
+                  <input type="file" multiple="multiple" id="file-up">
                 </div>
               </td>
             </tr>
@@ -279,38 +293,52 @@
               <td>
                 <div>
                   <ul class="image-preview">
-                    <li class="no-image">
+                   <!--  
+                    이미지 첨부 상태
+
+                    1. 이미지없음 : no-file
+                      <li class="status-no-image">
+
+                    2. 이미지 업로드중: file-uploading
+                      li class="status-image-uploading">
+
+                    3. 완료 (text or ppt) : status-text-file / status-ppt-file
+                      <li class="status-attached-image"> : 삭제버튼 없음
+                      <li class="status-attached-image-fix"> : 삭제버튼있음
+                   -->
+                    <li class="status-no-image">
                       <div><i class="far fa-file d-yellow"><span class="child-text-ir">빈 이미지 아이콘</span></i></div>
                       <span><i class="fas fa-exclamation-triangle d-yellow"><span class="child-text-ir">빈 파일 아이콘</span></i><em>No image</em></span>
                     </li>
-                    <li class="image-uploading">
+                    <li class="status-image-uploading">
                       <div><i class="fas fa-spinner d-green"><span class="child-text-ir">로딩중 아이콘</span></i></div>
                       <span><i class="fas fa-spinner d-yellow"><span class="child-text-ir">로딩중 아이콘</span></i><em>Uploading...</em></span>
                     </li>
-                    <!-- 이미지 첨부된 생김새01 -->
-                    <li class="attached-image">
+                    <li class="status-attached-image">
                       <div><img src="../img/c.jpg" alt=""></div>
                       <span><i class="fas fa-file-image"><span class="child-text-ir">이미지 아이콘</span></i><em>파일명</em></span>
-                      <span class="file-size"><span>1.44</span><em>MB</em></span>
+                      <span class="file-size"><span>1.44</span> <span>MB</span></span>
                     </li>
-                    <!-- 이미지 첨부된 생김새02/삭제버튼추가 -->
-                    <li class="attached-image-fix">
+                    <li class="status-attached-image-fix">
                       <div><img src="../img/c.jpg" alt=""></div>
                       <span><i class="fas fa-file-image"><span class="child-text-ir">이미지 아이콘</span></i><em>파일명</em></span>
-                      <span class="file-size"><span>1.44</span><em>MB</em></span>
+                      <span class="file-size"><span>1.44</span> <span>MB</span></span>
                       <button class="file-delete"><i class="fas fa-times"><span class="child-text-ir">닫기 아이콘</span></i></button>
                     </li>
                   </ul>
-                  <input type="file" multiple="multiple">
+                  <label for="image-up" class="child-text-ir">이미지업로드</label>
+                  <input type="file" multiple="multiple" id="image-up">
                 </div>
               </td>
             </tr>
           </tbody>
         </table>
-        <button>등록</button>
+        <button class="list-btn-style">등록</button>
       </section>
   
     </div>
   </main>
+
+  <script src="../js/index.js"></script>
 </body>
 </html>
