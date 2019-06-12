@@ -580,24 +580,26 @@ a {
   position: relative;
 }
 
-.look-book .list-wrap .list {
+.look-book .list-wrap ul.list {
   position: absolute;
   top: 0;
   opacity: 0;
   -webkit-transition: all .3s;
   transition: all .3s;
-}
-
-.look-book .list-wrap .list.on {
-  opacity: 1;
-}
-
-.look-book .list-wrap .list > div {
-  padding-left: 350px;
+  padding-left: 50%;
   white-space: nowrap;
 }
 
-.look-book .list-wrap .list > div img {
+.look-book .list-wrap ul.list.on {
+  opacity: 1;
+}
+
+.look-book .list-wrap ul.list > li {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.look-book .list-wrap ul.list > li img {
   width: 500px;
 }
 

@@ -456,32 +456,28 @@
       </div>
     </div>
     <div class="list-wrap">
-      <article class="list boy on">
-        <div>
-          <img src="../img/hero/img_mainroll_01_1.png" alt="boy">
-          <img src="../img/hero/img_mainroll_02_1.png" alt="boy">
-          <img src="../img/hero/img_mainroll_03_1.png" alt="boy">
-          <img src="../img/hero/img_mainroll_04_1.png" alt="boy">
-          <img src="../img/hero/img_mainroll_05_1.png" alt="boy">
-          <img src="../img/hero/img_mainroll_06_1.png" alt="boy">
-          <img src="../img/hero/img_mainroll_07_1.png" alt="boy">
-        </div>
-      </article>
+      <ul class="list boy on">
+        <li><img src="../img/hero/img_mainroll_01_1.png" alt="boy"></li>
+        <li><img src="../img/hero/img_mainroll_02_1.png" alt="boy"></li>
+        <li><img src="../img/hero/img_mainroll_03_1.png" alt="boy"></li>
+        <li><img src="../img/hero/img_mainroll_04_1.png" alt="boy"></li>
+        <li><img src="../img/hero/img_mainroll_05_1.png" alt="boy"></li>
+        <li><img src="../img/hero/img_mainroll_06_1.png" alt="boy"></li>
+        <li><img src="../img/hero/img_mainroll_07_1.png" alt="boy"></li>
+      </ul>
   
-      <article class="list girl">
-        <div>
-          <img src="../img/hero/img_mainroll_girl_01_1.png" alt="girl">
-          <img src="../img/hero/img_mainroll_girl_02_1.png" alt="girl">
-          <img src="../img/hero/img_mainroll_girl_03_1.png" alt="girl">
-          <img src="../img/hero/img_mainroll_girl_04_1.png" alt="girl">
-          <img src="../img/hero/img_mainroll_girl_05_1.png" alt="girl">
-          <img src="../img/hero/img_mainroll_girl_06_1.png" alt="girl">
-          <img src="../img/hero/img_mainroll_girl_07_1.png" alt="girl">
-          <img src="../img/hero/img_mainroll_girl_08_1.png" alt="girl">
-          <img src="../img/hero/img_mainroll_girl_09_1.png" alt="girl">
-          <img src="../img/hero/img_mainroll_girl_10_1.png" alt="girl">
-        </div>
-      </article>
+      <ul class="list girl">
+        <li><img src="../img/hero/img_mainroll_girl_01_1.png" alt="girl"></li>
+        <li><img src="../img/hero/img_mainroll_girl_02_1.png" alt="girl"></li>
+        <li><img src="../img/hero/img_mainroll_girl_03_1.png" alt="girl"></li>
+        <li><img src="../img/hero/img_mainroll_girl_04_1.png" alt="girl"></li>
+        <li><img src="../img/hero/img_mainroll_girl_05_1.png" alt="girl"></li>
+        <li><img src="../img/hero/img_mainroll_girl_06_1.png" alt="girl"></li>
+        <li><img src="../img/hero/img_mainroll_girl_07_1.png" alt="girl"></li>
+        <li><img src="../img/hero/img_mainroll_girl_08_1.png" alt="girl"></li>
+        <li><img src="../img/hero/img_mainroll_girl_09_1.png" alt="girl"></li>
+        <li><img src="../img/hero/img_mainroll_girl_10_1.png" alt="girl"></li>
+      </ul>
     </div>
 
     <div class="buttons">
@@ -599,6 +595,23 @@
   $('.girl-look-btn').on('click',function(){
     $('.list').removeClass('on');
     $('.list.girl').addClass('on')
+  });
+
+
+  //룩북 slide 효과
+  //500px씩 가기
+
+  var offsetX = 0;
+
+  //시작지점하고 끝지점 적용해주고, 터치 스와이프 추가하기
+  $('.prev-btn').on('click', function(){
+    offsetX = $('.list').position().left;
+    // console.log(offsetX);
+    $('.list').css({'left': (offsetX - 300) + 'px'});
+  });
+  $('.next-btn').on('click', function(){
+    offsetX = $('.list').position().left;
+    $('.list').css({'left': (offsetX + 300) + 'px'});
   });
 
 

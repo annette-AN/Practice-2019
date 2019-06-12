@@ -565,18 +565,20 @@ a {text-decoration: none; color: inherit;}
     height:701px;
     position: relative;
 
-    .list {
+    ul.list {
       position: absolute;
       top: 0;
       opacity: 0;
       transition: all .3s;
+      padding-left: 50%;
+      white-space: nowrap;
 
       &.on {
         opacity: 1;
       }
 
-      >div {
-        padding-left: 350px;
+      >li {
+        display: inline-block;
         white-space: nowrap;
 
         img {
