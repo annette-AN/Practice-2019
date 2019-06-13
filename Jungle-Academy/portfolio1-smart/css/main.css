@@ -571,7 +571,7 @@ a {
   margin-right: 0px;
 }
 
-.look-book > div .look-book-btn a:hover {
+.look-book > div .look-book-btn a:hover, .look-book > div .look-book-btn a:focus {
   color: #272D31;
 }
 

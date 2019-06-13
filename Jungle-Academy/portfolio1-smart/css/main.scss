@@ -552,7 +552,7 @@ a {text-decoration: none; color: inherit;}
           margin-right: 0px;
         }
 
-        &:hover {
+        &:hover, &:focus {
           //click시 색 바뀜
           color: #272D31;
         }

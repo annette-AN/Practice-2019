@@ -490,7 +490,7 @@
   <section class="smart-tv">
     <h2>Smart tv<span>Ch. MX</span></h2>
     <article>
-      <iframe width="1200" height="678" src="../https://www.youtube.com/embed/VlFKo4AkpFA?version=2&amp;loop=1&amp;autohide=1&amp;controls=0&amp;showinfo=0&amp;rel=0&amp;wmode=opaque&amp;autoplay=1" frameborder="0" id="video" allowfullscreen=""></iframe>
+      <iframe width="1200" height="678" src="https://www.youtube.com/embed/VlFKo4AkpFA?version=2&amp;loop=1&amp;autohide=1&amp;controls=0&amp;showinfo=0&amp;rel=0&amp;wmode=opaque&amp;autoplay=1" frameborder="0" id="video" allowfullscreen=""></iframe>
     </article>
     <article>
       <a href="javascript:;">
@@ -587,24 +587,25 @@
     setInterval(slideIntro1, slideTime);
   });
 
-  $('.boy-look-btn').on('click',function(){
+
+  //look-book click, slide
+  //click
+  $('.boy-look-btn').css({'color' : '#272D31'});
+  $('.boy-look-btn').on('click', function(){
     $('.list').removeClass('on');
     $('.list.boy').addClass('on');
+    $('.look-book-btn').find('a').css({'color': '#9D9D9D'});
+    $(this).css({'color' : '#272D31'});
   });
   
-  $('.girl-look-btn').on('click',function(){
+  $('.girl-look-btn').on('click', function(){
     $('.list').removeClass('on');
     $('.list.girl').addClass('on')
+    $('.look-book-btn').find('a').css({'color': '#9D9D9D'});
+    $(this).css({'color' : '#272D31'});
   });
 
-
-  //룩북 slide 효과
-  //500px씩 가기
-
-  // var offsetX = 0;
-
-  // console.log(boxWidth);
-
+  //slide
   slideMoving('.list.boy');
   slideMoving('.list.girl');
 
@@ -636,7 +637,36 @@
     });
   }
 
+    //offsetleft
+    // slideSwipe('.list.boy');
+    // slideSwipe('.list.girl');
 
+
+      var startX = 0;
+      var delX = 0;
+      var positionX = 0;
+
+      $('.list.girl').css({'display': 'none'});
+
+      $('.list.boy').on('mousedown', function(e){
+        e.preventDefault();
+        startX = e.clientX;
+        positionX = $(this).position().left;
+        // console.log(startX);
+
+        $(document).on('mousemove', function(e){
+          delX = e.clientX - startX;
+          // console.log(delX);
+          // if (offsetLeft < minOffsetLeft) offsetLeft = minOffsetLeft = (positionX + delX);
+          // if (offsetLeft > 0) offsetLeft = (positionX + delX);
+          $('.list.boy').css({'left': (positionX + delX) + 'px'});
+        });
+
+        $(document).on('mouseup', function(){
+          $(document).off('mousemove mousedown');
+        });
+      });
+    
 </script>
 
 </html>
