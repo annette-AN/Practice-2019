@@ -601,18 +601,40 @@
   //룩북 slide 효과
   //500px씩 가기
 
-  var offsetX = 0;
+  // var offsetX = 0;
 
-  //시작지점하고 끝지점 적용해주고, 터치 스와이프 추가하기
-  $('.prev-btn').on('click', function(){
-    offsetX = $('.list').position().left;
-    // console.log(offsetX);
-    $('.list').css({'left': (offsetX - 300) + 'px'});
-  });
-  $('.next-btn').on('click', function(){
-    offsetX = $('.list').position().left;
-    $('.list').css({'left': (offsetX + 300) + 'px'});
-  });
+  // console.log(boxWidth);
+
+  slideMoving('.list.boy');
+  slideMoving('.list.girl');
+
+  function slideMoving(selector) {
+
+    var boxWidth = $('.list-wrap').innerWidth();
+    var barWidth = 0;
+    var offsetLeft = 0;
+    var minOffsetLeft = 0;
+    
+    $(selector).find('li').each(function(){
+      barWidth += $(this).outerWidth(true)
+    });
+
+    $(selector).css({'width': barWidth + 'px'});
+
+    minOffsetLeft = -(barWidth - boxWidth);
+
+    $('.prev-btn').on('click', function(){
+      offsetLeft -= 300;
+      if (offsetLeft < minOffsetLeft) offsetLeft = minOffsetLeft;
+      $(selector).css({'left': offsetLeft + 'px'});
+    });
+
+    $('.next-btn').on('click', function(){
+      offsetLeft += 300;
+      if (offsetLeft > 0) offsetLeft = 0;
+      $(selector).css({'left': offsetLeft + 'px'});
+    });
+  }
 
 
 </script>
