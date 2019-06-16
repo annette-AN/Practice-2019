@@ -215,22 +215,20 @@
       top: auto;
       left: auto;
       transform: none;
-      margin-top: 10px;
+      height: auto;
 
       li {
         position: relative;
         width: 100%;
-        height: 100%;
+        height: calc(100vw - 47px);
+        margin-top: 10px;
         overflow: hidden;
-
-        li+li {
-          margin-top: 10px;
-        }
       }
     }
 
     .weather-wrap {
       position: static;
+      margin-top: 10px;
 
       .weather-today {
         float: none;

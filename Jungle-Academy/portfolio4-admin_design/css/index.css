@@ -381,6 +381,7 @@ section .table-wrap table tbody tr + tr {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   height: 100%;
+  overflow: hidden;
 }
 
 .joing .joing-board li {
