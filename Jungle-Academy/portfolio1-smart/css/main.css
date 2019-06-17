@@ -583,11 +583,11 @@ a {
 .look-book .list-wrap ul.list {
   position: absolute;
   top: 0;
+  padding-left: 600px;
+  white-space: nowrap;
   opacity: 0;
   -webkit-transition: all .3s;
   transition: all .3s;
-  padding-left: 600px;
-  white-space: nowrap;
 }
 
 .look-book .list-wrap ul.list.on {

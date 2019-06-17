@@ -567,10 +567,10 @@ a {text-decoration: none; color: inherit;}
     ul.list {
       position: absolute;
       top: 0;
-      opacity: 0;
-      transition: all .3s;
       padding-left: 600px;
       white-space: nowrap;
+      opacity: 0;
+      transition: all .3s;
 
       &.on {
         opacity: 1;

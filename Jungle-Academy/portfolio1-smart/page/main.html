@@ -559,7 +559,7 @@
     var allIntroWrap = $('.intro1-wrap');
     allIntroWrap.removeClass('show');
 
-    console.log("nextEle",nextElement[0])
+    // console.log("nextEle",nextElement[0])
 
     if(!nextElement[0]){
       allIntroWrap.eq(0).addClass("show");
@@ -570,23 +570,6 @@
 
   setInterval(toggleSlideShow, slideTime);
   
-  false && $('.intro1-wrap').each(function(){
-    var $container = $(this);
-
-    function slideIntro1(){
-      var $intro1 = $container.find('.intro1');
-      var first = $intro1.eq(0);
-      var second = $intro1.eq(1);
-
-      first.removeClass('show').appendTo($container);
-      second.addClass('show');
-
-      first.toggleClass('show');
-    };
-
-    setInterval(slideIntro1, slideTime);
-  });
-
 
   //look-book click, slide
   //click
@@ -600,10 +583,11 @@
   
   $('.girl-look-btn').on('click', function(){
     $('.list').removeClass('on');
-    $('.list.girl').addClass('on')
+    $('.list.girl').addClass('on');
     $('.look-book-btn').find('a').css({'color': '#9D9D9D'});
     $(this).css({'color' : '#272D31'});
   });
+
 
   //slide
   slideMoving('.list.boy');
@@ -615,9 +599,12 @@
     var barWidth = 0;
     var offsetLeft = 0;
     var minOffsetLeft = 0;
+    var startX = 0;
+    var delX = 0;
+    var positionX = 0;
     
     $(selector).find('li').each(function(){
-      barWidth += $(this).outerWidth(true)
+      barWidth += $(this).outerWidth(true);
     });
 
     $(selector).css({'width': barWidth + 'px'});
@@ -628,6 +615,7 @@
       offsetLeft -= 300;
       if (offsetLeft < minOffsetLeft) offsetLeft = minOffsetLeft;
       $(selector).css({'left': offsetLeft + 'px'});
+      // console.log(offsetLeft);
     });
 
     $('.next-btn').on('click', function(){
@@ -636,30 +624,30 @@
       $(selector).css({'left': offsetLeft + 'px'});
     });
 
-      var startX = 0;
-      var delX = 0;
-      var positionX = 0;
+    //모바일 스와이프
+    // $('.list.girl').css({'display': 'none'});
 
-      $('.list.girl').css({'display': 'none'});
+    $(selector).on('mousedown', function(e){
+      e.preventDefault();
+      startX = e.clientX;
+      console.log(startX);
 
-      $('.list.boy').on('mousedown', function(e){
-        e.preventDefault();
-        startX = e.clientX;
-        positionX = $(this).position().left;
-        // console.log(startX);
+      $(document).on('mousemove', function(e){
+        delX = e.clientX - startX;
+        offsetLeft = $(selector).position().left + delX;
+        console.log(offsetLeft);
+        console.log(minOffsetLeft);
 
-        $(document).on('mousemove', function(e){
-          delX = e.clientX - startX;
-          // console.log(delX);
-          // if (offsetLeft < minOffsetLeft) offsetLeft = minOffsetLeft = (positionX + delX);
-          // if (offsetLeft > 0) offsetLeft = (positionX + delX);
-          $('.list.boy').css({'left': (positionX + delX) + 'px'});
-        });
+        if (offsetLeft < minOffsetLeft) offsetLeft = minOffsetLeft;
+        if (offsetLeft > 0) offsetLeft = 0;
+
+        $(selector).css({'left': offsetLeft + 'px'});
 
         $(document).on('mouseup', function(){
           $(document).off('mousemove mousedown');
         });
       });
+    });
   }
 
     //offsetleft
