@@ -572,6 +572,10 @@
   
 
   //look-book click, slide
+
+  var slideBoy = slideMoving('.list.boy');
+  var slideGirl = slideMoving('.list.girl');
+
   //click
   $('.boy-look-btn').css({'color' : '#272D31'});
   $('.boy-look-btn').on('click', function(){
@@ -579,6 +583,8 @@
     $('.list.boy').addClass('on');
     $('.look-book-btn').find('a').css({'color': '#9D9D9D'});
     $(this).css({'color' : '#272D31'});
+    slideBoy.offsetLeftReset();
+    slideGirl.offsetLeftReset();
   });
   
   $('.girl-look-btn').on('click', function(){
@@ -586,15 +592,17 @@
     $('.list.girl').addClass('on');
     $('.look-book-btn').find('a').css({'color': '#9D9D9D'});
     $(this).css({'color' : '#272D31'});
+    slideBoy.offsetLeftReset();
+    slideGirl.offsetLeftReset();
   });
 
 
   //slide
+
   slideMoving('.list.boy');
   slideMoving('.list.girl');
 
   function slideMoving(selector) {
-
     var boxWidth = $('.list-wrap').innerWidth();
     var barWidth = 0;
     var offsetLeft = 0;
@@ -625,6 +633,7 @@
     });
 
     //모바일 스와이프
+    //listboy만 적용이 됌
     // $('.list.girl').css({'display': 'none'});
 
     $(selector).on('mousedown', function(e){
@@ -640,7 +649,6 @@
 
         if (offsetLeft < minOffsetLeft) offsetLeft = minOffsetLeft;
         if (offsetLeft > 0) offsetLeft = 0;
-
         $(selector).css({'left': offsetLeft + 'px'});
 
         $(document).on('mouseup', function(){
@@ -648,6 +656,14 @@
         });
       });
     });
+
+    return {
+      //제대로 적용이 안됌
+      offsetLeftReset: function(){
+        offsetLeft = 0;
+        $(selector).css({'left': offsetLeft + 'px'});
+      }
+    }
   }
 
     //offsetleft
