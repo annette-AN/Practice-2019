@@ -1,7 +1,8 @@
 @import url('http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700');
 @import url('http://fonts.googleapis.com/earlyaccess/notosanskr.css');
 
-div, section, p, span, ul, li, img {margin: 0; padding: 0; box-sizing: border-box;}
+div, section, p, span, ul, li, img, a {margin: 0; padding: 0; box-sizing: border-box;}
+h1, h2, h3, h4, h5, h6, em, strong, span {margin: 0; padding: 0; box-sizing: border-box; font-size: inherit; font-weight: normal;}
 li {list-style: none;}
 a {text-decoration: none; color: inherit;}
 body {

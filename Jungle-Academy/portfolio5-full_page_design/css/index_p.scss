@@ -1,86 +1,25 @@
-section.intro {
-  background: #F8F8F8;
-
-  > div {
-    // 창이 작아지면 컨텐츠가 넘치는데 확인
-    .content-wrap {
-      padding: 5%;
-      
-      .img-wrap {
-        position: relative;
-        display: block;
-        float: left;
-        width: 50%;
-        height: 100%;
-        overflow: hidden;
-
-        img {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 100%;
-        }
-      }
-
-      div+div {
-        float: left;
-        width: 50%;
-        height: 100%;
-        padding: 3%;
-        background: #FCFBFC;
-
-        p {
-          font-size: 18px;
-          line-height: 1.8;
-
-          span {
-            display: block;
-            font-size: 60px;
-          }
-        }
-
-        ul {
-          li {
-            width: 100%;
-            text-align: center;
-            font-weight: 500;
-          }
-        }
-
-        > ul {
-          margin-top: 50px;
-
-          > li {
-            padding-bottom: 20px;
-            font-size: 20px;
-            text-align: left;
-          }
-
-          ul {
-            li {
-              a {
-                display: block;
-                padding: 15px;
-                margin-top: 10px;
-                background: #ABCCB1;
-                font-size: 18px;
-
-                &:hover {
-                  //다른 멋있는 효과
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+main {
+  background: red;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
 }
 
-.section {
+#page1 {display: none;}
+
+//page common
+.page {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
   background: #FFEDC2;
 
-  .content-wrap{
+  .content-wrap {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -89,243 +28,479 @@ section.intro {
     height: 80%;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
     background: #F8F8F8;
+    overflow: hidden;
+    padding: 5%;
+  }
+}
 
-    .content {
+//첫번째 page
+.page.intro {
+  background: #F8F8F8;
+
+  .content-wrap {
+    > div {
       position: relative;
+      top: 50%;
+      transform: translate(0%, -50%);
+      width: 49%;
       height: 100%;
-      width: 100%;
-    }
-
-    .control {
-      .prev, .next {
-        img {
-          width: 80px;
-        }
-      }
-
-      .prev {
-        position: absolute;
-        top: 50%;
-        left: -90px;
-        transform: translateY(-50%);
-      }
-
-      .next {
-        position: absolute;
-        top: 50%;
-        right: -90px;
-        transform: translateY(-50%);
-      }
-    }
-
-    .indicator {
-      position: absolute;
-      left: 0;
-      bottom: 20px;
-      width: 100%;
-      text-align: center;
-      font-size: 15px;
+      float: left;
     }
   }
-}
 
-.pp1 {
-  .content-wrap {
-    .content {
-      li {
-        &:nth-child(2) {
-          display: none;
-        }
-      }
-    }
-  }
-}
-
-.pp2 {
-  .content-wrap {
-    .content {
-      li {
-        &:first-child {
-          display: none;
-        }
-      }
-    }
-  }
-}
-
-// 첫번째 li style
-.content {
-  > li {
-    position: absolute;
-    top: 50%;
-    left: 5%;
-    transform: translateY(-50%);
-    width: 90%;
-    height: 80%;
+  .img-wrap {
     overflow: hidden;
 
     img {
-      //img 적용할 때 공간없게 자르기
-      display: block;
       position: absolute;
       top: 50%;
-      left: 0%;
-      transform: translateY(-50%);
-      width: 53%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+    }
+  }
+
+  .img-wrap+div {
+
+    h3 {
+      height: 15%;
+      font-size: 50px;
+      letter-spacing: 5px;
+    }
+    
+    p {
+      height: 25%;
+      font-size: 18px;
     }
 
-    .desk {
-      //absolute로 위치지정하려고 했는데 하면 아무것도 안보임
-      float: right;
-      width: 45%;
+    ul {
+      height: 60%;
 
-      table {
-        width: 100%;
-        line-height: 1.3;
-
-        caption {
-          text-align: left;
-          font-size: 60px;
-          font-weight: 300;
-          margin-bottom: 50px;
-          line-height: 1.1;
-
-          span {
-            display: block;
-            font-size: 50px;
-            font-weight: 100;
-          }
-        }
-
-        tbody {
-          tr{
-            line-height: 1.5;
-
-            th {
-              font-size: 20px;
-              font-weight: 500;
-            }
-
-            td {
-              font-size: 18px;
-              color: #555555;
-
-              a {
-                background: url(../img/icon/click-icon.png) no-repeat right center / 25px 25px;
-                margin-left: 5px;
-                padding: 0px 18px 4px 4px;
-                border-bottom: 1px dotted #555555;
-                font-weight: 500;
-              }
-            }
-          }
-        }
+      li {
+        height: 50px;
+        line-height: 50px;
+        background: #F8F8F8;
       }
 
-      .sub-title {
-        margin-top: 50px;
-
-        li{
-          background: url(../img/icon/importance-icon.svg) no-repeat left center / 25px 25px;
-          font-size: 23px;
-          padding-left: 35px;
-          color: #333333;
-
-          span {
-            color: red;
-          }
-        }
+      li:first-of-type {
+        font-size: 20px;
+        font-weight: bold;
       }
-    }
 
-    .btn {
-      width: 80%;
-      margin-top: 50px;
+      li+li {
+        margin-top: 0.8%;
 
-      a {
-        display: block;
-        float: right;
-        width: 40%;
-        padding: 3.5%;
-        margin-top: 10px;
-        background: #FCFBFC;
-        font-size: 18px;
-        text-align: center;
-        border: 2px solid #7D7563;
-        border-radius: 8px;
-        box-shadow: 1px 1px 5px rgba(0,0,0,0.4), 1px 1px 5px rgba(0,0,0,0.4);
-        transition: all .4s;
+        a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          background: #ABCCB1;
+          font-size: 18px;
+          font-weight: 500;
+          text-align: center;
 
-        &:first-child {
-          float: left;
-        }
-
-        &:hover {
-          background: #7D7563;
-          color: #fff;
-          border-color: #FCFBFC;
+          &:hover {
+            //다른 멋있는 효과
+          }
         }
       }
     }
   }
 }
 
-// 두번째 li style ~
-.content {
-  li+li {
-    .btn {
-      //저 오른쪽 공간이 뭔지 모르겠음
-      position: absolute;
-      left: 50%;
-      bottom: 2%;
-      transform: translateX(-50%);
-      width: 30%;
-      overflow: hidden;
-      margin-top: 0px;
-    }
-  }
-
-  .explain-wrap {
-    display: flex;
-    justify-content: space-between;
-    height: 90%;
-    padding: 3%;
+//두번째 page~
+.page {
+  ul.content-wrap {
+    background: red;
 
     > li {
-      position: relative;
-      width: 30%;
+      width: 100%;
       height: 100%;
-      padding: 3%;
-      overflow: hidden;
-      border: 1px dotted gray;
-      color: #333333;
+      float: left;
+      background: pink;
+    }
+  }
+}
 
-      > img, > ul  {
+//     // 창이 작아지면 컨텐츠가 넘치는데 확인
+
+      
+//       .img-wrap {
+//         position: relative;
+//         display: block;
+//         float: left;
+//         width: 50%;
+//         height: 100%;
+//         overflow: hidden;
+
+//         img {
+//           position: absolute;
+//           top: 50%;
+//           transform: translateY(-50%);
+//           width: 100%;
+//         }
+//       }
+
+//       div+div {
+//         float: left;
+//         width: 50%;
+//         height: 100%;
+//         padding: 3%;
+//         background: #FCFBFC;
+
+//         p {
+//           font-size: 18px;
+//           line-height: 1.8;
+
+//           span {
+//             display: block;
+//             font-size: 60px;
+//           }
+//         }
+
+//         ul {
+//           li {
+//             width: 100%;
+//             text-align: center;
+//             font-weight: 500;
+//           }
+//         }
+
+//         > ul {
+//           margin-top: 50px;
+
+//           > li {
+//             padding-bottom: 20px;
+//             font-size: 20px;
+//             text-align: left;
+//           }
+
+//           ul {
+//             li {
+//               a {
+//                 display: block;
+//                 padding: 15px;
+//                 margin-top: 10px;
+//                 background: #ABCCB1;
+//                 font-size: 18px;
+
+//                 &:hover {
+//                   //다른 멋있는 효과
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+
+// }
+
+// .section {
+//   background: #FFEDC2;
+
+//   .content-wrap{
+
+
+
+//     .content {
+//       position: relative;
+//       height: 100%;
+//       width: 100%;
+//     }
+
+//     .control {
+//       .prev, .next {
+//         img {
+//           width: 80px;
+//         }
+//       }
+
+//       .prev {
+//         position: absolute;
+//         top: 50%;
+//         left: -90px;
+//         transform: translateY(-50%);
+//       }
+
+//       .next {
+//         position: absolute;
+//         top: 50%;
+//         right: -90px;
+//         transform: translateY(-50%);
+//       }
+//     }
+
+//     .indicator {
+//       position: absolute;
+//       left: 0;
+//       bottom: 20px;
+//       width: 100%;
+//       text-align: center;
+//       font-size: 15px;
+//     }
+//   }
+// }
+
+// .pp1 {
+//   .content-wrap {
+//     .content {
+//       li {
+//         &:nth-child(2) {
+//           display: none;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .pp2 {
+//   .content-wrap {
+//     .content {
+//       li {
+//         &:first-child {
+//           display: none;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// // 첫번째 li style
+// .content {
+//   > li {
+//     position: absolute;
+//     top: 50%;
+//     left: 5%;
+//     transform: translateY(-50%);
+//     width: 90%;
+//     height: 80%;
+//     overflow: hidden;
+
+//     img {
+//       //img 적용할 때 공간없게 자르기
+//       display: block;
+//       position: absolute;
+//       top: 50%;
+//       left: 0%;
+//       transform: translateY(-50%);
+//       width: 53%;
+//     }
+
+//     .desk {
+//       //absolute로 위치지정하려고 했는데 하면 아무것도 안보임
+//       float: right;
+//       width: 45%;
+
+//       table {
+//         width: 100%;
+//         line-height: 1.3;
+
+//         caption {
+//           text-align: left;
+//           font-size: 60px;
+//           font-weight: 300;
+//           margin-bottom: 50px;
+//           line-height: 1.1;
+
+//           span {
+//             display: block;
+//             font-size: 50px;
+//             font-weight: 100;
+//           }
+//         }
+
+//         tbody {
+//           tr{
+//             line-height: 1.5;
+
+//             th {
+//               font-size: 20px;
+//               font-weight: 500;
+//             }
+
+//             td {
+//               font-size: 18px;
+//               color: #555555;
+
+//               a {
+//                 background: url(../img/icon/click-icon.png) no-repeat right center / 25px 25px;
+//                 margin-left: 5px;
+//                 padding: 0px 18px 4px 4px;
+//                 border-bottom: 1px dotted #555555;
+//                 font-weight: 500;
+//               }
+//             }
+//           }
+//         }
+//       }
+
+//       .sub-title {
+//         margin-top: 50px;
+
+//         li{
+//           background: url(../img/icon/importance-icon.svg) no-repeat left center / 25px 25px;
+//           font-size: 23px;
+//           padding-left: 35px;
+//           color: #333333;
+
+//           span {
+//             color: red;
+//           }
+//         }
+//       }
+//     }
+
+//     .btn {
+//       width: 80%;
+//       margin-top: 50px;
+
+//       a {
+//         display: block;
+//         float: right;
+//         width: 40%;
+//         padding: 3.5%;
+//         margin-top: 10px;
+//         background: #FCFBFC;
+//         font-size: 18px;
+//         text-align: center;
+//         border: 2px solid #7D7563;
+//         border-radius: 8px;
+//         box-shadow: 1px 1px 5px rgba(0,0,0,0.4), 1px 1px 5px rgba(0,0,0,0.4);
+//         transition: all .4s;
+
+//         &:first-child {
+//           float: left;
+//         }
+
+//         &:hover {
+//           background: #7D7563;
+//           color: #fff;
+//           border-color: #FCFBFC;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// // 두번째 li style ~
+// .content {
+//   li+li {
+//     .btn {
+//       //저 오른쪽 공간이 뭔지 모르겠음
+//       position: absolute;
+//       left: 50%;
+//       bottom: 2%;
+//       transform: translateX(-50%);
+//       width: 30%;
+//       overflow: hidden;
+//       margin-top: 0px;
+//     }
+//   }
+
+//   .explain-wrap {
+//     display: flex;
+//     justify-content: space-between;
+//     height: 90%;
+//     padding: 3%;
+
+//     > li {
+//       position: relative;
+//       width: 30%;
+//       height: 100%;
+//       padding: 3%;
+//       overflow: hidden;
+//       border: 1px dotted gray;
+//       color: #333333;
+
+//       > img, > ul  {
+//         position: absolute;
+//         top: 50%;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+//         width: 100%;
+//       }
+//     }
+
+//     .sub-explain {
+//       ul {
+//         padding-left: 5%;
+
+//         li {
+//           background: url(../img/icon/importance-icon.svg) no-repeat left center / 25px 25px;
+//           font-size: 23px;
+//           padding-left: 35px;
+//           color: #333333;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .pp1 {
+//   .content-wrap .content li .desk table tbody tr td a {
+//     padding: 0px 25px 4px 4px;
+//   }
+// }
+
+
+///////////////
+
+section {
+  > h2 {
+    width: 0px;
+    height: 0px;
+    font-size: 0px;
+  }
+}
+
+#page-indicator {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translate(-50%, 0%);
+  z-index: 0;
+
+  li+li {
+    margin-top: 5px;
+  }
+
+  li {
+    position: relative;
+
+    a {
+      display: block;
+      width: 20px;
+      height: 20px;
+      overflow: hidden;
+
+      span {
+        display: block;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 100%;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #333;
+        transition: width .1s, height .1s;
+        text-indent: -9999px;
       }
-    }
-
-    .sub-explain {
-      ul {
-        padding-left: 5%;
-
-        li {
-          background: url(../img/icon/importance-icon.svg) no-repeat left center / 25px 25px;
-          font-size: 23px;
-          padding-left: 35px;
-          color: #333333;
+      
+      &:hover {
+        span {
+          width: 10px;
+          height: 10px;
+        }
+      }
+  
+      &.on {
+        span {
+          width: 12px;
+          height: 12px;
         }
       }
     }
-  }
-}
-
-.pp1 {
-  .content-wrap .content li .desk table tbody tr td a {
-    padding: 0px 25px 4px 4px;
   }
 }

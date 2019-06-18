@@ -124,9 +124,9 @@ function setParallaxNoBar(selector) {
 
         var delta = 0;
         if (eventScroll === 'mousewheel') {
-            delta = e.wheelDelta / -120;
+            delta = e.wheelDelta / -120; // 간혹 콘솔창에 값이 다르게 뜨기도 해서 -1로 나누고
         } else {
-            delta = e.detail / 3;
+            delta = e.detail / 3; // 1로 나누어도됌
         }
         if (delta > 0) {
             showPage(pageNext);
