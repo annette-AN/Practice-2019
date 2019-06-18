@@ -1,0 +1,6 @@
+1. Font Awesome 5.0.6 (SVG with JS Version)
+/js/fontawesome-all-5.0.6.min.js
+
+2. Air Datepicker
+
+3. CK Editor 4

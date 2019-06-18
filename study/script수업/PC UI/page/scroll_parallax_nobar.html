@@ -9,10 +9,10 @@
         <title>스크롤 UI(패럴랙스) | 디노웍스(주) UI 라이브러리</title>
         <meta name="description" content="디노웍스(주) UI 라이브러리 : 스크롤 UI(패럴랙스)" />
         <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
+        <link href="../fa/css/all.min.css" rel="stylesheet" />
         <link href="../css/scroll_parallax_nobar.css" rel="stylesheet" />
         <script src="../js/jquery-3.4.1.min.js"></script>
-        <script src="../js/ui_library_common.js"></script>
+        <script src="../js/ui_common.js"></script>
     </head>
     <body class="sub scroll-parallax">
         <div id="wrapper">
@@ -72,7 +72,7 @@
                 </section>
             </main>
             
-            <footer id="footer">
+            <footer id="footer" class="scroll-page">
                 <div class="sitemap">Sitemap</div>
                 <p class="copyright">2019 Dinoworks Inc.</p>
             </footer>
@@ -82,25 +82,29 @@
 <script>
 'use strict';
 
-setParallaxNoBar();
-    
-function setParallaxNoBar() {
-    var numPage = $('.scroll-page').length;
+setParallaxNoBar('.scroll-page');
+
+function setParallaxNoBar(selector) {
+    var numPage = $(selector).length;
     var pagePrev = 0;
     var pageNow = 0;
     var pageNext = 0;
-    var direction = 0;
+    var eventScroll = '';
+    var onAnimation = false;
     var isWheelBlocked = false;
-    var isFooterVisible = false;
-    var timerId = 0;
+    var timerId = '';
+    
+    // 브라우저에 따른 이벤트 식별
+    eventScroll = ('onmousewheel' in window) ? 'mousewheel' : 'DOMMouseScroll';
     
     $('.scroll-page').each(function(i) {
         $('#page-indicator').append('<li><a href="#">' + (i + 1) + ' 페이지</a></li>\n');
-        $(this).css({'top': (i * 100) + '%'});
+        if (i !== numPage - 1) {
+            $(this).css({'top': (i * 100) + '%'});
+        }
         $(this).prepend('<a href="#" class="hidden start">' + (i + 1) + '번 페이지 시작</a>').append('<a href="#" class="hidden end">' + (i + 1) + '번 페이지 끝</a>');
     });
-    $('#footer').css({'top': '100%'});
-    $('#footer').prepend('<a href="#" class="hidden start">푸터 페이지 시작</a>').append('<a href="#" class="hidden end">푸터 페이지 끝</a>');
+    $('#footer').css({'top': 'auto', 'bottom': -$('#footer').outerHeight() + 'px'});
     showPage(1);
         
     // indicator event
@@ -110,132 +114,27 @@ function setParallaxNoBar() {
         $('.scroll-page:eq(' + index + ') a.hidden.start').trigger('focus');
     });
     
-    // mousewheel event
-    $(window).on('mousewheel DOMMouseScroll', function(e) {
-        clearTimeout(timerId);
-        timerId = setTimeout(function() {isWheelBlocked = false}, 200);
-        if (isWheelBlocked === true) return false;
-        isWheelBlocked = true;
-        if (e.originalEvent.wheelDelta === undefined) {
-            direction = e.originalEvent.detail / 3;
-        } else {
-            direction = e.originalEvent.wheelDelta / -120;
-        }
-        console.log(direction);
-        if (direction > 0) {  // 다음 페이지
-            if (pageNow === numPage) {
-                showPage('footer');
-            } else {
-                showPage(pageNext);
-            }
-        } else {  // 이전 페이지
-            if (pageNow === numPage && isFooterVisible === true) {
-                showPage(numPage);
-            } else {
-                showPage(pagePrev);
-            }
-        }
-    });
-    
-    // focusin 이벤트
-    $('.scroll-page').on('focusin', function() {
-        var index = $('.scroll-page').index($(this));
-        showPage(index + 1);
-    });
-    // focusin 이벤트
-    $('#footer').on('focusin', function() {
-        showPage('footer');
-    });
-    
-    
-    function showPage(n) {
-        if (pageNow === 0) {
-            $('#main, #footer').css({'transition': 'none'});
-        } else {
-            $('#main, #footer').css({'transition': 'top 0.5s'});
-        }
-        if (n === 'footer') {
-            $('#main').css({'top': 'calc(' + (-(numPage - 1) * 100) + '% - ' + $('#footer').outerHeight() + 'px)'});
-            $('#footer').css({'top': 'calc(100% - ' + $('#footer').outerHeight() + 'px)'});
-            n = numPage;
-            isFooterVisible = true;
-        } else {
-            $('#main').css({'top': -((n - 1) * 100) + '%'});
-            $('#footer').css({'top': '100%'});
-            isFooterVisible = false;
-        }
-        $('#page-indicator li').removeClass('on');
-        $('#page-indicator li:eq(' + (n - 1) + ')').addClass('on');
-        pageNow = n;
-        pagePrev = (n - 1) < 1 ? 1 : n - 1;
-        pageNext = (n + 1) > numPage ? numPage : n + 1;
-        console.log(pagePrev + ' / ' + pageNow + ' / ' + pageNext);
-    }
-    
-    
-}
-
-    
-    
-    
-    
-    
-    
-/*
-setParallaxNoBar();
-
-function setParallaxNoBar() {
-    
-    var numPage = $('.scroll-page').length;
-    var pagePrev = 0;
-    var pageNow = 0;
-    var pageNext = 0;
-    var isWheelBlocked = false;
-    var isShowFooter = false;
-    var timerId = 0;
-    
-    $('.scroll-page').each(function(i) {
-        $('#page-indicator').append('<li><a href="#">' + (i + 1) + ' 페이지 보기</a></li>\n');
-        $(this).css({'top': (i * 100) + '%'});
-        $(this).prepend('<a href="#" class="hidden start">' + (i + 1) + '번 페이지 시작</a>').append('<a href="#" class="hidden end">' + (i + 1) + '번 페이지 끝</a>');
-    });
-    $('#footer').css({'top': '100%'});
-    $('#footer').prepend('<a href="#" class="hidden start">푸터 페이지 시작</a>').append('<a href="#" class="hidden end">푸터 페이지 끝</a>');
-    showPage(1);
-    
-    // indicator click 이벤트
-    $('#page-indicator li a').on('click', function() {
-        var index = $('#page-indicator li').index($(this).parent());
-        showPage(index + 1);
-        $('.scroll-page:eq(' + index + ') a.hidden.start').trigger('focus');
-    });
-    // mousewheel 이벤트
-    $(window).on('mousewheel DOMMouseScroll', function(e) {
+    // 마우스 휠
+    window.addEventListener(eventScroll, function(e) {
         e.preventDefault();
         clearTimeout(timerId);
-        timerId = setTimeout(function() {isWheelBlocked = false;}, 300);
-        if (isWheelBlocked === true) return false;
+        timerId = setTimeout(function() {isWheelBlocked = false;}, 200);
+        if (onAnimation === true || isWheelBlocked === true) return false;
         isWheelBlocked = true;
+
         var delta = 0;
-        if (e.originalEvent.wheelDelta) {  // 일반 브라우저
-            delta = e.originalEvent.wheelDelta / -120;
-        } else {  // 파이어폭스
-            delta = e.originalEvent.detail / 3;
+        if (eventScroll === 'mousewheel') {
+            delta = e.wheelDelta / -120;
+        } else {
+            delta = e.detail / 3;
         }
         if (delta > 0) {
-            if (pageNow === numPage) {
-                showPage('footer');
-            } else {
-                showPage(pageNext);
-            }
+            showPage(pageNext);
         } else {
-            if (pageNow === numPage && isShowFooter === true) {
-                showPage(pageNow);
-            } else {
-                showPage(pagePrev);
-            }
+            showPage(pagePrev);
         }
-    });
+    }, {passive: false});
+    
     // focusin 이벤트
     $('.scroll-page').on('focusin', function() {
         var index = $('.scroll-page').index($(this));
@@ -246,34 +145,28 @@ function setParallaxNoBar() {
         showPage('footer');
     });
     
-    
     function showPage(n) {
-        var scrollTo = 0;
+        var footerHeight = $('#footer').outerHeight();
         if (pageNow === 0) {
             $('#main, #footer').css({'transition': 'none'});
         } else {
-            $('#main, #footer').css({'transition': 'top 0.5s'});
+            $('#main, #footer').css({'transition': 'all 0.5s'});
         }
-        if (n === 'footer') {
-            $('#main').css({'top': 'calc(' + (-((numPage - 1) * 100)) + '% - ' + $('#footer').outerHeight() + 'px)'});
-            $('#footer').css({'top': 'calc(100% - ' + $('#footer').outerHeight() + 'px)'});
-            isShowFooter = true;
-            n = numPage;
+        if (n === numPage) {
+            $('#footer').css({'bottom': 0});
+            $('#main').css({'top': 'calc(' + -((n - 2) * 100) + '% - ' + footerHeight + 'px)'});
         } else {
+            $('#footer').css({'bottom': -footerHeight + 'px'});
             $('#main').css({'top': -((n - 1) * 100) + '%'});
-            $('#footer').css({'top': '100%'});
-            isShowFooter = false;
         }
         $('#page-indicator li').removeClass('on');
         $('#page-indicator li:eq(' + (n - 1) + ')').addClass('on');
         pageNow = n;
         pagePrev = (n - 1) < 1 ? 1 : n - 1;
         pageNext = (n + 1) > numPage ? numPage : n + 1;
+        //console.log(pagePrev + ' / ' + pageNow + ' / ' + pageNext);
     }
-}   
-*/
-    
-
+}
 </script>
     </body>
 </html>

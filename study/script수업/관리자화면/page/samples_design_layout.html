@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <title>디노웍스(주) 관리시스템</title>
+        <meta name="description" content="TIPS 디노웍스(주) 관리시스템" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=1200" />
+        <meta name="author" content="디노웍스(주) (DinoWorks Inc.)" />
+        <meta name="apple-mobile-web-app-title" content="디노웍스" />
+        <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+        <link href="../library/air_datepicker/datepicker.min.css" rel="stylesheet" />
+        <link href="../css/style.css" rel="stylesheet" />
+        <link href="../css/dino_form.css" rel="stylesheet" />
+        <script src="../js/jquery-3.3.1.min.js"></script>
+        <script src="../js/iscroll.js"></script>
+        <script src="../library/air_datepicker/datepicker.min.js"></script>
+        <script src="../library/air_datepicker/datepicker.ko.js"></script>
+        <script src="../js/dino_common.js"></script>
+        <script src="../js/dino_form.js"></script>
+        <script src="../js/script_ui.js"></script>
+        <script src="https://www.gstatic.com/charts/loader.js"></script>
+    </head>
+    <body class="sub samples design layout">
+        <div id="wrapper">
+            
+            <a href="#main" id="skip-nav">본문 바로가기 (Skip Navigation)</a>
+            <header id="header">
+                <div id="header-logo">
+                    <h1><a href="overview_dashboard.html"><img alt="교수나라" src="../img/logo.png" /></a></h1>
+                    <a href="#" class="toggle"><span class="fontawesome"><i class="fas fa-chevron-left" title="메뉴열기/닫기"></i></span></a>
+                </div>
+                <div id="header-body">
+                    <div class="user">
+                        <a href="#">
+                            <span class="face"><img alt="" src="../img/sample/sample_face.jpg" /></span>
+                            <span class="name">관리자</span>
+                        </a>
+                    </div>
+                    <div class="function">
+                        <ul>
+                            <li><a href="/admin/index.html" title="로그아웃"><span class="fontawesome"><i class="fas fa-sign-out-alt"></i></span></a></li>
+                            <li><a href="#" title="관리자정보변경"><span class="fontawesome"><i class="fas fa-info"></i></span></a></li>
+                            <li><a href="#" title="환경설정"><span class="fontawesome"><i class="fas fa-cog"></i></span></a></li>
+                            <li><a href="http://localhost/phpmyadmin/" target="_blank" title="DB접속"><span class="fontawesome"><i class="fas fa-database"></i></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            
+            <section id="gnb">
+                <div class="scroll-box">
+                    <h3 data-menu="overview">OVERVIEW</h3>
+                    <ul class="nav">
+                        <li data-menu="dashboard">
+                            <a href="overview_dashboard.html"><span class="fontawesome"><i class="fas fa-tv fa-fw"></i></span><em>Dashboard</em></a>
+                        </li>
+                    </ul>
+
+                    <h3 data-menu="basic">기본정보</h3>
+                    <ul class="nav">
+                        <li data-menu="user">
+                            <a href="#"><span class="fontawesome"><i class="fas fa-user fa-fw"></i></span><em>회원정보</em></a>
+                            <ul>
+                                <li data-menu="normal"><a href="#"><em>일반회원</em></a></li>
+                                <li data-menu="recruiter"><a href="#"><em>채용담당자</em></a></li>
+                                <li data-menu="admin"><a href="#"><em>관리자</em></a></li>
+                            </ul>
+                        </li>
+                        <li data-menu="org">
+                            <a href="#"><span class="fontawesome"><i class="fas fa-university fa-fw"></i></span><em>기관정보</em></a>
+                            <ul>
+                                <li data-menu="univ"><a href="#"><em>대학정보</em></a></li>
+                                <li data-menu="graduate"><a href="#"><em>대학원정보</em></a></li>
+                                <li data-menu="dept"><a href="#"><em>학과정보</em></a></li>
+                                <li data-menu="code"><a href="#"><em>학과분류기준</em></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h3 data-menu="recruite">채용공고</h3>
+                    <ul class="nav">
+                        <li data-menu="announce">
+                            <a href="#"><span class="fontawesome"><i class="fas fa-bullhorn fa-fw"></i></span><em>채용공고정보</em></a>
+                        </li>
+                    </ul>
+
+                    <h3 data-menu="setting">정보설정</h3>
+                    <ul class="nav">
+                        <li data-menu="code"><a href="#"><span class="fontawesome"><i class="fas fa-code fa-fw"></i></span><em>코드정보</em></a></li>
+                        <li data-menu="popup"><a href="#"><span class="fontawesome"><i class="fas fa-window-restore fa-fw"></i></span><em>팝업창</em></a></li>
+                    </ul>
+
+                    <h3 data-menu="samples">SAMPLES</h3>
+                    <ul class="nav">
+                        <li data-menu="design">
+                            <a href="#"><span class="fontawesome"><i class="fas fa-paint-brush fa-fw"></i></span><em>Design</em></a>
+                            <ul>
+                                <li data-menu="layout"><a href="samples_design_layout.html"><em>Layout</em></a></li>
+                                <li data-menu="button"><a href="samples_design_button.html"><em>Button</em></a></li>
+                                <li data-menu="form"><a href="samples_design_form.html"><em>Form</em></a></li>
+                                <li data-menu="list"><a href="samples_design_list.html"><em>List View</em></a></li>
+                            </ul>
+                        </li>
+                        <li data-menu="function">
+                            <a href="#"><span class="fontawesome"><i class="fas fa-cog fa-fw"></i></span><em>Function</em></a>
+                            <ul>
+                                <li data-menu="calendar"><a href="#"><em>Calendar</em></a></li>
+                                <li data-menu="address"><a href="#"><em>Address</em></a></li>
+                                <li data-menu="editor"><a href="#"><em>Editor</em></a></li>
+                                <li data-menu="chart"><a href="#"><em>Chart(Google)</em></a></li>
+                                <li data-menu="layerpop"><a href="#"><em>Layer Popup</em></a></li>
+                                <li data-menu="file"><a href="#"><em>이미지/파일첨부</em></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <main id="main">
+                <section class="main-box">
+                    <h2>Layout</h2>
+                    <p>레이아웃(1열, 2열(1:1, 2:1, 1:2), 3열)</p>
+
+                    <section class="layout column-1">
+                        <section class="layout-box">
+                            <h3>1열</h3>
+                        </section>
+                    </section>
+
+                    <section class="layout column-2">
+                        <section class="layout-box">
+                            <h3>2열(1:1)</h3>
+                        </section>
+                        <section class="layout-box">
+                            <h3>2열(1:1)</h3>
+                        </section>
+                    </section>
+
+                    <section class="layout column-2-1">
+                        <section class="layout-box">
+                            <h3>2열(2:1)</h3>
+                        </section>
+                        <section class="layout-box">
+                            <h3>2열(2:1)</h3>
+                        </section>
+                    </section>
+
+                    <section class="layout column-1-2">
+                        <section class="layout-box">
+                            <h3>2열(1:2)</h3>
+                        </section>
+                        <section class="layout-box">
+                            <h3>2열(1:2)</h3>
+                        </section>
+                    </section>
+                    
+                    <section class="layout column-3">
+                        <section class="layout-box">
+                            <h3>3열</h3>
+                        </section>
+                        <section class="layout-box">
+                            <h3>3열</h3>
+                        </section>
+                        <section class="layout-box">
+                            <h3>3열</h3>
+                        </section>
+                    </section>
+                </section>
+            </main>
+            
+            <footer id="footer">
+                <p>© Copyright 2018 TIPSTOWN. All Rights Reserved.</p>
+            </footer>
+            
+        </div> <!-- #wrapper  -->
+        
+<script>
+'use strict';
+
+
+
+</script>
+    </body>
+</html>
+
+

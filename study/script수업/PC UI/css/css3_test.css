@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* reset */
+body {margin: 0;}
+h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, table {margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 600;}
+main {display: block;}
+a {color: inherit; text-decoration: inherit;}
+a img {border: none;}
+img {vertical-align: middle;}
+li {list-style: none;}
+address, em, i, cite {font-style: normal;}
+table {border-collapse: collapse;}
+table caption {overflow: hidden; width: 0; height: 0;}
+i.fas, i.far, i.fab {vertical-align: middle; display: inline-block;}
+i.fas span, i.far span, i.fab span {position: absolute; overflow: hidden; text-indent: -999px;}
+.mobile {display: none !important;}
+br.only-m {content: '';}
+br.only-m:after {content: '\00a0';}
+div.hidden {position: absolute; left: -9999px;}
+
+
+/* common */
+body {font-family: '맑은 고딕', 'malgun gothic', '돋움', Dotum, 'Apple SD Gothic Neo', Helvetica, sans-serif; font-weight: 400; font-size: 14px; color: #333333 ; background: #ffffff;}
+#wrapper {min-width: 1200px; overflow: hidden;}
+#skip-nav {position: fixed; left: 0; top: -41px; width: 100%; line-height: 40px; text-align: center; font-size: 16px; color: #ffffff; background: rgba(0, 0, 0, 0.6); border-bottom: 1px solid #ffffff; z-index: 100000; transition: top 0.3s;}
+#skip-nav:focus {top: 0;}
+#go-home {position: fixed; right: 20px; top: 20px; width: 60px; height: 60px; font-size: 24px; text-align: center; line-height: 56px; border-radius: 100px; color: #ffffff; background: #ffcc00; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); z-index: 10000;}
+#main {width: 1200px; margin: 0 auto; padding: 60px 0 60px 0;}
+
+
+/* css3 test */
+#main > section {position: relative; display: inline-block; margin: 30px; width: 500px; height: 300px; border: 2px solid #e0e0e0;}
+#main > section.box1 a.box1 {position: absolute; left: 100px; top: 100px; width: 100px; height: 100px; background: red; color: #ffffff; transition: all 0.5s/* linear 0.2s*/;}
+#main > section.box1:hover a.box1 {transform: skew(30deg, 10deg);}
+
+#main > section.box2 {perspective: 500px;}
+#main > section.box2 a.box2 {position: absolute; left: 100px; top: 100px; width: 100px; height: 100px; background: blue; color: #ffffff; transition: all 2s/* linear 0.2s*/;}
+#main > section.box2:hover a.box2 {transform: rotate3d(1, 0, 0, 360deg) scale(1.2) translateX(150px);}
+
+#main > section.box3 a.box3 {position: absolute; left: 100px; top: 100px; width: 100px; height: 100px; background: lime; color: #ffffff; transition: all 2s/* linear 0.2s*/;}
+#main > section.box3:hover a.box3 {animation: test-animation 3s ease-out 0.1s 1 normal forwards;}
+@keyframes test-animation {
+    0% {opacity: 0; transform: rotate(3deg) scale(1.2);}
+    50% {opacity: 0.8; background: yellow;}
+    100% {opacity: 1; transform: rotate(0) scale(1); background: red;}
+}
+
+
+
+

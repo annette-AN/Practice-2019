@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="DinoWorks Inc. 디노웍스(주)" />
+        <meta name="apple-mobile-web-app-title" content="디노웍스 관리시스템" />
+        <title>Dashboard | Overview | 디노웍스(주) 관리시스템</title>
+        <meta name="description" content="디노웍스(주) UI 라이브러리" />
+        <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="../fa/css/all.min.css" rel="stylesheet" />
+        <link href="../css/image_slide_css3.css" rel="stylesheet" />
+        <script src="../js/jquery-3.4.1.min.js"></script>
+        <script src="../js/ui_common.js"></script>
+    </head>
+    <body class="sub slider">
+        <div id="wrapper">
+            <a href="#main" id="skip-nav">본문 바로가기</a>'
+            <a href="../index.html" id="go-home" title="홈 화면"><i class="fas fa-home"></i></a>
+            
+            <main id="main">
+                <div class="image-slide">
+                    <p class="dummy"><img alt="00" src="../img/slide/1.jpg" /></p>
+                    <div class="box">
+                        <ul class="slide">
+                            <li><img alt="00" src="../img/slide/1.jpg" /></li>
+                            <li><img alt="00" src="../img/slide/2.jpg" /></li>
+                            <li><img alt="00" src="../img/slide/3.jpg" /></li>
+                            <li><img alt="00" src="../img/slide/4.jpg" /></li>
+                        </ul>
+                        <ul class="message">
+                            <li>
+                                <em class="title">Title1</em>
+                                <p class="desc">description text1</p>
+                            </li>
+                            <li>
+                                <em class="title">Title2</em>
+                                <p class="desc">description text2</p>
+                            </li>
+                            <li>
+                                <em class="title">Title3</em>
+                                <p class="desc">description text3</p>
+                            </li>
+                            <li>
+                                <em class="title">Title4</em>
+                                <p class="desc">description text4</p>
+                            </li>
+                        </ul>
+                        <ul class="indicator">
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+        </div> <!-- #wrapper  -->
+<script>
+'use script';
+
+
+    
+setImageSlide('div.image-slide');
+
+function setImageSlide(selector) {
+    var numSlide = $(selector).find('ul.slide li').length;
+    var slideNow = 0;
+    var slidePrev = 0;
+    var slideNext = 0;
+    
+    showSlide(1);
+    
+    
+    $(selector).find('ul.slide li').each(function(i) {
+        var imageSrc = $(this).find('img').attr('src');
+        for (var j = 0; j < 4; j++) {
+            $(this).append('<span><img alt="" src="' + imageSrc + '" /></span>');
+            $(this).find('span:last-child').css({'left': (j * 25) + '%'});
+            $(this).find('span:last-child > img').css({'left': -(j * 100) + '%'});
+        }
+    });
+    
+    $(selector).find('ul.indicator li a').on('click', function() {
+        var index = $(selector).find('ul.indicator li').index($(this).parent());
+        showSlide(index + 1);
+    });
+    
+    function showSlide(n) {
+        if (slideNow === n) return false;
+        $(selector).find('ul.slide li').removeClass('start on off');
+        if (slideNow === 0) {
+            $(selector).find('ul.slide li:eq(' + (n - 1) + ')').addClass('start');
+        } else {
+            $(selector).find('ul.slide li:eq(' + (slideNow - 1) + ')').addClass('off');
+            $(selector).find('ul.slide li:eq(' + (n - 1) + ')').addClass('on');
+        }
+        $(selector).find('ul.indicator li').removeClass('on');
+        $(selector).find('ul.indicator li:eq(' + (n - 1) + ')').addClass('on');
+        slideNow = n;
+        slidePrev = (n - 1) < 1 ? numSlide : n - 1;
+        slideNext = (n + 1) > numSlide ? 1 : n + 1;
+    }
+}
+    
+    
+
+</script>
+    </body>
+</html>
+
+

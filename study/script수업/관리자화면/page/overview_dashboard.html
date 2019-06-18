@@ -1,74 +1,461 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <title>디노웍스(주) 관리시스템</title>
+        <meta name="description" content="TIPS 디노웍스(주) 관리시스템" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=1200" />
+        <meta name="author" content="디노웍스(주) (DinoWorks Inc.)" />
+        <meta name="apple-mobile-web-app-title" content="디노웍스" />
+        <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+        <link href="../library/air_datepicker/datepicker.min.css" rel="stylesheet" />
+        <link href="../css/style.css" rel="stylesheet" />
+        <link href="../css/dino_form.css" rel="stylesheet" />
+        <script src="../js/jquery-3.3.1.min.js"></script>
+        <script src="../js/iscroll.js"></script>
+        <script src="../library/air_datepicker/datepicker.min.js"></script>
+        <script src="../library/air_datepicker/datepicker.ko.js"></script>
+        <script src="../js/dino_common.js"></script>
+        <script src="../js/dino_form.js"></script>
+        <script src="../js/script_ui.js"></script>
+        <script src="https://www.gstatic.com/charts/loader.js"></script>
+    </head>
+    <body class="sub overview dashboard">
+        <div id="wrapper">
+            
+            <a href="#main" id="skip-nav">본문 바로가기 (Skip Navigation)</a>
+            <header id="header">
+                <div id="header-logo">
+                    <h1><a href="overview_dashboard.html"><img alt="교수나라" src="../img/logo.png" /></a></h1>
+                    <a href="#" class="toggle"><span class="fontawesome"><i class="fas fa-chevron-left" title="메뉴열기/닫기"></i></span></a>
+                </div>
+                <div id="header-body">
+                    <div class="user">
+                        <a href="#">
+                            <span class="face"><img alt="" src="../img/sample/sample_face.jpg" /></span>
+                            <span class="name">관리자</span>
+                        </a>
+                    </div>
+                    <div class="function">
+                        <ul>
+                            <li><a href="/admin/index.html" title="로그아웃"><span class="fontawesome"><i class="fas fa-sign-out-alt"></i></span></a></li>
+                            <li><a href="#" title="관리자정보변경"><span class="fontawesome"><i class="fas fa-info"></i></span></a></li>
+                            <li><a href="#" title="환경설정"><span class="fontawesome"><i class="fas fa-cog"></i></span></a></li>
+                            <li><a href="http://localhost/phpmyadmin/" target="_blank" title="DB접속"><span class="fontawesome"><i class="fas fa-database"></i></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            
+            <section id="gnb">
+                <div class="scroll-box">
+                    <h3 data-menu="overview">OVERVIEW</h3>
+                    <ul class="nav">
+                        <li data-menu="dashboard">
+                            <a href="overview_dashboard.html"><span class="fontawesome"><i class="fas fa-tv fa-fw"></i></span><em>Dashboard</em></a>
+                        </li>
+                    </ul>
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="author" content="DinoWorks Inc. 디노웍스(주)" />
-  <meta name="apple-mobile-web-app-title" content="디노웍스 관리시스템" />
-  <title>Dashboard | Overview | 디노웍스(주) 관리시스템</title>
-  <meta name="description" content="디노웍스(주) UI 라이브러리" />
-  <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
-  <link href="../fa/css/all.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&display=swap&subset=korean"
-    rel="stylesheet" />
-  <link href="../css/style.css" rel="stylesheet" media="screen and (min-width : 851px)" />
-  <link href="../css/style-pc.css" rel="stylesheet" media="screen and (min-width : 851px)" />
-  <link href="../css/style_mobile.css" rel="stylesheet" media="screen and (max-width : 850px)" />
-  <script src="../js/jquery-3.4.1.min.js"></script>
-  <script src="../js/ui_common.js"></script>
-</head>
+                    <h3 data-menu="basic">기본정보</h3>
+                    <ul class="nav">
+                        <li data-menu="user">
+                            <a href="#"><span class="fontawesome"><i class="fas fa-user fa-fw"></i></span><em>회원정보</em></a>
+                            <ul>
+                                <li data-menu="normal"><a href="#"><em>일반회원</em></a></li>
+                                <li data-menu="recruiter"><a href="#"><em>채용담당자</em></a></li>
+                                <li data-menu="admin"><a href="#"><em>관리자</em></a></li>
+                            </ul>
+                        </li>
+                        <li data-menu="org">
+                            <a href="#"><span class="fontawesome"><i class="fas fa-university fa-fw"></i></span><em>기관정보</em></a>
+                            <ul>
+                                <li data-menu="univ"><a href="#"><em>대학정보</em></a></li>
+                                <li data-menu="graduate"><a href="#"><em>대학원정보</em></a></li>
+                                <li data-menu="dept"><a href="#"><em>학과정보</em></a></li>
+                                <li data-menu="code"><a href="#"><em>학과분류기준</em></a></li>
+                            </ul>
+                        </li>
+                    </ul>
 
-<body class="sub overview dashboard">
-  <div id="wrapper">
-    <a href="#main" id="skip-nav">본문 바로가기</a>
-    <header id="header">
-      <h1>
-        <a href="#">
-          <img src="../img/logo_h_white.png" alt="로고">
-          <span>관리자사이트</span>
-        </a>
-        <a href="#" class="open"><i class="fas fa-angle-right"></i></a>
-      </h1>
+                    <h3 data-menu="recruite">채용공고</h3>
+                    <ul class="nav">
+                        <li data-menu="announce">
+                            <a href="#"><span class="fontawesome"><i class="fas fa-bullhorn fa-fw"></i></span><em>채용공고정보</em></a>
+                        </li>
+                    </ul>
 
-      <ul class="top-menu">
-        <li><a href="#"><i class="fas fa-user"><span>로그인</span></i></a></li>
-        <li><a href="#"><i class="fas fa-user"><span>로그인</span></i></a></li>
-        <li><a href="#"><i class="fas fa-user"><span>로그인</span></i></a></li>
-        <li><a href="#"><i class="fas fa-user"><span>로그인</span></i></a></li>
-        <li><a href="#"><i class="fas fa-user"><span>로그인</span></i></a></li>
-      </ul>
-    </header>
+                    <h3 data-menu="setting">정보설정</h3>
+                    <ul class="nav">
+                        <li data-menu="code"><a href="#"><span class="fontawesome"><i class="fas fa-code fa-fw"></i></span><em>코드정보</em></a></li>
+                        <li data-menu="popup"><a href="#"><span class="fontawesome"><i class="fas fa-window-restore fa-fw"></i></span><em>팝업창</em></a></li>
+                    </ul>
 
-    <nav id="gnb">
-      <h2>gnb</h2>
-    </nav>
+                    <h3 data-menu="samples">SAMPLES</h3>
+                    <ul class="nav">
+                        <li data-menu="design">
+                            <a href="#"><span class="fontawesome"><i class="fas fa-paint-brush fa-fw"></i></span><em>Design</em></a>
+                            <ul>
+                                <li data-menu="layout"><a href="samples_design_layout.html"><em>Layout</em></a></li>
+                                <li data-menu="button"><a href="samples_design_button.html"><em>Button</em></a></li>
+                                <li data-menu="form"><a href="samples_design_form.html"><em>Form</em></a></li>
+                                <li data-menu="list"><a href="samples_design_list.html"><em>List View</em></a></li>
+                            </ul>
+                        </li>
+                        <li data-menu="function">
+                            <a href="#"><span class="fontawesome"><i class="fas fa-cog fa-fw"></i></span><em>Function</em></a>
+                            <ul>
+                                <li data-menu="calendar"><a href="#"><em>Calendar</em></a></li>
+                                <li data-menu="address"><a href="#"><em>Address</em></a></li>
+                                <li data-menu="editor"><a href="#"><em>Editor</em></a></li>
+                                <li data-menu="chart"><a href="#"><em>Chart(Google)</em></a></li>
+                                <li data-menu="layerpop"><a href="#"><em>Layer Popup</em></a></li>
+                                <li data-menu="file"><a href="#"><em>이미지/파일첨부</em></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <main id="main">
+                <section class="main-box">
+                    <h2>Dashboard</h2>
+                    <p>서비스 관리를 위한 요약정보를 표시합니다.</p>
+                    
+                    <section class="layout column-3">
+                        <section class="layout-box">
+                            <h3>방문자 현황</h3>
+                            <div id="chart1"></div>
+                        </section>
+                        <section class="layout-box">
+                            <h3>일자별 공고 정보</h3>
+                            <div id="chart2"></div>
+                        </section>
+                        <section class="layout-box">
+                            <h3>연도별 공고 현황</h3>
+                            <div id="chart3"></div>
+                        </section>
+                    </section>
+                    
+                    <section class="layout column-2">
+                        <section class="layout-box">
+                            <h3>채용담당자 가입 정보</h3>
+                            <table class="list">
+                                <caption>채용담당자 가입 요약 정보</caption>
+                                <colgroup>
+                                    <col style="width: 60px;" />
+                                    <col />
+                                    <col />
+                                    <col style="width: 60px;" />
+                                    <col />
+                                    <col />
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>소속대학</th>
+                                        <th>소속부서</th>
+                                        <th>이름</th>
+                                        <th>신청일</th>
+                                        <th>상태정보</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>231</td>
+                                        <td><a href="#" class="link">경희대학교</a></td>
+                                        <td>학교본부</td>
+                                        <td><a href="#" class="link">김영민</a></td>
+                                        <td>2017-05-17</td>
+                                        <td>승인대기</td>
+                                    </tr>
+                                    <tr>
+                                        <td>230</td>
+                                        <td><a href="#" class="link">대구가톨릭대학교</a></td>
+                                        <td>사회체육학과</td>
+                                        <td><a href="#" class="link">손영미</a></td>
+                                        <td>2017-05-17</td>
+                                        <td>승인대기</td>
+                                    </tr>
+                                    <tr>
+                                        <td>229</td>
+                                        <td><a href="#" class="link">인천대학교</a></td>
+                                        <td>학교본부</td>
+                                        <td><a href="#" class="link">손수철</a></td>
+                                        <td>2017-05-17</td>
+                                        <td>승인대기</td>
+                                    </tr>
+                                    <tr>
+                                        <td>228</td>
+                                        <td><a href="#" class="link">한국과학기술원</a></td>
+                                        <td>특수대학</td>
+                                        <td><a href="#" class="link">김영민</a></td>
+                                        <td>2017-05-17</td>
+                                        <td>승인대기</td>
+                                    </tr>
+                                    <tr>
+                                        <td>227</td>
+                                        <td><a href="#" class="link">경희대학교</a></td>
+                                        <td>산업공학과</td>
+                                        <td><a href="#" class="link">김영민</a></td>
+                                        <td>2017-05-17</td>
+                                        <td>승인대기</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                        <section class="layout-box">
+                            <h3>일반회원 가입 정보</h3>
+                            <table class="list">
+                                <caption>일반회원 가입 요약 정보</caption>
+                                <colgroup>
+                                    <col style="width: 60px;" />
+                                    <col />
+                                    <col style="width: 70px;" />
+                                    <col />
+                                    <col />
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>아이디</th>
+                                        <th>이름</th>
+                                        <th>이메일</th>
+                                        <th>가입일</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1204</td>
+                                        <td><a href="#" class="link">chiu9374</a></td>
+                                        <td><a href="#" class="link">김용민</a></td>
+                                        <td>cih3333i@naver.com</td>
+                                        <td>2017-05-17</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1203</td>
+                                        <td><a href="#" class="link">chiu9374</a></td>
+                                        <td><a href="#" class="link">김용민</a></td>
+                                        <td>cih3333i@naver.com</td>
+                                        <td>2017-05-17</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1202</td>
+                                        <td><a href="#" class="link">chiu9374</a></td>
+                                        <td><a href="#" class="link">김용민</a></td>
+                                        <td>cih3333i@naver.com</td>
+                                        <td>2017-05-17</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1201</td>
+                                        <td><a href="#" class="link">chiu9374</a></td>
+                                        <td><a href="#" class="link">김용민</a></td>
+                                        <td>cih3333i@naver.com</td>
+                                        <td>2017-05-17</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1200</td>
+                                        <td><a href="#" class="link">chiu9374</a></td>
+                                        <td><a href="#" class="link">김용민</a></td>
+                                        <td>cih3333i@naver.com</td>
+                                        <td>2017-05-17</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    </section>
+                    
+                    <section class="layout column-2">
+                        <section class="layout-box">
+                            <h3>공고의뢰 목록</h3>
+                            <table class="list">
+                                <caption>채용담당자 가입 요약 정보</caption>
+                                <colgroup>
+                                    <col style="width: 60px;" />
+                                    <col />
+                                    <col />
+                                    <col style="width: 60px;" />
+                                    <col />
+                                    <col />
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>소속대학</th>
+                                        <th>소속부서</th>
+                                        <th>이름</th>
+                                        <th>신청일</th>
+                                        <th>상태정보</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>231</td>
+                                        <td><a href="#" class="link">경희대학교</a></td>
+                                        <td>학교본부</td>
+                                        <td><a href="#" class="link">김영민</a></td>
+                                        <td>2017-05-17</td>
+                                        <td>승인대기</td>
+                                    </tr>
+                                    <tr>
+                                        <td>230</td>
+                                        <td><a href="#" class="link">대구가톨릭대학교</a></td>
+                                        <td>사회체육학과</td>
+                                        <td><a href="#" class="link">손영미</a></td>
+                                        <td>2017-05-17</td>
+                                        <td>승인대기</td>
+                                    </tr>
+                                    <tr>
+                                        <td>229</td>
+                                        <td><a href="#" class="link">인천대학교</a></td>
+                                        <td>학교본부</td>
+                                        <td><a href="#" class="link">손수철</a></td>
+                                        <td>2017-05-17</td>
+                                        <td>승인대기</td>
+                                    </tr>
+                                    <tr>
+                                        <td>228</td>
+                                        <td><a href="#" class="link">한국과학기술원</a></td>
+                                        <td>특수대학</td>
+                                        <td><a href="#" class="link">김영민</a></td>
+                                        <td>2017-05-17</td>
+                                        <td>승인대기</td>
+                                    </tr>
+                                    <tr>
+                                        <td>227</td>
+                                        <td><a href="#" class="link">경희대학교</a></td>
+                                        <td>산업공학과</td>
+                                        <td><a href="#" class="link">김영민</a></td>
+                                        <td>2017-05-17</td>
+                                        <td>승인대기</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                        <section class="layout-box">
+                            <h3>최근등록 게시물</h3>
+                            <table class="list">
+                                <caption>채용담당자 가입 요약 정보</caption>
+                                <colgroup>
+                                    <col style="width: 60px;" />
+                                    <col />
+                                    <col style="width: 70px;" />
+                                    <col style="width: 100px;" />
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>구분</th>
+                                        <th>제목</th>
+                                        <th>작성자</th>
+                                        <th>등록일</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>공지</td>
+                                        <td><a href="#" class="title link">공지사항을 말씀드립니다. 5월부터는 채용공고내용은 직접수정이 불가합니다.</a></td>
+                                        <td>관리자</td>
+                                        <td>2017-05-17</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Q&amp;A</td>
+                                        <td><a href="#" class="title link">공지사항을 말씀드립니다. 5월부터는 채용공고내용은 직접수정이 불가합니다.</a></td>
+                                        <td>관리자</td>
+                                        <td>2017-05-17</td>
+                                    </tr>
+                                    <tr>
+                                        <td>문의</td>
+                                        <td><a href="#" class="title link">공지사항을 말씀드립니다. 5월부터는 채용공고내용은 직접수정이 불가합니다.</a></td>
+                                        <td>관리자</td>
+                                        <td>2017-05-17</td>
+                                    </tr>
+                                    <tr>
+                                        <td>채용</td>
+                                        <td><a href="#" class="title link">공지사항을 말씀드립니다. 5월부터는 채용공고내용은 직접수정이 불가합니다.</a></td>
+                                        <td>관리자</td>
+                                        <td>2017-05-17</td>
+                                    </tr>
+                                    <tr>
+                                        <td>공지</td>
+                                        <td><a href="#" class="title link">공지사항을 말씀드립니다. 5월부터는 채용공고내용은 직접수정이 불가합니다.</a></td>
+                                        <td>관리자</td>
+                                        <td>2017-05-17</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    </section>
+                    
+                </section>  <!-- section.main-box -->
+            </main>
+            
+            <footer id="footer">
+                <p>© Copyright 2018 TIPSTOWN. All Rights Reserved.</p>
+            </footer>
+            
+        </div> <!-- #wrapper  -->
+        
+<script>
+'use strict';
     
-    <main id="main">
-      <div class="main-wrap">
-        <h1>Dashboard</h1>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis expedita, laborum assumenda similique maxime doloremque officia beatae soluta voluptate quo labore quis, adipisci perspiciatis? Quae beatae nemo tempora molestiae amet!</p>
-      </div>
-    </main>
+// Load Charts and the corechart and barchart packages.
+google.charts.load('current', {'packages':['corechart']});
 
-    <footer id="footer">
-      <p>copyright&copy;</p>
-    </footer>
+// Draw the pie chart and bar chart when Charts is loaded.
+google.charts.setOnLoadCallback(drawChart);
 
-  </div> <!-- #wrapper  -->
-  <script>
-    'use script';
+function drawChart() {
 
+    var data1 = google.visualization.arrayToDataTable([
+        ['', '전체', '일반회원', '채용담당자'],
+        ['05-01', 120, 20, 10],
+        ['05-02', 132, 30, 3],
+        ['05-03', 100, 50, 5],
+        ['05-04', 200, 65, 15],
+        ['05-05', 157, 77, 16],
+        ['05-06', 324, 78, 37],
+        ['05-07', 547, 56, 15]
+    ]);
+    
+    var data2 = google.visualization.arrayToDataTable([
+        ['', '접수대기', '접수중'],
+        ['05-01', 6, 20],
+        ['05-02', 10, 30],
+        ['05-03', 10, 50],
+        ['05-04', 12, 65],
+        ['05-05', 7, 77],
+        ['05-06', 7, 78],
+        ['05-07', 6, 56]
+    ]);
+    
+    var data3 = google.visualization.arrayToDataTable([
+        ['Year', '대학수', '공고수', '채용인원'],
+        ['2014', 280, 500, 870],
+        ['2015', 300, 520, 900],
+        ['2016', 257, 512, 800],
+        ['2017', 305, 588, 1000]
+    ]);
 
+    var options1 = {title:''};
+    var chart1 = new google.visualization.ColumnChart(document.getElementById('chart1'));
+    chart1.draw(data1, options1);
 
+    var options2 = {title:''};
+    var chart2 = new google.visualization.ColumnChart(document.getElementById('chart2'));
+    chart2.draw(data2, options2);
+    
+    var options3 = {title: '', curveType: 'function'};
+    var chart3 = new google.visualization.LineChart(document.getElementById('chart3'));
+    chart3.draw(data3, options3);
+}
+    
+$(window).on('resize', function() {
+    google.charts.setOnLoadCallback(drawChart);
+});
 
-
-
-
-
-
-  </script>
-</body>
-
+</script>
+    </body>
 </html>
+
+

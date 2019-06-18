@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <title>디노웍스(주) 관리시스템</title>
+        <meta name="description" content="TIPS 디노웍스(주) 관리시스템" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=1200" />
+        <meta name="author" content="디노웍스(주) (DinoWorks Inc.)" />
+        <meta name="apple-mobile-web-app-title" content="디노웍스" />
+        <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+        <link href="../library/air_datepicker/datepicker.min.css" rel="stylesheet" />
+        <link href="../css/style.css" rel="stylesheet" />
+        <link href="../css/dino_form.css" rel="stylesheet" />
+        <script src="../js/jquery-3.3.1.min.js"></script>
+        <script src="../js/iscroll.js"></script>
+        <script src="../library/air_datepicker/datepicker.min.js"></script>
+        <script src="../library/air_datepicker/datepicker.ko.js"></script>
+        <script src="../js/dino_common.js"></script>
+        <script src="../js/dino_form.js"></script>
+        <script src="../js/script_ui.js"></script>
+        <script src="https://www.gstatic.com/charts/loader.js"></script>
+    </head>
+    <body class="sub samples design form">
+        <div id="wrapper">
+            
+            <a href="#main" id="skip-nav">본문 바로가기 (Skip Navigation)</a>
+            <header id="header">
+                <div id="header-logo">
+                    <h1><a href="overview_dashboard.html"><img alt="교수나라" src="../img/logo.png" /></a></h1>
+                    <a href="#" class="toggle"><span class="fontawesome"><i class="fas fa-chevron-left" title="메뉴열기/닫기"></i></span></a>
+                </div>
+                <div id="header-body">
+                    <div class="user">
+                        <a href="#">
+                            <span class="face"><img alt="" src="../img/sample/sample_face.jpg" /></span>
+                            <span class="name">관리자</span>
+                        </a>
+                    </div>
+                    <div class="function">
+                        <ul>
+                            <li><a href="/admin/index.html" title="로그아웃"><span class="fontawesome"><i class="fas fa-sign-out-alt"></i></span></a></li>
+                            <li><a href="#" title="관리자정보변경"><span class="fontawesome"><i class="fas fa-info"></i></span></a></li>
+                            <li><a href="#" title="환경설정"><span class="fontawesome"><i class="fas fa-cog"></i></span></a></li>
+                            <li><a href="http://localhost/phpmyadmin/" target="_blank" title="DB접속"><span class="fontawesome"><i class="fas fa-database"></i></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            
+            <section id="gnb">
+                <div class="scroll-box">
+                    <h3 data-menu="overview">OVERVIEW</h3>
+                    <ul class="nav">
+                        <li data-menu="dashboard">
+                            <a href="overview_dashboard.html"><span class="fontawesome"><i class="fas fa-tv fa-fw"></i></span><em>Dashboard</em></a>
+                        </li>
+                    </ul>
+
+                    <h3 data-menu="basic">기본정보</h3>
+                    <ul class="nav">
+                        <li data-menu="user">
+                            <a href="#"><span class="fontawesome"><i class="fas fa-user fa-fw"></i></span><em>회원정보</em></a>
+                            <ul>
+                                <li data-menu="normal"><a href="#"><em>일반회원</em></a></li>
+                                <li data-menu="recruiter"><a href="#"><em>채용담당자</em></a></li>
+                                <li data-menu="admin"><a href="#"><em>관리자</em></a></li>
+                            </ul>
+                        </li>
+                        <li data-menu="org">
+                            <a href="#"><span class="fontawesome"><i class="fas fa-university fa-fw"></i></span><em>기관정보</em></a>
+                            <ul>
+                                <li data-menu="univ"><a href="#"><em>대학정보</em></a></li>
+                                <li data-menu="graduate"><a href="#"><em>대학원정보</em></a></li>
+                                <li data-menu="dept"><a href="#"><em>학과정보</em></a></li>
+                                <li data-menu="code"><a href="#"><em>학과분류기준</em></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h3 data-menu="recruite">채용공고</h3>
+                    <ul class="nav">
+                        <li data-menu="announce">
+                            <a href="#"><span class="fontawesome"><i class="fas fa-bullhorn fa-fw"></i></span><em>채용공고정보</em></a>
+                        </li>
+                    </ul>
+
+                    <h3 data-menu="setting">정보설정</h3>
+                    <ul class="nav">
+                        <li data-menu="code"><a href="#"><span class="fontawesome"><i class="fas fa-code fa-fw"></i></span><em>코드정보</em></a></li>
+                        <li data-menu="popup"><a href="#"><span class="fontawesome"><i class="fas fa-window-restore fa-fw"></i></span><em>팝업창</em></a></li>
+                    </ul>
+
+                    <h3 data-menu="samples">SAMPLES</h3>
+                    <ul class="nav">
+                        <li data-menu="design">
+                            <a href="#"><span class="fontawesome"><i class="fas fa-paint-brush fa-fw"></i></span><em>Design</em></a>
+                            <ul>
+                                <li data-menu="layout"><a href="samples_design_layout.html"><em>Layout</em></a></li>
+                                <li data-menu="button"><a href="samples_design_button.html"><em>Button</em></a></li>
+                                <li data-menu="form"><a href="samples_design_form.html"><em>Form</em></a></li>
+                                <li data-menu="list"><a href="samples_design_list.html"><em>List View</em></a></li>
+                            </ul>
+                        </li>
+                        <li data-menu="function">
+                            <a href="#"><span class="fontawesome"><i class="fas fa-cog fa-fw"></i></span><em>Function</em></a>
+                            <ul>
+                                <li data-menu="calendar"><a href="#"><em>Calendar</em></a></li>
+                                <li data-menu="address"><a href="#"><em>Address</em></a></li>
+                                <li data-menu="editor"><a href="#"><em>Editor</em></a></li>
+                                <li data-menu="chart"><a href="#"><em>Chart(Google)</em></a></li>
+                                <li data-menu="layerpop"><a href="#"><em>Layer Popup</em></a></li>
+                                <li data-menu="file"><a href="#"><em>이미지/파일첨부</em></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <main id="main">
+                <section class="main-box">
+                    <h2>Form</h2>
+                    <p>기본폼 정의(input, textarea, checkbox, radio, image, file 등)</p>
+
+                    <section class="layout column-1">
+                        <section class="layout-box">
+                            <h3>Basic Form</h3>
+                            <table class="form form-box">
+                                <tbody>
+                                    <tr>
+                                        <td class="th"><label for="id"><span class="required" title="필수입력">*</span>아이디</label></td>
+                                        <td>
+                                            <input type="text" name="id" id="id" placeholder="chiu9000(예시)" />
+                                            <a href="#" class="btn small sky">중복확인</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="th"><label for="password">비밀번호</label></td>
+                                        <td><input type="password" name="password" id="password" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="th">이메일 주소</td>
+                                        <td>chiu9000@naver.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="th">참고사항</td>
+                                        <td class="multi-line">박근혜 전 대통령이 구속된 31일 각 당의 대선주자들은 대부분 “당연한 결과로 사법부의 판단을 존중한다”는 반응을 보였다. 하지만 이날 자유한국당 대선후보로 선출된 홍준표 경남지사는 “이중처벌이라는 느낌”이라며 결이 다른 반응을 보였다.문재인 더불어민주당 전 대표는 박광온 캠프 수석대변인을 통해 “법과 원칙에 따른 당연한 결과”라며 “박 전 대통령의 구속은 정의와 상식이 바로선 나라를 만들라는 국민의 준엄한 명령을 받드는 것”이라고 밝혔다. 안희정 캠프의 강훈식 대변인은 “사안의 중대성을 볼 때 구속수사는 불가피했다”며 “검찰은 구속수사를 통해 국정농단과 적폐의 실체를 낱낱이 밝혀야 한다”고 말했다. 이재명 캠프 제윤경 대변인도 입장을 내어 “(박 전 대통령의 구속은) 촛불민심과 함께한 국민의 심판이자, 시대정신과 함께한 역사의 심판”이라며 “이번 법원의 결정은 적폐청산을 위한 대장정의 시작이며 세상을 바꾸는 첫걸음임이 분명하다”고 했다.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="th"><label for="title">제목</label></td>
+                                        <td><input type="text" name="title" id="title" class="full" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="th"><label for="zip">주소</label></td>
+                                        <td>
+                                            <p class="line">
+                                                <input type="text" name="zip" id="zip" class="number" maxlength="5" title="우편번호" />
+                                                <a href="#" class="btn normal azure">우편번호선택</a>
+                                            </p>
+                                            <p class="line form-input">
+                                                <input type="text" name="address1" id="address1" class="half" title="공통주소" />
+                                                <input type="text" name="address2" id="address2" class="half" title="상세주소" />
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="th"><label for="mobile1">휴대전화</label></td>
+                                        <td>
+                                            <input type="text" name="mobile1" id="mobile1" class="number" maxlength="3" title="휴대전화 첫자리" /> -
+                                            <input type="text" name="mobile2" id="mobile2" class="number" maxlength="4" title="휴대전화 둘째자리" /> -
+                                            <input type="text" name="mobile3" id="mobile3" class="number" maxlength="4" title="휴대전화 셋째자리" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="th"><label for="grade">회원등급</label></td>
+                                        <td>
+                                            <select name="grade" id="grade">
+                                                <option value="no">- 회원등급선택 -</option>
+                                                <option value="normal">일반회원</option>
+                                                <option value="company">기업회원</option>
+                                                <option value="expert">전문가</option>
+                                                <option value="excellent">우수회원</option>
+                                                <option value="vip">VIP</option>
+                                                <option value="admin">관리자</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="th"><label for="greet">가입인사</label></td>
+                                        <td><textarea name="greet" id="greet"></textarea></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="th"><label for="interest">관심분야</label></td>
+                                        <td>
+                                            <ul class="input-list">
+                                                <li><input type="checkbox" name="interest" id="interest1" value="00" /><label for="interest1">농구</label></li>
+                                                <li><input type="checkbox" name="interest" id="interest2" value="00" /><label for="interest2">영화감상</label></li>
+                                                <li><input type="checkbox" name="interest" id="interest3" value="00" /><label for="interest3">등산</label></li>
+                                                <li><input type="checkbox" name="interest" id="interest4" value="00" /><label for="interest4">여행</label></li>
+                                                <li><input type="checkbox" name="interest" id="interest5" value="00" /><label for="interest5">십자수</label></li>
+                                                <li><input type="checkbox" name="interest" id="interest6" value="00" /><label for="interest6">인터넷쇼핑</label></li>
+                                                <li><input type="checkbox" name="interest" id="interest7" value="00" /><label for="interest7">독서</label></li>
+                                                <li><input type="checkbox" name="interest" id="interest8" value="00" /><label for="interest8">바둑</label></li>
+                                                <li><input type="checkbox" name="interest" id="interest9" value="00" /><label for="interest9">축구</label></li>
+                                                <li><input type="checkbox" name="interest" id="interest10" value="00" /><label for="interest10">TV시청</label></li>
+                                                <li><input type="checkbox" name="interest" id="interest11" value="00" /><label for="interest11">프로그래밍</label></li>
+                                                <li><input type="checkbox" name="interest" id="interest12" value="00" /><label for="interest12">해양스포츠</label></li>
+                                                <li><input type="checkbox" name="interest" id="interest13" value="00" /><label for="interest13">네트워킹</label></li>
+                                                <li><input type="checkbox" name="interest" id="interest14" value="00" /><label for="interest14">파티</label></li>
+                                                <li><input type="checkbox" name="interest" id="interest15" value="00" /><label for="interest15">요리</label></li>
+                                                <li><input type="checkbox" name="interest" id="interest16" value="00" /><label for="interest16">자전거</label></li>
+                                                <li><input type="checkbox" name="interest" id="interest17" value="00" /><label for="interest17">드론</label></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="th"><label for="sex">성별</label></td>
+                                        <td>
+                                            <ul class="input-list">
+                                                <li><input type="radio" name="sex" id="sex1" value="M" checked="checked" /><label for="sex1">남성</label></li>
+                                                <li><input type="radio" name="sex" id="sex2" value="F" /><label for="sex2">여성</label></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="th"><label for="date1">날짜선택</label></td>
+                                        <td>
+                                            <input type="text" name="date1" id="date1" class="date" />
+                                            <a href="#" class="btn small purple icon" title="날짜선택"><i class="fas fa-calendar"></i></a> ~
+                                            <input type="text" name="date2" id="date2" class="date" />
+                                            <a href="#" class="btn small purple icon" title="날짜선택"><i class="fas fa-calendar"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="th"><label for="date3">날짜/시간선택</label></td>
+                                        <td>
+                                            <input type="text" name="date3" id="date3" class="date" />
+                                            <a href="#" class="btn small purple icon" title="날짜선택"><i class="fas fa-calendar"></i></a>
+                                            <select name="hour1" id="hour1">
+                                                <option value="00">00</option>
+                                                <option value="01">01</option>
+                                                <option value="23">23</option>
+                                            </select>시
+                                            <select name="min1" id="min1">
+                                                <option value="00">00</option>
+                                                <option value="05">05</option>
+                                                <option value="55">55</option>
+                                            </select>분 ~
+                                            <input type="text" name="date4" id="date4" class="date" />
+                                            <a href="#" class="btn small purple icon" title="날짜선택"><i class="fas fa-calendar"></i></a>
+                                            <select name="hour2" id="hour2">
+                                                <option value="00">00</option>
+                                                <option value="01">01</option>
+                                                <option value="23">23</option>
+                                            </select>시
+                                            <select name="min2" id="min2">
+                                                <option value="00">00</option>
+                                                <option value="05">05</option>
+                                                <option value="55">55</option>
+                                            </select>분
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="th"><label for="date5">예약일시</label></td>
+                                        <td>
+                                            <span class="form-input btn-right">
+                                                <input type="text" name="date5" id="date5" class="date" />
+                                                <a href="#" class="btn small purple icon" title="날짜선택"><i class="fas fa-calendar"></i></a>
+                                            </span>
+                                            <select name="hour1" id="hour1">
+                                                <option value="00">00</option>
+                                                <option value="01">01</option>
+                                                <option value="23">23</option>
+                                            </select>
+                                            <span class="label">시</span>
+                                            <select name="min1" id="min1">
+                                                <option value="00">00</option>
+                                                <option value="05">05</option>
+                                                <option value="55">55</option>
+                                            </select>
+                                            <span class="label">분</span>
+                                            ~
+                                            <span class="form-input btn-right">
+                                                <input type="text" name="date6" id="date6" class="date" />
+                                                <a href="#" class="btn small purple icon" title="날짜선택"><i class="fas fa-calendar"></i></a>
+                                            </span>
+                                           <select name="hour2" id="hour2">
+                                                <option value="00">00</option>
+                                                <option value="01">01</option>
+                                                <option value="23">23</option>
+                                            </select>
+                                            <span class="label">시</span>
+                                            <select name="min2" id="min2">
+                                                <option value="00">00</option>
+                                                <option value="05">05</option>
+                                                <option value="55">55</option>
+                                            </select>
+                                            <span class="label">분</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="th multi-line"><label for="image1"><span class="required" title="필수입력">*</span>이미지첨부<br />(대표이미지)</label></td>
+                                        <td>
+                                            <ul class="image-preview">
+                                                <li class="no-image">
+                                                    <span class="image"><span class="fontawesome"><i class="far fa-image"></i></span></span>
+                                                    <span class="fileinfo">
+                                                        <span class="fontawesome"><i class="fas fa-exclamation-triangle"></i></span>
+                                                        <em class="name">No image</em>
+                                                    </span>
+                                                </li>
+                                                <li class="uploading">
+                                                    <span class="image"><span class="fontawesome"><i class="fa fa-spinner fa-spin"></i></span></span>
+                                                    <span class="fileinfo">
+                                                        <span class="fontawesome"><i class="fa fa-spinner fa-spin"></i></span>
+                                                        <em class="name">Uploading...</em>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="image">
+                                                        <img alt="" src="../img/sample/sample_face.jpg" />
+                                                        <span class="dimension">300px X 328px</span>
+                                                        <a href="#" class="download"><span class="fontawesome"><i class="fa fa-download" title="다운로드"></i></span></a>
+                                                        <!--
+                                                        <a href="#" class="prev"><span class="fontawesome"><i class="fa fa-arrow-left" title="앞으로 이동"></i></span></a>
+                                                        <a href="#" class="next"><span class="fontawesome"><i class="fa fa-arrow-right" title="뒤로 이동"></i></span></a>
+                                                        <a href="#" class="download"><span class="fontawesome"><i class="fa fa-download" title="다운로드"></i></span></a>
+    -->
+                                                    </span>
+                                                    <span class="fileinfo" title="sample_face.jpg">
+                                                        <img alt="" src="../img/common/icon_img.png" />
+                                                        <em class="name">sample_face(기존).jpg</em>
+                                                    </span>
+                                                    <span class="size">0.23 MB</span>
+                                                    <!-- <a href="#" class="delete"><span class="fontawesome"><i class="fa fa-times" title="첨부삭제"></i></span></a>
+                                                    <input type="hidden" name="image1_id[]" value="45" />
+                                                    <input type="hidden" name="image1_order[]" value="1" />  -->
+                                                </li>
+                                                <li>
+                                                    <span class="image">
+                                                        <img alt="" src="../img/sample/sample_face.jpg" />
+                                                        <span class="dimension">300px X 328px</span>
+                                                        <a href="#" class="prev"><span class="fontawesome"><i class="fa fa-arrow-left" title="앞으로 이동"></i></span></a>
+                                                        <a href="#" class="next"><span class="fontawesome"><i class="fa fa-arrow-right" title="뒤로 이동"></i></span></a>
+                                                        <a href="#" class="download"><span class="fontawesome"><i class="fa fa-download" title="다운로드"></i></span></a>
+                                                    </span>
+                                                    <span class="fileinfo" title="sample_face.jpg">
+                                                        <img alt="" src="../img/common/icon_img.png" />
+                                                        <em class="name">sample_face(기존).jpg</em>
+                                                    </span>
+                                                    <span class="size">1.44 MB</span>
+                                                    <a href="#" class="delete"><span class="fontawesome"><i class="fa fa-times" title="첨부삭제"></i></span></a>
+                                                    <input type="hidden" name="image1_id[]" value="45" />
+                                                    <input type="hidden" name="image1_order[]" value="1" />
+                                                </li>
+                                            </ul>
+                                            <input type="file" name="imageFile1[]" id="image1" multiple="multiple" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="th"><label for="file1">파일첨부</label></td>
+                                        <td>
+                                            <ul class="file-preview">
+                                                <li class="no-file">
+                                                    <span class="filename">
+                                                        <span class="fontawesome"><i class="fas fa-exclamation-triangle"></i></span>
+                                                        <em class="name">No File</em>
+                                                    </span>
+                                                </li>
+                                                <li class="uploading">
+                                                    <span class="filename">
+                                                        <span class="fontawesome"><i class="fas fa-spinner fa-spin"></i></span>
+                                                        <em class="name">Uploading...</em>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="filename" title="발표자료.ppt">
+                                                        <img alt="" src="../img/common/icon_ppt.png" />
+                                                        <em class="name">발표관련데이터.ppt</em>
+                                                    </a>
+                                                    <p class="function">
+                                                        <!--
+                                                        <a href="#" class="prev"><span class="fontawesome"><i class="fas fa-arrow-up" title="첨부순서 앞으로"></i></span></a>
+                                                        <a href="#" class="next"><span class="fontawesome"><i class="fas fa-arrow-down" title="첨부순서 앞으로"></i></span></a>
+                                                        <a href="#" class="delete"><span class="fontawesome"><i class="fas fa-times" title="첨부순서 앞으로"></i></span></a>
+    -->
+                                                        <span class="size">1.44 MB</span>
+                                                    </p>
+                                                    <!--
+                                                    <input type="hidden" name="file1_id[]" value="66" />
+                                                    <input type="hidden" name="file1_order[]" value="3" />
+    -->
+                                                </li>
+                                                <li>
+                                                    <span class="filename" title="발표자료.ppt">
+                                                        <img alt="" src="../img/common/icon_ppt.png" />
+                                                        <em class="name">발표관련데이터.ppt</em>
+                                                    </span>
+                                                    <p class="function">
+                                                        <a href="#" class="prev"><span class="fontawesome"><i class="fas fa-arrow-up" title="첨부순서 앞으로"></i></span></a>
+                                                        <a href="#" class="next"><span class="fontawesome"><i class="fas fa-arrow-down" title="첨부순서 앞으로"></i></span></a>
+                                                        <a href="#" class="delete"><span class="fontawesome"><i class="fas fa-times" title="첨부순서 앞으로"></i></span></a>
+                                                        <span class="size">1.44 MB</span>
+                                                    </p>
+                                                    <input type="hidden" name="file1_id[]" value="45" />
+                                                    <input type="hidden" name="file1_order[]" value="1" />
+                                                </li>
+                                            </ul>
+                                            <input type="file" name="file1[]" id="file1" multiple="multiple" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    </section>
+                    
+                </section>  <!-- section.main-box -->
+            </main>
+            
+            <footer id="footer">
+                <p>© Copyright 2018 TIPSTOWN. All Rights Reserved.</p>
+            </footer>
+            
+        </div> <!-- #wrapper  -->
+        
+<script>
+'use strict';
+
+
+
+
+
+</script>
+    </body>
+</html>
+
+

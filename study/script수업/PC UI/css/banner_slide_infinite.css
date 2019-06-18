@@ -1,0 +1,61 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* reset */
+body {margin: 0;}
+h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, table {margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 600;}
+main {display: block;}
+a {color: inherit; text-decoration: inherit;}
+a img {border: none;}
+img {vertical-align: middle;}
+li {list-style: none;}
+address, em, i, cite {font-style: normal;}
+table {border-collapse: collapse;}
+table caption {overflow: hidden; width: 0; height: 0;}
+i.fas, i.far, i.fab {vertical-align: middle; display: inline-block;}
+i.fas span, i.far span, i.fab span {position: absolute; overflow: hidden; text-indent: -999px;}
+.mobile {display: none !important;}
+br.only-m {content: '';}
+br.only-m:after {content: '\00a0';}
+div.hidden {position: absolute; left: -9999px;}
+
+
+/* common */
+body {font-family: '맑은 고딕', 'malgun gothic', '돋움', Dotum, 'Apple SD Gothic Neo', Helvetica, sans-serif; font-weight: 400; font-size: 14px; color: #333333 ; background: #ffffff;}
+#wrapper {min-width: 1200px; overflow: hidden;}
+#skip-nav {position: fixed; left: 0; top: -41px; width: 100%; line-height: 40px; text-align: center; font-size: 16px; color: #ffffff; background: rgba(0, 0, 0, 0.6); border-bottom: 1px solid #ffffff; z-index: 100000; transition: top 0.3s;}
+#skip-nav:focus {top: 0;}
+#go-home {position: fixed; right: 20px; top: 20px; width: 60px; height: 60px; font-size: 24px; text-align: center; line-height: 56px; border-radius: 100px; color: #ffffff; background: #ffcc00; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); z-index: 10000;}
+#main {margin: 0 auto; padding: 60px 0 60px 0;}
+
+
+/* banner-infinite */
+div.banner-infinite {position: relative; margin: 100px; background: yellow;}
+div.banner-infinite > div.box {position: relative; overflow: hidden; padding: 30px 0;}
+div.banner-infinite ul.banner {position: relative; width: 10000px; background: lime;}
+div.banner-infinite ul.banner:after {content: ''; display: block; clear: both;}
+div.banner-infinite ul.banner li {position: relative; width: 300px; height: 200px; overflow: hidden; float: left; transition: transform 1s; margin-right: 50px;}
+div.banner-infinite ul.banner li.on {transform: scale(1.2);}
+div.banner-infinite ul.banner li a {position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+div.banner-infinite ul.banner li a img {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); height: 100%;}
+div.banner-infinite ul.banner li a em {position: absolute; left: 0; bottom: 0; width: 100%; background: rgba(0, 0, 0, 0.6); color: #ffffff; text-align: center; font-size: 14px; padding: 10px 0;}
+
+div.banner-infinite ul.indicator {position: absolute; left: 0; bottom: 0; width: 100%; line-height: 30px; background: rgba(0, 0, 0, 0.3); text-align: center;}
+div.banner-infinite ul.indicator li {display: inline-block; vertical-align: middle;}
+div.banner-infinite ul.indicator li + li {margin-left: 10px;}
+div.banner-infinite ul.indicator li a {display: block; width: 10px; height: 10px; border: 2px solid #ffffff; border-radius: 20px; background: rgba(0, 0, 0, 0.5); text-indent: -999px; overflow: hidden;}
+div.banner-infinite ul.indicator li.on a {background: #ffffff;}
+div.banner-infinite a.play {color: #ffffff; position: absolute; right: 20px; bottom: 10px;}
+div.banner-infinite a.play i:first-child {display: none;}
+div.banner-infinite a.play i + i {display: inline-block;}
+div.banner-infinite a.play.on i:first-child {display: inline-block;}
+div.banner-infinite a.play.on i + i {display: none;}
+div.banner-infinite a.prev,
+div.banner-infinite a.next {position: absolute; top: 50%; transform: translate(0, -50%);}
+div.banner-infinite a.prev {left: -60px;}
+div.banner-infinite a.next {right: -60px;}
+
+
+
+
