@@ -1,12 +1,19 @@
+#wrapper {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
 main {
-  background: red;
   position: absolute;
   top: 0px;
   left: 0px;
   width: 100%;
+  height: 100vh;
+  transition: top .4s;
 }
 
-#page1 {display: none;}
+// #page2 {display: none;}
 
 //page common
 .page {
@@ -458,7 +465,7 @@ section {
   position: fixed;
   top: 50%;
   right: 20px;
-  transform: translate(-50%, 0%);
+  transform: translate(0%, -50%);
   z-index: 0;
 
   li+li {
@@ -488,7 +495,7 @@ section {
         text-indent: -9999px;
       }
       
-      &:hover {
+      &:hover, &:focus {
         span {
           width: 10px;
           height: 10px;
@@ -502,5 +509,27 @@ section {
         }
       }
     }
+  }
+}
+
+.control {
+  .prev, .next {
+    img {
+      width: 70px;
+    }
+  }
+
+  .prev {
+    position: absolute;
+    top: 50%;
+    left: 60px;
+    transform: translateY(-50%);
+  }
+
+  .next {
+    position: absolute;
+    top: 50%;
+    right: 60px;
+    transform: translateY(-50%);
   }
 }

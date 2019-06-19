@@ -1,13 +1,17 @@
+#wrapper {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
 main {
-  background: red;
   position: absolute;
   top: 0px;
   left: 0px;
   width: 100%;
-}
-
-#page1 {
-  display: none;
+  height: 100vh;
+  -webkit-transition: top .4s;
+  transition: top .4s;
 }
 
 .page {
@@ -124,8 +128,8 @@ section > h2 {
   position: fixed;
   top: 50%;
   right: 20px;
-  -webkit-transform: translate(-50%, 0%);
-          transform: translate(-50%, 0%);
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
   z-index: 0;
 }
 
@@ -160,7 +164,7 @@ section > h2 {
   text-indent: -9999px;
 }
 
-#page-indicator li a:hover span {
+#page-indicator li a:hover span, #page-indicator li a:focus span {
   width: 10px;
   height: 10px;
 }
@@ -168,5 +172,25 @@ section > h2 {
 #page-indicator li a.on span {
   width: 12px;
   height: 12px;
+}
+
+.control .prev img, .control .next img {
+  width: 70px;
+}
+
+.control .prev {
+  position: absolute;
+  top: 50%;
+  left: 60px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.control .next {
+  position: absolute;
+  top: 50%;
+  right: 60px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 /*# sourceMappingURL=index_p.css.map */
