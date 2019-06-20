@@ -195,7 +195,7 @@ nav.gnb > div.menu .main-body > .gnbMenu > ul > li.contentsList > a.insideList {
   color: white;
   line-height: 2em;
   padding-left: 10px;
-  background-image: url(/Practice-2019/Jungle-Academy/portfolio1/img/bg_hmenu_sub_a.png);
+  background-image: url(../img/bg_hmenu_sub_a.png);
   background-repeat: no-repeat;
   background-position: 0 11px;
 }
@@ -571,7 +571,7 @@ a {
   margin-right: 0px;
 }
 
-.look-book > div .look-book-btn a:hover, .look-book > div .look-book-btn a:focus {
+.look-book > div .look-book-btn a:hover, .look-book > div .look-book-btn a:focus, .look-book > div .look-book-btn a.on {
   color: #272D31;
 }
 
@@ -585,13 +585,8 @@ a {
   top: 0;
   padding-left: 600px;
   white-space: nowrap;
-  opacity: 0;
   -webkit-transition: all .3s;
   transition: all .3s;
-}
-
-.look-book .list-wrap ul.list.on {
-  opacity: 1;
 }
 
 .look-book .list-wrap ul.list > li {

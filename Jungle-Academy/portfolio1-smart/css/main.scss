@@ -185,7 +185,7 @@ nav.gnb {
               color: white;
               line-height: 2em;
               padding-left: 10px;
-              background-image: url(/Practice-2019/Jungle-Academy/portfolio1/img/bg_hmenu_sub_a.png);
+              background-image: url(../img/bg_hmenu_sub_a.png);
               background-repeat: no-repeat;
               background-position: 0 11px;
 
@@ -552,8 +552,7 @@ a {text-decoration: none; color: inherit;}
           margin-right: 0px;
         }
 
-        &:hover, &:focus {
-          //click시 색 바뀜
+        &:hover, &:focus, &.on {
           color: #272D31;
         }
       }
@@ -569,12 +568,8 @@ a {text-decoration: none; color: inherit;}
       top: 0;
       padding-left: 600px;
       white-space: nowrap;
-      opacity: 0;
+      // opacity: 0;
       transition: all .3s;
-
-      &.on {
-        opacity: 1;
-      }
 
       >li {
         display: inline-block;

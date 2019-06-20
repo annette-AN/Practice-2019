@@ -529,8 +529,6 @@
     </div>
   </footer>
 
-</body>
-
 <script>
   //부모님메뉴 오픈
   $(document).on('click', '#blue-gnb', function () {
@@ -573,47 +571,86 @@
 
   //look-book click, slide
 
-  var slideBoy = slideMoving('.list.boy');
-  var slideGirl = slideMoving('.list.girl');
+  // var slideBoy = slideMoving('.list.boy');
+  // var slideGirl = slideMoving('.list.girl');
+
+  //index1 = click된애
+  //index2 = on이 붙어있는애
+  //index1 === index2 {returen(false)}
+  //index1 !== index2 실행
+  //eq(0) 사라지게 / eq(1) 보여지게
+
 
   //click
-  $('.boy-look-btn').css({'color' : '#272D31'});
-  $('.boy-look-btn').on('click', function(){
-    $('.list').removeClass('on');
-    $('.list.boy').addClass('on');
-    $('.look-book-btn').find('a').css({'color': '#9D9D9D'});
-    $(this).css({'color' : '#272D31'});
-    console.log('click');
-    slideBoy.offsetLeftReset();
-    slideGirl.offsetLeftReset();
-  });
-  
-  $('.girl-look-btn').on('click', function(){
-    $('.list').removeClass('on');
-    $('.list.girl').addClass('on');
-    $('.look-book-btn').find('a').css({'color': '#9D9D9D'});
-    $(this).css({'color' : '#272D31'});
-    slideBoy.offsetLeftReset();
-    slideGirl.offsetLeftReset();
-  });
+  // $('.list.girl').css({'display': 'none'});
+  // $('.boy-look-btn').on('click', function(){
+  //   // $('.list').removeClass('on');
 
+  //   $('.list.girl').css({'display': 'none'});
+
+  //   // $('.list.boy').addClass('on');
+
+  //   $('.list.boy').css({'display': 'block'});
+
+  //   $('.look-book-btn').removeClass('on');
+  //   $(this).addClass('on');
+  //   // slideBoy.offsetLeftReset();
+  //   // slideGirl.offsetLeftReset();
+  // });
+  
+  // $('.girl-look-btn').on('click', function(){
+  //   // $('.list').removeClass('on');
+
+  //   $('.list.boy').css({'display': 'none'});
+
+  //   // $('.list.girl').addClass('on');
+  //   $('.list.girl').css({'display': 'block'});
+
+  //   $('.look-book-btn').removeClass('on');
+  //   $(this).addClass('on');
+  //   // slideBoy.offsetLeftReset();
+  //   // slideGirl.offsetLeftReset();
+  // });
+
+  $('.boy-look-btn').addClass('on');
+  $('.list.girl').css({'display': 'none'});
+
+  $('.look-book-btn a').on('click', function(){
+    var indexClick = $('.look-book-btn a').index($(this));
+    var indexOn = $('.look-book-btn a').index($('.look-book-btn a.on'));
+    console.log(indexClick + '/' + indexOn);
+
+    if (indexClick === indexOn) return false;
+    $('.look-book-btn a').removeClass('on');
+    $(this).addClass('on');
+
+    $('.list').eq(indexClick).css({'display': 'block', 'opacity': 0}).animate({'opacity': 1}).addClass('on');
+    $('.list').eq(indexOn).animate({'opacity': 0}, function(){
+      $(this).css({'display': 'none'}).removeClass('on');
+    })
+  });
 
   //slide
+
+  // $('.list.girl').css({'display': 'none'});
 
   slideMoving('.list.boy');
   slideMoving('.list.girl');
 
   function slideMoving(selector) {
-    var boxWidth = $('.list-wrap').innerWidth();
+    var boxWidth = $(selector).parent().innerWidth();
     var barWidth = 0;
     var offsetLeft = 0;
     var minOffsetLeft = 0;
     var startX = 0;
     var delX = 0;
     var positionX = 0;
+
+    console.log(boxWidth);
     
     $(selector).find('li').each(function(){
       barWidth += $(this).outerWidth(true);
+      console.log(barWidth);
     });
 
     $(selector).css({'width': barWidth + 'px'});
@@ -621,6 +658,7 @@
     minOffsetLeft = -(barWidth - boxWidth);
 
     $('.prev-btn').on('click', function(){
+      if ($(selector).attr('class').indexOf('on') === -1) return false;
       offsetLeft -= 300;
       if (offsetLeft < minOffsetLeft) offsetLeft = minOffsetLeft;
       $(selector).css({'left': offsetLeft + 'px'});
@@ -628,6 +666,7 @@
     });
 
     $('.next-btn').on('click', function(){
+      if ($(selector).attr('class').indexOf('on') === -1) return false;
       offsetLeft += 300;
       if (offsetLeft > 0) offsetLeft = 0;
       $(selector).css({'left': offsetLeft + 'px'});
@@ -635,45 +674,44 @@
 
     //모바일 스와이프
     //listboy만 적용이 됌
-    // $('.list.girl').css({'display': 'none'});
 
-    $(selector).on('mousedown', function(e){
-      e.preventDefault();
-      startX = e.clientX;
-      console.log(startX);
+    // $(selector).on('mousedown', function(e){
+    //   e.preventDefault();
+    //   startX = e.clientX;
+    //   console.log(startX);
 
-      $(document).on('mousemove', function(e){
-        delX = e.clientX - startX;
-        offsetLeft = $(selector).position().left + delX;
-        console.log(offsetLeft);
-        console.log(minOffsetLeft);
+    //   $(document).on('mousemove', function(e){
+    //     delX = e.clientX - startX;
+    //     offsetLeft = $(selector).position().left + delX;
+    //     console.log(offsetLeft);
+    //     console.log(minOffsetLeft);
 
-        if (offsetLeft < minOffsetLeft) offsetLeft = minOffsetLeft;
-        if (offsetLeft > 0) offsetLeft = 0;
-        $(selector).css({'left': offsetLeft + 'px'});
+    //     if (offsetLeft < minOffsetLeft) offsetLeft = minOffsetLeft;
+    //     if (offsetLeft > 0) offsetLeft = 0;
+    //     $(selector).css({'left': offsetLeft + 'px'});
 
-        $(document).on('mouseup', function(){
-          $(document).off('mousemove mousedown');
-        });
-      });
-    });
+    //     $(document).on('mouseup', function(){
+    //       $(document).off('mousemove mousedown');
+    //     });
+    //   });
+    // });
 
-    return {
-      //제대로 적용이 안됌
-      offsetLeftReset: function(){
-        offsetLeft = 0;
-        $(selector).css({'left': offsetLeft + 'px'});
-      }
-    }
+    // return {
+    //   //제대로 적용이 안됌
+    //   offsetLeftReset: function(){
+    //     offsetLeft = 0;
+    //     $(selector).css({'left': offsetLeft + 'px'});
+    //   }
+    // }
   }
 
     //offsetleft
     // slideSwipe('.list.boy');
     // slideSwipe('.list.girl');
 
-
-      
     
 </script>
+
+</body>
 
 </html>
