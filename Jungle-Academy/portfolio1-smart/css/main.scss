@@ -8,21 +8,22 @@ html {
 
     > header {
       margin: 0;
-      height: 100%;
+      height: 100vh;
 
       >nav.gnb {
         height: 100%;
         overflow: hidden;
 
         >div.menu {
-          width: 100%;
+          width: calc(100% - 140px);
           height: 100%;
           color: #FFFFFF;
 
           >.menu-body {
+            width: calc(100% - 140px);
+            height: 100%;
             position: fixed;
             overflow: hidden;
-            height: 100%;
           }
         }
       }
@@ -92,13 +93,13 @@ nav.gnb {
     
     .btnBox {
       box-sizing: border-box;
-      height: 130px;
-      padding-top: 50px;
-      margin-right: 200px;
+      height: 10%;
+      padding-top: 2%;
+      margin-right: 20px;
       float: right;
 
       >a {
-        vertical-align: top;
+        vertical-align: middle;
         display: inline-block;
         font-size: 15px;
         font-weight: bold;
@@ -120,14 +121,15 @@ nav.gnb {
     }
     
     .main-body {
-      height: 500px;
-      margin-left: 80px;
+      height: 70%;
+      padding: 30px 0px 0px 30px;
+      overflow: hidden;
       clear: both;
 
       >.headerLogo { //좀더 위로 올리고 싶음
+        width: 145px;
         font-size: 28px;
         font-weight: bold;
-        text-align: center;
         line-height: 1.7em;
         letter-spacing: 15px;
         float: left;
@@ -136,19 +138,18 @@ nav.gnb {
 
       >.gnbMenu { //스크롤 바꾸기
         height: 100%;
-        float: left;
-        width: 1230px;
-        margin-left: 140px;
+        width: calc(100% - 150px);
+        padding-bottom: 30px;
         overflow: auto; 
 
         >ul {
           box-sizing: border-box;
           display: inline-block;
-          width: 270px;
+          width: 255px;
           border: 1px solid white;
           vertical-align: top;
-          margin-top: 0;
-          margin-right: 28px;
+          margin-top: 30px;
+          margin-left: 10px;
           padding-left: 40px;
 
           h3, p, li {
@@ -201,14 +202,13 @@ nav.gnb {
         }
         
         ul.contents-buttom {
-          margin-top: 30px;
           min-height: 340px;
         }
       }
     }
 
     div.snb {
-      margin-top: 100px;
+      margin-top: 2%;
       overflow: hidden;
 
       >.snb-center {
@@ -225,8 +225,8 @@ nav.gnb {
 
       a.snb-right-btn {
         display: block;
-        float: left;
-        margin-left: 300px;
+        float: right;
+        margin-right: 20px;
       }
     }
   }
@@ -258,6 +258,13 @@ nav.gnb {
   opacity: 0;
 }
 
+//body
+.body-wrap {
+  position: absolute;
+  top:0px;
+  left: 0px;
+  width: calc(100% - 140px);
+}
 // section
 section {
   font-family: 'Gothic A1', sans-serif;
@@ -265,8 +272,7 @@ section {
 
 .intro-1 { //header영역때문에 absolute로 자리잡음
   background: #fff;
-  position: absolute;
-  top: 0%;
+  position: relative;
   width: 100%;
   height: 960px;
   overflow: hidden;
@@ -310,10 +316,10 @@ section {
 
     >div {
       position: absolute;
-      top: 200px;
-      margin-left: 270px;
-      width: 400px;
-      height: 430px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
     }
   }
 
@@ -327,15 +333,15 @@ section {
 
   .bg-img {
     position: absolute;
+    top: 50%;
+    left: 43%;
+    transform: translate(0%, -50%);
+    width: 55%;
   }
 }
 
 // intro-1 bg
 .intro1.bg1 {
-  >.bg-img {
-    bottom: 0%;
-    left: 43%;
-  }
   >.left {
     background: #C9EBF7;
     h2 {
@@ -363,11 +369,6 @@ section {
 
 
 .intro1.bg2 {
-  >.bg-img {
-    position: absolute;
-    bottom: 0%;
-    left: 35%;
-  }
   >.left {
     background: #F2D6D5;
     h2 {
@@ -393,19 +394,13 @@ section {
 }
 
 .intro1.bg3 {
-  >.bg-img {
-    position: absolute;
-    bottom: 0%;
-    left: 44.5%;
-  }
-
   >.left {
     background: #BAEBF0;
     >div{
-      width: 550px;
-      height: 500px;
+      width: 80%;
+
       h2 {
-        font-size: 50px;
+        font-size: 45px;
         font-weight: lighter;
         strong {
           color: #127D84;
@@ -418,6 +413,7 @@ section {
         margin-top: 40px;
       }
       img {
+        width: 100%;
         margin-top: 20px;
       }
     }
@@ -426,17 +422,18 @@ section {
 
 .intro1.bg4 {
   >.bg-img {
-    position: absolute;
-    bottom: 0%;
-    margin-left: 120px;
+    left: 1%;
+    transform: translate(0%, -50%);
   }
   >.left {
     background: #D7DFF8;
   }
   >img+img {
     position: absolute;
-    top: 300px;
-    margin-left: 730px;
+    top: 50%;
+    left: 45%;
+    transform: translate(0%, -50%);
+    width: 50%;
   }
 }
 
@@ -448,36 +445,38 @@ section,article,div,p,span,h1,h2,h3,a {
 a {text-decoration: none; color: inherit;}
 
 .style-introduce {
-  //background 어떻게
   padding-top: 150px;
   padding-bottom: 180px;
   background-image: url(../img/hero/img_parallax01_2.png), url(../img/hero/img_parallax02_2.png);
   background-repeat: no-repeat, no-repeat;
-  background-position: 0px 0px, 600px 550px;
-  
-
+  background-size: 80%;
+  background-position: 0px 0px, 90% 50%;
 
   article {
-    width: 930px;
+    width: 80%;
     margin: 0 auto;
     overflow: hidden;
 
     div {
-      width: 465px;
+      width: 50%;
       float: left;
+
+      img {
+        width: 100%;
+      }
     }
 
     .style-text-box {
       height: 370px;
       margin-top: 120px;
-      padding-left: 120px;
+      padding-left: 8%;
 
       &:first-child {
         padding-left: 0px;
       }
 
       p {
-        font-size: 75px;
+        font-size: 70px;
         color: #252A2E;
 
         span {
@@ -521,6 +520,8 @@ a {text-decoration: none; color: inherit;}
   padding: 150px 0px 60px 0px;
   
   >div{
+    //화면이 작아져도 일정히 보였으면 좋겠다
+    //width: calc(100% - 80px);
     width: 1200px;
     overflow: hidden;
     margin: 0px auto;
@@ -568,7 +569,6 @@ a {text-decoration: none; color: inherit;}
       top: 0;
       padding-left: 600px;
       white-space: nowrap;
-      // opacity: 0;
       transition: all .3s;
 
       >li {
@@ -628,8 +628,9 @@ a {text-decoration: none; color: inherit;}
   }
   
   article {
-    width: 1200px;
-    height: 678px;
+    //동영상이 height도 함께 정사각형으로 줄어들었으면 좋겠다
+    width: calc(100% - 80px);
+    height: 676px;
     margin: 40px auto;
   }
 

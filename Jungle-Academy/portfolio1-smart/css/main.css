@@ -10,7 +10,7 @@ html > body {
 
 html > body > header {
   margin: 0;
-  height: 100%;
+  height: 100vh;
 }
 
 html > body > header > nav.gnb {
@@ -19,15 +19,16 @@ html > body > header > nav.gnb {
 }
 
 html > body > header > nav.gnb > div.menu {
-  width: 100%;
+  width: calc(100% - 140px);
   height: 100%;
   color: #FFFFFF;
 }
 
 html > body > header > nav.gnb > div.menu > .menu-body {
+  width: calc(100% - 140px);
+  height: 100%;
   position: fixed;
   overflow: hidden;
-  height: 100%;
 }
 
 nav.gnb {
@@ -97,14 +98,14 @@ nav.gnb > div.menu {
 nav.gnb > div.menu .btnBox {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  height: 130px;
-  padding-top: 50px;
-  margin-right: 200px;
+  height: 10%;
+  padding-top: 2%;
+  margin-right: 20px;
   float: right;
 }
 
 nav.gnb > div.menu .btnBox > a {
-  vertical-align: top;
+  vertical-align: middle;
   display: inline-block;
   font-size: 15px;
   font-weight: bold;
@@ -125,15 +126,16 @@ nav.gnb > div.menu .btnBox > a.closeBtn > img {
 }
 
 nav.gnb > div.menu .main-body {
-  height: 500px;
-  margin-left: 80px;
+  height: 70%;
+  padding: 30px 0px 0px 30px;
+  overflow: hidden;
   clear: both;
 }
 
 nav.gnb > div.menu .main-body > .headerLogo {
+  width: 145px;
   font-size: 28px;
   font-weight: bold;
-  text-align: center;
   line-height: 1.7em;
   letter-spacing: 15px;
   float: left;
@@ -142,9 +144,8 @@ nav.gnb > div.menu .main-body > .headerLogo {
 
 nav.gnb > div.menu .main-body > .gnbMenu {
   height: 100%;
-  float: left;
-  width: 1230px;
-  margin-left: 140px;
+  width: calc(100% - 150px);
+  padding-bottom: 30px;
   overflow: auto;
 }
 
@@ -152,11 +153,11 @@ nav.gnb > div.menu .main-body > .gnbMenu > ul {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: inline-block;
-  width: 270px;
+  width: 255px;
   border: 1px solid white;
   vertical-align: top;
-  margin-top: 0;
-  margin-right: 28px;
+  margin-top: 30px;
+  margin-left: 10px;
   padding-left: 40px;
 }
 
@@ -209,12 +210,11 @@ nav.gnb > div.menu .main-body > .gnbMenu ul.contents-top {
 }
 
 nav.gnb > div.menu .main-body > .gnbMenu ul.contents-buttom {
-  margin-top: 30px;
   min-height: 340px;
 }
 
 nav.gnb > div.menu div.snb {
-  margin-top: 100px;
+  margin-top: 2%;
   overflow: hidden;
 }
 
@@ -232,8 +232,8 @@ nav.gnb > div.menu div.snb > .snb-center > a.snb-btn {
 
 nav.gnb > div.menu div.snb a.snb-right-btn {
   display: block;
-  float: left;
-  margin-left: 300px;
+  float: right;
+  margin-right: 20px;
 }
 
 nav.gnb > div.menu.parents {
@@ -264,14 +264,20 @@ nav.gnb > div.menu.students.menu-active {
   opacity: 0;
 }
 
+.body-wrap {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: calc(100% - 140px);
+}
+
 section {
   font-family: 'Gothic A1', sans-serif;
 }
 
 .intro-1 {
   background: #fff;
-  position: absolute;
-  top: 0%;
+  position: relative;
   width: 100%;
   height: 960px;
   overflow: hidden;
@@ -318,10 +324,11 @@ section {
 
 .intro-1 .left > div {
   position: absolute;
-  top: 200px;
-  margin-left: 270px;
-  width: 400px;
-  height: 430px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 80%;
 }
 
 .intro-1 .right {
@@ -334,11 +341,11 @@ section {
 
 .intro-1 .bg-img {
   position: absolute;
-}
-
-.intro1.bg1 > .bg-img {
-  bottom: 0%;
+  top: 50%;
   left: 43%;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+  width: 55%;
 }
 
 .intro1.bg1 > .left {
@@ -369,12 +376,6 @@ section {
   margin-right: 20px;
 }
 
-.intro1.bg2 > .bg-img {
-  position: absolute;
-  bottom: 0%;
-  left: 35%;
-}
-
 .intro1.bg2 > .left {
   background: #F2D6D5;
 }
@@ -403,23 +404,16 @@ section {
   margin-right: 20px;
 }
 
-.intro1.bg3 > .bg-img {
-  position: absolute;
-  bottom: 0%;
-  left: 44.5%;
-}
-
 .intro1.bg3 > .left {
   background: #BAEBF0;
 }
 
 .intro1.bg3 > .left > div {
-  width: 550px;
-  height: 500px;
+  width: 80%;
 }
 
 .intro1.bg3 > .left > div h2 {
-  font-size: 50px;
+  font-size: 45px;
   font-weight: lighter;
 }
 
@@ -435,13 +429,14 @@ section {
 }
 
 .intro1.bg3 > .left > div img {
+  width: 100%;
   margin-top: 20px;
 }
 
 .intro1.bg4 > .bg-img {
-  position: absolute;
-  bottom: 0%;
-  margin-left: 120px;
+  left: 1%;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
 }
 
 .intro1.bg4 > .left {
@@ -450,8 +445,11 @@ section {
 
 .intro1.bg4 > img + img {
   position: absolute;
-  top: 300px;
-  margin-left: 730px;
+  top: 50%;
+  left: 45%;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+  width: 50%;
 }
 
 section, article, div, p, span, h1, h2, h3, a {
@@ -471,24 +469,29 @@ a {
   padding-bottom: 180px;
   background-image: url(../img/hero/img_parallax01_2.png), url(../img/hero/img_parallax02_2.png);
   background-repeat: no-repeat, no-repeat;
-  background-position: 0px 0px, 600px 550px;
+  background-size: 80%;
+  background-position: 0px 0px, 90% 50%;
 }
 
 .style-introduce article {
-  width: 930px;
+  width: 80%;
   margin: 0 auto;
   overflow: hidden;
 }
 
 .style-introduce article div {
-  width: 465px;
+  width: 50%;
   float: left;
+}
+
+.style-introduce article div img {
+  width: 100%;
 }
 
 .style-introduce article .style-text-box {
   height: 370px;
   margin-top: 120px;
-  padding-left: 120px;
+  padding-left: 8%;
 }
 
 .style-introduce article .style-text-box:first-child {
@@ -496,7 +499,7 @@ a {
 }
 
 .style-introduce article .style-text-box p {
-  font-size: 75px;
+  font-size: 70px;
   color: #252A2E;
 }
 
@@ -639,8 +642,8 @@ a {
 }
 
 .smart-tv article {
-  width: 1200px;
-  height: 678px;
+  width: calc(100% - 80px);
+  height: 676px;
   margin: 40px auto;
 }
 
