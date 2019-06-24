@@ -540,7 +540,7 @@ a {
 }
 
 .look-book > div {
-  width: 1200px;
+  width: calc(100% - 80px);
   overflow: hidden;
   margin: 0px auto;
 }

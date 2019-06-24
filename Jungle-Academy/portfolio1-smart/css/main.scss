@@ -522,7 +522,7 @@ a {text-decoration: none; color: inherit;}
   >div{
     //화면이 작아져도 일정히 보였으면 좋겠다
     //width: calc(100% - 80px);
-    width: 1200px;
+    width: calc(100% - 80px);
     overflow: hidden;
     margin: 0px auto;
 
