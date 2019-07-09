@@ -1,0 +1,4383 @@
+<!-- 
+	내 용 : 브랜드 샵 자동형
+ -->
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="ko">
+
+
+
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+ 
+<!-- title변경하는 경우 해당 title명을 변경 처리 하면 됨 -->
+<title id="_HEADER_TITLE" data-ga_ctg_nm="로이드">로이드</title>  
+<meta name="title" content="로이드 - 이랜드몰닷컴" />
+<meta name="description" content="전시카테고리 설명" />
+<meta name="keywords" content="이랜드몰닷컴 검색광고키워드"/>
+
+	
+
+
+
+	<link rel="stylesheet" type="text/css" href="/css/pcweb/common.css?ver=tags/20190708-1" />
+	<link rel="stylesheet" type="text/css" href="/css/pcweb/layout.css?ver=tags/20190708-1" />
+	<link rel="stylesheet" type="text/css" href="/css/pcweb/order.css?ver=tags/20190708-1" />
+	<link rel="stylesheet" type="text/css" href="/css/pcweb/category.css?ver=tags/20190708-1" />
+	<link rel="stylesheet" type="text/css" href="/css/pcweb/goods.css?ver=tags/20190708-1" />
+	<link rel="stylesheet" type="text/css" href="/css/pcweb/shop.css?ver=tags/20190708-1" />
+	<link rel="stylesheet" type="text/css" href="/css/pcweb/mypage.css?ver=tags/20190708-1" />
+	<link rel="stylesheet" type="text/css" href="/css/pcweb/cs.css?ver=tags/20190708-1" />
+	<link rel="stylesheet" type="text/css" href="/css/pcweb/wf.css?ver=tags/20190708-1" />
+	<link rel="stylesheet" type="text/css" href="/css/pcweb/md.css?ver=tags/20190708-1" />
+
+			<link rel="stylesheet" type="text/css" href="/css/pcweb/main_renewal.css?ver=tags/20190708-1" />
+
+	<link rel="shortcut icon" type="image/x-icon" href="/images/pcweb/common/0000014.ico"/> 
+	
+	<script type="text/javascript" src="/common/js/jquery-1.11.3.min.js?ver=tags/20190708-1"></script>
+	<script type="text/javascript" src="/common/js/jquery-cookie.js?ver=tags/20190708-1"></script>
+	<script type="text/javascript" src="/pcweb/js/jquery-ui.js?ver=tags/20190708-1"></script>
+	<script type="text/javascript" src="/pcweb/js/ui.js?ver=tags/20190708-1"></script>
+	
+	<script type="text/javascript">
+	<!--
+		if ($.type(window.elandmall) != "object") {
+			window.elandmall = {};		
+		};
+		if ($.type(window.elandmall.global) != "object") {
+			window.elandmall.global = {};		
+		};
+		elandmall.global = {
+			scheme: "http",
+			image_path: "//www.elandrs.com",
+			upload_image_path: "//www.elandrs.com/upload",
+			js_path:"",
+			http_url:"http://www.elandmall.com",
+			https_url:"https://secure.elandmall.com",
+			cookie_domain: ".elandmall.com",
+			base_domain_url:"//www.elandmall.com", 
+			http_domain_cookie_name: "pcweb_3_http_domain",
+			modernhouse_domain_url:"//modernhouse.elandmall.com",
+			kimsclub_domain_url:"//ekimsclub.elandmall.com",
+			shoopen_domain_url:"//shoopen.elandmall.com",
+			lloyd_domain_url:"//lloyd.elandmall.com",
+			ost_domain_url:"//ost.elandmall.com",
+			clue_domain_url:"//clue.elandmall.com",
+			eblin_domain_url:"//eblin.elandmall.com",
+			mixxo_domain_url:"//mixxo.elandmall.com",
+			roem_domain_url:"//roem.elandmall.com",
+			spao_domain_url:"//spao.elandmall.com",
+			whoau_domain_url:"//whoau.elandmall.com",
+			folder_domain_url:"//folder.elandmall.com",
+			newbal_domain_url:"//nb.elandmall.com",
+			nbkids_domain_url:"//nbkids.elandmall.com",
+			bahus_domain_url:"//bahus.elandmall.com",
+			kinders_domain_url:"//kinderleague.elandmall.com",
+			disp_mall_no:"0000014",
+			ie_yn: "N",
+			oneclick_domain_url:"https://oneclick.elandretail.com",
+			ssl_domain_url:"https://secure.elandmall.com",
+			chnl_cd:"10",
+			kimsclub_mall_no:"0000045",
+			ksf_service_domain : "search.elandmall.com"
+		};
+	//-->
+	</script>	
+	<script type="text/javascript" src="/common/js/overpass.common.js?ver=tags/20190708-1"></script>
+	<script type="text/javascript" src="/common/js/overpass.util.js?ver=tags/20190708-1"></script>
+	<script type="text/javascript" src="/common/js/overpass.elandmall.js?ver=tags/20190708-1"></script>
+	<script type="text/javascript" src="/common/js/overpass.goods.js?ver=tags/20190708-1"></script>
+	<script type="text/javascript" src="/common/js/overpass.login.base.js?ver=tags/20190708-1"></script>
+	<script type="text/javascript" src="/pcweb/js/elandmall.login.js?ver=tags/20190708-1"></script>
+	<script type="text/javascript" src="/pcweb/js/elandmall.login.sns.js?ver=tags/20190708-1"></script>
+	<script type="text/javascript" src="/pcweb/js/elandmall.popup.js?ver=tags/20190708-1"></script>
+	<script type="text/javascript" src="/pcweb/js/elandmall.pcweb.js?ver=tags/20190708-1"></script>
+	<script type="text/javascript" src="/pcweb/js/elandmall.goods.js?ver=tags/20190708-1"></script>
+	<script type="text/javascript" src="/pcweb/netfunnel/netfunnel.js?ver=tags/20190708-1"></script>
+	
+	<script type="text/javascript" src="/common/js/aws-sdk-2.283.1.min.js?ver=tags/20190708-1"></script>
+	
+
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	//페이지 이동
+	$("#page_idx").createAnchor({
+		name: "page_idx", 				
+		fn: function(page, parameters) {
+			$("#cate_prd_list").load("/dispctg/initBrandShop.action?page_idx=" + page + "&listOnly=Y&" + parameters, function(){
+				$(window).scrollTop( 0 );
+				$("#hstr_pageNum").val(page);
+			});
+		}
+	});
+	// 상품 갯수 설정
+	$("#pageSize_select").change(function(){
+		$("#hstr_pageSize").val($(this).val());
+        
+		var parameters = "";
+		$("#historyForm :input").each(function(index){
+			parameters += $(this).attr('name') + "=" + encodeURI($(this).val()) + '&';
+		});
+		$("#cate_prd_list").load("/dispctg/initBrandShop.action?listOnly=Y&" + parameters);
+	});
+	
+	//첫페이지 OR 뒤로가기시 리스트 불러오기
+	var parameters = "";
+	$("#historyForm :input").each(function(index){
+		parameters += $(this).attr('name') + "=" + encodeURI($(this).val()) + '&';
+	});	
+	$("#cate_prd_list").load("/dispctg/initBrandShop.action?listOnly=Y&" + parameters);
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 외부 트래킹 헤더파일 -->
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+    /* 인풋창에 placeholder 속성 모든 브라우저 통일 */
+    input:focus::-webkit-input-placeholder { /* WebKit browsers */
+      color:transparent;
+    }
+    
+    input:focus:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      color:transparent;
+    }
+    
+    input:focus::-moz-placeholder { /* Mozilla Firefox 19+ */
+      color:transparent;
+    }
+    
+    input:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
+      color:transparent;
+    }
+    /*IE8 고객센터 focus 문제*/
+        
+</style>
+<script type="text/javascript" src="/pcweb/js/idangerous.swiper.min.js?ver=tags/20190708-1"></script>
+<script type="text/javascript" src="/pcweb/js/ui.header.js?ver=tags/20190708-1"></script>
+<script type="text/javascript" src="/pcweb/js/elandmall.search.module.js?ver=tags/20190708-1"></script>
+<script type="text/javascript" src="/pcweb/js/elandmall.search.js?ver=tags/20190708-1"></script>
+
+
+
+<script type="text/javascript">
+    var lockLogin = false;
+    var lockLoginPop = false;
+
+    var fnCloseBtn = function(){
+        $(".catg_bt").focus();
+        $(".catg_lyr").hide();
+    }
+    
+    //카테고리 전체보기
+    /*
+    getCtgList = function(){
+        //최초 1회 view
+        if($.trim($("#catg_all").html()) == ""){
+            $("#catg_all").load("/dispctg/searchGnbAllCategoryList.action");
+        }
+    }
+    */
+/**
+ * 몰번호로 사이트 도메인 URL 매핑 
+ */
+function getDispMallNoUrl(disp_mall_no){
+		var site_url = "//www.elandmall.com";
+		
+		if ("0000013" == disp_mall_no){
+			site_url = "//modernhouse.elandmall.com";
+		}else if ("0000043" == disp_mall_no){
+			site_url = "//mixxo.elandmall.com";
+		}else if ("0000042" == disp_mall_no){
+			site_url = "//whoau.elandmall.com";
+		}else if ("0000041" == disp_mall_no){
+			site_url = "//ost.elandmall.com";
+		}else if ("0000040" == disp_mall_no){
+			site_url = "//kinderleague.elandmall.com";
+		}else if ("0000039" == disp_mall_no){
+			site_url = "//folder.elandmall.com";
+		}else if ("0000038" == disp_mall_no){
+			site_url = "//nb.elandmall.com";
+		}else if ("0000037" == disp_mall_no){
+			site_url = "//spao.elandmall.com";
+		}else if ("0000036" == disp_mall_no){
+			site_url = "//clue.elandmall.com";
+		}else if ("0000035" == disp_mall_no){
+			site_url = "//roem.elandmall.com";
+		}else if ("0000033" == disp_mall_no){
+			site_url = "//eblin.elandmall.com";
+		}else if ("0000034" == disp_mall_no){
+			site_url = "//lloyd.elandmall.com";
+		}else if ("0000053" == disp_mall_no){
+			site_url = "//shoopen.elandmall.com";
+		}else if ("0000044" == disp_mall_no){
+			site_url = "//bahus.elandmall.com";
+		}else if ("0000063" == disp_mall_no){
+			site_url = "//nbkids.elandmall.com";
+		}else if ("0000045" == disp_mall_no){
+			site_url = "//ekimsclub.elandmall.com";
+		}
+
+		return site_url;
+}
+
+/**
+ * 퀵서치
+ */
+function setGnbQuickkSearch(searchKwd,area){
+    	var mallNo = '0000014'; //몰번호
+    	$("#"+area).find(".k_planevt").hide();
+    	// 퀵서치(카테고리, 기획전, 이벤트)
+    	if(!$.browser.msie || $.browser.version>9) {
+	        $.ajax({
+	        	type : "GET",
+	            url : "https://apigw.elandmall.com/admin/quicksearch",
+	            dataType : "json",
+	            data: {'searchKwd' : searchKwd,'mallNo' : mallNo},
+	            crossDomain: true,
+	            cors:true,
+	            success : function(rs) {
+	            	var ctg_count = rs.data[0].disp_ctg_rst.total_count;
+	            	var disp_ctg_rst = rs.data[0].disp_ctg_rst.rows;
+	            	var planshop_count = rs.data[1].planshop_rst.total_count;
+	            	var planshop_rst = rs.data[1].planshop_rst.rows;
+	            	var event_count = rs.data[2].event_rst.total_count;
+	            	var event_rst = rs.data[2].event_rst.rows;
+	            	
+	            	var total_count = ctg_count + planshop_count + event_count;
+	            	if(area == "sch_keyword" ){
+	            		total_count = planshop_count + event_count;
+	            	}
+	            	
+	            	if(total_count == 0){ $("#"+area).find(".k_planevt").hide();}
+	
+	            	if(area != "sch_keyword" ){
+		            	//카테고리
+		            	if(ctg_count == 0){
+		            		$("#"+area).find(".category").first().html("");
+		                 }else{
+		                    var result_html = "";
+		                    var sch_kwd = $.trim(searchKwd);
+		                     
+							for(var i=0;i<disp_ctg_rst.length;i++){
+								var temp_hilight = disp_ctg_rst[i].fields.disp_ctg_nm;
+								var disp_ctg_no = disp_ctg_rst[i].fields.disp_ctg_no;
+								var disp_lctg_nm = disp_ctg_rst[i].fields.disp_lctg_nm;
+								var disp_mctg_nm = disp_ctg_rst[i].fields.disp_mctg_nm;
+								var disp_sctg_nm = disp_ctg_rst[i].fields.disp_sctg_nm;
+								var depth_no = disp_ctg_rst[i].fields.depth_no;
+								var disp_mall_no = disp_ctg_rst[i].fields.disp_mall_no;
+								var doamin_url = getDispMallNoUrl(disp_mall_no); //몰별로 도메인 경로가 다름.
+								var data_ga_tag = (disp_lctg_nm != "" ? (disp_mctg_nm != "" ? disp_lctg_nm : temp_hilight) : "")  + (disp_mctg_nm != "" ? " &gt; " + (disp_sctg_nm != "" ? disp_mctg_nm : temp_hilight) : "") + (disp_sctg_nm != "" ? " &gt; " + temp_hilight :"");
+								
+								// 세뎁스의 경우 URL에 대표번호로 이동이 불가능함.
+								if(depth_no == 5){
+									disp_ctg_no = disp_ctg_rst[i].fields.disp_sctg_no;
+								}
+								
+								temp_hilight = temp_hilight.replace(sch_kwd,"<em>"+sch_kwd+"</em>");
+								
+								result_html += "<li>";
+								result_html += "	<span class=\"ico\">카테고리</span>";
+								result_html += "	<span class=\"txt\">";
+								result_html += "		<a href=\"" + doamin_url +"/dispctg/initDispCtg.action?disp_ctg_no=" + disp_ctg_no + "\" data-ga-tag=\"PC_검색팝업||추천카테고리||"+data_ga_tag+"\">";
+								result_html += 			disp_lctg_nm != "" ? "<span>" +  (disp_mctg_nm != "" ? disp_lctg_nm : temp_hilight) + "</span>" : "";
+								result_html += 			disp_mctg_nm != "" ? "<span> &gt; " + (disp_sctg_nm != "" ? disp_mctg_nm : temp_hilight) + "</span>" : "";
+								result_html += 			disp_sctg_nm != "" ? "<span> &gt; " + temp_hilight + "<span>":"";
+								result_html += "		</a>";
+								result_html += "	</span>";
+								result_html += "</li>";
+							}
+							$("#"+area).find(".k_planevt").show().find(".category").first().html("<ul>" + result_html + "</ul>");
+		                 }
+	            	}
+	            	
+	            	//기획전
+	            	 if(planshop_count == 0){
+	                     $("#k_planevt").children(".plan").first().html("");
+	                 }else{
+	                     var result_html = "";
+	                     var sch_kwd = $.trim(searchKwd);
+	                     
+						for(var i=0;i<planshop_rst.length;i++){
+							var temp_hilight = planshop_rst[i].fields.ctg_nm;
+							var ctg_no = planshop_rst[i].fields.ctg_no;
+							temp_hilight = temp_hilight.replace(sch_kwd,"<em>"+sch_kwd+"</em>");
+							
+							result_html += "<li>";
+							result_html += "	<span class=\"ico\">기획전</span>";
+							result_html += "	<span class=\"txt\">";
+							result_html += "		<a href=\"/shop/initPlanShop.action?disp_ctg_no=" + ctg_no + "\" data-ga-tag=\"PC_검색팝업||검색_기획전||"+planshop_rst[i].fields.ctg_nm+"\">" + temp_hilight + "</a>";
+							result_html += "	</span>";
+							result_html += "</li>";
+						}
+						$("#"+area).find(".k_planevt").show().find(".plan").first().html("<ul>" + result_html + "</ul>");
+	                 }
+	
+	                 //이벤트
+	                 if(event_count == 0){
+	                     $("#k_planevt").children(".event").first().html("");
+	                 }else{
+	                     var result_html = "";
+	                     var sch_kwd = $.trim(searchKwd);
+	                     
+	 					for(var i=0;i<event_rst.length;i++){
+	 						var temp_hilight = event_rst[i].fields.event_nm;
+	 						var event_no = event_rst[i].fields.event_no;
+	 						temp_hilight = temp_hilight.replace(sch_kwd,"<em>"+sch_kwd+"</em>");
+	 						
+	 						result_html += "<li>";
+	 						result_html += "	<span class=\"ico\">이벤트</span>";
+	 						result_html += "	<span class=\"txt\">";
+	 						result_html += "		<a href=\"/event/initEventDtl.action?event_no=" + event_no + "\" data-ga-tag=\"PC_검색팝업||검색_이벤트||"+event_rst[i].fields.event_nm+"\">" + temp_hilight + "</a>";
+	 						result_html += "	</span>";
+	 						result_html += "</li>";
+	 					}
+	 					$("#"+area).find(".k_planevt").show().find(".event").first().html("<ul>" + result_html + "</ul>");
+	                 }
+	                 
+	                 _google_analytics();
+	            },
+	            error : function(e) {
+	            	$("#"+area).find(".k_planevt").hide();
+	                console.log("퀵서치 처리중 장애가 발생하였습니다.");
+	            },
+	            complete : function(r,s) {
+	
+	            }
+	        });
+    	}
+}
+
+$(function() {
+	// $.support.cors = true;
+	
+	//검색창 클릭시 퀵서치 실행
+	$(".d_searchTerm").on("click",function(e){
+		var count = $(".plan").find("li").length + $(".event").find("li").length;
+		var count_ranking = $("#rankings").find("li").length;
+
+		if(count == 0){
+			setGnbQuickkSearch("","sch_keyword");
+		}
+		
+		if(count_ranking == 0){
+			fnRankingSrch();
+		}
+	});
+	
+    //인기검색어
+    fnRankingSrch = function(){
+	    var domainNo = 0;
+	    var ranking_api_url = "//search.elandmall.com/ksf/api/rankings";
+	    var dataType = "jsonp";
+	    
+	    domainNo = 14;
+	 
+		if(elandmall.global.disp_mall_no == "0000014"){
+			ranking_api_url = "https://apigw.elandmall.com/search/ranking";
+			dataType = "json"
+		}
+		
+	    var ppkUpAndDown = "";
+	    $.ajax({
+	        url: ranking_api_url,
+	        data: { domain_no: domainNo, max_count: 10 },
+	        cors:true,
+	        dataType: dataType,
+	        timeout: 3000,
+	        success: function(data) {
+	        	$("#rankings").children().remove();
+
+	            $.each(data, function (i, v) {
+	                if(v[1] == 'new'){
+	                    ppkUpAndDown = v[1];
+	                }else if(v[1] == 0){
+	                    ppkUpAndDown = "-";
+	                }else if(v[1] > 0){
+	                    ppkUpAndDown = "<span class=\"rl_up\">" + v[1] + "</span>";
+	                }else if(v[1] < 0){
+	                    ppkUpAndDown = "<span class=\"rl_down\">" + Math.abs(v[1]) + "</span>";
+	                }
+	                
+	                $("#rankings").append("<li " + (i<3?"class=\"rank\"":"") +"><a href=\"javascript:fnsearch.dftSchKwd('" + v[0] + "');\" class=\"d_links\" data-ga-tag=\"PC_검색팝업||인기검색어||"+ v[0] +"\"><em class=\"num\">" 
+	                                        + (i+1) + "</em><span>" + v[0] + "</span></a><div class=\"rl_pot\">" + ppkUpAndDown + "</div></li>");
+	            });
+	            if($("#rankings").children("li").length == 0){
+	                $("#rankings").append("<div class='msg' > 인기 검색어가 없습니다. </div>");
+	            }
+	            _google_analytics();
+	        },
+	        error: function () {
+	           console.log("인기검색어 에러 발생");
+	        }
+	    });
+    }
+    fnRankingSrch();
+    
+    var domainNo = 0;                //자동완성 도메인번호
+    domainNo = 14;
+    var link_domainNo = 99;		//바로가기 완성 도메인번호
+    var akc_maxCount = 10;             //자동완성 가져올 갯수
+    var link_maxCount = 2;		// 바로가기 완성 가져올 갯수
+    var akc_mode = "s";             //자동완성 모드 s: 전방일치
+    var akc_idx    = -1;                //자동완성 키 이벤트 관련 - down키 입력시 0부터 시작하기 위함
+    var akc_evt_key = 0;            //자동완성 이벤트 키
+    var akc_lst_len = 0;
+    
+    var searchRequest = true;
+    var preSearchKwd = "";
+	
+    //19.03.13 [검색개선과제] 검색창 자동완성 시 2초동안의 요청을 날리지 않도록 처리
+	//2초 마다 호출되는 타이머 함수. 
+    fnDoSetInterval = function(){
+		var f = setInterval(function() {
+			searchRequest = true;
+			
+			//최근 조회했던 키워드와 현재 INPUT 값이 동일하면  or INPUT 값이 공백이면 타이머 종료.
+			if( (preSearchKwd != $("#searchTerm").val()) && $.trim($("#searchTerm").val()) != ""){
+				fnDoSearch($("#searchTerm").val());
+			}else{
+				clearInterval(f);
+			}
+		}, 1000);   	
+    }
+    
+    $(".d_searchTerm").on("keyup",function(e){
+    	var searchKwd = $("#searchTerm").val();
+    	var searchTerm= encodeURIComponent(searchKwd);
+    	
+        //인풋창에 키워드가 존재할 경우
+        if(e.keyCode != 38 && e.keyCode != 40  && $.trim($(".d_searchTerm").val()) != ""){
+            if(searchRequest){
+            	fnDoSetInterval();
+            	fnDoSearch(searchKwd);
+            }
+        } 
+        
+        // 키보드 이벤트 등록
+        if(e.keyCode == 38){        // up
+            akc_idx--;
+            if(akc_idx < 0) akc_idx = 0;
+            
+            $("#searchTerm").val($('#akc'+akc_idx).children().children().text());
+        }else if(e.keyCode == 40){    // down
+            akc_idx++;
+            if(akc_idx > akc_lst_len-1) akc_idx = akc_lst_len-1;
+            
+            $("#searchTerm").val($('#akc'+akc_idx).children().children().text());
+        }else{
+            akc_idx    = -1;
+        }
+    });
+    
+    fnDoSearch = function(searchKwd){
+        preSearchKwd = searchKwd;
+    	setGnbQuickkSearch(searchKwd,"sch_complete");
+    	
+    	 //바로가기
+        $.ajax({
+            type : "POST",
+            url : "//search.elandmall.com/ksf/api/suggest?target=complete",
+            dataType : "jsonp",
+            data: { 'domain_no' : link_domainNo, 'term' : searchKwd, 'max_count' : link_maxCount, 'mode' : akc_mode },
+            timeout: 3000,
+            success : function(data) {
+            	  if(data.suggestions == ""){
+            		  $("#sch_complete").children(".k_brand").children().first().html("");
+                  }else{
+                    var result_html = "";
+                    var akc_kwd = "";
+                    var akc_link = "";
+                    $.each(data.suggestions, function(i, v){
+                        $.each(v, function(index, value){
+                        	akc_kwd = value[0];
+                        	akc_link = value[1];
+                        	result_html += "<li>";
+                        	result_html += "<a href=\"" + akc_link + "\"><span>" + akc_kwd + "</span></a>";
+                        	result_html += "</li>";    
+                        });
+                    });
+                    $("#sch_complete").children(".k_brand").children().first().html(result_html);
+                    
+                }
+            },
+            error : function(e) {
+                console.log("바로가기 완성 처리중 장애가 발생하였습니다.");
+            }
+        });
+    	 
+        //자동완성
+        $.ajax({
+            type : "POST",
+            url : "//search.elandmall.com/ksf/api/suggest?target=complete",
+            dataType : "jsonp",
+            data:  { 'domain_no' : domainNo, 'term' : searchKwd, 'max_count' : akc_maxCount, 'mode' : akc_mode },
+            timeout: 3000,
+            success : function(data) {
+                if(data.suggestions == ""){
+                    $("#sch_complete").children(".s_keyword").first().html("<div class=\"msg\">입력하신 단어가 들어가 있는 추천어가 없습니다.</div>");
+                }else{
+                    var temp_hilight = "";
+                    var akc_html = "";
+                    var akc_kwd = $.trim(searchKwd);
+                    $.each(data.suggestions, function(i, v){
+                        $.each(v, function(index, value){
+                            temp_hilight = value[0];
+                            temp_hilight = temp_hilight.replace(akc_kwd,"<b>"+akc_kwd+"</b>");
+                            akc_html += "<li id=\"akc" + index + "\">";
+                            akc_html += "<a class=\"d_links\" href=\"javascript:fnsearch.dftSchKwd('" + value[0] + "');\" data-ga-tag=\"PC_검색팝업||자동완성어||" + value[0] + "\"><span>" + temp_hilight + "</span></a>";
+                            akc_html += "</li>";    
+                        });
+                    });
+                    //$("#sch_complete").children().children().first().html(akc_html);
+                    $("#sch_complete").children(".s_keyword").removeClass("msg").addClass("s_keyword").first().html("<ul class='sch_ing'>" + akc_html + "</ul>");
+                    
+                    _google_analytics();
+                }
+                //자동완성 리스트 만큼 li태그가 생김, 그 숫자를 카운트
+                akc_lst_len = $(".s_keyword").find("li").length;
+                //console.log("akc_lst_len = "+akc_lst_len);
+            },
+            error : function(e) {
+                console.log("자동완성 처리중 장애가 발생하였습니다.");
+            }
+        });
+        searchRequest = false;
+    }
+    
+    //자동완성 리스트 끄기 버튼
+    $(".s_del > button").on("click", function(){
+        //$(".d_searchTerm").focus();
+        $(".d_sch_complete").hide();
+    });
+    
+    
+    isLoginCheckAjax = function(){   
+        $.ajax({
+            url:"/member/isLoginCheckAjax.action",
+            type:"get",
+            dataType:"json",
+            success: function(result){
+            	// login-out 처리
+                if ( result.ret_code == true ) {
+                    $("#dd_logout").show();
+                    $("#dd_login").hide();
+                    $("#dd_join").hide();
+                    
+            	    var _membState = elandmall.util.getCookie("membState");
+            	    var _coupon_param = elandmall.util.getCookie("coupon_param");
+            	    var _is_staff = elandmall.util.getCookie("is_staff");
+            	    //var _is_staff_alram = elandmall.util.getCookie("is_staff_alram_del");
+            	    var _is_staff_alram = 'Y';	//복지몰 팝업
+        		    //var _is_staff_don_agree_alram = elandmall.util.getCookie("is_staff_don_agree_alram");	//복지포인트 기부알람 팝업
+        		    var _is_staff_don_agree_alram = 'Y'; //임시로 막음
+        		    //var _is_staff_gift_noti = elandmall.util.getCookie("is_staff_gift_noti");	//복지포인트 상품권 구매안내
+        		    var _is_staff_gift_noti = 'Y';	//종료처리
+        		    
+        	    	elandmall.login_layer.fnCommLayer(null, {
+															membState:_membState,
+															coupon_param:_coupon_param,
+															is_staff:_is_staff,
+															is_staff_alram:_is_staff_alram,
+															is_staff_don_agree_alram:_is_staff_don_agree_alram,
+															is_staff_gift_noti:_is_staff_gift_noti
+															}
+					);
+            	    
+        		    var _first_login_yn = 'X';
+        		    if("3f3fssdd" == elandmall.util.getCookie("f_login_bene_110")){
+        		    	_first_login_yn = 'O';
+        		    	var expireDate = new Date();
+        		    	expireDate.setDate( expireDate.getDate() - 1 );
+        		    	elandmall.util.setCookie({ name: "f_login_bene_110", value: "", path: "/", domain : elandmall.global.cookie_domain });	//쿠키저장
+        		    }
+
+        		    dataLayer.push({
+            	    	age:result.age,
+          	          	gender:result.gender,
+          	          	custId:result.custId,
+          	        	grade:result.grade,
+          	          	register_date:result.register_date,
+          	          	login:"○", 
+          	          	chnl_cd:"PC Web",
+          	          	staff_yn:result.staff_yn,
+          	          	first_login_yn:_first_login_yn
+            	    }); 
+                } else {
+                    $("#dd_logout").hide();
+                    $("#dd_login").show();
+                    $("#dd_join").show();
+                    
+                    dataLayer.push({
+                    	age:"",
+                        gender:"",
+                        custId:"",
+                      	grade:"",
+                        register_date:"",
+                        login:"X", 
+                        chnl_cd:"PC Web",
+                        staff_yn:"",
+                        first_login_yn:"X"
+                    }); 
+                    //iframe으로 변경
+                    if(result.topas_yn){
+						var topasIframe = $("<iframe name=\"topas_iframe\" id=\"topas_iframe\" style=\"display:none\"/>");
+						topasIframe.attr("src", result.logout_url);
+						topasIframe.appendTo('body');
+                    	/* $.ajax({
+    						url: result.logout_url,
+    						type: "GET",
+    						contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+    						xhrFields: { withCredentials: true },
+    						crossDomain: true,
+    						cors: true,
+    						success: function(data) {
+    							//console.log("topas_logout");
+    						},error:function(e){
+								console.log(e);
+    						}
+    					}); */
+                    }
+                }
+            	// skyScrapper 구성
+            	if ( $('#wm_user_div').exists() ) {
+	            	if ( result.ret_code == true ) {
+	            		var html = "";
+	                    html = "<strong><span>"+result.mbr_nm+"</span>님</strong><span>";
+
+                        //html += "<a href=\"javascript:;\" onClick=\"elandmall.mypage.link.point(); return false;\" class=\"tx_num\">";
+                        html += /* result.eland_points+"P</a><br /> */"쿠폰 <a href=\"javascript:;\" onClick=\"elandmall.mypage.link.coupon(); return false;\">";
+                        html += result.coupon_count+"</a>장";
+                    
+	                    html += "</span>";
+	                    $('#wm_user_div').append(html);
+            		}
+            	}
+            	
+            	// 장바구니 영역 구성
+            	if ( $('#cart_info').exists() ) {
+               		var html = "";
+                       	html += "<a href='javascript:void(0);' class= 'wm_r03' onclick='elandmall.hdLink(\"CART\");' data-ga-tag='PC_공통||플로팅메뉴||장바구니'>장바구니<em>";
+                       	html += result.cart_count;
+                       	html += "</em></a>";
+                       	
+                    $('#cart_info').html(html);
+            	}
+            	// TNB 상단 장바구니 개수
+            	if ( $('#tnb_cart_num').exists() ) {
+            		$('#tnb_cart_num').text(result.cart_count);
+            	}
+            },
+            error:function(err){
+
+                    $("#dd_logout").hide();
+                    $("#dd_login").show();
+                    $("#dd_join").show();
+
+				// 장바구니 영역 구성
+				if ( $('#cart_info').exists() ) {
+						var html = "";
+				       	html += "<a href='javascript:void(0);' class= 'wm_r03' onclick='elandmall.hdLink(\"CART\");' data-ga-tag='PC_GNB||공통정보||장바구니'>장바구니<em>";
+				       	html += "0";
+				       	html += "</em></a>";
+				       	
+				    $('#cart_info').html(html);
+				}
+            }
+        });
+        
+    }
+    
+    $(document).ready(function(){
+        isLoginCheckAjax();
+        
+    });
+
+});
+</script>
+
+<script>
+ElandmallEventListener.fnAddOnloadListener(function() {(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-54802457-5', 'auto');
+  ga('require', 'GTM-WW6VMS7');});
+
+dataLayer = [];
+</script>
+
+</head>
+<body>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-N7KDQF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>ElandmallEventListener.fnAddOnloadListener(function(){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N7KDQF');});</script>
+<!-- End Google Tag Manager -->
+
+<!-- class="modern" -->
+    <!-- skip navigation -->
+    <div id="skipNav">
+        <a href="#content" onClick="document.getElementById('content').tabIndex = -1;document.getElementById('content').focus();return false;">컨텐츠바로가기</a>
+        <a href="#header" onClick="document.getElementById('header').tabIndex = -1;document.getElementById('header').focus();return false;">메뉴바로가기</a>
+    </div>
+    <!-- //skip navigation -->
+
+    <!-- wrapper -->
+    <div id="wrapper" class='renewal'>
+    
+
+            <!-- BANNER -->
+
+	            <!-- 비정형 영역 처리   -->
+	            <!-- 
+	내 용 : 2018_공통배너_최상단HEADER배너
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<div class="header_top_banner" style="background:#3887ca">
+			<div class="btn_hdtb_img">
+				<ul>
+
+					<li data-ga-tag="PC_공통||최상단배너||♥반품샵&시즌오프♥"><a href="javascript:void(0);" onclick="elandmall.disp.clickEvent({openwinyn:'N',tr_yn:'Y',banner_kind_cd:'10' ,conts_form_cd:'110' ,conts_divi_cd:'10' ,conts_dist_no:'C19070648420489' ,sale_area_no:'D1808001090' , rel_divi_cd:'20' , rel_no:'190700000105128', move_cont_no:'1906397564', url:'', brandIndexYn:'N'})"><img src="//www.elandrs.com/upload/dspl/banner/10/519/00/190700000137519.jpg" width="358" height="80" alt="♥반품샵&시즌오프♥" /></a></li>
+
+					<li data-ga-tag="PC_공통||최상단배너||7/10일 이득타임_사전 이벤트"><a href="javascript:void(0);" onclick="elandmall.disp.clickEvent({openwinyn:'N',tr_yn:'Y',banner_kind_cd:'20' ,conts_form_cd:'130' ,conts_divi_cd:'10' ,conts_dist_no:'C19070648420490' ,sale_area_no:'D1808001090' , rel_divi_cd:'20' , rel_no:'190700000105129', move_cont_no:'E190705231', url:'', brandIndexYn:'N'})"><img src="//www.elandrs.com/upload/dspl/banner/20/520/00/190700000137520.jpg" width="362" height="80" alt="7/10일 이득타임_사전 이벤트" /></a></li>
+
+					<li data-ga-tag="PC_공통||최상단배너||[미쏘]스페셜위크"><a href="javascript:void(0);" onclick="elandmall.disp.clickEvent({openwinyn:'N',tr_yn:'Y',banner_kind_cd:'10' ,conts_form_cd:'110' ,conts_divi_cd:'10' ,conts_dist_no:'C19070648420491' ,sale_area_no:'D1808001090' , rel_divi_cd:'20' , rel_no:'190700000105130', move_cont_no:'1906397914', url:'', brandIndexYn:'N'})"><img src="//www.elandrs.com/upload/dspl/banner/10/521/00/190700000137521.jpg" width="360" height="80" alt="[미쏘]스페셜위크" /></a></li>
+
+				</ul>
+			</div>
+			<a href="javascript:" class="btn_hdtb_close" title="오늘 하루 보지 않기">배너 닫기</a>
+		</div>
+		<script type="text/javascript">
+			$(".btn_hdtb_close").on("click",function(){
+				$(".header_top_banner").removeClass("on");
+				elandmall.util.setCookie({ name: "main_top_banner_0000014", value: "Y", age:1, path: "/", domain : elandmall.global.cookie_domain });
+			});
+
+			if(elandmall.util.getCookie("main_top_banner_0000014") == "Y"){
+				$(".header_top_banner").removeClass("on");
+			} else {
+				$(".header_top_banner").addClass("on");
+			}
+		</script>
+
+	            <!-- //비정형 영역 처리  -->
+	            
+	            
+				<!-- ie 9 알림 div --> 
+				<div class="box_old_broswer" style="display:none;">
+					<div class="cont">
+						<div class="txt_noti">
+							<strong>고객님의 브라우저에서는 정상 동작하지 않습니다.</strong>
+							<span>인터넷 익스플로러 업데이트 또는 크롬이나 파이어폭스 브라우저에서 사용해 주세요.</span>
+						</div>
+						<div class="set_broswer">
+							<ul>
+								<li class="ie"><a href="http://windows.microsoft.com/ko-kr/internet-explorer/download-ie" target="_blank">
+									<strong>Internet Explore</strong>
+									<span>업데이트하기</span>
+								</a></li>
+								<li class="chrome"><a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">
+									<strong>Chrome</strong>
+									<span>설치하기</span> 
+								</a></li>
+								<li class="ff"><a href="https://www.mozilla.org/ko/firefox/new/" target="_blank">
+									<strong>Firefox</strong>
+									<span>설치하기</span>
+								</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>         
+	            
+            
+            <!-- //BANNER  -->
+            
+
+            <!-- 비정형 영역 처리   -->
+            <!-- 
+	내 용 : 2018_공통배너_비정형 레이어
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+	<div class="center_btm_banner">
+	
+		<a href="javascript:void(0);" onclick="elandmall.disp.clickEvent({openwinyn:'N',tr_yn:'Y',banner_kind_cd:'10' ,conts_form_cd:'110' ,conts_divi_cd:'10' ,conts_dist_no:'C19070648420403' ,sale_area_no:'D1808001098' , rel_divi_cd:'20' , rel_no:'190700000105122', move_cont_no:'1906398073', url:'', brandIndexYn:'N'})" data-ga-tag="PC_공통||플로팅띠배너||여름 시즌오프 SALE"><img src="//www.elandrs.com/upload/dspl/banner/10/512/00/190700000137512.jpg" width="1080" height="100" alt="여름 시즌오프 SALE" /></a>
+		<a href="javascript:;" class="btn_close"><img src="//www.elandrs.com/images/pcweb/renewal/btn_center_btn.png" alt="배너 닫기"></a>
+	</div>
+	<script>
+		if(elandmall.util.getCookie("main_bottom_banner_0000014") == "close"){
+			$(".center_btm_banner").hide();
+		}else{
+			$(".center_btm_banner").show();
+		}
+		
+		$(".center_btm_banner .btn_close").click(function(e){
+			e.preventDefault();
+			$(".center_btm_banner").hide();
+			elandmall.util.setCookie({ name: "main_bottom_banner_0000014", value: "close", path: "/", domain : elandmall.global.cookie_domain });	//쿠키저장
+		});
+	</script>	
+	
+            <!-- //비정형 영역 처리  -->
+  
+
+
+<!--[if lte IE 9]>
+<script type="text/javascript">
+	$(".box_old_broswer").show();
+</script>
+<![endif]-->
+
+		
+        <!-- HEADER  header_fix -->
+        <div id="header" class="header">
+            <div class="head">
+                <!-- LOGO -->
+                <h1>
+                    <a href="javascript:void(0);" onclick="elandmall.hdLink('MAIN');" data-ga-tag='PC_공통||이랜드로고||'><img src="//www.elandrs.com/images/pcweb/common/logo_eland_v2.png" alt="ELANDMALL" /></a>
+                </h1>
+                <!-- //LOGO -->
+
+                <!-- MALL TAB -->
+                <div class="hd_mall">
+                    <div class="tit">
+                        <a href="javascript:void(0);" onclick="elandmall.hdLink('MAIN');" class="btn_home"><img src="//www.elandrs.com/images/pcweb/renewal/tit_eland_v2.png" alt="ELANDMALL" /></a>
+                        <!-- <a href="javascript:void(0);" class="btn_mall_sel d_main_logo"><strong class="ir">몰 선택</strong></a> -->
+                    </div>
+                </div>
+                <div class="mall_select">
+                    <ul>
+                        <li class="el"><a href="javascript:void(0);" onclick="elandmall.hdLink('MAIN');" class="d_move_link" data-ga-tag='PC_공통||상단탭||이랜드몰'>이랜드몰 <span class="ir">이동</span></a></li>
+                        <li class="mh"><a href="javascript:void(0);" onclick="elandmall.hdLink('MAIN_MODERN');" class="d_move_link" data-ga-tag='PC_공통||상단탭||모던하우스'>모던하우스몰 <span class="ir">이동</span></a></li>
+                        <li class="ki"><a href="javascript:void(0);" onclick="elandmall.hdLink('KIMSCLUB');" class="d_move_link" data-ga-tag="PC_공통||상단탭||킴스클럽">킴스클럽몰 <span class="ir">이동</span></a></li>
+                    </ul>
+                </div>
+                <!-- //MALL TAB -->
+
+			<!-- 비정형 영역 처리   -->
+			<!--
+	내 용 : 2018_PC_GNB_ BARND SITE 
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="bs_selectbox d_bs_sel">
+	<div class="bs_sel_tit"><a href="javascript:;"><span>BRAND SITE</span></a></div>
+	<div class="brand_select">
+	
+	
+	
+		<dl>
+			<dt><span>키즈</span></dt>
+			<dd>
+				<ul>
+				
+				
+				
+				<li>
+					<a href="http://kinderleague.elandmall.com/dispctg/initBrandShop.action?brand_no=1600002696" data-ga-tag='PC_공통||브랜드사이트||키즈_'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/322/00/181000000087322.jpg" alt="" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://nbkids.elandmall.com/main/initMain.action" data-ga-tag='PC_공통||브랜드사이트||키즈_뉴발란스 키즈'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/340/00/170100000016340.jpg" alt="뉴발란스 키즈" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://kinderleague.elandmall.com/dispctg/initBrandShop.action?brand_no=1690000380" data-ga-tag='PC_공통||브랜드사이트||키즈_'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/243/00/170300000021243.jpg" alt="" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://kinderleague.elandmall.com/dispctg/initBrandShop.action?brand_no=1600002582" data-ga-tag='PC_공통||브랜드사이트||키즈_'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/496/00/170300000019496.jpg" alt="" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://kinderleague.elandmall.com/dispctg/initBrandShop.action?brand_no=1690000294" data-ga-tag='PC_공통||브랜드사이트||키즈_'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/617/00/170500000027617.jpg" alt="" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://kinderleague.elandmall.com/dispctg/initBrandShop.action?brand_no=1690000468" data-ga-tag='PC_공통||브랜드사이트||키즈_'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/618/00/170500000027618.jpg" alt="" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://kinderleague.elandmall.com/dispctg/initBrandShop.action?brand_no=1690000058" data-ga-tag='PC_공통||브랜드사이트||키즈_'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/933/00/170500000027933.jpg" alt="" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://kinderleague.elandmall.com/dispctg/initBrandShop.action?brand_no=1690000142" data-ga-tag='PC_공통||브랜드사이트||키즈_'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/619/00/170500000027619.jpg" alt="" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://kinderleague.elandmall.com/dispctg/initBrandShop.action?brand_no=1690000198" data-ga-tag='PC_공통||브랜드사이트||키즈_'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/769/00/180700000074769.jpg" alt="" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://kinderleague.elandmall.com/dispctg/initBrandShop.action?brand_no=1690000157" data-ga-tag='PC_공통||브랜드사이트||키즈_'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/772/00/180700000074772.jpg" alt="" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://kinderleague.elandmall.com/dispctg/initBrandShop.action?brand_no=1690000342" data-ga-tag='PC_공통||브랜드사이트||키즈_'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/776/00/180700000074776.jpg" alt="" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://kinderleague.elandmall.com/dispctg/initBrandShop.action?brand_no=1690000448" data-ga-tag='PC_공통||브랜드사이트||키즈_'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/089/00/170900000039089.jpg" alt="" /></a>
+					</li>	
+				
+					
+					
+				</ul>
+			</dd>
+		</dl>
+
+	
+	
+		<dl>
+			<dt><span>여성/언더웨어</span></dt>
+			<dd>
+				<ul>
+				
+				
+				
+				<li>
+					<a href="http://www.elandmall.com/dispctg/initBrandShop.action?brand_no=1690000421" data-ga-tag='PC_공통||브랜드사이트||여성언더웨어_오스본'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/838/00/190100000098838.jpg" alt="오스본" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://www.elandmall.com/dispctg/initBrandShop.action?brand_no=1690000317" data-ga-tag='PC_공통||브랜드사이트||여성언더웨어_2ME'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/342/00/170100000016342.jpg" alt="2ME" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://www.elandmall.com/dispctg/initBrandShop.action?brand_no=1690000333" data-ga-tag='PC_공통||브랜드사이트||여성언더웨어_클라비스'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/349/00/170100000016349.png" alt="클라비스" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://roem.elandmall.com" data-ga-tag='PC_공통||브랜드사이트||여성언더웨어_로엠'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/350/00/170100000016350.jpg" alt="로엠" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://www.elandmall.com/dispctg/initBrandShop.action?brand_no=1600002581" data-ga-tag='PC_공통||브랜드사이트||여성언더웨어_'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/085/00/170400000022085.jpg" alt="" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://www.elandmall.com/dispctg/initBrandShop.action?brand_no=1690000449" data-ga-tag='PC_공통||브랜드사이트||여성언더웨어_'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/012/00/170400000024012.jpg" alt="" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://www.elandmall.com/dispctg/initBrandShop.action?brand_no=1690000316" data-ga-tag='PC_공통||브랜드사이트||여성언더웨어_'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/213/00/170600000030213.jpg" alt="" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://www.elandmall.com/dispctg/initBrandShop.action?brand_no=1600002584" data-ga-tag='PC_공통||브랜드사이트||여성언더웨어_'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/790/00/170700000032790.jpg" alt="" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://mixxo.elandmall.com" data-ga-tag='PC_공통||브랜드사이트||여성언더웨어_미쏘'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/351/00/170100000016351.jpg" alt="미쏘" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://www.elandmall.com/dispctg/initBrandShop.action?brand_no=1690000322" data-ga-tag='PC_공통||브랜드사이트||여성언더웨어_태창'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/353/00/170100000016353.jpg" alt="태창" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://www.elandmall.com/dispctg/initBrandShop.action?brand_no=1690000131" data-ga-tag='PC_공통||브랜드사이트||여성언더웨어_'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/214/00/170600000030214.jpg" alt="" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://www.elandmall.com/dispctg/initBrandShop.action?brand_no=1690000464" data-ga-tag='PC_공통||브랜드사이트||여성언더웨어_'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/215/00/170600000030215.jpg" alt="" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://www.elandmall.com/dispctg/initBrandShop.action?brand_no=1690000314" data-ga-tag='PC_공통||브랜드사이트||여성언더웨어_'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/216/00/170600000030216.jpg" alt="" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://www.elandmall.com/dispctg/initBrandShop.action?brand_no=1690000196" data-ga-tag='PC_공통||브랜드사이트||여성언더웨어_'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/212/00/170600000030212.jpg" alt="" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://www.elandmall.com/dispctg/initBrandShop.action?brand_no=1700005506" data-ga-tag='PC_공통||브랜드사이트||여성언더웨어_'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/255/00/170800000034255.jpg" alt="" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://www.elandmall.com/dispctg/initBrandShop.action?brand_no=1690000372" data-ga-tag='PC_공통||브랜드사이트||여성언더웨어_'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/862/00/170600000030862.jpg" alt="" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://eblin.elandmall.com" data-ga-tag='PC_공통||브랜드사이트||여성언더웨어_에블린'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/355/00/170100000016355.jpg" alt="에블린" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://www.elandmall.com/dispctg/initBrandShop.action?brand_no=1690000259" data-ga-tag='PC_공통||브랜드사이트||여성언더웨어_헌트이너웨이'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/354/00/170100000016354.jpg" alt="헌트이너웨이" /></a>
+					</li>	
+				
+					
+					
+				</ul>
+			</dd>
+		</dl>
+
+	
+	
+		<dl>
+			<dt><span>남성/캐주얼/SPA</span></dt>
+			<dd>
+				<ul>
+				
+				
+				
+				<li>
+					<a href="http://www.elandmall.com/dispctg/initBrandShop.action?brand_no=1690000381" data-ga-tag='PC_공통||브랜드사이트||남성캐주얼SPA_'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/769/00/190400000123769.gif" alt="" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://whoau.elandmall.com" data-ga-tag='PC_공통||브랜드사이트||남성캐주얼SPA_후아유'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/346/00/170100000016346.jpg" alt="후아유" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://spao.elandmall.com" data-ga-tag='PC_공통||브랜드사이트||남성캐주얼SPA_스파오'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/348/00/170100000016348.jpg" alt="스파오" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://www.elandmall.com/dispctg/initBrandShop.action?brand_no=1700004796" data-ga-tag='PC_공통||브랜드사이트||남성캐주얼SPA_레겐보겐'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/364/00/180700000074364.jpg" alt="레겐보겐" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://www.elandmall.com/dispctg/initBrandShop.action?brand_no=1600003604" data-ga-tag='PC_공통||브랜드사이트||남성캐주얼SPA_'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/313/00/171100000044313.png" alt="" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://www.elandmall.com/dispctg/initBrandShop.action?brand_no=1690000390" data-ga-tag='PC_공통||브랜드사이트||남성캐주얼SPA_켄싱턴'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/362/00/170100000016362.jpg" alt="켄싱턴" /></a>
+					</li>	
+				
+					
+					
+				</ul>
+			</dd>
+		</dl>
+
+	
+	
+		<dl>
+			<dt><span>스포츠/패션잡화/패션슈즈</span></dt>
+			<dd>
+				<ul>
+				
+				
+				
+				<li>
+					<a href="http://nb.elandmall.com/main/initMain.action" data-ga-tag='PC_공통||브랜드사이트||스포츠패션잡화패션슈즈_뉴발란스'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/341/00/170100000016341.jpg" alt="뉴발란스" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://www.elandmall.com/dispctg/initBrandShop.action?brand_no=1690000049" data-ga-tag='PC_공통||브랜드사이트||스포츠패션잡화패션슈즈_'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/386/00/170600000029386.jpg" alt="" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://folder.elandmall.com" data-ga-tag='PC_공통||브랜드사이트||스포츠패션잡화패션슈즈_폴더'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/339/00/170100000016339.jpg" alt="폴더" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://shoopen.elandmall.com" data-ga-tag='PC_공통||브랜드사이트||스포츠패션잡화패션슈즈_슈펜'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/338/00/170100000016338.jpg" alt="슈펜" /></a>
+					</li>	
+				
+					
+					
+				</ul>
+			</dd>
+		</dl>
+
+	
+	
+		<dl>
+			<dt><span>쥬얼리/시계</span></dt>
+			<dd>
+				<ul>
+				
+				
+				
+				<li>
+					<a href="http://clue.elandmall.com" data-ga-tag='PC_공통||브랜드사이트||쥬얼리시계_클루'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/356/00/170100000016356.jpg" alt="클루" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://ost.elandmall.com" data-ga-tag='PC_공통||브랜드사이트||쥬얼리시계_OST'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/357/00/170100000016357.jpg" alt="OST" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://lloyd.elandmall.com" data-ga-tag='PC_공통||브랜드사이트||쥬얼리시계_로이드'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/358/00/170100000016358.jpg" alt="로이드" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://www.elandmall.com/dispctg/initBrandShop.action?brand_no=1600002578" data-ga-tag='PC_공통||브랜드사이트||쥬얼리시계_라템'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/359/00/170100000016359.jpg" alt="라템" /></a>
+					</li>	
+				
+					
+					
+				</ul>
+			</dd>
+		</dl>
+
+	
+	
+		<dl>
+			<dt><span>가구/생활/인테리어</span></dt>
+			<dd>
+				<ul>
+				
+				
+				
+				<li>
+					<a href="http://modernhouse.elandmall.com/dispctg/initBrandShop.action?brand_no=1690000240" data-ga-tag='PC_공통||브랜드사이트||가구생활인테리어_버터'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/360/00/170100000016360.jpg" alt="버터" /></a>
+					</li>	
+				
+					
+				
+				
+				
+				<li>
+					<a href="http://www.elandmall.com/dispctg/initBrandShop.action?brand_no=1690000269" data-ga-tag='PC_공통||브랜드사이트||가구생활인테리어_'>
+				 
+					<img src="//www.elandrs.com/upload/dspl/banner/90/345/00/170900000039345.jpg" alt="" /></a>
+					</li>	
+				
+					
+					
+				</ul>
+			</dd>
+		</dl>
+
+
+
+				
+			
+		<div class="ldeco"></div>
+		<div class="rdeco"></div>
+	</div>
+</div>
+
+
+<script>
+	$(document).ready(function(){	
+		var brandList = $("#_mall_brand_list li");
+		var link      = location.href;
+		var mall_link = elandmall.global.http_url;
+	
+		//브랜드몰 여부 판단.
+		var _brand_flag = false;
+		if(link.indexOf("/dispctg/initBrandShop.action") > -1 ){
+			_brand_flag = true;
+		}
+		
+		$.each(brandList, function(key, val){
+			var aTagHref = $(this).find("a").attr("href");
+			
+			var _brand_flag_c = false;
+			if(aTagHref.indexOf("/dispctg/initBrandShop.action") > -1 ){
+				_brand_flag_c = true;
+			}
+			
+			if( aTagHref != null && aTagHref != ""){
+				if(_brand_flag){
+					if(link.indexOf(aTagHref) > -1 ){
+						$(this).find("span").eq(0).show();
+						return false;				
+					}
+				}else{
+					//브랜드몰은 비교 x
+					if(!_brand_flag_c){
+						if(aTagHref.indexOf(mall_link) > -1){
+							$(this).find("span").eq(0).show();
+							return false;						
+						}
+					}
+				}
+				
+			}
+			
+		});
+		
+	});
+</script>
+
+						
+
+			<!-- //비정형 영역 처리  -->
+
+
+                <!-- TNB -->
+                <div class="hd_tnb">
+                    <dl>
+                        <dt class="ir">마이메뉴</dt>
+                            <dd id="dd_logout" style="display:none"><a href="javascript:void(0);" onclick="elandmall.logout({})" data-ga-tag='PC_공통||공통정보||로그아웃'>로그아웃</a></dd>
+                            <dd id="dd_login" style="display:none"><a href="javascript:void(0);" id="login_btn" onclick="elandmall.login({rtn_btn_id:'#login_btn'});return false;" data-ga-tag='PC_공통||공통정보||로그인'>로그인</a></dd>
+
+                            <dd id="dd_join" style="display:none"><a href="javascript:void(0);" onclick="elandmall.oneclick.fnMemJoin();" data-ga-tag='PC_공통||공통정보||회원가입'>회원가입</a></dd>
+
+                            <dd><a href="javascript:void(0);" onclick="elandmall.hdLink('MYPAGE');" data-ga-tag='PC_공통||공통정보||마이페이지'>마이페이지</a></dd>
+                            <dd><a href="javascript:void(0);" onclick="elandmall.hdLink('CUSTCENTER');" data-ga-tag='PC_공통||공통정보||고객센터'>고객센터</a></dd>
+                            <dd><a href="javascript:void(0);" onclick="elandmall.layout.fnAddBookmark(); return false;" data-ga-tag='PC_공통||공통정보||즐겨찾기'>즐겨찾기</a></dd>
+                    </dl>
+                </div>
+                <!-- //TNB -->
+                <!-- SEARCH -->
+                <div class="hd_sch" id="hd_sch">
+                        <div class="sch_wrap">
+                        
+                        <form name="headerSearchForm" autocomplete="off" id="headerSearchForm" method="get" onsubmit="return fnsearch.srchKwd(this)"
+                        action="/search/search.action">
+                        <input type="hidden"  id="header_LandingLink" value="" />
+                            <div class="sch_box">
+                                <label class="ir" for="searchTerm">검색</label>
+
+            <!-- 비정형 영역 처리   -->
+            <!-- 
+	내 용 : 2018_검색 광고 문구
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+			<input type="text" class="input d_searchTerm" name="kwd" id="searchTerm" />
+			<input type="hidden" id="searchAd" value="7월 10일(수) 반값데이 9시 OPEN" data-link="/event/initEventDtl.action?event_no=E190705231" data-banner_no="190700000105172" data-conts_dist_no="C19070748464769"/>
+
+ 
+
+            <!-- //비정형 영역 처리  -->
+
+
+                            </div>
+                        </form>
+                            <!-- KEYWORD LAYER -->
+                            <div id="sch_keyword" class="sch_keyword d_sch_keyword">
+                                <dl class="f_keyword">
+                                	<dt><button type="button" id="rankings_btn">인기 검색어</button></dt>
+                                    <dd id="rankings_dd">
+                                        <!-- 인기검색어 -->
+                                        <ol id="rankings">
+                                        </ol>
+                                        <!-- //인기검색어 -->
+                                    </dd>
+                                    <dt><button type="button" id="headerResentKwd_btn">최근 검색어</button></dt>
+                                    <!-- 최근검색어 -->
+                                    <dd id="headerResentKwd" >
+                                    </dd>
+                                    <!-- //최근검색어 -->
+									<!-- 퀵서치 -->
+									<div class="k_planevt">
+										<!-- 퀵서치 : 기획전 -->
+										<div class="plan"></div>
+										<!-- //퀵서치 : 기획전 -->
+										<!-- 퀵서치 : 이벤트 -->
+										<div class="event"></div>
+										<!-- //퀵서치 : 이벤트 -->
+									</div>
+									<!-- //퀵서치 -->
+                                </dl>
+                            </div>
+                            <!-- //KEYWORD LAYER -->
+    
+                            <!-- AUTO COMPLETE LAYER -->
+                            <div id="sch_complete" class="sch_keyword d_sch_complete" >
+	                            <!-- 특정 키워드 입력시 매장/브랜드몰 바로가기 -->
+								<div class="k_brand">
+									<!-- 최대2개까지 노출 -->
+									<ul>
+									</ul>
+								</div>
+								<!-- //특정 키워드 입력시 매장/브랜드몰 바로가기 -->
+                                <!-- 자동완성 -->
+                                <div class="s_keyword">
+                                    <ul class="sch_ing">
+                                    </ul>
+                                </div>
+                                <!-- //자동완성 -->
+	                            <!-- 검색고도화 카테고리,기획전,이벤트 추가(항목당 최대 3개씩 최신 등록 순으로 출력) -->
+								<div class="k_planevt">
+									<!-- 퀵서치 : 카테고리 -->
+									<div class="category"></div>
+									<!-- //퀵서치 : 카테고리 -->
+									<!-- 퀵서치 : 기획전 -->
+									<div class="plan"></div>
+									<!-- //퀵서치 : 기획전 -->
+									<!-- 퀵서치 : 이벤트 -->
+									<div class="event"></div>
+									<!-- //퀵서치 : 이벤트 -->
+								</div>
+								<!-- //검색고도화 카테고리,기획전,이벤트 추가(항목당 최대 3개씩 최신 등록 순으로 출력) -->
+                                <div class="s_del"><button type="button">끄기</button></div>
+                            </div>
+                            <!-- //AUTO COMPLETE LAYER -->
+    
+                            <button type="button" id="sch_del" class="sch_del" title="삭제하기">끄기</button>
+                            <button type="button" id="sch_btn" class="sch_btn" title="검색하기">검색</button>
+                        </div>
+                        
+                </div>
+                <!-- //SEARCH -->
+
+                <!-- BANNER -->
+
+            <!-- 비정형 영역 처리   -->
+            <!-- 
+	내 용 : 헤더배너
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<div class="hd_bn">
+					<div class="bn_lst" id="hdBanner">
+						<ul class="swiper-wrapper">
+
+							<li class="swiper-slide" data-index="0" data-ga-tag='PC_공통||로고옆배너||[데이텀/알토]시즌오프'>
+							<a href="javascript:void(0);" onclick="elandmall.disp.clickEvent({openwinyn:'N',tr_yn:'Y',banner_kind_cd:'10' ,conts_form_cd:'110' ,conts_divi_cd:'10' ,conts_dist_no:'C19070648419897' ,sale_area_no:'D1808001091' , rel_divi_cd:'20' , rel_no:'190700000105107', move_cont_no:'1906398248', url:'', brandIndexYn:'N'})"><img src="//www.elandrs.com/upload/dspl/banner/10/491/00/190700000137491.jpg" width="320" height="76" alt="[데이텀/알토]시즌오프" /></a>
+							</li>			
+
+							<li class="swiper-slide" data-index="1" data-ga-tag='PC_공통||로고옆배너||쥬얼리/잡화 페밀리위크'>
+							<a href="javascript:void(0);" onclick="elandmall.disp.clickEvent({openwinyn:'N',tr_yn:'Y',banner_kind_cd:'10' ,conts_form_cd:'110' ,conts_divi_cd:'10' ,conts_dist_no:'C19070548371038' ,sale_area_no:'D1808001091' , rel_divi_cd:'20' , rel_no:'190700000105054', move_cont_no:'1906398180', url:'', brandIndexYn:'N'})"><img src="//www.elandrs.com/upload/dspl/banner/10/382/00/190700000137382.jpg" width="320" height="76" alt="쥬얼리/잡화 페밀리위크" /></a>
+							</li>			
+
+							<li class="swiper-slide" data-index="2" data-ga-tag='PC_공통||로고옆배너||시즌오프 시원한 여름나기'>
+							<a href="javascript:void(0);" onclick="elandmall.disp.clickEvent({openwinyn:'N',tr_yn:'Y',banner_kind_cd:'10' ,conts_form_cd:'110' ,conts_divi_cd:'10' ,conts_dist_no:'C19070548371022' ,sale_area_no:'D1808001091' , rel_divi_cd:'20' , rel_no:'190700000105053', move_cont_no:'1805347912', url:'', brandIndexYn:'N'})"><img src="//www.elandrs.com/upload/dspl/banner/10/381/00/190700000137381.jpg" width="320" height="76" alt="시즌오프 시원한 여름나기" /></a>
+							</li>			
+
+							<li class="swiper-slide" data-index="3" data-ga-tag='PC_공통||로고옆배너||연합_쿨 캐주얼핫템'>
+							<a href="javascript:void(0);" onclick="elandmall.disp.clickEvent({openwinyn:'N',tr_yn:'Y',banner_kind_cd:'10' ,conts_form_cd:'110' ,conts_divi_cd:'10' ,conts_dist_no:'C19070548371021' ,sale_area_no:'D1808001091' , rel_divi_cd:'20' , rel_no:'190700000105052', move_cont_no:'1906397058', url:'', brandIndexYn:'N'})"><img src="//www.elandrs.com/upload/dspl/banner/10/380/00/190700000137380.jpg" width="320" height="76" alt="연합_쿨 캐주얼핫템" /></a>
+							</li>			
+
+							<li class="swiper-slide" data-index="4" data-ga-tag='PC_공통||로고옆배너||[로엠]데일리 쉬폰'>
+							<a href="javascript:void(0);" onclick="elandmall.disp.clickEvent({openwinyn:'N',tr_yn:'Y',banner_kind_cd:'10' ,conts_form_cd:'110' ,conts_divi_cd:'10' ,conts_dist_no:'C19070548370977' ,sale_area_no:'D1808001091' , rel_divi_cd:'20' , rel_no:'190700000105051', move_cont_no:'1906397981', url:'', brandIndexYn:'N'})"><img src="//www.elandrs.com/upload/dspl/banner/10/379/00/190700000137379.jpg" width="320" height="76" alt="[로엠]데일리 쉬폰" /></a>
+							</li>			
+		
+						</ul>
+					</div>
+					<div class="bt_hd_btns">
+						<button type="button" class="bt_hd_prev d_hd_prev">이전</button>
+						<button type="button" class="bt_hd_next d_hd_next">다음</button>
+					</div>
+				</div>
+ 
+
+            <!-- //비정형 영역 처리  -->
+            
+                <!-- //BANNER  -->
+
+                <!-- CATG ALL -->
+                <div class="hd_catg" id="gnb">
+                    <div class="catg_wrap">
+                        <button type="button"  id="catg_bt" class="catg_bt"  data-bo_preview_yn="Y" >전체 카테고리</button>
+
+			            <!-- 비정형 영역 처리   -->
+			            <!-- 
+	내용 : 2018_PC_카테고리
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- LAYER -->
+<div class="catg_lyr" id="catg_lyr">
+	<!-- 카테고리 -->
+	<div class="cate_area01">
+		<div id="cateMainLnb" class="lnb_cate_main">
+			<ul>
+				
+				<li><a href="javascript:;" onClick="elandmall.dispctg.fnCategoryPathInfo({disp_ctg_no:'1703314378'})" data-ga-tag='PC_공통||전체카테고리_우측||패션의류'><span>패션의류</span></a>
+					 <div class="depth2">
+					         <div class="lnb_tit"><a href="#none" onClick="elandmall.dispctg.fnCategoryPathInfo({disp_ctg_no:'1703314378'})"  data-ga-tag='PC_공통||전체카테고리_상세||패션의류'>패션의류</a></div>
+					         <div class="lb01">
+										<ul>
+										
+					 
+                                   
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||패션의류_캐주얼/유니섹스'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006231'})"><span>캐주얼/유니섹스</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||패션의류_여성의류'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006243'})"><span>여성의류</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||패션의류_언더웨어/잠옷'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006242'})"><span>언더웨어/잠옷</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||패션의류_패션잡화/가죽/모피'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006241'})"><span>패션잡화/가죽/모피</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||패션의류_남성의류'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006230'})"><span>남성의류</span></a>
+											</li>
+											
+										
+
+                                   </ul>
+								</div>
+
+						<div class="lb02">
+							<div class="lnb_tit02 txt_en">BEST BRAND</div>
+							<ul>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000248');" data-ga-tag='PC_공통||전체카테고리_상세||패션의류_후아유'><span>후아유</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000120');" data-ga-tag='PC_공통||전체카테고리_상세||패션의류_미쏘'><span>미쏘</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000158');" data-ga-tag='PC_공통||전체카테고리_상세||패션의류_로엠'><span>로엠</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000449');" data-ga-tag='PC_공통||전체카테고리_상세||패션의류_알토'><span>알토</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000196');" data-ga-tag='PC_공통||전체카테고리_상세||패션의류_데이텀'><span>데이텀</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000333');" data-ga-tag='PC_공통||전체카테고리_상세||패션의류_클라비스'><span>클라비스</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000317');" data-ga-tag='PC_공통||전체카테고리_상세||패션의류_투미(2ME)'><span>투미(2ME)</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000438');" data-ga-tag='PC_공통||전체카테고리_상세||패션의류_에블린'><span>에블린</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000259');" data-ga-tag='PC_공통||전체카테고리_상세||패션의류_헌트이너웨어'><span>헌트이너웨어</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000447');" data-ga-tag='PC_공통||전체카테고리_상세||패션의류_애니바디'><span>애니바디</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000055');" data-ga-tag='PC_공통||전체카테고리_상세||패션의류_스파오'><span>스파오</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000314');" data-ga-tag='PC_공통||전체카테고리_상세||패션의류_트렌드컬렉션'><span>트렌드컬렉션</span></a>
+								</li>
+									
+							</ul>
+						</div>
+
+                     </div>
+				</li>
+				
+				<li><a href="javascript:;" onClick="elandmall.dispctg.fnCategoryPathInfo({disp_ctg_no:'1607006212'})" data-ga-tag='PC_공통||전체카테고리_우측||잡화/슈즈/쥬얼리'><span>잡화/슈즈/쥬얼리</span></a>
+					 <div class="depth2">
+					         <div class="lnb_tit"><a href="#none" onClick="elandmall.dispctg.fnCategoryPathInfo({disp_ctg_no:'1607006212'})"  data-ga-tag='PC_공통||전체카테고리_상세||잡화/슈즈/쥬얼리'>잡화/슈즈/쥬얼리</a></div>
+					         <div class="lb01">
+										<ul>
+										
+					 
+                                   
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||잡화/슈즈/쥬얼리_가방/패션잡화'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006255'})"><span>가방/패션잡화</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||잡화/슈즈/쥬얼리_시계/보석/쥬얼리'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006256'})"><span>시계/보석/쥬얼리</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||잡화/슈즈/쥬얼리_패션슈즈'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006257'})"><span>패션슈즈</span></a>
+											</li>
+											
+										
+
+                                   </ul>
+								</div>
+
+						<div class="lb02">
+							<div class="lnb_tit02 txt_en">BEST BRAND</div>
+							<ul>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000063');" data-ga-tag='PC_공통||전체카테고리_상세||잡화/슈즈/쥬얼리_슈펜'><span>슈펜</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000156');" data-ga-tag='PC_공통||전체카테고리_상세||잡화/슈즈/쥬얼리_로이드'><span>로이드</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000420');" data-ga-tag='PC_공통||전체카테고리_상세||잡화/슈즈/쥬얼리_오에스티'><span>오에스티</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000332');" data-ga-tag='PC_공통||전체카테고리_상세||잡화/슈즈/쥬얼리_클루(CLUE)'><span>클루(CLUE)</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600002578');" data-ga-tag='PC_공통||전체카테고리_상세||잡화/슈즈/쥬얼리_라템'><span>라템</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000425');" data-ga-tag='PC_공통||전체카테고리_상세||잡화/슈즈/쥬얼리_엘칸토'><span>엘칸토</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1700004611');" data-ga-tag='PC_공통||전체카테고리_상세||잡화/슈즈/쥬얼리_탠디'><span>탠디</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000219');" data-ga-tag='PC_공통||전체카테고리_상세||잡화/슈즈/쥬얼리_고세'><span>고세</span></a>
+								</li>
+									
+							</ul>
+						</div>
+
+                     </div>
+				</li>
+				
+				<li><a href="javascript:;" onClick="elandmall.dispctg.fnCategoryPathInfo({disp_ctg_no:'1706322097'})" data-ga-tag='PC_공통||전체카테고리_우측||뷰티'><span>뷰티</span></a>
+					 <div class="depth2">
+					         <div class="lnb_tit"><a href="#none" onClick="elandmall.dispctg.fnCategoryPathInfo({disp_ctg_no:'1706322097'})"  data-ga-tag='PC_공통||전체카테고리_상세||뷰티'>뷰티</a></div>
+					         <div class="lb01">
+										<ul>
+										
+					 
+                                   
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||뷰티_향수/드레스퍼퓸'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1706322098'})"><span>향수/드레스퍼퓸</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||뷰티_기초스킨케어'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1706322099'})"><span>기초스킨케어</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||뷰티_마스크/팩/클렌징'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1706322101'})"><span>마스크/팩/클렌징</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||뷰티_베이스 메이크업'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1706322102'})"><span>베이스 메이크업</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||뷰티_포인트 메이크업'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1706322103'})"><span>포인트 메이크업</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||뷰티_바디케어'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1706322104'})"><span>바디케어</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||뷰티_헤어케어'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1801338188'})"><span>헤어케어</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||뷰티_선케어/선크림'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1801337926'})"><span>선케어/선크림</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||뷰티_네일아트'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1706322106'})"><span>네일아트</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||뷰티_이미용 용품'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1706322107'})"><span>이미용 용품</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||뷰티_남성화장품'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1706322108'})"><span>남성화장품</span></a>
+											</li>
+											
+										
+
+                                   </ul>
+								</div>
+
+						<div class="lb02">
+							<div class="lnb_tit02 txt_en">BEST BRAND</div>
+							<ul>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600000599');" data-ga-tag='PC_공통||전체카테고리_상세||뷰티_LG생활건강'><span>LG생활건강</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600002241');" data-ga-tag='PC_공통||전체카테고리_상세||뷰티_헤라'><span>헤라</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000245');" data-ga-tag='PC_공통||전체카테고리_상세||뷰티_토니모리'><span>토니모리</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1800009929');" data-ga-tag='PC_공통||전체카테고리_상세||뷰티_클라뷰'><span>클라뷰</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1800010215');" data-ga-tag='PC_공통||전체카테고리_상세||뷰티_멀블리스'><span>멀블리스</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1700005216');" data-ga-tag='PC_공통||전체카테고리_상세||뷰티_바닐라코'><span>바닐라코</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600002946');" data-ga-tag='PC_공통||전체카테고리_상세||뷰티_루나'><span>루나</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1700005229');" data-ga-tag='PC_공통||전체카테고리_상세||뷰티_반트365'><span>반트365</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1700005215');" data-ga-tag='PC_공통||전체카테고리_상세||뷰티_입생로랑'><span>입생로랑</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600000982');" data-ga-tag='PC_공통||전체카테고리_상세||뷰티_맥(MAC)'><span>맥(MAC)</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1800009101');" data-ga-tag='PC_공통||전체카테고리_상세||뷰티_AHC'><span>AHC</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1700004708');" data-ga-tag='PC_공통||전체카테고리_상세||뷰티_바이오더마'><span>바이오더마</span></a>
+								</li>
+									
+							</ul>
+						</div>
+
+                     </div>
+				</li>
+				
+				<li><a href="javascript:;" onClick="elandmall.dispctg.fnCategoryPathInfo({disp_ctg_no:'1607006211'})" data-ga-tag='PC_공통||전체카테고리_우측||유아동/출산'><span>유아동/출산</span></a>
+					 <div class="depth2">
+					         <div class="lnb_tit"><a href="#none" onClick="elandmall.dispctg.fnCategoryPathInfo({disp_ctg_no:'1607006211'})"  data-ga-tag='PC_공통||전체카테고리_상세||유아동/출산'>유아동/출산</a></div>
+					         <div class="lb01">
+										<ul>
+										
+					 
+                                   
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||유아동/출산_유아동의류'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006251'})"><span>유아동의류</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||유아동/출산_유아동잡화'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006252'})"><span>유아동잡화</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||유아동/출산_아동한복/잡화'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1608303718'})"><span>아동한복/잡화</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||유아동/출산_출산용품/기저귀'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006253'})"><span>출산용품/기저귀</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||유아동/출산_분유/이유식/간식'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1802340880'})"><span>분유/이유식/간식</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||유아동/출산_유모차/카시트/아기띠'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006248'})"><span>유모차/카시트/아기띠</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||유아동/출산_유아동 도서/완구/교구'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006250'})"><span>유아동 도서/완구/교구</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||유아동/출산_유아동 가구/침구'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006249'})"><span>유아동 가구/침구</span></a>
+											</li>
+											
+										
+
+                                   </ul>
+								</div>
+
+						<div class="lb02">
+							<div class="lnb_tit02 txt_en">BEST BRAND</div>
+							<ul>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000468');" data-ga-tag='PC_공통||전체카테고리_상세||유아동/출산_신디키즈'><span>신디키즈</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600002582');" data-ga-tag='PC_공통||전체카테고리_상세||유아동/출산_밀리밤'><span>밀리밤</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000380');" data-ga-tag='PC_공통||전체카테고리_상세||유아동/출산_인디고뱅크키즈'><span>인디고뱅크키즈</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000294');" data-ga-tag='PC_공통||전체카테고리_상세||유아동/출산_펠릭스키즈'><span>펠릭스키즈</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600003965');" data-ga-tag='PC_공통||전체카테고리_상세||유아동/출산_일로딜로'><span>일로딜로</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000401');" data-ga-tag='PC_공통||전체카테고리_상세||유아동/출산_유솔'><span>유솔</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000342');" data-ga-tag='PC_공통||전체카테고리_상세||유아동/출산_코코리따'><span>코코리따</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000418');" data-ga-tag='PC_공통||전체카테고리_상세||유아동/출산_오후'><span>오후</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000157');" data-ga-tag='PC_공통||전체카테고리_상세||유아동/출산_로엠걸즈'><span>로엠걸즈</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000204');" data-ga-tag='PC_공통||전체카테고리_상세||유아동/출산_뉴발란스키즈'><span>뉴발란스키즈</span></a>
+								</li>
+									
+							</ul>
+						</div>
+
+                     </div>
+				</li>
+				
+				<li><a href="javascript:;" onClick="elandmall.dispctg.fnCategoryPathInfo({disp_ctg_no:'1607006208'})" data-ga-tag='PC_공통||전체카테고리_우측||레저/스포츠'><span>레저/스포츠</span></a>
+					 <div class="depth2">
+					         <div class="lnb_tit"><a href="#none" onClick="elandmall.dispctg.fnCategoryPathInfo({disp_ctg_no:'1607006208'})"  data-ga-tag='PC_공통||전체카테고리_상세||레저/스포츠'>레저/스포츠</a></div>
+					         <div class="lb01">
+										<ul>
+										
+					 
+                                   
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||레저/스포츠_스포츠패션/슈즈'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006234'})"><span>스포츠패션/슈즈</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||레저/스포츠_등산/캠핑/낚시'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006232'})"><span>등산/캠핑/낚시</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||레저/스포츠_헬스/요가'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006236'})"><span>헬스/요가</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||레저/스포츠_골프의류/잡화'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1611307392'})"><span>골프의류/잡화</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||레저/스포츠_수영/스키/구기'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006233'})"><span>수영/스키/구기</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||레저/스포츠_자전거 /보드/자동차'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006235'})"><span>자전거 /보드/자동차</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||레저/스포츠_여행용품'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1703314032'})"><span>여행용품</span></a>
+											</li>
+											
+										
+
+                                   </ul>
+								</div>
+
+						<div class="lb02">
+							<div class="lnb_tit02 txt_en">BEST BRAND</div>
+							<ul>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1700005232');" data-ga-tag='PC_공통||전체카테고리_상세||레저/스포츠_스노우라인'><span>스노우라인</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1700004602');" data-ga-tag='PC_공통||전체카테고리_상세||레저/스포츠_노마드캠핑'><span>노마드캠핑</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600002977');" data-ga-tag='PC_공통||전체카테고리_상세||레저/스포츠_VANS'><span>VANS</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000287');" data-ga-tag='PC_공통||전체카테고리_상세||레저/스포츠_푸마'><span>푸마</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1800008773');" data-ga-tag='PC_공통||전체카테고리_상세||레저/스포츠_이고진'><span>이고진</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600002289');" data-ga-tag='PC_공통||전체카테고리_상세||레저/스포츠_휠라'><span>휠라</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1700006910');" data-ga-tag='PC_공통||전체카테고리_상세||레저/스포츠_르까프'><span>르까프</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1800009602');" data-ga-tag='PC_공통||전체카테고리_상세||레저/스포츠_K2'><span>K2</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600003883');" data-ga-tag='PC_공통||전체카테고리_상세||레저/스포츠_케이스위스'><span>케이스위스</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000458');" data-ga-tag='PC_공통||전체카테고리_상세||레저/스포츠_아디다스'><span>아디다스</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000205');" data-ga-tag='PC_공통||전체카테고리_상세||레저/스포츠_뉴발란스'><span>뉴발란스</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000204');" data-ga-tag='PC_공통||전체카테고리_상세||레저/스포츠_뉴발란스키즈'><span>뉴발란스키즈</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600000748');" data-ga-tag='PC_공통||전체카테고리_상세||레저/스포츠_나이키'><span>나이키</span></a>
+								</li>
+									
+							</ul>
+						</div>
+
+                     </div>
+				</li>
+				
+				<li><a href="javascript:;" onClick="elandmall.dispctg.fnCategoryPathInfo({disp_ctg_no:'1607006215'})" data-ga-tag='PC_공통||전체카테고리_우측||해외직구/명품'><span>해외직구/명품</span></a>
+					 <div class="depth2">
+					         <div class="lnb_tit"><a href="#none" onClick="elandmall.dispctg.fnCategoryPathInfo({disp_ctg_no:'1607006215'})"  data-ga-tag='PC_공통||전체카테고리_상세||해외직구/명품'>해외직구/명품</a></div>
+					         <div class="lb01">
+										<ul>
+										
+					 
+                                   
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||해외직구/명품_해외직구'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1808359858'})"><span>해외직구</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||해외직구/명품_병행수입'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006264'})"><span>병행수입</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||해외직구/명품_중고명품'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1901374892'})"><span>중고명품</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||해외직구/명품_LUXURY GALLERY'>
+											<a href="/dispctg/initDispCtg.action?disp_ctg_no=1901377219"><span>LUXURY GALLERY</span></a>
+											</li>
+											
+										
+
+                                   </ul>
+								</div>
+
+						<div class="lb02">
+							<div class="lnb_tit02 txt_en">BEST BRAND</div>
+							<ul>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000218');" data-ga-tag='PC_공통||전체카테고리_상세||해외직구/명품_구찌'><span>구찌</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600002396');" data-ga-tag='PC_공통||전체카테고리_상세||해외직구/명품_프라다'><span>프라다</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000109');" data-ga-tag='PC_공통||전체카테고리_상세||해외직구/명품_버버리'><span>버버리</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600001039');" data-ga-tag='PC_공통||전체카테고리_상세||해외직구/명품_미우미우'><span>미우미우</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600003329');" data-ga-tag='PC_공통||전체카테고리_상세||해외직구/명품_발렌티노'><span>발렌티노</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600001073');" data-ga-tag='PC_공통||전체카테고리_상세||해외직구/명품_발렌시아가'><span>발렌시아가</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600001898');" data-ga-tag='PC_공통||전체카테고리_상세||해외직구/명품_보테가베네타'><span>보테가베네타</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000295');" data-ga-tag='PC_공통||전체카테고리_상세||해외직구/명품_펜디'><span>펜디</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000298');" data-ga-tag='PC_공통||전체카테고리_상세||해외직구/명품_페레가모'><span>페레가모</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600001834');" data-ga-tag='PC_공통||전체카테고리_상세||해외직구/명품_발리'><span>발리</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000139');" data-ga-tag='PC_공통||전체카테고리_상세||해외직구/명품_마이클코어스'><span>마이클코어스</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600001619');" data-ga-tag='PC_공통||전체카테고리_상세||해외직구/명품_생로랑'><span>생로랑</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600003331');" data-ga-tag='PC_공통||전체카테고리_상세||해외직구/명품_알렉산더맥퀸'><span>알렉산더맥퀸</span></a>
+								</li>
+									
+							</ul>
+						</div>
+
+                     </div>
+				</li>
+				
+				<li><a href="javascript:;" onClick="elandmall.dispctg.fnCategoryPathInfo({disp_ctg_no:'1607006205'})" data-ga-tag='PC_공통||전체카테고리_우측||가구/침구/인테리어'><span>가구/침구/인테리어</span></a>
+					 <div class="depth2">
+					         <div class="lnb_tit"><a href="#none" onClick="elandmall.dispctg.fnCategoryPathInfo({disp_ctg_no:'1607006205'})"  data-ga-tag='PC_공통||전체카테고리_상세||가구/침구/인테리어'>가구/침구/인테리어</a></div>
+					         <div class="lb01">
+										<ul>
+										
+					 
+                                   
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||가구/침구/인테리어_거실가구'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006217'})"><span>거실가구</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||가구/침구/인테리어_침실가구'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1811367960'})"><span>침실가구</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||가구/침구/인테리어_인테리어'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006262'})"><span>인테리어</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||가구/침구/인테리어_주방/수납가구'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006219'})"><span>주방/수납가구</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||가구/침구/인테리어_학생/아동/사무 가구'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006223'})"><span>학생/아동/사무 가구</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||가구/침구/인테리어_DIY 가구'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006216'})"><span>DIY 가구</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||가구/침구/인테리어_침구세트/침구단품'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006220'})"><span>침구세트/침구단품</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||가구/침구/인테리어_커튼/블라인드/카페트'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006221'})"><span>커튼/블라인드/카페트</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||가구/침구/인테리어_쿠션/방석/패브릭소품'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006222'})"><span>쿠션/방석/패브릭소품</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||가구/침구/인테리어_유아동침구'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006218'})"><span>유아동침구</span></a>
+											</li>
+											
+										
+
+                                   </ul>
+								</div>
+
+						<div class="lb02">
+							<div class="lnb_tit02 txt_en">BEST BRAND</div>
+							<ul>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000078');" data-ga-tag='PC_공통||전체카테고리_상세||가구/침구/인테리어_삼익가구'><span>삼익가구</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000191');" data-ga-tag='PC_공통||전체카테고리_상세||가구/침구/인테리어_동서가구'><span>동서가구</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000212');" data-ga-tag='PC_공통||전체카테고리_상세||가구/침구/인테리어_까사미아 까사온'><span>까사미아 까사온</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1700008458');" data-ga-tag='PC_공통||전체카테고리_상세||가구/침구/인테리어_에몬스홈'><span>에몬스홈</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600004131');" data-ga-tag='PC_공통||전체카테고리_상세||가구/침구/인테리어_파로마'><span>파로마</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600003266');" data-ga-tag='PC_공통||전체카테고리_상세||가구/침구/인테리어_두닷'><span>두닷</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600000906');" data-ga-tag='PC_공통||전체카테고리_상세||가구/침구/인테리어_룸앤홈'><span>룸앤홈</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000416');" data-ga-tag='PC_공통||전체카테고리_상세||가구/침구/인테리어_올리비아데코'><span>올리비아데코</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600001700');" data-ga-tag='PC_공통||전체카테고리_상세||가구/침구/인테리어_주호데코'><span>주호데코</span></a>
+								</li>
+									
+							</ul>
+						</div>
+
+                     </div>
+				</li>
+				
+				<li><a href="javascript:;" onClick="elandmall.dispctg.fnCategoryPathInfo({disp_ctg_no:'1607006213'})" data-ga-tag='PC_공통||전체카테고리_우측||주방/생활/수납'><span>주방/생활/수납</span></a>
+					 <div class="depth2">
+					         <div class="lnb_tit"><a href="#none" onClick="elandmall.dispctg.fnCategoryPathInfo({disp_ctg_no:'1607006213'})"  data-ga-tag='PC_공통||전체카테고리_상세||주방/생활/수납'>주방/생활/수납</a></div>
+					         <div class="lb01">
+										<ul>
+										
+					 
+                                   
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||주방/생활/수납_주방/식기'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006260'})"><span>주방/식기</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||주방/생활/수납_생활/수납/청소'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006259'})"><span>생활/수납/청소</span></a>
+											</li>
+											
+										
+
+                                   </ul>
+								</div>
+
+						<div class="lb02">
+							<div class="lnb_tit02 txt_en">BEST BRAND</div>
+							<ul>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000291');" data-ga-tag='PC_공통||전체카테고리_상세||주방/생활/수납_포트메리온'><span>포트메리온</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1700004698');" data-ga-tag='PC_공통||전체카테고리_상세||주방/생활/수납_로얄베일'><span>로얄베일</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600000764');" data-ga-tag='PC_공통||전체카테고리_상세||주방/생활/수납_네오플램'><span>네오플램</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000269');" data-ga-tag='PC_공통||전체카테고리_상세||주방/생활/수납_한샘'><span>한샘</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000250');" data-ga-tag='PC_공통||전체카테고리_상세||주방/생활/수납_홈앤하우스'><span>홈앤하우스</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600001757');" data-ga-tag='PC_공통||전체카테고리_상세||주방/생활/수납_엔플라스틱'><span>엔플라스틱</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600000918');" data-ga-tag='PC_공통||전체카테고리_상세||주방/생활/수납_리벤스'><span>리벤스</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000193');" data-ga-tag='PC_공통||전체카테고리_상세||주방/생활/수납_덴비'><span>덴비</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000328');" data-ga-tag='PC_공통||전체카테고리_상세||주방/생활/수납_키친아트'><span>키친아트</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000336');" data-ga-tag='PC_공통||전체카테고리_상세||주방/생활/수납_큐티폴'><span>큐티폴</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1700004966');" data-ga-tag='PC_공통||전체카테고리_상세||주방/생활/수납_코스타노바'><span>코스타노바</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600001358');" data-ga-tag='PC_공통||전체카테고리_상세||주방/생활/수납_쓰임'><span>쓰임</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000319');" data-ga-tag='PC_공통||전체카테고리_상세||주방/생활/수납_테팔'><span>테팔</span></a>
+								</li>
+									
+							</ul>
+						</div>
+
+                     </div>
+				</li>
+				
+				<li><a href="javascript:;" onClick="elandmall.dispctg.fnCategoryPathInfo({disp_ctg_no:'1607006206'})" data-ga-tag='PC_공통||전체카테고리_우측||가전/디지털'><span>가전/디지털</span></a>
+					 <div class="depth2">
+					         <div class="lnb_tit"><a href="#none" onClick="elandmall.dispctg.fnCategoryPathInfo({disp_ctg_no:'1607006206'})"  data-ga-tag='PC_공통||전체카테고리_상세||가전/디지털'>가전/디지털</a></div>
+					         <div class="lb01">
+										<ul>
+										
+					 
+                                   
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||가전/디지털_대형가전'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006225'})"><span>대형가전</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||가전/디지털_주방가전'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006227'})"><span>주방가전</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||가전/디지털_생활/이미용/계절가전'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006226'})"><span>생활/이미용/계절가전</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||가전/디지털_카메라/캠코더'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006228'})"><span>카메라/캠코더</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||가전/디지털_노트북/PC/프린터/게임'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006224'})"><span>노트북/PC/프린터/게임</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||가전/디지털_휴대폰'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006229'})"><span>휴대폰</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||가전/디지털_음향'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1808360089'})"><span>음향</span></a>
+											</li>
+											
+										
+
+                                   </ul>
+								</div>
+
+						<div class="lb02">
+							<div class="lnb_tit02 txt_en">BEST BRAND</div>
+							<ul>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600000597');" data-ga-tag='PC_공통||전체카테고리_상세||가전/디지털_LG전자'><span>LG전자</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600002702');" data-ga-tag='PC_공통||전체카테고리_상세||가전/디지털_삼성전자'><span>삼성전자</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000201');" data-ga-tag='PC_공통||전체카테고리_상세||가전/디지털_다이슨'><span>다이슨</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1700005642');" data-ga-tag='PC_공통||전체카테고리_상세||가전/디지털_일렉트로룩스'><span>일렉트로룩스</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600001551');" data-ga-tag='PC_공통||전체카테고리_상세||가전/디지털_위닉스'><span>위닉스</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600001548');" data-ga-tag='PC_공통||전체카테고리_상세||가전/디지털_위니아'><span>위니아</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000337');" data-ga-tag='PC_공통||전체카테고리_상세||가전/디지털_쿠쿠'><span>쿠쿠</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600001121');" data-ga-tag='PC_공통||전체카테고리_상세||가전/디지털_드롱기'><span>드롱기</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600003533');" data-ga-tag='PC_공통||전체카테고리_상세||가전/디지털_HP'><span>HP</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1700006536');" data-ga-tag='PC_공통||전체카테고리_상세||가전/디지털_브리츠'><span>브리츠</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600003509');" data-ga-tag='PC_공통||전체카테고리_상세||가전/디지털_젠하이저'><span>젠하이저</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1800010197');" data-ga-tag='PC_공통||전체카테고리_상세||가전/디지털_슈피겐'><span>슈피겐</span></a>
+								</li>
+									
+							</ul>
+						</div>
+
+                     </div>
+				</li>
+				
+				<li><a href="javascript:;" onClick="elandmall.dispctg.fnCategoryPathInfo({disp_ctg_no:'1607006214'})" data-ga-tag='PC_공통||전체카테고리_우측||반려동물/팬시'><span>반려동물/팬시</span></a>
+					 <div class="depth2">
+					         <div class="lnb_tit"><a href="#none" onClick="elandmall.dispctg.fnCategoryPathInfo({disp_ctg_no:'1607006214'})"  data-ga-tag='PC_공통||전체카테고리_상세||반려동물/팬시'>반려동물/팬시</a></div>
+					         <div class="lb01">
+										<ul>
+										
+					 
+                                   
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||반려동물/팬시_반려동물'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006261'})"><span>반려동물</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||반려동물/팬시_팬시'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006263'})"><span>팬시</span></a>
+											</li>
+											
+										
+
+                                   </ul>
+								</div>
+
+						<div class="lb02">
+							<div class="lnb_tit02 txt_en">BEST BRAND</div>
+							<ul>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1800010931');" data-ga-tag='PC_공통||전체카테고리_상세||반려동물/팬시_올라펫(holapet)'><span>올라펫(holapet)</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600003950');" data-ga-tag='PC_공통||전체카테고리_상세||반려동물/팬시_샘아쿠아'><span>샘아쿠아</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000132');" data-ga-tag='PC_공통||전체카테고리_상세||반려동물/팬시_모던하우스'><span>모던하우스</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600001608');" data-ga-tag='PC_공통||전체카테고리_상세||반려동물/팬시_인테홀릭'><span>인테홀릭</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000052');" data-ga-tag='PC_공통||전체카테고리_상세||반려동물/팬시_시우아트'><span>시우아트</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600001589');" data-ga-tag='PC_공통||전체카테고리_상세||반려동물/팬시_이즈워즈'><span>이즈워즈</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600002450');" data-ga-tag='PC_공통||전체카테고리_상세||반려동물/팬시_하이모리'><span>하이모리</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600001432');" data-ga-tag='PC_공통||전체카테고리_상세||반려동물/팬시_아트앤하우스'><span>아트앤하우스</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600003101');" data-ga-tag='PC_공통||전체카테고리_상세||반려동물/팬시_W101'><span>W101</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600003251');" data-ga-tag='PC_공통||전체카테고리_상세||반려동물/팬시_문구코너'><span>문구코너</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600002661');" data-ga-tag='PC_공통||전체카테고리_상세||반려동물/팬시_히키스'><span>히키스</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600002717');" data-ga-tag='PC_공통||전체카테고리_상세||반려동물/팬시_러브하우스'><span>러브하우스</span></a>
+								</li>
+									
+							</ul>
+						</div>
+
+                     </div>
+				</li>
+				
+				<li><a href="javascript:;" onClick="elandmall.dispctg.fnCategoryPathInfo({disp_ctg_no:'1612309301'})" data-ga-tag='PC_공통||전체카테고리_우측||식품/생필품'><span>식품/생필품</span></a>
+					 <div class="depth2">
+					         <div class="lnb_tit"><a href="#none" onClick="elandmall.dispctg.fnCategoryPathInfo({disp_ctg_no:'1612309301'})"  data-ga-tag='PC_공통||전체카테고리_상세||식품/생필품'>식품/생필품</a></div>
+					         <div class="lb01">
+										<ul>
+										
+					 
+                                   
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||식품/생필품_가공식품'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1612309302'})"><span>가공식품</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||식품/생필품_건강기능식품'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1612309303'})"><span>건강기능식품</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||식품/생필품_건강의료용품'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1802340750'})"><span>건강의료용품</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||식품/생필품_바디/헤어/구강케어'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1612309304'})"><span>바디/헤어/구강케어</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||식품/생필품_세제/제습/방향'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1612309305'})"><span>세제/제습/방향</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||식품/생필품_신선식품/과일'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1612309306'})"><span>신선식품/과일</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||식품/생필품_화장지/물티슈/생리대'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1612309307'})"><span>화장지/물티슈/생리대</span></a>
+											</li>
+											
+										
+
+                                   </ul>
+								</div>
+
+						<div class="lb02">
+							<div class="lnb_tit02 txt_en">BEST BRAND</div>
+							<ul>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600002087');" data-ga-tag='PC_공통||전체카테고리_상세||식품/생필품_킴스클럽'><span>킴스클럽</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1700004486');" data-ga-tag='PC_공통||전체카테고리_상세||식품/생필품_숲골'><span>숲골</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600001742');" data-ga-tag='PC_공통||전체카테고리_상세||식품/생필품_에코마트(ECO MART)'><span>에코마트(ECO MART)</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1700004447');" data-ga-tag='PC_공통||전체카테고리_상세||식품/생필품_오리온'><span>오리온</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1700005122');" data-ga-tag='PC_공통||전체카테고리_상세||식품/생필품_사조대림'><span>사조대림</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1700004614');" data-ga-tag='PC_공통||전체카테고리_상세||식품/생필품_코카콜라'><span>코카콜라</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1700004448');" data-ga-tag='PC_공통||전체카테고리_상세||식품/생필품_크라운제과'><span>크라운제과</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600003269');" data-ga-tag='PC_공통||전체카테고리_상세||식품/생필품_매일유업'><span>매일유업</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600000777');" data-ga-tag='PC_공통||전체카테고리_상세||식품/생필품_농심'><span>농심</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600002478');" data-ga-tag='PC_공통||전체카테고리_상세||식품/생필품_청정원'><span>청정원</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600001796');" data-ga-tag='PC_공통||전체카테고리_상세||식품/생필품_오뚜기'><span>오뚜기</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600001657');" data-ga-tag='PC_공통||전체카테고리_상세||식품/생필품_CJ제일제당'><span>CJ제일제당</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600003212');" data-ga-tag='PC_공통||전체카테고리_상세||식품/생필품_유한킴벌리'><span>유한킴벌리</span></a>
+								</li>
+									
+							</ul>
+						</div>
+
+                     </div>
+				</li>
+				
+				<li><a href="javascript:;" onClick="elandmall.dispctg.fnCategoryPathInfo({disp_ctg_no:'1607006209'})" data-ga-tag='PC_공통||전체카테고리_우측||여행/상품권/서비스'><span>여행/상품권/서비스</span></a>
+					 <div class="depth2">
+					         <div class="lnb_tit"><a href="#none" onClick="elandmall.dispctg.fnCategoryPathInfo({disp_ctg_no:'1607006209'})"  data-ga-tag='PC_공통||전체카테고리_상세||여행/상품권/서비스'>여행/상품권/서비스</a></div>
+					         <div class="lb01">
+										<ul>
+										
+					 
+                                   
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||여행/상품권/서비스_항공'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1906396172'})"><span>항공</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||여행/상품권/서비스_숙박'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1906396171'})"><span>숙박</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||여행/상품권/서비스_여행/숙박'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1611308086'})"><span>여행/숙박</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||여행/상품권/서비스_호텔/리조트'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006237'})"><span>호텔/리조트</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||여행/상품권/서비스_이용권/입장권'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006238'})"><span>이용권/입장권</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||여행/상품권/서비스_상품권'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1610306495'})"><span>상품권</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||여행/상품권/서비스_e쿠폰/선물하기'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1906396160'})"><span>e쿠폰/선물하기</span></a>
+											</li>
+										
+											<li data-ga-tag='PC_공통||전체카테고리_상세||여행/상품권/서비스_렌탈'>
+											<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1607006240'})"><span>렌탈</span></a>
+											</li>
+											
+										
+
+                                   </ul>
+								</div>
+
+						<div class="lb02">
+							<div class="lnb_tit02 txt_en">BEST BRAND</div>
+							<ul>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600002629');" data-ga-tag='PC_공통||전체카테고리_상세||여행/상품권/서비스_이월드'><span>이월드</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1700006807');" data-ga-tag='PC_공통||전체카테고리_상세||여행/상품권/서비스_스타벅스'><span>스타벅스</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1700006813');" data-ga-tag='PC_공통||전체카테고리_상세||여행/상품권/서비스_배스킨라빈스'><span>배스킨라빈스</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600002633');" data-ga-tag='PC_공통||전체카테고리_상세||여행/상품권/서비스_이랜드크루즈'><span>이랜드크루즈</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1700004590');" data-ga-tag='PC_공통||전체카테고리_상세||여행/상품권/서비스_PIC리조트'><span>PIC리조트</span></a>
+								</li>
+								
+								<li>
+								<a href="javascript:;" onclick="elandmall.brand.goBrandShop('1600002622');" data-ga-tag='PC_공통||전체카테고리_상세||여행/상품권/서비스_애슐리'><span>애슐리</span></a>
+								</li>
+									
+							</ul>
+						</div>
+
+                     </div>
+				</li>
+				
+				
+				
+				<li class="sp_depth"><a href="javascript:;" data-ga-tag='PC_공통||전체카테고리_우측||전문관'><span>전문관</span></a>
+					<div class="depth2">
+						<div class="lnb_tit">전문관</div>
+						<div class="lb01">
+							<ul>
+										
+								<li data-ga-tag='PC_공통||전체카테고리_상세||전문관_펫츠펫츠'>
+								<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1807356024'})"><span>펫츠펫츠</span></a>
+								</li>
+										
+								<li data-ga-tag='PC_공통||전체카테고리_상세||전문관_스토어쇼핑'>
+								<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1704316850'})"><span>스토어쇼핑</span></a>
+								</li>
+										
+								<li data-ga-tag='PC_공통||전체카테고리_상세||전문관_365아울렛'>
+								<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1709327170'})"><span>365아울렛</span></a>
+								</li>
+										
+								<li data-ga-tag='PC_공통||전체카테고리_상세||전문관_이랜드몰투어'>
+								<a href="javascript:void(0);" onClick="elandmall.dispctg.goDispctg({disp_ctg_no:'1803343689'})"><span>이랜드몰투어</span></a>
+								</li>
+								
+							</ul>
+						</div>
+						
+
+					</div>
+				</li>
+				
+				<li class="sp_depth size02"><a href="javascript:;" data-ga-tag='PC_공통||전체카테고리_우측||스페셜샵'><span>스페셜샵</span></a><!-- 스페셜샵 레이어 사이즈 다름 -->
+					<div class="depth2">
+						<div class="lnb_tit">스페셜샵</div>
+						<div class="lb01">
+							<ul>
+
+									 
+	<li><a class="tg" data-ga-tag="스토어쇼핑" href="/dispctg/initDispCtg.action?disp_ctg_no=1704316850"><span>스토어쇼핑</span></a></li>
+
+			
+							
+							</ul>
+						</div>
+
+					</div>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+	 <!--  2017.09.01 스크립트 추가 -->
+	<script type="text/javascript">
+		$('.renewal .catg_lyr .lnb_cate_main ul li').on('focusin mouseover', function(){
+				$(this).addClass('on').siblings('li').removeClass('on');
+			}
+		)
+		.on('mouseleave', function() {
+				$(this).removeClass('on');
+			}
+		);
+	</script>
+	<!-- //카테고리 -->
+</div>
+
+			            <!-- //비정형 영역 처리  -->
+                        
+                    </div>
+                </div>
+                <!-- //CATG ALL -->
+
+                <!-- DISP. MENU -->
+                <div class="gnb_menu_wrap">
+                	<div class="hd_disp">
+                    	<dl>
+
+            <!-- 비정형 영역 처리   -->
+            <!-- 
+    내 용 : GNB 영역
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<dd >
+
+				<a href="/shop/initShopLuckyDeal.action"   data-ga-tag='PC_공통||GNB||럭키딜'>럭키딜<q>매일특가</q></a>					
+
+		</dd>
+
+		<dd >
+
+				<a href="/shop/initShopBest100.action"   data-ga-tag='PC_공통||GNB||베스트'>베스트</a>
+
+		</dd>
+
+		<dd >
+
+				<a href="/shop/initPlanShopMain.action"   data-ga-tag='PC_공통||GNB||시즌기획전'>시즌기획전</a>
+
+		</dd>
+
+		<dd >
+
+				<a href="/dispctg/initDispCtg.action?disp_ctg_no=1709327170"   data-ga-tag='PC_공통||GNB||365아울렛'>365아울렛<q>상시할인</q></a>					
+
+		</dd>
+
+		<dd >
+
+				<a href="/dispctg/initDispCtg.action?disp_ctg_no=1704316850"   data-ga-tag='PC_공통||GNB||스토어쇼핑'>스토어쇼핑<q>매장쇼핑</q></a>					
+
+		</dd>
+
+		<dd >
+
+				<a href="/dispctg/initDispCtg.action?disp_ctg_no=1901376642"   data-ga-tag='PC_공통||GNB||KIM'S장보기'>KIM'S장보기</a>
+
+		</dd>
+
+		<dd >
+
+				<a href="/shop/initEkidsShop.action"   data-ga-tag='PC_공통||GNB||E키즈샵'>E키즈샵</a>
+
+		</dd>
+
+		<dd >
+
+				<a href="/dispctg/initDispCtg.action?disp_ctg_no=1901377219"   data-ga-tag='PC_공통||GNB||글로벌샵'>글로벌샵<q>명품/스포츠</q></a>					
+
+		</dd>
+
+
+				<script type="text/javascript">
+				 $(document).ready(function() {
+					$(".hd_disp > dl > dd").on("mouseover", function() {
+						if( $(this).find(".depth2").length > 0 && $.trim($(this).find(".depth2").html()) == "") {
+						    var objDepth1 = $(this);
+						    var obj = objDepth1.find(".depth2");
+							$.ajax({
+								url: "/dispctg/searchGnbLowCategoryList.action",
+								dataType: "html",
+								data: {disp_ctg_no:obj.attr("data")},
+								async: false,
+								success : function(data) {
+									obj.html(data);
+									objDepth1.addClass('active');
+									
+								}
+							});
+						}
+					});
+
+					$(".gnbImageMenu").click(function(){
+						var pin = {
+						 			sale_area_no : "D1808001089",
+									conts_divi_cd : "10",
+									conts_dist_no : $(this).attr("data-conts_dist_no"),
+									rel_divi_cd : "20",
+									rel_no : $(this).attr("data-banner_no")
+						 	 };
+						 elandmall.tracking.fireClick(pin);
+						 location.href = $(this).attr("data-link-url");
+					});
+				});
+				 
+				 var gnbMenu = new commonUI.header.gnbCate('.hd_disp');
+
+				</script>
+
+            <!-- //비정형 영역 처리  -->            
+
+                    	</dl>
+                	</div>
+                <!-- //DISP. MENU -->
+
+                <!-- BRAND ZONE -->
+                	<div class="hd_zone">
+
+					<!-- 비정형 영역 처리   -->
+		            <!-- 
+    내 용 : GNB 영역
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<a href="/eventshop/initGroupPurchaseMain.action"   data-ga-tag='PC_공통||GNB||공동구매'>공동구매</a>
+
+				<a href="/event/initEventBenefitZone.action"   data-ga-tag='PC_공통||GNB||이벤트&혜택'>이벤트&혜택<q>쿠폰혜택</q></a>					
+
+		            <!-- //비정형 영역 처리  -->	
+						<a href="javascript:void(0);" onclick="elandmall.hdLink('BRAND_INDEX');" data-ga-tag='PC_GNB||전체카테고리||브랜드'>브랜드</a>                    
+                	</div>
+                <!-- //BRAND ZONE -->
+				</div>
+            </div>
+        </div>
+        <!-- //HEADER -->
+        
+
+        
+        <!-- 검색 광고문구, 일반검색 분기 -->
+        <script type="text/javascript">
+            var $d_hd_sch = $('#hd_sch');
+            var $searchAd = $('#searchAd');//광고
+            var $d_searchinfo = $d_hd_sch.find('#searchTerm');//검색창
+            var $d_btn_search = $d_hd_sch.find('#sch_btn');//검색버튼
+            
+            $d_searchinfo.val($searchAd.val());
+            
+            $d_searchinfo.on('click focus',function() {
+            	if($d_searchinfo.val() == $searchAd.val() || $d_searchinfo.val() == "검색어를 입력해 주세요") {
+            		$d_searchinfo.val('');
+            	}
+                $searchAd.val('');
+            });
+            
+            $d_btn_search.on('click',function() {
+            	 var pin ={
+            			 
+            			sale_area_no : "D1808001092",
+	
+						conts_divi_cd : "10",
+						conts_dist_no : $("#searchAd").attr("data-conts_dist_no"),
+						rel_divi_cd : "20",
+						rel_no : $("#searchAd").attr("data-banner_no")
+            	 };
+            	if($searchAd.val()==''){
+            		fnsearch.headerSearchForm_submit();
+                } else {
+	             	elandmall.tracking.fireClick(pin);
+                	elandmall.util.ga("PC_공통", "검색광고", $searchAd.val());
+                    location.href = $("#searchAd").attr("data-link");
+                };
+            });
+            
+            $d_searchinfo.keydown(function(e){
+                if(e.keyCode == 13){
+                	e.preventDefault();
+                	fnsearch.headerSearchForm_submit();
+                }    	
+            }); 
+        </script>  
+        <!-- container -->
+        <div id="container">
+            <div class="wing_menu">
+            <!-- 좌측 비정형배너 -->
+            <!-- 
+	내 용 : 좌측 비정형 배너
+ -->
+
+
+
+	<div class="wm_left">
+
+		<!-- 비정형 영역 처리   -->
+		<!-- 
+	내 용 : 좌측 비정형 배너
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<div class="wm_adds" data-ga-tag='PC_공통||좌측윙배너||1907_카드사'>
+			<a href="javascript:void(0);" onclick="elandmall.disp.clickEvent({openwinyn:'N',tr_yn:'Y',banner_kind_cd:'20' ,conts_form_cd:'130' ,conts_divi_cd:'10' ,conts_dist_no:'C19062647876230' ,sale_area_no:'D1808001093' , rel_divi_cd:'20' , rel_no:'190600000104170', move_cont_no:'E190605145', url:'', brandIndexYn:'N'})"><img src="//www.elandrs.com/upload/dspl/banner/20/630/00/190600000135630.jpg" width="66" height="144" alt="1907_카드사" /></a>	
+			</div>
+ 
+
+		<!-- //비정형 영역 처리  -->
+
+		<!-- 비정형 영역 처리   -->
+		<!-- 
+	내 용 : 좌측 비정형 배너 롤링
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+		<!-- //비정형 영역 처리  -->
+
+	</div>
+            <!-- //좌측 비정형배너 -->
+            
+            <!-- 스카이스크랩퍼 -->
+            <!--
+	내 용 : 스카이스크랩퍼
+-->
+
+
+
+
+
+
+
+	<div class="wm_right">
+		<div class="wm_user" id="wm_user_div">
+		</div>
+		<ul class="wm_list">
+			<li id="cart_info"></li>
+
+
+			<li><a href="javascript:;" onClick="elandmall.mypage.link.goodListLately(); return false;" class="wm_r02" data-ga-tag='PC_공통||플로팅메뉴||최근본상품'>최근본상품</a></li>
+
+		</ul>
+
+		<div class="wm_goods_wrap" src="" tabindex="0" id="wm_goods_wrap">
+		<!-- 이부분에 fnSkyScraperLatelyPic 로 상품가져옴 -->
+<script type="text/javascript" src="/scrapper/js/scrapper-goods.js?ver=tags/20190708-1"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+	ScrapperGoods.mallLatelyEventTag = "PC_공통||플로팅메뉴||";
+
+	ScrapperGoods.domain = ".elandmall.com";
+	ScrapperGoods.api_domain = "https://apigw.elandmall.com";
+	ScrapperGoods.recent_goods_save_cnt = 50;
+	ScrapperGoods.spring_profiles_active = "prd";
+	ScrapperGoods.cache_key = "tags/20190708-1";
+	ScrapperGoods.isLogin = "false";
+	ScrapperGoods.add_init_handler(initScrapperGoodsList);
+	ScrapperGoods.init();
+});
+
+//쿠키 조회하여 최근 본 상품 리스트 그리기
+function initScrapperGoodsList() {
+	html = '<ul class="d_wg_slider">'
+	html += generateScrapperGoodsListHtml(ScrapperGoods.scrapper_goods_functions.getScrapperGoodsList(), true);
+	html += '</ul>';
+	html += '<div class="nodata">';
+	html += '최근<br />본 상품이<br />없습니다.';
+	html += '</div>';
+	
+	$('#wmGoods').html(html);
+	
+	wbGoods();
+}
+
+function generateScrapperGoodsListHtml(goodsList, isReverse) {
+
+	var html = '';
+	if (isReverse == undefined || !isReverse) {
+		$.each(goodsList, function(i, d){
+			html += generateScrapperGoodsHtml(d, i);
+		});
+	} else {
+		$(goodsList.reverse()).each(function(i, d){
+			html += generateScrapperGoodsHtml(d, i);
+		})
+	}
+
+	return html;
+}
+
+function generateScrapperGoodsHtml(goods_info, idx) {
+	html = '';
+	html += '<li goods_no=\''+goods_info.goods_no+'\' recent_history_pk=\''+goods_info.recent_history_pk+'\'>';
+	html += '<a href="javascript:;" class="wm_gd_links" data-index="'+idx+'" id="sky_goods_'+goods_info.goods_no+'"'; 
+	html += 'onclick="elandmall.goods.goDetail({goods_no : \''+goods_info.goods_no+'\', vir_vend_no : \''+goods_info.vir_vend_no+'\', server_name : \''+goods_info.server_name+'\', dlp_list : \'최근본상품\', dlp_category : \''+goods_info.disp_ctg_path+'\', brand_nm : \''+goods_info.brand_nm+'\'}); return false;"';
+	html += 'onmouseover="ScrapperGoods.fnGetGoodsInfo(\''+goods_info.goods_no+'\',\''+goods_info.vir_vend_no+'\'); return false;">';
+	if("img_path_null" != goods_info.imgfile) {				
+		html += '<img src="'+getGoodsImagePath(goods_info.goods_no, 62, goods_info.imgfile)+'" width="62" height="62" alt="'+goods_info.goods_no+'" onError="this.src=\'//www.elandrs.com/images/pcweb/common/62_noimg.gif\'" />';
+	} else {
+		html += '<img src="//www.elandrs.com/images/pcweb/common/62_noimg.gif" width="62" height="62" alt="'+goods_info.goods_no+'" onError="this.src=\'//www.elandrs.com/images/pcweb/common/62_noimg.gif\'" />';
+	}
+	html += '</a>';
+	html += '<a href="#delete" class="wm_btn_del">상품 삭제</a>';
+	html += '</li>';
+	return html;
+}
+
+function getGoodsImagePath(good_no, size, img_path) {
+    sGood_path = "";
+
+   	if (img_path !== undefined) {
+   		if(size !== undefined) {   /* 모바일 이미지는 리사이징을 안하므로 size가 없이 들어옴 */
+   			 /* 리사이즈 체크  */
+   			resizes = [90, 170, 240, 330, 600];
+   	        for(var i = 0; resizes.length > i; i++ ){
+   	        	if( resizes[i] >= size){
+   	        		size = resizes[i];
+   	        		break;
+   	        	}
+   	        }
+   	        
+   	        sGood_path = "//www.elandrs.com/upload/prd/img/"+good_no.substring(good_no.length - 3, good_no.length)+"/"+size+"/"+img_path.substring(img_path.lastIndexOf("/") + 1);
+   		} else {
+   			sGood_path = "//www.elandrs.com/upload/"+img_path;
+   		}
+   	}
+    return sGood_path;
+}
+function wbGoods(){
+	var $target = $(".wm_goods_wrap");
+	if ( commonUI.isTarget( $target ) ) return ;
+
+	var $wrapper, $links, $btns, $lastOnItems, $itemWrap ,$tabItems;
+	var _lastIDX = 0;
+	var _IDX = 0;
+	var _pageIDX = 0;
+	var _reload_yn = false;
+	function wbInit(){
+		$wrapper = $target.find(".wm_goods");
+		$liItems = $target.find("li");
+		$links = $target.find(".wm_gd_links");
+		$itemWrap = $target.find(".d_wg_slider");
+		$btns = {
+			prev : $target.find(".d_wm_prev")
+			,next :  $target.find(".d_wm_next")
+			,del :  $target.find(".wm_btn_del")
+		}
+
+		if ( setInit() ) {
+			function _bodyClickFn(e){ // body click func
+				if (!$wrapper.is(e.target) && $wrapper.has(e.target).length < 1){
+					$wrapper.removeClass("active");
+					$liItems.removeClass("on");
+					commonUI.bodyClickOffFunc( "d_wbGoods" );
+
+					e.preventDefault();
+				}
+			}
+
+			commonUI.bodyClickFunc( "d_wbGoods" , _bodyClickFn );
+
+			wbEventHanlder();
+		};
+	}
+
+	function wbEventHanlder(){
+		$wrapper.on("mouseenter", ".wm_gd_links" , function(e) {
+			var $this = $(this);
+
+			$(this).parent().addClass("on");
+		})
+
+		$wrapper.on("mouseleave", "li" , function(e) {
+			var $this = $(this);
+
+			$wrapper.removeClass("active");
+			$this.removeClass("on");
+		})
+
+		$wrapper.on("focusin mouseenter" , "li" , function(e) {
+			var $this = $(this);
+
+			_lastIDX = $wrapper.find("li.on .wm_gd_links").attr("data-index");
+			_IDX = $this.index();
+
+			wbEngine();
+			commonUI.bodyClickOnFunc( "d_wbGoods" );
+		})
+
+		$btns.del.on("click" , function(e) {
+			e.preventDefault();
+			wbDelete();
+		})
+
+		$btns.prev.on("click" , function(e) {
+			e.preventDefault();
+			wbReload();
+			wbPrev();
+		})
+
+		$btns.next.on("click" , function(e) {
+			e.preventDefault();
+			wbReload();
+			wbNext();
+		})
+
+		$tabItems = $wrapper.find("li .wm_gd_links");
+
+		$tabItems.on("focus" , function(e) {
+			e.preventDefault();
+			var _vi = Math.floor($(this).attr("data-index")/4); //리뉴얼 수정
+			_pageIDX = _vi;
+			wbAni();
+		})
+	}
+
+	function _tabEvent(){
+		var _$tabItems  = $wrapper.find("li:not(.off)");
+
+		_$tabItems.each(function(idx){
+			$(this).find(".wm_gd_links").attr("data-index",idx);
+		})
+	}
+
+	function wbDelete(){
+		var $this = $liItems.eq(_IDX);
+		$this.addClass("off");
+		setInit();
+		wbDeleteChk();
+		_tabEvent();
+		
+		//최근본 상품 삭제(Cookie, Api)
+		ScrapperGoods.fnDeleteScrapperGoodList($this.attr("goods_no"), $this.attr("recent_history_pk"), wbReload, _reload_yn);
+	}
+
+	function wbDeleteChk(){
+		var chksItemLength = $wrapper.find("li:visible").length;
+		if ( (_pageIDX*4) >= chksItemLength ){
+			wbPrev();
+		}
+	}
+
+	function setInit(){
+		var chksItemLength = $wrapper.find("li:visible").length;
+
+		if ( chksItemLength < 1  ) {
+			$wrapper.removeClass("active").off("mouseenter");
+			$itemWrap.hide();
+			$(".nodata").addClass("on");
+			$wrapper.height(55); //리뉴얼 수정
+			$(".wm_btns").remove();
+			
+			return false;
+		}else if ( chksItemLength < 5 ) { //리뉴얼 수정
+			$wrapper.height(chksItemLength*55); //리뉴얼 수정
+
+			$(".wm_btns").remove();
+			return true;
+		}
+
+		return true;
+	}
+
+	function wbPrev(){
+		var chksItemLength = parseInt($wrapper.find("li:visible").length/4); //리뉴얼 수정
+		if($wrapper.find("li:visible").length%4 == 0){
+			chksItemLength--;
+		}
+		_pageIDX = ( _pageIDX > 0 )? _pageIDX -1: chksItemLength ;
+		wbAni();
+	}
+
+	function wbNext(){
+		var chksItemLength = parseInt($wrapper.find("li:visible").length/4); //리뉴얼 수정
+		if($wrapper.find("li:visible").length%4 == 0){
+			chksItemLength--;
+		}
+		_pageIDX = ( _pageIDX < chksItemLength )? _pageIDX+1: 0 ;
+		wbAni();
+	}
+
+	function wbAni(){
+		var _css = { "top" : "-"+_pageIDX*220+"px" } //리뉴얼 수정
+		$itemWrap.css(_css);
+	}
+
+	function wbEngine(){
+		$wrapper.addClass("active");
+
+		$liItems.removeClass("on");
+		$liItems.eq(_IDX).addClass("on");
+
+		$lastOnItems = $liItems.eq(_IDX);
+	}
+
+	//쿠키에는 6개까지만 가지고 있어 api호출하여 최근 본 상품 리스트 다시 그리기
+	function wbReload() {
+		//한번만 실행
+		if ( !_reload_yn ) {
+			ScrapperGoods.fnFullReloadScrapper(function(scrapper_goods_list) {
+				
+				if (scrapper_goods_list == undefined) return;
+				
+				$itemWrap.html("");
+				$itemWrap.append(generateScrapperGoodsListHtml(scrapper_goods_list));
+
+				//조회된 리스트 eventHanlder 초기화 처리
+				_reload_yn = true;
+
+				$liItems = $target.find("li");
+				$links = $target.find(".wm_gd_links");
+
+				$target.find(".wm_btn_del").on("click" , function(e) {
+					e.preventDefault();
+					wbDelete();
+				})
+
+				setInit();
+			});
+		}
+	}
+
+	wbInit();
+}
+</script>
+		<div class="wm_goods" id="wmGoods">
+			<ul class="d_wg_slider">
+			<div class="nodata">최근<br />본 상품이<br />없습니다.</div>
+		</div>
+		<div class="wm_btns">
+			<a href="#" class="wm_bt_next d_wm_next" tabindex="-1">이전목록</a>
+			<a href="#" class="wm_bt_prev d_wm_prev" tabindex="-1">다음목록</a>
+		</div>
+		</div>
+		<span class="wm_top"><a href="javascript:;" onclick="javascript:$(window).scrollTop(0);" keypress="javascript:$(window).scrollTop(0);" >TOP</a></span><!-- 160805 -->
+			<!-- BANNER -->
+
+		<!-- 비정형 영역 처리   -->
+		<!-- 
+	내 용 : 2018_공통배너 우측  하단 비정형 배너
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class="btm_fixed_adds zoom"> <!-- [V2 ] : 확대 배너  - .zoom  <script> 추가 -->
+
+
+
+					<a href="javascript:void(0);" onclick="elandmall.disp.clickEvent({openwinyn:'',tr_yn:'Y',banner_kind_cd:'20' ,conts_form_cd:'130' ,conts_divi_cd:'10' ,conts_dist_no:'C19032943080128' ,sale_area_no:'D1808001095' , rel_divi_cd:'20' , rel_no:'190300000095186', move_cont_no:'E181204246', url:'', brandIndexYn:'N'})"class="open_bn" data-ga-tag="PC_공통||우측윙배너||신규고객 쇼핑혜택"><img src="//www.elandrs.com/upload/dspl/banner/20/453/00/190300000118453.png" width="66" height="144" alt="신규고객 쇼핑혜택" ></a>
+					
+
+						<div class="big_zoom">
+							
+						<a href="javascript:void(0);" onclick="elandmall.disp.clickEvent({openwinyn:'',tr_yn:'Y',banner_kind_cd:'20' ,conts_form_cd:'130' ,conts_divi_cd:'10' ,conts_dist_no:'C19032943080129' ,sale_area_no:'D1808001095' , rel_divi_cd:'20' , rel_no:'190300000095187', move_cont_no:'E181204246', url:'', brandIndexYn:'N'})" data-ga-tag="PC_공통||우측윙배너||신규고객 쇼핑혜택"><img src="//www.elandrs.com/upload/dspl/banner/20/454/00/190300000118454.png" width="550" height="350" alt="신규고객 쇼핑혜택" ></a>
+							
+							<button class="close"><span class="ir">닫기</span></button>
+						</div>
+
+
+	</div>
+			
+	<script type="text/javascript">
+		$('.zoom .open_bn').mousestop(function(){
+			if(!$(this).hasClass('opened')){
+				$(this).addClass('opened');
+				$('.big_zoom').fadeOut(0).css('z-index', 10).fadeIn(300,function(){$('.big_zoom').addClass('on')});
+			}
+		});
+		$('.big_zoom .close').click(function(){
+			$('.big_zoom').removeClass('on');
+			setTimeout(function(){
+				$('.big_zoom').fadeOut(1000,function(){
+					$('.big_zoom').css('z-index', -10).fadeIn(0).removeClass('on');
+					$('.zoom .open_bn').removeClass('opened')
+				})
+			},500)
+		})
+	</script>
+
+
+
+			
+	
+
+		<!-- //비정형 영역 처리  -->
+
+			<!-- //BANNER  -->
+	</div>
+
+            <!-- //스카이스크랩퍼 -->
+            </div>
+             
+
+<!-- 자바스크립트 변수값을 담기 위한 hidden value [For IE,FF 뒤로가기 Cache Bug] -->
+<input type="hidden" id="var_kwd" name="kwd" value=""/>
+<input type="hidden" id="var_brand" name="brand_no" value="1690000156"/>
+<!-- //자바스크립트 변수값을 담기 위한 hidden value [For IE,FF 뒤로가기 Cache Bug] -->
+
+
+<form name="historyForm" id="historyForm" method="post" action="" >	
+	<input type="hidden" id="hstr_kwd" name="kwd" value=""/>
+	<input type="hidden" id="hstr_category_1depth" name="category_1depth" value=""/>
+	<input type="hidden" id="hstr_category_2depth" name="category_2depth" value=""/>
+	<input type="hidden" id="hstr_category_3depth" name="category_3depth" value=""/>
+	<input type="hidden" id="hstr_category_4depth" name="category_4depth" value=""/>
+	<input type="hidden" id="hstr_category_5depth" name="category_5depth" value="null"/>
+	<input type="hidden" id="hstr_category_6depth" name="category_6depth" value="null"/>
+	<input type="hidden" id="hstr_brandNm" name="brand_nm" value=""/>
+	<input type="hidden" id="hstr_brandNo" name="brand_no" value="1690000156"/>
+	<input type="hidden" id="hstr_vend" name="vend_no" value=""/>
+	<input type="hidden" id="hstr_vendNm" name="vend_nm" value=""/>
+	<input type="hidden" id="hstr_material" name="material_info" value=""/>
+	<input type="hidden" id="hstr_size" name="size_info" value=""/>
+	<input type="hidden" id="hstr_deliCostFreeYn" name="deliCostFreeYn" value=""/>
+	<input type="hidden" id="hstr_setDicountYn" name="setDicountYn" value=""/>
+	<input type="hidden" id="hstr_giftYn" name="giftYn" value=""/>
+	<input type="hidden" id="hstr_oneMoreYn" name="oneMoreYn" value=""/>
+	<input type="hidden" id="hstr_discountYn" name="discountYn" value=""/>
+	<input type="hidden" id="hstr_welfareYn" name="welfareYn" value=""/>
+	<input type="hidden" id="hstr_staffDCYn" name="staffDCYn" value=""/>
+	<input type="hidden" id="hstr_minPrice" name="min_price" value=""/>
+	<input type="hidden" id="hstr_maxPrice" name="max_price" value=""/>
+	<input type="hidden" id="hstr_minRate" name="min_rate" value=""/>
+	<input type="hidden" id="hstr_maxRate" name="max_rate" value=""/>
+	<input type="hidden" id="hstr_color" name="color_info" value=""/>
+	<input type="hidden" id="hstr_reSrchFlag" name="reSrch" value=""/>
+	<input type="hidden" id="hstr_pageNum" name="page_idx" value="1"/>
+	<input type="hidden" id="hstr_pageSize" name="pageSize" value="60"/>
+	<input type="hidden" id="hstr_srchFd" name="srchFd" value="null"/>
+	<input type="hidden" id="hstr_sort" name="sort" value="1"/>
+	<input type="hidden" id="hstr_listType" name="listType" value="image"/>
+	<input type="hidden" id="hstr_applyStartDate" name="applyStartDate" value=""/>
+	<input type="hidden" id="hstr_applyEndDate" name="applyEndDate" value=""/>
+	<input type="hidden" id="hstr_dispStartDate" name="dispStartDate" value=""/>
+	<input type="hidden" id="hstr_dispEndDate" name="dispEndDate" value=""/>
+	<input type="hidden" id="hstr_newGoodsStartDate" name="newGoodsStartDate" value=""/>
+	<input type="hidden" id="hstr_newGoodsEndDate" name="newGoodsEndDate" value=""/>
+	<input type="hidden" id="hstr_mallNo" name="mall_no" value="null"/>
+</form>
+
+
+<!-- content -->
+<div id="content">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+<!--
+
+function changeNav(val, paths, depth) {
+	console.log("CategoryNo="+val + ", CategoryPath="+paths+", depth="+depth);
+
+	
+	elandmall.dispctg.fnCategoryPathInfo({'disp_ctg_no':val});
+}
+
+//-->
+</script>
+<div class="location"><!--  NaviCategoryInc.jsp -->
+	<input type="hidden" id="preLargeCtg" value=""/>
+	<ul>
+		<li ><a  class="home" href="javascript:;" onclick="javascript:elandmall.hdLink('MALL_MAIN');">HOME</a></li>
+
+        <li class="lct_txt"><a href="javascript:;" onclick="elandmall.brand.goBrandShop('1690000156')"><span>로이드</span></a></li>
+
+	</ul>    
+</div>
+<script type="text/javascript">
+//	commonUI.loadJs('/pcweb/js/stickyMenu_JEC.js');
+</script>
+
+	
+	<div class="new_cate_wrap">
+	<div class="brand">
+		<div class="title">
+			<h2 class="tit_h2">로이드</h2>
+			
+		</div>
+		<div class="content_cate">
+			<!-- l_content -->
+			<div class="l_content">
+			<!-- 카테고리 그룹핑 영역 SearchBrandShop.jsp -->
+
+			<div class="cate_area01">
+				<div class="lnb_cate01 overHeight">
+					<ul>
+
+						<li><a href="javascript:fnsearch.go1depthBrandShopCategoryList('1690000156','1607006212')"><span>잡화/슈즈/쥬얼리<em>(5,810)</em></span></a>
+
+							<div class="depth2">
+								<ul>
+
+									<li><a href="javascript:fnsearch.go2depthBrandShopCategoryList('1690000156', '1607006212', '1607006256')"><span>시계/보석/쥬얼리<em>(5,808)</em></span></a></li>
+
+									<li><a href="javascript:fnsearch.go2depthBrandShopCategoryList('1690000156', '1607006212', '1901375297')"><span>test<em>(2)</em></span></a></li>
+
+								</ul>
+							</div>
+
+						</li>
+
+					</ul>
+				</div>
+			</div>
+
+			<!-- //카테고리 그룹핑 영역 -->
+			<!-- 검색 필터  -->
+			
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	//사이즈/색상 버튼 검색
+	$('.eCk > input').each(function(){ // checkbox 
+		$(this).change(function(){
+			fnsearch.srchFilterBox_brandSearch();
+		});
+	});
+	
+	// 빠른가격 버튼 
+	$("button[name='fast_price']").click(function(e){
+		var min_price = $(this).attr('data-min-price');
+		var max_price = $(this).attr('data-max-price');
+		var var_minPrice = $("#var_minPrice").val();
+		var var_maxPrice = $("#var_maxPrice").val(); 
+		
+		if($(this).hasClass("on")){
+			$(this).removeClass('on');
+			min_price = var_minPrice;
+			max_price = var_maxPrice;
+			fnDataGaTag(false, '가격', $(this).text());
+		}else{
+			$(this).parent().siblings().children().removeClass('on');
+			$(this).addClass("on");
+			fnDataGaTag(true, '가격', $(this).text());
+		}
+		e.preventDefault();
+		$( "#slider-range" ).slider('values',[ min_price , max_price ]);	
+		fnsearch.srchFilterBox_price_brandSearch(min_price, max_price);
+	});
+	
+	//가격 확인버튼 
+	$("#priceSearch").click(function(){
+		fnsearch.srchFilterBox_price_brandSearch($( "#l_range" ).val(), $( "#r_range" ).val());
+	});
+	
+	// 빠른할인율 버튼 
+	$("button[name='fast_discount']").click(function(e){
+		var min_dis = $(this).attr('data-min-dis');
+		var max_dis = $(this).attr('data-max-dis');
+		var var_minDiscount = $("#var_minDiscount").val();
+		var var_maxDiscount = $("#var_maxDiscount").val(); 
+		
+		if($(this).hasClass("on")){
+			$(this).removeClass('on');
+			min_dis = var_minDiscount;
+			max_dis = var_maxDiscount;
+			fnDataGaTag(false, '할인율', $(this).text());
+		}else{
+			$(this).parent().siblings().children().removeClass('on');
+			$(this).addClass("on");
+			fnDataGaTag(true, '할인율', $(this).text());
+		}
+		e.preventDefault();
+		$( "#slider-disrange" ).slider('values',[ min_dis , max_dis ]);	
+		fnsearch.srchFilterBox_discount_brandSearch(min_dis, max_dis);
+	});
+	
+	//할인율 확인 버튼
+	$("#disSearch").click(function(){
+		fnsearch.srchFilterBox_discount_brandSearch($( "#l_disrange" ).val(), $( "#r_disrange" ).val());
+	});
+	
+	// 가격/할인율 텍스트 입력시 버튼 해제
+	$(".input_range > input").change(function(){
+		$(this).find("button").removeClass('on');
+	});
+	
+	//가격인풋박스 숫자만 입력 받기
+	$("#l_range").keyup(function(){$(this).val( $(this).val().replace(/[^0-9]/g,"") );} );
+	$("#l_range").keyup(function(){$(this).val( $(this).val().replace(/[^\!-z]/g,"") );} );
+	$("#r_range").keyup(function(){$(this).val( $(this).val().replace(/[^0-9]/g,"") );} );
+	$("#r_range").keyup(function(){$(this).val( $(this).val().replace(/[^\!-z]/g,"") );} );
+	
+	//할인율인풋박스 숫자만 입력 받기
+	$("#l_disrange").keyup(function(){$(this).val( $(this).val().replace(/[^0-9]/g,"") );} );
+	$("#l_disrange").keyup(function(){$(this).val( $(this).val().replace(/[^\!-z]/g,"") );} );
+	$("#r_disrange").keyup(function(){$(this).val( $(this).val().replace(/[^0-9]/g,"") );} );
+	$("#r_disrange").keyup(function(){$(this).val( $(this).val().replace(/[^\!-z]/g,"") );} );
+});
+
+function fnDataGaTag(chk, type, label){
+	if(chk){
+		elandmall.util.ga("PC_브랜드관_레벨3", "검색필터", type+"_"+label);
+	}
+}
+
+</script>
+<div class="box_filter">
+	<div class="tit">상세검색</div>
+	<div class="set_replace">
+		<a class="btn04 full replace" href="javascript:fnsearch.initBrandFilterBox()"><span>선택초기화</span></a>
+	</div>
+	
+	<div class="set_list_filter">
+		<ul>
+
+
+			<li class="filterOpen active">
+			<input type="hidden" id="var_minPrice" value="5000"/>
+			<input type="hidden" id="var_maxPrice" value="699000"/>
+				<a><span>가격</span></a>
+				<div class="depth2">
+					<div class="set_range">
+						<div id="slider-range"></div>
+					</div>
+					<div class="input_range">
+						<input type="text" id="l_range" class="input_txt wide range_left" onKeyUp="slideRngChange();" value="0">
+						<!-- <input type="text" id="l_range" class="input_txt wide range_left" onKeyUp="slideRngChange();" value="0"> -->
+						<span>~</span>
+						<input type="text" id="r_range" class="input_txt wide range_right" onKeyUp="slideRngChange();" value="0">
+						<!-- <input type="text" id="r_range" class="input_txt wide range_right" onKeyUp="slideRngChange();" value="0"> -->
+					<div class="btn_range">
+						<button type="button" id="priceSearch" class="btn07"><span class="ir">확인</span></button>
+					</div>
+					</div>
+					<!-- 빠른 가격 선택 -->
+					<div class="btn_quick">
+						<ul>
+
+				<li><button type="button" name="fast_price" data-min-price=0 data-max-price=200000>20만원 이하</button></li> <!-- 선택시 .on 클래스 추가 -->
+
+				<li><button type="button" name="fast_price" data-min-price=0 data-max-price=300000>30만원 이하</button></li> <!-- 선택시 .on 클래스 추가 -->
+
+				<li><button type="button" name="fast_price" data-min-price=0 data-max-price=400000>40만원 이하</button></li> <!-- 선택시 .on 클래스 추가 -->
+
+				<li><button type="button" name="fast_price" data-min-price=0 data-max-price=500000>50만원 이하</button></li> <!-- 선택시 .on 클래스 추가 -->
+
+				<li><button type="button" name="fast_price" data-min-price=0 data-max-price=600000>60만원 이하</button></li> <!-- 선택시 .on 클래스 추가 -->
+
+				<li><button type="button" name="fast_price" data-min-price=0 data-max-price=700000>70만원 이하</button></li> <!-- 선택시 .on 클래스 추가 -->
+						
+						</ul>
+					</div>
+					<!-- //빠른 가격 선택 -->
+					<script>
+						$(function() {
+							$( "#l_range" ).val('5000');
+							$( "#r_range" ).val('699000');
+							$( "#slider-range" ).slider({
+								range: true,
+								min: 0,
+							    max: 699000,
+								values: [ 5000, 699000 ],
+								change: function( event, ui ) {
+									$( "#l_range" ).val(ui.values[ 0 ]);
+									$( "#r_range" ).val(ui.values[ 1 ]);
+									//fnsearch.srchFilterBox_price($( "#l_range" ).val(), $( "#r_range" ).val());
+								}
+							});
+						});
+						function slideRngChange() {
+							var min_val = $(".input_range #l_range").val();
+							var max_val = $(".input_range #r_range").val();
+							$("button[name='fast_price']").parent().siblings().children().removeClass('on');
+							$( "#slider-range" ).slider('values',[ min_val , max_val ]);	
+						}
+					</script>
+				</div>
+			</li>
+
+
+			<!-- 할인율 -->
+			<li class="filterOpen active"><!-- 필터 선택시 .active 클래스 추가 -->
+				<input type="hidden" id="var_minDiscount" value="0"/>
+				<input type="hidden" id="var_maxDiscount" value="60"/>
+				<a><span>할인율</span></a>
+				<div class="depth2">
+					<div id="slider-disrange"></div>
+					<div class="input_range">
+						<input type="text" id="l_disrange" class="input_txt wide range_left" value="0" onKeyUp="slideDisChange();" title="최소 할인율" />
+						<!-- <input type="text" id="l_disrange" class="input_txt wide range_left" value="0" onKeyUp="slideDisChange();" title="최소 할인율" /> -->
+						<span>~</span>
+						<input type="text" id="r_disrange" class="input_txt wide range_right" value="0" onKeyUp="slideDisChange();" title="최대 할인율" />
+						<!-- <input type="text" id="r_disrange" class="input_txt wide range_right" value="90" onKeyUp="slideDisChange();" title="최대 할인율" /> -->
+						<div class="btn_range">
+							<button type="button" id="disSearch" class="btn07"><span class="ir">확인</span></button>
+						</div>											
+					</div>
+					<!-- 빠른 할인율 선택 -->
+					<div class="btn_quick">
+						<ul>
+							<li><button type="button"  name="fast_discount"  data-min-dis="30" data-max-dis="100">30% 이상</button></li>
+							<li><button type="button"  name="fast_discount"  data-min-dis="50" data-max-dis="100">50% 이상</button></li>
+							<li><button type="button"  name="fast_discount"  data-min-dis="70" data-max-dis="100">70% 이상</button></li>
+							<li><button type="button"  name="fast_discount"  data-min-dis="90" data-max-dis="100">90% 이상</button></li>
+						</ul>
+					</div>
+					<!-- //빠른 할인율 선택 -->
+				</div>
+				<script>
+					$(function() {
+						$( "#l_disrange" ).val('0');
+						$( "#r_disrange" ).val('60');
+						$( "#slider-disrange" ).slider({
+							range: true,
+							min: 0,
+							max: 100,
+							values: [ 0, 60 ],
+							change: function( event, ui ) {
+								$( "#l_disrange" ).val(ui.values[ 0 ]);
+								$( "#r_disrange" ).val(ui.values[ 1 ]);
+								//fnsearch.srchFilterBox_price($( "#l_range" ).val(), $( "#r_range" ).val());
+							}
+						});
+					});
+					
+					function slideDisChange() {
+						var min_val = $(".input_range #l_disrange").val();
+						var max_val = $(".input_range #r_disrange").val();
+						$("button[name='fast_discount']").parent().siblings().children().removeClass('on');
+						$( "#slider-disrange" ).slider('values',[ min_val , max_val ]);	
+					}
+					
+				</script>
+			</li>
+			<!-- //할인율 -->
+
+
+		</ul>
+	</div>
+</div>
+<script type="text/javascript">
+	commonUI.loadJs('/pcweb/js/stickyMenu_JEC.js');
+</script>		
+			
+			<!-- //검색 필터 -->
+			</div>
+			<!-- //l_content -->
+			<!-- r_content -->
+			<div class="r_content">		
+			
+			<!-- 배너 -->
+
+			<!-- //배너 -->
+			
+			<!-- 추천 BEST -->
+
+				<div class="box_recom_best">
+					<div class="tit_h3_bar02"><span>추천 베스트</span></div>
+					<div class="list_product05 d_prd_over">
+						<ul class="list">
+
+ 							<li>
+								<a href="javascript:;" onclick= "elandmall.goods.goDetail({goods_no:'1906559149', vir_vend_no:'VV19009762', sale_shop_divi_cd:'14', disp_ctg_no:'' ,sale_area_no:'', tr_yn:'', conts_dist_no:'', conts_divi_cd:'10', rel_no:'1906559149', rel_divi_cd:'10', brand_nm:'로이드', goods_nm:'다이얼 포인트 여성 원형메쉬 시계 (LL2G19702IGG)', cust_sale_price:39900,ga_ctg_nm:$('#_HEADER_TITLE').data('ga_ctg_nm'), dlp_list:'', dlp_category:'잡화&#44;슈즈&#44;쥬얼리/시계&#44;보석&#44;쥬얼리'});" class="links" data-ga-tag="PC_브랜드관_레벨3||추천베스트||다이얼 포인트 여성 원형메쉬 시계 (LL2G19702IGG)"><div class="thumb"><span><img src="//www.elandrs.com/upload/prd/img/149/240/1906559149_0000007.jpg" width="186" height="186" onError="this.src='//www.elandrs.com/images/pcweb/common/186_noimg.gif'" alt="다이얼 포인트 여성 원형메쉬 시계 (LL2G19702IGG)"/></span></div><div class="cont"><span class="brand_nm">로이드</span><span class="prod_nm">다이얼 포인트 여성 원형메쉬 시계 (LL2G19702IGG)</span><div class="box_price"><span class="dis_percent"><strong>33</strong>%</span><div class="cont_price"><div class="price01"><del class="prime">59,900원</del></div><span class="c_price"><strong>39,900</strong>원</span></div></div><div class="box_flag"><span class="flag_icon c02">무료배송</span></div><div class="box_grade"><div class="set_grade01"><span style="width:100%">100점</span></div><strong class="set_conunt_review">리뷰(1)<span class="ir">개의 상품평</span></strong></div></div></a><div class="box_opt_link"><a class="opt_like" href="javascript:;" onClick="elandmall.wishlist.addGoodsWish('1906559149','VV19009762','14','','','');"><span>찜하기</span></a><a class="opt01" href="javascript:;" onClick="elandmall.popup.goodsPreview({goods_no:'1906559149', vir_vend_no:'VV19009762', sale_shop_divi_cd:'14', disp_ctg_no:'' ,sale_area_no:'', tr_yn:'', conts_dist_no:'', conts_divi_cd:'10', rel_no:'1906559149', rel_divi_cd:'10', brand_nm:'로이드', goods_nm:'다이얼 포인트 여성 원형메쉬 시계 (LL2G19702IGG)', cust_sale_price:39900,ga_ctg_nm:$('#_HEADER_TITLE').data('ga_ctg_nm'), dlp_list:'', dlp_category:'잡화&#44;슈즈&#44;쥬얼리/시계&#44;보석&#44;쥬얼리'});"><span>미리보기</span></a><a class="opt02" href="javascript:;" onclick= "elandmall.goods.goDetail({goods_no:'1906559149', vir_vend_no:'VV19009762', sale_shop_divi_cd:'14', disp_ctg_no:'' ,sale_area_no:'', tr_yn:'', conts_dist_no:'', conts_divi_cd:'10', rel_no:'1906559149', rel_divi_cd:'10', brand_nm:'로이드', goods_nm:'다이얼 포인트 여성 원형메쉬 시계 (LL2G19702IGG)', cust_sale_price:39900,ga_ctg_nm:$('#_HEADER_TITLE').data('ga_ctg_nm'), dlp_list:'', dlp_category:'잡화&#44;슈즈&#44;쥬얼리/시계&#44;보석&#44;쥬얼리',target:'_blank'});"><span>새창열기</span></a><a class="opt03" href="javascript:;" onmouseover="elandmall.popup.optNameLayer({goods_no:'1906559149', vir_vend_no :'VV19009762', obj:this})"><span>옵션보기</span></a></div>
+							</li> 
+
+ 							<li>
+								<a href="javascript:;" onclick= "elandmall.goods.goDetail({goods_no:'1906542886', vir_vend_no:'VV19009762', sale_shop_divi_cd:'14', disp_ctg_no:'' ,sale_area_no:'', tr_yn:'', conts_dist_no:'', conts_divi_cd:'10', rel_no:'1906542886', rel_divi_cd:'10', brand_nm:'로이드', goods_nm:'[로이드X프린세스 콜라보] 인어공주 프린세스 목걸이 (LNT19029T)', cust_sale_price:59900,ga_ctg_nm:$('#_HEADER_TITLE').data('ga_ctg_nm'), dlp_list:'', dlp_category:'잡화&#44;슈즈&#44;쥬얼리/시계&#44;보석&#44;쥬얼리'});" class="links" data-ga-tag="PC_브랜드관_레벨3||추천베스트||[로이드X프린세스 콜라보] 인어공주 프린세스 목걸이 (LNT19029T)"><div class="thumb"><span><img src="//www.elandrs.com/upload/prd/img/886/240/1906542886_0000005.jpg" width="186" height="186" onError="this.src='//www.elandrs.com/images/pcweb/common/186_noimg.gif'" alt="[로이드X프린세스 콜라보] 인어공주 프린세스 목걸이 (LNT19029T)"/></span></div><div class="cont"><span class="brand_nm">로이드</span><span class="prod_nm">[로이드X프린세스 콜라보] 인어공주 프린세스 목걸이 (LNT19029T)</span><div class="box_price"><span class="dis_percent"><strong>25</strong>%</span><div class="cont_price"><div class="price01"><del class="prime">79,900원</del></div><span class="c_price"><strong>59,900</strong>원</span></div></div><div class="box_flag"><span class="flag_icon c02">무료배송</span></div><div class="box_grade"><div class="set_grade01"><span style="width:70%">70점</span></div><strong class="set_conunt_review">리뷰(1)<span class="ir">개의 상품평</span></strong></div></div></a><div class="box_opt_link"><a class="opt_like" href="javascript:;" onClick="elandmall.wishlist.addGoodsWish('1906542886','VV19009762','14','','','');"><span>찜하기</span></a><a class="opt01" href="javascript:;" onClick="elandmall.popup.goodsPreview({goods_no:'1906542886', vir_vend_no:'VV19009762', sale_shop_divi_cd:'14', disp_ctg_no:'' ,sale_area_no:'', tr_yn:'', conts_dist_no:'', conts_divi_cd:'10', rel_no:'1906542886', rel_divi_cd:'10', brand_nm:'로이드', goods_nm:'[로이드X프린세스 콜라보] 인어공주 프린세스 목걸이 (LNT19029T)', cust_sale_price:59900,ga_ctg_nm:$('#_HEADER_TITLE').data('ga_ctg_nm'), dlp_list:'', dlp_category:'잡화&#44;슈즈&#44;쥬얼리/시계&#44;보석&#44;쥬얼리'});"><span>미리보기</span></a><a class="opt02" href="javascript:;" onclick= "elandmall.goods.goDetail({goods_no:'1906542886', vir_vend_no:'VV19009762', sale_shop_divi_cd:'14', disp_ctg_no:'' ,sale_area_no:'', tr_yn:'', conts_dist_no:'', conts_divi_cd:'10', rel_no:'1906542886', rel_divi_cd:'10', brand_nm:'로이드', goods_nm:'[로이드X프린세스 콜라보] 인어공주 프린세스 목걸이 (LNT19029T)', cust_sale_price:59900,ga_ctg_nm:$('#_HEADER_TITLE').data('ga_ctg_nm'), dlp_list:'', dlp_category:'잡화&#44;슈즈&#44;쥬얼리/시계&#44;보석&#44;쥬얼리',target:'_blank'});"><span>새창열기</span></a><a class="opt04" href="javascript:;" onClick="elandmall.popup.callGoDetail({goods_no:'1906542886', vir_vend_no:'VV19009762', sale_shop_divi_cd:'14', disp_ctg_no:'' ,sale_area_no:'', tr_yn:'', conts_dist_no:'', conts_divi_cd:'10', rel_no:'1906542886', rel_divi_cd:'10', brand_nm:'로이드', goods_nm:'[로이드X프린세스 콜라보] 인어공주 프린세스 목걸이 (LNT19029T)', cust_sale_price:59900,ga_ctg_nm:$('#_HEADER_TITLE').data('ga_ctg_nm'), dlp_list:'', dlp_category:'잡화&#44;슈즈&#44;쥬얼리/시계&#44;보석&#44;쥬얼리',cart_divi_cd:'10'});"><span>장바구니</span></a></div>
+							</li> 
+
+ 							<li>
+								<a href="javascript:;" onclick= "elandmall.goods.goDetail({goods_no:'1906542897', vir_vend_no:'VV19009762', sale_shop_divi_cd:'14', disp_ctg_no:'' ,sale_area_no:'', tr_yn:'', conts_dist_no:'', conts_divi_cd:'10', rel_no:'1906542897', rel_divi_cd:'10', brand_nm:'로이드', goods_nm:'[로이드X프린세스 콜라보] 미녀와야수 벨 프린세스왕관 반지 (LRT19027T)', cust_sale_price:59900,ga_ctg_nm:$('#_HEADER_TITLE').data('ga_ctg_nm'), dlp_list:'', dlp_category:'잡화&#44;슈즈&#44;쥬얼리/시계&#44;보석&#44;쥬얼리'});" class="links" data-ga-tag="PC_브랜드관_레벨3||추천베스트||[로이드X프린세스 콜라보] 미녀와야수 벨 프린세스왕관 반지 (LRT19027T)"><div class="thumb"><span><img src="//www.elandrs.com/upload/prd/img/897/240/1906542897_0000005.jpg" width="186" height="186" onError="this.src='//www.elandrs.com/images/pcweb/common/186_noimg.gif'" alt="[로이드X프린세스 콜라보] 미녀와야수 벨 프린세스왕관 반지 (LRT19027T)"/></span></div><div class="cont"><span class="brand_nm">로이드</span><span class="prod_nm">[로이드X프린세스 콜라보] 미녀와야수 벨 프린세스왕관 반지 (LRT19027T)</span><div class="box_price"><span class="dis_percent"><strong>25</strong>%</span><div class="cont_price"><div class="price01"><del class="prime">79,900원</del></div><span class="c_price"><strong>59,900</strong>원</span></div></div><div class="box_flag"><span class="flag_icon c02">무료배송</span></div><div class="box_grade"><div class="set_grade01"><span style="width:100%">100점</span></div><strong class="set_conunt_review">리뷰(4)<span class="ir">개의 상품평</span></strong></div></div></a><div class="box_opt_link"><a class="opt_like" href="javascript:;" onClick="elandmall.wishlist.addGoodsWish('1906542897','VV19009762','14','','','');"><span>찜하기</span></a><a class="opt01" href="javascript:;" onClick="elandmall.popup.goodsPreview({goods_no:'1906542897', vir_vend_no:'VV19009762', sale_shop_divi_cd:'14', disp_ctg_no:'' ,sale_area_no:'', tr_yn:'', conts_dist_no:'', conts_divi_cd:'10', rel_no:'1906542897', rel_divi_cd:'10', brand_nm:'로이드', goods_nm:'[로이드X프린세스 콜라보] 미녀와야수 벨 프린세스왕관 반지 (LRT19027T)', cust_sale_price:59900,ga_ctg_nm:$('#_HEADER_TITLE').data('ga_ctg_nm'), dlp_list:'', dlp_category:'잡화&#44;슈즈&#44;쥬얼리/시계&#44;보석&#44;쥬얼리'});"><span>미리보기</span></a><a class="opt02" href="javascript:;" onclick= "elandmall.goods.goDetail({goods_no:'1906542897', vir_vend_no:'VV19009762', sale_shop_divi_cd:'14', disp_ctg_no:'' ,sale_area_no:'', tr_yn:'', conts_dist_no:'', conts_divi_cd:'10', rel_no:'1906542897', rel_divi_cd:'10', brand_nm:'로이드', goods_nm:'[로이드X프린세스 콜라보] 미녀와야수 벨 프린세스왕관 반지 (LRT19027T)', cust_sale_price:59900,ga_ctg_nm:$('#_HEADER_TITLE').data('ga_ctg_nm'), dlp_list:'', dlp_category:'잡화&#44;슈즈&#44;쥬얼리/시계&#44;보석&#44;쥬얼리',target:'_blank'});"><span>새창열기</span></a><a class="opt04" href="javascript:;" onClick="elandmall.popup.callGoDetail({goods_no:'1906542897', vir_vend_no:'VV19009762', sale_shop_divi_cd:'14', disp_ctg_no:'' ,sale_area_no:'', tr_yn:'', conts_dist_no:'', conts_divi_cd:'10', rel_no:'1906542897', rel_divi_cd:'10', brand_nm:'로이드', goods_nm:'[로이드X프린세스 콜라보] 미녀와야수 벨 프린세스왕관 반지 (LRT19027T)', cust_sale_price:59900,ga_ctg_nm:$('#_HEADER_TITLE').data('ga_ctg_nm'), dlp_list:'', dlp_category:'잡화&#44;슈즈&#44;쥬얼리/시계&#44;보석&#44;쥬얼리',cart_divi_cd:'10'});"><span>장바구니</span></a></div>
+							</li> 
+			
+						</ul>
+					</div>						
+				</div>
+
+			<!-- 상품리스트 -->
+			<div id="cate_prd_list" class="cate_prd_list">
+				
+			</div>
+			<!-- //상품리스트 -->
+			</div>
+			<!-- //r_content -->
+		</div>
+		
+	</div>
+	</div>
+</div>
+<!-- content -->
+
+
+
+
+
+
+
+	</div>
+	<!--- //container -->
+
+
+
+		<!-- footer -->
+		<div id="footer">
+
+			<!-- 푸터배너 -->
+
+				<!-- 비정형 영역 처리   -->
+				<!-- 
+	내 용 : 2018_공통배너_푸터띠배너
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<div class="footer_bnr" style="background:#3987cb">
+
+			<a href="javascript:void(0);" onclick="elandmall.disp.clickEvent({openwinyn:'N',tr_yn:'Y',banner_kind_cd:'10' ,conts_form_cd:'110' ,conts_divi_cd:'10' ,conts_dist_no:'C19070848514224' ,sale_area_no:'D1808001097' , rel_divi_cd:'20' , rel_no:'190700000105213', move_cont_no:'1906397564', url:'', brandIndexYn:'N'})"><img src="//www.elandrs.com/upload/dspl/banner/10/674/00/190700000137674.jpg" width="1080" height="120" alt="♥반품샵&시즌오프♥" /></a>			
+		
+			<button type="button" class="btn_ftb_close" title="오늘 하루 보지 않기">배너 닫기</button>
+		</div>
+		<script type="text/javascript">
+			if($(".footer_bnr a").size() > 0){
+
+				$(".footer_bnr a").attr("data-ga-tag","PC_공통||푸터띠배너||♥반품샵&시즌오프♥");
+
+			}
+
+			$(".btn_ftb_close").on("click",function(){
+				$(".footer_bnr").hide();
+				elandmall.util.setCookie({ name: "main_footer_banner_0000014", value: "Y", age:1, path: "/", domain : elandmall.global.cookie_domain });
+			});
+
+			if(elandmall.util.getCookie("main_footer_banner_0000014") == "Y"){
+				$(".footer_bnr").hide();
+			} else {
+				$(".footer_bnr").show();
+			}
+		</script>
+ 
+				<!-- //비정형 영역 처리  -->
+
+			<!-- //푸터배너 -->
+			<div class="foot_section">
+				<div class="foot_opt_area">
+					<ul class="foot_opt_list">
+
+
+						<li><a href="http://www.eland.co.kr/" target="_blank" title="새창" data-ga-tag='PC_공통||최하단메뉴||이랜드소개'>이랜드 소개</a></li>
+						<li><a href="https://www.elandretail.com/members/membership_07.do" target="_blank" title="새창" data-ga-tag='PC_공통||최하단메뉴||이랜드상품권소개'>이랜드 상품권 소개</a></li>
+
+						<li><a href="https://oneclick.elandretail.com/terms/privacyTerms" target="_blank" title="새창" data-ga-tag='PC_공통||최하단메뉴||개인정보처리방침'><strong>개인정보처리방침</strong></a></li>
+						<li><a href="https://oneclick.elandretail.com/terms/mediaTerms" target="_blank" title="새창" data-ga-tag='PC_공통||최하단메뉴||영상정보처리기기운영관리방침'>영상정보처리기기운영, 관리방침</a></li>
+						<li><a href="https://oneclick.elandretail.com/terms/memberShipClubTerms" target="_blank" title="새창" data-ga-tag='PC_공통||최하단메뉴||약관안내'>약관안내</a></li>
+						<li><a href="http://www.elandethic.co.kr" target="_blank" title="새창" data-ga-tag='PC_공통||최하단메뉴||윤리경영'>윤리경영</a></li>
+						<li><a href="https://edi.eland.co.kr/ewstoolkit_install.jsp" target="_blank" title="새창" data-ga-tag='PC_공통||최하단메뉴||전자세금계산서'>전자세금 계산서</a></li>
+						
+						<li><a href="javascript:elandmall.util.openWin({'url':'/custcenter/elandMallJoin.action'});" title="새창" data-ga-tag='PC_공통||최하단메뉴||인터넷쇼핑몰입점상담'>인터넷 쇼핑몰 입점 상담</a></li>
+						
+
+						<li><a href="javascript:elandmall.footer.link.bigOrder()"  title="새창" data-ga-tag='PC_공통||최하단메뉴||단체구매상담'>단체구매 상담</a></li>
+
+
+
+
+
+					</ul>
+				</div>
+				<div class="cont">
+					<div class="logo_footer">
+
+                        <a href="javascript:void(0);" onclick="elandmall.hdLink('MAIN');"><img src="//www.elandrs.com/images/pcweb/common/logo_footer.gif" alt="이랜드 쇼핑포털 ELAND MALL"></a>
+						<div class="logo_footer_qrcode"><img src="//www.elandrs.com/images/pcweb/common/logo_footer_qrcode.gif" alt="이랜드 모바일 QR CODE"></div>
+
+
+						<button type="button" class="foot_app_btn" onclick="elandmall.layout.fnAppIntro();return false;"><span class="ir">앱다운로드</span></button>
+							
+
+					</div>
+
+					<div class="foot_context">
+
+						<ul class="foot_view">
+							<li>상호명 : 주식회사 이랜드 리테일</li>
+							<li>대표이사 : 최종양/김연배</li>
+							<li>서울특별시 서초구 잠원동 70번지 2호</li>
+							<li>사업자등록번호 : 114-81-01855</li>
+							<li>통신판매업 신고번호 : 제 2007-서울서초-09998호 <button type="button" class="btn07 c01 ico_arrow04" onclick="window.open('https://goo.gl/qkVbiL')"><span>사업자 정보확인</span></button></li>
+
+							<li>개인정보 보호책임자 : 대표이사 김연배</li>
+							<li class="mail">EMAIL : <a href="mailto:webmaster@elandmall.com">webmaster@elandmall.com</a></li>
+						</ul>
+						<div class="copyright">Copyright © Eland Retail. All Rights Reserved.</div>
+						
+					</div>
+					<div class="foot_side_opt">
+					
+						<div class="fm_links">
+							<a class="btn_fm_site" href="#"><span>패밀리 사이트 바로가기</span></a>
+							<div class="list_fm_site">
+								<ul class="scroll">
+									<li><a href="http://www.eland.co.kr"    	    			target="blank" data-ga-tag='PC_공통||패밀리사이트바로가기||이랜드그룹'>이랜드그룹</a></li>
+									<li><a href="http://www.bearstown.com/main/main.asp" 	    target="blank" data-ga-tag='PC_공통||패밀리사이트바로가기||베어스타운'>베어스타운</a></li>
+									<li><a href="http://www.seoulelandfc.com" 					target="blank" data-ga-tag='PC_공통||패밀리사이트바로가기||서울이랜드FC'>서울이랜드FC</a></li>
+									<li><a href="http://home.ebs.co.kr/cocomong/main"  			target="blank" data-ga-tag='PC_공통||패밀리사이트바로가기||올리브스튜디오'>올리브스튜디오</a></li>
+									<li><a href="https://www.elandretail.com"       			target="blank" data-ga-tag='PC_공통||패밀리사이트바로가기||이랜드리테일'>이랜드리테일</a></li>
+									<li><a href="http://www.elandeat.com"    	   			    target="blank" data-ga-tag='PC_공통||패밀리사이트바로가기||이랜드외식브랜드'>이랜드 외식브랜드</a></li>
+									<li><a href="http://www.eworld.kr/main/main.htm"    		target="blank" data-ga-tag='PC_공통||패밀리사이트바로가기||이월드'>이월드</a></li>
+									<li><a href="http://www.elandcruise.com"  					target="blank" data-ga-tag='PC_공통||패밀리사이트바로가기||이크루즈'>이크루즈</a></li>
+									<li><a href="http://www.kensingtonresort.co.kr"    		    target="blank" data-ga-tag='PC_공통||패밀리사이트바로가기||켄싱턴리조트'>켄싱턴리조트</a></li>
+									<li><a href="http://www.kensingtonjeju.com"   			    target="blank" data-ga-tag='PC_공통||패밀리사이트바로가기||켄싱턴제주호텔'>켄싱턴제주호텔</a></li>
+									<li><a href="http://www.kensingtonhotel.com"    			target="blank" data-ga-tag='PC_공통||패밀리사이트바로가기||켄싱턴호텔'>켄싱턴호텔</a></li>
+									<li><a href="http://cocomong.forkids.kr"  					target="blank" data-ga-tag='PC_공통||패밀리사이트바로가기||코코몽키즈랜드'>코코몽키즈랜드</a></li>
+									<li><a href="http://www.tourmall.com" 					    target="blank" data-ga-tag='PC_공통||패밀리사이트바로가기||투어몰'>투어몰</a></li>
+									<li><a href="http://www.pic.co.kr/saipan/pic_saipan.php"    target="blank" data-ga-tag='PC_공통||패밀리사이트바로가기||PIC호텔'>PIC 호텔</a></li>
+								</ul>
+							</div>
+						</div>
+						<script type="text/javascript">
+							$(".fm_links").find("li").on("click",function(){
+								$(this).parent().parent().removeClass('active');
+							});
+						</script>
+						
+						<div class="foot_cs">
+
+							<strong class="foot_cs_tit">고객센터</strong>
+							<strong class="foot_csph">1899-9500</strong>
+
+							<span>상담시간 : 오전9시~오후6시(토요일, 공휴일은 쉽니다) </span>
+									
+
+							<button type="button" class="auth_btn partner" onclick="elandmall.footer.link.goOutsideStaffCert();return false;"><span>협력사 입직원 인증</span></button>
+							<button type="button" class="auth_btn" onclick="elandmall.footer.link.goStaffCert();return false;"><span>임직원 회원가입 / 인증</span></button>
+						</div>
+					</div>
+				</div>
+				<div class="foot_bot">
+					<p><strong>소비자피해보상보험</strong> 고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한 구매 안전서비스를 이용하실 수 있습니다.</p>
+					<button onclick="window.open('https://www.usafe.co.kr/usafeShopCheck.asp?com_no=1148101855','newwin','width=550,height=500,top=100')" type="button" class="btn07 c01 ico_arrow04"><span>서비스 가입사실 확인하기</span></button>
+					<ul class="foot_menus"> <!-- 2018.07.12 변경 : isms_info, norton 클래스 삽입 유의 -->
+						<li class="isms_info">
+							<!-- NGCPO-4715 이랜드몰 푸터 ISMS 인증마크 클릭 시 인증서팝업 연결 -->
+							<a href="/popup/forward.certView.action" target="_blank" onclick="window.open(this.href,'name','resizable=no scrollbars=no width=520 height=755');return false;" keypress="this.onclick" title="새창">
+								<img src="//www.elandrs.com/images/pcweb/common/foot_menu04.png" alt="정보관리체계인증(ISMS) 마크" >
+								<span>
+									정보보호관리체계 ISMS 인증 획득<br />	고객님의 소중한 정보는 안전하게 관리되고 있습니다.<br />유효기간 : 2017.11.27 ~ 2020.11.26
+								</span>
+							</a>
+						</li>
+						<li class="norton"><img src="//www.elandrs.com/images/pcweb/common/foot_menu03.png" alt="Norton Secured"></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+
+
+
+
+<!-- CRITEO ,TARGETING GATES 트래커 추가 -->	
+
+
+
+
+
+
+
+<!-- CAFE 24 -->
+<script type='text/javascript'>
+ElandmallEventListener.fnAddOnloadListener(function() {var s = document.createElement('script');s.type = 'text/javascript';s.async = true;s.src = '//iloveccmel.cmclog.cafe24.com/weblog_iloveccmel.js';var x = document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);});
+ElandmallEventListener.fnAddOnloadListener(function() {var s = document.createElement('script');s.type = 'text/javascript';s.async = true;s.src = '//iloveccmel.weblog.cafe24.com/weblog_iloveccmel.js';var x = document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);});
+</script>
+<!-- CAFE 24 -->
+
+
+<!-- adinsight 공통스크립트 start -->
+<script type="text/javascript">
+var TRS_AIDX = 10952;
+var TRS_PROTOCOL = document.location.protocol;
+var TRS_URL = TRS_PROTOCOL + '//' + ((TRS_PROTOCOL=='https:')?'analysis.adinsight.co.kr':'adlog.adinsight.co.kr') +  '/emnet/trs_esc.js';
+var TRS_DOMAIN = 'elandmall.com';
+ElandmallEventListener.fnAddOnloadListener(function(){	 
+	var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = TRS_URL;
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);	
+});
+</script>
+<!-- adinsight 공통스크립트 end -->
+
+<!-- 카카오픽셀 공통 스크립트  -->
+<script type='text/javascript'>
+function kakaoScriptProc(p) {
+	p = $.extend({
+		type: null	/* traking 화면 구분 */
+	}, p || {});
+
+	$.getScript("//t1.daumcdn.net/adfit/static/kp.js", function() {
+		kakaoPixel('5285479976422128775').pageView();
+
+		//null은 일반웹페이지 유입이다
+		//특정 traking 필요시 type 및 function 파라미터로 실행(traking.jsp, gate.jsp ...)
+		if ( p.type != null ) {
+			p.proc();
+		}
+	});
+}
+
+//공통의 일반페이지 유입시 실행
+ElandmallEventListener.fnAddOnloadListener(function(){
+	if( typeof(kakaoScriptRun) == "undefined" ){
+		kakaoScriptProc();
+	}
+});
+</script>
+<!-- //카카오픽셀 공통 스크립트  -->
+
+<!-- 네이버 프리미엄 로그 분석(Free) 공통 스크립트  -->
+<script type='text/javascript'>
+// A. Account ID 적용
+if(!wcs_add) var wcs_add = {};
+wcs_add["wa"] = "s_28280acc1805";
+
+function naverPremiumLogScriptProc(p) {
+	p = $.extend({
+		cnv_type: null,
+		cnv_val: null,
+	}, p || {});
+
+	$.getScript("//wcs.naver.net/wcslog.js", function() {
+		//B.유입추적함수
+		if (!_nasa) var _nasa={};
+		if(p.cnv_type != null){
+			_nasa["cnv"] = wcs.cnv(p.cnv_type, p.cnv_val);
+		}
+
+		wcs.inflow('elandmall.com');
+
+		// C. 로그 수집 함수 호출
+		wcs_do(_nasa);
+	});
+}
+
+//공통의 일반페이지 유입시 실행
+ElandmallEventListener.fnAddOnloadListener(function(){
+	if( typeof(naverPremiumLogScriptRun) == "undefined" ){
+		naverPremiumLogScriptProc();
+	}
+});
+</script>
+<!-- //네이버 프리미엄 로그 분석(Free) 공통 스크립트  -->
+
+<!-- Facebook Pixel Code -->
+<script type="text/javascript">
+function fbqInit (f, b, e, v, n, t, s) {
+    if (f.fbq) return;
+    n = f.fbq = function() {
+        n.callMethod ?
+            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+    };
+    if (!f._fbq) f._fbq = n;
+    n.push = n;
+    n.loaded = !0;
+    n.version = '2.0';
+    n.queue = [];
+    t = b.createElement(e);
+    t.async = !0;
+    t.src = v;
+    s = b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t, s)
+}
+
+function facebookPixelProc(){
+	fbqInit (window, document, 'script','https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '177135579646074');
+	fbq('track', 'PageView');
+}
+
+ElandmallEventListener.fnAddOnloadListener(function(){
+	facebookPixelProc();
+});
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=177135579646074&ev=PageView&noscript=1" /></noscript>
+<!-- End Facebook Pixel Code -->
+
+<!-- Mobon Tracker v3.1 [공용] start -->
+<script type="text/javascript">
+function mobRf(){
+	var rf = new EN();
+	rf.setSSL(true);
+	rf.sendRf();
+}
+
+function mobRfScriptProc(p) {
+	p = $.extend({callback:null }, p || {});
+	
+	$.getScript("https://cdn.megadata.co.kr/js/enliple_min2.js", function() {
+		mobRf();
+		if($.type(p) != "undefined" && p.callback != null) {
+			p.callback();
+		}
+	});
+}
+
+//공통의 일반페이지 유입시 실행
+ElandmallEventListener.fnAddOnloadListener(function(){
+	if( typeof(mobRfScriptRun) == "undefined" ){
+		mobRfScriptProc();
+	}
+});
+</script>
+<!-- Mobon Tracker v3.1 [공용] end -->
+
+
+
+
+</body>
+</html>

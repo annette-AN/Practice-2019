@@ -1,0 +1,141 @@
+
+
+
+
+
+
+
+
+
+	<link rel="stylesheet" type="text/css" href="/css/pcweb/common.css?ver=tags/20190708-1" />
+	<link rel="stylesheet" type="text/css" href="/css/pcweb/layout.css?ver=tags/20190708-1" />
+	<link rel="stylesheet" type="text/css" href="/css/pcweb/order.css?ver=tags/20190708-1" />
+	<link rel="stylesheet" type="text/css" href="/css/pcweb/category.css?ver=tags/20190708-1" />
+	<link rel="stylesheet" type="text/css" href="/css/pcweb/goods.css?ver=tags/20190708-1" />
+	<link rel="stylesheet" type="text/css" href="/css/pcweb/shop.css?ver=tags/20190708-1" />
+	<link rel="stylesheet" type="text/css" href="/css/pcweb/mypage.css?ver=tags/20190708-1" />
+	<link rel="stylesheet" type="text/css" href="/css/pcweb/cs.css?ver=tags/20190708-1" />
+	<link rel="stylesheet" type="text/css" href="/css/pcweb/wf.css?ver=tags/20190708-1" />
+	<link rel="stylesheet" type="text/css" href="/css/pcweb/md.css?ver=tags/20190708-1" />
+
+			<link rel="stylesheet" type="text/css" href="/css/pcweb/main_renewal.css?ver=tags/20190708-1" />
+
+	<link rel="shortcut icon" type="image/x-icon" href="/images/pcweb/common/0000014.ico"/> 
+	
+	<script type="text/javascript" src="/common/js/jquery-1.11.3.min.js?ver=tags/20190708-1"></script>
+	<script type="text/javascript" src="/common/js/jquery-cookie.js?ver=tags/20190708-1"></script>
+	<script type="text/javascript" src="/pcweb/js/jquery-ui.js?ver=tags/20190708-1"></script>
+	<script type="text/javascript" src="/pcweb/js/ui.js?ver=tags/20190708-1"></script>
+	
+	<script type="text/javascript">
+	<!--
+		if ($.type(window.elandmall) != "object") {
+			window.elandmall = {};		
+		};
+		if ($.type(window.elandmall.global) != "object") {
+			window.elandmall.global = {};		
+		};
+		elandmall.global = {
+			scheme: "http",
+			image_path: "//www.elandrs.com",
+			upload_image_path: "//www.elandrs.com/upload",
+			js_path:"",
+			http_url:"http://www.elandmall.com",
+			https_url:"https://secure.elandmall.com",
+			cookie_domain: ".elandmall.com",
+			base_domain_url:"//www.elandmall.com", 
+			http_domain_cookie_name: "pcweb_3_http_domain",
+			modernhouse_domain_url:"//modernhouse.elandmall.com",
+			kimsclub_domain_url:"//ekimsclub.elandmall.com",
+			shoopen_domain_url:"//shoopen.elandmall.com",
+			lloyd_domain_url:"//lloyd.elandmall.com",
+			ost_domain_url:"//ost.elandmall.com",
+			clue_domain_url:"//clue.elandmall.com",
+			eblin_domain_url:"//eblin.elandmall.com",
+			mixxo_domain_url:"//mixxo.elandmall.com",
+			roem_domain_url:"//roem.elandmall.com",
+			spao_domain_url:"//spao.elandmall.com",
+			whoau_domain_url:"//whoau.elandmall.com",
+			folder_domain_url:"//folder.elandmall.com",
+			newbal_domain_url:"//nb.elandmall.com",
+			nbkids_domain_url:"//nbkids.elandmall.com",
+			bahus_domain_url:"//bahus.elandmall.com",
+			kinders_domain_url:"//kinderleague.elandmall.com",
+			disp_mall_no:"0000014",
+			ie_yn: "N",
+			oneclick_domain_url:"https://oneclick.elandretail.com",
+			ssl_domain_url:"https://secure.elandmall.com",
+			chnl_cd:"10",
+			kimsclub_mall_no:"0000045",
+			ksf_service_domain : "search.elandmall.com"
+		};
+	//-->
+	</script>	
+	<script type="text/javascript" src="/common/js/overpass.common.js?ver=tags/20190708-1"></script>
+	<script type="text/javascript" src="/common/js/overpass.util.js?ver=tags/20190708-1"></script>
+	<script type="text/javascript" src="/common/js/overpass.elandmall.js?ver=tags/20190708-1"></script>
+	<script type="text/javascript" src="/common/js/overpass.goods.js?ver=tags/20190708-1"></script>
+	<script type="text/javascript" src="/common/js/overpass.login.base.js?ver=tags/20190708-1"></script>
+	<script type="text/javascript" src="/pcweb/js/elandmall.login.js?ver=tags/20190708-1"></script>
+	<script type="text/javascript" src="/pcweb/js/elandmall.login.sns.js?ver=tags/20190708-1"></script>
+	<script type="text/javascript" src="/pcweb/js/elandmall.popup.js?ver=tags/20190708-1"></script>
+	<script type="text/javascript" src="/pcweb/js/elandmall.pcweb.js?ver=tags/20190708-1"></script>
+	<script type="text/javascript" src="/pcweb/js/elandmall.goods.js?ver=tags/20190708-1"></script>
+	<script type="text/javascript" src="/pcweb/netfunnel/netfunnel.js?ver=tags/20190708-1"></script>
+	
+	<script type="text/javascript" src="/common/js/aws-sdk-2.283.1.min.js?ver=tags/20190708-1"></script>
+
+
+<script type="text/javascript" src="/common/js/overpass.common.js"></script>
+
+<script type="text/javascript">
+<!--
+	//카카오픽셀 스크립트(회원가입 완료)
+	if ( 'JOIN' == 'null' ) {
+		kakaoPixel('5285479976422128775').pageView();
+		kakaoPixel('5285479976422128775').completeRegistration();
+	}
+
+	var TRS_AIDX = 10952;
+    var TRS_PROTOCOL = document.location.protocol;
+    var TRS_URL = TRS_PROTOCOL + '//' + ((TRS_PROTOCOL=='https:')?'analysis.adinsight.co.kr':'adlog.adinsight.co.kr') +  '/emnet/trs_esc.js';
+
+	var s = document.createElement('script');
+	s.type = 'text/javascript';
+	s.async = true;
+	s.src = TRS_URL;
+	var x = document.getElementsByTagName('script')[0];
+	x.parentNode.insertBefore(s, x);
+
+    var entry_url = "http://lloyd.elandmall.com/main/initMain.action";
+    var chnl_YN   = "Y";
+    var redirect_url = "";
+
+    if(entry_url != ""){
+    	redirect_url = entry_url;
+    	
+    	//2017.05.25 Google	Analytics 유입 최적화 가이드 적용. (외부채널에 한하여)
+    	if(chnl_YN == "Y"){
+	    	if( location.search ){
+	    		if(entry_url.lastIndexOf("?") <= -1){
+	    			redirect_url = redirect_url + "?" + location.search.substring(1);
+	    		}else{
+	    			redirect_url = redirect_url + "&" + location.search.substring(1);
+	    		}
+	    	}
+	
+	    	if(window.location.href){
+	    		var referrer = "utm_referrer=" + encodeURIComponent(window.location.href);
+	    		redirect_url = redirect_url + (location.search || entry_url.lastIndexOf("?") <= -1 ? '&' : '?') + referrer;
+	    	}
+    	}
+    } else {
+        redirect_url = "http://www.elandmall.com";
+    }
+
+    ElandmallEventListener.fnAddOnloadListener(function(){
+		window.location.href = redirect_url;
+    });
+//-->
+</script>
+
