@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css?family=Archivo+Narrow|Nanum+Gothic|Roboto&display=swap");
+body, header, nav, ul, li, section, article, h1, h2, h3, h4, h5, h6, p, div {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nanum Gothic', 'Roboto', sans-serif;
+  font-size: 13px;
+  color: #555555;
+  background: #FFFFFF;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: normal;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input, button, select {
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 0px;
+  border-radius: 0px;
+  vertical-align: middle;
+  white-space: normal;
+  background: none;
+  line-height: 1;
+  font: inherit;
+}
+
+select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.eland-wrap {
+  height: 40px;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.eland {
+  width: 1200px;
+  height: 40px;
+  margin: 0 auto;
+}
+
+.eland > ul {
+  display: block;
+  float: left;
+  width: 50%;
+}
+
+.eland .eland-site {
+  height: 40px;
+  padding-left: 22px;
+  background-image: url(../img/icons/header_lloyd.png);
+  background-repeat: no-repeat;
+  background-position: 18% 0%;
+}
+
+.eland .eland-site li {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.eland .eland-site li a {
+  display: inline-block;
+  width: 130px;
+  height: 40px;
+}
+
+.eland .eland-site li select {
+  position: relative;
+  width: 125px;
+  height: 26px;
+  padding-left: 10px;
+  color: #5F5F5F;
+  font-family: 'Archivo Narrow', sans-serif;
+  font-weight: bolder;
+  font-size: 12px;
+  letter-spacing: 1px;
+  border: 1px solid #ECECEC;
+  background-image: url(../img/icons/bu_brand_arrow.png);
+  background-repeat: no-repeat;
+  background-position: 98px -22px;
+}
+
+.eland .eland-site li select:hover, .eland .eland-site li select:focus {
+  background-position: 98px -2px;
+}
+
+.eland .eland-site li ul {
+  display: block;
+}
+
+.text-ir {
+  position: absolute;
+  text-indent: -9999px;
+}
+/*# sourceMappingURL=index.css.map */
