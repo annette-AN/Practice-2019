@@ -31,33 +31,46 @@ button {cursor: pointer;}
 .eland-wrap {
   height: 40px;
   border-bottom: 1px solid #E5E5E5;
+  // background: pink;
 }
 .eland {
+  position: relative;
   width: 1200px;
   height: 40px;
   margin: 0 auto;
+  // background: red;
 
   > ul {
+    position: absolute;
     display: block;
-    float: left;
-    width: 50%;
   }
 
   .eland-site {
+    top: 0px;
+    left: 0px;
     height: 40px;
-    padding-left: 22px;
+    padding-left: 38px;
     background-image: url(../img/icons/header_lloyd.png);
     background-repeat: no-repeat;
-    background-position: 18% 0%;
+    background-position: 7% 0%;
+    // background: red;
 
     li {
       display: inline-block;
       vertical-align: middle;
 
+      &:nth-child(3) {
+        a {
+          width: 100px;
+        }
+      }
+
       a {
         display: inline-block;
         width: 130px;
         height: 40px;
+
+        background: rgba(255, 192, 203, 0.5);
       }
 
       select {
@@ -81,11 +94,33 @@ button {cursor: pointer;}
       }
 
       ul {
-        //위치 다시 잡고 ul width를 50%로 정렬하면 안될듯
-        display: block;
       }
     }
   }
+
+  .eland-member {
+    top: 50%;
+    right: 70px;
+    transform: translate(0%, -50%);
+
+    li {
+      display: inline-block;
+      font-size: 11px;
+
+      img {
+        padding: 0px 10px;
+      }
+    }
+
+    .login {
+      position: fixed;
+      // top: 50%;
+      // left: 50%;
+      // transform: translate(-50%, -50%);
+      background: #999;
+    }
+  }
+
 }
 
 .text-ir {
