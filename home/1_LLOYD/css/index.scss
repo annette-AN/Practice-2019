@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Archivo+Narrow|Nanum+Gothic|Roboto&display=swap');
-body, header, nav, ul, li, section, article, h1, h2, h3, h4, h5, h6, p, div {margin: 0; padding: 0; box-sizing: border-box;}
+body, header, nav, ul, li, section, article, h1, h2, h3, h4, h5, h6, p, div, a, span {margin: 0; padding: 0; box-sizing: border-box;}
 body {
   font-family: 'Nanum Gothic', 'Roboto', sans-serif;
   font-size: 13px;
   color: #555555;
   background: #FFFFFF;
+  overflow-y: scroll;
 }
 h1, h2, h3, h4, h5, h6 {font-size: inherit; font-weight: normal;}
 li {list-style: none;}
@@ -31,14 +32,13 @@ button {cursor: pointer;}
 .eland-wrap {
   height: 40px;
   border-bottom: 1px solid #E5E5E5;
-  // background: pink;
 }
+
 .eland {
   position: relative;
   width: 1200px;
   height: 40px;
   margin: 0 auto;
-  // background: red;
 
   > ul {
     position: absolute;
@@ -52,10 +52,17 @@ button {cursor: pointer;}
     padding-left: 38px;
     background-image: url(../img/icons/header_lloyd.png);
     background-repeat: no-repeat;
-    background-position: 7% 0%;
-    // background: red;
+    background-position: 54px 0px;
 
-    li {
+    .li-brand {
+      &:hover {
+        > ul {
+          display: block;
+        }
+      }
+    }
+
+    > li {
       display: inline-block;
       vertical-align: middle;
 
@@ -65,19 +72,21 @@ button {cursor: pointer;}
         }
       }
 
-      a {
+      > a {
         display: inline-block;
         width: 130px;
         height: 40px;
-
-        background: rgba(255, 192, 203, 0.5);
       }
 
-      select {
-        position: relative;
+      .brand {
+        position: absolute;
+        top: 50%;
+        left: 410px;
+        transform: translate(0%, -50%);
         width: 125px;
         height: 26px;
-        padding-left: 10px;
+        line-height: 26px;
+        padding-left: 14px;
         color: #5F5F5F;
         font-family: 'Archivo Narrow', sans-serif;
         font-weight: bolder;
@@ -86,14 +95,49 @@ button {cursor: pointer;}
         border: 1px solid #ECECEC;
         background-image: url(../img/icons/bu_brand_arrow.png);
         background-repeat: no-repeat;
-        background-position: 98px -22px;
+        background-position: 97px -22px;
 
         &:hover, &:focus {
-          background-position: 98px -2px;
+          background-position: 97px -2px;
+        }
+
+        img {
+          padding-left: 9px;
         }
       }
 
-      ul {
+      .brand-site {
+        // 백그라운드랑 border-bottom은 header가 내려오게 jquery로
+        display: none;
+
+        li {
+          padding: 20px 0px;
+
+          a {
+            img {
+              width: 100px;
+            }
+          }
+
+          &:nth-of-type(1) ,&:nth-of-type(2) {
+            span {
+              height: 80px;
+            }
+          }
+        }
+
+        li+li {
+          border-top: 1px solid #ededed;
+        }
+
+        .brand-type {
+          display: block;
+          float: left;
+          width: 180px;
+          height: 40px;
+          padding: 0px 40px;
+          // font-weight: bold;
+        }
       }
     }
   }
@@ -120,7 +164,6 @@ button {cursor: pointer;}
       background: #999;
     }
   }
-
 }
 
 .text-ir {

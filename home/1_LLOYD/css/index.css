@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Archivo+Narrow|Nanum+Gothic|Roboto&display=swap");
-body, header, nav, ul, li, section, article, h1, h2, h3, h4, h5, h6, p, div {
+body, header, nav, ul, li, section, article, h1, h2, h3, h4, h5, h6, p, div, a, span {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -11,6 +11,7 @@ body {
   font-size: 13px;
   color: #555555;
   background: #FFFFFF;
+  overflow-y: scroll;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -80,30 +81,38 @@ button {
   padding-left: 38px;
   background-image: url(../img/icons/header_lloyd.png);
   background-repeat: no-repeat;
-  background-position: 7% 0%;
+  background-position: 54px 0px;
 }
 
-.eland .eland-site li {
+.eland .eland-site .li-brand:hover > ul {
+  display: block;
+}
+
+.eland .eland-site > li {
   display: inline-block;
   vertical-align: middle;
 }
 
-.eland .eland-site li:nth-child(3) a {
+.eland .eland-site > li:nth-child(3) a {
   width: 100px;
 }
 
-.eland .eland-site li a {
+.eland .eland-site > li > a {
   display: inline-block;
   width: 130px;
   height: 40px;
-  background: rgba(255, 192, 203, 0.5);
 }
 
-.eland .eland-site li select {
-  position: relative;
+.eland .eland-site > li .brand {
+  position: absolute;
+  top: 50%;
+  left: 410px;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
   width: 125px;
   height: 26px;
-  padding-left: 10px;
+  line-height: 26px;
+  padding-left: 14px;
   color: #5F5F5F;
   font-family: 'Archivo Narrow', sans-serif;
   font-weight: bolder;
@@ -112,11 +121,43 @@ button {
   border: 1px solid #ECECEC;
   background-image: url(../img/icons/bu_brand_arrow.png);
   background-repeat: no-repeat;
-  background-position: 98px -22px;
+  background-position: 97px -22px;
 }
 
-.eland .eland-site li select:hover, .eland .eland-site li select:focus {
-  background-position: 98px -2px;
+.eland .eland-site > li .brand:hover, .eland .eland-site > li .brand:focus {
+  background-position: 97px -2px;
+}
+
+.eland .eland-site > li .brand img {
+  padding-left: 9px;
+}
+
+.eland .eland-site > li .brand-site {
+  display: none;
+}
+
+.eland .eland-site > li .brand-site li {
+  padding: 20px 0px;
+}
+
+.eland .eland-site > li .brand-site li a img {
+  width: 100px;
+}
+
+.eland .eland-site > li .brand-site li:nth-of-type(1) span, .eland .eland-site > li .brand-site li:nth-of-type(2) span {
+  height: 80px;
+}
+
+.eland .eland-site > li .brand-site li + li {
+  border-top: 1px solid #ededed;
+}
+
+.eland .eland-site > li .brand-site .brand-type {
+  display: block;
+  float: left;
+  width: 180px;
+  height: 40px;
+  padding: 0px 40px;
 }
 
 .eland .eland-member {
