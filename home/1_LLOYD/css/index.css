@@ -64,7 +64,7 @@ button {
 
 .eland {
   position: relative;
-  width: 1200px;
+  width: 1100px;
   height: 40px;
   margin: 0 auto;
 }
@@ -78,10 +78,8 @@ button {
   top: 0px;
   left: 0px;
   height: 40px;
-  padding-left: 38px;
   background-image: url(../img/icons/header_lloyd.png);
   background-repeat: no-repeat;
-  background-position: 54px 0px;
 }
 
 .eland .eland-site .li-brand:hover > ul {
@@ -93,13 +91,13 @@ button {
   vertical-align: middle;
 }
 
-.eland .eland-site > li:nth-child(3) a {
-  width: 100px;
+.eland .eland-site > li:nth-child(2) a {
+  width: 133px;
 }
 
 .eland .eland-site > li > a {
   display: inline-block;
-  width: 130px;
+  width: 110px;
   height: 40px;
 }
 
@@ -162,7 +160,7 @@ button {
 
 .eland .eland-member {
   top: 50%;
-  right: 70px;
+  right: 0px;
   -webkit-transform: translate(0%, -50%);
           transform: translate(0%, -50%);
 }
@@ -179,6 +177,88 @@ button {
 .eland .eland-member .login {
   position: fixed;
   background: #999;
+}
+
+.snb {
+  width: 1100px;
+  position: relative;
+  margin: 30px auto;
+}
+
+.snb .sns {
+  width: 140px;
+  height: 45px;
+  background: url(../img/icons/header_lloyd.png) 0px -159px no-repeat;
+}
+
+.snb .sns > a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+.snb .sns > a + a {
+  margin-left: 6px;
+}
+
+.snb h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.snb .search {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+  right: 0px;
+  width: 260px;
+  height: 40px;
+  background-color: #f3f3f3;
+  border-radius: 20px;
+}
+
+.snb .search input {
+  width: 215px;
+  height: 100%;
+  border-radius: 20px;
+  padding-left: 5px;
+}
+
+.snb .search button {
+  position: absolute;
+  top: 0%;
+  right: 0px;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: url(../img/icons/header_lloyd.png) -175px -158px no-repeat;
+}
+
+.gnb {
+  position: relative;
+  background: #16391D;
+  color: #f2f2f2;
+}
+
+.gnb > ul {
+  width: 1100px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.gnb > ul > li {
+  float: left;
+  padding: 0px 27px;
+  line-height: 40px;
+}
+
+.gnb > ul > li:first-child {
+  width: 180px;
 }
 
 .text-ir {
