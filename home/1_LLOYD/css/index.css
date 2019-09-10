@@ -257,8 +257,15 @@ button {
   line-height: 40px;
 }
 
-.gnb > ul > li:first-child {
+.gnb > ul > li > ul:first-child {
   width: 180px;
+  background: pink;
+}
+
+.gnb > ul > li > ul > li {
+  float: left;
+  position: absolute;
+  background: red;
 }
 
 .text-ir {

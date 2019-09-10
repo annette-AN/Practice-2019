@@ -240,8 +240,19 @@ button {cursor: pointer;}
       padding: 0px 27px;
       line-height: 40px;
       
-      &:first-child {
-        width: 180px;
+      >ul {
+        // position: relative;
+
+        &:first-child {
+          width: 180px;
+          background: pink;
+        }
+
+        >li {
+          float: left;
+          position: absolute;
+          background: red;
+        }
       }
     }
   }
