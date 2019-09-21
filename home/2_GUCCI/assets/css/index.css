@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans+KR:100,300,400,500,700,900|Poiret+One|Quattrocento+Sans&display=swap");
+body, div, h1, h2, h3, h4, h5, h6, button, ul, li, a, span, em, p {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.index .visual {
+  background: pink;
+}
+
+.index .visual .slide {
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  padding-top: 44%;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  -webkit-box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.2);
+}
+
+.index .visual .slide .contents {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #f2f2f2;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.index .visual .slide .contents h2 {
+  font-size: 65px;
+  font-weight: 100;
+}
+
+.index .visual .slide .contents h3 {
+  font-weight: 100;
+}
+
+.index .visual .slide .contents .view-btn {
+  margin-top: 5px;
+}
+
+.index .visual .slide .contents .view-btn button {
+  padding: 13px;
+  background: #1B1B1B;
+  color: #fff;
+  font-weight: 300;
+}
+
+.index .visual .slide .contents .view-btn button:hover {
+  background: #333;
+}
+
+.index .visual .s1 {
+  background-image: url(../img/HeroBigStandard_3200x1520/HeroBigStandard_S93-FS-HERO-02_001_Default.jpg);
+}
+
+.index .visual .s2 {
+  background-image: url(../img/HeroBigStandard_3200x1520/HeroBigStandard_S93-FS-ADV-02_001_Default.jpg);
+}
+
+.index .visual .s3 {
+  background-image: url(../img/HeroBigStandard_3200x1520/HeroBigStandard_S93-FS-ADV-18_001_Default.jpg);
+}
+
+.index .visual .s4 {
+  background-image: url(../img/HeroBigStandard_3200x1520/HeroBigStandard_S01-FS-Creativita-01-up_001_Default.jpg);
+}
+
+.index .visual #indicator {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  bottom: 10px;
+  background: red;
+  overflow: hidden;
+}
+
+.index .visual #indicator li {
+  float: left;
+}
+
+.index .visual #indicator li + li {
+  margin-left: 5px;
+}
+
+.text-ir {
+  width: 0px;
+  height: 0px;
+  text-indent: -9999px;
+  font-size: 0px;
+}
+
+.NanumGothic {
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+.Quattrocento {
+  font-family: 'Quattrocento Sans', sans-serif;
+}
+
+.PoiretOne {
+  font-family: 'Poiret One', cursive;
+}
+/*# sourceMappingURL=index.css.map */

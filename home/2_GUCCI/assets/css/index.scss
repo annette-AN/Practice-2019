@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans+KR:100,300,400,500,700,900|Poiret+One|Quattrocento+Sans&display=swap');
+
+body {
+}
+
+body, div, h1, h2, h3, h4, h5, h6, button, ul, li, a, span, em, p {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.index {
+  .visual {
+    background: pink;
+
+    .slide {
+      position: relative;
+      max-width: 100%;
+      height: auto;
+      padding-top: 44%;
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: cover;
+      box-shadow: inset 0 0 0 2000px rgba(0,0,0,0.2);
+
+      .contents {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #f2f2f2;
+        margin-top: 30px;
+        text-align: center;
+
+        h2 {
+          // background: red;
+          font-size: 65px;
+          font-weight: 100;
+        }
+
+        h3 {
+          font-weight: 100;
+        }
+
+        .view-btn {
+          margin-top: 5px;
+
+          button {
+            padding: 13px;
+            background: #1B1B1B;
+            
+            color: #fff;
+            font-weight: 300;
+
+            &:hover {
+              background: #333;
+            }
+          }
+        }
+      }
+    }
+
+    .s1 {
+      background-image: url(../img/HeroBigStandard_3200x1520/HeroBigStandard_S93-FS-HERO-02_001_Default.jpg);
+    }
+    .s2 {
+      background-image: url(../img/HeroBigStandard_3200x1520/HeroBigStandard_S93-FS-ADV-02_001_Default.jpg);
+    }
+    .s3 {
+      background-image: url(../img/HeroBigStandard_3200x1520/HeroBigStandard_S93-FS-ADV-18_001_Default.jpg);
+    }
+    .s4 {
+      background-image: url(../img/HeroBigStandard_3200x1520/HeroBigStandard_S01-FS-Creativita-01-up_001_Default.jpg);
+    }
+
+    #indicator {
+      position: absolute;
+      // top: auto;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      bottom: 10px;
+      background: red;
+      overflow: hidden;
+
+      //너 위치가 왜그러니 text-ir 때문은 아닌거 같은데 확인
+
+      li {
+        float: left;
+      }
+
+      li+li {
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+
+
+//design
+.text-ir {width:0px; height:0px; text-indent: -9999px; font-size: 0px;}
+.NanumGothic {font-family: 'Nanum Gothic', sans-serif;}
+.Quattrocento {font-family: 'Quattrocento Sans', sans-serif;}
+.PoiretOne {font-family: 'Poiret One', cursive;}
