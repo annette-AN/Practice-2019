@@ -16,14 +16,19 @@ button {
 }
 
 .index .visual {
+  position: relative;
+  padding-top: 36.666%;
   background: pink;
 }
 
 .index .visual .slide {
-  position: relative;
-  max-width: 100%;
-  height: auto;
-  padding-top: 44%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: auto;
+  right: auto;
+  width: 100%;
+  height: 100%;
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
@@ -84,10 +89,11 @@ button {
 
 .index .visual #indicator {
   position: absolute;
+  top: auto;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  bottom: 10px;
+  bottom: 30px;
   background: red;
   overflow: hidden;
 }
@@ -98,6 +104,26 @@ button {
 
 .index .visual #indicator li + li {
   margin-left: 5px;
+}
+
+.index .visual .silde-btns .prev-btn, .index .visual .silde-btns .next-btn {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+}
+
+.index .visual .silde-btns .prev-btn img, .index .visual .silde-btns .next-btn img {
+  width: 40px;
+  background: #f2f2f2;
+}
+
+.index .visual .silde-btns .prev-btn {
+  left: 40px;
+}
+
+.index .visual .silde-btns .next-btn {
+  right: 40px;
 }
 
 .text-ir {

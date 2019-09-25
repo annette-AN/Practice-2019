@@ -20,13 +20,18 @@ button {
 
 .index {
   .visual {
+    position: relative;
+    padding-top: 36.666%;
     background: pink;
 
     .slide {
-      position: relative;
-      max-width: 100%;
-      height: auto;
-      padding-top: 44%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      bottom: auto;
+      right: auto;
+      width: 100%;
+      height: 100%;
       background-repeat: no-repeat;
       background-position: top center;
       background-size: cover;
@@ -42,7 +47,6 @@ button {
         text-align: center;
 
         h2 {
-          // background: red;
           font-size: 65px;
           font-weight: 100;
         }
@@ -84,14 +88,16 @@ button {
 
     #indicator {
       position: absolute;
-      // top: auto;
+      top: auto;
       left: 50%;
       transform: translate(-50%,-50%);
-      bottom: 10px;
+      bottom: 30px; //위치 재지정
       background: red;
       overflow: hidden;
 
-      //너 위치가 왜그러니 text-ir 때문은 아닌거 같은데 확인
+      &:hover {
+        //인디케이터 모양잡기
+      }
 
       li {
         float: left;
@@ -100,6 +106,31 @@ button {
       li+li {
         margin-left: 5px;
       }
+    }
+
+    .silde-btns {
+      // position: absolute;
+      // background: red;
+
+      .prev-btn, .next-btn {
+        position: absolute;
+        top: 50%;
+        transform: translate(0%, -50%);
+        
+        img {
+          width: 40px;
+          background: #f2f2f2;
+        }
+      }
+
+      .prev-btn {
+        left: 40px;
+      }
+
+      .next-btn {
+        right: 40px;
+      }
+
     }
   }
 }
