@@ -6,12 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/>
   <link rel="stylesheet" href="assets/css/index.css"/>
+  <script src="assets/js/jquery.min.js"></script>
+  <!-- <script src=""></script> -->
   <meta name="title" content="구찌 공식 온라인 스토어"/>
   <meta name="description" content="새롭게 공개된 구찌 2019 가을/겨울 컬렉션을 구찌 공식 온라인 스토어에서 가장 먼저 만나 보세요."/>
   <title>구찌 공식 온라인 스토어</title>
   <!-- 9/10 3h -->
 </head>
-<body id="idnex" class="index">
+<body id="index" class="index">
   <div class="visual">
     <div class="slide s1">
       <div class="contents">
@@ -43,12 +45,12 @@
     <div class="slide s4">
     </div>
 
-    <ul id="indicator">
-      <li><span class="text-ir">n번 슬라이드</span>*</li>
-      <li><span class="text-ir">n번 슬라이드</span>*</li>
+    <ul class="indicator">
+      <!-- <li><span class="text-ir">n번 슬라이드</span>*</li>
+      <li><span class="text-ir">n번 슬라이드</span>*</li> -->
     </ul>
 
-    <div class="silde-btns">
+    <div class="slide-btns">
       <a class="prev-btn" href="#"><img src="assets/img/icons/bt_left01_off.png" alt="이전 슬라이드 버튼"></a>
       <a class="next-btn" href="#"><img src="assets/img/icons/bt_right01_off.png" alt="다음 슬라이드 버튼"></a>
     </div>
@@ -897,5 +899,52 @@
       </ul>
     </nav>
   </header>
+
+
+<script>
+  'use strict';
+
+  //맨 처음 시작할때 indicator에 addClass가 안됌
+
+  var numSlide = $('.visual .slide').length;
+  var slideNow = 0;
+  var slideNext = 0;
+  var slidePrev = 0;
+  var timerId = '';
+  var timerSpeed = 2500;
+
+  showSlide(1);
+
+  $('.visual .slide').each(function(i){
+    $('.visual .indicator').append('<li><a href="#"><span class="text-ir"' + (i + 1) + '번 슬라이드</span></a></li>\n');
+  });
+
+  $('.visual .indicator > li > a').on('click', function(e){
+    var index = $('.visual .indicator > li').index($(this).parent());
+
+    showSlide(index + 1);
+  });
+
+  $('.slide-btns .next-btn').on('click', function(){
+    showSlide(slideNext);
+  });
+
+  $('.slide-btns .prev-btn').on('click', function(){
+    showSlide(slidePrev);
+  });
+  
+  function showSlide(n) {
+    clearTimeout(timerId);
+    $('.visual .indicator > li').removeClass('on');
+    $('.visual .slide').removeClass('on');
+    $('.visual .indicator > li').eq(n - 1).addClass('on');
+    $('.visual .slide').eq(n - 1).addClass('on');
+
+    slideNow = n;
+    slideNext = n + 1 > numSlide ? 1 : n + 1;
+    slidePrev = n - 1 < 1 ? numSlide : n - 1;
+    timerId = setTimeout(() => {showSlide(slideNext)}, timerSpeed);
+  }
+</script>
 </body>
 </html>

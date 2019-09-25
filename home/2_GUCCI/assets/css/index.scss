@@ -25,6 +25,7 @@ button {
     background: pink;
 
     .slide {
+      display: none;
       position: absolute;
       top: 0px;
       left: 0px;
@@ -36,6 +37,10 @@ button {
       background-position: top center;
       background-size: cover;
       box-shadow: inset 0 0 0 2000px rgba(0,0,0,0.2);
+
+      &.on {
+        display: block;
+      }
 
       .contents {
         position: absolute;
@@ -86,29 +91,45 @@ button {
       background-image: url(../img/HeroBigStandard_3200x1520/HeroBigStandard_S01-FS-Creativita-01-up_001_Default.jpg);
     }
 
-    #indicator {
+    .indicator {
       position: absolute;
       top: auto;
       left: 50%;
       transform: translate(-50%,-50%);
-      bottom: 30px; //위치 재지정
-      background: red;
+      bottom: 30px; //위치 재지정cd0
       overflow: hidden;
-
-      &:hover {
-        //인디케이터 모양잡기
-      }
 
       li {
         float: left;
+        width: 12px;
+        height: 12px;
+        border-radius: 6px;
+
+        &:hover { 
+          border: 1px solid #f2f2f2;
+        }
+
+        &.on {
+          //인디케이터 모양잡기
+          border: 1px solid #f2f2f2;
+        }
+
+        > a {
+          position: absolute;
+          display: block;
+          width: 6px;
+          height: 6px;
+          background: #f2f2f2;
+          border-radius: 3px;
+        }
       }
 
       li+li {
-        margin-left: 5px;
+        margin-left: 20px;
       }
     }
 
-    .silde-btns {
+    .slide-btns {
       // position: absolute;
       // background: red;
 

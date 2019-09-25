@@ -22,6 +22,7 @@ button {
 }
 
 .index .visual .slide {
+  display: none;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -34,6 +35,10 @@ button {
   background-size: cover;
   -webkit-box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.2);
           box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.2);
+}
+
+.index .visual .slide.on {
+  display: block;
 }
 
 .index .visual .slide .contents {
@@ -87,42 +92,61 @@ button {
   background-image: url(../img/HeroBigStandard_3200x1520/HeroBigStandard_S01-FS-Creativita-01-up_001_Default.jpg);
 }
 
-.index .visual #indicator {
+.index .visual .indicator {
   position: absolute;
   top: auto;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   bottom: 30px;
-  background: red;
   overflow: hidden;
 }
 
-.index .visual #indicator li {
+.index .visual .indicator li {
   float: left;
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
 }
 
-.index .visual #indicator li + li {
-  margin-left: 5px;
+.index .visual .indicator li:hover {
+  border: 1px solid #f2f2f2;
 }
 
-.index .visual .silde-btns .prev-btn, .index .visual .silde-btns .next-btn {
+.index .visual .indicator li.on {
+  border: 1px solid #f2f2f2;
+}
+
+.index .visual .indicator li > a {
+  position: absolute;
+  display: block;
+  width: 6px;
+  height: 6px;
+  background: #f2f2f2;
+  border-radius: 3px;
+}
+
+.index .visual .indicator li + li {
+  margin-left: 20px;
+}
+
+.index .visual .slide-btns .prev-btn, .index .visual .slide-btns .next-btn {
   position: absolute;
   top: 50%;
   -webkit-transform: translate(0%, -50%);
           transform: translate(0%, -50%);
 }
 
-.index .visual .silde-btns .prev-btn img, .index .visual .silde-btns .next-btn img {
+.index .visual .slide-btns .prev-btn img, .index .visual .slide-btns .next-btn img {
   width: 40px;
   background: #f2f2f2;
 }
 
-.index .visual .silde-btns .prev-btn {
+.index .visual .slide-btns .prev-btn {
   left: 40px;
 }
 
-.index .visual .silde-btns .next-btn {
+.index .visual .slide-btns .next-btn {
   right: 40px;
 }
 
