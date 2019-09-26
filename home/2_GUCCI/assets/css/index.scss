@@ -1,12 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans+KR:100,300,400,500,700,900|Poiret+One|Quattrocento+Sans&display=swap');
 
 body {
+  font-size: 11px;
 }
 
 body, div, h1, h2, h3, h4, h5, h6, button, ul, li, a, span, em, p {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
 }
 
 li {
@@ -16,6 +21,10 @@ li {
 button {
   border: none;
   cursor: pointer;
+}
+
+em {
+  font-style: normal;
 }
 
 .index {
@@ -158,12 +167,121 @@ button {
       position: absolute;
       right: 26px;
       bottom: 20px;
-      text-decoration: none;
       font-size: 13px;
       color: #f2f2f2;
 
       i {
         font-size: 9px;
+      }
+    }
+  }
+
+  header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    height: 120px;
+    padding-top: 25px;
+    box-shadow: inset 0px 60px 50px -20px rgba(0,0,0,0.8);
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #1B1B1B;
+    }
+
+    #nation-info {
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      right: auto;
+      bottom: auto;
+
+      li + li {
+        margin-left: 10px;
+      }
+      li:first-child {
+        #shopping-area {
+          background: pink;
+        }
+      }
+    }
+
+    .user-info {
+      position: absolute;
+      top: 25px;
+      right: 90px;
+      left: auto;
+      bottom: auto;
+
+      li + li {
+        margin-left: 20px;
+      }
+    }
+
+    #nation-info, .user-info {
+      > li {
+        display: inline-block;
+
+        > div {
+          // display: none;
+          position: absolute;
+        }
+      }
+
+      li {
+        > span {
+          cursor: pointer;
+          color: rgba(255, 255, 255, 0.9);
+
+          &:hover {
+            color: rgba(255, 255, 255, 1);
+
+            i {
+              color: rgba(255, 255, 255, 1);
+            }
+          }
+
+          i {
+            margin-right: 4px;
+            color: rgba(255, 255, 255, 0.5);
+          }
+        }
+      }
+    }
+
+    .site-search {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      left: auto;
+      bottom: auto;
+      width: 34px;
+      height: 34px;
+      border: 3px solid rgba(255, 255, 255, 0.4);
+      border-radius: 17px;
+      cursor: pointer;
+
+      &:hover {
+        border-color: rgba(255, 255, 255, 0.9);
+
+        i {
+          color: rgba(255, 255, 255, 0.9);
+        }
+      }
+
+      i {
+        display: block;
+        text-align: center;
+        margin-top: 6px;
+        // position: absolute;
+        // top: 50px;
+        // left: 50px;
+        // transform: translate(-50%, -50%);
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 15px;
       }
     }
   }

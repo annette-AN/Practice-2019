@@ -1,9 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans+KR:100,300,400,500,700,900|Poiret+One|Quattrocento+Sans&display=swap");
+body {
+  font-size: 11px;
+}
+
 body, div, h1, h2, h3, h4, h5, h6, button, ul, li, a, span, em, p {
   margin: 0px;
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
 }
 
 li {
@@ -13,6 +21,10 @@ li {
 button {
   border: none;
   cursor: pointer;
+}
+
+em {
+  font-style: normal;
 }
 
 .index .visual {
@@ -158,13 +170,114 @@ button {
   position: absolute;
   right: 26px;
   bottom: 20px;
-  text-decoration: none;
   font-size: 13px;
   color: #f2f2f2;
 }
 
 .index .visual .present-svc i {
   font-size: 9px;
+}
+
+.index header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: auto;
+  bottom: auto;
+  width: 100%;
+  height: 120px;
+  padding-top: 25px;
+  -webkit-box-shadow: inset 0px 60px 50px -20px rgba(0, 0, 0, 0.8);
+          box-shadow: inset 0px 60px 50px -20px rgba(0, 0, 0, 0.8);
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.index header:hover {
+  background-color: #1B1B1B;
+}
+
+.index header #nation-info {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  right: auto;
+  bottom: auto;
+}
+
+.index header #nation-info li + li {
+  margin-left: 10px;
+}
+
+.index header #nation-info li:first-child #shopping-area {
+  background: pink;
+}
+
+.index header .user-info {
+  position: absolute;
+  top: 25px;
+  right: 90px;
+  left: auto;
+  bottom: auto;
+}
+
+.index header .user-info li + li {
+  margin-left: 20px;
+}
+
+.index header #nation-info > li, .index header .user-info > li {
+  display: inline-block;
+}
+
+.index header #nation-info > li > div, .index header .user-info > li > div {
+  position: absolute;
+}
+
+.index header #nation-info li > span, .index header .user-info li > span {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.index header #nation-info li > span:hover, .index header .user-info li > span:hover {
+  color: white;
+}
+
+.index header #nation-info li > span:hover i, .index header .user-info li > span:hover i {
+  color: white;
+}
+
+.index header #nation-info li > span i, .index header .user-info li > span i {
+  margin-right: 4px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.index header .site-search {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  left: auto;
+  bottom: auto;
+  width: 34px;
+  height: 34px;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  border-radius: 17px;
+  cursor: pointer;
+}
+
+.index header .site-search:hover {
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.index header .site-search:hover i {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.index header .site-search i {
+  display: block;
+  text-align: center;
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 15px;
 }
 
 .text-ir {

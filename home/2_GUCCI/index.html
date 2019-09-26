@@ -33,7 +33,7 @@
         </div>
       </div>
     </div>
-    <div class="slide s3">
+    <div class="slide s3 on">
       <div class="contents">
         <h3><span class="PoiretOne">2019</span> 가을/겨울 컬렉션</h3>
         <h2>스니커즈</h2>
@@ -60,12 +60,14 @@
   <header>
     <ul id="nation-info">
       <li>
-        <span></span>
-        <div>
-           <div>
+        <span>
+          <i class="fas fa-map-marker-alt"><span class="i-text-ir">지도표시</span></i>
+          대한민국
+        </span>
+        <div id="shopping-area">
+          <div>
             <em>
-              <i class="fas fa-map-marker-alt"><span class="i-text-ir">지도표시</span></i>
-              대한민국
+              아래의 지역에서 온라인 쇼핑이 가능합니다.
             </em>
             <p>지역을 변경하실 경우 쇼핑백에 담아두신 상품이 초기화 됩니다.</p>
             <div class="nation-select">
@@ -95,7 +97,7 @@
       </li>
       <li>
         <span>
-          <i class="fas fa-phone"><span class="i-text-it">전화기</span></i>
+          <i class="fas fa-phone"><span class="i-text-ir">전화기</span></i>
           02-3452-1921
         </span>
       </li>
@@ -120,16 +122,16 @@
         </div>
       </li>
       <li>
-        <span><i class="far fa-heart"><span class="i-text-ir">좋아요</span></i></span>
-        <ul class="shopping-basket">
+        <span>
+          <i class="far fa-heart"><span class="i-text-ir">좋아요</span></i>
+        </span>
+        <div class="shopping-basket">
           <!-- 쇼핑 바스켓 css 공유 -->
-          <li>
-            관심상품
-            <ul>
-              <li>관심상품이 비어 있습니다.</li>
-            </ul>
-          </li>
-        </ul>
+          <h3>관심상품</h3>
+          <ul>
+            <li>관심상품이 비어 있습니다.</li>
+          </ul>
+        </div>
       </li>
       <li>
         <span>
@@ -160,7 +162,7 @@
       </li>
     </ul>
 
-    <div>
+    <div class="site-search">
       <!-- css border로 동그라미 효과주기 -->
       <i class="fas fa-search"><span class="i-text-ir">검색</span></i>
       <!-- open일 때 
@@ -172,7 +174,7 @@
       -->
     </div>
 
-    <nav>
+    <nav class="gnb">
       <ul>
         <li>
           <a href="#">WHAT'S NEW</a>
@@ -913,7 +915,7 @@
   var timerId = '';
   var timerSpeed = 2500;
 
-  showSlide(1);
+  // showSlide(1);
 
   $('.visual .slide').each(function(i){
     $('.visual .indicator').append('<li><a href="#"><span class="text-ir"' + (i + 1) + '번 슬라이드</span></a></li>\n');
