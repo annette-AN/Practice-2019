@@ -915,11 +915,11 @@
   var timerId = '';
   var timerSpeed = 2500;
 
-  // showSlide(1);
-
   $('.visual .slide').each(function(i){
     $('.visual .indicator').append('<li><a href="#"><span class="text-ir"' + (i + 1) + '번 슬라이드</span></a></li>\n');
   });
+
+  // showSlide(1);
 
   $('.visual .indicator > li > a').on('click', function(e){
     var index = $('.visual .indicator > li').index($(this).parent());
