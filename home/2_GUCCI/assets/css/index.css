@@ -17,7 +17,7 @@ button {
 
 .index .visual {
   position: relative;
-  padding-top: 36.666%;
+  height: 465px;
   background: pink;
 }
 
@@ -43,10 +43,13 @@ button {
 
 .index .visual .slide .contents {
   position: absolute;
-  top: 50%;
+  top: 52%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   color: #f2f2f2;
   margin-top: 30px;
   text-align: center;
@@ -66,10 +69,11 @@ button {
 }
 
 .index .visual .slide .contents .view-btn button {
-  padding: 13px;
+  padding: 11px;
   background: #1B1B1B;
   color: #fff;
   font-weight: 300;
+  font-size: 12px;
 }
 
 .index .visual .slide .contents .view-btn button:hover {
@@ -150,10 +154,31 @@ button {
   right: 40px;
 }
 
+.index .visual .present-svc {
+  position: absolute;
+  right: 26px;
+  bottom: 20px;
+  text-decoration: none;
+  font-size: 13px;
+  color: #f2f2f2;
+}
+
+.index .visual .present-svc i {
+  font-size: 9px;
+}
+
 .text-ir {
   width: 0px;
   height: 0px;
   text-indent: -9999px;
+  font-size: 0px;
+}
+
+.i-text-ir {
+  position: absolute;
+  left: -9999px;
+  width: 0px;
+  height: 0px;
   font-size: 0px;
 }
 

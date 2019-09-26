@@ -21,7 +21,7 @@ button {
 .index {
   .visual {
     position: relative;
-    padding-top: 36.666%;
+    height: 465px;
     background: pink;
 
     .slide {
@@ -44,9 +44,10 @@ button {
 
       .contents {
         position: absolute;
-        top: 50%;
+        top: 52%;
         left: 50%;
         transform: translate(-50%, -50%);
+        width: fit-content;
         color: #f2f2f2;
         margin-top: 30px;
         text-align: center;
@@ -64,11 +65,11 @@ button {
           margin-top: 5px;
 
           button {
-            padding: 13px;
+            padding: 11px;
             background: #1B1B1B;
-            
             color: #fff;
             font-weight: 300;
+            font-size: 12px;
 
             &:hover {
               background: #333;
@@ -151,7 +152,19 @@ button {
       .next-btn {
         right: 40px;
       }
+    }
 
+    .present-svc {
+      position: absolute;
+      right: 26px;
+      bottom: 20px;
+      text-decoration: none;
+      font-size: 13px;
+      color: #f2f2f2;
+
+      i {
+        font-size: 9px;
+      }
     }
   }
 }
@@ -160,6 +173,7 @@ button {
 
 //design
 .text-ir {width:0px; height:0px; text-indent: -9999px; font-size: 0px;}
+.i-text-ir {position: absolute; left: -9999px; width: 0px; height: 0px; font-size: 0px;}
 .NanumGothic {font-family: 'Nanum Gothic', sans-serif;}
 .Quattrocento {font-family: 'Quattrocento Sans', sans-serif;}
 .PoiretOne {font-family: 'Poiret One', cursive;}
