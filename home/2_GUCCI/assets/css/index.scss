@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans+KR:100,300,400,500,700,900|Poiret+One|Quattrocento+Sans&display=swap');
-
 body {
+  // font-family: Futura, Futura, "Malgun Gothic", Dotum, sans-serif;
+  font-family: Futura,"Helvetica","Arial",sans-serif;
   font-size: 11px;
 }
 
@@ -30,7 +30,7 @@ em {
 .index {
   .visual {
     position: relative;
-    height: 465px;
+    height: 533px; //크롬에서 다시맞춤
     background: pink;
 
     .slide {
@@ -60,6 +60,7 @@ em {
         color: #f2f2f2;
         margin-top: 30px;
         text-align: center;
+        font-weight: 100;
 
         h2 {
           font-size: 65px;
@@ -71,7 +72,7 @@ em {
         }
 
         .view-btn {
-          margin-top: 5px;
+          margin-top: 10px;
 
           button {
             padding: 11px;
@@ -97,9 +98,6 @@ em {
     .s3 {
       background-image: url(../img/HeroBigStandard_3200x1520/HeroBigStandard_S93-FS-ADV-18_001_Default.jpg);
     }
-    .s4 {
-      background-image: url(../img/HeroBigStandard_3200x1520/HeroBigStandard_S01-FS-Creativita-01-up_001_Default.jpg);
-    }
 
     .indicator {
       position: absolute;
@@ -110,25 +108,36 @@ em {
       overflow: hidden;
 
       li {
+        position: relative;
         float: left;
         width: 12px;
         height: 12px;
         border-radius: 6px;
+        // transition: border .4s;
+        cursor: pointer;
 
         &:hover { 
           border: 1px solid #f2f2f2;
         }
 
         &.on {
-          //인디케이터 모양잡기
           border: 1px solid #f2f2f2;
+
+          a {
+            width: 0px;
+            height: 0px;
+          }
         }
 
         > a {
           position: absolute;
+          top: 3px;
+          left: 3px;
+          right: auto;
+          bottom: auto;
           display: block;
-          width: 6px;
-          height: 6px;
+          width: 4px;
+          height: 4px;
           background: #f2f2f2;
           border-radius: 3px;
         }
@@ -150,7 +159,6 @@ em {
         
         img {
           width: 40px;
-          background: #f2f2f2;
         }
       }
 
@@ -183,7 +191,7 @@ em {
     right: auto;
     bottom: auto;
     width: 100%;
-    height: 120px;
+    height: 100px;
     padding-top: 25px;
     box-shadow: inset 0px 60px 50px -20px rgba(0,0,0,0.8);
     transition: background-color 0.3s;
@@ -209,6 +217,15 @@ em {
       }
     }
 
+    h1 {
+      text-align: center;
+      color: #f2f2f2;
+      font-size: 28px;
+      font-weight: 400;
+      letter-spacing: 15px;
+
+    }
+
     .user-info {
       position: absolute;
       top: 25px;
@@ -225,8 +242,8 @@ em {
       > li {
         display: inline-block;
 
-        > div {
-          // display: none;
+        > div { //팝업
+          display: none;
           position: absolute;
         }
       }
@@ -285,6 +302,116 @@ em {
       }
     }
   }
+
+  .gnb {
+    font-size: 12px;
+
+    > ul {
+      position: relative;
+      text-align: center;
+      
+      > li {
+        display: inline-block;
+        margin: 17px;
+
+        > a {
+          color: rgba(242, 242, 242, 0.8);
+
+          &:hover {
+            color: rgba(242, 242, 242, 1);
+          }
+        }
+
+        > ul {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0%;
+          right: 0%;
+          bottom: auto;
+          margin: 0px 16px;
+          background: rgba(255, 255, 255, 0.95);
+          // background: rgba(245, 244, 243, 0.98);
+          height: auto;
+          padding: 26px 120px 55px;
+          overflow: hidden;
+
+          &.on {
+            display: block;
+          }
+
+          li {
+            text-align: left;
+          }
+
+          > li + li {
+            &:before {
+              content: '';
+              display: block;
+              position: absolute;
+              top: 0px;
+              left: 0px;
+              right: auto;
+              bottom: auto;
+              width: 1px;
+              height: 230px;
+              background: #e7e7e7;
+            }
+          }
+
+          &:first-child {
+
+
+          }
+
+          > li {
+            position: relative;
+            float: left;
+            margin: 0px auto;
+            padding: 0px 35px;
+            
+            a {
+              font-size: 12px;
+            }
+
+            > a {
+              color: #313131;
+              font-weight: bold;
+              letter-spacing: 1px;
+            }
+
+            > ul {
+              margin-top: 5px;
+
+              > li {
+                margin-top: 16px;
+
+                a {
+                  color: rgba(49, 49, 49, 0.7);
+                  font-weight: 400;
+                }
+
+                &:hover {
+                  a {
+                    color: rgba(49, 49, 49, 1);
+                  }
+                }
+              }
+            }
+          }
+
+          .slide {
+            background: red;
+            width: 235px;
+          }
+        }
+
+        .menu-style-WM {
+          background: red;
+        }
+      }
+    }
+  }
 }
 
 
@@ -292,6 +419,4 @@ em {
 //design
 .text-ir {width:0px; height:0px; text-indent: -9999px; font-size: 0px;}
 .i-text-ir {position: absolute; left: -9999px; width: 0px; height: 0px; font-size: 0px;}
-.NanumGothic {font-family: 'Nanum Gothic', sans-serif;}
-.Quattrocento {font-family: 'Quattrocento Sans', sans-serif;}
-.PoiretOne {font-family: 'Poiret One', cursive;}
+// .PoiretOne {font-family: Futura,"Helvetica","Arial",sans-serif; font-size: 66px; font-weight: normal;}
