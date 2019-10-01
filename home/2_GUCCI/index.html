@@ -42,8 +42,6 @@
         </div>
       </div>
     </div>
-    <div class="slide s4">
-    </div>
 
     <ul class="indicator">
       <!-- <li><span class="text-ir">n번 슬라이드</span>*</li>
@@ -103,7 +101,7 @@
       </li>
     </ul>
     
-    <h1>GUCCI</h1>
+    <h1><img src="assets/img/icons/gucci_light.png"></h1>
 
     <ul class="user-info">
       <!-- 유저인포 css 공유 -->
@@ -163,7 +161,6 @@
     </ul>
 
     <div class="site-search">
-      <!-- css border로 동그라미 효과주기 -->
       <i class="fas fa-search"><span class="i-text-ir">검색</span></i>
       <!-- open일 때 
         <i class="fas fa-times"><span class="i-text-ir">닫기</span></i>
@@ -186,7 +183,7 @@
                   <a href="#">런웨이</a>
                 </li>
                 <li>
-                  <a href="#">구찌 1955</a>
+                  <a href="#">구찌 <span class="PoiretOne">1955</span></a>
                 </li>
                 <li>
                   <a href="#">구찌 그립</a>
@@ -206,7 +203,7 @@
               <a href="#">패션쇼 보기</a>
               <ul>
                 <li>
-                  <a href="#">2020 크루즈 컬렉션</a>
+                  <a href="#"><span class="PoiretOne">2020</span> 크루즈 컬렉션</a>
                 </li>
                 <li>
                   <a href="#"><span class="PoiretOne">2019</span> 가을/겨울 패션쇼</a>
@@ -214,10 +211,10 @@
                 <li>
                   <a href="#"><span class="PoiretOne">2019</span> 봄/여름 패션쇼</a>
                 </li>
-                <li>
-                  <div class="slide">
+                <li class="slide">
+                  <div>
                     <a href="#">
-                      <h3>2020 크루즈 컬렉션</h3>
+                      <h3><span class="PoiretOne">2020</span> 크루즈 컬렉션</h3>
                     </a>
                     <a href="#">
                       <h3>--</h3>
@@ -254,7 +251,7 @@
         </li>
         <li>
           <a href="#">여성</a>
-          <ul>
+          <ul class="on" class="menu-style-WM">
             <li>
               <a href="#">신상품</a>
               <ul>
@@ -262,7 +259,7 @@
                   <a href="#">새로운 룩</a>
                 </li>
                 <li>
-                  <a href="#">구찌 1955</a>
+                  <a href="#">구찌 <span class="PoiretOne">1955</span></a>
                 </li>
                 <li>
                   <a href="#">구찌 그립</a>
@@ -272,20 +269,6 @@
                 </li>
                 <li>
                   <a href="#">NEW: 구찌 메모아 뒨 오더</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">선물제안</a>
-              <ul>
-                <li>
-                  <a href="#">for 여성</a>
-                </li>
-                <li>
-                  <a href="#">구찌 데코</a>
-                </li>
-                <li>
-                  <a href="#">구찌 DIY</a>
                 </li>
               </ul>
             </li>
@@ -341,29 +324,6 @@
                 </li>
                 <li>
                   <a href="#">가죽 소품 & 테크</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">패션소품</a>
-              <ul>
-                <li>
-                  <a href="#">벨트</a>
-                </li>
-                <li>
-                  <a href="#">주얼리 & 시계</a>
-                </li>
-                <li>
-                  <a href="#">아이웨어</a>
-                </li>
-                <li>
-                  <a href="#">모자</a>
-                </li>
-                <li>
-                  <a href="#">스카프 및 장갑</a>
-                </li>
-                <li>
-                  <a href="#">여성 향수</a>
                 </li>
               </ul>
             </li>
@@ -438,6 +398,43 @@
               </ul>
             </li>
             <li>
+              <a href="#">선물제안</a>
+              <ul>
+                <li>
+                  <a href="#">for 여성</a>
+                </li>
+                <li>
+                  <a href="#">구찌 데코</a>
+                </li>
+                <li>
+                  <a href="#">구찌 DIY</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">패션소품</a>
+              <ul>
+                <li>
+                  <a href="#">벨트</a>
+                </li>
+                <li>
+                  <a href="#">주얼리 & 시계</a>
+                </li>
+                <li>
+                  <a href="#">아이웨어</a>
+                </li>
+                <li>
+                  <a href="#">모자</a>
+                </li>
+                <li>
+                  <a href="#">스카프 및 장갑</a>
+                </li>
+                <li>
+                  <a href="#">여성 향수</a>
+                </li>
+              </ul>
+            </li>
+            <li>
               <a href="#">DIY</a>
               <ul>
                 <li>
@@ -455,7 +452,7 @@
         </li>
         <li>
           <a href="#">남성</a>
-          <ul>
+          <ul class="menu-style-WM">
             <li>
               <a href="#">신상품</a>
               <ul>
@@ -891,7 +888,7 @@
               <ul>
                 <li>
                   <a href="#">
-                    <h3>Cruise 2020</h3>
+                    <h3>Cruise <span class="PoiretOne">2020</span></h3>
                   </a>
                 </li>
               </ul>
@@ -906,8 +903,6 @@
 <script>
   'use strict';
 
-  //맨 처음 시작할때 indicator에 addClass가 안됌
-
   var numSlide = $('.visual .slide').length;
   var slideNow = 0;
   var slideNext = 0;
@@ -919,7 +914,7 @@
     $('.visual .indicator').append('<li><a href="#"><span class="text-ir"' + (i + 1) + '번 슬라이드</span></a></li>\n');
   });
 
-  // showSlide(1);
+  showSlide(1);
 
   $('.visual .indicator > li > a').on('click', function(e){
     var index = $('.visual .indicator > li').index($(this).parent());
