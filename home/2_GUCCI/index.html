@@ -17,7 +17,7 @@
   <div class="visual">
     <div class="slide s1">
       <div class="contents">
-        <h2><span class="PoiretOne">2019</span> 가을/겨울 패션쇼</h2>
+        <h2><span class="perhaps">2019</span> 가을/겨울 패션쇼</h2>
         <div class="view-btn">
           <button>여성 컬렉션 만나보기</button>
           <button>남성 컬렉션 만나보기</button>
@@ -26,7 +26,7 @@
     </div>
     <div class="slide s2">
       <div class="contents">
-        <h3><span class="PoiretOne">2019</span> 가을/겨울 컬렉션</h3>
+        <h3><span class="perhaps">2019</span> 가을/겨울 컬렉션</h3>
         <h2>스니커즈</h2>
         <div class="view-btn">
             <button>여성 컬렉션 만나보기</button>
@@ -35,7 +35,7 @@
     </div>
     <div class="slide s3 on">
       <div class="contents">
-        <h3><span class="PoiretOne">2019</span> 가을/겨울 컬렉션</h3>
+        <h3><span class="perhaps">2019</span> 가을/겨울 컬렉션</h3>
         <h2>스니커즈</h2>
         <div class="view-btn">
           <button>남성 컬렉션 만나보기</button>
@@ -55,7 +55,7 @@
     <a href="#" class="present-svc">구찌 선물포장 서비스 <i class="fas fa-chevron-right"><span class="i-text-ir">오른쪽 화살표</span></i></a>
   </div>
 
-  <header>
+  <header id="index-header">
     <ul id="nation-info">
       <li>
         <span>
@@ -175,7 +175,7 @@
       <ul>
         <li>
           <a href="#">WHAT'S NEW</a>
-          <ul>
+          <ul class="on">
             <li>
               <a href="#">NEW</a>
               <ul>
@@ -183,7 +183,7 @@
                   <a href="#">런웨이</a>
                 </li>
                 <li>
-                  <a href="#">구찌 <span class="PoiretOne">1955</span></a>
+                  <a href="#">구찌 <span class="perhaps">1955</span></a>
                 </li>
                 <li>
                   <a href="#">구찌 그립</a>
@@ -199,50 +199,64 @@
                 </li>
               </ul>
             </li>
-            <li>
+            <li class="fashion-show">
               <a href="#">패션쇼 보기</a>
               <ul>
                 <li>
-                  <a href="#"><span class="PoiretOne">2020</span> 크루즈 컬렉션</a>
+                  <a href="#"><span class="perhaps">2020</span> 크루즈 컬렉션</a>
                 </li>
                 <li>
-                  <a href="#"><span class="PoiretOne">2019</span> 가을/겨울 패션쇼</a>
+                  <a href="#"><span class="perhaps">2019</span> 가을/겨울 패션쇼</a>
                 </li>
                 <li>
-                  <a href="#"><span class="PoiretOne">2019</span> 봄/여름 패션쇼</a>
+                  <a href="#"><span class="perhaps">2019</span> 봄/여름 패션쇼</a>
                 </li>
-                <li class="slide">
-                  <div>
+              </ul>
+              <figure>
+                <div class="slide">
+                  <div class="slide-wrap">
                     <a href="#">
-                      <h3><span class="PoiretOne">2020</span> 크루즈 컬렉션</h3>
+                      <img src="assets/img/NavSlide/NavHorizontalStandard_S01-FS-SHOWSPACE_001_Default.jpg" alt="글자끌어올수있나">
+                      <em>
+                        <span class="perhaps">2020</span> 글자 끌어오기
+                      </em>
                     </a>
                     <a href="#">
-                      <h3>--</h3>
+                      <img src="assets/img/NavSlide/NavHorizontalStandard_S01CRUISE-showspace_001_Default.jpg" alt="글자끌어올수있나">
+                      <em>
+                        <span class="perhaps">2020</span> 글자 끌어오기
+                      </em>
                     </a>
                     <a href="#">
-                      <h3>--</h3>
+                      <img src="assets/img/NavSlide/NavHorizontalStandard_S93-FS-SHOWSPACE_001_Default.jpg" alt="글자끌어올수있나">
+                      <em>
+                        <span class="perhaps">2020</span> 글자 끌어오기
+                      </em>
                     </a>
                   </div>
-                  <ul id="indicator">
-                    <li><span class="text-ir">1번 슬라이드</span></li>
-                  </ul>
-                </li>
-                <!-- 저 슬라이드 어떻게 넣는지 확인 -->
-              </ul>
+                </div>
+                <ul id="indicator">
+                  <!-- <li><span class="text-ir">1번 슬라이드</span></li> -->
+                </ul>
+              </figure>
             </li>
-            <li>
+            <li class="gucci-edit">
               <a href="#">구찌 에디트</a>
               <ul>
                 <li>
                   <a href="#">
-                    <img src="" alt="앨범커버"/>
-                    <em>더 퍼포머스</em>
+                    <div>
+                        <img src="assets/img/NavAlbumCover/NavArticle_GQ-Ghali_001_Default.jpg" alt="GUCCIGIG"/>
+                    </div>
+                    <em>#GUCCIGIG</em>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img src="" alt="앨범커버"/>
-                    <em>#GUCCIGIG</em>
+                    <div>
+                      <img src="assets/img/NavAlbumCover/NavArticle_s93-guccigig_001_Default.jpg" alt="더 퍼포머스"/>
+                    </div>
+                    <em>더 퍼포머스</em>
                   </a>
                 </li>
               </ul>
@@ -251,202 +265,214 @@
         </li>
         <li>
           <a href="#">여성</a>
-          <ul class="on" class="menu-style-WM">
+          <ul class="menu-style-WM">
             <li>
-              <a href="#">신상품</a>
-              <ul>
-                <li>
-                  <a href="#">새로운 룩</a>
-                </li>
-                <li>
-                  <a href="#">구찌 <span class="PoiretOne">1955</span></a>
-                </li>
-                <li>
-                  <a href="#">구찌 그립</a>
-                </li>
-                <li>
-                  <a href="#">구찌 매니페스토</a>
-                </li>
-                <li>
-                  <a href="#">NEW: 구찌 메모아 뒨 오더</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">핸드백</a>
-              <ul>
-                <li>
-                  <a href="#">구찌의 선택</a>
-                </li>
-                <li>
-                  <a href="#">탑 핸들백 & 보스톤백</a>
-                </li>
-                <li>
-                  <a href="#">토트백</a>
-                </li>
-                <li>
-                  <a href="#">숄더백</a>
-                </li>
-                <li>
-                  <a href="#">크로스백</a>
-                </li>
-                <li>
-                  <a href="#">벨트백 & 백팩</a>
-                </li>
-                <li>
-                  <a href="#">미니백</a>
-                </li>
-                <li>
-                  <a href="#">클러치</a>
-                </li>
-                <li>
-                  <a href="#">프레셔스 스킨</a>
-                </li>
-                <li>
-                  <a href="#">캐주얼백</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">지갑</a>
-              <ul>
-                <li>
-                  <a href="#">구찌의 선택</a>
-                </li>
-                <li>
-                  <a href="#">장지갑 & 반지갑</a>
-                </li>
-                <li>
-                  <a href="#">스트랩 지갑 & 파우치</a>
-                </li>
-                <li>
-                  <a href="#">카드 & 키 케이스</a>
-                </li>
-                <li>
-                  <a href="#">가죽 소품 & 테크</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">의류</a>
-              <ul>
-                <li>
-                  <a href="#">새로운 룩</a>
-                </li>
-                <li>
-                  <a href="#">드레스</a>
-                </li>
-                <li>
-                  <a href="#">재킷 & 코트</a>
-                </li>
-                <li>
-                  <a href="#">아우터웨어</a>
-                </li>
-                <li>
-                  <a href="#">탑 & 셔츠</a>
-                </li>
-                <li>
-                  <a href="#">스웨터 & 가디건</a>
-                </li>
-                <li>
-                  <a href="#">스웨트셔츠 & 티셔츠</a>
-                </li>
-                <li>
-                  <a href="#">액티브웨어</a>
-                </li>
-                <li>
-                  <a href="#">스커트</a>
-                </li>
-                <li>
-                  <a href="#">팬츠 & 쇼츠</a>
-                </li>
-                <li>
-                  <a href="#">데님</a>
-                </li>                
-                <li>
-                  <a href="#">수영복</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">여성 슈즈</a>
-              <ul>
-                <li>
-                  <a href="#">펌프스</a>
-                </li>
-                <li>
-                  <a href="#">샌들</a>
-                </li>
-                <li>
-                  <a href="#">모카신 & 로퍼</a>
-                </li>
-                <li>
-                  <a href="#">슬리퍼 & 뮬</a>
-                </li>
-                <li>
-                  <a href="#">부츠 & 부티</a>
-                </li>
-                <li>
-                  <a href="#">에스파드리유 & 웨지</a>
-                </li>
-                <li>
-                  <a href="#">슬라이드 & 통</a>
-                </li>
-                <li>
-                  <a href="#">스니커즈</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">선물제안</a>
-              <ul>
-                <li>
-                  <a href="#">for 여성</a>
-                </li>
-                <li>
-                  <a href="#">구찌 데코</a>
-                </li>
-                <li>
-                  <a href="#">구찌 DIY</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">패션소품</a>
-              <ul>
-                <li>
-                  <a href="#">벨트</a>
-                </li>
-                <li>
-                  <a href="#">주얼리 & 시계</a>
-                </li>
-                <li>
-                  <a href="#">아이웨어</a>
-                </li>
-                <li>
-                  <a href="#">모자</a>
-                </li>
-                <li>
-                  <a href="#">스카프 및 장갑</a>
-                </li>
-                <li>
-                  <a href="#">여성 향수</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">DIY</a>
-              <ul>
-                <li>
+              <div>
+                <header class="gnb-sub-header">
+                  <a href="#">신상품</a>
+                </header>
+                <ul>
+                  <li>
+                    <a href="#">새로운 룩</a>
+                  </li>
+                  <li>
+                    <a href="#">구찌 <span class="perhaps">1955</span></a>
+                  </li>
+                  <li>
+                    <a href="#">구찌 그립</a>
+                  </li>
+                  <li>
+                    <a href="#">구찌 매니페스토</a>
+                  </li>
+                  <li>
+                    <a href="#">NEW: 구찌 메모아 뒨 오더</a>
+                  </li>
+                </ul>
+                <header class="gnb-sub-header">
+                  <a href="#">선물제안</a>
+                </header>
+                <ul>
+                  <li>
+                    <a href="#">for 여성</a>
+                  </li>
+                  <li>
+                    <a href="#">구찌 데코</a>
+                  </li>
+                  <li>
+                    <a href="#">구찌 DIY</a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <header class="gnb-sub-header">
+                  <a href="#">핸드백</a>
+                </header>
+                <ul>
+                  <li>
+                    <a href="#">구찌의 선택</a>
+                  </li>
+                  <li>
+                    <a href="#">탑 핸들백 & 보스톤백</a>
+                  </li>
+                  <li>
+                    <a href="#">토트백</a>
+                  </li>
+                  <li>
+                    <a href="#">숄더백</a>
+                  </li>
+                  <li>
+                    <a href="#">크로스백</a>
+                  </li>
+                  <li>
+                    <a href="#">벨트백 & 백팩</a>
+                  </li>
+                  <li>
+                    <a href="#">미니백</a>
+                  </li>
+                  <li>
+                    <a href="#">클러치</a>
+                  </li>
+                  <li>
+                    <a href="#">프레셔스 스킨</a>
+                  </li>
+                  <li>
+                    <a href="#">캐주얼백</a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <header class="gnb-sub-header">
                   <a href="#">지갑</a>
-                </li>
-                <li>
-                  <a href="#">니트웨어</a>
-                </li>
-                <li>
-                  <a href="#">토트백</a>
-                </li>
-              </ul>
+                </header>
+                <ul>
+                  <li>
+                    <a href="#">구찌의 선택</a>
+                  </li>
+                  <li>
+                    <a href="#">장지갑 & 반지갑</a>
+                  </li>
+                  <li>
+                    <a href="#">스트랩 지갑 & 파우치</a>
+                  </li>
+                  <li>
+                    <a href="#">카드 & 키 케이스</a>
+                  </li>
+                  <li>
+                    <a href="#">가죽 소품 & 테크</a>
+                  </li>
+                </ul>
+                <header class="gnb-sub-header">
+                  <a href="#">패션소품</a>
+                </header>
+                <ul>
+                  <li>
+                    <a href="#">벨트</a>
+                  </li>
+                  <li>
+                    <a href="#">주얼리 & 시계</a>
+                  </li>
+                  <li>
+                    <a href="#">아이웨어</a>
+                  </li>
+                  <li>
+                    <a href="#">모자</a>
+                  </li>
+                  <li>
+                    <a href="#">스카프 및 장갑</a>
+                  </li>
+                  <li>
+                    <a href="#">여성 향수</a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <header class="gnb-sub-header">
+                  <a href="#">의류</a>
+                </header>
+                <ul>
+                  <li>
+                    <a href="#">새로운 룩</a>
+                  </li>
+                  <li>
+                    <a href="#">드레스</a>
+                  </li>
+                  <li>
+                    <a href="#">재킷 & 코트</a>
+                  </li>
+                  <li>
+                    <a href="#">아우터웨어</a>
+                  </li>
+                  <li>
+                    <a href="#">탑 & 셔츠</a>
+                  </li>
+                  <li>
+                    <a href="#">스웨터 & 가디건</a>
+                  </li>
+                  <li>
+                    <a href="#">스웨트셔츠 & 티셔츠</a>
+                  </li>
+                  <li>
+                    <a href="#">액티브웨어</a>
+                  </li>
+                  <li>
+                    <a href="#">스커트</a>
+                  </li>
+                  <li>
+                    <a href="#">팬츠 & 쇼츠</a>
+                  </li>
+                  <li>
+                    <a href="#">데님</a>
+                  </li>                
+                  <li>
+                    <a href="#">수영복</a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <header class="gnb-sub-header">
+                  <a href="#">여성 슈즈</a>
+                </header>
+                <ul>
+                  <li>
+                    <a href="#">펌프스</a>
+                  </li>
+                  <li>
+                    <a href="#">샌들</a>
+                  </li>
+                  <li>
+                    <a href="#">모카신 & 로퍼</a>
+                  </li>
+                  <li>
+                    <a href="#">슬리퍼 & 뮬</a>
+                  </li>
+                  <li>
+                    <a href="#">부츠 & 부티</a>
+                  </li>
+                  <li>
+                    <a href="#">에스파드리유 & 웨지</a>
+                  </li>
+                  <li>
+                    <a href="#">슬라이드 & 통</a>
+                  </li>
+                  <li>
+                    <a href="#">스니커즈</a>
+                  </li>
+                </ul>
+                <header class="gnb-sub-header">
+                  <a href="#">DIY</a>
+                </header>
+                <ul>
+                  <li>
+                    <a href="#">지갑</a>
+                  </li>
+                  <li>
+                    <a href="#">니트웨어</a>
+                  </li>
+                  <li>
+                    <a href="#">토트백</a>
+                  </li>
+                </ul>
+              </div>
             </li>
           </ul>
         </li>
@@ -454,191 +480,203 @@
           <a href="#">남성</a>
           <ul class="menu-style-WM">
             <li>
-              <a href="#">신상품</a>
-              <ul>
-                <li>
-                  <a href="#">새로운 룩</a>
-                </li>
-                <li>
-                  <a href="#">구찌 그립</a>
-                </li>
-                <li>
-                  <a href="#">구찌 매니페스토</a>
-                </li>
-                <li>
-                  <a href="#">NEW: 구찌 메모아 뒨 오더</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">선물제안</a>
-              <ul>
-                <li>
-                  <a href="#">for 남성</a>
-                </li>
-                <li>
-                  <a href="#">구찌 데코</a>
-                </li>
-                <li>
-                  <a href="#">구찌 DIY</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">남성 가방</a>
-              <ul>
-                <li>
-                  <a href="#">구찌의 선택</a>
-                </li>
-                <li>
-                  <a href="#">크로스백</a>
-                </li>
-                <li>
-                  <a href="#">백팩</a>
-                </li>
-                <li>
-                  <a href="#">벨트백</a>
-                </li>
-                <li>
-                  <a href="#">토트백</a>
-                </li>
-                <li>
-                  <a href="#">포트폴리오</a>
-                </li>
-                <li>
-                  <a href="#">브리프케이스</a>
-                </li>
-                <li>
-                  <a href="#">여행가방</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">지갑</a>
-              <ul>
-                <li>
-                  <a href="#">구찌의 선택</a>
-                </li>
-                <li>
-                  <a href="#">장지갑 & 반지갑</a>
-                </li>
-                <li>
-                  <a href="#">파우치</a>
-                </li>
-                <li>
-                  <a href="#">카드 케이스 & 가죽 소품</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">패션소품</a>
-              <ul>
-                <li>
-                  <a href="#">벨트</a>
-                </li>
-                <li>
-                  <a href="#">주얼리 & 시계</a>
-                </li>
-                <li>
-                  <a href="#">아이웨어</a>
-                </li>
-                <li>
-                  <a href="#">넥타이</a>
-                </li>
-                <li>
-                  <a href="#">모자</a>
-                </li>
-                <li>
-                  <a href="#">스카프 및 장갑</a>
-                </li>
-                <li>
-                  <a href="#">남성 향수</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">의류</a>
-              <ul>
-                <li>
-                  <a href="#">새로운 룩</a>
-                </li>
-                <li>
-                  <a href="#">재킷 & 코트</a>
-                </li>
-                <li>
-                  <a href="#">아우터웨어 & 가죽 자켓</a>
-                </li>
-                <li>
-                  <a href="#">수트</a>
-                </li>
-                <li>
-                  <a href="#">셔츠</a>
-                </li>
-                <li>
-                  <a href="#">스웨터 & 가디건</a>
-                </li>
-                <li>
-                  <a href="#">스웨트셔츠</a>
-                </li>
-                <li>
-                  <a href="#">액티브웨어</a>
-                </li>
-                <li>
-                  <a href="#">티셔츠 & 폴로</a>
-                </li>
-                <li>
-                  <a href="#">팬츠 & 쇼츠</a>
-                </li>
-                <li>
-                  <a href="#">데님</a>
-                </li>                
-              </ul>
-            </li>
-            <li>
-              <a href="#">남성 슈즈</a>
-              <ul>
-                <li>
-                  <a href="#">모카신 & 로퍼</a>
-                </li>
-                <li>
-                  <a href="#">레이스업</a>
-                </li>
-                <li>
-                  <a href="#">부츠</a>
-                </li>
-                <li>
-                  <a href="#">슬리퍼</a>
-                </li>
-                <li>
-                  <a href="#">샌들 & 슬라이드</a>
-                </li>
-                <li>
-                  <a href="#">에스파드리유</a>
-                </li>
-                <li>
-                  <a href="#">스니커즈</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">DIY</a>
-              <ul>
-                <li>
+              <div>
+                <header class="gnb-sub-header">
+                  <a href="#">신상품</a>
+                </header>
+                <ul>
+                  <li>
+                    <a href="#">새로운 룩</a>
+                  </li>
+                  <li>
+                    <a href="#">구찌 그립</a>
+                  </li>
+                  <li>
+                    <a href="#">구찌 매니페스토</a>
+                  </li>
+                  <li>
+                    <a href="#">NEW: 구찌 메모아 뒨 오더</a>
+                  </li>
+                </ul>
+                <header class="gnb-sub-header">
+                  <a href="#">선물제안</a>
+                </header>
+                <ul>
+                  <li>
+                    <a href="#">for 남성</a>
+                  </li>
+                  <li>
+                    <a href="#">구찌 데코</a>
+                  </li>
+                  <li>
+                    <a href="#">구찌 DIY</a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <header class="gnb-sub-header">
+                  <a href="#">남성 가방</a>
+                </header>
+                <ul>
+                  <li>
+                    <a href="#">구찌의 선택</a>
+                  </li>
+                  <li>
+                    <a href="#">크로스백</a>
+                  </li>
+                  <li>
+                    <a href="#">백팩</a>
+                  </li>
+                  <li>
+                    <a href="#">벨트백</a>
+                  </li>
+                  <li>
+                    <a href="#">토트백</a>
+                  </li>
+                  <li>
+                    <a href="#">포트폴리오</a>
+                  </li>
+                  <li>
+                    <a href="#">브리프케이스</a>
+                  </li>
+                  <li>
+                    <a href="#">여행가방</a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <header class="gnb-sub-header">
                   <a href="#">지갑</a>
-                </li>
-                <li>
-                  <a href="#">니트웨어</a>
-                </li>
-                <li>
-                  <a href="#">토트백</a>
-                </li>
-              </ul>
+                </header>
+                <ul>
+                  <li>
+                    <a href="#">구찌의 선택</a>
+                  </li>
+                  <li>
+                    <a href="#">장지갑 & 반지갑</a>
+                  </li>
+                  <li>
+                    <a href="#">파우치</a>
+                  </li>
+                  <li>
+                    <a href="#">카드 케이스 & 가죽 소품</a>
+                  </li>
+                </ul>
+                <header class="gnb-sub-header">
+                  <a href="#">패션소품</a>
+                </header>
+                <ul>
+                  <li>
+                    <a href="#">벨트</a>
+                  </li>
+                  <li>
+                    <a href="#">주얼리 & 시계</a>
+                  </li>
+                  <li>
+                    <a href="#">아이웨어</a>
+                  </li>
+                  <li>
+                    <a href="#">넥타이</a>
+                  </li>
+                  <li>
+                    <a href="#">모자</a>
+                  </li>
+                  <li>
+                    <a href="#">스카프 및 장갑</a>
+                  </li>
+                  <li>
+                    <a href="#">남성 향수</a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <header class="gnb-sub-header">
+                  <a href="#">의류</a>
+                </header>
+                <ul>
+                  <li>
+                    <a href="#">새로운 룩</a>
+                  </li>
+                  <li>
+                    <a href="#">재킷 & 코트</a>
+                  </li>
+                  <li>
+                    <a href="#">아우터웨어 & 가죽 자켓</a>
+                  </li>
+                  <li>
+                    <a href="#">수트</a>
+                  </li>
+                  <li>
+                    <a href="#">셔츠</a>
+                  </li>
+                  <li>
+                    <a href="#">스웨터 & 가디건</a>
+                  </li>
+                  <li>
+                    <a href="#">스웨트셔츠</a>
+                  </li>
+                  <li>
+                    <a href="#">액티브웨어</a>
+                  </li>
+                  <li>
+                    <a href="#">티셔츠 & 폴로</a>
+                  </li>
+                  <li>
+                    <a href="#">팬츠 & 쇼츠</a>
+                  </li>
+                  <li>
+                    <a href="#">데님</a>
+                  </li>                
+                </ul>
+              </div>
+              <div>
+                <header class="gnb-sub-header">
+                  <a href="#">남성 슈즈</a>
+                </header>
+                <ul>
+                  <li>
+                    <a href="#">모카신 & 로퍼</a>
+                  </li>
+                  <li>
+                    <a href="#">레이스업</a>
+                  </li>
+                  <li>
+                    <a href="#">부츠</a>
+                  </li>
+                  <li>
+                    <a href="#">슬리퍼</a>
+                  </li>
+                  <li>
+                    <a href="#">샌들 & 슬라이드</a>
+                  </li>
+                  <li>
+                    <a href="#">에스파드리유</a>
+                  </li>
+                  <li>
+                    <a href="#">스니커즈</a>
+                  </li>
+                </ul>
+                <header class="gnb-sub-header">
+                  <a href="#">DIY</a>
+                </header>
+                <ul>
+                  <li>
+                    <a href="#">지갑</a>
+                  </li>
+                  <li>
+                    <a href="#">니트웨어</a>
+                  </li>
+                  <li>
+                    <a href="#">토트백</a>
+                  </li>
+                </ul>
+              </div>
             </li>
           </ul>
         </li>
         <li>
           <a href="#">주얼리 & 시계</a>
-          <ul>
+          <ul class="">
             <li>
               <a href="#">골드 주얼리</a>
               <ul>
@@ -888,7 +926,7 @@
               <ul>
                 <li>
                   <a href="#">
-                    <h3>Cruise <span class="PoiretOne">2020</span></h3>
+                    <h3>Cruise <span class="perhaps">2020</span></h3>
                   </a>
                 </li>
               </ul>
@@ -903,7 +941,8 @@
 <script>
   'use strict';
 
-  var numSlide = $('.visual .slide').length;
+  // visual slide
+  var numSlide = '';
   var slideNow = 0;
   var slideNext = 0;
   var slidePrev = 0;
@@ -937,11 +976,62 @@
     $('.visual .indicator > li').eq(n - 1).addClass('on');
     $('.visual .slide').eq(n - 1).addClass('on');
 
+    numSlide = $('.visual .slide').length;
     slideNow = n;
     slideNext = n + 1 > numSlide ? 1 : n + 1;
     slidePrev = n - 1 < 1 ? numSlide : n - 1;
     // timerId = setTimeout(() => {showSlide(slideNext)}, timerSpeed);
   }
+
+  //nav fashion-show slide
+
+  var slideWidth = 0;
+  var slideWrapWidth = 0;
+
+  $('.fashion-show .slide .slide-wrap > a').each(function(i){
+    $('.fashion-show #indicator').append('<li><a href="#"><span class="text-ir"' + (i + 1) + '번 슬라이드</span></a></li>\n');
+  });
+
+  $('.fashion-show #indicator li:first-child').addClass('on');
+
+  $('.fashion-show .slide .slide-wrap a').each(function(i){
+    numSlide = $('.fashion-show .slide .slide-wrap a').length;
+    slideWidth = 350;
+    slideWrapWidth = ( numSlide * slideWidth );
+
+    $(this).css({'left': ( i * slideWidth ) + 'px'});
+
+    $('.fashion-show .slide-wrap').css({
+      'width' : slideWrapWidth + 'px',
+    });
+  });
+
+
+  $('.fashion-show #indicator > li > a').on('click', function(e){
+    var index = $('.fashion-show #indicator > li').index($(this).parent());
+    slideWidth = 350;
+
+    $('.fashion-show #indicator > li').removeClass('on');
+    $(this).parent().addClass('on');
+    $('.fashion-show .slide-wrap').css({
+      'left' : -( index * slideWidth ) + 'px',
+    });
+  });
+
+  $('.fashion-show > ul > li > a').on('mouseenter', function(){
+    var index = $('.fashion-show > ul > li').index($(this).parent());
+    slideWidth = 350;
+
+    $('.fashion-show #indicator > li').removeClass('on');
+    $('.fashion-show #indicator > li').eq(index).addClass('on');
+    $('.fashion-show .slide-wrap').css({
+      'left' : -( index * slideWidth ) + 'px',
+    });
+  });
+
+
+
+
 </script>
 </body>
 </html>
