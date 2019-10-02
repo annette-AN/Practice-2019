@@ -194,7 +194,7 @@ em {
     width: 100%;
     height: 100px;
     padding-top: 25px;
-    box-shadow: inset 0px 60px 50px -20px rgba(0,0,0,0.8);
+    box-shadow: inset 0px 70px 100px -30px rgba(0,0,0,0.8);
     transition: background-color 0.3s;
 
     &:hover {
@@ -388,6 +388,9 @@ em {
             > ul {
               margin-top: 5px;
 
+              > li:first-child {
+                margin-top: 22px;
+              }
               > li {
                 margin-top: 16px;
 
@@ -408,6 +411,7 @@ em {
               }
             }
           }
+
           .fashion-show {
             padding-right: 0px;
 
@@ -447,25 +451,6 @@ em {
                     img {
                       width: 100%;
                       height: 100%;
-                    }
-
-                    em {
-                      display: block;
-                      position: absolute;
-                      top: 50%;
-                      left: auto;
-                      right: auto;
-                      bottom: auto;
-                      transform: translate(0%, -50%);
-                      width: 100%;
-                      color: #fff;
-                      font-size: 20px;
-                      font-weight: bold;
-                      text-align: center;
-
-                      span {
-                        font-weight: normal;
-                      }
                     }
                   }
                 }
@@ -583,6 +568,151 @@ em {
                   }
                 }
               }
+            }
+          }
+        }
+
+        .wide-list {
+          > li {
+            padding: 0px 65px;
+          }
+
+          .details {
+            div {
+              margin-top: 40px;
+            }
+          }
+        }
+
+        .col-list {
+          .col4 {
+            > a {
+              display: block;
+              margin-bottom: 22px;
+            }
+
+            ul {
+              column-count: 3;
+              column-gap: 30px;
+
+              li:first-child {
+                margin-top: 0px;
+              }
+            }
+          }
+
+          .col2 {
+            > a {
+              display: block;
+              margin-bottom: 26px;
+            }
+
+            ul {
+              column-count: 2;
+              column-gap: 30px;
+
+              li:first-child {
+                margin-top: 0px;
+              }
+            }
+          }
+        }
+
+        .gucci-story {
+          .recently-info {
+            > ul {
+              column-gap: 14px;
+
+              > li + li {
+                margin-top: 10px;
+              }
+
+              > li {
+
+                > a {
+                  display: block;
+                  height: 80px;
+
+                  img {
+                    height: 100%;
+                  }
+
+                  div {
+                    display: inline-block;
+                    width: 120px;
+                    padding-left: 12px;
+                    vertical-align: top;
+                    font-size: 11px;
+
+                    em, span {
+                      word-break: break-all;
+                    }
+
+                    em {
+                      display: block;
+                      font-weight: bold;
+                      margin-bottom: 12px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .details {
+          > div {
+            position: relative;
+            margin-top: 22px;
+          }
+        }
+      }
+
+      .no-border-all-list {
+        > li + li {
+          &:before {
+            width: 0px;
+            height: 0px;
+          }
+        }
+      }
+
+      .no-border {
+        &:before {
+          width: 0px;
+          height: 0px;
+        }
+      }
+
+      .slide-inside-text {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        transform: translate(0%, -50%);
+        width: 100%;
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+
+        span {
+          font-weight: normal;
+        }
+      }
+
+      .details {
+        div {
+          a {
+            position: relative;
+            display: block;
+            width: 350px;
+            height: 154px;
+
+            img {
+              width: 100%;
+              height: 100%;
             }
           }
         }
