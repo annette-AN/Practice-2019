@@ -35,7 +35,6 @@ em {
     background: pink;
 
     .slide {
-      display: none;
       position: absolute;
       top: 0px;
       left: 0px;
@@ -344,7 +343,7 @@ em {
           background: rgba(255, 255, 255, 0.95);
           // background: rgba(245, 244, 243, 0.98);
           height: auto;
-          padding: 26px 120px 55px;
+          padding: 26px 0px 55px 0px;
 
           &.on {
             display: block;
@@ -529,14 +528,15 @@ em {
         }
 
         .menu-style-WM {
-          padding: 0px 230px 55px;
+          padding: 0px 0px 55px;
+          text-align: center;
 
           > li {
-            width: 1150px;
 
             > div {
               display: inline-block;
-              width: 19%;
+              width: 200px;
+              // padding: 0px 45px;
               vertical-align: top;
 
               > .gnb-sub-header {

@@ -34,7 +34,6 @@ em {
 }
 
 .index .visual .slide {
-  display: none;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -339,7 +338,7 @@ em {
   margin: 0px 16px;
   background: rgba(255, 255, 255, 0.95);
   height: auto;
-  padding: 26px 120px 55px;
+  padding: 26px 0px 55px 0px;
 }
 
 .index .gnb > ul > li > ul.on {
@@ -517,16 +516,13 @@ em {
 }
 
 .index .gnb > ul > li .menu-style-WM {
-  padding: 0px 230px 55px;
-}
-
-.index .gnb > ul > li .menu-style-WM > li {
-  width: 1150px;
+  padding: 0px 0px 55px;
+  text-align: center;
 }
 
 .index .gnb > ul > li .menu-style-WM > li > div {
   display: inline-block;
-  width: 19%;
+  width: 200px;
   vertical-align: top;
 }
 
