@@ -29,7 +29,7 @@ em {
 
 .index .visual {
   position: relative;
-  height: 533px;
+  height: 700px;
   background: pink;
 }
 
@@ -185,7 +185,7 @@ em {
   font-size: 9px;
 }
 
-.index header {
+.index #index-header {
   position: fixed;
   top: 0px;
   left: 0px;
@@ -200,11 +200,11 @@ em {
   transition: background-color 0.3s;
 }
 
-.index header:hover {
+.index #index-header:hover {
   background-color: #1B1B1B;
 }
 
-.index header #nation-info {
+.index #index-header #nation-info {
   position: absolute;
   top: 25px;
   left: 25px;
@@ -212,15 +212,15 @@ em {
   bottom: auto;
 }
 
-.index header #nation-info li + li {
+.index #index-header #nation-info li + li {
   margin-left: 10px;
 }
 
-.index header #nation-info li:first-child #shopping-area {
+.index #index-header #nation-info li:first-child #shopping-area {
   background: pink;
 }
 
-.index header h1 {
+.index #index-header h1 {
   text-align: center;
   color: #f2f2f2;
   font-size: 28px;
@@ -228,7 +228,7 @@ em {
   letter-spacing: 15px;
 }
 
-.index header .user-info {
+.index #index-header .user-info {
   position: absolute;
   top: 25px;
   right: 90px;
@@ -236,38 +236,38 @@ em {
   bottom: auto;
 }
 
-.index header .user-info li + li {
+.index #index-header .user-info li + li {
   margin-left: 20px;
 }
 
-.index header #nation-info > li, .index header .user-info > li {
+.index #index-header #nation-info > li, .index #index-header .user-info > li {
   display: inline-block;
 }
 
-.index header #nation-info > li > div, .index header .user-info > li > div {
+.index #index-header #nation-info > li > div, .index #index-header .user-info > li > div {
   display: none;
   position: absolute;
 }
 
-.index header #nation-info li > span, .index header .user-info li > span {
+.index #index-header #nation-info li > span, .index #index-header .user-info li > span {
   cursor: pointer;
   color: rgba(255, 255, 255, 0.9);
 }
 
-.index header #nation-info li > span:hover, .index header .user-info li > span:hover {
+.index #index-header #nation-info li > span:hover, .index #index-header .user-info li > span:hover {
   color: white;
 }
 
-.index header #nation-info li > span:hover i, .index header .user-info li > span:hover i {
+.index #index-header #nation-info li > span:hover i, .index #index-header .user-info li > span:hover i {
   color: white;
 }
 
-.index header #nation-info li > span i, .index header .user-info li > span i {
+.index #index-header #nation-info li > span i, .index #index-header .user-info li > span i {
   margin-right: 4px;
   color: rgba(255, 255, 255, 0.5);
 }
 
-.index header .site-search {
+.index #index-header .site-search {
   position: absolute;
   top: 15px;
   right: 25px;
@@ -280,15 +280,15 @@ em {
   cursor: pointer;
 }
 
-.index header .site-search:hover {
+.index #index-header .site-search:hover {
   border-color: rgba(255, 255, 255, 0.9);
 }
 
-.index header .site-search:hover i {
+.index #index-header .site-search:hover i {
   color: rgba(255, 255, 255, 0.9);
 }
 
-.index header .site-search i {
+.index #index-header .site-search i {
   display: block;
   text-align: center;
   margin-top: 6px;
@@ -301,13 +301,24 @@ em {
 }
 
 .index .gnb > ul {
-  position: relative;
+  position: absolute;
+  top: auto;
+  left: 50%;
+  right: auto;
+  bottom: 0%;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  width: 100%;
   text-align: center;
+}
+
+.index .gnb > ul li {
+  vertical-align: top;
 }
 
 .index .gnb > ul > li {
   display: inline-block;
-  margin: 17px;
+  margin: 26px 17px;
 }
 
 .index .gnb > ul > li > a {
@@ -329,7 +340,6 @@ em {
   background: rgba(255, 255, 255, 0.95);
   height: auto;
   padding: 26px 120px 55px;
-  overflow: hidden;
 }
 
 .index .gnb > ul > li > ul.on {
@@ -355,7 +365,7 @@ em {
 
 .index .gnb > ul > li > ul > li {
   position: relative;
-  float: left;
+  display: inline-block;
   margin: 0px auto;
   padding: 0px 35px;
 }
@@ -379,6 +389,10 @@ em {
 }
 
 .index .gnb > ul > li > ul > li > ul > li a {
+  font-size: 12px;
+}
+
+.index .gnb > ul > li > ul > li > ul > li a {
   color: rgba(49, 49, 49, 0.7);
   font-weight: 400;
 }
@@ -387,13 +401,173 @@ em {
   color: #313131;
 }
 
-.index .gnb > ul > li > ul .slide {
-  background: red;
-  width: 235px;
+.index .gnb > ul > li > ul .fashion-show {
+  padding-right: 0px;
+}
+
+.index .gnb > ul > li > ul .fashion-show a {
+  display: block;
+}
+
+.index .gnb > ul > li > ul .fashion-show ul, .index .gnb > ul > li > ul .fashion-show figure {
+  display: inline-block;
+}
+
+.index .gnb > ul > li > ul .fashion-show ul {
+  width: 108px;
+}
+
+.index .gnb > ul > li > ul .fashion-show figure {
+  position: relative;
+  vertical-align: top;
+}
+
+.index .gnb > ul > li > ul .fashion-show figure .slide {
+  position: relative;
+  width: 350px;
+  height: 154px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.index .gnb > ul > li > ul .fashion-show figure .slide .slide-wrap {
+  position: absolute;
+  height: 100%;
+  -webkit-transition: left .3s;
+  transition: left .3s;
+}
+
+.index .gnb > ul > li > ul .fashion-show figure .slide .slide-wrap a {
+  position: absolute;
+  width: 350px;
+  height: 100%;
+}
+
+.index .gnb > ul > li > ul .fashion-show figure .slide .slide-wrap a img {
+  width: 100%;
+  height: 100%;
+}
+
+.index .gnb > ul > li > ul .fashion-show figure .slide .slide-wrap a em {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+  width: 100%;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.index .gnb > ul > li > ul .fashion-show figure .slide .slide-wrap a em span {
+  font-weight: normal;
+}
+
+.index .gnb > ul > li > ul .fashion-show figure #indicator {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  right: auto;
+  top: auto;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  width: auto;
+}
+
+.index .gnb > ul > li > ul .fashion-show figure #indicator li + li {
+  margin-left: 6px;
+}
+
+.index .gnb > ul > li > ul .fashion-show figure #indicator li {
+  display: inline-block;
+}
+
+.index .gnb > ul > li > ul .fashion-show figure #indicator li a {
+  width: 6px;
+  height: 6px;
+  border: 1px solid #727272;
+  border-radius: 3px;
+}
+
+.index .gnb > ul > li > ul .fashion-show figure #indicator li:hover a {
+  background: black;
+}
+
+.index .gnb > ul > li > ul .fashion-show figure #indicator li.on a {
+  background: black;
+}
+
+.index .gnb > ul > li > ul .gucci-edit > ul {
+  padding-top: 10px;
+}
+
+.index .gnb > ul > li > ul .gucci-edit > ul > li {
+  margin-top: 5px;
+}
+
+.index .gnb > ul > li > ul .gucci-edit > ul > li > a {
+  display: block;
+  cursor: pointer;
+}
+
+.index .gnb > ul > li > ul .gucci-edit > ul > li > a div {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+}
+
+.index .gnb > ul > li > ul .gucci-edit > ul > li > a div img {
+  width: 100%;
+  height: 100%;
+}
+
+.index .gnb > ul > li > ul .gucci-edit > ul > li > a em {
+  padding-left: 10px;
+  font-size: 11px;
+  vertical-align: top;
 }
 
 .index .gnb > ul > li .menu-style-WM {
-  background: red;
+  padding: 0px 230px 55px;
+}
+
+.index .gnb > ul > li .menu-style-WM > li {
+  width: 1150px;
+}
+
+.index .gnb > ul > li .menu-style-WM > li > div {
+  display: inline-block;
+  width: 19%;
+  vertical-align: top;
+}
+
+.index .gnb > ul > li .menu-style-WM > li > div > .gnb-sub-header {
+  margin: 26px 0px 22px;
+}
+
+.index .gnb > ul > li .menu-style-WM > li > div > .gnb-sub-header a {
+  color: #313131;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.index .gnb > ul > li .menu-style-WM > li > div > ul li + li {
+  margin-top: 16px;
+}
+
+.index .gnb > ul > li .menu-style-WM > li > div > ul li a {
+  font-size: 12px;
+  color: rgba(49, 49, 49, 0.7);
+  font-weight: 400;
+}
+
+.index .gnb > ul > li .menu-style-WM > li > div > ul li:hover a {
+  color: #313131;
 }
 
 .text-ir {

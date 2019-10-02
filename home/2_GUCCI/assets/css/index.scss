@@ -30,7 +30,8 @@ em {
 .index {
   .visual {
     position: relative;
-    height: 533px; //크롬에서 다시맞춤
+    //height: 533px; //크롬
+    height: 700px; //ex11
     background: pink;
 
     .slide {
@@ -184,7 +185,7 @@ em {
     }
   }
 
-  header {
+  #index-header {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -307,12 +308,22 @@ em {
     font-size: 12px;
 
     > ul {
-      position: relative;
+      position: absolute;
+      top: auto;
+      left: 50%;
+      right: auto;
+      bottom: 0%;
+      transform: translate(-50%, 0%);
+      width: 100%;
       text-align: center;
+
+      li {
+        vertical-align: top;
+      }
       
       > li {
         display: inline-block;
-        margin: 17px;
+        margin: 26px 17px;
 
         > a {
           color: rgba(242, 242, 242, 0.8);
@@ -334,7 +345,6 @@ em {
           // background: rgba(245, 244, 243, 0.98);
           height: auto;
           padding: 26px 120px 55px;
-          overflow: hidden;
 
           &.on {
             display: block;
@@ -359,17 +369,12 @@ em {
             }
           }
 
-          &:first-child {
-
-
-          }
-
           > li {
             position: relative;
-            float: left;
+            display: inline-block;
             margin: 0px auto;
             padding: 0px 35px;
-            
+
             a {
               font-size: 12px;
             }
@@ -387,6 +392,10 @@ em {
                 margin-top: 16px;
 
                 a {
+                  font-size: 12px;
+                }
+
+                a {
                   color: rgba(49, 49, 49, 0.7);
                   font-weight: 400;
                 }
@@ -399,15 +408,183 @@ em {
               }
             }
           }
+          .fashion-show {
+            padding-right: 0px;
 
-          .slide {
-            background: red;
-            width: 235px;
+            a {
+              display: block;
+            }
+
+            ul, figure {
+              display: inline-block;
+            }
+
+            ul {
+              width: 108px;
+            }
+
+            figure {
+              position: relative;
+              vertical-align: top;
+
+              .slide {
+                position: relative;
+                width: 350px;
+                height: 154px;
+                margin-top: 10px;
+                overflow: hidden;
+
+                .slide-wrap {
+                  position: absolute;
+                  height: 100%;
+                  transition: left .3s;
+
+                  a {
+                    position: absolute;
+                    width: 350px;
+                    height: 100%;
+
+                    img {
+                      width: 100%;
+                      height: 100%;
+                    }
+
+                    em {
+                      display: block;
+                      position: absolute;
+                      top: 50%;
+                      left: auto;
+                      right: auto;
+                      bottom: auto;
+                      transform: translate(0%, -50%);
+                      width: 100%;
+                      color: #fff;
+                      font-size: 20px;
+                      font-weight: bold;
+                      text-align: center;
+
+                      span {
+                        font-weight: normal;
+                      }
+                    }
+                  }
+                }
+              }
+
+              #indicator {
+                position: absolute;
+                bottom: -20px;
+                left: 50%;
+                right: auto;
+                top: auto;
+                transform: translate(-50%, 0%);
+                width: auto;
+
+                li + li {
+                  margin-left: 6px;
+                }
+
+                li {
+                  display: inline-block;
+
+                  a {
+                    width: 6px;
+                    height: 6px;
+                    border: 1px solid #727272;
+                    border-radius: 3px;
+                  }
+
+                  &:hover {
+                    a {
+                      background: black;
+                    }
+                  }
+
+                  &.on {
+                    a {
+                      background: black;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .gucci-edit {
+            > ul {
+              padding-top: 10px;
+
+              > li {
+                margin-top: 5px;
+
+                > a {
+                  display: block;
+                  cursor: pointer;
+
+                  div {
+                    display: inline-block;
+                    width: 70px;
+                    height: 70px;
+
+                    img {
+                      width: 100%;
+                      height: 100%;
+                    }
+                  }
+
+                  em {
+                    padding-left: 10px;
+                    font-size: 11px;
+                    vertical-align: top;
+                  }
+                }
+              }
+            }
           }
         }
 
         .menu-style-WM {
-          background: red;
+          padding: 0px 230px 55px;
+
+          > li {
+            width: 1150px;
+
+            > div {
+              display: inline-block;
+              width: 19%;
+              vertical-align: top;
+
+              > .gnb-sub-header {
+                margin: 26px 0px 22px;
+
+                a {
+                  color: #313131;
+                  font-weight: bold;
+                  letter-spacing: 1px;
+                }
+              }
+
+              > ul {
+                // display: none;
+                li + li {
+                  margin-top: 16px;
+                }
+                li {
+                  a {
+                    font-size: 12px;
+                    color: rgba(49, 49, 49, 0.7);
+                    font-weight: 400;
+                  }
+  
+                  &:hover {
+                    a {
+                      color: rgba(49, 49, 49, 1);
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -419,4 +596,4 @@ em {
 //design
 .text-ir {width:0px; height:0px; text-indent: -9999px; font-size: 0px;}
 .i-text-ir {position: absolute; left: -9999px; width: 0px; height: 0px; font-size: 0px;}
-// .PoiretOne {font-family: Futura,"Helvetica","Arial",sans-serif; font-size: 66px; font-weight: normal;}
+.perhaps {}
