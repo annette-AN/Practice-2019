@@ -44,8 +44,7 @@
     </div>
 
     <ul class="indicator">
-      <!-- <li><span class="text-ir">n번 슬라이드</span>*</li>
-      <li><span class="text-ir">n번 슬라이드</span>*</li> -->
+      <!-- 슬라이드 이미지 개수에 맞춰 인디케이터 자동생성 -->
     </ul>
 
     <div class="slide-btns">
@@ -57,12 +56,12 @@
 
   <header id="index-header">
     <ul id="nation-info">
-      <li>
+      <li id="popup-nation">
         <span>
           <i class="fas fa-map-marker-alt"><span class="i-text-ir">지도표시</span></i>
           대한민국
         </span>
-        <div id="shopping-area">
+        <div class="shopping-area">
           <div>
             <em>
               아래의 지역에서 온라인 쇼핑이 가능합니다.
@@ -90,10 +89,10 @@
            </div>
         </div>
       </li>
-      <li>
+      <li class="no-cursor">
         <span>한국어</span>
       </li>
-      <li>
+      <li class="no-cursor">
         <span>
           <i class="fas fa-phone"><span class="i-text-ir">전화기</span></i>
           02-3452-1921
@@ -105,52 +104,47 @@
 
     <ul class="user-info">
       <!-- 유저인포 css 공유 -->
-      <li>
+      <li id="popup-login">
         <span>로그인</span>
-        <div>
-          <h2>
-            <em>고객님만을 위한 맞춤 리스트를 살펴보세요</em>
-            <em>최근 주문 내역, 배송 추적 및 반송 관리를 조회하세요</em>
-            <em>마음에 드는 상품을 저장하세요</em>
-          </h2>
+        <div class="popup-design">
+          <ul>
+            <li>고객님만을 위한 맞춤 리스트를 살펴보세요</li>
+            <li>최근 주문 내역, 배송 추적 및 반송 관리를 조회하세요</li>
+            <li>마음에 드는 상품을 저장하세요</li>
+          </ul>
           <div class="login">
             <a href="#" class="join-btn">신규 회원 가입</a>
             <a href="#" class="login-btn">로그인</a>
           </div>
         </div>
       </li>
-      <li>
+      <li id="popup-like-it">
         <span>
           <i class="far fa-heart"><span class="i-text-ir">좋아요</span></i>
         </span>
-        <div class="shopping-basket">
-          <!-- 쇼핑 바스켓 css 공유 -->
+        <div>
           <h3>관심상품</h3>
           <ul>
             <li>관심상품이 비어 있습니다.</li>
           </ul>
         </div>
       </li>
-      <li>
+      <li id="popup-shopping-bag">
         <span>
           <i class="fas fa-shopping-bag"><span class="i-text-ir">가방</span></i>
           쇼핑백
         </span>
         <div>
-          <ul class="shopping-basket">
-            <li>
-              쇼핑백
-              <ul>
-                <li>쇼핑백이 비어 있습니다.</li>
-              </ul>
-            </li>
+          <h3>쇼핑백</h3>
+          <ul>
+            <li>쇼핑백이 비어 있습니다.</li>
           </ul>
-          <div>
-            <h2>
-              <em>고객님만을 위한 맞춤 리스트를 살펴보세요</em>
-              <em>최근 주문 내역, 배송 추적 및 반송 관리를 조회하세요</em>
-              <em>마음에 드는 상품을 저장하세요</em>
-            </h2>
+          <div class="popup-design">
+            <ul>
+              <li>고객님만을 위한 맞춤 리스트를 살펴보세요</li>
+              <li>최근 주문 내역, 배송 추적 및 반송 관리를 조회하세요</li>
+              <li>마음에 드는 상품을 저장하세요</li>
+            </ul>
             <div class="login">
               <a href="#" class="join-btn">신규 회원 가입</a>
               <a href="#" class="login-btn">로그인</a>
@@ -236,7 +230,7 @@
                   </div>
                 </div>
                 <ul id="indicator">
-                  <!-- <li><span class="text-ir">1번 슬라이드</span></li> -->
+                  <!-- 슬라이드 이미지 개수에 맞춰 인디케이터 자동생성 -->
                 </ul>
               </figure>
             </li>
@@ -983,8 +977,61 @@
     slideNow = n;
     slideNext = n + 1 > numSlide ? 1 : n + 1;
     slidePrev = n - 1 < 1 ? numSlide : n - 1;
-    timerId = setTimeout(() => {showSlide(slideNext)}, timerSpeed);
+    // timerId = setTimeout(() => {showSlide(slideNext)}, timerSpeed);
   }
+
+  //snb effect
+
+  $('#popup-nation').on('mouseenter', function(){
+    $(this).find('div').addClass('on');
+  });
+  
+  $('#popup-nation').on('mouseleave', function(){
+    $(this).find('div').removeClass('on');
+  });
+
+  $('.search-box input').on('click', function(e){
+    $(this).addClass('on');
+  });
+
+  $('#popup-login').on('mouseenter', function(){
+    $(this).find('div').addClass('on');
+  });
+
+  $('#popup-login').on('mouseleave', function(){
+    $(this).find('div').removeClass('on');
+  });
+
+  $('#popup-like-it').on('mouseenter', function(){
+    $(this).find('div').addClass('on');
+  });
+
+  $('#popup-like-it').on('mouseleave', function(){
+    $(this).find('div').removeClass('on');
+  });
+
+  $('#popup-shopping-bag').on('mouseenter', function(){
+    $(this).find('div').addClass('on');
+  });
+
+  $('#popup-shopping-bag').on('mouseleave', function(){
+    $(this).find('div').removeClass('on');
+  });
+
+  
+  function popupAddClassOn(selector, showWhat) {
+    $(selector).on('mouseenter', function(){
+      $(this).find(showWhat).addClass('on');
+    });
+
+    $(selector).on('mouseleave', function(){
+      $(this).find(showWhat).removeClass('on');
+    });
+  }
+
+
+
+
 
   //nav fashion-show slide
 
@@ -1038,14 +1085,13 @@
     $(this).find('ul').addClass('on');
   });
 
-  $('#index-header').on('mouseleave', function(){
+  $('.gnb > ul > li').on('mouseleave',function(){
     $('.gnb > ul > li > ul').removeClass('on');
   });
 
-
-
-
-
+  $('#index-header').on('mouseleave', function(){
+    $('.gnb > ul > li > ul').removeClass('on');
+  });
 
 </script>
 </body>
