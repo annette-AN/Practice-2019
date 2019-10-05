@@ -10,6 +10,10 @@ body, div, h1, h2, h3, h4, h5, h6, button, ul, li, a, span, em, p {
           box-sizing: border-box;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
 a {
   text-decoration: none;
 }
@@ -29,7 +33,7 @@ em {
 
 .index .visual {
   position: relative;
-  height: 700px;
+  height: 770px;
   background: pink;
 }
 
@@ -215,8 +219,98 @@ em {
   margin-left: 10px;
 }
 
-.index #index-header #nation-info li:first-child #shopping-area {
-  background: pink;
+.index #index-header #nation-info .shopping-area {
+  display: none;
+}
+
+.index #index-header #nation-info .shopping-area:before {
+  left: 10px;
+}
+
+.index #index-header #nation-info .shopping-area.on {
+  display: block;
+}
+
+.index #index-header #nation-info .shopping-area > div {
+  margin: 30px 20px;
+}
+
+.index #index-header #nation-info .shopping-area > div > em {
+  font-weight: bold;
+}
+
+.index #index-header #nation-info .shopping-area > div > p {
+  margin: 20px 0px;
+}
+
+.index #index-header #nation-info .shopping-area > div .nation-select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.index #index-header #nation-info .shopping-area > div .nation-select > a {
+  position: relative;
+  display: inline-block;
+}
+
+.index #index-header #nation-info .shopping-area > div .nation-select > a + a:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -8px;
+  left: -20px;
+  right: auto;
+  bottom: auto;
+  width: 1px;
+  height: 30px;
+  background: #e7e7e7;
+}
+
+.index #index-header #nation-info .shopping-area > div .search-box {
+  position: relative;
+  margin-top: 20px;
+}
+
+.index #index-header #nation-info .shopping-area > div .search-box input {
+  width: 100%;
+  height: 40px;
+  padding: 0px 10px;
+  background: #F4F4F4;
+  border: none;
+  font-size: 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #aaaaaa;
+}
+
+.index #index-header #nation-info .shopping-area > div .search-box input.on {
+  border: 1px solid #9e9e9e;
+}
+
+.index #index-header #nation-info .shopping-area > div .search-box a {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  left: auto;
+  bottom: auto;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+}
+
+.index #index-header #nation-info .shopping-area > div .search-box a i {
+  font-size: 15px;
+}
+
+.index #index-header #nation-info .shopping-area > div .use-gps {
+  margin-top: 10px;
+}
+
+.index #index-header #nation-info .shopping-area > div .use-gps a {
+  color: #aaaaaa;
 }
 
 .index #index-header h1 {
@@ -235,17 +329,144 @@ em {
   bottom: auto;
 }
 
-.index #index-header .user-info li + li {
+.index #index-header .user-info > li + li {
   margin-left: 20px;
 }
 
+.index #index-header .user-info > li > div {
+  display: none;
+}
+
+.index #index-header .user-info > li > div.on {
+  display: block;
+}
+
+.index #index-header .user-info > li > div > h3 {
+  padding: 10px 0px;
+  font-size: 16px;
+  text-align: center;
+  border-bottom: 1px solid #e7e7e7;
+  color: #4d4d4d;
+}
+
+.index #index-header .user-info > li > div > ul {
+  padding: 20px;
+  color: #727272;
+}
+
+.index #index-header .user-info > li > div > ul > li {
+  font-size: 12px;
+  text-align: center;
+}
+
+.index #index-header .user-info > li .popup-design {
+  border: 1px solid #f2f2f2;
+}
+
+.index #index-header .user-info > li .popup-design > ul {
+  position: relative;
+  height: 160px;
+  background: #000;
+  color: #f2f2f2;
+}
+
+.index #index-header .user-info > li .popup-design > ul > li {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  width: 240px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.index #index-header .user-info > li .popup-design .login {
+  position: relative;
+}
+
+.index #index-header .user-info > li .popup-design .login > a {
+  display: block;
+  margin: 20px;
+  padding: 13px 0px;
+  text-align: center;
+  background: #000;
+  color: #fff;
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
+.index #index-header .user-info > li .popup-design .login .join-btn {
+  position: absolute;
+  top: -100px;
+  width: calc(100% - 40px);
+  background: #fff;
+  color: #000;
+}
+
+.index #index-header .user-info #popup-login .popup-design {
+  left: -120px;
+}
+
+.index #index-header .user-info #popup-login .popup-design:before {
+  left: 130px;
+}
+
+.index #index-header .user-info #popup-like-it > div {
+  right: -5px;
+}
+
+.index #index-header .user-info #popup-like-it > div:before {
+  right: 10px;
+}
+
+.index #index-header .user-info #popup-shopping-bag > div {
+  left: -220px;
+}
+
+.index #index-header .user-info #popup-shopping-bag > div:before {
+  left: 218px;
+}
+
+.index #index-header .user-info #popup-shopping-bag h3 {
+  border: none;
+}
+
 .index #index-header #nation-info > li, .index #index-header .user-info > li {
+  position: relative;
   display: inline-block;
 }
 
 .index #index-header #nation-info > li > div, .index #index-header .user-info > li > div {
-  display: none;
+  background: #fff;
   position: absolute;
+  top: calc(100% + 20px);
+  left: auto;
+  right: auto;
+  bottom: auto;
+  width: 310px;
+}
+
+.index #index-header #nation-info > li > div:before, .index #index-header .user-info > li > div:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -12px;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  border: 6px solid transparent;
+  border-bottom-color: #fff;
+}
+
+.index #index-header #nation-info > li > div a, .index #index-header .user-info > li > div a {
+  color: #313131;
+}
+
+.index #index-header #nation-info > li > div i, .index #index-header .user-info > li > div i {
+  color: #aaaaaa;
 }
 
 .index #index-header #nation-info li > span, .index #index-header .user-info li > span {
@@ -317,10 +538,13 @@ em {
 
 .index .gnb > ul > li {
   display: inline-block;
-  margin: 26px 17px;
+  margin: 21px 0px 0px;
+  background: pink;
 }
 
 .index .gnb > ul > li > a {
+  display: block;
+  padding: 5px 17px 26px;
   color: rgba(242, 242, 242, 0.8);
 }
 
@@ -686,5 +910,9 @@ em {
   width: 0px;
   height: 0px;
   font-size: 0px;
+}
+
+.no-cursor {
+  cursor: none;
 }
 /*# sourceMappingURL=index.css.map */

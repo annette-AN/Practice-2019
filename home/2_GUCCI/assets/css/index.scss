@@ -10,6 +10,10 @@ body, div, h1, h2, h3, h4, h5, h6, button, ul, li, a, span, em, p {
   box-sizing: border-box;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
 a {
   text-decoration: none;
 }
@@ -31,7 +35,7 @@ em {
   .visual {
     position: relative;
     //height: 533px; //크롬
-    height: 700px; //ex11
+    height: 770px; //ex11
     background: pink;
 
     .slide {
@@ -210,9 +214,94 @@ em {
       li + li {
         margin-left: 10px;
       }
-      li:first-child {
-        #shopping-area {
-          background: pink;
+
+      .shopping-area {
+        display: none;
+
+        &:before {
+          left: 10px;
+        }
+
+        &.on {
+          display: block;
+        }
+
+        > div {
+          margin: 30px 20px;
+
+          > em {
+            font-weight: bold;
+          }
+
+          > p {
+            margin: 20px 0px;
+          }
+
+          .nation-select {
+            display: flex;
+            justify-content: space-between;
+
+            > a {
+              position: relative;
+              display: inline-block;
+            }
+
+            > a + a {
+              &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: -8px;
+                left: -20px;
+                right: auto;
+                bottom: auto;
+                width: 1px;
+                height: 30px;
+                background: #e7e7e7;
+              }
+            }
+          }
+
+          .search-box {
+            position: relative;
+            margin-top: 20px;
+
+            input {
+              width: 100%;
+              height: 40px;
+              padding: 0px 10px;
+              background: #F4F4F4;
+              border: none;
+              font-size: 12px;
+              box-sizing: border-box;
+              color: #aaaaaa;
+
+              &.on {
+                border: 1px solid #9e9e9e;
+              }
+            }
+
+            a {
+              position: absolute;
+              top: 50%;
+              right: 15px;
+              left: auto;
+              bottom: auto;
+              transform: translate(0%, -50%);
+
+              i {
+                font-size: 15px;
+              }
+            }
+          }
+
+          .use-gps {
+            margin-top: 10px;
+
+            a {
+              color: #aaaaaa;
+            }
+          }
         }
       }
     }
@@ -233,18 +322,152 @@ em {
       left: auto;
       bottom: auto;
 
-      li + li {
+      > li + li {
         margin-left: 20px;
+      }
+      
+      > li {
+        > div {
+          display: none;
+
+          &.on {
+            display: block;
+          }
+
+          > h3 {
+            padding: 10px 0px;
+            font-size: 16px;
+            text-align: center;
+            border-bottom: 1px solid #e7e7e7;
+            color: #4d4d4d;
+          }
+
+          > ul {
+            padding: 20px;
+            color: #727272;
+
+            > li {
+              font-size: 12px;
+              text-align: center;
+            }
+          }
+        }
+
+        .popup-design {
+          border: 1px solid #f2f2f2;
+
+          > ul {
+            position: relative;
+            height: 160px;
+            background: #000;
+            color: #f2f2f2;
+
+            > li {
+              position: absolute;
+              top: 40px;
+              left: 50%;
+              right: auto;
+              bottom: auto;
+              transform: translate(-50%, 0%);
+              width: 240px;
+              font-size: 16px;
+              text-align: center;
+            }
+          }
+
+          .login {
+            position: relative;
+
+            > a {
+              display: block;
+              margin: 20px;
+              padding: 13px 0px;
+              text-align: center;
+              background: #000;
+              color: #fff;
+              letter-spacing: 2px;
+              font-size: 12px;
+            }
+
+            .join-btn {
+              position: absolute;
+              top: -100px;
+              width: calc(100% - 40px);
+              background: #fff;
+              color: #000;
+            }
+          }
+        }
+      }
+
+      #popup-login {
+        .popup-design {
+          left: -120px;
+          
+          &:before {
+            left: 130px;
+          }
+        }
+      }
+
+      #popup-like-it {
+        > div {
+          right: -5px;
+          
+          &:before {
+            right: 10px;
+          }
+        }
+      }
+
+      #popup-shopping-bag {
+        > div {
+          left: -220px;
+          
+          &:before {
+            left: 218px;
+          }
+        }
+
+        h3 {
+          border: none;
+        }
       }
     }
 
     #nation-info, .user-info {
       > li {
+        position: relative;
         display: inline-block;
 
-        > div { //팝업
-          display: none;
+        > div {
+          background: #fff;
           position: absolute;
+          top: calc(100% + 20px);
+          left: auto;
+          right: auto;
+          bottom: auto;
+          width: 310px;
+          
+          &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -12px;
+            left: auto;
+            right: auto;
+            bottom: auto;
+            border: 6px solid transparent;
+            border-bottom-color: #fff;
+          }
+
+          a {
+            color: #313131;
+          }
+
+          i {
+            color: #aaaaaa;
+          }
         }
       }
 
@@ -322,9 +545,13 @@ em {
       
       > li {
         display: inline-block;
-        margin: 26px 17px;
+        margin: 21px 0px 0px;
+        // padding: 26px 17px;
+        background: pink;
 
         > a {
+          display: block;
+          padding: 5px 17px 26px;
           color: rgba(242, 242, 242, 0.8);
 
           &:hover {
@@ -727,3 +954,4 @@ em {
 .text-ir {width:0px; height:0px; text-indent: -9999px; font-size: 0px;}
 .i-text-ir {position: absolute; left: -9999px; width: 0px; height: 0px; font-size: 0px;}
 .perhaps {}
+.no-cursor {cursor: none;}
