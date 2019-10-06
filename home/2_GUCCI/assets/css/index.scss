@@ -1,6 +1,6 @@
 body {
   // font-family: Futura, Futura, "Malgun Gothic", Dotum, sans-serif;
-  font-family: Futura,"Helvetica","Arial",sans-serif;
+  // font-family: Futura,"Helvetica","Arial",sans-serif;
   font-size: 11px;
 }
 
@@ -34,8 +34,9 @@ em {
 .index {
   .visual {
     position: relative;
-    //height: 533px; //크롬
-    height: 770px; //ex11
+    // height: 533px; //imac 크롬
+    height: 540px; //macbook 크롬
+    // height: 770px; //ex11
     background: pink;
 
     .slide {
@@ -176,14 +177,83 @@ em {
     }
 
     .present-svc {
-      position: absolute;
-      right: 26px;
-      bottom: 20px;
-      font-size: 13px;
-      color: #f2f2f2;
+      > h3 {
+        > a {
+          position: absolute;
+          right: 26px;
+          bottom: 20px;
+          font-size: 13px;
+          color: #f2f2f2;
+    
+          i {
+            font-size: 9px;
+          }
+        }
+      }
 
-      i {
-        font-size: 9px;
+      > div {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 590px;
+        height: 570px;
+        padding: 25px 90px;
+        background: #fff;
+        text-align: center;
+        font-weight: 300;
+        z-index: 1;
+
+        &.on {
+          display: block;
+        }
+
+        > em {
+          position: relative;
+          display: block;
+          padding: 25px 0px;
+          font-weight: 400;
+          font-size: 12px;
+
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            right: auto;
+            bottom: auto;
+            transform: translate(-50%, 0%);
+            width: 30px;
+            height: 1px;
+            background: gray;
+          }
+        }
+
+        > h4 {
+          margin: 30px auto 0px;
+          padding-bottom: 10px;
+          font-size: 24px;
+          font-weight: 300;
+        }
+
+        > p {
+          margin: 25px auto;
+          font-size: 16px;
+          line-height: 1.5;
+        }
+
+        > button {
+          width: 120px;
+          height: 45px;
+          margin-top: 20px;
+          background: #313131;
+          color: #cfc9c3;
+          font-size: 12px;
+        }
       }
     }
   }
@@ -358,13 +428,17 @@ em {
 
           > ul {
             position: relative;
-            height: 160px;
-            background: #000;
+            height: 170px;
+            background-image: url(../img/SnbPopupImage/MenuFlyoutMedium_S93-FS_001_Default.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 800px 170px;
+            box-shadow: inset 0 0 0 700px rgba(0,0,0,0.4);
             color: #f2f2f2;
 
             > li {
               position: absolute;
-              top: 40px;
+              top: 45px;
               left: 50%;
               right: auto;
               bottom: auto;
@@ -441,13 +515,14 @@ em {
         display: inline-block;
 
         > div {
-          background: #fff;
           position: absolute;
           top: calc(100% + 20px);
           left: auto;
           right: auto;
           bottom: auto;
           width: 310px;
+          background: #fff;
+          z-index: 1;
           
           &:before {
             content: '';
@@ -490,38 +565,59 @@ em {
           }
         }
       }
+
+      .no-cursor {
+        cursor: initial;
+
+        &:hover {
+          color: rgba(255, 255, 255, 0.9);
+        }
+      }
     }
 
     .site-search {
       position: absolute;
-      top: 15px;
-      right: 25px;
+      top: 0%;
       left: auto;
+      right: 0%;
       bottom: auto;
-      width: 34px;
-      height: 34px;
-      border: 3px solid rgba(255, 255, 255, 0.4);
-      border-radius: 17px;
       cursor: pointer;
 
-      &:hover {
-        border-color: rgba(255, 255, 255, 0.9);
+      > div {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        left: auto;
+        bottom: auto;
+        width: 34px;
+        height: 34px;
+        border: 3px solid rgba(255, 255, 255, 0.4);
+        border-radius: 17px;
+        background: transparent;
+
+        &:hover {
+          border-color: rgba(255, 255, 255, 0.9);
+  
+          &:before {
+            border-color: rgba(255, 255, 255, 0.9);
+          }
+  
+          i {
+            color: rgba(255, 255, 255, 0.9);
+          }
+        }
 
         i {
-          color: rgba(255, 255, 255, 0.9);
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          right: auto;
+          bottom: auto;
+          transform: translate(-50%, -50%);
+          color: rgba(255, 255, 255, 0.4);
+          font-size: 15px;
         }
-      }
-
-      i {
-        display: block;
-        text-align: center;
-        margin-top: 6px;
-        // position: absolute;
-        // top: 50px;
-        // left: 50px;
-        // transform: translate(-50%, -50%);
-        color: rgba(255, 255, 255, 0.4);
-        font-size: 15px;
       }
     }
   }
@@ -538,6 +634,7 @@ em {
       transform: translate(-50%, 0%);
       width: 100%;
       text-align: center;
+      z-index: 0;
 
       li {
         vertical-align: top;

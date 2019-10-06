@@ -1,5 +1,4 @@
 body {
-  font-family: Futura,"Helvetica","Arial",sans-serif;
   font-size: 11px;
 }
 
@@ -33,7 +32,7 @@ em {
 
 .index .visual {
   position: relative;
-  height: 770px;
+  height: 540px;
   background: pink;
 }
 
@@ -176,7 +175,7 @@ em {
   right: 40px;
 }
 
-.index .visual .present-svc {
+.index .visual .present-svc > h3 > a {
   position: absolute;
   right: 26px;
   bottom: 20px;
@@ -184,8 +183,75 @@ em {
   color: #f2f2f2;
 }
 
-.index .visual .present-svc i {
+.index .visual .present-svc > h3 > a i {
   font-size: 9px;
+}
+
+.index .visual .present-svc > div {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 590px;
+  height: 570px;
+  padding: 25px 90px;
+  background: #fff;
+  text-align: center;
+  font-weight: 300;
+  z-index: 1;
+}
+
+.index .visual .present-svc > div.on {
+  display: block;
+}
+
+.index .visual .present-svc > div > em {
+  position: relative;
+  display: block;
+  padding: 25px 0px;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.index .visual .present-svc > div > em:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  width: 30px;
+  height: 1px;
+  background: gray;
+}
+
+.index .visual .present-svc > div > h4 {
+  margin: 30px auto 0px;
+  padding-bottom: 10px;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.index .visual .present-svc > div > p {
+  margin: 25px auto;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.index .visual .present-svc > div > button {
+  width: 120px;
+  height: 45px;
+  margin-top: 20px;
+  background: #313131;
+  color: #cfc9c3;
+  font-size: 12px;
 }
 
 .index #index-header {
@@ -365,14 +431,19 @@ em {
 
 .index #index-header .user-info > li .popup-design > ul {
   position: relative;
-  height: 160px;
-  background: #000;
+  height: 170px;
+  background-image: url(../img/SnbPopupImage/MenuFlyoutMedium_S93-FS_001_Default.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 800px 170px;
+  -webkit-box-shadow: inset 0 0 0 700px rgba(0, 0, 0, 0.4);
+          box-shadow: inset 0 0 0 700px rgba(0, 0, 0, 0.4);
   color: #f2f2f2;
 }
 
 .index #index-header .user-info > li .popup-design > ul > li {
   position: absolute;
-  top: 40px;
+  top: 45px;
   left: 50%;
   right: auto;
   bottom: auto;
@@ -440,13 +511,14 @@ em {
 }
 
 .index #index-header #nation-info > li > div, .index #index-header .user-info > li > div {
-  background: #fff;
   position: absolute;
   top: calc(100% + 20px);
   left: auto;
   right: auto;
   bottom: auto;
   width: 310px;
+  background: #fff;
+  z-index: 1;
 }
 
 .index #index-header #nation-info > li > div:before, .index #index-header .user-info > li > div:before {
@@ -487,7 +559,24 @@ em {
   color: rgba(255, 255, 255, 0.5);
 }
 
+.index #index-header #nation-info .no-cursor, .index #index-header .user-info .no-cursor {
+  cursor: initial;
+}
+
+.index #index-header #nation-info .no-cursor:hover, .index #index-header .user-info .no-cursor:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
 .index #index-header .site-search {
+  position: absolute;
+  top: 0%;
+  left: auto;
+  right: 0%;
+  bottom: auto;
+  cursor: pointer;
+}
+
+.index #index-header .site-search > div {
   position: absolute;
   top: 15px;
   right: 25px;
@@ -497,21 +586,30 @@ em {
   height: 34px;
   border: 3px solid rgba(255, 255, 255, 0.4);
   border-radius: 17px;
-  cursor: pointer;
+  background: transparent;
 }
 
-.index #index-header .site-search:hover {
+.index #index-header .site-search > div:hover {
   border-color: rgba(255, 255, 255, 0.9);
 }
 
-.index #index-header .site-search:hover i {
+.index #index-header .site-search > div:hover:before {
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.index #index-header .site-search > div:hover i {
   color: rgba(255, 255, 255, 0.9);
 }
 
-.index #index-header .site-search i {
+.index #index-header .site-search > div i {
   display: block;
-  text-align: center;
-  margin-top: 6px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   color: rgba(255, 255, 255, 0.4);
   font-size: 15px;
 }
@@ -530,6 +628,7 @@ em {
           transform: translate(-50%, 0%);
   width: 100%;
   text-align: center;
+  z-index: 0;
 }
 
 .index .gnb > ul li {
