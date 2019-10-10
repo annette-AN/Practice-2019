@@ -16,6 +16,7 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 li {
@@ -269,6 +270,7 @@ em {
     padding-top: 25px;
     box-shadow: inset 0px 70px 100px -30px rgba(0,0,0,0.8);
     transition: background-color 0.3s;
+    z-index: 2;
 
     &:hover {
       background-color: #1B1B1B;
@@ -1045,6 +1047,119 @@ em {
   }
 }
 
+.index-main {
+  position: relative;
+  margin: 16px;
+  text-align: center;
+  z-index: 0;
+
+  > section + section {
+    margin-top: 2px;
+  }
+
+  > section {
+    position: relative;
+    width: 100%;
+    background: #e7e7e7;
+    color: #989898;
+    font-weight: 300;
+
+    > img {
+      display: block;
+      margin: 0px auto;
+      border: 1px solid black;
+    }
+
+    > em {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+    
+    > h4 {
+      margin: 18px 0px 12px;
+      color: #636363;
+      font-weight: 300;
+      font-size: 33px;
+    }
+
+    > span {
+      display: block;
+    }
+
+    > a {
+      display: inline-block;
+      margin-top: 15px;
+      line-height: 40px;
+      font-size: 12px;
+
+      &:hover {
+        > span {
+          background: #313131;
+        }
+      }
+
+      > span {
+        padding: 13px 42px;
+        background: #1a1a1a;
+        vertical-align: middle;
+        letter-spacing: 1px;
+        color: #f2f2f2;
+      }
+    }
+
+    > aside {
+      position: absolute;
+      top: auto;
+      left: auto;
+      right: auto;
+      bottom: auto;
+      width: 180px;
+      background: #f5f5f5;
+      z-index: 1;
+
+      > a {
+        display: block;
+        margin: 40px 0px;
+        color: #7a7a7a;
+
+        > h4 {
+          margin-top: 20px;
+          font-size: 20px;
+          font-weight: 300;
+        }
+
+        > p {
+          margin-top: 20px;
+          font-size: 15px;
+          font-family: serif;
+        }
+      }
+    }
+
+    .aside-right {
+      right: 115px;
+    }
+    .aside-left {
+      left: 95px;
+    }
+    .aside-center {
+      left: 50%;
+      transform: translate(-50%, 0%);
+    }
+  }
+}
+
+.aside-hover-effect {
+  display: inline-block;
+  margin-top: 23px;
+  color: #424242;
+  font-size: 12px;
+  font-weight: 400;
+
+  &:hover {
+    color: #7a7a7a;
+  }
+}
 
 
 //design
