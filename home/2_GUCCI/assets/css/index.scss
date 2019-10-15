@@ -1,5 +1,5 @@
 body {
-  // font-family: Futura, Futura, "Malgun Gothic", Dotum, sans-serif;
+  font-family: Futura, Futura, "Malgun Gothic", Dotum, sans-serif;
   // font-family: Futura,"Helvetica","Arial",sans-serif;
   font-size: 11px;
 }
@@ -35,9 +35,9 @@ em {
 .index {
   .visual {
     position: relative;
-    // height: 533px; //imac 크롬
-    height: 540px; //macbook 크롬
-    // height: 770px; //ex11
+    // height: 590px; //imac 크롬
+    // height: 540px; //macbook 크롬
+    height: 800px; //ex11
     background: pink;
 
     .slide {
@@ -659,20 +659,23 @@ em {
         }
 
         > ul {
-          display: none;
           position: absolute;
-          top: 100%;
+          top: -800px;
           left: 0%;
           right: 0%;
           bottom: auto;
           margin: 0px 16px;
           background: rgba(255, 255, 255, 0.95);
-          // background: rgba(245, 244, 243, 0.98);
           height: auto;
           padding: 26px 0px 55px 0px;
+          transition: top .3s;
+
+          &.hidden {
+            display: none;
+          }
 
           &.on {
-            display: block;
+            top: 100%;
           }
 
           li {
@@ -1048,6 +1051,7 @@ em {
 }
 
 .index-main {
+  display: block;
   position: relative;
   margin: 16px;
   text-align: center;
@@ -1063,23 +1067,111 @@ em {
     background: #e7e7e7;
     color: #989898;
     font-weight: 300;
+    overflow: hidden;
 
-    > img {
-      display: block;
-      margin: 0px auto;
-      border: 1px solid black;
+    > aside {
+      position: absolute;
+      top: auto;
+      left: auto;
+      right: auto;
+      bottom: auto;
+      width: 180px;
+      background: #f5f5f5;
+      z-index: 1;
+
+      &:nth-of-type(1) {
+        top: 120px;
+      }
+      
+      &:nth-of-type(2) {
+        top: 300px;
+      }
+
+      &:nth-of-type(3) {
+        bottom: 120px;
+      }
+
+      > a {
+        display: block;
+        margin: 40px 0px;
+        color: #7a7a7a;
+
+        > h4 {
+          margin-top: 20px;
+          font-size: 20px;
+          font-weight: 300;
+        }
+
+        > p {
+          margin-top: 20px;
+          font-size: 15px;
+          font-family: serif;
+        }
+      }
     }
+
+    .aside-right {
+      right: 380px;
+    }
+    .aside-left {
+      left: 380px;
+    }
+    aside.aside-center {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .section-image {
+    position: relative;
+    top: -100px;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    margin: 0px auto;
+  }
+
+  .model-look {
+    .section-image {
+      top: 100px;
+
+      img {
+        width: 420px;
+      }
+    }
+
+    .section-contents {
+      top: 150px;
+    }
+  }
+
+  .full-image {
+    .section-image {
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .section-contents {
+    position: relative;
+    top: -200px;
+    left: auto;
+    right: auto;
+    bottom: auto;
 
     > em {
       margin-top: 20px;
       font-size: 16px;
     }
     
-    > h4 {
+    h4 {
       margin: 18px 0px 12px;
       color: #636363;
       font-weight: 300;
-      font-size: 33px;
+      font-size: 35px;
+      letter-spacing: 2px;
     }
 
     > span {
@@ -1106,46 +1198,54 @@ em {
         color: #f2f2f2;
       }
     }
+  }
 
-    > aside {
-      position: absolute;
-      top: auto;
-      left: auto;
-      right: auto;
-      bottom: auto;
-      width: 180px;
-      background: #f5f5f5;
-      z-index: 1;
+  .section-gucci-story {
+    padding-bottom: 40px;
 
-      > a {
+    h3 {
+      margin-top: 70px;
+      color: #636363;
+      font-weight: 300;
+      font-size: 35px;
+      letter-spacing: 2px;
+
+      &:after {
+        content: '';
         display: block;
-        margin: 40px 0px;
-        color: #7a7a7a;
+        width: 150px;
+        height: 1px;
+        margin: 10px auto;
+        background: gray;
+      }
+    }
 
-        > h4 {
-          margin-top: 20px;
-          font-size: 20px;
-          font-weight: 300;
+    > div {
+      column-count: 3;
+      width: 1300px;
+      margin: 0px auto;
+
+      article {
+        display: inline-block;
+        margin: 60px 0px;
+
+        .image-part {
+          img {
+            width: 340px;
+          }
         }
 
-        > p {
+        h4 {
           margin-top: 20px;
-          font-size: 15px;
-          font-family: serif;
+          font-size: 20px;
+        }
+
+        .aside-hover-effect {
+          margin-top: 10px;
         }
       }
     }
 
-    .aside-right {
-      right: 115px;
-    }
-    .aside-left {
-      left: 95px;
-    }
-    .aside-center {
-      left: 50%;
-      transform: translate(-50%, 0%);
-    }
   }
 }
 
@@ -1159,6 +1259,10 @@ em {
   &:hover {
     color: #7a7a7a;
   }
+}
+
+.wide-margin {
+  margin-top: 50px;
 }
 
 
