@@ -34,7 +34,7 @@ em {
 
 .index .visual {
   position: relative;
-  height: 800px;
+  height: 633px;
   background: pink;
 }
 
@@ -55,6 +55,10 @@ em {
 
 .index .visual .slide.on {
   display: block;
+}
+
+.index .visual .slide #svg-icon-equilibrium:hover #equilibrium-equilibrium {
+  fill: #fff;
 }
 
 .index .visual .slide .contents {
@@ -269,7 +273,6 @@ em {
           box-shadow: inset 0px 70px 100px -30px rgba(0, 0, 0, 0.8);
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
-  z-index: 2;
 }
 
 .index #index-header:hover {
@@ -656,16 +659,21 @@ em {
 
 .index .gnb > ul > li > ul {
   position: absolute;
-  top: -800px;
+  top: 100%;
   left: 0%;
   right: 0%;
   bottom: auto;
+  -webkit-transform: translate(0px, -800px);
+          transform: translate(0px, -800px);
   margin: 0px 16px;
   background: rgba(255, 255, 255, 0.95);
   height: auto;
   padding: 26px 0px 55px 0px;
-  -webkit-transition: top .3s;
-  transition: top .3s;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+  z-index: -1;
 }
 
 .index .gnb > ul > li > ul.hidden {
@@ -673,7 +681,8 @@ em {
 }
 
 .index .gnb > ul > li > ul.on {
-  top: 100%;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
 }
 
 .index .gnb > ul > li > ul li {

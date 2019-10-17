@@ -35,9 +35,7 @@ em {
 .index {
   .visual {
     position: relative;
-    // height: 590px; //imac 크롬
-    // height: 540px; //macbook 크롬
-    height: 800px; //ex11
+    height: 633px;
     background: pink;
 
     .slide {
@@ -55,6 +53,10 @@ em {
 
       &.on {
         display: block;
+      }
+      
+      #svg-icon-equilibrium:hover #equilibrium-equilibrium {
+        fill:#fff;
       }
 
       .contents {
@@ -270,7 +272,6 @@ em {
     padding-top: 25px;
     box-shadow: inset 0px 70px 100px -30px rgba(0,0,0,0.8);
     transition: background-color 0.3s;
-    z-index: 2;
 
     &:hover {
       background-color: #1B1B1B;
@@ -660,22 +661,24 @@ em {
 
         > ul {
           position: absolute;
-          top: -800px;
+          top: 100%;
           left: 0%;
           right: 0%;
           bottom: auto;
+          transform: translate(0px, -800px);
           margin: 0px 16px;
           background: rgba(255, 255, 255, 0.95);
           height: auto;
           padding: 26px 0px 55px 0px;
-          transition: top .3s;
+          transition: transform .3s;
+          z-index: -1;
 
           &.hidden {
             display: none;
           }
 
           &.on {
-            top: 100%;
+            transform: translate(0px, 0px);
           }
 
           li {
