@@ -56,25 +56,6 @@
       <h3>
         <a href="#">구찌 선물포장 서비스 <i class="fas fa-chevron-right"><span class="i-text-ir">오른쪽 화살표</span></i></a>
       </h3>
-      <div>
-        <em>특별한 서비스</em>
-        <h4>구찌 선물포장 서비스</h4>
-        <p>블랙 & 화이트 컨셉의 패키징을 만나보세요.</p>
-        <p>
-          구찌 공식 온라인 사이트에서는 상품을 구매하시는 모든 고객님께<br/>
-          특별한 포장재를 이용하여 선물포장 후 배송해 드리고<br/>
-          있습니다.
-        </p>
-        <p>
-          모든 상품에는 매장과 동일하게 구찌 쇼핑백이<br/>
-          동봉되어 무료로 배송됩니다.
-        </p>
-        <p>
-          주문시, '선물메세지'를 작성하실 수 있으며 메시지는 인보이스에<br/>
-          함께 프린트 되어 받으시는 분께 전달됩니다.
-        </p>
-        <button>닫기</button>
-      </div>
     </div>
   </div>
 
@@ -85,32 +66,34 @@
           <i class="fas fa-map-marker-alt"><span class="i-text-ir">지도표시</span></i>
           <span hidden-text>대한민국</span>
         </span>
-        <div class="shopping-area" dropdown>
-          <div>
-            <em>
-              아래의 지역에서 온라인 쇼핑이 가능합니다.
-            </em>
-            <p>지역을 변경하실 경우 쇼핑백에 담아두신 상품이 초기화 됩니다.</p>
-            <div class="nation-select">
-              <a href="#">배송지역: <span>대한민국</span></a>
-              <a href="#">국가 / 지역 변경 <i class="fas fa-chevron-right"><span class="i-text-ir">오른쪽 화살표</span></i></a>
-            </div>
-           </div>
-           <div>
-            <em>매장 찾기</em>
-            <div class="search-box">
-              <input type="text" placeholder="국가, 지역 또는 도시"/>
-              <a href="#">
-                <i class="fas fa-search"><span class="i-text-ir">검색</span></i>
-              </a>
-            </div>
-            <div class="use-gps">
-              <a href="#">
-                <i class="fas fa-location-arrow"><span class="i-text-ir">위치 아이콘</span></i>
-                <span>현재 위치 사용하기</span>
-              </a>
-            </div>
-           </div>
+        <div class="dropdown-wrap" dropdown>
+          <div class="shopping-area">
+            <div>
+              <em>
+                아래의 지역에서 온라인 쇼핑이 가능합니다.
+              </em>
+              <p>지역을 변경하실 경우 쇼핑백에 담아두신 상품이 초기화 됩니다.</p>
+              <div class="nation-select">
+                <a href="#">배송지역: <span>대한민국</span></a>
+                <a href="#">국가 / 지역 변경 <i class="fas fa-chevron-right"><span class="i-text-ir">오른쪽 화살표</span></i></a>
+              </div>
+             </div>
+             <div>
+              <em>매장 찾기</em>
+              <div class="search-box">
+                <input type="text" placeholder="국가, 지역 또는 도시"/>
+                <a href="#">
+                  <i class="fas fa-search"><span class="i-text-ir">검색</span></i>
+                </a>
+              </div>
+              <div class="use-gps">
+                <a href="#">
+                  <i class="fas fa-location-arrow"><span class="i-text-ir">위치 아이콘</span></i>
+                  <span>현재 위치 사용하기</span>
+                </a>
+              </div>
+             </div>
+          </div>
         </div>
       </li>
       <li class="no-cursor">
@@ -133,39 +116,7 @@
           <i class="fas fa-user"><span class="i-text-ir">사람</span></i>
           <span hidden-text>로그인</span>
         </span>
-        <div class="popup-design" dropdown>
-          <ul>
-            <li>고객님만을 위한 맞춤 리스트를 살펴보세요</li>
-            <li>최근 주문 내역, 배송 추적 및 반송 관리를 조회하세요</li>
-            <li>마음에 드는 상품을 저장하세요</li>
-          </ul>
-          <div class="login">
-            <a href="#" class="join-btn">신규 회원 가입</a>
-            <a href="#" class="login-btn">로그인</a>
-          </div>
-        </div>
-      </li>
-      <li id="popup-like-it" popper>
-        <span>
-          <i class="far fa-heart"><span class="i-text-ir">좋아요</span></i>
-        </span>
-        <div dropdown>
-          <h3>관심상품</h3>
-          <ul>
-            <li>관심상품이 비어 있습니다.</li>
-          </ul>
-        </div>
-      </li>
-      <li id="popup-shopping-bag" popper>
-        <span>
-          <i class="fas fa-shopping-bag"><span class="i-text-ir">가방</span></i>
-          <span hidden-text>쇼핑백</span>
-        </span>
-        <div dropdown>
-          <h3>쇼핑백</h3>
-          <ul>
-            <li>쇼핑백이 비어 있습니다.</li>
-          </ul>
+        <div class="dropdown-wrap" dropdown>
           <div class="popup-design">
             <ul>
               <li>고객님만을 위한 맞춤 리스트를 살펴보세요</li>
@@ -175,6 +126,44 @@
             <div class="login">
               <a href="#" class="join-btn">신규 회원 가입</a>
               <a href="#" class="login-btn">로그인</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li id="popup-like-it" popper>
+        <span>
+          <i class="far fa-heart"><span class="i-text-ir">좋아요</span></i>
+        </span>
+        <div class="dropdown-wrap" dropdown>
+          <div>
+            <h3>관심상품</h3>
+            <ul>
+              <li>관심상품이 비어 있습니다.</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li id="popup-shopping-bag" popper>
+        <span>
+          <i class="fas fa-shopping-bag"><span class="i-text-ir">가방</span></i>
+          <span hidden-text>쇼핑백</span>
+        </span>
+        <div class="dropdown-wrap" dropdown>
+          <div>
+            <h3>쇼핑백</h3>
+            <ul>
+              <li>쇼핑백이 비어 있습니다.</li>
+            </ul>
+            <div class="popup-design">
+              <ul>
+                <li>고객님만을 위한 맞춤 리스트를 살펴보세요</li>
+                <li>최근 주문 내역, 배송 추적 및 반송 관리를 조회하세요</li>
+                <li>마음에 드는 상품을 저장하세요</li>
+              </ul>
+              <div class="login">
+                <a href="#" class="join-btn">신규 회원 가입</a>
+                <a href="#" class="login-btn">로그인</a>
+              </div>
             </div>
           </div>
         </div>
@@ -231,38 +220,24 @@
             </li>
             <li class="fashion-show">
               <a href="#">패션쇼 보기</a>
-              <ul>
+              <ul class="fashion-show-list">
+                <!--
                 <li>
-                  <a href="#"><span class="perhaps">2020</span> 크루즈 컬렉션</a>
+                  <a href="#" data="2020 크루즈 컬렉션">{{ data }}</a>
                 </li>
-                <li>
-                  <a href="#"><span class="perhaps">2019</span> 가을/겨울 패션쇼</a>
-                </li>
-                <li>
-                  <a href="#"><span class="perhaps">2019</span> 봄/여름 패션쇼</a>
-                </li>
+                -->
               </ul>
               <figure>
                 <div class="slide">
                   <div class="slide-wrap">
+                    <!--
                     <a href="#">
                       <img src="assets/img/NavSlide/NavHorizontalStandard_S01-FS-SHOWSPACE_001_Default.jpg" alt="글자끌어올수있나">
                       <em class="slide-inside-text">
-                        <span class="perhaps">2020</span> 글자 끌어오기
+                        {{ data }}
                       </em>
                     </a>
-                    <a href="#">
-                      <img src="assets/img/NavSlide/NavHorizontalStandard_S01CRUISE-showspace_001_Default.jpg" alt="글자끌어올수있나">
-                      <em class="slide-inside-text">
-                        <span class="perhaps">2020</span> 글자 끌어오기
-                      </em>
-                    </a>
-                    <a href="#">
-                      <img src="assets/img/NavSlide/NavHorizontalStandard_S93-FS-SHOWSPACE_001_Default.jpg" alt="글자끌어올수있나">
-                      <em class="slide-inside-text">
-                        <span class="perhaps">2020</span> 글자 끌어오기
-                      </em>
-                    </a>
+                    -->
                   </div>
                 </div>
                 <ul id="indicator">
@@ -1355,17 +1330,17 @@
               <svg viewBox="0 0 34 34" id="svg-icon-gucci-app"><title>gucci-app</title><desc>Created with Sketch.</desc> <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->   <g id="gucci-app-Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="gucci-app-gucci-app" fill="#E5DFD9" fill-rule="nonzero" opacity="0.5"> <path d="M7.21428571,0 L26.7857143,0 C30.7700543,-5.07530526e-16 34,3.22994573 34,7.21428571 L34,26.7857143 C34,30.7700543 30.7700543,34 26.7857143,34 L7.21428571,34 C3.22994573,34 4.0602442e-15,30.7700543 4.0602442e-15,26.7857143 L0,7.21428571 C0,3.22994573 3.22994573,3.55271368e-15 7.21428571,0 Z M7.21428571,1.85714286 C4.25561741,1.85714286 1.85714286,4.25561741 1.85714286,7.21428571 L1.85714286,26.7857143 C1.85714286,29.7443826 4.25561741,32.1428571 7.21428571,32.1428571 L26.7857143,32.1428571 C29.7443826,32.1428571 32.1428571,29.7443826 32.1428571,26.7857143 L32.1428571,7.21428571 C32.1428571,4.25561741 29.7443826,1.85714286 26.7857143,1.85714286 L7.21428571,1.85714286 Z" id="gucci-app-MouseOver"></path> <path d="M17.3469388,17.3573054 C17.3469388,18.3546976 18.0739005,19.172773 19.0452496,19.3707956 C19.0452496,19.3707956 19.3738657,19.4286635 19.6086187,19.4285713 C20.1865824,19.4281106 20.711128,19.2537697 21.1435277,18.9463694 C21.1435277,18.9463694 21.4065159,18.7891677 21.4076606,18.6283723 L21.5102041,17.8698235 C21.2121126,18.5852478 20.7102695,18.853578 20.4190461,19.0164006 C20.1750403,19.138771 19.8607326,19.2268629 19.5664566,19.2268629 L19.5664566,19.2263101 C19.1161238,19.2263101 18.6565383,18.9775149 18.4516421,18.5798112 L18.4262685,18.540004 C18.2215631,18.1907692 18.1048066,17.7871682 18.1048066,17.3573054 C18.1048066,16.9273505 18.2215631,16.5236573 18.4262685,16.1744226 L18.4493527,16.1348918 C18.6541535,15.7371881 19.1161238,15.465172 19.5664566,15.465172 L19.5664566,15.464527 C19.8607326,15.464527 20.1750403,15.5481037 20.4190461,15.6705663 C20.8617477,15.9344734 21.2106817,16.3305185 21.4076606,16.8029529 L21.4076606,16.0860542 C21.4065159,15.9253509 21.1530666,15.7496278 21.1530666,15.7496278 C20.7207624,15.4423197 20.1865824,15.2657673 19.6086187,15.2653066 C19.3738657,15.2651223 19.0452496,15.3229902 19.0452496,15.3229902 C18.0739005,15.5209206 17.3469388,16.3596368 17.3469388,17.3573054" id="gucci-app-Fill-4"></path> <path d="M22.2040816,17.3572133 C22.2040816,18.3547898 22.9310267,19.172773 23.9024489,19.3709798 C23.9024489,19.3709798 24.2310575,19.4286635 24.4656144,19.4285713 C25.0437556,19.4281106 25.5683846,19.253954 26.0005835,18.9464616 C26.0005835,18.9464616 26.2636612,18.7890756 26.2645196,18.6283723 L26.3673469,17.8700078 C26.0691669,18.5854321 25.5675261,18.8534859 25.2758324,19.0164006 C25.0322137,19.1386789 24.7177225,19.2268629 24.4237394,19.2268629 L24.4237394,19.2263101 C23.9733215,19.2263101 23.5135557,18.9774227 23.3085688,18.5798112 L23.2831959,18.5400961 C23.0786859,18.1907692 22.9619321,17.7873525 22.9619321,17.3572133 C22.9619321,16.9272583 23.0786859,16.5236573 23.2831959,16.1746069 L23.3062796,16.1348918 C23.511171,15.7371881 23.9733215,15.4652642 24.4237394,15.4652642 L24.4237394,15.4647113 C24.7177225,15.4647113 25.0322137,15.5480116 25.2758324,15.6704741 C25.7188101,15.9344734 26.0677361,16.3305185 26.2645196,16.8031372 L26.2645196,16.0860542 C26.2636612,15.9255352 26.0101223,15.7496278 26.0101223,15.7496278 C25.5778279,15.4422276 25.0437556,15.2656751 24.4656144,15.2653066 C24.2310575,15.2651223 23.9024489,15.3229902 23.9024489,15.3229902 C22.9310267,15.5210127 22.2040816,16.3596368 22.2040816,17.3572133" id="gucci-app-Fill-6"></path> <path d="M28.4489796,15.2653061 L27.755102,15.2653061 C27.8404158,15.3621509 27.8960681,15.5218581 27.8960681,15.703803 L27.8960681,18.9971983 C27.8960681,19.1740411 27.8434945,19.3309565 27.7623842,19.4285714 L28.4417566,19.4285714 C28.3606464,19.3309565 28.3079543,19.1740411 28.3079543,18.9971983 L28.3079543,15.703803 C28.3079543,15.5218581 28.3636658,15.3621509 28.4489796,15.2653061" id="gucci-app-Fill-8"></path> <path d="M12.2689021,15.2653061 L11.1020408,15.2653061 C11.245509,15.3621576 11.3391964,15.5260156 11.3391964,15.7079732 L11.338599,15.709321 L11.338599,18.1710427 C11.3783241,18.6201601 11.6700394,19.0019821 12.0765492,19.1777781 L12.0807307,19.1798961 C12.4127685,19.3366299 12.7820422,19.4285714 13.1763059,19.4285714 C13.5763442,19.4285714 13.9540807,19.346161 14.2893044,19.1850949 L14.2960745,19.1823993 C14.7020865,19.0032337 14.9919101,18.6212191 15.0283497,18.1703688 L15.0281505,18.17008 L15.0281505,15.6973831 C15.0281505,15.5153292 15.1219375,15.3622539 15.2653061,15.2653061 L14.583907,15.2653061 C14.7274747,15.3622539 14.8211621,15.5153292 14.8211621,15.6973831 L14.8211621,18.17008 L14.8201665,18.1782633 C14.7915923,18.4502368 14.6546952,18.6907288 14.4486028,18.8562235 L14.439244,18.8648882 C14.2092569,19.0370258 13.8044397,19.1681507 13.4225216,19.1681507 C13.1847686,19.1681507 12.9573701,19.1198213 12.7476935,19.0425134 L12.7259891,19.0347152 C12.3510403,18.9081151 12.0742592,18.5682685 12.0312487,18.173257 L12.0310495,18.1677694 L12.0310495,15.709321 L12.0301535,15.7079732 C12.0301535,15.5260156 12.1254339,15.3621576 12.2689021,15.2653061" id="gucci-app-Fill-11"></path> <path d="M5.93348571,18.5688983 C5.72513741,18.2372065 5.59209796,17.7879658 5.59209796,17.351684 C5.59209796,16.9228466 5.70533878,16.5202946 5.90378776,16.1718757 L5.92617687,16.1324477 C6.1249034,15.7357777 6.57324082,15.4645606 7.00992109,15.4645606 L7.00992109,15.4640092 C7.29515102,15.4640092 7.60017959,15.5472768 7.83665306,15.669421 C8.26620952,15.9326422 8.6044517,16.3277497 8.79549932,16.7989562 L8.79549932,16.083829 C8.79457415,15.9235434 8.54866395,15.748369 8.54866395,15.748369 C8.12946939,15.4418596 7.61137415,15.2656742 7.05072109,15.2653066 C6.82322177,15.2651227 6.50440816,15.3228402 6.50440816,15.3228402 C5.56230748,15.5202562 4.85714286,16.3567923 4.85714286,17.351684 C4.85714286,18.4136676 5.66379864,19.2883451 6.7015619,19.4044235 C6.7015619,19.4044235 6.91610884,19.436407 7.0589551,19.4267568 C7.6660517,19.4267568 8.22300408,19.2142682 8.65894422,18.860243 L8.71602721,18.7953568 C8.76783673,18.7274376 8.79938503,18.6425157 8.79938503,18.5506088 L8.79938503,17.9563391 C8.79938503,17.7803375 8.88709116,17.6240959 9.02040816,17.528237 L7.90456054,17.528237 C8.03824762,17.6241878 8.12539864,17.7799699 8.12539864,17.9563391 L8.13307755,18.5121918 C8.13307755,18.6228476 8.08802177,18.7230261 8.01521088,18.7956325 C7.92380408,18.8964543 7.5740898,19.0730074 7.5740898,19.0730074 C7.40487619,19.1634437 7.21133061,19.2146358 7.00585034,19.2146358 C6.54076735,19.2146358 6.13378503,18.9536204 5.93330068,18.5685307 L5.93348571,18.5688983" id="gucci-app-Fill-1"></path> </g> </g> </svg>
               <svg class="reversal-icon" viewBox="0 0 44 44" id="svg-icon-gucci-app-hover"><title>gucci-app-hover</title><desc>Created with Sketch.</desc> Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch   <g id="gucci-app-hover-Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="gucci-app-hover-HOVER2_State_GucciAppMobile" fill-rule="nonzero"> <path d="M9.91176471,1 L34.0882353,1 C39.010067,1 43,4.98993296 43,9.91176471 L43,34.0882353 C43,39.010067 39.010067,43 34.0882353,43 L9.91176471,43 C4.98993296,43 1,39.010067 1,34.0882353 L1,9.91176471 C1,4.98993296 4.98993296,1 9.91176471,1 Z" id="gucci-app-hover-Path" fill="#FFFFFF"></path> <path d="M9.33613445,2.40336134 C5.50726959,2.40336134 2.40336134,5.50726959 2.40336134,9.33613445 L2.40336134,34.6638655 C2.40336134,38.4927304 5.50726959,41.5966387 9.33613445,41.5966387 L34.6638655,41.5966387 C38.4927304,41.5966387 41.5966387,38.4927304 41.5966387,34.6638655 L41.5966387,9.33613445 C41.5966387,5.50726959 38.4927304,2.40336134 34.6638655,2.40336134 L9.33613445,2.40336134 Z M9.33613445,0 L34.6638655,0 C39.8200702,-6.5680421e-16 44,4.17992977 44,9.33613445 L44,34.6638655 C44,39.8200702 39.8200702,44 34.6638655,44 L9.33613445,44 C4.17992977,44 5.25443368e-15,39.8200702 5.25443368e-15,34.6638655 L0,9.33613445 C0,4.17992977 4.17992977,4.59762947e-15 9.33613445,0 Z" id="gucci-app-hover-MouseOver" fill="#4B4B4B"></path> <path d="M21,22.5124501 C21,23.7102986 21.8730668,24.6927911 23.039638,24.9306123 C23.039638,24.9306123 23.4342995,25.0001105 23.7162332,24.9999999 C24.4103563,24.9994465 25.0403254,24.7900665 25.5596288,24.4208848 C25.5596288,24.4208848 25.8754726,24.2320887 25.8768473,24.0389766 L26,23.1279743 C25.6419979,23.9871849 25.0392943,24.3094442 24.6895406,24.504991 C24.3964944,24.6519554 24.0190171,24.7577521 23.6655974,24.7577521 L23.6655974,24.7570881 C23.1247566,24.7570881 22.5728033,24.4582899 22.326727,23.9806556 L22.2962539,23.9328479 C22.0504067,23.5134238 21.9101844,23.0287069 21.9101844,22.5124501 C21.9101844,21.9960827 22.0504067,21.5112551 22.2962539,21.091831 L22.3239775,21.0443553 C22.5699393,20.566721 23.1247566,20.240035 23.6655974,20.240035 L23.6655974,20.2392604 C24.0190171,20.2392604 24.3964944,20.3396344 24.6895406,20.4867095 C25.2212166,20.8036568 25.6402795,21.2792992 25.8768473,21.8466836 L25.8768473,20.9857024 C25.8754726,20.7927009 25.5710849,20.5816609 25.5710849,20.5816609 C25.051896,20.2125899 24.4103563,20.0005539 23.7162332,20.0000005 C23.4342995,19.9997792 23.039638,20.0692774 23.039638,20.0692774 C21.8730668,20.3069879 21,21.3142696 21,22.5124501" id="gucci-app-hover-Fill-4" fill="#231F20"></path> <path d="M28,22.5123395 C28,23.7104093 28.8730468,24.6927911 30.0397058,24.9308336 C30.0397058,24.9308336 30.4343582,25.0001105 30.7160565,24.9999999 C31.4103927,24.9994465 32.0404619,24.7902878 32.5595244,24.4209955 C32.5595244,24.4209955 32.8754754,24.231978 32.8765064,24.0389766 L33,23.1281956 C32.6418916,23.9874062 32.0394309,24.3093335 31.6891124,24.504991 C31.3965312,24.6518447 31.0188333,24.7577521 30.6657655,24.7577521 L30.6657655,24.7570881 C30.1248224,24.7570881 29.5726527,24.4581793 29.3264675,23.9806556 L29.2959951,23.9329586 C29.0503826,23.5134238 28.9101636,23.0289282 28.9101636,22.5123395 C28.9101636,21.995972 29.0503826,21.5112551 29.2959951,21.0920524 L29.3237181,21.0443553 C29.5697888,20.566721 30.1248224,20.2401457 30.6657655,20.2401457 L30.6657655,20.2394817 C31.0188333,20.2394817 31.3965312,20.3395237 31.6891124,20.4865988 C32.2211199,20.8036568 32.6401732,21.2792992 32.8765064,21.846905 L32.8765064,20.9857024 C32.8754754,20.7929222 32.5709802,20.5816609 32.5709802,20.5816609 C32.0518031,20.2124792 31.4103927,20.0004432 30.7160565,20.0000005 C30.4343582,19.9997792 30.0397058,20.0692774 30.0397058,20.0692774 C28.8730468,20.3070986 28,21.3142696 28,22.5123395" id="gucci-app-hover-Fill-6" fill="#231F20"></path> <path d="M36,20 L35,20 C35.1229522,20.1163086 35.203157,20.3081139 35.203157,20.5266261 L35.203157,24.4819294 C35.203157,24.6943141 35.1273891,24.8827664 35.0104949,25 L35.9895904,25 C35.8726962,24.8827664 35.7967577,24.6943141 35.7967577,24.4819294 L35.7967577,20.5266261 C35.7967577,20.3081139 35.8770478,20.1163086 36,20" id="gucci-app-hover-Fill-8" fill="#231F20"></path> <path d="M15.4013775,20 L14,20 C14.1723025,20.1163167 14.2848192,20.313107 14.2848192,20.5316344 L14.2841018,20.5332532 L14.2841018,23.4897327 C14.3318108,24.0291139 14.6821552,24.4876746 15.1703654,24.6988021 L15.1753874,24.7013459 C15.5741582,24.8895801 16.0176487,25 16.4911517,25 C16.9715898,25 17.4252439,24.9010267 17.827841,24.7075895 L17.8359719,24.704352 C18.3235843,24.4891777 18.6716568,24.0303857 18.7154199,23.4889233 L18.7151808,23.4885764 L18.7151808,20.5189159 C18.7151808,20.3002729 18.8278171,20.1164323 19,20 L18.181653,20 C18.354075,20.1164323 18.4665917,20.3002729 18.4665917,20.5189159 L18.4665917,23.4885764 L18.465396,23.4984044 C18.431079,23.8250393 18.2666683,24.1138655 18.0191553,24.3126214 L18.0079156,24.3230275 C17.7317056,24.5297614 17.245528,24.6872398 16.7868519,24.6872398 C16.5013153,24.6872398 16.2282141,24.6291971 15.9763966,24.5363519 L15.95033,24.5269864 C15.5000239,24.3749422 15.1676153,23.9667931 15.1159604,23.492392 L15.1157213,23.4858015 L15.1157213,20.5332532 L15.1146451,20.5316344 C15.1146451,20.313107 15.229075,20.1163167 15.4013775,20" id="gucci-app-hover-Fill-11" fill="#231F20"></path> <path d="M7.29266667,23.9675494 C7.04244444,23.569194 6.88266667,23.0296648 6.88266667,22.5056989 C6.88266667,21.9906736 7.01866667,21.5072166 7.257,21.0887723 L7.28388889,21.04142 C7.52255556,20.5650272 8.061,20.2393007 8.58544444,20.2393007 L8.58544444,20.2386385 C8.928,20.2386385 9.29433333,20.3386412 9.57833333,20.485334 C10.0942222,20.8014575 10.5004444,21.275974 10.7298889,21.8418836 L10.7298889,20.9830299 C10.7287778,20.7905301 10.4334444,20.580149 10.4334444,20.580149 C9.93,20.2120373 9.30777778,20.000442 8.63444444,20.0000005 C8.36122222,19.9997798 7.97833333,20.0690974 7.97833333,20.0690974 C6.84688889,20.30619 6,21.3108535 6,22.5056989 C6,23.7811204 6.96877778,24.8315909 8.21511111,24.9709988 C8.21511111,24.9709988 8.47277778,25.0094104 8.64433333,24.9978207 C9.37344444,24.9978207 10.0423333,24.742626 10.5658889,24.3174487 L10.6344444,24.2395216 C10.6966667,24.157952 10.7345556,24.0559625 10.7345556,23.9455841 L10.7345556,23.2318779 C10.7345556,23.0205034 10.8398889,22.8328602 11,22.7177356 L9.65988889,22.7177356 C9.82044444,22.8329706 9.92511111,23.0200619 9.92511111,23.2318779 L9.93433333,23.899446 C9.93433333,24.0323415 9.88022222,24.1526539 9.79277778,24.2398527 C9.683,24.3609378 9.263,24.5729745 9.263,24.5729745 C9.05977778,24.6815868 8.82733333,24.7430675 8.58055556,24.7430675 C8.022,24.7430675 7.53322222,24.4295931 7.29244444,23.9671079 L7.29266667,23.9675494" id="gucci-app-hover-Fill-1" fill="#231F20"></path> </g> </g> </svg>
               <span class="text-ir">Install Gucci Style App</span>
-            </div>
-            <div class="app-links-wrap">
-              <div id="app-links">
-                  <a href="https://itunes.apple.com/it/app/gucci/id334876990?mt=8" target="_blank">
-                    Apple App Store
-                    <i class="fas fa-file-export"><span class="i-text-ir">링크 연결 표시</span></i>
-                  </a>
-                  <a href="https://play.google.com/store/apps/details?id=com.gucci.gucciapp" target="_blank">
-                    Google Play
-                    <i class="fas fa-file-export"><span class="i-text-ir">링크 연결 표시</span></i>
-                  </a>
+              <div class="app-links-wrap">
+                  <div id="app-links">
+                    <a href="https://itunes.apple.com/it/app/gucci/id334876990?mt=8" target="_blank">
+                      Apple App Store
+                      <i class="fas fa-file-export"><span class="i-text-ir">링크 연결 표시</span></i>
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.gucci.gucciapp" target="_blank">
+                      Google Play
+                      <i class="fas fa-file-export"><span class="i-text-ir">링크 연결 표시</span></i>
+                    </a>
+                  </div>
                 </div>
             </div>
           </div>
@@ -1390,6 +1365,29 @@
     </div>
   </footer>
 
+  <!-- 구찌 선물포장 서비스 모달 -->
+  <div id="present-svc-modal" class="backdrop">
+    <div class="dialog">
+      <em>특별한 서비스</em>
+      <h4>구찌 선물포장 서비스</h4>
+      <p>블랙 & 화이트 컨셉의 패키징을 만나보세요.</p>
+      <p>
+        구찌 공식 온라인 사이트에서는 상품을 구매하시는 모든 고객님께<br/>
+        특별한 포장재를 이용하여 선물포장 후 배송해 드리고<br/>
+        있습니다.
+      </p>
+      <p>
+        모든 상품에는 매장과 동일하게 구찌 쇼핑백이<br/>
+        동봉되어 무료로 배송됩니다.
+      </p>
+      <p>
+        주문시, '선물메세지'를 작성하실 수 있으며 메시지는 인보이스에<br/>
+        함께 프린트 되어 받으시는 분께 전달됩니다.
+      </p>
+      <button>닫기</button>
+    </div>
+  </div>
+
 <script>
   'use strict';
 
@@ -1398,7 +1396,6 @@
   });
 
   // visual slide
-
   function creatSlide() {
     var numSlide = '';
     var slideNow = 0;
@@ -1438,26 +1435,24 @@
       slidePrev = n - 1 < 1 ? numSlide : n - 1;
       timerId = setTimeout(function(){showSlide(slideNext)}, timerSpeed);
     }
-    
     showSlide(1);
   }
-
   creatSlide();
   
 
   //visual present-svc
 
-  $('.present-svc > h3').on('click', function(){
-    $(this).parent().find('div').addClass('on');
+  $('.present-svc > h3 > a').on('click', function(){
+    $("#present-svc-modal").addClass('on')
+    // $(this).parent().find('div').addClass('on');
+    // $('body')
   });
 
-  $('.present-svc button').on('click', function(){
-    $('.present-svc').find('div').removeClass('on');
+  $('#present-svc-modal button').on('click', function(){
+    $("#present-svc-modal").removeClass('on');
   });
 
-
-  //snb effect #nation-info, .user-info
-
+  //snb dropdown effect
   function showDropdown(){
     var $this = $(this);
 
@@ -1480,39 +1475,14 @@
 
   $(document).on('mouseenter', '[popper]', function(){
     showDropdown.call(this);
-    console.log('mouseenter1');
   });
 
   $(document).on('mouseleave', '[popper]', function(){
-    var $this = $(this);
-
-    if ( $this.hover() ) {
-      showDropdown.call(this);
-      console.log('hover');
-    } else {
-      hiddenDropDown.call(this);
-      console.log('mouseleave1');
-    }
     hiddenDropDown.call(this);
-    console.log('mouseleave2', $(this));
   });
 
 
-  //snb effect .site-search
-
-  // $('.site-search .box-open').addClass('hidden');
-
-  // $('.site-search .box-close button').on('click', function(e){
-  //   $('.site-search .box-close').addClass('hidden');
-  //   $('.site-search .box-open').removeClass('hidden');
-  // });
-
-  // $('.site-search .box-open button').on('click', function(e){
-  //   $('.site-search .box-open').addClass('hidden');
-  //   $('.site-search .box-close').removeClass('hidden');
-  // });
-
-
+  // 검색 영역 스크립트
   function creatSearchBoxEffect() {
     var $boxOpen = $('.site-search .box-open');
     var $boxClose = $('.site-search .box-close');
@@ -1537,12 +1507,33 @@
 
 
   //nav gnb fashion-show slide 
+  function creatFashionShowSlide(data) {
 
-  function creatFashionShowSlide() {
+    var $fashionShow = $('.fashion-show');
+    var $fashionShowList = $fashionShow.children("ul").empty();
+    var $fashionShowFigure = $fashionShow.find('figure .slide-wrap').empty();
+
+    for(var i=0,l=data.length;i<l;i++){
+      var datum = data[i];
+      $fashionShowList.append('\
+      <li>\
+        <a href="#">' + datum.title + '</a>\
+      </li>');
+
+      $fashionShowFigure.append('\
+      <a href="#">\
+        <img src="' + datum.src + '" alt="' + datum.title + '">\
+        <em class="slide-inside-text">\
+          ' + datum.title + '\
+        </em>\
+      </a>');
+    }
+
     var numSlide = '';
     var slideWidth = 0;
     var slideWrapWidth = 0;
 
+    $('.fashion-show #indicator').empty();
     $('.fashion-show .slide-wrap > a').each(function(i){
       $('.fashion-show #indicator').append('<li><a href="#"><span class="text-ir"' + (i + 1) + '번 슬라이드</span></a></li>\n');
     });
@@ -1585,10 +1576,23 @@
     });
   }
 
-  creatFashionShowSlide();
-  
+  creatFashionShowSlide([
+    { 
+      title:"2020 크루즈 컬렉션",
+      src:"assets/img/NavSlide/NavHorizontalStandard_S01-FS-SHOWSPACE_001_Default.jpg",
+    },
+    { 
+      title:"2019 가을/겨울 패션쇼",
+      src:"assets/img/NavSlide/NavHorizontalStandard_S01CRUISE-showspace_001_Default.jpg",
+    },
+    { 
+      title:"2019 봄/여름 패션쇼",
+      src:"assets/img/NavSlide/NavHorizontalStandard_S93-FS-SHOWSPACE_001_Default.jpg",
+    }
+  ]);
 
-  //nav gnb
+
+  //nav gnb 메뉴 오픈
   $(document).on('mouseenter', '[menu]', function(){
     $(this).find('[menu-list]').addClass('on');
   });
@@ -1617,62 +1621,43 @@
   });
 
   //footer
-
-  false && $(document).on('click', function(){
-    if ( !$('.index-footer .search-input').click ) {
-      $('.search-input').addClass('on');
-      console.log('inputAdd');
-    } else {
-      $('.search-input').removeClass('on');
-      console.log('inputRemove');
-    }
-  });
-
-  false && $('.index-footer .search-input').on('focus', function(){
-    $('.search-input').addClass('on');
-
-    if ( $('.search-input') ) {
-      $(this).removeClass('on');
-    }
-  });
-
   function creatFooterSearchEffect() {
     //input
-    $('.search-input').on('click', function(){
+    $('.search-input').on('focus', function(){
       $(this).addClass('on');
       $('.search-button').addClass('on');
     });
 
-    $(document).on('click', function(){
+    $('.search-input').on('blur', function(){
       $('.search-input').removeClass('on');
       $('.search-button').removeClass('on');
     });
-
-    $(document).on('click', '.search-input', function(e){
-      e.stopPropagation();
+    
+    $('.search-button').on('click',function(){
+      if($('.search-input').val()){
+        alert('이동');
+      } else {
+        $('.search-input').focus();
+      }
     });
   }
-
   creatFooterSearchEffect();
 
+
   function creatOtherSiteEffect() {
-    var footer = $('.index-footer .app-groups')
+    var $appGroups = $('.index-footer .other-site .app-link-toggle');
     
-    $('footer .app-link-toggle').on('mouseenter', function(){
-      $(this).find('.reversal-icon').addClass('hover');
-      $('footer #app-links').addClass('on');
+    $appGroups.on('mouseenter', function(){
+      $(this).find('.reversal-icon').addClass('on');
+      $appGroups.find('.app-links-wrap').addClass('on');
     });
 
-    $('footer').on('mouseleave', function(){
-      $(this).find('.reversal-icon').removeClass('hover');
-      $('footer #app-links').removeClass('on');
+    $appGroups.on('mouseleave', function(){
+      $(this).find('.reversal-icon').removeClass('on');
+      $appGroups.find('.app-links-wrap').removeClass('on');
     });
   }
-
   creatOtherSiteEffect();
-
-
-
 
 </script>
 </body>
