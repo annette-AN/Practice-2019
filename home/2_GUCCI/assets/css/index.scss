@@ -32,11 +32,16 @@ em {
   font-style: normal;
 }
 
+input {
+  border: none;
+  box-sizing: border-box;
+}
+
 .index {
   .visual {
     position: relative;
     height: 633px;
-    background: pink;
+    background: #e7e7e7;
 
     .slide {
       position: absolute;
@@ -50,9 +55,13 @@ em {
       background-position: top center;
       background-size: cover;
       box-shadow: inset 0 0 0 2000px rgba(0,0,0,0.2);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 1.2s;
 
       &.on {
-        display: block;
+        opacity: 1;
+        pointer-events: initial;
       }
       
       #svg-icon-equilibrium:hover #equilibrium-equilibrium {
@@ -89,7 +98,7 @@ em {
             font-weight: 300;
             font-size: 12px;
 
-            &:hover {
+            &:hover, &:focus {
               background: #333;
             }
           }
@@ -124,7 +133,7 @@ em {
         // transition: border .4s;
         cursor: pointer;
 
-        &:hover { 
+        &:hover, &:focus { 
           border: 1px solid #f2f2f2;
         }
 
@@ -196,15 +205,14 @@ em {
 
       > div {
         display: none;
-        position: absolute;
+        position: fixed;
         top: 50%;
         left: 50%;
         right: auto;
         bottom: auto;
         transform: translate(-50%, -50%);
         width: 590px;
-        height: 570px;
-        padding: 25px 90px;
+        padding: 25px 0px;
         background: #fff;
         text-align: center;
         font-weight: 300;
@@ -252,7 +260,7 @@ em {
         > button {
           width: 120px;
           height: 45px;
-          margin-top: 20px;
+          margin-top: 35px;
           background: #313131;
           color: #cfc9c3;
           font-size: 12px;
@@ -271,9 +279,10 @@ em {
     height: 100px;
     padding-top: 25px;
     box-shadow: inset 0px 70px 100px -30px rgba(0,0,0,0.8);
-    transition: background-color 0.3s;
+    transition: background-color .3s, height .3s;
+    z-index: 1;
 
-    &:hover {
+    &.on, &:hover, &:focus {
       background-color: #1B1B1B;
     }
 
@@ -289,15 +298,15 @@ em {
       }
 
       .shopping-area {
-        display: none;
+        // display: none;
 
         &:before {
           left: 10px;
         }
 
-        &.on {
-          display: block;
-        }
+        // &.on {
+        //   display: block;
+        // }
 
         > div {
           margin: 30px 20px;
@@ -344,7 +353,6 @@ em {
               height: 40px;
               padding: 0px 10px;
               background: #F4F4F4;
-              border: none;
               font-size: 12px;
               box-sizing: border-box;
               color: #aaaaaa;
@@ -401,11 +409,11 @@ em {
       
       > li {
         > div {
-          display: none;
+          // display: none;
 
-          &.on {
-            display: block;
-          }
+          // &.on {
+          //   display: block;
+          // }
 
           > h3 {
             padding: 10px 0px;
@@ -525,8 +533,20 @@ em {
           bottom: auto;
           width: 310px;
           background: #fff;
-          z-index: 1;
-          
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity .3s;
+
+          &.hidden {
+            display: none;
+          }
+
+          &.on {
+            opacity: 1;
+            pointer-events: initial;
+            z-index: 1;
+          }
+
           &:before {
             content: '';
             display: block;
@@ -547,6 +567,12 @@ em {
             color: #aaaaaa;
           }
         }
+
+        span[hidden-text] {
+          &.hidden {
+            display: none;
+          }
+        }
       }
 
       li {
@@ -554,7 +580,7 @@ em {
           cursor: pointer;
           color: rgba(255, 255, 255, 0.9);
 
-          &:hover {
+          &:hover, &:focus {
             color: rgba(255, 255, 255, 1);
 
             i {
@@ -572,54 +598,130 @@ em {
       .no-cursor {
         cursor: initial;
 
-        &:hover {
+        &:hover, &:focus {
           color: rgba(255, 255, 255, 0.9);
         }
       }
     }
 
     .site-search {
-      position: absolute;
-      top: 0%;
-      left: auto;
-      right: 0%;
-      bottom: auto;
-      cursor: pointer;
-
       > div {
         position: absolute;
-        top: 15px;
-        right: 25px;
+        top: 0%;
         left: auto;
+        right: 0%;
         bottom: auto;
-        width: 34px;
-        height: 34px;
-        border: 3px solid rgba(255, 255, 255, 0.4);
-        border-radius: 17px;
-        background: transparent;
+        cursor: pointer;
 
-        &:hover {
-          border-color: rgba(255, 255, 255, 0.9);
-  
-          &:before {
-            border-color: rgba(255, 255, 255, 0.9);
-          }
-  
-          i {
-            color: rgba(255, 255, 255, 0.9);
-          }
-        }
-
-        i {
+        button {
           display: block;
           position: absolute;
-          top: 50%;
-          left: 50%;
-          right: auto;
+          top: 15px;
+          right: 25px;
+          left: auto;
           bottom: auto;
-          transform: translate(-50%, -50%);
-          color: rgba(255, 255, 255, 0.4);
-          font-size: 15px;
+          width: 34px;
+          height: 34px;
+          border: 3px solid rgba(255, 255, 255, 0.4);
+          border-radius: 17px;
+          background: transparent;
+
+          &:hover, &:focus {
+            border-color: rgba(255, 255, 255, 0.9);
+    
+            &:before {
+              border-color: rgba(255, 255, 255, 0.9);
+            }
+    
+            i {
+              color: rgba(255, 255, 255, 0.9);
+            }
+          }
+
+          i {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            right: auto;
+            bottom: auto;
+            transform: translate(-50%, -50%);
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 15px;
+          }
+        }
+      }
+
+      .box-close, .box-open {
+        &.hidden {
+          display: none;
+        }
+      }
+
+      .box-open {
+        width: calc(100vw);
+        height: 65px;
+        background: #313131;
+
+        > div {
+          margin-top: 17px;
+
+          a {
+            display: inline-block;
+            margin-left: 4%;
+            color: #999999;
+            font-size: 16px;
+
+            &:hover, &:focus {
+              color: #fff;
+            }
+          }
+  
+          input {
+            display: inline-block;
+            width: calc(96% - 90px);
+            height: 30px;
+            margin-left: 5px;
+            outline: none;
+            background: #313131;
+            color: #999999;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  #index-header[minimal] {
+    height: 65px;
+    padding-top: 0px;
+    background-color: #1B1B1B;
+
+    h1 {
+      display: none;
+    }
+
+    #nation-info {
+      li + li {
+        margin-left: 0px;
+      }
+
+      > li > div {
+        left: -12px;
+      }
+    }
+
+    // .index #index-header .user-info #popup-login .popup-design
+    .user-info {
+      li + li {
+        margin-left: 10px;
+      }
+
+      #popup-login .popup-design {
+        left: -170px;
+
+        &:before {
+          left: 170px;
         }
       }
     }
@@ -637,7 +739,7 @@ em {
       transform: translate(-50%, 0%);
       width: 100%;
       text-align: center;
-      z-index: 0;
+      z-index: -1;
 
       li {
         vertical-align: top;
@@ -646,15 +748,13 @@ em {
       > li {
         display: inline-block;
         margin: 21px 0px 0px;
-        // padding: 26px 17px;
-        background: pink;
 
         > a {
           display: block;
           padding: 5px 17px 26px;
           color: rgba(242, 242, 242, 0.8);
 
-          &:hover {
+          &:hover, &:focus {
             color: rgba(242, 242, 242, 1);
           }
         }
@@ -665,20 +765,17 @@ em {
           left: 0%;
           right: 0%;
           bottom: auto;
-          transform: translate(0px, -800px);
           margin: 0px 16px;
           background: rgba(255, 255, 255, 0.95);
           height: auto;
           padding: 26px 0px 55px 0px;
-          transition: transform .3s;
-          z-index: -1;
-
-          &.hidden {
-            display: none;
-          }
+          transition: opacity .2s;
+          opacity: 0;
+          pointer-events: none;
 
           &.on {
-            transform: translate(0px, 0px);
+            opacity: 1;
+            pointer-events: initial;
           }
 
           li {
@@ -734,7 +831,7 @@ em {
                   font-weight: 400;
                 }
 
-                &:hover {
+                &:hover, &:focus {
                   a {
                     color: rgba(49, 49, 49, 1);
                   }
@@ -810,7 +907,7 @@ em {
                     border-radius: 3px;
                   }
 
-                  &:hover {
+                  &:hover, &:focus {
                     a {
                       background: black;
                     }
@@ -893,7 +990,7 @@ em {
                     font-weight: 400;
                   }
   
-                  &:hover {
+                  &:hover, &:focus {
                     a {
                       color: rgba(49, 49, 49, 1);
                     }
@@ -1091,7 +1188,7 @@ em {
       }
 
       &:nth-of-type(3) {
-        bottom: 120px;
+        bottom: 620px;
       }
 
       > a {
@@ -1114,10 +1211,10 @@ em {
     }
 
     .aside-right {
-      right: 380px;
+      right: 320px;
     }
     .aside-left {
-      left: 380px;
+      left: 310px;
     }
     aside.aside-center {
       top: 50%;
@@ -1136,6 +1233,8 @@ em {
   }
 
   .model-look {
+    padding-bottom: 400px;
+
     .section-image {
       top: 100px;
 
@@ -1151,6 +1250,8 @@ em {
 
   .full-image {
     .section-image {
+      top: 0px;
+
       img {
         width: 100%;
       }
@@ -1187,7 +1288,7 @@ em {
       line-height: 40px;
       font-size: 12px;
 
-      &:hover {
+      &:hover, &:focus {
         > span {
           background: #313131;
         }
@@ -1226,6 +1327,7 @@ em {
     > div {
       column-count: 3;
       width: 1300px;
+      height: 850px;
       margin: 0px auto;
 
       article {
@@ -1248,9 +1350,298 @@ em {
         }
       }
     }
+  }
 
+  .scroll-top {
+    position: absolute;
+    bottom: -10px;
+    right: 10px;
+    top: auto;
+    left: auto;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.1);
+
+    i {
+      color: #999;
+      font-size: 15px;
+    }
   }
 }
+
+.index-footer {
+  background: #1b1b1b;
+
+  .footer-wrap {
+    position: relative;
+    width: 1200px;
+    margin: 0px auto;
+  
+    .footer-menu-wrap {
+      padding-top: 60px;
+
+      header, span, em, address {
+        font-size: 12px;
+        color: #E5DFD9;
+      }
+    
+      header, i {
+        color: #807D7A;
+      }
+    
+      a {
+        i, span {
+          display: inline-flex;
+        }
+    
+        span {
+          width: calc(100% - 23px);
+        }
+    
+        i, img {
+          width: 12px;
+          margin-right: 6px;
+        }
+      }
+    
+      .font-weight-bold {
+        font-weight: bold;
+      }
+      
+      .footer-menu {
+        display: inline-block;
+        width: 18%;
+        vertical-align: top;
+        
+        > header {
+          font-size: 13px;
+        }
+
+        > ul, div {
+          width: 90%;
+          margin-top: 35px;
+        }
+
+        > ul {
+          > li + li {
+            margin-top: 10px;
+          }
+
+          > li {
+            > a {
+              display: block;
+              color: #E5DFD9;
+
+              &:hover, &:focus {
+                color: #fff;
+
+                span {
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+
+        > div {
+          position: relative;
+
+          > input::placeholder {
+            color: #E5DFD9;
+            font-size: 12px;
+          }
+
+          > input {
+            width: 100%;
+            height: 30px;
+            padding-left: 20px;
+            background: #000;
+            outline: none;
+            color: #444;
+
+            &.on {
+              background: #fff;
+            }
+
+            &:focus::placeholder {
+              color: #333;
+            }
+          }
+
+          > i {
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            right: auto;
+            bottom: auto;
+            transform: translate(0%, -50%);
+          }
+
+          > button {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            right: auto;
+            bottom: auto;
+            transform: translate(0%, -50%);
+            width: 30px;
+            height: 30px;
+            background-color: #000;
+
+            &.on {
+              background-color: buttonface;
+            }
+
+            &:hover, &:focus {
+              background-color: rgba(110, 107, 103, 0.8);
+            }
+          }
+        }
+      }
+    }
+
+    .other-site {
+      display: inline-flex;
+      justify-content: space-between;
+      position: absolute;
+      top: 210px;
+      left: 73%;
+      right: auto;
+      bottom: auto;
+      width: 320px;
+
+      > a {
+        opacity: 0.5;
+
+        &:hover, &:focus {
+          opacity: 1;
+        }
+      }
+
+      > a {
+        width: 65px;
+      }
+
+      > button {
+        position: relative;
+        width: 50px;
+        background-color: initial;
+
+        .app-groups {
+          svg {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: auto;
+            bottom: auto;
+          }
+
+          .reversal-icon {
+            display: none;
+
+            &.hover {
+              display: initial;
+            }
+          }
+
+          .app-links-wrap {
+            position: absolute;
+            bottom: 100%;
+            left: -10px;
+            top: auto;
+            right: auto;
+            padding-bottom: 15px;
+            
+            #app-links {
+              width: 120px;
+              padding: 0px 5px;
+              background-color: #f2f2f2;
+              box-shadow: 0px 0px 3px 1px #9F111B;
+              opacity: 0;
+              pointer-events: none;
+              transition: opacity .5s;
+    
+              &.on {
+                opacity: 1;
+                pointer-events: initial;
+              }
+    
+              &::before {
+                position: absolute;
+                top: calc(100% - 15px);
+                left: 15px;
+                right: auto;
+                bottom: auto;
+                display: block;
+                content: '';
+                width: 14px;
+                height: 14px;
+                border: 7px solid #f2f2f2;
+                border-left-color: transparent;
+                border-right-color: transparent;
+                border-bottom-color: transparent;
+                box-sizing: border-box;
+              }
+    
+              > a {
+                position: relative;
+                display: block;
+                padding: 6px 5px 4px;
+                font-size: 10px;
+                text-align: left;
+    
+                i {
+                  position: absolute;
+                  right: 0px;
+                  bottom: 4px;
+                  top: auto;
+                  left: auto;
+                  color: rgba(159, 17, 27, 0.8);
+                }
+              }
+    
+              > a + a {
+                border-top: 1px solid rgba(159, 17, 27, 0.5);
+              }
+            }
+          }
+
+         
+        }
+
+
+      }
+    }
+
+    .gucci-info {
+      padding: 100px 0px 20px;
+      font-size: 12px;
+      color: #999;
+      line-height: 1.7em;
+
+      a {
+        text-decoration-line: underline;
+        font-size: 11px;
+      }
+
+      > span {
+        display: block;
+      }
+
+      > address {
+        font-style: normal;
+      }
+
+      > address, em {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+
 
 .aside-hover-effect {
   display: inline-block;
@@ -1259,7 +1650,7 @@ em {
   font-size: 12px;
   font-weight: 400;
 
-  &:hover {
+  &:hover, &:focus {
     color: #7a7a7a;
   }
 }
