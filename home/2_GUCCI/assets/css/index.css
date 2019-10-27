@@ -434,7 +434,6 @@ input {
 }
 
 .index #index-header .user-info > li .dropdown-wrap > div > ul > li {
-  font-size: 12px;
   text-align: center;
 }
 
@@ -1545,6 +1544,8 @@ input {
 }
 
 .index-footer .footer-wrap .other-site > a {
+  width: 65px;
+  height: 44px;
   opacity: 0.5;
 }
 
@@ -1552,8 +1553,8 @@ input {
   opacity: 1;
 }
 
-.index-footer .footer-wrap .other-site > a {
-  width: 65px;
+.index-footer .footer-wrap .other-site > a .margin-top {
+  margin-top: 5px;
 }
 
 .index-footer .footer-wrap .other-site > button {

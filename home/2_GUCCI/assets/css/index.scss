@@ -416,12 +416,6 @@ input {
       > li {
         .dropdown-wrap {
           > div {
-            // display: none;
-  
-            // &.on {
-            //   display: block;
-            // }
-  
             > h3 {
               padding: 10px 0px;
               font-size: 16px;
@@ -435,7 +429,6 @@ input {
               color: #727272;
   
               > li {
-                font-size: 12px;
                 text-align: center;
               }
             }
@@ -1590,15 +1583,17 @@ input {
       width: 320px;
 
       > a {
+        width: 65px;
+        height: 44px;
         opacity: 0.5;
 
         &:hover, &:focus {
           opacity: 1;
         }
-      }
 
-      > a {
-        width: 65px;
+        .margin-top {
+          margin-top: 5px;
+        }
       }
 
       > button {
@@ -1607,7 +1602,6 @@ input {
         background-color: initial;
 
         .app-groups {
-
           .app-link-toggle {
             svg {
               position: absolute;
@@ -1624,7 +1618,7 @@ input {
                 display: initial;
               }
             }
-  
+
             .app-links-wrap {
               position: absolute;
               bottom: 100%;
