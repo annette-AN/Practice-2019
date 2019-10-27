@@ -119,9 +119,11 @@
         <div class="dropdown-wrap" dropdown>
           <div class="popup-design">
             <ul>
+              <!-- 
               <li>고객님만을 위한 맞춤 리스트를 살펴보세요</li>
               <li>최근 주문 내역, 배송 추적 및 반송 관리를 조회하세요</li>
-              <li>마음에 드는 상품을 저장하세요</li>
+              <li>마음에 드는 상품을 저장하세요</li> 
+              -->
             </ul>
             <div class="login">
               <a href="#" class="join-btn">신규 회원 가입</a>
@@ -156,9 +158,11 @@
             </ul>
             <div class="popup-design">
               <ul>
+                <!--
                 <li>고객님만을 위한 맞춤 리스트를 살펴보세요</li>
                 <li>최근 주문 내역, 배송 추적 및 반송 관리를 조회하세요</li>
-                <li>마음에 드는 상품을 저장하세요</li>
+                <li>마음에 드는 상품을 저장하세요</li> 
+                -->
               </ul>
               <div class="login">
                 <a href="#" class="join-btn">신규 회원 가입</a>
@@ -1195,7 +1199,7 @@
             <li>
               <a href="#">
                 <i class="fas fa-utensils"><span class="i-text-ir">레스토랑아이콘</span></i>
-                <span>Gucci Osteria da Massimo Bottura</span>
+                <span class="width-calc">Gucci Osteria da Massimo Bottura</span>
               </a>
             </li>
           </ul>
@@ -1248,37 +1252,37 @@
           <ul>
             <li>
               <a href="#">
-                <i class="fab fa-facebook-f"><span class="i-text-ir">Facebook</span></i>
+                <i class="fab fa-facebook-f sns-color-1"><span class="i-text-ir">Facebook</span></i>
                 <span>Facebook</span>
               </a>
             </li>
             <li>
               <a href="#">
-                <img src="assets/img/icons/gucci-footer-icon.png" alt="gucci 아이콘">
+                <i class="fab fa-instagram sns-color-1"><span class="i-text-ir">Gucci instagram</span></i>
                 <span>Gucci</span>
               </a>
             </li>
             <li>
               <a href="#">
-                <img src="assets/img/icons/gucci-footer-icon.png" alt="gucci 아이콘">
+                <i class="fab fa-instagram sns-color-1"><span class="i-text-ir">Gucci Beauty instagram</span></i>
                 <span>Gucci Beauty</span>
               </a>
             </li>
             <li>
               <a href="#">
-                <i class="fab fa-youtube"><span class="i-text-ir">YouTube</span></i>
+                <i class="fab fa-youtube sns-color-2"><span class="i-text-ir">YouTube</span></i>
                 <span>YouTube</span>
               </a>
             </li>
             <li>
               <a href="#">
-                <i class="fab fa-twitter"><span class="i-text-ir">Twitter</span></i>
+                <i class="fab fa-twitter sns-color-3"><span class="i-text-ir">Twitter</span></i>
                 <span>Twitter</span>
               </a>
             </li>
             <li>
-              <a href="#">
-                <i class="fas fa-comment-dots"><span class="i-text-ir">Kakao Talk Channel</span></i>
+              <a href="#" class="sns-qr-code">
+                <i class="fas fa-comment-dots sns-color-4"><span class="i-text-ir">Kakao Talk Channel</span></i>
                 <span>Kakao Talk Channel</span>
               </a>
             </li>
@@ -1438,7 +1442,7 @@
     showSlide(1);
   }
   creatSlide();
-  
+
 
   //visual present-svc
 
@@ -1467,10 +1471,9 @@
     var $this = $(this);
     
     $this.find('[dropdown]').removeClass('on');
-    $this.find('[dropdown]').addClass('hidden');
     setTimeout(function() {
-      
-    }, 100);
+      $this.find('[dropdown]').addClass('hidden');
+    }, 200);
   }
 
   $(document).on('mouseenter', '[popper]', function(){
@@ -1480,6 +1483,53 @@
   $(document).on('mouseleave', '[popper]', function(){
     hiddenDropDown.call(this);
   });
+
+  //snb dropdown text slide .popup-design
+
+  function creatDropdownTextSlide(textData) {
+    var numSlide = '';
+    var slideNow = 0;
+    var slideNext = 0;
+    var slidePrev = 0;
+    var timerId = '';
+    var timerSpeed = 2500;
+    var $seletor = $('#index-header .popup-design > ul').empty();
+
+    for ( var i=0, l=textData.length; i<l; i++ ) {
+      var datum = textData[i];
+      $seletor.append('\<li>' + datum.title + '</li>');
+    }
+
+    $seletor.css({'background-image' : 'url(assets/img/SnbPopupImage/MenuFlyoutMedium_S93-FS_001_Default.jpg)'});
+
+    function showSlide(n) {
+      clearTimeout(timerId);
+      $seletor.children('li').removeClass('on');
+      $seletor.children('li').eq(n - 1).addClass('on');
+
+      //확인
+      numSlide =  ($seletor.children('li').length)/2;
+      slideNow = n;
+      slideNext = n + 1 > numSlide ? 1 : n + 1;
+      // slidePrev = n - 1 < 1 ? numSlide : n - 1;
+      timerId = setTimeout(function(){showSlide(slideNext)}, timerSpeed);
+
+      console.log('slideNext', slideNext);
+    }
+    showSlide(1);
+  }
+
+  creatDropdownTextSlide([
+    { 
+      title:'고객님만을 위한 맞춤 리스트를 살펴보세요',
+    },
+    { 
+      title:'최근 주문 내역, 배송 추적 및 반송 관리를 조회하세요',
+    },
+    { 
+      title:'마음에 드는 상품을 저장하세요',
+    }
+  ]);
 
 
   // 검색 영역 스크립트

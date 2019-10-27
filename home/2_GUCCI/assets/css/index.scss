@@ -448,7 +448,6 @@ input {
           > ul {
             position: relative;
             height: 170px;
-            background-image: url(../img/SnbPopupImage/MenuFlyoutMedium_S93-FS_001_Default.jpg);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: 800px 170px;
@@ -464,7 +463,15 @@ input {
               transform: translate(-50%, 0%);
               width: 240px;
               font-size: 16px;
+              color: #f2f2f2;
               text-align: center;
+              opacity: 0;
+              pointer-events: none;
+              transition: opacity .5s;
+
+              &.on {
+                opacity: 1;
+              }
             }
           }
 
@@ -547,7 +554,7 @@ input {
           bottom: auto;
           opacity: 0;
           pointer-events: none;
-          transition: opacity .3s;
+          transition: opacity .5s;
 
           &.hidden {
             display: none;
@@ -1423,13 +1430,13 @@ input {
         i, span {
           display: inline-flex;
         }
-    
-        span {
+
+        .width-calc {
           width: calc(100% - 23px);
         }
     
-        i, img {
-          width: 12px;
+        i {
+          font-size: 12px;
           margin-right: 6px;
         }
       }
@@ -1458,12 +1465,53 @@ input {
           }
 
           > li {
+            position: relative;
+
+            .sns-qr-code {
+              &:before {
+                display: none;
+                content: '';
+                position: absolute;
+                top: -50px;
+                left: -140px;
+                right: auto;
+                bottom: auto;
+                width: 130px;
+                height: 130px;
+                background-image: url(../img/common/kakao-QR-code/kakao-qr-code.jpg);
+                background-size: contain;
+                color: #fff;
+              }
+
+              &:hover {
+                &:before {
+                  display: block;
+                }
+              }
+            }
+
             > a {
               display: block;
               color: #E5DFD9;
 
               &:hover, &:focus {
                 color: #fff;
+
+                .sns-color-1 {
+                  color: #355CA9;
+                }
+
+                .sns-color-2 {
+                  color: #DE2C28;
+                }
+
+                .sns-color-3 {
+                  color: #00ABF0;
+                }
+
+                .sns-color-4 {
+                  color: #E5D93F;
+                }
 
                 span {
                   color: #fff;

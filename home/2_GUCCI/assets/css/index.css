@@ -445,7 +445,6 @@ input {
 .index #index-header .user-info > li .popup-design > ul {
   position: relative;
   height: 170px;
-  background-image: url(../img/SnbPopupImage/MenuFlyoutMedium_S93-FS_001_Default.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 800px 170px;
@@ -464,7 +463,16 @@ input {
           transform: translate(-50%, 0%);
   width: 240px;
   font-size: 16px;
+  color: #f2f2f2;
   text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+}
+
+.index #index-header .user-info > li .popup-design > ul > li.on {
+  opacity: 1;
 }
 
 .index #index-header .user-info > li .popup-design .login {
@@ -531,8 +539,8 @@ input {
   bottom: auto;
   opacity: 0;
   pointer-events: none;
-  -webkit-transition: opacity .3s;
-  transition: opacity .3s;
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
 }
 
 .index #index-header #nation-info > li .dropdown-wrap.hidden, .index #index-header .user-info > li .dropdown-wrap.hidden {
@@ -1352,12 +1360,12 @@ input {
   display: inline-flex;
 }
 
-.index-footer .footer-wrap .footer-menu-wrap a span {
+.index-footer .footer-wrap .footer-menu-wrap a .width-calc {
   width: calc(100% - 23px);
 }
 
-.index-footer .footer-wrap .footer-menu-wrap a i, .index-footer .footer-wrap .footer-menu-wrap a img {
-  width: 12px;
+.index-footer .footer-wrap .footer-menu-wrap a i {
+  font-size: 12px;
   margin-right: 6px;
 }
 
@@ -1384,6 +1392,29 @@ input {
   margin-top: 10px;
 }
 
+.index-footer .footer-wrap .footer-menu-wrap .footer-menu > ul > li {
+  position: relative;
+}
+
+.index-footer .footer-wrap .footer-menu-wrap .footer-menu > ul > li .sns-qr-code:before {
+  display: none;
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -140px;
+  right: auto;
+  bottom: auto;
+  width: 130px;
+  height: 130px;
+  background-image: url(../img/common/kakao-QR-code/kakao-qr-code.jpg);
+  background-size: contain;
+  color: #fff;
+}
+
+.index-footer .footer-wrap .footer-menu-wrap .footer-menu > ul > li .sns-qr-code:hover:before {
+  display: block;
+}
+
 .index-footer .footer-wrap .footer-menu-wrap .footer-menu > ul > li > a {
   display: block;
   color: #E5DFD9;
@@ -1391,6 +1422,22 @@ input {
 
 .index-footer .footer-wrap .footer-menu-wrap .footer-menu > ul > li > a:hover, .index-footer .footer-wrap .footer-menu-wrap .footer-menu > ul > li > a:focus {
   color: #fff;
+}
+
+.index-footer .footer-wrap .footer-menu-wrap .footer-menu > ul > li > a:hover .sns-color-1, .index-footer .footer-wrap .footer-menu-wrap .footer-menu > ul > li > a:focus .sns-color-1 {
+  color: #355CA9;
+}
+
+.index-footer .footer-wrap .footer-menu-wrap .footer-menu > ul > li > a:hover .sns-color-2, .index-footer .footer-wrap .footer-menu-wrap .footer-menu > ul > li > a:focus .sns-color-2 {
+  color: #DE2C28;
+}
+
+.index-footer .footer-wrap .footer-menu-wrap .footer-menu > ul > li > a:hover .sns-color-3, .index-footer .footer-wrap .footer-menu-wrap .footer-menu > ul > li > a:focus .sns-color-3 {
+  color: #00ABF0;
+}
+
+.index-footer .footer-wrap .footer-menu-wrap .footer-menu > ul > li > a:hover .sns-color-4, .index-footer .footer-wrap .footer-menu-wrap .footer-menu > ul > li > a:focus .sns-color-4 {
+  color: #E5D93F;
 }
 
 .index-footer .footer-wrap .footer-menu-wrap .footer-menu > ul > li > a:hover span, .index-footer .footer-wrap .footer-menu-wrap .footer-menu > ul > li > a:focus span {
