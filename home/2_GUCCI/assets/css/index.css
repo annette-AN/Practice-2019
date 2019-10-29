@@ -247,15 +247,11 @@ input {
   margin-left: 20px;
 }
 
-.index .visual .slide-btns .prev-btn, .index .visual .slide-btns .next-btn {
+.index .visual .slide-btns > a {
   position: absolute;
   top: 50%;
   -webkit-transform: translate(0%, -50%);
           transform: translate(0%, -50%);
-}
-
-.index .visual .slide-btns .prev-btn img, .index .visual .slide-btns .next-btn img {
-  width: 40px;
 }
 
 .index .visual .slide-btns .prev-btn {
@@ -583,8 +579,11 @@ input {
 }
 
 .index #index-header #nation-info li > span, .index #index-header .user-info li > span {
-  cursor: pointer;
   color: rgba(255, 255, 255, 0.9);
+}
+
+.index #index-header #nation-info li > span.cursor, .index #index-header .user-info li > span.cursor {
+  cursor: pointer;
 }
 
 .index #index-header #nation-info li > span:hover, .index #index-header #nation-info li > span:focus, .index #index-header .user-info li > span:hover, .index #index-header .user-info li > span:focus {
@@ -598,14 +597,6 @@ input {
 .index #index-header #nation-info li > span i, .index #index-header .user-info li > span i {
   margin-right: 4px;
   color: rgba(255, 255, 255, 0.5);
-}
-
-.index #index-header #nation-info .no-cursor, .index #index-header .user-info .no-cursor {
-  cursor: initial;
-}
-
-.index #index-header #nation-info .no-cursor:hover, .index #index-header #nation-info .no-cursor:focus, .index #index-header .user-info .no-cursor:hover, .index #index-header .user-info .no-cursor:focus {
-  color: rgba(255, 255, 255, 0.9);
 }
 
 .index #index-header .site-search > div {

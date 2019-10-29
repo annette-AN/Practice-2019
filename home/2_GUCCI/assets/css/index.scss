@@ -238,14 +238,10 @@ input {
     }
 
     .slide-btns {
-      .prev-btn, .next-btn {
+      > a {
         position: absolute;
         top: 50%;
         transform: translate(0%, -50%);
-        
-        img {
-          width: 40px;
-        }
       }
 
       .prev-btn {
@@ -596,8 +592,11 @@ input {
 
       li {
         > span {
-          cursor: pointer;
           color: rgba(255, 255, 255, 0.9);
+
+          &.cursor {
+            cursor: pointer;
+          }
 
           &:hover, &:focus {
             color: rgba(255, 255, 255, 1);
@@ -614,13 +613,13 @@ input {
         }
       }
 
-      .no-cursor {
-        cursor: initial;
+      // .no-cursor {
+      //   cursor: initial;
 
-        &:hover, &:focus {
-          color: rgba(255, 255, 255, 0.9);
-        }
-      }
+      //   &:hover, &:focus {
+      //     color: rgba(255, 255, 255, 0.9);
+      //   }
+      // }
     }
 
     .site-search {
@@ -1735,3 +1734,10 @@ input {
 .i-text-ir {position: absolute; left: -9999px; width: 0px; height: 0px; font-size: 0px;}
 .perhaps {}
 .no-cursor {cursor: none;}
+
+
+//반응형 min-width : 500 , max-width
+//header => 1297 이상, 1296 > 1024, 1023 > 768, 767 미만
+//visual => 1271 이상, 1270 > 768, 768미만
+//main => 1601이상 , 1600 > 1297, 1296 > 1024 , 1023 > 768, 767 미만
+//footer => 1240 이상, 1239 > 1023 , 768, 767 미만
