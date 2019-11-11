@@ -1,0 +1,565 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100:300:400:500:700:900|Roboto+Condensed:400:700|Oswald&display=swap');
+
+body, h1, h2, h3, h4, h5, h6, nav, main, div, section, article, p, a, i, span, em, img  {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Roboto Condensed', 'Noto Sans KR', sans-serif;
+}
+
+p {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.main {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+em {
+  font-style: normal;
+}
+
+li {
+  list-style: none;
+}
+
+nav {
+  position: absolute;
+  top: 28px;
+  right: 5px;
+  left: auto;
+  bottom: auto;
+  overflow: hidden;
+  z-index: 1;
+
+  a {
+    display: block;
+    float: left;
+    padding: 8px 15px;
+    color: #fffffa;
+    border: 2px solid transparent;
+    font-size: 14px;
+
+    &:hover {
+      border: 2px solid #fffffa;
+    }
+  }
+}
+
+.visual {
+  // display: flex;
+  // flex-direction: row;
+  // flex-wrap: wrap;
+  // height: 955px;
+  overflow: hidden;
+
+  > div {
+    position: relative;
+    float: left;
+    width: 50%;
+
+    img {
+      vertical-align: bottom;
+    }
+
+    .post{
+      bottom: 25px;
+      left: 30px;
+    }
+  }
+
+  .full-height-box {
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .post{
+      em {
+        font-size: 22px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  .half-height-box {
+    height: 50%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.travel-better {
+  // text-contents의 font-size를 줄임
+
+  .contents-wrap {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1100px;
+    width: 80vw;
+    margin: 110px auto 160px;
+
+    > div {
+      width: 49%;
+    }
+
+    .text-contents {
+      color: #192b39;
+
+      h2 {
+        font-size: 35px;
+        text-transform: uppercase;
+        font-family: 'Oswald', sans-serif;
+        font-weight: 600;
+
+        em {
+          font-size: 57px;
+        }
+      }
+
+      p {
+        font-size: 19px;
+        margin: 55px 0px;
+        color: #87919b;
+        line-height: 1.5em;
+        text-transform: capitalize;
+
+        br {
+          display: block;
+          content: '';
+          height: 45px;
+        }
+      }
+    }
+
+    .img-contents {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-content: space-between;
+      max-width: 563px;
+      height: 100%;
+
+      > div {
+        flex-direction: column;
+        background-image: url(../img/NavArticle_Memoire-Fragrance_001_Default.jpg);
+        background-repeat: no-repeat;
+      }
+
+      .img-box-1 {
+        width: calc(46% - 25px);
+        height: 0px;
+        padding-top: 50%;
+        background-position: bottom right;
+        background-size: auto 85%;
+      }
+
+      .img-box-2 {
+        width: 54%;
+        height: 0px;
+        padding-top: 50%;
+        background-position: bottom left;
+        background-size: auto 100%;
+      }
+
+      .img-box-3 {
+        width: calc(46% - 25px);
+        height: 0px;
+        padding-top: calc(50% - 25px);
+        margin-top: 25px;
+        background-position: top right;
+        background-size: auto 70%;
+      }
+
+      .img-box-4 {
+        width: 54%;
+        height: 0px;
+        padding-top: calc(50% - 25px);
+        margin-top: 25px;
+        background-position: top left;
+        background-size: auto 80%;
+      }
+    }
+  }
+}
+
+.travel-sns-info {
+  > div {
+    padding: 190px 0px 180px 170px;
+    background-image: url(../img/sec-travel-sns-info/fcf3e9c0799f155193b794b00fb5b50e.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: inset 2000px 2000px rgba(0,0,0,0.4);
+    color: #feffff;
+
+    h2 {
+      font-size: 60px;
+      word-break: keep-all;
+
+      em {
+        color: #71abb9;
+      }
+
+      em:nth-of-type(2) {
+        color: #f6ac9f;
+      }
+    }
+
+    p {
+      width: 515px;
+      margin-top: 30px;
+      font-size: 19px;
+    }
+
+    .view-btn {
+      margin-top: 60px;
+    }
+  }
+
+  > article {
+    display: flex;
+    flex-direction: row;
+
+    .sns-post {
+      position: relative;
+      width: 25%;
+      //위에 살짝 검게 표현해야함
+      box-shadow: inset 0px 100px 100px 0px rgba(0,0,0,0.4);
+
+      img {
+        width: 100%;
+      }
+
+      .post{
+        top: 22px;
+        left: 30px;
+      }
+    }
+
+    .sns-category {
+      bottom: 0px;
+      left: 0px;
+    }
+  }
+}
+
+.travel-journals {
+  position: relative;
+  padding-top: 135px;
+  background-image: url(../img/sec-travel-journals/79127fced7d5c857dd89729c934e3631.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 2300px;
+  
+  > div {
+    width: 900px;
+    margin: 0px auto;
+
+    h2, p {
+      text-align: center;
+      color: #1e2e3b;
+    }
+
+    h2 {
+      font-size: 43px;
+    }
+
+    p {
+      margin-top: 55px;
+      font-size: 18px;
+    }
+  }
+
+  > section {
+    max-width: 1200px;
+    width: 80vw;
+    margin: 70px auto 0px;
+
+    .first-list {
+      position: relative;
+      margin: 0px auto;
+      text-align: center;
+
+      > li + li {
+        margin-left: 6px;
+      }
+
+      > li {
+        display: inline-block;
+
+        > a {
+          display: block;
+          width: 76px;
+          height: 30px;
+          line-height: 30px;
+          text-align: center;
+          font-size: 11px;
+          border-radius: 53px ;
+          background-color: #e0e5e9;
+
+          &:hover {
+            background-color: #f4aea2;
+          }
+        }
+
+        .second-list {
+          display: none;
+
+          &.on {
+            display: block;
+            position: absolute;
+            top: 75px;
+            left: 50%;
+            bottom: auto;
+            right: auto;
+            transform: translate(-50%, 0%);
+            max-width: 1170px;
+            width: 80vw;
+            padding: 0px;
+            background: pink;
+          }
+
+          > li:nth-of-type(3n) {
+            margin-right: 0px;
+          }
+
+          > li {
+            position: relative;
+            float: left;
+            width: 30%;
+            margin: 20px;
+
+            .image-box {
+              // height: 365px;
+              background: #196798;
+
+              img {
+                width: 100%;
+              }
+
+              .sns-category {
+                top: 10px;
+                left: 10px;
+              }
+            }
+
+            .post-box {
+              position: relative;
+              height: 215px;
+              background: #ffffff;
+
+              .post {
+                top: 35px;
+                left: 50%;
+                transform: translate(-50%, 0%);
+                width: 80%;
+                text-align: left;
+
+                span, em {
+                  color: #17294d;
+                }
+
+                > span {
+                  font-size: 9px;
+                }
+
+                > em {
+                  margin-top: 16px;
+                  font-size: 23px;
+                  font-weight: bold;
+                }
+
+                .date {
+                  color: #cbb6b1;
+                }
+              }
+
+              .comment {
+                position: absolute;
+                bottom: 10px;
+                left: 10px;
+                top: auto;
+                right: auto;
+                font-size: 11px;
+                color: #67706f;
+
+                i {
+                  font-size: 12px;
+                }
+
+                em {
+                  margin-left: 5px;
+                }
+              }
+
+              .share {
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+                left: auto;
+                top: auto;
+                color: #67706f;
+                
+                i {
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+
+.icon-text-ir {
+  position: absolute;
+  left: -5000px;
+  font-size: 0px;
+}
+
+.text-ir {
+  text-indent: -5000px;
+  font-size: 0px;
+}
+
+.sns {
+  display: flex;
+
+  a + a {
+    margin-left: 20px;
+  }
+
+  a {
+    position: relative;
+    width: 31px;
+    height: 31px;
+    background: #192f3a;
+    border-radius: 15px;
+
+    i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      right: auto;
+      bottom: auto;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
+      color: #fffcff;
+    }
+  }
+}
+
+.post{
+  position: absolute;
+  top: auto;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  width: 70%;
+  color: #fffee9;
+
+  em {
+    font-family: 'Oswald', sans-serif;
+  }
+
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+  }
+
+  .user-img {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background: pink;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  em {
+    display: block;
+    margin-top: 6px;
+    font-size: 17px;
+    text-transform: uppercase;
+  }
+}
+
+.view-btn {
+  display: block;
+  width: 180px;
+  padding: 10px 0px;
+  text-align: center;
+  font-size: 14px;
+  border: 2px solid #fffffa;
+
+  &:hover {
+    background: rgba(225,225,225,0.1);
+  }
+}
+
+.sns-category {
+  position: absolute;
+  top: auto;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  padding: 4px 12px;
+  background-color: #010000;
+  color: #fffee9;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 9px;
+}
+
+@media all and (max-width: 1200px) and (min-width: 1024px) {
+
+  .travel-better {
+    .contents-wrap {
+      .text-contents {
+        h2 {
+          font-size: 25px;
+
+          em {
+            font-size: 47px;
+          }
+        }
+
+        p {
+          font-size: 16px;
+          margin: 32px 0px;
+
+          br {
+            height: 20px;
+          }
+        }
+      } 
+    }
+  }
+
+  .travel-sns-info > div {
+    padding: 150px 0px 140px 130px;
+  }
+
+  .travel-journals > section .first-list > li .second-list > li {
+    margin: 13px;
+  }
+}
