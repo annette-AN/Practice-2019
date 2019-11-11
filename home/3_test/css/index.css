@@ -28,6 +28,10 @@ li {
   list-style: none;
 }
 
+img {
+  vertical-align: bottom;
+}
+
 nav {
   position: absolute;
   top: 28px;
@@ -35,7 +39,10 @@ nav {
   left: auto;
   bottom: auto;
   overflow: hidden;
+  background-color: transparent;
   z-index: 1;
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
 }
 
 nav a {
@@ -51,18 +58,20 @@ nav a:hover {
   border: 2px solid #fffffa;
 }
 
+main > section {
+  min-width: 1024px;
+}
+
 .visual {
   overflow: hidden;
+  height: 50vw;
+  min-height: 512px;
 }
 
 .visual > div {
   position: relative;
   float: left;
   width: 50%;
-}
-
-.visual > div img {
-  vertical-align: bottom;
 }
 
 .visual > div .post {
@@ -93,6 +102,10 @@ nav a:hover {
   height: 100%;
 }
 
+.travel-better {
+  padding: 0px 80px;
+}
+
 .travel-better .contents-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -101,7 +114,6 @@ nav a:hover {
       -ms-flex-pack: justify;
           justify-content: space-between;
   max-width: 1100px;
-  width: 80vw;
   margin: 110px auto 160px;
 }
 
@@ -125,11 +137,13 @@ nav a:hover {
 }
 
 .travel-better .contents-wrap .text-contents p {
+  padding-right: 70px;
   font-size: 19px;
   margin: 55px 0px;
   color: #87919b;
   line-height: 1.5em;
   text-transform: capitalize;
+  word-break: keep-all;
 }
 
 .travel-better .contents-wrap .text-contents p br {
@@ -162,7 +176,6 @@ nav a:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-image: url(../img/NavArticle_Memoire-Fragrance_001_Default.jpg);
   background-repeat: no-repeat;
 }
 
@@ -170,6 +183,7 @@ nav a:hover {
   width: calc(46% - 25px);
   height: 0px;
   padding-top: 50%;
+  background-image: url(../img/sec-travel-better/image1.png);
   background-position: bottom right;
   background-size: auto 85%;
 }
@@ -178,6 +192,7 @@ nav a:hover {
   width: 54%;
   height: 0px;
   padding-top: 50%;
+  background-image: url(../img/sec-travel-better/image2.png);
   background-position: bottom left;
   background-size: auto 100%;
 }
@@ -187,6 +202,7 @@ nav a:hover {
   height: 0px;
   padding-top: calc(50% - 25px);
   margin-top: 25px;
+  background-image: url(../img/sec-travel-better/image4.png);
   background-position: top right;
   background-size: auto 70%;
 }
@@ -196,18 +212,16 @@ nav a:hover {
   height: 0px;
   padding-top: calc(50% - 25px);
   margin-top: 25px;
+  background-image: url(../img/sec-travel-better/image3.png);
   background-position: top left;
   background-size: auto 80%;
 }
 
 .travel-sns-info > div {
   padding: 190px 0px 180px 170px;
-  background-image: url(../img/sec-travel-sns-info/fcf3e9c0799f155193b794b00fb5b50e.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  -webkit-box-shadow: inset 2000px 2000px rgba(0, 0, 0, 0.4);
-          box-shadow: inset 2000px 2000px rgba(0, 0, 0, 0.4);
   color: #feffff;
 }
 
@@ -216,11 +230,11 @@ nav a:hover {
   word-break: keep-all;
 }
 
-.travel-sns-info > div h2 em {
+.travel-sns-info > div h2 .em-style-1 {
   color: #71abb9;
 }
 
-.travel-sns-info > div h2 em:nth-of-type(2) {
+.travel-sns-info > div h2 .em-style-2 {
   color: #f6ac9f;
 }
 
@@ -246,13 +260,26 @@ nav a:hover {
 
 .travel-sns-info > article .sns-post {
   position: relative;
-  width: 25%;
-  -webkit-box-shadow: inset 0px 100px 100px 0px rgba(0, 0, 0, 0.4);
-          box-shadow: inset 0px 100px 100px 0px rgba(0, 0, 0, 0.4);
+  width: 25vw;
+  height: calc(25vw - 4px);
+  min-width: 252px;
+  min-height: 252px;
 }
 
 .travel-sns-info > article .sns-post img {
   width: 100%;
+}
+
+.travel-sns-info > article .sns-post .img-box-shadow {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: auto;
+  bottom: auto;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: inset 0px 100px 100px 0px rgba(0, 0, 0, 0.4);
+          box-shadow: inset 0px 100px 100px 0px rgba(0, 0, 0, 0.4);
 }
 
 .travel-sns-info > article .sns-post .post {
@@ -267,11 +294,9 @@ nav a:hover {
 
 .travel-journals {
   position: relative;
-  padding-top: 135px;
-  background-image: url(../img/sec-travel-journals/79127fced7d5c857dd89729c934e3631.jpg);
+  padding: 135px 50px;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 2300px;
 }
 
 .travel-journals > div {
@@ -294,26 +319,25 @@ nav a:hover {
 }
 
 .travel-journals > section {
-  max-width: 1200px;
-  width: 80vw;
+  max-width: 1215px;
   margin: 70px auto 0px;
 }
 
-.travel-journals > section .first-list {
+.travel-journals > section .tab-list {
   position: relative;
   margin: 0px auto;
   text-align: center;
 }
 
-.travel-journals > section .first-list > li + li {
+.travel-journals > section .tab-list > li + li {
   margin-left: 6px;
 }
 
-.travel-journals > section .first-list > li {
+.travel-journals > section .tab-list > li {
   display: inline-block;
 }
 
-.travel-journals > section .first-list > li > a {
+.travel-journals > section .tab-list > li > a {
   display: block;
   width: 76px;
   height: 30px;
@@ -324,60 +348,65 @@ nav a:hover {
   background-color: #e0e5e9;
 }
 
-.travel-journals > section .first-list > li > a:hover {
+.travel-journals > section .tab-list > li > a:hover {
   background-color: #f4aea2;
 }
 
-.travel-journals > section .first-list > li .second-list {
+.travel-journals > section .tab-panel {
   display: none;
 }
 
-.travel-journals > section .first-list > li .second-list.on {
-  display: block;
-  position: absolute;
-  top: 75px;
-  left: 50%;
-  bottom: auto;
-  right: auto;
-  -webkit-transform: translate(-50%, 0%);
-          transform: translate(-50%, 0%);
-  max-width: 1170px;
-  width: 80vw;
+.travel-journals > section .tab-panel.on {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 55px auto 0px;
   padding: 0px;
-  background: pink;
+  overflow: hidden;
 }
 
-.travel-journals > section .first-list > li .second-list > li:nth-of-type(3n) {
-  margin-right: 0px;
-}
-
-.travel-journals > section .first-list > li .second-list > li {
+.travel-journals .panel-post {
   position: relative;
   float: left;
-  width: 30%;
+  width: 365px;
   margin: 20px;
 }
 
-.travel-journals > section .first-list > li .second-list > li .image-box {
-  background: #196798;
+.travel-journals .panel-post .image-box {
+  height: 365px;
 }
 
-.travel-journals > section .first-list > li .second-list > li .image-box img {
+.travel-journals .panel-post .image-box img {
   width: 100%;
+  height: 100%;
 }
 
-.travel-journals > section .first-list > li .second-list > li .image-box .sns-category {
+.travel-journals .panel-post .image-box .sns-category {
   top: 10px;
   left: 10px;
 }
 
-.travel-journals > section .first-list > li .second-list > li .post-box {
+.travel-journals .view-btn {
+  width: 320px;
+  height: 50px;
+  margin: 100px auto 0px;
+  padding: 0px;
+  line-height: 50px;
+  color: #fffffa;
+}
+
+.post-box {
   position: relative;
   height: 215px;
   background: #ffffff;
 }
 
-.travel-journals > section .first-list > li .second-list > li .post-box .post {
+.post-box .post {
   top: 35px;
   left: 50%;
   -webkit-transform: translate(-50%, 0%);
@@ -386,25 +415,25 @@ nav a:hover {
   text-align: left;
 }
 
-.travel-journals > section .first-list > li .second-list > li .post-box .post span, .travel-journals > section .first-list > li .second-list > li .post-box .post em {
+.post-box .post span, .post-box .post em {
   color: #17294d;
 }
 
-.travel-journals > section .first-list > li .second-list > li .post-box .post > span {
+.post-box .post > span {
   font-size: 9px;
 }
 
-.travel-journals > section .first-list > li .second-list > li .post-box .post > em {
+.post-box .post > em {
   margin-top: 16px;
   font-size: 23px;
   font-weight: bold;
 }
 
-.travel-journals > section .first-list > li .second-list > li .post-box .post .date {
+.post-box .post .date {
   color: #cbb6b1;
 }
 
-.travel-journals > section .first-list > li .second-list > li .post-box .comment {
+.post-box .comment {
   position: absolute;
   bottom: 10px;
   left: 10px;
@@ -414,15 +443,33 @@ nav a:hover {
   color: #67706f;
 }
 
-.travel-journals > section .first-list > li .second-list > li .post-box .comment i {
+.post-box .comment i {
   font-size: 12px;
 }
 
-.travel-journals > section .first-list > li .second-list > li .post-box .comment em {
+.post-box .comment em {
   margin-left: 5px;
 }
 
-.travel-journals > section .first-list > li .second-list > li .post-box .share {
+.post-box .like {
+  position: absolute;
+  bottom: 10px;
+  left: 50px;
+  top: auto;
+  right: auto;
+  font-size: 11px;
+  color: red;
+}
+
+.post-box .like i {
+  font-size: 12px;
+}
+
+.post-box .like em {
+  margin-left: 5px;
+}
+
+.post-box .share {
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -431,7 +478,7 @@ nav a:hover {
   color: #67706f;
 }
 
-.travel-journals > section .first-list > li .second-list > li .post-box .share i {
+.post-box .share i {
   font-size: 12px;
 }
 
@@ -543,7 +590,66 @@ nav a:hover {
   font-size: 9px;
 }
 
-@media all and (max-width: 1200px) and (min-width: 1024px) {
+.useful-things .travel-sns-info > div {
+  padding: 190px 0px 170px;
+}
+
+.useful-things .travel-sns-info > div h2, .useful-things .travel-sns-info > div p {
+  width: 1150px;
+  text-align: center;
+}
+
+.useful-things .travel-sns-info > div h2 {
+  margin: 0px auto;
+  font-size: 45px;
+}
+
+.useful-things .travel-sns-info > div p {
+  margin: 30px auto 0px;
+}
+
+.useful-things .travel-sns-info > div .view-btn {
+  margin: 60px auto 0px;
+}
+
+.useful-things .panel-post {
+  width: 25vw;
+  min-width: 256px;
+  background: pink;
+}
+
+.useful-things .panel-post img {
+  width: 100%;
+  height: 100%;
+}
+
+.useful-things .image-box {
+  position: relative;
+}
+
+.useful-things .image-box .sns-category {
+  top: 10px;
+  left: 10px;
+  bottom: auto;
+}
+
+.useful-things .post-box {
+  height: 265px;
+}
+
+.useful-things .post-box .post {
+  width: 90%;
+}
+
+.useful-things .post-box .post p {
+  padding-top: 25px;
+  color: #111;
+}
+
+@media all and (max-width: 1200px) {
+  nav {
+    background-color: rgba(0, 0, 0, 0.75);
+  }
   .travel-better .contents-wrap .text-contents h2 {
     font-size: 25px;
   }

@@ -28,6 +28,10 @@ li {
   list-style: none;
 }
 
+img {
+  vertical-align: bottom;
+}
+
 nav {
   position: absolute;
   top: 28px;
@@ -35,7 +39,9 @@ nav {
   left: auto;
   bottom: auto;
   overflow: hidden;
+  background-color: transparent;
   z-index: 1;
+  transition: background-color .3s;
 
   a {
     display: block;
@@ -51,21 +57,23 @@ nav {
   }
 }
 
+main {
+  > section {
+    min-width: 1024px;
+  }
+}
+
+
+
 .visual {
-  // display: flex;
-  // flex-direction: row;
-  // flex-wrap: wrap;
-  // height: 955px;
   overflow: hidden;
+  height: 50vw;
+  min-height: 512px;
 
   > div {
     position: relative;
     float: left;
     width: 50%;
-
-    img {
-      vertical-align: bottom;
-    }
 
     .post{
       bottom: 25px;
@@ -75,6 +83,7 @@ nav {
 
   .full-height-box {
     height: 100%;
+
     img {
       width: 100%;
       height: 100%;
@@ -90,6 +99,7 @@ nav {
 
   .half-height-box {
     height: 50%;
+    
     img {
       width: 100%;
       height: 100%;
@@ -98,13 +108,12 @@ nav {
 }
 
 .travel-better {
-  // text-contents의 font-size를 줄임
+  padding: 0px 80px;
 
   .contents-wrap {
     display: flex;
     justify-content: space-between;
     max-width: 1100px;
-    width: 80vw;
     margin: 110px auto 160px;
 
     > div {
@@ -126,11 +135,13 @@ nav {
       }
 
       p {
+        padding-right: 70px;
         font-size: 19px;
         margin: 55px 0px;
         color: #87919b;
         line-height: 1.5em;
         text-transform: capitalize;
+        word-break: keep-all;
 
         br {
           display: block;
@@ -151,7 +162,6 @@ nav {
 
       > div {
         flex-direction: column;
-        background-image: url(../img/NavArticle_Memoire-Fragrance_001_Default.jpg);
         background-repeat: no-repeat;
       }
 
@@ -159,6 +169,7 @@ nav {
         width: calc(46% - 25px);
         height: 0px;
         padding-top: 50%;
+        background-image: url(../img/sec-travel-better/image1.png);
         background-position: bottom right;
         background-size: auto 85%;
       }
@@ -167,6 +178,7 @@ nav {
         width: 54%;
         height: 0px;
         padding-top: 50%;
+        background-image: url(../img/sec-travel-better/image2.png);
         background-position: bottom left;
         background-size: auto 100%;
       }
@@ -176,6 +188,7 @@ nav {
         height: 0px;
         padding-top: calc(50% - 25px);
         margin-top: 25px;
+        background-image: url(../img/sec-travel-better/image4.png);
         background-position: top right;
         background-size: auto 70%;
       }
@@ -185,6 +198,7 @@ nav {
         height: 0px;
         padding-top: calc(50% - 25px);
         margin-top: 25px;
+        background-image: url(../img/sec-travel-better/image3.png);
         background-position: top left;
         background-size: auto 80%;
       }
@@ -195,22 +209,20 @@ nav {
 .travel-sns-info {
   > div {
     padding: 190px 0px 180px 170px;
-    background-image: url(../img/sec-travel-sns-info/fcf3e9c0799f155193b794b00fb5b50e.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    box-shadow: inset 2000px 2000px rgba(0,0,0,0.4);
     color: #feffff;
 
     h2 {
       font-size: 60px;
       word-break: keep-all;
 
-      em {
+      .em-style-1 {
         color: #71abb9;
       }
 
-      em:nth-of-type(2) {
+      .em-style-2 {
         color: #f6ac9f;
       }
     }
@@ -232,12 +244,24 @@ nav {
 
     .sns-post {
       position: relative;
-      width: 25%;
-      //위에 살짝 검게 표현해야함
-      box-shadow: inset 0px 100px 100px 0px rgba(0,0,0,0.4);
+      width: 25vw;
+      height: calc(25vw - 4px);
+      min-width: 252px;
+      min-height: 252px;
 
       img {
         width: 100%;
+      }
+
+      .img-box-shadow {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: auto;
+        bottom: auto;
+        width: 100%;
+        height: 100%;
+        box-shadow: inset 0px 100px 100px 0px rgba(0,0,0,0.4);
       }
 
       .post{
@@ -255,11 +279,9 @@ nav {
 
 .travel-journals {
   position: relative;
-  padding-top: 135px;
-  background-image: url(../img/sec-travel-journals/79127fced7d5c857dd89729c934e3631.jpg);
+  padding: 135px 50px;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 2300px;
   
   > div {
     width: 900px;
@@ -281,11 +303,10 @@ nav {
   }
 
   > section {
-    max-width: 1200px;
-    width: 80vw;
+    max-width: 1215px;
     margin: 70px auto 0px;
 
-    .first-list {
+    .tab-list {
       position: relative;
       margin: 0px auto;
       text-align: center;
@@ -311,118 +332,134 @@ nav {
             background-color: #f4aea2;
           }
         }
+      }
+    }
 
-        .second-list {
-          display: none;
+    .tab-panel {
+      display: none;
 
-          &.on {
-            display: block;
-            position: absolute;
-            top: 75px;
-            left: 50%;
-            bottom: auto;
-            right: auto;
-            transform: translate(-50%, 0%);
-            max-width: 1170px;
-            width: 80vw;
-            padding: 0px;
-            background: pink;
-          }
-
-          > li:nth-of-type(3n) {
-            margin-right: 0px;
-          }
-
-          > li {
-            position: relative;
-            float: left;
-            width: 30%;
-            margin: 20px;
-
-            .image-box {
-              // height: 365px;
-              background: #196798;
-
-              img {
-                width: 100%;
-              }
-
-              .sns-category {
-                top: 10px;
-                left: 10px;
-              }
-            }
-
-            .post-box {
-              position: relative;
-              height: 215px;
-              background: #ffffff;
-
-              .post {
-                top: 35px;
-                left: 50%;
-                transform: translate(-50%, 0%);
-                width: 80%;
-                text-align: left;
-
-                span, em {
-                  color: #17294d;
-                }
-
-                > span {
-                  font-size: 9px;
-                }
-
-                > em {
-                  margin-top: 16px;
-                  font-size: 23px;
-                  font-weight: bold;
-                }
-
-                .date {
-                  color: #cbb6b1;
-                }
-              }
-
-              .comment {
-                position: absolute;
-                bottom: 10px;
-                left: 10px;
-                top: auto;
-                right: auto;
-                font-size: 11px;
-                color: #67706f;
-
-                i {
-                  font-size: 12px;
-                }
-
-                em {
-                  margin-left: 5px;
-                }
-              }
-
-              .share {
-                position: absolute;
-                bottom: 10px;
-                right: 10px;
-                left: auto;
-                top: auto;
-                color: #67706f;
-                
-                i {
-                  font-size: 12px;
-                }
-              }
-            }
-          }
-        }
+      &.on {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 55px auto 0px;
+        padding: 0px;
+        overflow: hidden;
       }
     }
   }
 
+  .panel-post {
+    position: relative;
+    float: left;
+    width: 365px;
+    margin: 20px;
+
+    .image-box {
+      height: 365px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .sns-category {
+        top: 10px;
+        left: 10px;
+      }
+    }
+  }
+
+  .view-btn {
+    width: 320px;
+    height: 50px;
+    margin: 100px auto 0px;
+    padding: 0px;
+    line-height: 50px;
+    color: #fffffa;
+  }
 }
 
+.post-box {
+  position: relative;
+  height: 215px;
+  background: #ffffff;
+
+  .post {
+    top: 35px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 80%;
+    text-align: left;
+
+    span, em {
+      color: #17294d;
+    }
+
+    > span {
+      font-size: 9px;
+    }
+
+    > em {
+      margin-top: 16px;
+      font-size: 23px;
+      font-weight: bold;
+    }
+
+    .date {
+      color: #cbb6b1;
+    }
+  }
+
+  .comment {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    top: auto;
+    right: auto;
+    font-size: 11px;
+    color: #67706f;
+
+    i {
+      font-size: 12px;
+    }
+
+    em {
+      margin-left: 5px;
+    }
+  }
+
+  .like {
+    position: absolute;
+    bottom: 10px;
+    left: 50px;
+    top: auto;
+    right: auto;
+    font-size: 11px;
+    color: red;
+
+    i {
+      font-size: 12px;
+    }
+
+    em {
+      margin-left: 5px;
+    }
+  }
+
+  .share {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    left: auto;
+    top: auto;
+    color: #67706f;
+    
+    i {
+      font-size: 12px;
+    }
+  }
+}
 
 .icon-text-ir {
   position: absolute;
@@ -530,7 +567,70 @@ nav {
   font-size: 9px;
 }
 
-@media all and (max-width: 1200px) and (min-width: 1024px) {
+.useful-things {
+  .travel-sns-info {
+    > div {
+      padding: 190px 0px 170px;
+
+      h2, p {
+        width: 1150px;
+        text-align: center;
+      }
+
+      h2 {
+        margin: 0px auto;
+        font-size: 45px;
+      }
+
+      p {
+        margin: 30px auto 0px;
+      }
+
+      .view-btn {
+        margin: 60px auto 0px;
+      }
+    }
+  }
+  
+  .panel-post {
+    width: 25vw;
+    min-width: 256px;
+    background: pink;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .image-box {
+    position: relative;
+
+    .sns-category {
+      top: 10px;
+      left: 10px;
+      bottom: auto;
+    }
+  }
+
+  .post-box {
+    height: 265px;
+
+    .post {
+      width: 90%;
+
+      p {
+        padding-top: 25px;
+        color: #111;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1200px) {
+  nav {
+    background-color: rgba(0,0,0,0.75);
+  }
 
   .travel-better {
     .contents-wrap {
@@ -561,5 +661,16 @@ nav {
 
   .travel-journals > section .first-list > li .second-list > li {
     margin: 13px;
+  }
+}
+
+@media all and (max-width: 1300px) {
+  .travel-journals > section .tab-panel {
+    &.on {
+
+    }
+  }
+
+  .travel-journals > section .tab-panel > li {
   }
 }
