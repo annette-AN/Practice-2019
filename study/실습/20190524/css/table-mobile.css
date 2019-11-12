@@ -1,79 +1,21 @@
 @charset "UTF-8";
-@media all and (max-width: 768px) {
-  #container {
-    width: 100%;
-  }
-  #left-menu {
-    display: none;
-  }
-  .contents {
-    left: 0px;
-    margin: 0px 16px;
-  }
-  .contents .basic-table, .contents .table-step2, .contents .table-step3 {
-    width: 100%;
-  }
-  .contents table {
-    min-width: 320px;
-    margin: 20px 0px;
-  }
-  .contents table th {
-    display: none;
-  }
-  .contents table td {
-    display: block;
-  }
-  .contents .basic-table tr:first-child {
-    border-top: 2px solid #323232;
-  }
-  .contents .basic-table tr td {
-    position: relative;
-    display: block;
-    text-align: left;
-    padding-left: 33%;
-  }
-  .contents .basic-table tr td:last-child {
-    margin-bottom: 10px;
-  }
-  .contents .basic-table tr td button {
-    width: 30%;
-  }
-  .contents .basic-table tr td:before {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    display: inline-block;
-    width: 30%;
-    height: 100%;
-    border-right: 1px solid #d3d3d3;
-    background: #f3f3f3;
-    font-weight: bold;
-    padding: 10px 0px;
-    text-align: center;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-  }
-  .contents .basic-table tr td:first-child:before {
-    content: '실습';
-  }
-  .contents .basic-table tr td:nth-child(2):before {
-    content: '상호';
-  }
-  .contents .basic-table tr td:nth-child(3):before {
-    content: '주소';
-  }
-  .contents .basic-table tr td:nth-child(4):before {
-    content: '전화번호';
-  }
-  .contents .basic-table tr td:nth-child(5):before {
-    content: '지도보기';
-    padding-top: 15px;
-  }
-  .table-step2 {
-    display: none;
-  }
-  .table-step3 {
-    display: none;
-  }
-}
+@media all and (max-width: 768px) { #container { width: 100%; }
+  #left-menu { display: none; }
+  .contents { left: 0px; margin: 0px 16px; }
+  .contents .basic-table, .contents .table-step2, .contents .table-step3 { width: 100%; }
+  .contents table { min-width: 320px; margin: 20px 0px; }
+  .contents table th { display: none; }
+  .contents table td { display: block; }
+  .contents .basic-table tr:first-child { border-top: 2px solid #323232; }
+  .contents .basic-table tr td { position: relative; display: block; text-align: left; padding-left: 33%; }
+  .contents .basic-table tr td:last-child { margin-bottom: 10px; }
+  .contents .basic-table tr td button { width: 30%; }
+  .contents .basic-table tr td:before { position: absolute; top: 0px; left: 0px; display: inline-block; width: 30%; height: 100%; border-right: 1px solid #d3d3d3; background: #f3f3f3; font-weight: bold; padding: 10px 0px; text-align: center; -webkit-box-sizing: border-box; box-sizing: border-box; }
+  .contents .basic-table tr td:first-child:before { content: '실습'; }
+  .contents .basic-table tr td:nth-child(2):before { content: '상호'; }
+  .contents .basic-table tr td:nth-child(3):before { content: '주소'; }
+  .contents .basic-table tr td:nth-child(4):before { content: '전화번호'; }
+  .contents .basic-table tr td:nth-child(5):before { content: '지도보기'; padding-top: 15px; }
+  .table-step2 { display: none; }
+  .table-step3 { display: none; } }
 /*# sourceMappingURL=table-mobile.css.map */

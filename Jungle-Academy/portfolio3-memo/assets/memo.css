@@ -1,372 +1,102 @@
-section.memo-write .memo-body {
-  position: relative;
-  margin: 80px auto;
-  width: 800px;
-  max-width: calc(100% - 80px);
-  min-width: 350px;
-  border: 1px solid #c4c4c4;
-  border-radius: 10px;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.1);
-}
+section.memo-write .memo-body { position: relative; margin: 80px auto; width: 800px; max-width: calc(100% - 80px); min-width: 350px; border: 1px solid #c4c4c4; border-radius: 10px; -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.1); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.1); }
 
-@media all and (max-width: 768px) {
-  section.memo-write .memo-body {
-    width: 800px;
-  }
-  section.memo-write .memo-body[open] {
-    height: 161px;
-  }
-}
+@media all and (max-width: 768px) { section.memo-write .memo-body { width: 800px; }
+  section.memo-write .memo-body[open] { height: 161px; } }
 
-section.memo-write .memo-body[open] .blind-sec {
-  width: 100%;
-  display: inline-block;
-}
+section.memo-write .memo-body[open] .blind-sec { width: 100%; display: inline-block; }
 
-section.memo-write .memo-body[open] div.memo-front-icons {
-  display: none;
-}
+section.memo-write .memo-body[open] div.memo-front-icons { display: none; }
 
-@media all and (max-width: 768px) {
-  section.memo-write .memo-body[open] div.memo-front-icons {
-    display: block;
-  }
-  section.memo-write .memo-body[open] div.memo-front-icons a.input-icon {
-    font-size: 15px;
-    margin-right: 15px;
-  }
-}
+@media all and (max-width: 768px) { section.memo-write .memo-body[open] div.memo-front-icons { display: block; }
+  section.memo-write .memo-body[open] div.memo-front-icons a.input-icon { font-size: 15px; margin-right: 15px; } }
 
-section.memo-write .memo-body[open] .memo-mid-icons {
-  display: inline-block;
-}
+section.memo-write .memo-body[open] .memo-mid-icons { display: inline-block; }
 
-@media all and (max-width: 768px) {
-  section.memo-write .memo-body[open] .memo-mid-icons {
-    margin-right: 20px;
-  }
-}
+@media all and (max-width: 768px) { section.memo-write .memo-body[open] .memo-mid-icons { margin-right: 20px; } }
 
-section.memo-write .memo-body[open] div.btn-set {
-  display: block;
-}
+section.memo-write .memo-body[open] div.btn-set { display: block; }
 
-@media all and (max-width: 768px) {
-  section.memo-write .memo-body[open] div.btn-set {
-    float: none;
-    position: absolute;
-    right: 0px;
-  }
-}
+@media all and (max-width: 768px) { section.memo-write .memo-body[open] div.btn-set { float: none; position: absolute; right: 0px; } }
 
-section.memo-write .memo-body a.input-icon {
-  color: gray;
-  font-size: 20px;
-  text-decoration: none;
-  position: relative;
-  margin-right: 30px;
-}
+section.memo-write .memo-body a.input-icon { color: gray; font-size: 20px; text-decoration: none; position: relative; margin-right: 30px; }
 
-section.memo-write .memo-body a.input-icon div.upload-tooltip {
-  font-size: 12px;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  color: white;
-  background-color: gray;
-  border-radius: 5px;
-  padding: 5px 10px;
-  white-space: nowrap;
-  line-height: initial;
-}
+section.memo-write .memo-body a.input-icon div.upload-tooltip { font-size: 12px; position: absolute; top: 100%; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%); color: white; background-color: gray; border-radius: 5px; padding: 5px 10px; white-space: nowrap; line-height: initial; }
 
-section.memo-write .memo-body a.input-icon-l {
-  color: #CACACA;
-  font-size: 15px;
-  text-decoration: none;
-  margin-right: 20px;
-}
+section.memo-write .memo-body a.input-icon-l { color: #CACACA; font-size: 15px; text-decoration: none; margin-right: 20px; }
 
-section.memo-write .memo-body .memo-description, section.memo-write .memo-body .memo-title {
-  font-family: sans-serif;
-  color: gray;
-  padding: 10px 20px;
-  background: none;
-  font-size: 15px;
-  font-weight: bold;
-  border: none;
-  width: 70%;
-  height: 40px;
-  outline: none;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
+section.memo-write .memo-body .memo-description, section.memo-write .memo-body .memo-title { font-family: sans-serif; color: gray; padding: 10px 20px; background: none; font-size: 15px; font-weight: bold; border: none; width: 70%; height: 40px; outline: none; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-section.memo-write .memo-body .blind-sec {
-  display: none;
-}
+section.memo-write .memo-body .blind-sec { display: none; }
 
-section.memo-write .memo-body .blind-sec .memo-description:focus, section.memo-write .memo-body .blind-sec .memo-title:focus {
-  outline: none;
-}
+section.memo-write .memo-body .blind-sec .memo-description:focus, section.memo-write .memo-body .blind-sec .memo-title:focus { outline: none; }
 
-section.memo-write .memo-body div.memo-front-icons {
-  display: inline-block;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  line-height: 40px;
-}
+section.memo-write .memo-body div.memo-front-icons { display: inline-block; position: absolute; top: 0px; right: 0px; line-height: 40px; }
 
-@media all and (max-width: 768px) {
-  section.memo-write .memo-body div.memo-front-icons {
-    display: none;
-  }
-}
+@media all and (max-width: 768px) { section.memo-write .memo-body div.memo-front-icons { display: none; } }
 
-section.memo-write .memo-body div.memo-mid-icons {
-  display: none;
-  margin: 10px 10px 10px 20px;
-}
+section.memo-write .memo-body div.memo-mid-icons { display: none; margin: 10px 10px 10px 20px; }
 
-section.memo-write .memo-body div.memo-mid-icons a.input-icon {
-  font-size: 15px;
-  margin-right: 20px;
-}
+section.memo-write .memo-body div.memo-mid-icons a.input-icon { font-size: 15px; margin-right: 20px; }
 
-section.memo-write .memo-body div.btn-set {
-  display: none;
-  float: right;
-}
+section.memo-write .memo-body div.btn-set { display: none; float: right; }
 
-section.memo-write .memo-body div.btn-set button {
-  display: inline-block;
-  margin-right: 20px;
-  padding: 0 15px;
-  background: none;
-  border: none;
-  line-height: 40px;
-  cursor: pointer;
-  font-family: sans-serif;
-  outline: none;
-}
+section.memo-write .memo-body div.btn-set button { display: inline-block; margin-right: 20px; padding: 0 15px; background: none; border: none; line-height: 40px; cursor: pointer; font-family: sans-serif; outline: none; }
 
-section.memo-show {
-  width: 800px;
-  max-width: calc(100%);
-  margin: 0 auto;
-}
+section.memo-show { width: 800px; max-width: calc(100%); margin: 0 auto; }
 
-section.memo-show .no-memo {
-  margin: 200px auto;
-  width: 800px;
-  max-width: calc(100% - 40px);
-  color: #d1d1d1;
-  text-align: center;
-  font-size: 25px;
-}
+section.memo-show .no-memo { margin: 200px auto; width: 800px; max-width: calc(100% - 40px); color: #d1d1d1; text-align: center; font-size: 25px; }
 
-section.memo-show .no-memo[hidden] {
-  display: none;
-}
+section.memo-show .no-memo[hidden] { display: none; }
 
-section.memo-show .no-memo i {
-  font-size: 150px;
-}
+section.memo-show .no-memo i { font-size: 150px; }
 
-section.memo-show .memo-body {
-  display: inline-block;
-  margin: 20px;
-  width: 300px;
-  max-width: calc(100% - 40px);
-  height: 125px;
-  border: 1px solid #c4c4c4;
-  border-radius: 10px;
-  -webkit-transition: -webkit-box-shadow .5s;
-  transition: -webkit-box-shadow .5s;
-  transition: box-shadow .5s;
-  transition: box-shadow .5s, -webkit-box-shadow .5s;
-}
+section.memo-show .memo-body { display: inline-block; margin: 20px; width: 300px; max-width: calc(100% - 40px); height: 125px; border: 1px solid #c4c4c4; border-radius: 10px; -webkit-transition: -webkit-box-shadow .5s; transition: -webkit-box-shadow .5s; transition: box-shadow .5s; transition: box-shadow .5s, -webkit-box-shadow .5s; }
 
-section.memo-show .memo-body:hover, section.memo-show .memo-body[hover] {
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.1);
-}
+section.memo-show .memo-body:hover, section.memo-show .memo-body[hover] { -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.1); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.1); }
 
-section.memo-show .memo-body:hover div.memo-mid-icons, section.memo-show .memo-body[hover] div.memo-mid-icons {
-  opacity: 1;
-}
+section.memo-show .memo-body:hover div.memo-mid-icons, section.memo-show .memo-body[hover] div.memo-mid-icons { opacity: 1; }
 
-section.memo-show .memo-body:hover div.memo-mid-icons a.input-icon, section.memo-show .memo-body[hover] div.memo-mid-icons a.input-icon {
-  opacity: 1;
-}
+section.memo-show .memo-body:hover div.memo-mid-icons a.input-icon, section.memo-show .memo-body[hover] div.memo-mid-icons a.input-icon { opacity: 1; }
 
-section.memo-show .memo-body a.input-icon {
-  opacity: 0;
-  color: gray;
-  font-size: 20px;
-  text-decoration: none;
-  position: relative;
-  margin-right: 30px;
-}
+section.memo-show .memo-body a.input-icon { opacity: 0; color: gray; font-size: 20px; text-decoration: none; position: relative; margin-right: 30px; }
 
-section.memo-show .memo-body a.input-icon div.upload-tooltip {
-  font-size: 12px;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  color: white;
-  background-color: gray;
-  border-radius: 5px;
-  padding: 5px 10px;
-  white-space: nowrap;
-  line-height: initial;
-}
+section.memo-show .memo-body a.input-icon div.upload-tooltip { font-size: 12px; position: absolute; top: 100%; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%); color: white; background-color: gray; border-radius: 5px; padding: 5px 10px; white-space: nowrap; line-height: initial; }
 
-section.memo-show .memo-body .memo-description, section.memo-show .memo-body .memo-title {
-  font-family: sans-serif;
-  color: #3E3E3E;
-  padding: 10px 20px;
-  font-size: 15px;
-  font-weight: bold;
-  border: none;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  outline: none;
-  background: none;
-}
+section.memo-show .memo-body .memo-description, section.memo-show .memo-body .memo-title { font-family: sans-serif; color: #3E3E3E; padding: 10px 20px; font-size: 15px; font-weight: bold; border: none; width: 100%; -webkit-box-sizing: border-box; box-sizing: border-box; outline: none; background: none; }
 
-section.memo-show .memo-body .memo-title {
-  font-size: 13px;
-}
+section.memo-show .memo-body .memo-title { font-size: 13px; }
 
-section.memo-show .memo-body div.memo-front-icons {
-  display: none;
-}
+section.memo-show .memo-body div.memo-front-icons { display: none; }
 
-section.memo-show .memo-body div.memo-mid-icons {
-  width: 100%;
-  text-align: center;
-  margin-top: 5px;
-}
+section.memo-show .memo-body div.memo-mid-icons { width: 100%; text-align: center; margin-top: 5px; }
 
-section.memo-show .memo-body div.memo-mid-icons a.input-icon {
-  opacity: 0;
-  display: inline-block;
-  text-align: center;
-  width: 15%;
-  margin: 0;
-  -webkit-transition: opacity .5s;
-  transition: opacity .5s;
-}
+section.memo-show .memo-body div.memo-mid-icons a.input-icon { opacity: 0; display: inline-block; text-align: center; width: 15%; margin: 0; -webkit-transition: opacity .5s; transition: opacity .5s; }
 
-section.memo-show .memo-body div.memo-mid-icons a.input-icon:hover {
-  color: #3E3E3E;
-}
+section.memo-show .memo-body div.memo-mid-icons a.input-icon:hover { color: #3E3E3E; }
 
-section.memo-show .memo-body div.memo-mid-icons a.input-icon i {
-  font-size: 15px;
-  line-height: 27px;
-}
+section.memo-show .memo-body div.memo-mid-icons a.input-icon i { font-size: 15px; line-height: 27px; }
 
-section.memo-show .memo-body div.memo-mid-icons a.input-icon-l {
-  display: none;
-}
+section.memo-show .memo-body div.memo-mid-icons a.input-icon-l { display: none; }
 
-section.memo-show .memo-body div.btn-set {
-  display: none;
-  float: right;
-}
+section.memo-show .memo-body div.btn-set { display: none; float: right; }
 
-section.memo-show .memo-body div.btn-set button {
-  display: inline-block;
-  margin-right: 20px;
-  padding: 0 15px;
-  background: white;
-  border: none;
-  line-height: 40px;
-  cursor: pointer;
-  font-family: sans-serif;
-  outline: none;
-}
+section.memo-show .memo-body div.btn-set button { display: inline-block; margin-right: 20px; padding: 0 15px; background: white; border: none; line-height: 40px; cursor: pointer; font-family: sans-serif; outline: none; }
 
-@media all and (max-width: 768px) {
-  section.memo-show {
-    margin-left: 20px;
-  }
-  section.memo-show .memo-body {
-    height: auto;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    max-width: calc(100% - 80px);
-    margin: 0px 0px 0px 20px;
-  }
-  section.memo-show .memo-body:hover {
-    -webkit-box-shadow: none;
-            box-shadow: none;
-  }
-  section.memo-show .memo-body .blind-sec {
-    display: none;
-  }
-  section.memo-show .memo-body div.memo-mid-icons {
-    display: none;
-  }
-  section.memo-show .memo-body[open] {
-    height: auto;
-  }
-  section.memo-show .memo-body[open] .blind-sec {
-    display: block;
-    width: 100%;
-  }
-  section.memo-show .memo-body[open] .blind-sec .memo-title {
-    font-size: 16px;
-    color: gray;
-  }
-  section.memo-show .memo-body[open] .blind-sec a.input-icon {
-    opacity: 1;
-    margin-right: 0px;
-  }
-  section.memo-show .memo-body[open] div.memo-mid-icons {
-    display: block;
-    margin-top: 10px;
-  }
-  section.memo-show .memo-body[open] div.memo-mid-icons a.input-icon {
-    opacity: 1;
-  }
-  section.memo-show .memo-body[open] div.btn-set {
-    display: block;
-    width: 100%;
-    margin: 10px 0px 0px 0px;
-    border-top: 1px solid #c4c4c4;
-  }
-  section.memo-show .memo-body[open] div.btn-set button {
-    line-height: 25px;
-    margin: 0px;
-    padding: 3px 0;
-    border: none;
-    width: 49%;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-  }
-  section.memo-show .memo-body[open] div.btn-set button:first-child {
-    border-right: 1px solid #c4c4c4;
-  }
-  section.memo-show .memo-body[open] div.btn-set button .memo-save {
-    float: left;
-  }
-  section.memo-show .memo-body[open] div.btn-set button .memo-close {
-    float: right;
-  }
-  section.memo-show .memo-body div.memo-description {
-    display: block;
-    margin-top: 10px;
-  }
-}
+@media all and (max-width: 768px) { section.memo-show { margin-left: 20px; }
+  section.memo-show .memo-body { height: auto; overflow: hidden; position: relative; width: 100%; max-width: calc(100% - 80px); margin: 0px 0px 0px 20px; }
+  section.memo-show .memo-body:hover { -webkit-box-shadow: none; box-shadow: none; }
+  section.memo-show .memo-body .blind-sec { display: none; }
+  section.memo-show .memo-body div.memo-mid-icons { display: none; }
+  section.memo-show .memo-body[open] { height: auto; }
+  section.memo-show .memo-body[open] .blind-sec { display: block; width: 100%; }
+  section.memo-show .memo-body[open] .blind-sec .memo-title { font-size: 16px; color: gray; }
+  section.memo-show .memo-body[open] .blind-sec a.input-icon { opacity: 1; margin-right: 0px; }
+  section.memo-show .memo-body[open] div.memo-mid-icons { display: block; margin-top: 10px; }
+  section.memo-show .memo-body[open] div.memo-mid-icons a.input-icon { opacity: 1; }
+  section.memo-show .memo-body[open] div.btn-set { display: block; width: 100%; margin: 10px 0px 0px 0px; border-top: 1px solid #c4c4c4; }
+  section.memo-show .memo-body[open] div.btn-set button { line-height: 25px; margin: 0px; padding: 3px 0; border: none; width: 49%; -webkit-box-sizing: border-box; box-sizing: border-box; }
+  section.memo-show .memo-body[open] div.btn-set button:first-child { border-right: 1px solid #c4c4c4; }
+  section.memo-show .memo-body[open] div.btn-set button .memo-save { float: left; }
+  section.memo-show .memo-body[open] div.btn-set button .memo-close { float: right; }
+  section.memo-show .memo-body div.memo-description { display: block; margin-top: 10px; } }
 /*# sourceMappingURL=memo.css.map */

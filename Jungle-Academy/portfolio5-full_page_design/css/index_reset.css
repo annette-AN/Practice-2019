@@ -1,35 +1,12 @@
 @import url("http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700");
 @import url("http://fonts.googleapis.com/earlyaccess/notosanskr.css");
-div, section, p, span, ul, li, img, a {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
+div, section, p, span, ul, li, img, a { margin: 0; padding: 0; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-h1, h2, h3, h4, h5, h6, em, strong, span {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-size: inherit;
-  font-weight: normal;
-}
+h1, h2, h3, h4, h5, h6, em, strong, span { margin: 0; padding: 0; -webkit-box-sizing: border-box; box-sizing: border-box; font-size: inherit; font-weight: normal; }
 
-li {
-  list-style: none;
-}
+li { list-style: none; }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+a { text-decoration: none; color: inherit; }
 
-body {
-  margin: 0;
-  font-family: 'Roboto', 'Noto Sans KR', 'sans-serif';
-  font-size: 14px;
-  min-width: 320px;
-  color: #212121;
-}
+body { margin: 0; font-family: 'Roboto', 'Noto Sans KR', 'sans-serif'; font-size: 14px; min-width: 320px; color: #212121; }
 /*# sourceMappingURL=index_reset.css.map */

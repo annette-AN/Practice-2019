@@ -1,107 +1,38 @@
-* {
-  margin: 0;
-  padding: 0;
-}
+* { margin: 0; padding: 0; }
 
-li {
-  list-style: none;
-}
+li { list-style: none; }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+a { text-decoration: none; color: inherit; }
 
-body {
-  font: 20px;
-  color: #222;
-  padding-top: 200px;
-  height: 3000px;
-}
+body { font: 20px; color: #222; padding-top: 200px; height: 3000px; }
 
-header {
-  width: 100%;
-  min-width: 960px;
-  position: absolute;
-  background: #eee;
-  -webkit-box-shadow: 0px 1px 3px #777;
-          box-shadow: 0px 1px 3px #777;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-}
+header { width: 100%; min-width: 960px; position: absolute; background: #eee; -webkit-box-shadow: 0px 1px 3px #777; box-shadow: 0px 1px 3px #777; -webkit-transition: all .2s; transition: all .2s; }
 
-header .inner {
-  width: 960px;
-  height: 70px;
-  margin: 0 auto;
-}
+header .inner { width: 960px; height: 70px; margin: 0 auto; }
 
-header .inner .logo {
-  float: left;
-  line-height: 70px;
-}
+header .inner .logo { float: left; line-height: 70px; }
 
-header .inner nav {
-  float: right;
-}
+header .inner nav { float: right; }
 
-header .inner nav a {
-  display: block;
-  float: left;
-  padding: 0px 10px;
-  line-height: 70px;
-  -webkit-transition: all .4s;
-  transition: all .4s;
-}
+header .inner nav a { display: block; float: left; padding: 0px 10px; line-height: 70px; -webkit-transition: all .4s; transition: all .4s; }
 
-header .inner nav a:hover {
-  background: #222;
-  color: #eee;
-}
+header .inner nav a:hover { background: #222; color: #eee; }
 
-header.on {
-  position: fixed;
-  top: 0;
-  background: #5048b7;
-  -webkit-transition: all .4s;
-  transition: all .4s;
-}
+header.on { position: fixed; top: 0; background: #5048b7; -webkit-transition: all .4s; transition: all .4s; }
 
-header.on .logo {
-  color: #fff;
-}
+header.on .logo { color: #fff; }
 
-header.on a {
-  color: #fff;
-}
+header.on a { color: #fff; }
 
-header.on a:hover {
-  color: #fff;
-}
+header.on a:hover { color: #fff; }
 
-header.on.bg {
-  background: #f79bc6;
-}
+header.on.bg { background: #f79bc6; }
 
-section {
-  margin: 0px auto;
-  font-size: 20px;
-  line-height: 1.8;
-  width: 960px;
-  padding: 100px 0px;
-}
+section { margin: 0px auto; font-size: 20px; line-height: 1.8; width: 960px; padding: 100px 0px; }
 
-section .scrollTop {
-  margin-bottom: 5px;
-  font-size: 24px;
-}
+section .scrollTop { margin-bottom: 5px; font-size: 24px; }
 
-section .offset {
-  margin-bottom: 5px;
-  font-size: 24px;
-}
+section .offset { margin-bottom: 5px; font-size: 24px; }
 
-section p {
-  margin-bottom: 20px;
-}
+section p { margin-bottom: 20px; }
 /*# sourceMappingURL=0513-04.css.map */

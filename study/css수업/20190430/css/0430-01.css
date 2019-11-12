@@ -1,16 +1,6 @@
-body {
-  height: 3000px;
-}
+body { height: 3000px; }
 
-.scroll-top h1 {
-  width: 800px;
-  font-size: 20px;
-}
+.scroll-top h1 { width: 800px; font-size: 20px; }
 
-.scroll-top p {
-  font-size: 30px;
-  position: fixed;
-  top: 0;
-  right: 0;
-}
+.scroll-top p { font-size: 30px; position: fixed; top: 0; right: 0; }
 /*# sourceMappingURL=0430-01.css.map */

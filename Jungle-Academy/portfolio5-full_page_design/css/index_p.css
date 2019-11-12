@@ -1,196 +1,56 @@
-#wrapper {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
+#wrapper { position: relative; height: 100vh; overflow: hidden; }
 
-main {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100vh;
-  -webkit-transition: top .4s;
-  transition: top .4s;
-}
+main { position: absolute; top: 0px; left: 0px; width: 100%; height: 100vh; -webkit-transition: top .4s; transition: top .4s; }
 
-.page {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  z-index: -1;
-  background: #FFEDC2;
-}
+.page { position: absolute; top: 0px; left: 0px; width: 100%; height: 100vh; overflow: hidden; z-index: -1; background: #FFEDC2; }
 
-.page .content-wrap {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 80%;
-  height: 80%;
-  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  background: #F8F8F8;
-  overflow: hidden;
-  padding: 5%;
-}
+.page .content-wrap { position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); width: 80%; height: 80%; -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); background: #F8F8F8; overflow: hidden; padding: 5%; }
 
-.page.intro {
-  background: #F8F8F8;
-}
+.page.intro { background: #F8F8F8; }
 
-.page.intro .content-wrap > div {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translate(0%, -50%);
-          transform: translate(0%, -50%);
-  width: 49%;
-  height: 100%;
-  float: left;
-}
+.page.intro .content-wrap > div { position: relative; top: 50%; -webkit-transform: translate(0%, -50%); transform: translate(0%, -50%); width: 49%; height: 100%; float: left; }
 
-.page.intro .img-wrap {
-  overflow: hidden;
-}
+.page.intro .img-wrap { overflow: hidden; }
 
-.page.intro .img-wrap img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 90%;
-}
+.page.intro .img-wrap img { position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); width: 90%; }
 
-.page.intro .img-wrap + div h3 {
-  height: 15%;
-  font-size: 50px;
-  letter-spacing: 5px;
-}
+.page.intro .img-wrap + div h3 { height: 15%; font-size: 50px; letter-spacing: 5px; }
 
-.page.intro .img-wrap + div p {
-  height: 25%;
-  font-size: 18px;
-}
+.page.intro .img-wrap + div p { height: 25%; font-size: 18px; }
 
-.page.intro .img-wrap + div ul {
-  height: 60%;
-}
+.page.intro .img-wrap + div ul { height: 60%; }
 
-.page.intro .img-wrap + div ul li {
-  height: 50px;
-  line-height: 50px;
-  background: #F8F8F8;
-}
+.page.intro .img-wrap + div ul li { height: 50px; line-height: 50px; background: #F8F8F8; }
 
-.page.intro .img-wrap + div ul li:first-of-type {
-  font-size: 20px;
-  font-weight: bold;
-}
+.page.intro .img-wrap + div ul li:first-of-type { font-size: 20px; font-weight: bold; }
 
-.page.intro .img-wrap + div ul li + li {
-  margin-top: 0.8%;
-}
+.page.intro .img-wrap + div ul li + li { margin-top: 0.8%; }
 
-.page.intro .img-wrap + div ul li + li a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: #ABCCB1;
-  font-size: 18px;
-  font-weight: 500;
-  text-align: center;
-}
+.page.intro .img-wrap + div ul li + li a { display: block; width: 100%; height: 100%; background: #ABCCB1; font-size: 18px; font-weight: 500; text-align: center; }
 
-.page ul.content-wrap {
-  background: red;
-}
+.page ul.content-wrap { background: red; }
 
-.page ul.content-wrap > li {
-  width: 100%;
-  height: 100%;
-  float: left;
-  background: pink;
-}
+.page ul.content-wrap > li { width: 100%; height: 100%; float: left; background: pink; }
 
-section > h2 {
-  width: 0px;
-  height: 0px;
-  font-size: 0px;
-}
+section > h2 { width: 0px; height: 0px; font-size: 0px; }
 
-#page-indicator {
-  position: fixed;
-  top: 50%;
-  right: 20px;
-  -webkit-transform: translate(0%, -50%);
-          transform: translate(0%, -50%);
-  z-index: 0;
-}
+#page-indicator { position: fixed; top: 50%; right: 20px; -webkit-transform: translate(0%, -50%); transform: translate(0%, -50%); z-index: 0; }
 
-#page-indicator li + li {
-  margin-top: 5px;
-}
+#page-indicator li + li { margin-top: 5px; }
 
-#page-indicator li {
-  position: relative;
-}
+#page-indicator li { position: relative; }
 
-#page-indicator li a {
-  display: block;
-  width: 20px;
-  height: 20px;
-  overflow: hidden;
-}
+#page-indicator li a { display: block; width: 20px; height: 20px; overflow: hidden; }
 
-#page-indicator li a span {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #333;
-  -webkit-transition: width .1s, height .1s;
-  transition: width .1s, height .1s;
-  text-indent: -9999px;
-}
+#page-indicator li a span { display: block; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); width: 5px; height: 5px; border-radius: 50%; background: #333; -webkit-transition: width .1s, height .1s; transition: width .1s, height .1s; text-indent: -9999px; }
 
-#page-indicator li a:hover span, #page-indicator li a:focus span {
-  width: 10px;
-  height: 10px;
-}
+#page-indicator li a:hover span, #page-indicator li a:focus span { width: 10px; height: 10px; }
 
-#page-indicator li a.on span {
-  width: 12px;
-  height: 12px;
-}
+#page-indicator li a.on span { width: 12px; height: 12px; }
 
-.control .prev img, .control .next img {
-  width: 70px;
-}
+.control .prev img, .control .next img { width: 70px; }
 
-.control .prev {
-  position: absolute;
-  top: 50%;
-  left: 60px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
+.control .prev { position: absolute; top: 50%; left: 60px; -webkit-transform: translateY(-50%); transform: translateY(-50%); }
 
-.control .next {
-  position: absolute;
-  top: 50%;
-  right: 60px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
+.control .next { position: absolute; top: 50%; right: 60px; -webkit-transform: translateY(-50%); transform: translateY(-50%); }
 /*# sourceMappingURL=index_p.css.map */

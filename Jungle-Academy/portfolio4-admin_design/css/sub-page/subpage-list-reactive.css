@@ -1,120 +1,30 @@
-@media all and (min-width: 768px) and (max-width: 1149px) {
-  main {
-    padding: 2% 5%;
-  }
-}
+@media all and (min-width: 768px) and (max-width: 1149px) { main { padding: 2% 5%; } }
 
-@media all and (min-width: 768px) and (max-width: 991px) {
-  main.write ul li span em {
-    display: inline-block;
-    width: 70%;
-  }
-}
+@media all and (min-width: 768px) and (max-width: 991px) { main.write ul li span em { display: inline-block; width: 70%; } }
 
-@media all and (min-width: 320px) and (max-width: 767px) {
-  main.sub {
-    padding: 0%;
-    margin: 16px;
-  }
-  main.list table {
-    max-width: 100%;
-    overflow: hidden;
-  }
-  main.list table tr, main.list table th, main.list table td {
-    display: block;
-  }
-  main.list .list-horizon {
-    overflow: hidden;
-  }
-  main.list .list-horizon table tbody tr, main.list .list-horizon table tbody th, main.list .list-horizon table tbody td {
-    float: left;
-    line-height: 35px;
-  }
-  main.list .list-horizon table tbody tr {
-    width: 100%;
-  }
-  main.list .list-horizon table tbody th {
-    width: 80px;
-    height: 35px;
-    text-align: left;
-    padding-left: 10px;
-  }
-  main.list .list-horizon table tbody td {
-    width: calc(100% - 80px);
-  }
-  main.list .list-horizon table tfoot td {
-    height: auto;
-    padding: 10px;
-  }
-  main.list .list-board table {
-    table-layout: fixed;
-  }
-  main.list .list-board table colgroup {
-    display: none;
-  }
-  main.list .list-board table thead th {
-    visibility: hidden;
-    width: 0px;
-    height: 0px;
-    margin: 0px;
-    padding: 0px;
-    text-indent: -9999px;
-    font-size: 0px;
-  }
-  main.list .list-board table tbody tr {
-    overflow: hidden;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  main.list .list-board table tbody tr td {
-    border: none;
-    line-height: 35px;
-  }
-  main.list .list-board table tbody tr td:first-child {
-    display: none;
-  }
-  main.list .list-board table tbody tr td:nth-child(2) {
-    max-width: 100%;
-    font-weight: bold;
-  }
-  main.list .list-board table tbody tr td:nth-child(3), main.list .list-board table tbody tr td:last-child {
-    float: left;
-    font-size: 12px;
-  }
-  main.list .list-board table tbody tr td:nth-child(3) {
-    width: 110px;
-  }
-  main.list .list-board table tbody tr td:last-child {
-    position: relative;
-    width: 90px;
-  }
-  main.list .list-board table tbody tr td:last-child:before {
-    position: absolute;
-    top: 50%;
-    left: -1px;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-    display: block;
-    content: '';
-    width: 1px;
-    height: 10px;
-    background: gray;
-  }
-  main.write {
-    padding-bottom: 50px;
-    background: #fff;
-  }
-  main.write ul li span em {
-    width: 48%;
-  }
-  main.write .image-preview li {
-    float: none;
-    margin: 5px auto;
-  }
-}
+@media all and (min-width: 320px) and (max-width: 767px) { main.sub { padding: 0%; margin: 16px; }
+  main.list table { max-width: 100%; overflow: hidden; }
+  main.list table tr, main.list table th, main.list table td { display: block; }
+  main.list .list-horizon { overflow: hidden; }
+  main.list .list-horizon table tbody tr, main.list .list-horizon table tbody th, main.list .list-horizon table tbody td { float: left; line-height: 35px; }
+  main.list .list-horizon table tbody tr { width: 100%; }
+  main.list .list-horizon table tbody th { width: 80px; height: 35px; text-align: left; padding-left: 10px; }
+  main.list .list-horizon table tbody td { width: calc(100% - 80px); }
+  main.list .list-horizon table tfoot td { height: auto; padding: 10px; }
+  main.list .list-board table { table-layout: fixed; }
+  main.list .list-board table colgroup { display: none; }
+  main.list .list-board table thead th { visibility: hidden; width: 0px; height: 0px; margin: 0px; padding: 0px; text-indent: -9999px; font-size: 0px; }
+  main.list .list-board table tbody tr { overflow: hidden; border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+  main.list .list-board table tbody tr td { border: none; line-height: 35px; }
+  main.list .list-board table tbody tr td:first-child { display: none; }
+  main.list .list-board table tbody tr td:nth-child(2) { max-width: 100%; font-weight: bold; }
+  main.list .list-board table tbody tr td:nth-child(3), main.list .list-board table tbody tr td:last-child { float: left; font-size: 12px; }
+  main.list .list-board table tbody tr td:nth-child(3) { width: 110px; }
+  main.list .list-board table tbody tr td:last-child { position: relative; width: 90px; }
+  main.list .list-board table tbody tr td:last-child:before { position: absolute; top: 50%; left: -1px; -webkit-transform: translateY(-50%); transform: translateY(-50%); display: block; content: ''; width: 1px; height: 10px; background: gray; }
+  main.write { padding-bottom: 50px; background: #fff; }
+  main.write ul li span em { width: 48%; }
+  main.write .image-preview li { float: none; margin: 5px auto; } }
 
-@media all and (max-width: 320px) {
-  * {
-    display: none;
-  }
-}
+@media all and (max-width: 320px) { * { display: none; } }
 /*# sourceMappingURL=subpage-list-reactive.css.map */

@@ -1,89 +1,30 @@
-* {
-  margin: 0;
-  padding: 0;
-}
+* { margin: 0; padding: 0; }
 
-li {
-  list-style: none;
-}
+li { list-style: none; }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+a { text-decoration: none; color: inherit; }
 
-body {
-  font: 14px;
-  margin: 0 auto;
-}
+body { font: 14px; margin: 0 auto; }
 
-body .gnb {
-  width: 960px;
-  margin: 0 auto;
-}
+body .gnb { width: 960px; margin: 0 auto; }
 
-body .gnb:after {
-  content: '';
-  display: block;
-  clear: both;
-}
+body .gnb:after { content: ''; display: block; clear: both; }
 
-body .gnb > .m {
-  float: left;
-  width: 192px;
-  text-align: center;
-  position: relative;
-}
+body .gnb > .m { float: left; width: 192px; text-align: center; position: relative; }
 
-body .gnb > .m > a {
-  display: block;
-  height: 50px;
-  line-height: 50px;
-  font-size: 18px;
-}
+body .gnb > .m > a { display: block; height: 50px; line-height: 50px; font-size: 18px; }
 
-body .gnb > .m ul {
-  position: absolute;
-  left: 0px;
-  top: 50px;
-  width: 100%;
-  background: #222;
-  display: none;
-}
+body .gnb > .m ul { position: absolute; left: 0px; top: 50px; width: 100%; background: #222; display: none; }
 
-body .gnb > .m ul li a {
-  display: block;
-  color: #fff;
-  padding: 12px 0px;
-  border-bottom: 1px solid #333;
-}
+body .gnb > .m ul li a { display: block; color: #fff; padding: 12px 0px; border-bottom: 1px solid #333; }
 
-body .gnb > .m ul li a:last-child {
-  border-bottom: none;
-}
+body .gnb > .m ul li a:last-child { border-bottom: none; }
 
-body .gnb > .m ul li a:hover {
-  background: #fff;
-  color: #000;
-}
+body .gnb > .m ul li a:hover { background: #fff; color: #000; }
 
-body .gnb > .m.on > a {
-  border-bottom: 4px solid #8c34a7;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
+body .gnb > .m.on > a { border-bottom: 4px solid #8c34a7; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-.main {
-  background: url(../img/project03.jpg) no-repeat center top/cover;
-  height: 500px;
-}
+.main { background: url(../img/project03.jpg) no-repeat center top/cover; height: 500px; }
 
-.main a {
-  display: block;
-  width: 1000px;
-  height: 100%;
-  margin: 0px auto;
-  text-indent: -9999%;
-  overflow: hidden;
-}
+.main a { display: block; width: 1000px; height: 100%; margin: 0px auto; text-indent: -9999%; overflow: hidden; }
 /*# sourceMappingURL=0513-02.css.map */

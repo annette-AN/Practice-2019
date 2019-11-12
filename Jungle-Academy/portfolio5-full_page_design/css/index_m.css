@@ -1,56 +1,22 @@
-.section1 {
-  background: #AAB3AB;
-}
+.section1 { background: #AAB3AB; }
 
-.section1 div .content {
-  width: 90%;
-  margin: 30px auto 10px;
-}
+.section1 div .content { width: 90%; margin: 30px auto 10px; }
 
-.section1 div .content img {
-  display: block;
-  width: 60%;
-  margin: 0 auto;
-}
+.section1 div .content img { display: block; width: 60%; margin: 0 auto; }
 
-.section1 div .content div {
-  margin-top: 14px;
-}
+.section1 div .content div { margin-top: 14px; }
 
-.section1 div .content div p {
-  line-height: 1.8;
-}
+.section1 div .content div p { line-height: 1.8; }
 
-.section1 div .content div p span {
-  display: block;
-  font-size: 30px;
-}
+.section1 div .content div p span { display: block; font-size: 30px; }
 
-.section1 div .content div ul li {
-  width: 100%;
-  text-align: center;
-  font-weight: 500;
-}
+.section1 div .content div ul li { width: 100%; text-align: center; font-weight: 500; }
 
-.section1 div .content div > ul {
-  margin-top: 14px;
-}
+.section1 div .content div > ul { margin-top: 14px; }
 
-.section1 div .content div > ul > li {
-  padding-bottom: 10px;
-  font-size: 18px;
-  text-align: left;
-}
+.section1 div .content div > ul > li { padding-bottom: 10px; font-size: 18px; text-align: left; }
 
-.section1 div .content div > ul ul li a {
-  display: block;
-  padding: 15px;
-  margin-top: 10px;
-  background: #EEE0B7;
-  font-size: 18px;
-}
+.section1 div .content div > ul ul li a { display: block; padding: 15px; margin-top: 10px; background: #EEE0B7; font-size: 18px; }
 
-.section1 div .content div > ul ul li a:hover {
-  background: #EBEFC9;
-}
+.section1 div .content div > ul ul li a:hover { background: #EBEFC9; }
 /*# sourceMappingURL=index_m.css.map */
