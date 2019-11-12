@@ -102,6 +102,18 @@ main > section {
   height: 100%;
 }
 
+.img-box-shadow {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: auto;
+  bottom: auto;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: inset 0px -80px 50px 0px rgba(0, 0, 0, 0.4);
+          box-shadow: inset 0px -80px 50px 0px rgba(0, 0, 0, 0.4);
+}
+
 .travel-better {
   padding: 0px 80px;
 }
@@ -271,13 +283,6 @@ main > section {
 }
 
 .travel-sns-info > article .sns-post .img-box-shadow {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: auto;
-  bottom: auto;
-  width: 100%;
-  height: 100%;
   -webkit-box-shadow: inset 0px 100px 100px 0px rgba(0, 0, 0, 0.4);
           box-shadow: inset 0px 100px 100px 0px rgba(0, 0, 0, 0.4);
 }
@@ -424,9 +429,24 @@ main > section {
 }
 
 .post-box .post > em {
-  margin-top: 16px;
-  font-size: 23px;
+  margin-top: 20px;
+  font-size: 25px;
   font-weight: bold;
+}
+
+.post-box .post p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  height: 4.5em;
+  margin-top: 20px;
+  line-height: 1.5em;
+  color: #111;
+  font-size: 13px;
+  word-break: break-all;
 }
 
 .post-box .post .date {
@@ -435,8 +455,8 @@ main > section {
 
 .post-box .comment {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: 20px;
+  left: 20px;
   top: auto;
   right: auto;
   font-size: 11px;
@@ -453,8 +473,8 @@ main > section {
 
 .post-box .like {
   position: absolute;
-  bottom: 10px;
-  left: 50px;
+  bottom: 20px;
+  left: 60px;
   top: auto;
   right: auto;
   font-size: 11px;
@@ -471,8 +491,8 @@ main > section {
 
 .post-box .share {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 20px;
+  right: 20px;
   left: auto;
   top: auto;
   color: #67706f;
@@ -548,7 +568,6 @@ main > section {
   width: 20px;
   height: 20px;
   border-radius: 10px;
-  background: pink;
   overflow: hidden;
 }
 
@@ -615,7 +634,6 @@ main > section {
 .useful-things .panel-post {
   width: 25vw;
   min-width: 256px;
-  background: pink;
 }
 
 .useful-things .panel-post img {
@@ -641,15 +659,7 @@ main > section {
   width: 90%;
 }
 
-.useful-things .post-box .post p {
-  padding-top: 25px;
-  color: #111;
-}
-
 @media all and (max-width: 1200px) {
-  nav {
-    background-color: rgba(0, 0, 0, 0.75);
-  }
   .travel-better .contents-wrap .text-contents h2 {
     font-size: 25px;
   }
@@ -668,6 +678,16 @@ main > section {
   }
   .travel-journals > section .first-list > li .second-list > li {
     margin: 13px;
+  }
+}
+
+@media all and (max-width: 1300px) {
+  nav {
+    top: 5px;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+  .useful-things .post-box .post > em {
+    font-size: 18px;
   }
 }
 /*# sourceMappingURL=index.css.map */
